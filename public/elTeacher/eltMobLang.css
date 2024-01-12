@@ -1,0 +1,63 @@
+
+ #mobLang, #mobLang > * {
+     transition: all .3s ease-out;
+     font-family: Raleway, sans-serif;
+     font-size: 14px;
+ }
+#mobLang {
+    display: flex;
+    flex-direction: row;
+    bottom: 0;
+    translate: -50%;
+    left: 50%;
+
+    z-index: 995595607309;
+
+    /*background-color: #ffffff;*/
+    border-radius: 15px 15px 0 0;
+
+    gap: 10px;
+    padding: 10px 10px 0 10px;
+    position: fixed;
+}
+.mobLangLink {
+    padding: 0 20px;
+    text-decoration: none;
+    color: #ffffff;
+    border-radius: 10px 10px 0 0;
+    /*box-shadow: 0 2px 0 #00000090;*/
+    background-color: #64b6ac;
+    opacity: 0;
+
+    /*animation: showshowshow 1s .5s forwards;*/
+}
+
+@media screen and (min-width: 600px) {
+    #mobLang {
+        display: none;
+    }
+}
+
+.linkShow {
+    animation: showshowshow 2.3s forwards;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    padding: 10px 20px;
+    box-shadow: 0 1px 5px #00000090;
+}
+
+@keyframes showshowshow {
+    from {
+        opacity: 0;
+        translate: 0 30px;
+        border-radius: 0;
+        /*padding: 0 20px;*/
+        box-shadow: 0 2px 15px #00000090;
+    }
+    30% {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
