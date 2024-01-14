@@ -24,10 +24,10 @@ function defaultVisible() {
         let categoryElements = document.getElementsByClassName(findingCategories[i].id);
 
         for (let h = 0; h < categoryElements.length; h++) {
+                let elementDisplay = categoryElements[h].style.display;
             if (findingCategories[i].classList.contains('filterActive')) {
                 console.log('Показываем все элементы в категории ' + findingCategories[i].innerHTML);
                 categoryElements[h].style.cssText += ('animation: showElements .5s ease-out forwards');
-                let elementDisplay = categoryElements[h].style.display;
                 categoryElements[h].style.display = elementDisplay;
 
                 // categoryElements[h].removeAttribute('hidden');
