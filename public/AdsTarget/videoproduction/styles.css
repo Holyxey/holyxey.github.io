@@ -12,31 +12,12 @@ a {
 	transition: .3s ease-out;
 }
 
-h1 {
+h1, .h1 {
 	font-family: "Geometria";
 	color: #555555;
 	font-size: 3.5rem;
-	font-weight: 400;
+	font-weight: 500;
 }
-.h1 {
-	font-family: "Geometria";
-	color: #555555;
-	font-size: 3.5rem;
-	font-weight: 400;
-}
-/*	#rec600139613 .tn-elem[data-elem-id="1685869433216"] .tn-atom {
-		font-family: "Geometria";
-		color: #ffffff;
-		font-size: 3.5rem!important;
-		font-weight: 400!important;
-	}
-	#rec645266902 .tn-elem[data-elem-id="1685869433965"] .tn-atom {
-		font-family: "Geometria";
-		color: #555555;
-		font-size: 3.5rem!important;
-		font-weight: 400!important;
-	}
- */
 p {
 	font-family: "Geometria";
 	color: #555555;
