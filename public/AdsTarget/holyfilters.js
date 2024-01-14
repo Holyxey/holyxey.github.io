@@ -25,7 +25,7 @@ function defaultVisible() {
                 categoryElements[h].style.cssText += ('animation: showElements .5s ease-out forwards');
                 categoryElements[h].removeAttribute('hidden');
             } else {
-            //    console.log('Класс не найден, скрываем все элементы в категории ' + findingCategories[i].innerHTML);
+                console.log('Класс не найден, скрываем все элементы в категории ' + findingCategories[i].innerHTML);
                 categoryElements[h].setAttribute('hidden', '');
             }
         }
@@ -33,6 +33,7 @@ function defaultVisible() {
     }
 }  // Проверяем видимость по умолчанию через поиск класса filterActive в кнопке фильтрации
 defaultVisible();
+
 
 
 function categoryClick(element) {
