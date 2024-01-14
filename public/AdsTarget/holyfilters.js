@@ -28,12 +28,10 @@ function defaultVisible() {
                 console.log('Показываем все элементы в категории ' + findingCategories[i].innerHTML);
                 categoryElements[h].style.animation = 'showElements .5s ease-out forwards';
                 categoryElements[h].style.display = '';
-                categoryElements[h].classList.add('visibleElement');
             } else {
                 console.log('Класс не найден, скрываем все элементы в категории ' + findingCategories[i].innerHTML);
                 categoryElements[h].style.display = 'none';
                 categoryElements[h].style.animation = 'unset';
-                categoryElements[h].classList.remove('visibleElement');
             }
         }
 
