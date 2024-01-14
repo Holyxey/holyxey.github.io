@@ -21,11 +21,11 @@ function defaultVisible() {
 
         for (let h = 0; h < categoryElements.length; h++) {
             if (findingCategories[i].classList.contains('filterActive')) {
-                console.log('Класс найден, показываем все элементы в категории ' + findingCategories[i].innerHTML);
+                console.log('Показываем все элементы в категории ' + findingCategories[i].innerHTML);
                 categoryElements[h].style.cssText += ('animation: showElements .5s ease-out forwards');
                 categoryElements[h].removeAttribute('hidden');
             } else {
-                console.log('Класс не найден, скрываем все элементы в категории ' + findingCategories[i].innerHTML);
+            //    console.log('Класс не найден, скрываем все элементы в категории ' + findingCategories[i].innerHTML);
                 categoryElements[h].setAttribute('hidden', '');
             }
         }
