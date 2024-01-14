@@ -4,13 +4,17 @@ let findingCategories = document.getElementsByClassName('filter_button');
 
 
 
-function makeIdFilters() {
-    for (let i = 0; i < findingCategories.length; i++) {
-        findingCategories[i].id = 'holyxeyCategory_' + (i + 1);
-        console.log('Объявили категорию: ' + findingCategories[i].id);
-    }
-}  // Объявляем ID в соответствии с количеством категорий
-makeIdFilters();
+for (let i = 0; i < findingCategories.length; i++)
+    findingCategories[i].setAttribute('onclick', 'categoryClick(this)');
+// Добавляем onClick для всех категорий для функции выше
+
+
+
+for (let i = 0; i < findingCategories.length; i++) {
+    findingCategories[i].id = 'holyxeyCategory_' + (i + 1);
+    console.log('Объявили категорию: ' + findingCategories[i].id)
+}
+// Объявляем ID в соответствии с количеством категорий
 
 
 
@@ -45,14 +49,5 @@ function categoryClick(element) {
     }
     defaultVisible();
 }  // Обрабатываем клики по кнопкам фильтров
-
-
-
-function categoryClickSet() {
-    for (let i = 0; i < findingCategories.length; i++) {
-        findingCategories[i].setAttribute('onclick', 'categoryClick(this)');
-    }
-}  // Добавляем onClick для всех категорий для функции выше
-categoryClickSet();
 
 
