@@ -14,4 +14,4 @@ function footerPadding() {
 }
 if (document.documentElement.clientWidth < 600) {
     footerPadding()
-} else {};
+} else {}
