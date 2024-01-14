@@ -29,10 +29,12 @@ function defaultVisible() {
                     console.log('Показываем все элементы в категории ' + findingCategories[i].innerHTML);
                     categoryElements[h].classList.add('showThisElement');
                     categoryElements[h].style.display = '';
+                    categoryElements[h].style.cssText += 'order: -' + findingCategories.length;
                 } else {
                     console.log('Класс не найден, скрываем все элементы в категории ' + findingCategories[i].innerHTML);
                     categoryElements[h].style.display = 'none';
                     categoryElements[h].classList.remove('showThisElement');
+                    categoryElements[h].style.cssText -= 'order: -' + findingCategories.length;
                 }
             }, (50 * h));
         }
