@@ -1,0 +1,23 @@
+/* Keyframes */
+	@keyframes scale_logo {
+		from {
+		}
+		50% {
+			scale: 1.22;
+			opacity: .97;
+		}
+		to {
+		}
+	}
+	
+	@keyframes show {
+		from {
+			opacity: 0;
+		}
+		30% {
+			opacity: 0.1;
+		}
+		to {
+			opacity: 1;
+		}
+	}
