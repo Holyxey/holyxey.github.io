@@ -6,7 +6,7 @@ let findingCategories = document.getElementsByClassName('filter_button');
 
 for (let i = 0; i < findingCategories.length; i++)
     findingCategories[i].setAttribute('onclick', 'categoryClick(this)');
-// Добавляем onClick для всех категорий для функции выше
+// Добавляем onClick для всех категорий
 
 
 
@@ -38,9 +38,12 @@ for (let i = 0; i < findingCategories.length; i++) {
     let categoryElements = document.getElementsByClassName(findingCategories[i].id);
     for (let h = 0; h < categoryElements.length; h++) {
         if (findingCategories[i].classList.contains('filterActive')) {
-
+            categoryElements[h].classList.remove('hideThisElement');
+            categoryElements[h].classList.add('showThisElement');
         } else {
             categoryElements[h].style.display = 'none';
+            categoryElements[h].classList.add('hideThisElement');
+            categoryElements[h].classList.remove('showThisElement');
         }
     }
 }  // Проверяем видимость по умолчанию через поиск класса filterActive в кнопке фильтрации
@@ -60,7 +63,6 @@ function defaultVisible() {
                     categoryElements[h].classList.add('showThisElement');
                     categoryElements[h].style.display = '';
                 } else {
-                    categoryElements[h].style.order = '';
                     categoryElements[h].classList.add('hideThisElement');
                     categoryElements[h].classList.remove('showThisElement');
                     setTimeout(function () {categoryElements[h].style.display = 'none';}, 200);
