@@ -3,12 +3,13 @@ let findingCategories = document.getElementsByClassName('filter_button');
 // Определили ко-во категорий для фильтрации
 
 
+
 for (let i = 0; i < findingCategories.length; i++)
     findingCategories[i].setAttribute('onclick', 'categoryClick(this)');
 // Добавляем onClick для всех категорий для функции выше
 
 
-let categoryClickCounter = 0;
+
 function categoryClick(element) {
     let categoryElements = document.getElementsByClassName(element.id);
     if (element.classList.contains('filterActive')) {
@@ -17,7 +18,6 @@ function categoryClick(element) {
         element.classList.add('filterActive');
     }
     defaultVisible();
-    categoryClickCounter++;
 }  // Обрабатываем клики по кнопкам фильтров
 
 
@@ -43,7 +43,7 @@ for (let i = 0; i < findingCategories.length; i++) {
             categoryElements[h].style.display = 'none';
         }
     }
-}
+}  // Проверяем видимость по умолчанию через поиск класса filterActive в кнопке фильтрации
 
 
 
@@ -59,26 +59,13 @@ function defaultVisible() {
                     categoryElements[h].classList.remove('hideThisElement');
                     categoryElements[h].classList.add('showThisElement');
                     categoryElements[h].style.display = '';
-                    categoryElements[h].style.order = '-' + categoryClickCounter;
-                    categoryClickCounter++;
                 } else {
                     categoryElements[h].style.order = '';
                     categoryElements[h].classList.add('hideThisElement');
                     categoryElements[h].classList.remove('showThisElement');
                     setTimeout(function () {categoryElements[h].style.display = 'none';}, 200);
-                    categoryElements[h].style.order = '-' + categoryClickCounter;
-                    categoryClickCounter++;
                 }
             }, (50 * (h * 5)));
         }
     }
-
-}  // Проверяем видимость по умолчанию через поиск класса filterActive в кнопке фильтрации
-// А так же работаем с кнопками фильтров
-defaultVisible();
-
-
-
-
-
-
+} // Работаем с кнопками фильтров
