@@ -17,6 +17,11 @@ for (let i = 0; i < findingCategories.length; i++) {
 // Объявляем ID в соответствии с количеством категорий
 
 
+for (let i = 0; i < findingCategories.length; i++) {
+    let categoryElements = document.getElementsByClassName(findingCategories[i].id);
+    console.log(categoryElements);
+}
+
 
 function defaultVisible() {
     for (let i = 0; i < findingCategories.length; i++) {
@@ -24,16 +29,12 @@ function defaultVisible() {
         let categoryElements = document.getElementsByClassName(findingCategories[i].id);
 
         for (let h = 0; h < categoryElements.length; h++) {
-                let elementDisplay = categoryElements[h].style.display;
             if (findingCategories[i].classList.contains('filterActive')) {
                 console.log('Показываем все элементы в категории ' + findingCategories[i].innerHTML);
                 categoryElements[h].style.cssText += ('animation: showElements .5s ease-out forwards');
                 categoryElements[h].style.display = elementDisplay;
-
-                // categoryElements[h].removeAttribute('hidden');
             } else {
                 console.log('Класс не найден, скрываем все элементы в категории ' + findingCategories[i].innerHTML);
-                // categoryElements[h].setAttribute('hidden', '');
                 categoryElements[h].style.display = 'none';
             }
         }
