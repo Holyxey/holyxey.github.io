@@ -24,15 +24,17 @@ function defaultVisible() {
         let categoryElements = document.getElementsByClassName(findingCategories[i].id);
 
         for (let h = 0; h < categoryElements.length; h++) {
-            if (findingCategories[i].classList.contains('filterActive')) {
-                console.log('Показываем все элементы в категории ' + findingCategories[i].innerHTML);
-                categoryElements[h].classList.add('showThisElement');
-                categoryElements[h].style.display = '';
-            } else {
-                console.log('Класс не найден, скрываем все элементы в категории ' + findingCategories[i].innerHTML);
-                categoryElements[h].style.display = 'none';
-                categoryElements[h].classList.remove('showThisElement');
-            }
+            setTimeout(function () {
+                if (findingCategories[i].classList.contains('filterActive')) {
+                    console.log('Показываем все элементы в категории ' + findingCategories[i].innerHTML);
+                    categoryElements[h].classList.add('showThisElement');
+                    categoryElements[h].style.display = '';
+                } else {
+                    console.log('Класс не найден, скрываем все элементы в категории ' + findingCategories[i].innerHTML);
+                    categoryElements[h].style.display = 'none';
+                    categoryElements[h].classList.remove('showThisElement');
+                }
+            }, 300);
         }
 
     }
