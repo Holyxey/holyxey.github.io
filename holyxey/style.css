@@ -1,6 +1,11 @@
 body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
     background-color: #333333;
     text-align: center;
+    height: 95vh;
 }
 a {
     text-decoration: none;
