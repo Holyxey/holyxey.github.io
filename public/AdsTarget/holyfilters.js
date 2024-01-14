@@ -26,7 +26,8 @@ function defaultVisible() {
         for (let h = 0; h < categoryElements.length; h++) {
             if (findingCategories[i].classList.contains('filterActive')) {
                 console.log('Показываем все элементы в категории ' + findingCategories[i].innerHTML);
-                categoryElements[h].style.animation = 'showElements .5s ease-out forwards';
+                // categoryElements[h].style.animation = 'showElements .5s ease-out forwards';
+                categoryElements[h].classList.add = 'showThisElement';
                 categoryElements[h].style.display = '';
             } else {
                 console.log('Класс не найден, скрываем все элементы в категории ' + findingCategories[i].innerHTML);
