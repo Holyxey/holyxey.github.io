@@ -31,6 +31,21 @@ for (let i = 0; i < findingCategories.length; i++) {
 
 
 
+
+
+for (let i = 0; i < findingCategories.length; i++) {
+    let categoryElements = document.getElementsByClassName(findingCategories[i].id);
+    for (let h = 0; h < categoryElements.length; h++) {
+        if (findingCategories[i].classList.contains('filterActive')) {
+
+        } else {
+            categoryElements[h].style.display = 'none';
+        }
+    }
+}
+
+
+
 function defaultVisible() {
 
     for (let i = 0; i < findingCategories.length; i++) {
@@ -49,7 +64,7 @@ function defaultVisible() {
                     categoryElements[h].classList.remove('showThisElement');
                     setTimeout(function () {categoryElements[h].style.display = 'none';}, 200);
                 }
-            }, (50 * h));
+            }, (50 * (h * 5)));
         }
     }
 
