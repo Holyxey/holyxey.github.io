@@ -40,8 +40,8 @@
 <stop offset="1" stop-color="#77CBF5" stop-opacity="0"/>
 </radialGradient>
 <linearGradient id="paint1_linear_1_4" x1="53.4875" y1="68" x2="59.7041" y2="27.9077" gradientUnits="userSpaceOnUse">
-<stop stop-color="#1691D0"/>
-<stop offset="1" stop-color="#1691D0" stop-opacity="0"/>
+<stop stop-color="#95EED0"/>
+<stop offset="1" stop-color="#96EECF"/>
 </linearGradient>
 </defs>
 </svg>
