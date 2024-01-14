@@ -10,5 +10,5 @@
 }
 
 .showThisElement {
-    animation: showElement .3s ese-out forwards;
+    animation: showElement .3s ease-out forwards;
 }
