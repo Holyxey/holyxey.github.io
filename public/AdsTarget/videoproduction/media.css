@@ -106,6 +106,7 @@
 		}
 		.card {
 			max-width: unset;
+			min-width: 80%;
 		}
 		.block_column {
 			.block_row {
