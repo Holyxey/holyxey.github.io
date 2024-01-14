@@ -28,6 +28,7 @@ img {
     margin: 1em;
     transition: all .5s ease-out;
     width: 5em;
+    height: 5em;
 }
 img:hover {
     scale: 1.08;
