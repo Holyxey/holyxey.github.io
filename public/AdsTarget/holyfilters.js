@@ -29,7 +29,7 @@ function defaultVisible() {
                     console.log('Показываем все элементы в категории ' + findingCategories[i].innerHTML);
                     categoryElements[h].classList.add('showThisElement');
                     categoryElements[h].style.display = '';
-                    categoryElements[h].style.order = '-' + findingCategories.length;
+                    categoryElements[h].style.order = '-' + categoryElements.length;
                 } else {
                     console.log('Класс не найден, скрываем все элементы в категории ' + findingCategories[i].innerHTML);
                     categoryElements[h].style.display = 'none';
