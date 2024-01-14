@@ -34,7 +34,7 @@ function defaultVisible() {
                     categoryElements[h].style.display = 'none';
                     categoryElements[h].classList.remove('showThisElement');
                 }
-            }, (30 * h));
+            }, (50 * h));
         }
 
     }
