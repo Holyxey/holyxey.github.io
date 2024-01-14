@@ -8,3 +8,7 @@
         translate: 0;
     }
 }
+
+.showThisElement {
+    animation: showElement .3s ease-out forward;
+}
