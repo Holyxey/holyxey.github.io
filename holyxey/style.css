@@ -9,17 +9,20 @@ h1 {
     color: #cff3f1;
     font-family: 'Helvetica', sans-serif;
     font-weight: 300;
+    font-size: 2em;
 }
 h2 {
     color: #cff3f1;
     font-family: 'Helvetica', sans-serif;
     font-weight: 300;
+    font-size: 1.5em;
 }
 img {
     box-shadow: 0 0 40px #00000090 inset;
     border-radius: 100px;
     margin: 1em;
     transition: all .5s ease-out;
+    width: 5em;
 }
 img:hover {
     scale: 1.08;
