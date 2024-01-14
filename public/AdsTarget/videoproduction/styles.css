@@ -239,7 +239,7 @@ p {
 	.block_cards {
 		justify-content: unset;
 	}
-	.card_img::after {
+/*	.card_img::after {
 		content: '';
 		font-size: 2rem;
 		line-height: 1px;
@@ -261,7 +261,7 @@ p {
 		border-radius: 100%;
 
 		transition: all .5s ease-out;
-	}
+	} */
 	
 }
 
