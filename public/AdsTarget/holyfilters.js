@@ -5,7 +5,7 @@ let findingCategories = document.getElementsByClassName('filter_button');
 
 
 for (let i = 0; i < findingCategories.length; i++)
-    findingCategories[i].setAttribute('onclick', 'categoryClick(this)');
+    findingCategories[i].setAttribute('onclick', 'onlyOneFilter(this)');
 // Добавляем onClick для всех категорий
 
 
@@ -19,6 +19,16 @@ function categoryClick(element) {
     }
     defaultVisible();
 }  // Обрабатываем клики по кнопкам фильтров
+
+
+
+function onlyOneFilter(element) {
+    for (let i = 0; i < findingCategories.length; i++) {
+        findingCategories[i].classList.remove('filterActive');
+    }
+        element.classList.add('filterActive');
+    defaultVisible();
+} // Добавляем в обработчик сверху, если нужен 'radio', а не чекбокс
 
 
 
