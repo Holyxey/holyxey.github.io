@@ -9,11 +9,25 @@ for (let i = 0; i < findingCategories.length; i++)
 
 
 
+function categoryClick(element) {
+    let categoryElements = document.getElementsByClassName(element.id);
+    if (element.classList.contains('filterActive')) {
+        element.classList.remove('filterActive');
+    } else {
+        element.classList.add('filterActive');
+    }
+    defaultVisible();
+}  // Обрабатываем клики по кнопкам фильтров
+
+
+
+console.log('Объявляем категории: (' + findingCategories.length + ') ед.')
 for (let i = 0; i < findingCategories.length; i++) {
     findingCategories[i].id = 'holyxeyCategory_' + (i + 1);
-    console.log('Объявили категорию: ' + findingCategories[i].id)
+    console.log((i + 1) + '.) ' + findingCategories[i].id)
 }
-// Объявляем ID в соответствии с количеством категорий
+// Объявляем ID для кнопок фильтров в соответствии с количеством категорий
+// Эти же ID = элементам фильтрации
 
 
 
@@ -45,14 +59,6 @@ defaultVisible();
 
 
 
-function categoryClick(element) {
-    let categoryElements = document.getElementsByClassName(element.id);
-    if (element.classList.contains('filterActive')) {
-        element.classList.remove('filterActive');
-    } else {
-        element.classList.add('filterActive');
-    }
-    defaultVisible();
-}  // Обрабатываем клики по кнопкам фильтров
+
 
 
