@@ -19,13 +19,14 @@ for (let i = 0; i < findingCategories.length; i++) {
 
 
 function defaultVisible() {
+    let orrrder = 1;
     for (let i = 0; i < findingCategories.length; i++) {
 
         let categoryElements = document.getElementsByClassName(findingCategories[i].id);
 
         for (let h = 0; h < categoryElements.length; h++) {
             setTimeout(function () {
-                let orrrder = 1;
+
                 if (findingCategories[i].classList.contains('filterActive')) {
                     console.log('Показываем все элементы в категории ' + findingCategories[i].innerHTML);
                     categoryElements[h].classList.add('showThisElement');
@@ -37,8 +38,8 @@ function defaultVisible() {
                     categoryElements[h].style.order = '';
                     categoryElements[h].classList.remove('showThisElement');
                 }
-                orrrder++;
             }, (50 * h));
+            orrrder++;
         }
 
     }
