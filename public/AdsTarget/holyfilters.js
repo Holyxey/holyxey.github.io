@@ -2,6 +2,14 @@
 let findingCategories = document.getElementsByClassName('filter_button');
 // Определили ко-во категорий для фильтрации
 
+let allCategoriesButton = document.getElementById('allCategoriesButton');
+if (allCategoriesButton) {
+    allCategoriesButton.setAttribute('onclick', 'showAllCategories(this)');
+}
+function showAllCategories(element) {
+    allCategoriesButton.classList.add('filterActive');
+}
+// Правила для "все фильтры" - нужно добавить класс для кнопки "allCategoriesButton"
 
 
 for (let i = 0; i < findingCategories.length; i++)
