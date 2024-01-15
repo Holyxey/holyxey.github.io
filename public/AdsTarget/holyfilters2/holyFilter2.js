@@ -27,6 +27,7 @@ function h_buttonClick(element) {
         for (let i = 0; i < h_categoryCounter.length; i++) {
             if (h_categoryCounter[i] !== element) {
                 h_categoryCounter[i].classList.remove('filter_active');
+                h_allCategory.classList.remove('filter_active');
             }
         }
     }
@@ -71,7 +72,14 @@ function h_showDisplay(element) {
 function h_hideDisplay(element) {
     element.style.display = 'none';
 } // display 'none'
-
+if (h_allCategory != '') {
+    for (let i = 0; i < h_element.length; i++) {
+        h_showElement(h_element[i]);
+        setTimeout(h_showDisplay, (20 * (i * 2)), h_element[i]);
+    }
+} else {
+    h_checkActive();
+}
 
 
 
@@ -91,10 +99,3 @@ else
 
 
 console.log('_____');
-h_checkActive();
-if (h_allCategory != '') {
-    for (let i = 0; i < h_element.length; i++) {
-        h_showElement(h_element[i]);
-        setTimeout(h_showDisplay, (20 * (i * 2)), h_element[i]);
-    }
-}
