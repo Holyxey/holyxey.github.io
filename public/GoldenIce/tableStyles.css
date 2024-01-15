@@ -1,0 +1,93 @@
+<!--Стили для таблиц-->
+
+<style>
+
+ .table_div {
+     /* max-width: 40%; */
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex: 1 0 0;
+     overflow-x: auto;
+     overflow-y: auto;
+ }
+.new {
+    font-size: 1rem;
+    text-align: center;
+    background-color: #FEED79;
+    font-weight: 450;
+    border: 1px solid #A294AD;
+}
+
+.deviv {
+    border: none;
+    padding: 0.5rem;
+    background-color: transparent;
+}
+
+.days {
+    font-size: 1rem;
+    text-align: center;
+    background-color: #DBD3E1!important;
+    font-weight: 450;
+    border: 1px solid #A294AD;
+}
+
+.person {
+    background-color: #BDBBDA;
+}
+
+table {
+    width: 90%;
+    border-collapse: collapse;
+    letter-spacing: 1px;
+    font-size: 1rem;
+    font-family: 'CirceRounded',Arial,sans-serif;
+    line-height: 1.55;
+    font-weight: 300;
+}
+
+td, th {
+    border: 1px solid #A294AD;
+    padding: 2px 5px;
+    background-color: #E5DDEC;
+    text-align: center;
+    white-space: nowrap;
+    width: auto;
+}
+.vertical {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.vertical td {
+    white-space: unset;
+}
+
+</style>
+
+<style> /* Media */
+
+@media (max-width:960) {
+    .days {
+        font-size: 0.7rem;
+        /*text-align: left;*/
+    }
+    table {
+        font-size: 1rem;
+        width: 100%;
+    }
+    td, th {
+        padding: 1.5px 4px;
+        /*text-align: left;*/
+    }
+}
+
+</style> <!--  Media -->
+
+<style>
+ .maxw {
+     max-width: 400px;
+ }
+</style>
