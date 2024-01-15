@@ -1,0 +1,18 @@
+@keyframes h_showElement {
+    from {
+        opacity: 0;
+        translate: 0 -10px;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes h_hideElement {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        translate: 0 -10px;
+    }
+}

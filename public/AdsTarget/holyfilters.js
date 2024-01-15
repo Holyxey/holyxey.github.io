@@ -14,7 +14,7 @@ function showAllCategories(element) {
 
 for (let i = 0; i < findingCategories.length; i++)
     findingCategories[i].setAttribute('onclick', 'onlyOneFilter(this)');
-// Добавляем onClick для всех категорий
+// Добавляем onClick для 'всех категорий'
 
 
 
@@ -36,7 +36,8 @@ function onlyOneFilter(element) {
     }
         element.classList.add('filterActive');
     defaultVisible();
-} // Добавляем в обработчик сверху, если нужен 'radio', а не чекбокс
+}
+// Добавляем в обработчик сверху, если нужен 'radio', а не чекбокс
 
 
 
@@ -64,7 +65,8 @@ for (let i = 0; i < findingCategories.length; i++) {
             categoryElements[h].classList.remove('showThisElement');
         }
     }
-}  // Проверяем видимость по умолчанию через поиск класса filterActive в кнопке фильтрации
+}
+// Проверяем видимость по умолчанию через поиск класса filterActive в кнопке фильтрации
 
 
 
@@ -88,4 +90,5 @@ function defaultVisible() {
             }, (50 * (h * 5)));
         }
     }
-} // Работаем с кнопками фильтров
+}
+// Работаем с кнопками фильтров

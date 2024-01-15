@@ -1,0 +1,21 @@
+.caarrdd {
+    width: 90px;
+    height: 90px;
+    background-color: cornflowerblue;
+    text-align: center;
+    border-radius: 1em;
+    margin: 1em;
+}
+.filter_active {
+    border-color: #FF4F92;
+}
+
+
+.h_showElement {
+    transition: all .3s ease-out;
+    animation: h_showElement .3s ease-out forwards;
+}
+.h_hideElement {
+    transition: all .3s ease-out;
+    animation: h_hideElement .3s ease-out forwards;
+}
