@@ -42,15 +42,15 @@ function h_checkActive() {
         if (h_categoryCounter[i].classList.contains('filter_active')) {
             for (let j = 0; j < cgs.length; j++) {
                 h_showElement(cgs[j]);
-                // h_showDisplay(cgs[j]);
                 setTimeout(h_showDisplay, (20 * (j * 2)), cgs[j]);
+                // h_showDisplay(cgs[j]);
             }
         }
         else {
             for (let j = 0; j < cgs.length; j++) {
                 h_hideElement(cgs[j]);
-                // h_hideDisplay(cgs[j]);
                 setTimeout(h_hideDisplay, (20 * (j * 2)), cgs[j]);
+                // h_hideDisplay(cgs[j]);
             }
         }
     }
@@ -92,3 +92,9 @@ else
 
 console.log('_____');
 h_checkActive();
+if (h_allCategory != '') {
+    for (let i = 0; i < h_element.length; i++) {
+        h_showElement(h_element[i]);
+        setTimeout(h_showDisplay, (20 * (i * 2)), h_element[i]);
+    }
+}
