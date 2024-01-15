@@ -1,8 +1,7 @@
-<!--Стили для таблиц-->
+/*Стили для таблиц*/
 
-<style>
 
- .table_div {
+.table_div {
      /* max-width: 40%; */
      display: flex;
      justify-content: center;
@@ -65,11 +64,15 @@ td, th {
     white-space: unset;
 }
 
-</style>
 
-<style> /* Media */
+.maxw {
+    max-width: 400px;
+}
 
-@media (max-width:960) {
+
+/* Media */
+
+@media (max-width: 960px) {
     .days {
         font-size: 0.7rem;
         /*text-align: left;*/
@@ -84,10 +87,3 @@ td, th {
     }
 }
 
-</style> <!--  Media -->
-
-<style>
- .maxw {
-     max-width: 400px;
- }
-</style>
