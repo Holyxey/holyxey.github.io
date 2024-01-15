@@ -72,13 +72,15 @@ function h_showDisplay(element) {
 function h_hideDisplay(element) {
     element.style.display = 'none';
 } // display 'none'
-if (h_allCategory != '') {
+if (h_allCategory !== '' && h_allCategory) {
     for (let i = 0; i < h_element.length; i++) {
         h_showElement(h_element[i]);
         setTimeout(h_showDisplay, (20 * (i * 2)), h_element[i]);
+        console.log('"Все категории" - присутствует');
     }
 } else {
     h_checkActive();
+    console.log('"Все категории" - отсутствует');
 }
 
 
@@ -86,16 +88,13 @@ if (h_allCategory != '') {
 
 
 // Все стартовые логи
-{
     console.log('Найдено категорий: ' + h_categoryCounter.length)
-if (h_allCategory)
-    console.log('"Все категории" - присутствует');
-else
-    console.log('"Все категории" - отсутствует');
+// if (h_allCategory)
+//     console.log('"Все категории" - присутствует');
+// else
+//     console.log('"Все категории" - отсутствует');
     
-    if (h_filterActive.length > 0)
-        console.log('Есть активные фильтры по умолчанию');
-} // Все стартовые логи
-
-
+if (h_filterActive.length > 0)
+    console.log('Есть активные фильтры по умолчанию');
+// Все стартовые логи
 console.log('_____');
