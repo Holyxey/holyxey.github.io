@@ -15,3 +15,13 @@ function footerPadding() {
 if (document.documentElement.clientWidth < 600) {
     footerPadding()
 } else {}
+
+
+
+//////// крепим навбар
+setTimeout(function () {
+    document.querySelector('.w-embed').style.position = 'sticky';
+    document.querySelector('.w-embed').style.position = '-webkit-sticky';
+    document.querySelector('.w-embed').style.top = '0';
+    document.querySelector('.w-embed').style.zIndex = '100500';
+}, 3000)
