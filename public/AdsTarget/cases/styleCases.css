@@ -1,4 +1,4 @@
-#cases {
+#h_at_cases {
     display: flex;
     position: relative;
     max-width: 1200px;
@@ -14,10 +14,10 @@
 
     background-color: #FFFFFF;
 }
-.caseBlock * {
+.h_at_caseBlock * {
     transition: all .3s ease;
 }
-.caseBlock {
+.h_at_caseBlock {
     display: flex;
     width: 340px;
     min-width: 240px;
@@ -32,7 +32,7 @@
 
     border-radius: 1rem;
 }
-.caseBlockImg {
+.h_at_caseBlockImg {
     display: flex;
     max-height: 600px;
     min-height: 40vh;
@@ -47,7 +47,7 @@
     background-size: cover;
     background-repeat: no-repeat;
 }
-.caseBlockImg > .p {
+.h_at_caseBlockImg > .p {
     display: flex;
     padding: .6rem 1rem .5rem 1rem;
     align-items: flex-start;
@@ -62,7 +62,7 @@
 
     opacity: .9;
 }
-.caseBlockHeader {
+.h_at_caseBlockHeader {
     display: flex;
     padding: 0 5px;
     align-items: flex-start;
@@ -74,7 +74,7 @@
     font-size: 24px;
     font-weight: 500;
 }
-.caseBlockLink {
+.h_at_caseBlockLink {
     display: flex;
     padding: .8rem 1rem .6rem 1rem;
     justify-content: center;
@@ -96,8 +96,8 @@
     text-transform: uppercase;
 }
 
-.caseBlock:hover {
-    .caseBlockLink {
+.h_at_caseBlock:hover {
+    .h_at_caseBlockLink {
         border: 1px solid #ff4f92;
         background-color: #ff4f92;
         color: #fff!important;
@@ -109,13 +109,13 @@
 
 
 @media screen and (max-width: 1300px) {
-    .caseBlock {
+    .h_at_caseBlock {
         max-width: unset!important;
     }
 }
 
 @media screen and (max-width: 500px) {
-    #cases {
+    #h_at_cases {
         padding: 40px;
         gap: 40px;
     }
