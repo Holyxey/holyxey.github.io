@@ -1,0 +1,48 @@
+.i_phones {
+    display: flex;
+    flex-direction: row;
+    /*flex-wrap: wrap;*/
+    gap: 3%;
+    justify-content: left;
+    max-width: 1200px;
+    overflow-x: auto;
+    padding: 5rem 0;
+    border-radius: 2rem;
+
+
+    transition: all 0.4s ease-in-out;
+}
+
+.i_phone {
+    width: 17%;
+    background-size: cover;
+    background-position: center center;
+    transition: all 0.4s ease;
+}
+.i_phone:hover {
+
+    margin: 1	px;
+    scale: 1.03;
+    z-index: 2;
+    border-radius: 15px;
+    opacity: 1;
+}
+
+@media screen and (max-width: 960px) {
+    .i_phones {
+        flex-wrap: nowrap;
+        justify-content: left;
+        width: 90vw;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        border-radius: 0;
+        padding-left: 25px;
+    }
+    .i_phone:hover {
+        margin: 0;
+        scale: 1;
+        z-index: 2;
+        border-radius: 0;
+        opacity: 1;
+    }
+}
