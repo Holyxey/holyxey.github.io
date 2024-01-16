@@ -1,4 +1,4 @@
-
+if (document.documentElement.clientWidth > 500) {
 let setI = 0;
 
 function testReviewClick(el) {
@@ -14,4 +14,5 @@ function testReviewClick(el) {
 function IisUno(el) {
     el.style.cssText = "height:40vh; max-height:350px";
     setI = 0;
+}
 }
