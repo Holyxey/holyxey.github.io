@@ -151,6 +151,12 @@
     font-size: .8rem;
     font-weight: 500;
 }
+.filter_active {
+    border-radius: .5rem;
+    padding: 15px 20px 12px 20px;
+    border: #FF4F92 1px solid!important;
+    color: #555555;
+}
 .filter_button, #h_all {
     border-radius: .5rem;
     padding: 15px 20px 12px 20px;
@@ -158,10 +164,11 @@
     color: #555555;
 
     min-width: fit-content;
+    transition: all .3s ease;
 }
-.filter_active {
-    border-radius: .5rem;
-    padding: 15px 20px 12px 20px;
+
+.filter_button:hover, #h_all:hover {
+    scale: 1.02;
     border: #FF4F92 1px solid!important;
     color: #555555;
 }
