@@ -126,7 +126,8 @@
     color: #fff!important;
 }
 
-/*.filterActive*/
+
+
 
 /* cases buttons */
 .h_at_filterButtonsBlock {
@@ -164,7 +165,6 @@
     border: #FF4F92 1px solid!important;
     color: #555555;
 }
-
 
 @media screen and (max-width: 1300px) {
     .h_at_caseBlock {
