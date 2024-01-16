@@ -14,6 +14,9 @@
 
     background-color: #FFFFFF;
 }
+.caseBlock * {
+    transition: all .3s ease;
+}
 .caseBlock {
     display: flex;
     width: 340px;
@@ -56,6 +59,8 @@
     font-size: 16px;
     font-weight: 400;
     color: #777777;
+
+    opacity: .9;
 }
 .caseBlockHeader {
     display: flex;
@@ -71,15 +76,14 @@
 }
 .caseBlockLink {
     display: flex;
-    height: 40px;
-    padding: 0 20px;
+    padding: .8rem 1rem .6rem 1rem;
     justify-content: center;
     align-items: center;
     gap: 10px;
     align-self: stretch;
 
     border-radius: .5rem .5rem 1rem 1rem;
-    border: 1px solid rgba(255, 79, 146, 0.50);
+    border: 1px solid #ff4f9250;
     background: #FFF;
 
     text-decoration: none;
@@ -92,8 +96,22 @@
     text-transform: uppercase;
 }
 
-@media screen and (max-width: 480px) {
-    #cases {
-        background-color: red;
+.caseBlock:hover {
+    .caseBlockLink {
+        border: 1px solid #ff4f92;
+        background-color: #ff4f92;
+        color: #fff!important;
+    }
+    .p {
+        opacity: 1;
     }
 }
+
+
+@media screen and (max-width: 1300px) {
+    .caseBlock {
+        max-width: unset!important;
+    }
+}
+
+@media screen and (max-width: 480px) {}
