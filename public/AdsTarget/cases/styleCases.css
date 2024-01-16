@@ -114,4 +114,9 @@
     }
 }
 
-@media screen and (max-width: 480px) {}
+@media screen and (max-width: 500px) {
+    #cases {
+        padding: 40px;
+        gap: 40px;
+    }
+}
