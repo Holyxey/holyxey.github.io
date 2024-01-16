@@ -154,6 +154,9 @@
 	.slider {
 		max-width: 100%;
 	}
+	.Review_slide {
+		max-height: unset;
+	}
 		h1, .h1, #rec600139613 .tn-elem[data-elem-id="1685869433216"] .tn-atom, #rec645266902 .tn-elem[data-elem-id="1685869433965"] .tn-atom {
 			font-size: 2.5rem!important;
 			line-height: 2.5rem!important;
