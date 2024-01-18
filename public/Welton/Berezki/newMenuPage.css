@@ -80,7 +80,7 @@ body {
     transition: all .4s ease;
 }
 .hx_wh_menuPointImg {
-    height: 225px;
+    aspect-ratio: 2/3;
     align-self: stretch;
     border-radius: .2rem .2rem 1rem 1rem;
     border: 1px solid #ffffff30;
@@ -119,5 +119,9 @@ body {
         flex: 1 0 0;
         width: unset;
         max-width: 100%;
+    }
+    .hx_wh_menuPointImg {
+        aspect-ratio: unset;
+        height: 25vh;
     }
 }
