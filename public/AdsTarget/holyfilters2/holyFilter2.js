@@ -42,7 +42,8 @@ function h_checkActive() {
 
         if (h_categoryCounter[i].classList.contains('filter_active')) {
             for (let j = 0; j < cgs.length; j++) {
-                h_showElement(cgs[j]);
+                // h_showElement(cgs[j]);
+                setTimeout(h_showElement, (20 * (j * 2)), cgs[j]);
                 setTimeout(h_showDisplay, (20 * (j * 2)), cgs[j]);
                 // h_showDisplay(cgs[j]);
             }
@@ -50,6 +51,7 @@ function h_checkActive() {
         else {
             for (let j = 0; j < cgs.length; j++) {
                 h_hideElement(cgs[j]);
+                // setTimeout(h_hideElement, (20 * (j * 2)), cgs[j]);
                 setTimeout(h_hideDisplay, (20 * (j * 2)), cgs[j]);
                 // h_hideDisplay(cgs[j]);
             }
