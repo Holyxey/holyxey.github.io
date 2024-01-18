@@ -1,0 +1,103 @@
+body {
+    margin: 0;
+}
+
+#hx_wh_menuHero {
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /*height: -webkit-fill-available;*/
+    /*height: 100vh;*/
+    filter: grayscale(10%);
+
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.65) 100%), url(https://static.tildacdn.com/tild3432-3330-4333-b537-333365353136/back.jpg), lightgray 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    font-family: 'Open Sans',Arial,sans-serif;
+}
+
+.hx_wh_menuH {
+    font-size: 40px;
+    font-weight: 300;
+    color: #ffffff;
+}
+.hx_wh_menuP {
+    font-size: 16px;
+    font-weight: 300;
+    color: #ffffff;
+    max-width: 50%;
+    text-align: center;
+    padding: 2rem;
+    background-color: #22222250;
+    border-radius: 1rem;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid #ffffff20;
+}
+
+.hx_wh_menuBlock {
+    display: flex;
+    max-width: 1200px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+.hx_wh_menuPoint {
+    display: flex;
+    width: 150px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    text-decoration: none;
+}
+.hx_wh_menuPointHeader {
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 10px;
+    align-self: stretch;
+    border-radius: 1rem 1rem .2rem .2rem;
+    border: 1px solid #ffffff60;
+    background: #FFD37A;
+    box-shadow: 0 0 10px 0 #00000090;
+    color: #222;
+    text-align: center;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+
+    transition: all .4s ease;
+}
+.hx_wh_menuPointImg {
+    height: 225px;
+    align-self: stretch;
+    border-radius: .2rem .2rem 1rem 1rem;
+    border: 1px solid #ffffff30;
+    box-shadow: 0 0 10px 0 #00000090;
+
+    background-size: 110%;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    transition: all .4s ease;
+}
+
+.hx_wh_menuPoint:hover .hx_wh_menuPointImg {
+    scale: 1.05;
+    border-radius: .5rem;
+}
+.hx_wh_menuPoint:hover .hx_wh_menuPointHeader {
+    translate: 0 -0.3rem;
+    border-radius: 1rem 1rem .1rem .1rem;
+}
