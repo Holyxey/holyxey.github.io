@@ -23,13 +23,13 @@ body {
 }
 
 .hx_wh_menuH {
-    font-size: 40px;
+    font-size: 2.5rem;
     font-weight: 300;
     color: #ffffff;
     margin: 4rem 0 2rem 0;
 }
 .hx_wh_menuP {
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 300;
     color: #ffffff;
     max-width: 50%;
@@ -127,6 +127,7 @@ body {
     .hx_wh_menuP {
         margin-top: 5rem;
         padding: 2rem 1rem;
+        line-height: 1.1rem;
     }
     .hx_wh_menuH {
         margin: 2rem 0 1rem 0;
