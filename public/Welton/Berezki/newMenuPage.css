@@ -6,11 +6,6 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
 #hx_wh_menuHero {
@@ -29,6 +24,7 @@ body {
     font-size: 40px;
     font-weight: 300;
     color: #ffffff;
+    margin: 4rem 0 2rem 0;
 }
 .hx_wh_menuP {
     font-size: 16px;
