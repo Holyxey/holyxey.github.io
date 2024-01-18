@@ -124,4 +124,10 @@ body {
         aspect-ratio: unset;
         height: 25vh;
     }
+    .hx_wh_menuP {
+        margin-top: 5rem;
+    }
+    .hx_wh_menuH {
+        margin: 2rem 0 1rem 0;
+    }
 }
