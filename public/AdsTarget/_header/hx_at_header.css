@@ -1,0 +1,107 @@
+.hx_at_header {
+    --color-blue: #5ED7CF;
+    --color-blue2: #5ED7CF20;
+    --color-pink: #FF4F92;
+    --color-pink2: #FF4F9220;
+    --color-gray: #555555;
+    --color-white: #ffffff;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: var(--color-white);
+
+    font-family: 'Geometria', sans-serif;
+
+    border-bottom: var(--color-blue) 1px solid;
+
+    ul {
+        display: flex;
+        position: relative;
+
+        translate: -50%;
+        left: 50%;
+
+        margin: 0;
+        padding: 1rem 0;
+        max-width: 1200px;
+
+        justify-content: space-between;
+        align-items: center;
+    }
+    li {
+        list-style-type:  none;
+    }
+
+    #header_logo {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+
+        img {
+            width: 3rem;
+            padding-right: 1rem;
+        }
+        p {
+            display: inline-flex;
+            margin: 0;
+            padding: 0;
+
+            font-size: 2rem;
+            font-weight: 500;
+            font-family: 'Geometria', sans-serif;
+            color: var(--color-gray);
+
+            translate: 0 3px;
+        }
+
+    }
+
+    #header_links {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .button_pink {
+        padding: 15px 20px 12px 20px;
+        border-radius: .5rem;
+
+        background: var(--color-pink);
+        border: 1px solid transparent;
+
+        transition: .5s ease-out;
+
+        text-transform: uppercase;
+        text-decoration: none;
+        color: var(--color-white)!important;
+        font-size: .8rem;
+        font-weight: 500;
+    }
+        .button_pink:hover {
+            background-color: var(--color-white);
+            color: var(--color-pink)!important;
+            border: var(--color-pink) 1px solid;
+        }
+    .button_blue {
+        padding: 15px 20px 12px 20px;
+        border-radius: .5rem;
+
+        background: var(--color-blue);
+        border: 1px solid transparent;
+
+        transition: .5s ease-out;
+
+        text-transform: uppercase;
+        text-decoration: none;
+        color: var(--color-white)!important;
+        font-size: .8rem;
+        font-weight: 500;
+    }
+    .button_link_header {
+        text-decoration: none;
+        color: var(--color-gray)!important;
+        font-size: 1rem;
+        font-weight: 400;
+    }
+
+}
