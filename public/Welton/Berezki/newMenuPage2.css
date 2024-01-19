@@ -1,0 +1,140 @@
+body {
+    margin: 0;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.65) 100%), url(https://static.tildacdn.com/tild3432-3330-4333-b537-333365353136/back.jpg), lightgray 50%;
+    filter: grayscale(10%);
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-position-y: bottom;
+}
+
+#hx_wh_menuHero {
+    padding: 0;
+    margin: 0;
+
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    font-family: 'Open Sans',Arial,sans-serif;
+}
+
+.hx_wh_menuH {
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: #ffffff;
+    margin: 4rem 0 4rem 0;
+    opacity: 0.7;
+}
+.hx_wh_menuP {
+    font-size: 1rem;
+    font-weight: 300;
+    color: #ffffff;
+    max-width: 50%;
+    text-align: center;
+    padding: 2rem;
+    margin: 0;
+    background-color: #22222250;
+    border-radius: 1rem;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid #ffffff20;
+
+    margin-top: 120px;
+}
+
+.hx_wh_menuBlock {
+    display: flex;
+    max-width: 1200px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+.hx_wh_menuPoint {
+    display: flex;
+    width: 150px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    text-decoration: none;
+}
+.hx_wh_menuPointHeader {
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 10px;
+    align-self: stretch;
+    border-radius: 1rem 1rem .2rem .2rem;
+    border: 1px solid #ffffff20;
+    background: #334e3e;
+    box-shadow: 0 0 10px 0 #00000090;
+    color: #ebe3de;
+    text-align: center;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+
+    transition: all .4s ease;
+}
+.hx_wh_menuPointImg {
+    aspect-ratio: 2/3;
+    align-self: stretch;
+    border-radius: .2rem .2rem 1rem 1rem;
+    border: 1px solid #ffffff20;
+    box-shadow: 0 0 10px 0 #00000090;
+
+    background-size: 110%;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    transition: all .4s ease;
+}
+
+.hx_wh_menuPoint:hover .hx_wh_menuPointImg {
+    scale: 1.05;
+    border-radius: .5rem .5rem 1rem 1rem;
+    background-size: 115%;
+}
+.hx_wh_menuPoint:hover .hx_wh_menuPointHeader {
+    translate: 0 -0.3rem;
+    border-radius: 1rem 1rem .1rem .1rem;
+}
+
+@media screen and (max-width: 1000px) {
+    #hx_wh_menuHero {
+        padding: 0 1rem 1rem 1rem;
+    }
+    .hx_wh_menuP {
+        margin-top: 120px;
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .hx_wh_menuPoint {
+        min-width: 150px;
+        flex: 1 0 0;
+        width: unset;
+        max-width: 100%;
+    }
+    .hx_wh_menuPointImg {
+        aspect-ratio: unset;
+        height: 25vh;
+    }
+    .hx_wh_menuP {
+        margin-top: 5rem;
+        line-height: 1.1rem;
+    }
+    .hx_wh_menuH {
+        margin: 2rem 0 1rem 0;
+    }
+}
