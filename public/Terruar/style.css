@@ -83,6 +83,7 @@
 
 .staff-description-block {
     display: flex;
+    position: relative;
     flex-direction: column;
     gap: 1rem;
     align-items: center;
@@ -109,6 +110,15 @@
     color: #ffffff;
     font-size: .9rem;
  }
+.staff-description-block::after {
+    content: url("https://static.tildacdn.com/tild3336-6439-4264-b931-346233333835/photo.svg");
+    position: absolute;
+    top: .5rem;
+    left: .5rem;
+    pointer-events: none;
+    opacity: .3;
+    transform: rotate(10deg);
+}
 
 .staff-close {
     position: absolute;
