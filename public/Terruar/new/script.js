@@ -1,17 +1,17 @@
-let staffMain = document.getElementById('staff-main');
-let staffBefore = document.getElementById('staff-before');
+let staffMain = document.getElementById('staff-before');
 function showStaff() {
-    if (staffMain.style.display === 'none' && staffBefore.style.display === 'none') {
+    if (staffMain.style.display == 'none') {
         staffMain.classList.add('show');
         staffMain.classList.remove('hide');
-        staffBefore.style.display = 'block';
-        staffMain.style.display = 'block';
-        staffMain.style.cssText += 'margin: 5rem auto;';
+        staffMain.style.display = 'flex';
     }
     else {
         staffMain.classList.add('hide');
-        staffMain.classList.remove('show');
-        staffBefore.style.display = 'none';
-        staffMain.style.display = 'none';
+        setTimeout(staffHide, 500)
     }
+}
+
+function staffHide() {
+    staffMain.classList.remove('show');
+    staffMain.style.display = 'none';
 }
