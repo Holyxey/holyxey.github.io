@@ -118,7 +118,7 @@ p, .p {
 
     text-decoration: none;
 
-    border-radius: 1rem;
+    border-radius: .5rem;
 
     background-blend-mode: multiply, normal, normal;
     background-size: cover;
@@ -136,7 +136,7 @@ p, .p {
     opacity: .9;
     z-index: 1;
 
-    border-radius: 1rem;
+    border-radius: .5rem;
 
     display: flex;
     align-items: flex-end;
