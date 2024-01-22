@@ -1,6 +1,6 @@
 let staffMain = document.getElementById('staff-before');
 function showStaff() {
-    if (staffMain.style.display == 'none') {
+    if (staffMain.style.display === 'none') {
         staffMain.classList.add('show');
         staffMain.classList.remove('hide');
         staffMain.style.display = 'flex';
@@ -15,5 +15,6 @@ function staffHide() {
     staffMain.classList.remove('show');
     staffMain.style.display = 'none';
 }
-let offerFirst = document.getElementById('rec671999226');
+// let offerFirst = document.getElementById('offer_1');
+let offerFirst = document.getElementById('rec579021325');
 offerFirst.setAttribute('onclick', 'showStaff()')
