@@ -67,7 +67,7 @@ p, .p {
     cursor: pointer;
 }
 .form_required {
-    border-left: 3px solid #3855FA;
+    /*border-left: 3px solid #3855FA;*/
 }
 .form_date {
     display: flex;
