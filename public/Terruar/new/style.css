@@ -5,6 +5,7 @@
     height: 100%;
     width: 100%;
     margin: 0;
+    position: relative;
 
     background-color: #22222220;
     backdrop-filter: blur(10px);
@@ -17,8 +18,9 @@
     border-radius: 2rem;
     height: 100%;
     max-width: 1200px;
+    position: relative;
 
-    margin: 5rem;
+    margin: 5rem auto;
 }
 .staff-section {
     display: flex;
