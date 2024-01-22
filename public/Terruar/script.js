@@ -16,5 +16,5 @@ function staffHide() {
     staffMain.style.display = 'none';
 }
 // let offerFirst = document.getElementById('offer_1');
-let offerFirst = document.getElementById('rec611615690');
+let offerFirst = document.getElementById('rec695303982');
 offerFirst.setAttribute('onclick', 'showStaff()')
