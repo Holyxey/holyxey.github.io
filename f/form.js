@@ -10,7 +10,7 @@ for (let i = 0; i < formLabels.length; i++) {
 let dateLabel = document.getElementById('date');
 let labelHeight = formLabels[0].clientHeight.toString();
 dateLabel.style.height = (labelHeight + 'px');
-dateLabel.style.padding = ('0 1.1rem');
+dateLabel.style.padding = ('0 1rem');
 
 
 //

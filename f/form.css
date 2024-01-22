@@ -15,6 +15,7 @@ body {
     align-items: flex-start;
     gap: 2rem;
     flex: 1 0 0;
+    flex-wrap: wrap;
 }
 .form {
     display: flex;
@@ -72,6 +73,7 @@ p, .p {
     align-items: flex-start;
     gap: .5rem;
     align-self: stretch;
+    border-radius: .5rem;
 }
 .date_icon {
     padding: .5rem;
@@ -84,6 +86,66 @@ p, .p {
     cursor: pointer;
     flex: 1 0 0;
 }
+
+.info_block {
+    display: flex;
+    padding: 3rem 1.5rem 1.5rem 1.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    flex: 1 0 0;
+
+    border-radius: 1rem;
+    background: #F9FAFC;
+}
+.menu_block {
+    display: flex;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 1rem;
+    align-self: stretch;
+    flex-wrap: wrap;
+}
+.menu_point {
+    display: flex;
+    position: relative;
+    min-width: 200px;
+    padding: 140px 1.5rem 1.5rem 1.5rem;
+    align-items: flex-start;
+    gap: 10px;
+    flex: 1 0 0;
+
+    text-decoration: none;
+
+    border-radius: 1rem;
+
+    background-blend-mode: multiply, normal, normal;
+    background-size: cover;
+    background-position: center 65%;
+    background-repeat: no-repeat;
+}
+.shadow_gradient {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#ffffff00 30%, #111111 100%);
+    opacity: .9;
+    z-index: 1;
+
+    border-radius: 1rem;
+
+    display: flex;
+    align-items: flex-end;
+}
+.menu_point .h1 {
+        z-index: 100;
+        position: absolute;
+        bottom: 1rem;
+        left: 1rem;
+    }
 
 .button_blue {
     display: flex;
