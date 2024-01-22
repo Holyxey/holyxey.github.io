@@ -77,13 +77,11 @@ p, .p {
     padding: .5rem;
     gap: .5rem;
     align-self: stretch;
-    text-align: center;
 
     border-radius: .5rem;
     border: 1px solid #F2F4F7;
     background: #FFFfff;
     cursor: pointer;
-    /*width: -webkit-fill-available;*/
     flex: 1 0 0;
 }
 
