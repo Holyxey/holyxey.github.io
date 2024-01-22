@@ -1,0 +1,103 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 2rem;
+}
+.main {
+    display: flex;
+    max-width: 1200px;
+    align-items: flex-start;
+    gap: 2rem;
+    flex: 1 0 0;
+}
+.form {
+    display: flex;
+    max-width: 400px;
+    padding: 3rem 1.5rem 1.5rem 1.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    flex: 1 0 0;
+
+    border-radius: 1rem;
+    background: #F9FAFC;
+}
+h1, .h1 {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 2rem;
+    font-weight: 500;
+
+    color: #2B2F33;
+}
+h2, .h2 {
+    font-family: 'Palatino', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+
+    color: #2B2F33;
+}
+p, .p {
+    font-family: 'Ubuntu', sans-serif;
+    
+    color: #707A89;
+    font-size: 1rem;
+    font-weight: 300;
+}
+.form_classic {
+    display: flex;
+    padding: 1rem;
+    align-items: flex-start;
+    gap: .5rem;
+    align-self: stretch;
+
+    border-radius: .5rem;
+    border: 1px solid #F2F4F7;
+    background: #FFF;
+
+    overflow: hidden;
+}
+.form_required {
+    border-left: 3px solid #3855FA;
+}
+.date_icon {
+    display: flex;
+    /* width: 47px; */
+    padding: .5rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    align-self: stretch;
+
+    border-radius: .5rem;
+    border: 1px solid #F2F4F7;
+    background: #FFFfff;
+    cursor: pointer;
+}
+.form_date {
+    display: flex;
+    align-items: flex-start;
+    gap: .5rem;
+    align-self: stretch;
+}
+.button_blue {
+    display: flex;
+    padding: 1rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    align-self: stretch;
+
+    border-radius: .5rem;
+    background: #3855FA;
+    border: unset;
+
+    color: #ffffff;
+}
