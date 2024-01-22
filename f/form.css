@@ -62,24 +62,10 @@ p, .p {
     background: #FFF;
 
     overflow: hidden;
+    cursor: pointer;
 }
 .form_required {
     border-left: 3px solid #3855FA;
-}
-.date_icon {
-    display: flex;
-    /* width: 47px; */
-    padding: .5rem;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: .5rem;
-    align-self: stretch;
-
-    border-radius: .5rem;
-    border: 1px solid #F2F4F7;
-    background: #FFFfff;
-    cursor: pointer;
 }
 .form_date {
     display: flex;
@@ -87,6 +73,20 @@ p, .p {
     gap: .5rem;
     align-self: stretch;
 }
+.date_icon {
+    padding: .5rem;
+    gap: .5rem;
+    align-self: stretch;
+    text-align: center;
+
+    border-radius: .5rem;
+    border: 1px solid #F2F4F7;
+    background: #FFFfff;
+    cursor: pointer;
+    /*width: -webkit-fill-available;*/
+    flex: 1 0 0;
+}
+
 .button_blue {
     display: flex;
     padding: 1rem;
