@@ -30,6 +30,9 @@ body {
     border-radius: 1rem;
     background: #F9FAFC;
 }
+.form:hover {
+    box-shadow: 0 0 9px #11111120;
+}
 h1, .h1 {
     font-family: 'Ubuntu', sans-serif;
     font-size: 2rem;
@@ -99,6 +102,9 @@ p, .p {
     border-radius: 1rem;
     background: #F9FAFC;
 }
+.info_block:hover {
+    box-shadow: 0 0 9px #11111120;
+}
 .menu_block {
     display: flex;
     align-items: flex-start;
@@ -156,6 +162,7 @@ p, .p {
     align-items: center;
     gap: .5rem;
     align-self: stretch;
+    cursor: pointer;
 
     border-radius: .5rem;
     background: #3855FA;
