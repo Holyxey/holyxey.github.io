@@ -110,14 +110,14 @@ td, th {
 .h1-tables {
     font-family: 'Playfair Display',serif;
     color: #383838;
-    font-size: 52px;
+    font-size: 3rem;
     line-height: 1.1;
     font-weight: 700;
     background-position: center center;
     border-color: transparent;
     border-style: solid;
 
-    margin-top: 3rem;
+    margin: 3rem 0 2rem 0;
     max-width: 1200px;
     position: relative;
     left: 50%;
