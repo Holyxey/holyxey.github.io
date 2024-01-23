@@ -3,14 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <title>Download QR</title>
+    <style>
+        .dwnlbtn {
+            display: block;
+            padding: 1rem 2rem;
+            text-align: center;
+            text-decoration: none;
+            font-family: sans-serif;
+            color: #fff;
+            background-color: #373F51;
+            border-radius: 1rem;
+            font-size: 1rem;
+            margin-top: 1rem;
+            box-shadow: 0 3px 2px #00000050;
+            transition: all .3s ease-out;
+        }
+        .qrimg {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+            justify-content: center;
+            height: 100vh;
+        }
+        frmt {
+            color: #373F51;
+            background-color: #fff;
+            padding: .3rem;
+            border-radius: .5rem;
+            margin-left: .5rem;
+        }
+    </style>
 </head>
 <body style="margin: 0">
 
-<div style="display: flex; flex-direction: column; align-items: center; gap: 2rem; justify-content: center; height: 100vh">
-    <img height="250" src="https://holyxey.github.io/public/DavidsGarden/qr.svg" alt="qr">
-    <a
-            style="display: block; padding: 1rem; border: 1px solid #334e3e; width: 250px; text-align: center; text-decoration: none; font-family: sans-serif; color: #334e3e; background-color: #cff3f1; border-radius: 1rem"
-            href="https://holyxey.github.io/public/DavidsGarden/qr.svg" download="QR код меню David's Garden">СКАЧАТЬ</a>
+<div class="qrimg">
+    <img style="width: 30vw" src="https://holyxey.github.io/public/DavidsGarden/qr.svg" alt="qr">
+    <div>
+        <a class="dwnlbtn" href="https://holyxey.github.io/public/DavidsGarden/qr.svg" download="QR-код меню David's Garden">СКАЧАТЬ <frmt>*.svg</frmt></a>
+        <a class="dwnlbtn" href="https://holyxey.github.io/public/DavidsGarden/qr.png" download="QR-код меню David's Garden">СКАЧАТЬ <frmt>*.png</frmt></a>
+    </div>
 </div>
 
 </body>
