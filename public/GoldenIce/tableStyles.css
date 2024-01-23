@@ -86,8 +86,6 @@ td, th {
 }
 
 /* new horizontal */
-
-
 #golden-horizontal {
     position: relative;
     display: flex;
@@ -133,4 +131,57 @@ td, th {
     #golden-horizontal {
         padding: 0 5px 0 5px;
     }
+}
+
+#gi-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    /*background-color: #d4c5e0;*/
+
+    max-width: 1200px;
+    position: relative;
+    translate: -50%;
+    left: 50%;
+    padding-bottom: 1rem;
+}
+.gi-filter {
+    flex: 1 0 0;
+    padding: 1rem 2rem;
+
+    border-radius: 1rem;
+    border: 2px solid #FFFFFF90;
+    background-color: #d4c5e0;
+    cursor: pointer;
+    color: #111;
+
+    min-width: max-content;
+    text-align: center;
+
+    font-family: 'CirceRounded', 'Circe Rounded', Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: .5rem;
+
+    transition: all .3s ease-out;
+}
+.gi-filter:hover, .gi-active {
+    box-shadow: 0 3px 10px 0 rgba(89, 89, 89, 0.2);
+    background: #ffef8f;
+}
+
+.tables-filters {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+}
+.tables-in {
+    width: 100%;
+}
+
+@keyframes clicked {
+    from {scale: 0.9}
+    to {scale: 1}
 }
