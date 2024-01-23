@@ -133,6 +133,8 @@ td, th {
     }
 }
 
+
+/* gi filters */
 #gi-filters {
     display: flex;
     flex-wrap: wrap;
