@@ -94,6 +94,7 @@ td, th {
     background-color: #d4c5e0;
     translate: -50%;
     left: 50%;
+    padding-bottom: 1rem;
 }
 .golden-h-img {
     content: '';
@@ -129,7 +130,7 @@ td, th {
         margin: 3rem 0 2rem 2rem;
     }
     #golden-horizontal {
-        padding: 0 5px 0 5px;
+        padding: 0 5px 1rem 5px;
     }
 }
 
@@ -185,4 +186,9 @@ td, th {
 @keyframes clicked {
     from {scale: 0.9}
     to {scale: 1}
+}
+@media screen and (max-width: 600px) {
+    #gi-filters {
+        padding: 15px 15px 1rem 15px;
+    }
 }
