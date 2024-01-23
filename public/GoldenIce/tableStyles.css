@@ -87,3 +87,29 @@ td, th {
     }
 }
 
+/* new horizontal */
+
+
+#golden-horizontal {
+    position: relative;
+    display: flex;
+    gap: 50px;
+    max-width: 1200px;
+    background-color: #d4c5e0;
+    translate: -50%;
+    left: 50%;
+}
+.golden-h-img {
+    content: '';
+    min-width: 60%;
+    background-image: url("https://thumb.tildacdn.com/tild3331-6230-4863-a535-363633346261/-/format/webp/IMG_4430.PNG");
+    background-size: contain;
+    background-repeat: no-repeat;
+    overflow: visible;
+}
+@media screen and (max-width: 600px) {
+    .golden-h-img {
+        display: none;
+        min-width: unset;
+    }
+}
