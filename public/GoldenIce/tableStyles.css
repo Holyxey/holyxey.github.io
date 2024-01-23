@@ -158,13 +158,12 @@ td, th {
     cursor: pointer;
     color: #111;
 
-    min-width: max-content;
+    min-width: fit-content;
     text-align: center;
 
     font-family: 'CirceRounded', 'Circe Rounded', Arial, sans-serif;
     font-size: 1rem;
     font-weight: 500;
-    line-height: .5rem;
 
     transition: all .3s ease-out;
 }
