@@ -22,7 +22,7 @@
     font-family: 'Geometria', sans-serif;
 
     border: 1px solid #55555520;
-    padding: 1rem;
+    padding: 1.3rem;
     border-radius: 1rem;
     min-width: 40%;
     /*max-width: calc(50% - 4rem);*/
@@ -33,9 +33,9 @@
     gap: 1rem;
 }
 .step-num {
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: #FF4F92;
-    font-weight: 300;
+    font-weight: 400;
 }
 .step-head {
     font-size: 1.5rem;
@@ -43,9 +43,10 @@
     color: #555555;
 }
 .step-text {
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: #555555;
-    font-weight: 300;
+    font-weight: 400;
+    line-height: 1.1rem;
 }
 
 .step-hover {

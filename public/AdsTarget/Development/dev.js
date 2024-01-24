@@ -11,17 +11,17 @@ for (let i = 0; i < step.length; i++) {
 }
 function stepHover(el) {
     el.classList.add('step-hover');
-    let n = el.getAttribute('step-n');
-    if (n < step.length) {
-        let nxt = stepS.querySelector('[step-n="' + (parseInt(n) + 1) + '"]');
-        nxt.classList.add('step-hover-sec');
-    }
+    // let n = el.getAttribute('step-n');
+    // if (n < step.length) {
+    //     let nxt = stepS.querySelector('[step-n="' + (parseInt(n) + 1) + '"]');
+    //     nxt.classList.add('step-hover-sec');
+    // }
 }
 function stepLeave(el) {
     el.classList.remove('step-hover')
-    let n = el.getAttribute('step-n');
-    if (n < step.length) {
-        let nxt = stepS.querySelector('[step-n="' + (parseInt(n) + 1) + '"]');
-        nxt.classList.remove('step-hover-sec');
-    }
+    // let n = el.getAttribute('step-n');
+    // if (n < step.length) {
+    //     let nxt = stepS.querySelector('[step-n="' + (parseInt(n) + 1) + '"]');
+    //     nxt.classList.remove('step-hover-sec');
+    // }
 }
