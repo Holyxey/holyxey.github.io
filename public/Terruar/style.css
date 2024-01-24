@@ -175,11 +175,10 @@
 @media screen and (max-width: 1000px) {
     #staff-before {
         align-items: flex-start;
-        padding: 2rem 0;
         overflow-y: auto;
     }
     #staff-main {
-        margin: 0 1rem;
+        margin: 1rem;
     }
     .staff-close {
         top: 3rem;
@@ -193,6 +192,7 @@
     .staff-person {
         flex-direction: column;
         align-items: center;
+        flex: auto;
     }
     .staff-description-block {
         width: unset;
@@ -210,5 +210,9 @@
     }
     .staff-close {
         border: 1px solid transparent;
+        top: 2rem;
+    }
+    #staff-main {
+         padding-bottom: unset;
     }
 }
