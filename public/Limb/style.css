@@ -218,7 +218,7 @@ p, .p {
 #hx-limb-materials:before {
     width: 2px;
     height: 100%;
-    
+
 }
 .hx-limb-variants-list {
     display: flex;
@@ -258,3 +258,9 @@ p, .p {
  }
 
 /**/
+.holyLink {
+    content: url("https://holyxey.github.io/holyxey/hlx.png");
+    position: absolute;
+    top: 0;
+    left: 0;
+}
