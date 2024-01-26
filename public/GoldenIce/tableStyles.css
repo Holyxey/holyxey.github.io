@@ -95,6 +95,7 @@ td, th {
     translate: -50%;
     left: 50%;
     padding-bottom: 1rem;
+    overflow: hidden;
 }
 .golden-h-img {
     content: '';
