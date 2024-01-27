@@ -1,4 +1,4 @@
-@media only screen and (max-width: 1200px) {
+@media screen and (max-width: 1200px) {
 
     .hx-limb-section {
         padding: 0 4rem;
@@ -39,7 +39,7 @@
     }
 }
 
-@media only screen and (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
     h1, .h1 {
         font-size: 2.5rem;
     }
@@ -64,7 +64,7 @@
     }
 }
 
-@media only screen and (max-width: 900px) {
+@media screen and (max-width: 900px) {
     .hx-limb-tab {
         flex: 1 0 40%;
     }
@@ -98,7 +98,7 @@
     }
 }
 
-@media only screen and (max-width: 500px) {
+@media screen and (max-width: 500px) {
     #hx-limb-full-hero {
         background-image: none;
     }
