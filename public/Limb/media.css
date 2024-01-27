@@ -99,6 +99,10 @@
 }
 
 @media screen and (max-width: 500px) {
+    h3, .h3 {
+        font-size: 1.7rem;
+    }
+
     #hx-limb-full-hero {
         background-image: none;
     }
@@ -128,6 +132,9 @@
         width: calc(100% - 2rem);
         width: -webkit-fill-available;
     }
+    .hx-limb-modules-list {
+        padding: 0 1rem;
+    }
     .hx-limb-modules-list-point {
         align-items: center;
     }
@@ -136,12 +143,17 @@
         flex-direction: column;
     }
 
+    .hx-limb-liners-list {
+        flex-direction: column;
+    }
     .hx-limb-liners-materials-list {
         flex-direction: column;
         gap: .5rem;
     }
     .hx-limb-liners-point {
         align-items: flex-start;
+        flex: none;
+        width: auto;;
     }
 
     .hx-limb-materials-list {
