@@ -3,21 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title>Протезы бедра - Limb</title>
-    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.cdnfonts.com/css/montserrat" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" href="forSlick.css">
+    <link rel="stylesheet" href="media.css">
+
 
 </head>
 <body style="padding-bottom: 5rem">
 
-<div style="height: 80px; display: flex; align-items: center; justify-content: center"> header</div>
+<div style="z-index: 100; border-bottom: #0099A0 1px solid; height: 80px; display: flex; align-items: center; justify-content: center; position: sticky; top: 0; left: 0; background-color: #ffffff"> header</div>
 
-    <section class="anishow hx-limb-section" style="background-image: url('https://static.tildacdn.com/tild6666-3132-4038-b838-356466633035/Wireframe_-_7_2.jpg')">
+    <section id="hx-limb-full-hero" class="anishow hx-limb-section">
         <div id="hx-limb-hero">
             <h1>Получить современный протез&nbsp;бедра</h1>
             <p class="h4">Бесплатно от&nbsp;государства</p>
             <a href="#" class="orange-button">бесплатная консультация</a>
         </div>
     </section>
+
+<!--bread-->
     <section class="hx-limb-section">
         <div id="hx-limb-bread">
             <span class="h6">Протезы нижних конечностей</span>
@@ -25,18 +32,35 @@
             <span class="h6" style="opacity: .5">Протезы бедра</span>
         </div>
     </section>
+
+<!--types-->
     <section class="hx-limb-section">
         <div id="hx-limb-types" class="hx-limb-block">
             <p class="h3">ТИПЫ ПРОТЕЗОВ</p>
             <p class="h5">Протезы – это конструкции, которые служат восстановлению утраченных функций и внешнего вида ампутированной конечности пациента. Протезы изготавливаются индивидуально, их конструкция и материалы определяются медицинскими показаниями, уровнем активности протезируемого.</p>
             <div class="hx-limb-tabs">
-                <div class="hx-limb-tab h5">Немодульные</div>
-                <div class="hx-limb-tab h5 hx-limb-tab-active">Модульные</div>
+                <div class="hx-limb-tab h5 hx-limb-tab-active">Немодульные</div>
+                <div class="hx-limb-tab h5">Модульные</div>
                 <div class="hx-limb-tab h5">Купальные</div>
                 <div class="hx-limb-tab h5">С&nbsp;микропроцессорным управлением</div>
             </div>
             <div class="hx-limb-tab-in">
-                <img class="hx-limb-tab-in-img" src="https://static.tildacdn.com/tild6233-6539-4831-b964-303032386264/limb-nemodul.svg" alt="Немодульный протез">
+                <div class="hx-limb-tab-in-img">
+                    <img src="types1.svg" alt="Немодульные или каркасные протезы.">
+                </div>
+                <div class="hx-limb-tab-in-info">
+                    <p class="h5">Немодульные или каркасные протезы.</p>
+                    <p class="h6 hx-limb-tab-in-info-function">Основные функции</p>
+                    <ul>
+                        <li>Недостаточные функциональные возможности</li>
+                        <li>Использование для пациентов низкого уровня активности или пожилых</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="hx-limb-tab-in">
+                <div class="hx-limb-tab-in-img">
+                    <img src="types2.svg" alt="Модульный протез">
+                </div>
                 <div class="hx-limb-tab-in-info">
                     <p class="h5">Система модульной конструкции при протезировании была разработана в 1969 г. немецкой фирмой Отто Бокк.</p>
                     <p class="h6 hx-limb-tab-in-info-function">Основные функции</p>
@@ -48,31 +72,61 @@
                     </ul>
                 </div>
             </div>
+            <div class="hx-limb-tab-in">
+                <div class="hx-limb-tab-in-img">
+                    <img src="types3.svg" alt="Купальные">
+                </div>
+                <div class="hx-limb-tab-in-info">
+                    <p class="h5">Протезы для купания изготавливаются из водостойких комплектующих: коленных шарниров, стоп, клапанов, замков и лайнеров.</p>
+                    <p class="h6 hx-limb-tab-in-info-function">Основные функции</p>
+                    <ul>
+                        <li>Недостаточные функциональные возможности</li>
+                        <li>Использование для пациентов низкого уровня активности или пожилых</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="hx-limb-tab-in">
+                <div class="hx-limb-tab-in-img">
+                    <img src="types4.svg" alt="С микропроцессорным управлением">
+                </div>
+                <div class="hx-limb-tab-in-info">
+                    <p class="h5">Протезы бедра модульные с микропроцессорным управлением относятся к высоко функциональным видам протезов.</p>
+                    <p class="h6 hx-limb-tab-in-info-function">Основные функции</p>
+                    <ul>
+                        <li>Повышение уровня двигательной активности</li>
+                        <li>Улучшение статики опорно-двигательного аппарата, кинематики и динамики ходьбы</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
+
+<!--materials-->
     <section class="hx-limb-section">
         <div id="hx-limb-materials" class="hx-limb-block">
-            <p class="h3">МАТЕРИАЛЫ, ПРИМЕНЯЕМЫЕ ДЛЯ&nbsp;ИЗГОТОВЛЕНИЯ:</p>
+            <p class="h3">МАТЕРИАЛЫ, ПРИМЕНЯЕМЫЕ ДЛЯ&nbsp;ИЗГОТОВЛЕНИЯ</p>
             <div class="hx-limb-materials-list">
                 <div class="hx-limb-materials-point">
-                    <img src="https://thumb.tildacdn.com/tild3562-3430-4134-a239-633231313663/-/resize/60x/-/format/webp/check_mark_pqboks7to.png" alt="">
+                    <img src="yep.png" alt="">
                     <span>Литевые смолы</span>
                 </div>
                 <div class="hx-limb-materials-point">
-                    <img src="https://thumb.tildacdn.com/tild3562-3430-4134-a239-633231313663/-/resize/60x/-/format/webp/check_mark_pqboks7to.png" alt="">
+                    <img src="yep.png" alt="">
                     <span>Термопласты</span>
                 </div>
                 <div class="hx-limb-materials-point">
-                    <img src="https://thumb.tildacdn.com/tild3562-3430-4134-a239-633231313663/-/resize/60x/-/format/webp/check_mark_pqboks7to.png" alt="">
+                    <img src="yep.png" alt="">
                     <span>Карбон</span>
                 </div>
             </div>
             <div class="backFrame"></div>
         </div>
     </section>
+
+<!--variants-->
     <section class="hx-limb-section">
         <div id="hx-limb-variants" class="hx-limb-block">
-            <p class="h3">СПОСОБЫ КРЕПЛЕНИЯ ПРОТЕЗА:</p>
+            <p class="h3">СПОСОБЫ КРЕПЛЕНИЯ ПРОТЕЗА</p>
             <div class="hx-limb-variants-list">
                 <div class="hx-limb-variants-list-point">
                     <div class="hx-limb-variants-list-info">
@@ -95,9 +149,11 @@
             </div>
         </div>
     </section>
+
+<!--structure-->
     <section class="hx-limb-section">
         <div id="hx-limb-structure" class="hx-limb-block">
-            <p class="h3">ПРОТЕЗ БЕДРА СОСТОИТ ИЗ:</p>
+            <p class="h3">составные части протеза бедра</p>
             <div class="hx-limb-structure-block">
                 <img class="hx-limb-structure-block-img" src="s2.jpg" alt="Протез бедра">
                 <div class="hx-limb-structure-block-img-select first">1</div>
@@ -115,9 +171,11 @@
             <div class="backFrame"></div>
         </div>
     </section>
+
+<!--modules-->
     <section class="hx-limb-section">
         <div id="hx-limb-modules" class="hx-limb-block">
-            <p class="h3">Коленные модули:</p>
+            <p class="h3">Коленные модули</p>
             <div class="hx-limb-modules-list">
                 <div class="hx-limb-modules-list-point">
                     <img src="m3.png" alt="Вакуумный. Силикон" class="hx-limb-modules-list-img">
@@ -139,27 +197,234 @@
 
             <div class="hx-limb-slide">
                 <img src="https://static.tildacdn.com/tild6461-3130-4631-a636-666138336165/fa1f17db6339ae39610c.jpeg" alt="С-LEG">
-                <p class="h4">КОЛЕННЫЙ МОДУЛЬ<br>С-LEG</p>
+                <p class="h4">С-LEG</p>
             </div>
             <div class="hx-limb-slide">
                 <img src="https://static.tildacdn.com/tild6536-3537-4333-b865-343931376266/product--image-15651.png" alt="STEPLIFE P5">
-                <p class="h4">КОЛЕННЫЙ МОДУЛЬ<br>STEPLIFE P5</p>
+                <p class="h4">STEPLIFE P5</p>
             </div>
             <div class="hx-limb-slide">
                 <img src="https://static.tildacdn.com/tild3339-6461-4538-b561-373065316333/Rheo_Knee_XC_2017_mg.jpg" alt="RHEO KNEE XC">
-                <p class="h4">КОЛЕННЫЙ МОДУЛЬ<br>RHEO KNEE XC</p>
+                <p class="h4">RHEO KNEE XC</p>
             </div>
             <div class="hx-limb-slide">
                 <img src="https://static.tildacdn.com/tild3339-6461-4538-b561-373065316333/Rheo_Knee_XC_2017_mg.jpg" alt="RHEO KNEE XC">
-                <p class="h4">КОЛЕННЫЙ МОДУЛЬ<br>RHEO KNEE XC</p>
+                <p class="h4">RHEO KNEE XC</p>
             </div>
 
-            <div class="hx-limb-slider-lar"> < </div>
-            <div class="hx-limb-slider-rar"> > </div>
+        </div>
+        <div class="hx-limb-modules-wbttn">
+            <p class="h5" style="text-align: center">Специалисты отдела сопровождения пациентов помогут оформить необходимые документы и ответят на Ваши вопросы. Вы получите пошаговую инструкцию для получения протеза. Также подготовим МТЗ для Вас. Вы сможете обратиться к нам за бесплатной консультацией на всех этапах оформления документов.</p>
+            <a href="#" class="orange-button-woshdw">бесплатная консультация</a>
+        </div>
 
+    </section>
+
+<!--feet-->
+    <section class="hx-limb-section">
+        <div id="hx-limb-feet" class="hx-limb-block">
+            <p class="h3">СТОПЫ</p>
+            <div class="hx-limb-feet-list">
+
+                <div class="hx-limb-feet-point">
+                    <p class="h6 hx-feet-slide-header">БЕСШАРНИРНЫЕ</p>
+                    <p class="p hx-feet-slide-p">Для пациентов низкой активности, износостойкая надежная конструкция, устойчивы к воздействию воды.</p>
+                </div>
+                <div class="hx-limb-feet-point">
+                    <p class="h6 hx-feet-slide-header">ШАРНИРНЫЕ</p>
+                    <p class="p hx-feet-slide-p">Для пациентов с низкой активностью, надежное решение для пожилых пациентов с ампутацией бедра, стопы с двухступенчатой регулировкой высоты каблука от 0 до 2 см.</p>
+                </div>
+                <div class="hx-limb-feet-point">
+                    <p class="h6 hx-feet-slide-header">ДЛЯ УМЕРЕННОЙ АКТИВНОСТИ</p>
+                    <p class="p hx-feet-slide-p">Сочетают в себе достаточную динамичность, энергосбережение, мультиосность.</p>
+                </div>
+                <div class="hx-limb-feet-point">
+                    <p class="h6 hx-feet-slide-header">КАРБОНОВЫЕ ЭНЕРГОСБЕРЕГАЮЩИЕ</p>
+                    <p class="p hx-feet-slide-p">Для активных пациентов, обладают высоким уровнем возврата энергии, поглощают вертикальные ударные нагрузки.</p>
+                </div>
+                <div class="hx-limb-feet-point">
+                    <p class="h6 hx-feet-slide-header">КАРБОНОВЫЕ С ВЕРТИКАЛЬНЫМИ АМОРТИЗАТОРАМИ</p>
+                    <p class="p hx-feet-slide-p">В конструкции некоторых карбоновых стоп предусмотрены вертикальные амортизаторы, направленных на снижение вертикальных усилий и крутящих нагрузок, что позволяет ощутимо разгрузить культю пользователя.</p>
+                </div>
+                <div class="hx-limb-feet-point">
+                    <p class="h6 hx-feet-slide-header">С ВОЗМОЖНОСТЬЮ РЕГУЛИРОВКИ ВЫСОТЫ КАБЛУКА</p>
+                    <p class="p hx-feet-slide-p">Диапазон регулировки высоты каблука до 35 мм. Особенно актуально для женщин.</p>
+                </div>
+                <div class="hx-limb-feet-point">
+                    <p class="h6 hx-feet-slide-header">С ГИДРАВЛИЧЕСКОЙ СИСТЕМОЙ УПРАВЛЕНИЯ ЩИКОЛОТКОЙ</p>
+                    <p class="p hx-feet-slide-p">Обеспечивают высокую устойчивость на неровных, наклонных опорных поверхностях, биометрическая конструкция позволяет точно воспроизводить анатомическое движение щиколотки в процессе ходьбы, а при сидении обеспечивает естественное положение мыска стопы.</p>
+                </div>
+
+            </div>
+            <div class="backFrame"></div>
         </div>
     </section>
 
-<script src="script.js"></script>
+<!--liners-->
+    <section class="hx-limb-section">
+        <div id="hx-limb-liners" class="hx-limb-block">
+            <p class="h3">ЛАЙНЕРЫ для протеза</p>
+            <p class="h5">Лайнер — это чехол, который надевается на культю и соединяет ее с протезом, защищая кожу от травм.</p>
+            <div class="hx-limb-liners-list">
+                <div class="hx-limb-liners-point">Обеспечивает фиксацию протеза</div>
+                <div class="hx-limb-liners-point">Хорошее демпфирование ударов</div>
+                <div class="hx-limb-liners-point">Сглаживание неровностей культи</div>
+                <div class="hx-limb-liners-point">Оптимальное распределение нагрузки по всей поверхности культи</div>
+                <div class="hx-limb-liners-point">Снижает трение между культеприёмной гильзой и культёй, уменьшает потенциальное повреждение кожи</div>
+                <div class="hx-limb-liners-point">Смягчение в области костных выступов и чувствительных участков</div>
+            </div>
+        </div>
+    </section>
+    <section class="hx-limb-section">
+        <div class="hx-limb-block">
+            <p class="h3">Материал производства лайнеров</p>
+            <div class="hx-limb-liners-materials-list">
+                <div class="hx-limb-liners-materials-point">
+                    <div class="hx-limb-liners-materials-ul">
+                        <p class="h6 hx-limb-liners-materials-header">СИЛИКОНОВЫЙ</p>
+
+                        <div class="lil">Долгий срок службы</div>
+                        <div class="lil">100% адгезию, стабилизация положения протеза</div>
+                        <div class="lil">Для пациентов любого уровня активности</div>
+                    </div>
+                </div>
+                <div class="hx-limb-liners-materials-point">
+                    <div class="hx-limb-liners-materials-ul">
+                        <p class="h6 hx-limb-liners-materials-header">ПОЛИУРЕТАНОВЫЙ</p>
+
+                        <div class="lil">Ампутация любого уровня</div>
+                        <div class="lil">Для пациентов любого уровня активности</div>
+                        <div class="lil">Качественная амортизация и правильное распределение нагрузки</div>
+                        <div class="lil">Может использоваться пациентами с рубцовой или костной культёй</div>
+                    </div>
+                </div>
+                <div class="hx-limb-liners-materials-point">
+                    <div class="hx-limb-liners-materials-ul">
+                        <p class="h6 hx-limb-liners-materials-header">СОПОЛИМЕРНЫЙ</p>
+
+                        <div class="lil">Содержит минеральное масло</div>
+                        <div class="lil">Для пациентов с сухой кожей</div>
+                        <div class="lil">Рекомендован для пациентов со средней и низкой активностью при ампутации конечности на уровне голени</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="backFrame"></div>
+        </div>
+    </section>
+
+<!--devices-->
+    <section class="hx-limb-section">
+    <div id="hx-limb-devices" class="hx-limb-block">
+        <p class="h3">РЕГУЛИРОВОЧНО-СОЕДИНИТЕЛЬНЫЕ И ФУНКЦИОНАЛЬНЫЕ УСТРОЙСТВА</p>
+        <p class="h5">Регулировочно-соединительные устройства обеспечивают регулировку схемы протеза, а установка в протезе функциональных устройств повышает и функциональность всего протеза.</p>
+        <p class="h5">Среди регулировочно-соединительных устройств можно отметить:</p>
+
+        <div class="hx-limb-devices-list">
+            <div class="hx-limb-devices-list-point">
+                <div class="hx-limb-devices-list-header">
+                    <img src="yep.png" alt="">
+                    <p class="h6">ТОРСИОННЫЕ УСТРОЙСТВА</p>
+                </div>
+                <div>Устройство, позволяющее достичь симметричной походки. Оно прекрасно поглощает удар пятки и минимизирует режущие силы в области культи.</div>
+            </div>
+
+            <div class="hx-limb-devices-list-point">
+                <div class="hx-limb-devices-list-header">
+                    <img src="yep.png" alt="">
+                    <p class="h6">РЕГУЛИРУЕМАЯ ЩИКОЛОТКА</p>
+                </div>
+                <div>Устройство, позволяющее осуществлять бесступенчатую регулировку необходимой высоты каблука при смене типа обуви или для ходьбы босиком простым нажатием клавиши.</div>
+            </div>
+
+            <div class="hx-limb-devices-list-point">
+                <div class="hx-limb-devices-list-header">
+                    <img src="yep.png" alt="">
+                    <p class="h6">ПОВОРОТНОЕ УСТРОЙСТВО ДЛЯ РАЗВОРОТА ГОЛЕНИ ОТНОСИТЕЛЬНО БЕДРА</p>
+                </div>
+                <div>Устройство, позволяющее комфортно сесть в автомобиль или положить ногу на ногу.</div>
+            </div>
+        </div>
+
+        <div class="hx-limb-devices-perks">
+            <p class="h5">Преимущества торсионных устройств:</p>
+            <li class="h6 hx-limb-devices-perks-p">Торсионные устройства компенсируют недостаток вращательных движений при фиксации гильзы протеза на культе</li>
+            <li class="h6 hx-limb-devices-perks-p">Предоставляют больше подвижностей на досуге, например при игре в теннис</li>
+        </div>
+    </div>
+</section>
+
+<!--reviews-->
+    <section class="hx-limb-section">
+    <div id="hx-limb-reviews" class="hx-limb-block">
+        <p class="h3">Отзывы</p>
+
+        <div id="slider-reviews" class="hx-reviews-slider">
+
+            <div class="hx-review-slide">
+                <img src="https://picsum.photos/300/300?blur=3" alt="С-LEG">
+                <p class="hx-review-name">Виталий</p>
+                <p class="hx-review-info">Участник СВО. Ампутация по средней третий бедра.</p>
+            </div>
+            <div class="hx-review-slide">
+                <img src="https://picsum.photos/300/300?blur=3" alt="С-LEG">
+                <p class="hx-review-name">Виталий</p>
+                <p class="hx-review-info">Участник СВО. Ампутация по средней третий бедра.</p>
+            </div>
+            <div class="hx-review-slide">
+                <img src="https://picsum.photos/300/300?blur=3" alt="С-LEG">
+                <p class="hx-review-name">Виталий</p>
+                <p class="hx-review-info">Участник СВО. Ампутация по средней третий бедра.</p>
+            </div>
+            <div class="hx-review-slide">
+                <img src="https://picsum.photos/300/300?blur=3" alt="С-LEG">
+                <p class="hx-review-name">Виталий</p>
+                <p class="hx-review-info">Участник СВО. Ампутация по средней третий бедра.</p>
+            </div>
+            <div class="hx-review-slide">
+                <img src="https://picsum.photos/300/300?blur=3" alt="С-LEG">
+                <p class="hx-review-name">Виталий</p>
+                <p class="hx-review-info">Участник СВО. Ампутация по средней третий бедра.</p>
+            </div>
+
+        </div>
+    <div class="backFrame"></div>
+    </div>
+
+</section>
+
+<!--form-->
+    <section class="hx-limb-section">
+    <div id="hx-limb-form" class="hx-limb-block">
+        <p class="h3">Свяжитесь с нами</p>
+
+        <div class="hx-limb-form-block">
+            <form class="hx-limb-form-column">
+                <input type="text" name="fname" id="fname" placeholder="Ваше имя">
+                <input type="tel" name="ftel" id="ftel" placeholder="+7 999 999 99 99">
+                <input type="textarea" name="fcomment" id="fcomment" hidden="">
+
+                <textarea name="fcomment" id="ffcomment" cols="30" rows="10" form="fcomment" placeholder="Введите комментарий"></textarea>
+            </form>
+            <div class="hx-limb-form-column">
+                <a href="#">+7 (915) 303 00 94</a>
+                <a href="#">+7 (980) 148 00 77</a>
+                <a href="#">info@limbrussia.ru</a>
+                <p>г. Москва, Мисайлово, ул. Первомайская 158А</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+<script src="scriptSlide.js"></script>
+<!--<script src="linersCounter.js"></script>-->
+<script src="limbTabs.js"></script>
+
 </body>
 </html>
