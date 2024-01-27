@@ -99,6 +99,9 @@
 }
 
 @media screen and (max-width: 500px) {
+    h1, .h1 {
+        font-size: 2rem;
+    }
     h3, .h3 {
         font-size: 1.7rem;
     }
