@@ -1,5 +1,10 @@
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1600px) {
+    h1, .h1 {
+        max-width: 80%;
+    }
+}
 
+@media screen and (max-width: 1200px) {
     .hx-limb-section {
         padding: 0 4rem;
     }
@@ -16,6 +21,26 @@
         padding: 1rem 1.5rem;
     }
 
+    .first {
+        top: 10rem;
+        left: 12rem;
+    }
+    .second {
+        top: 7rem;
+        left: 20rem;
+    }
+    .third {
+        top: 8rem;
+        left: 27rem;
+    }
+    .third2 {
+        top: 9rem;
+        left: 39rem;
+    }
+    .four {
+        top: 12rem;
+        left: 53rem;
+    }
 
     #slider-reviews {
         .slick-prev
@@ -62,9 +87,39 @@
     .hx-limb-modules-wbttn p {
         max-width: 80vw;
     }
+
+    .hx-limb-structure-block-info-in {
+        padding: 1rem .5rem;
+    }
+    .first {
+        top: 11rem;
+        left: 7rem;
+    }
+    .second {
+        top: 8rem;
+        left: 15rem;
+    }
+    .third {
+        top: 10rem;
+        left: 21rem;
+    }
+    .third2 {
+        top: 10rem;
+        left: 34rem;
+    }
+    .four {
+        top: 15rem;
+        left: 46rem;
+    }
+
 }
 
 @media screen and (max-width: 900px) {
+    h1, .h1 {
+
+        max-width: unset;
+    }
+
     .hx-limb-tab {
         flex: 1 0 40%;
     }
@@ -95,6 +150,53 @@
     }
     .hx-limb-devices-list-header img {
         display: none;
+    }
+
+    .hx-limb-structure-block {
+        display: flex;
+    }
+    .hx-limb-structure-block-info {
+        flex-direction: column;
+        flex: 1;
+        max-width: 70%;
+    }
+    .hx-limb-structure-block-img {
+        position: absolute;
+        rotate: 90deg;
+        scale: .5 -.5;
+        top: 6rem;
+        left: 85%;
+    }
+
+
+
+    .hx-limb-structure-block-info-in {
+        padding: 1rem .5rem;
+    }
+    .first {
+        top: 0rem;
+        left: unset;
+        right: 7rem;
+    }
+    .second {
+        top: 5rem;
+        left: unset;
+        right: 8rem;
+    }
+    .third {
+        top: 8rem;
+        left: unset;
+        right: 2.5rem;
+    }
+    .third2 {
+        top: 14rem;
+        left: unset;
+        right: 6.5rem;
+    }
+    .four {
+        top: 17rem;
+        left: unset;
+        right: 1rem;
     }
 }
 
@@ -187,5 +289,44 @@
     }
     .hx-limb-form-column a, .hx-limb-form-column p {
         text-align: center;
+    }
+
+    .hx-limb-structure-block-info {
+        gap: 1rem;
+    }
+    .hx-limb-structure-block-img-select {
+        z-index: 2;
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+    .hx-limb-structure-block-info-in {
+        padding: 1rem;
+        justify-content: left;
+        text-align: left;
+    }
+    .first {
+        top: 0;
+        left: unset;
+        right: 2rem;
+    }
+    .second {
+        top: 4rem;
+        left: unset;
+        right: 3rem;
+    }
+    .third {
+        top: 8rem;
+        left: unset;
+        right: 3rem;
+    }
+    .third2 {
+        top: 14rem;
+        left: unset;
+        right: 2.5rem;
+    }
+    .four {
+        top: 17rem;
+        left: unset;
+        right: 3rem;
     }
 }
