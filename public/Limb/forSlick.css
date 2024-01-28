@@ -2,7 +2,7 @@
 /* forSlick */
 .slick-prev,
 .slick-next {
-    position: absolute;
+    /*position: absolute;*/
     transition: background .3s ease-out;
 
     top: 50%;
@@ -78,23 +78,22 @@
     content: url("Arrows/lArrow.svg");
 }
 
-#slider-reviews {
-    .slick-prev
+
+#slider-reviews .slick-prev
     {
         left: -6rem;
     }
-    [dir='rtl'] .slick-prev
+#slider-reviews [dir='rtl'] .slick-prev
     {
         right: -6rem;
         left: auto;
     }
-    .slick-next
+#slider-reviews .slick-next
     {
         right: -6rem;
     }
-    [dir='rtl'] .slick-next
+#slider-reviews [dir='rtl'] .slick-next
     {
         right: auto;
         left: -6rem;
     }
-}
