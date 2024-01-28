@@ -294,6 +294,9 @@
     .hx-limb-liners-materials-ul {
         margin-top: unset;
     }
+    .hx-limb-devices-perks-p {
+        max-width: unset;
+    }
 
     .hx-limb-structure-block-info {
         gap: 1rem;
