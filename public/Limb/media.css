@@ -198,6 +198,11 @@
         left: unset;
         right: 1rem;
     }
+
+    .slick-prev,
+    .slick-next {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 500px) {
