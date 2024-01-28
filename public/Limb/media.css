@@ -321,29 +321,36 @@
         justify-content: left;
         text-align: left;
     }
-    .first {
-        top: 0;
-        left: unset;
-        right: 2rem;
-    }
-    .second {
-        top: 4rem;
-        left: unset;
-        right: 3rem;
-    }
-    .third {
-        top: 8rem;
-        left: unset;
-        right: 3rem;
-    }
-    .third2 {
-        top: 14rem;
-        left: unset;
-        right: 2.5rem;
-    }
-    .four {
-        top: 17rem;
-        left: unset;
-        right: 3rem;
+        .first {
+            top: 0;
+            left: unset;
+            right: 2rem;
+        }
+        .second {
+            top: 4rem;
+            left: unset;
+            right: 3rem;
+        }
+        .third {
+            top: 8rem;
+            left: unset;
+            right: 3rem;
+        }
+        .third2 {
+            top: 14rem;
+            left: unset;
+            right: 2.5rem;
+        }
+        .four {
+            top: 17rem;
+            left: unset;
+            right: 3rem;
+        }
+
+    .hx-limb-feet-point,
+    .hx-limb-liners-point,
+    .hx-limb-liners-materials-ul,
+    .hx-limb-devices-list-point {
+        padding: 1rem 1rem;
     }
 }
