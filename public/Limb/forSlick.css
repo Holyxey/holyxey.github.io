@@ -2,7 +2,7 @@
 /* forSlick */
 .slick-prev,
 .slick-next {
-    /*position: absolute;*/
+    position: absolute;
     transition: background .3s ease-out;
 
     top: 50%;

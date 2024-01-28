@@ -29,6 +29,7 @@ h1, .h1 {
     font-weight: 500;
     font-size: 3.2rem;
     text-transform: uppercase;
+    max-width: 80%;
 }
 h2, .h2 {
     font-weight: 500;
@@ -71,6 +72,8 @@ p, .p {
     color: #fafafa;
 
     background-color: #ff5b00;
+
+    transition: all .3s ease-out;
 }
 .orange-button-woshdw {
     width: fit-content;
@@ -84,6 +87,15 @@ p, .p {
     color: #fafafa;
 
     background-color: #ff5b00;
+    border: 1px solid #ff5b00;
+
+    transition: all .3s ease-out;
+}
+.orange-button:hover, .orange-button-woshdw:hover {
+    background-color: #FFFfff;
+    color: #ff5b00;
+    border-color: #ff5b00;
+    box-shadow: unset;
 }
 .backFrame {
     content: '';
@@ -104,8 +116,6 @@ p, .p {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-
-    overflow: hidden;
 
     padding: 5rem 0;
 
