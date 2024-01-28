@@ -291,6 +291,10 @@
         text-align: center;
     }
 
+    .hx-limb-liners-materials-ul {
+        margin-top: unset;
+    }
+
     .hx-limb-structure-block-info {
         gap: 1rem;
     }
