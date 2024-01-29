@@ -80,7 +80,7 @@ h4, .h4 {
 }
 
 .hx-at-btn-p {
-    color: var(--c-wht);
+    color: var(--c-wht)!important;
     font-size: var(--rem-aa);
     padding: var(--rem-a) var(--rem-b) calc(var(--rem-a) - 2px) var(--rem-b);
     border-radius: var(--rem-aa);
@@ -96,10 +96,10 @@ h4, .h4 {
 }
     .hx-at-btn-p:hover {
     background-color: var(--c-wht);
-    color: var(--c-pk);
+    color: var(--c-pk)!important;
 }
 .hx-at-btn-bl {
-    color: #333333;
+    color: #333333!important;
     font-size: var(--rem-aa);
     padding: var(--rem-a) var(--rem-b) calc(var(--rem-a) - 2px) var(--rem-b);
     border-radius: var(--rem-aa);
@@ -117,7 +117,7 @@ h4, .h4 {
     background-color: var(--c-wht);
 }
 .hx-at-btn-p-tr {
-    color: var(--c-pk);
+    color: var(--c-pk)!important;
     font-size: var(--rem-aa);
     padding: var(--rem-a) var(--rem-b) calc(var(--rem-a) - 2px) var(--rem-b);
     border-radius: var(--rem-aa);
@@ -165,7 +165,7 @@ h4, .h4 {
 }
 .hx-at-hdr-li {
     margin-right: var(--rem-b);
-    color: var(--c-gr);
+    color: var(--c-gr)!important;
 }
 
     #hero {
@@ -285,6 +285,7 @@ h4, .h4 {
     flex-wrap: wrap;
     gap: var(--rem-c);
     padding-inline-start: 0;
+    padding-left: 0!important;
 }
 .hx-at-case-web {
     flex: 1;
