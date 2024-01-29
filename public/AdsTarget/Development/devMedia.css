@@ -36,8 +36,70 @@
     }
     #formConsultation, #formPrice {
         flex-wrap: wrap;
+        justify-content: flex-start;
     }
     .hx-at-price {
         min-width: 30%;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .hx-at-step {
+        min-width: 40%;
+        max-width: none;
+    }
+    .hx-at-cases-block {
+        flex-direction: column;
+        justify-content: center;
+        flex-wrap: unset;
+    }
+    .hx-at-case-web {
+        max-width: none;
+        flex-direction: column;
+    }
+    .hx-at-case-img {
+        max-width: none;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    h1, .h1 {
+        font-size: var(--rem-cc);
+        line-height: var(--rem-c);
+    }
+    .hx-at-hero-btns {
+        flex-direction: column;
+    }
+    .hx-at-btn-p,
+    .hx-at-btn-p-tr
+    {
+        width: auto;
+        text-align: center;
+    }
+    .hx-at-hero-list-li {
+        display: flex;
+        text-align: center;
+        flex: 1;
+        align-items: center;
+        justify-content: center;
+    }
+    .hx-at-steps-block {
+        flex-direction: column;
+    }
+    .hx-at-price-block {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .hx-at-hero-ul {
+        display: none;
+    }
+    h1, .h1 {
+        padding-bottom: var(--rem-a);
+    }
+    .hx-at-step-header {
+        flex-direction: row;
+        align-items: center;
     }
 }
