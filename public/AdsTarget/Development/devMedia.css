@@ -37,4 +37,7 @@
     #formConsultation, #formPrice {
         flex-wrap: wrap;
     }
+    .hx-at-price {
+        min-width: 30%;
+    }
 }
