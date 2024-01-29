@@ -1,0 +1,40 @@
+@media screen and (max-width: 1280px) {
+    .hx-at-sct {
+        padding: 0 var(--rem-b);
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .hx-at-steps-block {
+        justify-content: center;
+    }
+    .hx-at-step {
+        min-width: 25%;
+        max-width: calc(50% - var(--rem-b));
+    }
+    .hx-at-case-h {
+        font-size: var(--rem-bb);
+    }
+    .hx-at-cases-block {
+        justify-content: space-between;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    #headerPC {
+        display: none;
+    }
+    .hx-at-hero-ul {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: var(--rem-a);
+    }
+    .hx-at-step-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--rem-aaa);
+    }
+    #formConsultation, #formPrice {
+        flex-wrap: wrap;
+    }
+}
