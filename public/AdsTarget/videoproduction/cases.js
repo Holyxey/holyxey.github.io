@@ -34,4 +34,5 @@ function closethis() {
     casepopup.classList.add('hidepopup');
     casepopup.classList.remove('showpopup');
     setTimeout(function (){casepopup.style.display = 'none'},300)
+    iframeLink.src = '';
 }
