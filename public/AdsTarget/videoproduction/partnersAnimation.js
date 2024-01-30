@@ -6,6 +6,7 @@ let partnersMaxOnScreen = 7;
 let windowWidth = window.innerWidth;
 
 function partnerStart() {
+    console.log('Partners autoscroll enabled')
     partners = document.getElementsByClassName('hx-at-partner'); // поменяй обратно на 'hx-at-partner'      -----------------------------------
     partnersBlock = document.getElementsByClassName('hx-at-partners-block')[0]
 
@@ -33,7 +34,6 @@ function getScroll(el) {
     let gap = getGap(partnersBlock);
     let fp = document.querySelector('[partner="0"]')
     let width = getWidth(fp)
-    console.log(gap + width)
     rootStyles.setProperty('--partnermoov', ('-' + (gap + width) + 'px'))
     addScroll();
     setTimeout(renamePartners,1000)
@@ -71,6 +71,5 @@ function setBetween() {
     for (let i = 1; i <= partnersMaxOnScreen; i++) {
         let element = document.querySelector('[partner="'+ i + '"]')
         element.style.minWidth = (z + 'px');
-        console.log(z)
     }
 }
