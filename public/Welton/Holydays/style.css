@@ -94,6 +94,8 @@ a {
     font-size: 2rem;
     font-family: 'Cormorant Unicase', Helvetica, Arial, sans-serif;
     color: var(--c-green);
+    font-weight: 600;
+    translate: 0 .5rem;
 }
 .hx-wh-popup-block-info {
     font-size: 1rem;
