@@ -8,7 +8,8 @@ a {
 }
 
 #hx-wh-popup {
-    position: absolute;
+    position: fixed;
+    z-index: 1000;
     top: 0;
     left: 0;
     width: 100%;
@@ -101,7 +102,7 @@ a {
 .hx-wh-popup-block-ul {
     font-family: 'CeraPro', Helvetica, Arial, sans-serif;
     text-align: left;
-    font-weight: 300;
+    font-weight: 400;
 }
 .cost {
     font-family: 'CeraPro', Helvetica, Arial, sans-serif;
