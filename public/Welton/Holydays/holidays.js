@@ -4,7 +4,7 @@ let hldsClose;
 let hldsPopup;
 let hldsOpen;
 
-window.addEventListener("DOMContentLoaded", hldsStart);
+document.addEventListener("DOMContentLoaded", hldsStart);
 
 function hldsStart(el) {
     hldsBlock = document.getElementById('hx-wh-popup-info');
