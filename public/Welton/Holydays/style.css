@@ -89,13 +89,14 @@ a {
 .hx-wh-popup-block-header {
     font-size: 1.8rem;
     font-family: 'Cormorant Unicase', Helvetica, Arial, sans-serif;
+    line-height: 1.8rem;
 }
 .hx-wh-popup-block-header-date {
     font-size: 2rem;
     font-family: 'Cormorant Unicase', Helvetica, Arial, sans-serif;
     color: var(--c-green);
     font-weight: 600;
-    translate: 0 .5rem;
+    line-height: 2rem;
 }
 .hx-wh-popup-block-info {
     font-size: 1rem;
@@ -169,6 +170,10 @@ a {
         bottom: 2rem;
         right: 1.5rem;
         left: auto;
+    }
+    .hx-wh-popup-block {
+        width: auto;
+        padding: 0 .5rem;
     }
 }
 @media screen and (max-width: 480px) {
