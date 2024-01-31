@@ -1,0 +1,6 @@
+.t-sumbit {
+    font-size: var(--rem-aa);
+    padding: var(--rem-a) var(--rem-b) calc(var(--rem-a) - 2px) var(--rem-b);
+    padding-bottom: 0;
+    padding-top: 4px;
+}
