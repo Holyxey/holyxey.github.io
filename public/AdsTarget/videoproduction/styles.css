@@ -203,6 +203,42 @@ html {
 	#reviews {
 		background-color: var(--c-bl-tr);
 	}
+.hx-at-review-block {
+	display: flex;
+	flex-direction: row;
+	gap: var(--rem-b);
+
+	overflow: hidden;
+	border-radius: var(--rem-a);
+}
+.hx-at-review {
+	background-color: var(--c-wht);
+	padding: var(--rem-a);
+	border-radius: var(--rem-a);
+}
+.hx-at-review-headline {
+	display: flex;
+	align-items: center;
+	gap: var(--rem-a);
+}
+	.hx-at-review img {
+		width: var(--rem-d);
+		border-radius: var(--rem-aa);
+		float: left;
+	}
+	.hx-at-review-name {
+		font-size: var(--rem-bb);
+		translate: 0 calc(var(--rem-a) / 6);
+	}
+.hx-at-review-position {
+
+}
+.hx-at-review-in {
+	padding: var(--rem-a) 0;
+}
+
+
+
 
 /**/
 	@keyframes partners {
