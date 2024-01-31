@@ -11,7 +11,7 @@ function hldsStart(el) {
     hldsItem = document.querySelectorAll('.hx-wh-popup-item');
     hldsClose = document.getElementById('hx-wh-hlds-cls');
     hldsPopup = document.getElementById('hx-wh-popup');
-    hldsOpen = document.querySelector("a[data='hlds']");
+    hldsOpen = document.querySelector("a[href='#hlds']");
 
     hldsClose.setAttribute('onclick', 'hldsCloseFun()')
     hldsPopup.setAttribute('onclick', 'hldsCloseFun()')
