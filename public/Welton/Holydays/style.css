@@ -6,9 +6,6 @@
 a {
     color: var(--c-green)!important;
 }
-body {
-    background-image: url("https://static.tildacdn.com/tild6131-6136-4235-a564-326239376163/h_01.jpg");
-}
 
 #hx-wh-popup {
     position: absolute;
