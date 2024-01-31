@@ -215,6 +215,7 @@ a {
         width: calc(100% - 5rem);
         top: auto;
         bottom: 1.5rem;
+        justify-content: center;
     }
 }
 
