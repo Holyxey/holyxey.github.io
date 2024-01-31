@@ -2,6 +2,7 @@ let caseWeb;
 let iframeLink;
 let casepopup;
 let closepopup;
+let popupvid;
 
 document.addEventListener("DOMContentLoaded", q);
 function q() {
@@ -27,12 +28,26 @@ function caseWebClick(el) {
     }
     closepopup = document.getElementById('closepopup');
     closepopup.setAttribute('onclick', 'closethis()')
+    casepopup.setAttribute('onclick', 'closethis()')
+    respons();
 }
 
 function closethis() {
-    // casepopup =  document.getElementById('casepopup')
     casepopup.classList.add('hidepopup');
     casepopup.classList.remove('showpopup');
     setTimeout(function (){casepopup.style.display = 'none'},300)
     iframeLink.src = '';
+    popupvid.style.height = '';
 }
+
+function respons(el) {
+    popupvid = document.getElementById('popupiframe');
+    let w = getWidth(popupvid);
+    let h = (w / 1.7777);
+    popupvid.style.height = (h + 'px');
+}
+
+document.addEventListener('keydown', function(event) {
+    if (event.keyCode === 27)
+        closethis();
+});
