@@ -1,7 +1,6 @@
 .t-sumbit {
     font-size: var(--rem-aa)!important;
     padding: var(--rem-a) var(--rem-b) calc(var(--rem-a) - 2px) var(--rem-b)!important;
-    padding-bottom: 0!important;
     height: unset!important;
 }
 .t-section__descr {
@@ -12,4 +11,9 @@
 }
 .t690 .t-section__title {
     margin-bottom: 0!important;
+}
+.t-input {
+    font-size: var(--rem-aa)!important;
+    padding: var(--rem-a) var(--rem-b) calc(var(--rem-a) - 2px) var(--rem-b)!important;
+    height: unset!important;
 }
