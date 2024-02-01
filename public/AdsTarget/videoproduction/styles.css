@@ -208,35 +208,42 @@ html {
 	flex-direction: row;
 	gap: var(--rem-b);
 
-	overflow: hidden;
 	border-radius: var(--rem-a);
 }
 .hx-at-review {
 	background-color: var(--c-wht);
 	padding: var(--rem-a);
-	border-radius: var(--rem-a);
+	border-radius: var(--rem-c) var(--rem-a) var(--rem-a) var(--rem-a);
+	margin: 0 var(--rem-aa);
 }
 .hx-at-review-headline {
 	display: flex;
 	align-items: center;
-	gap: var(--rem-a);
+	gap: var(--rem-b);
 }
 	.hx-at-review img {
 		width: var(--rem-d);
-		border-radius: var(--rem-aa);
+		border-radius: var(--rem-e);
 		float: left;
+		filter: drop-shadow(0 0 4px #11111150);
 	}
 	.hx-at-review-name {
 		font-size: var(--rem-bb);
 		translate: 0 calc(var(--rem-a) / 6);
 	}
 .hx-at-review-position {
-
+	padding: var(--rem-b) var(--rem-a) var(--rem-a) var(--rem-a);
+	font-weight: 500;
 }
 .hx-at-review-in {
-	padding: var(--rem-a) 0;
+	font-size: var(--rem-aa);
+	padding: var(--rem-a);
+
 }
 
+	.slick-prev:before, .slick-next:before {
+		color: var(--c-pk)!important;
+	}
 
 
 

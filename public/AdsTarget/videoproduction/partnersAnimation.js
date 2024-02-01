@@ -24,6 +24,12 @@ function getWidth(el) {
     return width;
 }
 
+function getPaddingRight(el) {
+    let paddingWPX = window.getComputedStyle(el).paddingRight;
+    let padding = parseInt(paddingWPX.match(/\d+/));
+    return padding;
+}
+
 function getGap(el) {
     let gapWPX = window.getComputedStyle(el).gap;
     let gap = parseInt(gapWPX.match(/\d+/));
