@@ -14,7 +14,6 @@ function reviewImgWait() {
         let elImg = caseBackgr[i].querySelector('div[laazy]')
         if (elImg) {
             let url = elImg.getAttribute('laazy')
-            console.log(url)
             elImg.style.backgroundImage = url;
             elImg.classList.add('showpopup')
         }
