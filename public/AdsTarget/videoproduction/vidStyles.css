@@ -143,13 +143,26 @@ html {
 		align-items: center;
 		justify-content: center;
 
-		background-color: var(--c-wht);
-		border: 1px solid var(--c-bl);
-		border-radius: var(--rem-b);
-		box-shadow: 0 0 var(--rem-a) #00000050;
+		/*background-color: var(--c-wht);*/
+		/*border: 1px solid var(--c-bl);*/
+		/*border-radius: var(--rem-b);*/
+		/*box-shadow: 0 0 var(--rem-a) #00000050;*/
 
 		cursor: pointer;
 	}
+.close-popup-div {
+	background-color: var(--c-wht);
+	height: 3px;
+	width: var(--rem-b);
+	border-radius: 1px;
+	position: absolute;
+}
+.close-popup-div:nth-child(1) {
+	transform: rotate(45deg);
+}
+.close-popup-div:nth-child(2) {
+	transform: rotate(-45deg);
+}
 
 	#partners {
 	}
