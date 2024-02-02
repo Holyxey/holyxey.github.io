@@ -38,7 +38,7 @@ function getGap(el) {
 
 function getScroll(el) {
     if (getWidth(partnersBlock) < 800)
-        partnersMaxOnScreen = 2;
+        partnersMaxOnScreen = 3;
     if (getWidth(partnersBlock) >= 800)
         partnersMaxOnScreen = 7;
 
