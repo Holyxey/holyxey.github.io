@@ -9,6 +9,13 @@
     }
 }
 
+@media screen and (max-width: 1024px) {
+    #popupiframe {
+        width: 90vw;
+        height: unset;
+    }
+}
+
 @media screen and (min-width: 800px) {
     .hx-at-hdr-mobile-menu {
         display: none;
@@ -119,21 +126,10 @@
     #closepopup {
         display: none;
     }
-
-
     #popupiframe {
-        /*display: flex;*/
-        /*align-items: center;*/
-        /*justify-content: center;*/
-
         border-radius: unset;
-        /*box-shadow: 0 0 var(--rem-c) #000000;*/
         width: 100vw;
         height: unset;
-
-        /*background-color: #FFFfff;*/
-
-        /*transition: all .3s ease-in;*/
     }
 }
 
