@@ -132,42 +132,6 @@ h4, .h4 {
     width: fit-content;
 }
 
-    #hx-at-sct-hdr {
-        position: sticky;
-        top: 0;
-        border-bottom: var(--c-bl) 1px solid;
-        background-color: var(--c-wht);
-        z-index: 100;
-    }
-    #headerPC {
-        display: flex;
-        align-items: center;
-        flex-direction: row;
-        justify-content: space-between;
-        gap: var(--rem-b);
-        padding: var(--rem-a) 0;
-    }
-.hx-at-hdr-logo {
-    display: flex;
-    align-items: center;
-    gap: var(--rem-b);
-
-    font-size: var(--rem-b);
-    font-weight: 500;
-}
-.hx-at-hdr-logo img {
-    height: var(--rem-c);
-    width: var(--rem-c);
-    translate: 0 -.2rem;
-}
-.hx-at-hdr-menu {
-
-}
-.hx-at-hdr-li {
-    margin-right: var(--rem-b);
-    color: var(--c-gr)!important;
-}
-
     #hero {
         padding: calc(var(--rem-d) * 2) 0;
         background-color: var(--c-wht);
