@@ -138,7 +138,4 @@
         display: flex;
         gap: var(--rem-a);
     }
-    .hx-at-review {
-        margin: 0;
-    }
 }
