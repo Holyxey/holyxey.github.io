@@ -21,6 +21,7 @@
 }
 .hx-at-review img {
     width: var(--rem-d);
+    height: var(--rem-d);
     border-radius: var(--rem-e);
     float: left;
     filter: drop-shadow(0 0 4px #11111150);
