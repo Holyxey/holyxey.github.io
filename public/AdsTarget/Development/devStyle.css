@@ -348,3 +348,22 @@ h4, .h4 {
     border-radius: var(--rem-aa);
     padding: var(--rem-aa) var(--rem-a);
 }
+
+
+/**/
+@keyframes partners {
+    from {}
+    to {translate: var(--partnermoov) 0;}
+}
+.scroll {animation: partners 1s forwards;}
+@keyframes showpopup {
+    from {opacity: 0}
+    to {opacity: 1}
+}
+.showpopup {animation: showpopup .3s forwards;}
+.slowshow {animation: showpopup 2s 1s forwards;}
+@keyframes hidepopup {
+    from {opacity: 1}
+    to {opacity: 0}
+}
+.hidepopup {animation: hidepopup .3s forwards;}
