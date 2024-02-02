@@ -165,54 +165,6 @@ html {
 	transform: rotate(-45deg);
 }
 
-	#partners {
-	}
-.hx-at-partners-block {
-	padding-top: var(--rem-a);
-
-	display: flex;
-
-	gap: 10px;
-	justify-content: space-between;
-	overflow-x: hidden;
-
-	align-items: center;
-}
-	#partners ul {
-	list-style: none;
-	margin-left: 0;
-	padding-inline-start: unset;
-	margin-block-start: unset;
-	margin-block-end: unset;
-
-	display: flex;
-}
-.hx-at-partner {
-	display: flex;
-	justify-content: center;
-
-	cursor: default;
-
-	transition: all .3s ease-out, filter .2s ease-out, opacity .4s ease-out;
-	filter: grayscale(100%) blur(0);
-	opacity: .4;
-
-	min-height: 50px;
-	/*min-width: 150px;*/
-	background-size: contain;
-	background-position: center;
-	background-repeat: no-repeat;
-}
-	.hx-at-partner:hover {
-		filter: grayscale(0) blur(0);
-		opacity: 1;
-	}
-	.hx-at-partner img {
-		/*height: var(--rem-c);*/
-		max-width: 100px;
-		max-height: 50px;
-	}
-
 	#reviews {
 		background-color: var(--c-bl-tr);
 	}
