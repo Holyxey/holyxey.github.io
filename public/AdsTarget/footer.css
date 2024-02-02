@@ -19,8 +19,8 @@
     gap: var(--rem-a);
 }
 #hx-at-footer-main img {
-    height: var(--rem-b);
-    width: var(--rem-b);
+    height: 2rem;
+    width: 2rem;
 }
 .hx-at-footer-socials {
     display: flex;
