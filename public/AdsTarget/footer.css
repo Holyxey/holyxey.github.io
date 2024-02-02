@@ -1,3 +1,13 @@
+#footer {
+    background-color: var(--c-gr);
+}
+#footer > .hx-at-blk {
+    gap: var(--rem-c);
+}
+#footer * {
+    color: var(--c-wht)!important;
+}
+
 #hx-at-footer-main {
     display: flex;
     gap: var(--rem-c) var(--rem-e);
@@ -9,8 +19,8 @@
     gap: var(--rem-a);
 }
 #hx-at-footer-main img {
-    height: var(--rem-cc);
-    width: var(--rem-cc);
+    height: var(--rem-b);
+    width: var(--rem-b);
 }
 .hx-at-footer-socials {
     display: flex;
