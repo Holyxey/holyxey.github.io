@@ -37,6 +37,9 @@ function getGap(el) {
 }
 
 function getScroll(el) {
+    if (getWidth(partnersBlock) < 800)
+        partnersMaxOnScreen = 4;
+
     let gap = getGap(partnersBlock);
     let fp = document.querySelector('[partner="0"]')
     let width = getWidth(fp)

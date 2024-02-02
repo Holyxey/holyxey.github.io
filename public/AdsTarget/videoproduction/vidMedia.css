@@ -109,6 +109,9 @@
         width: 100%;
         height: 100%;
     }
+    #closepopup {
+        display: none;
+    }
 
 
     #popupiframe {
@@ -127,9 +130,12 @@
     }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 480px) {
     .hx-at-hero-ul {
         display: flex;
         gap: var(--rem-a);
+    }
+    .hx-at-review {
+        margin: 0;
     }
 }
