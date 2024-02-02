@@ -6,6 +6,7 @@
     padding: var(--rem-a) var(--rem-b) calc(var(--rem-a) - 2px) var(--rem-b)!important;
     height: unset!important;
     text-transform: uppercase;
+    width: unset!important;
 }
 .t-section__descr {
     max-width: unset!important;
