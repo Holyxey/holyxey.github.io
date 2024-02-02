@@ -245,6 +245,46 @@ html {
 		color: var(--c-pk)!important;
 	}
 
+	#footer {
+		background-color: var(--c-gr);
+	}
+	#footer > .hx-at-blk {
+		gap: var(--rem-c);
+	}
+	#footer * {
+		color: var(--c-wht)!important;
+	}
+
+/*#hx-at-footer-main {*/
+/*	display: flex;*/
+/*	gap: var(--rem-e);*/
+/*}*/
+/*.hx-at-footer-column {*/
+/*	display: flex;*/
+/*	flex-direction: column;*/
+/*	gap: var(--rem-a);*/
+/*}*/
+/*#hx-at-footer-main img {*/
+/*	height: var(--rem-cc);*/
+/*	width: var(--rem-cc);*/
+/*}*/
+/*.hx-at-footer-socials {*/
+/*	display: flex;*/
+/*	gap: var(--rem-a);*/
+/*}*/
+/*.hx-at-footer-adstarget {*/
+/*	font-size: var(--rem-b);*/
+/*	font-weight: 500;*/
+/*}*/
+/*#hx-at-footer-policy {*/
+/*	display: flex;*/
+/*	justify-content: space-between;*/
+/*	opacity: .5;*/
+/*}*/
+
+
+
+
 
 
 /**/
