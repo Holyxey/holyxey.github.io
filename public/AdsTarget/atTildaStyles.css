@@ -1,7 +1,7 @@
 .t-popup_show .t-popup__container {
     border-radius: var(--rem-a);
 }
-.t-sumbit, t-form__submit, .t-form__submit button {
+.t-sumbit, t-form__submit, button {
     font-size: var(--rem-aa)!important;
     padding: var(--rem-a) var(--rem-b) calc(var(--rem-a) - 2px) var(--rem-b)!important;
     height: unset!important;
@@ -25,6 +25,9 @@
     margin-left: unset!important;
     margin-right: unset!important;
     max-width: unset!important;
+}
+.footerForm button {
+
 }
 
 @media screen and (max-width: 640px) {
