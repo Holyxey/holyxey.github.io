@@ -98,9 +98,7 @@ h3, .h3 {
     display: block;
 
     background-color: var(--blue);
-    padding: var(--c);
-    /*margin-block: var(--a);*/
-    /*border-radius: var(--d);*/
+    padding: var(--c) var(--b);
 
     font-size: var(--b);
     text-transform: uppercase;
@@ -109,6 +107,8 @@ h3, .h3 {
     color: var(--light);
     text-align: center;
     margin-top: var(--c);
+
+    max-width: fit-content;
 }
 
 .hx-case-block {
