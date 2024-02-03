@@ -321,10 +321,10 @@ p, .p {
 .hx-limb-variants-list-img {
     position: absolute;
     right: 0;
-    bottom: -1rem;
+    /*bottom: -1rem;*/
     z-index: -1;
     height: 100%;
-    transform: rotate(-10deg);
+    /*transform: rotate(-10deg);*/
 }
 
     #hx-limb-structure {
