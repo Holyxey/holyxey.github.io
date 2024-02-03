@@ -21,27 +21,6 @@
         padding: 1rem 1.5rem;
     }
 
-    .first {
-        top: 10rem;
-        left: 12rem;
-    }
-    .second {
-        top: 7rem;
-        left: 20rem;
-    }
-    .third {
-        top: 8rem;
-        left: 27rem;
-    }
-    .third2 {
-        top: 9rem;
-        left: 39rem;
-    }
-    .four {
-        top: 12rem;
-        left: 53rem;
-    }
-
     #slider-reviews {
         .slick-prev
         {
@@ -89,27 +68,7 @@
     }
 
     .hx-limb-structure-block-info-in {
-        padding: 1rem .5rem;
-    }
-    .first {
-        top: 11rem;
-        left: 7rem;
-    }
-    .second {
-        top: 8rem;
-        left: 15rem;
-    }
-    .third {
-        top: 10rem;
-        left: 21rem;
-    }
-    .third2 {
-        top: 10rem;
-        left: 34rem;
-    }
-    .four {
-        top: 15rem;
-        left: 46rem;
+        padding: 1rem;
     }
 
 }
@@ -161,42 +120,18 @@
         max-width: 70%;
     }
     .hx-limb-structure-block-img {
-        position: absolute;
-        rotate: 90deg;
-        scale: .5 -.5;
-        top: 6rem;
-        left: 85%;
+        flex: 1;
+        padding-inline: unset;
     }
-
-
+    .hx-limb-structure-block-img-select {
+        translate: 8vw;
+    }
 
     .hx-limb-structure-block-info-in {
-        padding: 1rem .5rem;
+        padding: 1rem;
     }
-    .first {
-        top: 0rem;
-        left: unset;
-        right: 7rem;
-    }
-    .second {
-        top: 5rem;
-        left: unset;
-        right: 8rem;
-    }
-    .third {
-        top: 8rem;
-        left: unset;
-        right: 2.5rem;
-    }
-    .third2 {
-        top: 14rem;
-        left: unset;
-        right: 6.5rem;
-    }
-    .four {
-        top: 17rem;
-        left: unset;
-        right: 1rem;
+        #hx-limb-structure .hx-limb-structure-block:last-child {
+        display: none;
     }
 
     .slick-prev,
@@ -218,10 +153,10 @@
         background-image: none;
     }
     .hx-limb-section {
-        padding: 0 .5rem;
+        padding: 0 1rem;
     }
     .hx-limb-block {
-        padding: 5rem .5rem;
+        padding: 5rem 1rem;
         overflow: hidden;
     }
     #hx-limb-bread {
@@ -268,7 +203,8 @@
     .hx-limb-liners-point {
         align-items: flex-start;
         flex: none;
-        width: auto;;
+        width: auto;
+        font-size: .9rem;
     }
 
     .hx-limb-materials-list {
@@ -280,12 +216,12 @@
         background-color: #FFFfff99;
     }
     .hx-limb-variants-list-img {
+        /*flex: 1;*/
         position: relative;
         right: unset;
         bottom: unset;
         z-index: unset;
         height: unset;
-        transform: rotate(0deg);
         max-width: 100%;
     }
     .hx-limb-devices-list {
@@ -308,8 +244,15 @@
         max-width: unset;
     }
 
+    .hx-limb-structure-block {
+        gap: 1rem;
+    }
     .hx-limb-structure-block-info {
         gap: 1rem;
+        max-width: unset;
+    }
+    .hx-limb-structure-block-img {
+        flex: unset;
     }
     .hx-limb-structure-block-img-select {
         z-index: 2;
@@ -320,32 +263,37 @@
         padding: 1rem;
         justify-content: left;
         text-align: left;
+        font-size: .8rem;
     }
-        .first {
-            top: 0;
-            left: unset;
-            right: 2rem;
-        }
-        .second {
-            top: 4rem;
-            left: unset;
-            right: 3rem;
-        }
-        .third {
-            top: 8rem;
-            left: unset;
-            right: 3rem;
-        }
-        .third2 {
-            top: 14rem;
-            left: unset;
-            right: 2.5rem;
-        }
-        .four {
-            top: 17rem;
-            left: unset;
-            right: 3rem;
-        }
+
+
+    .first {
+        left: auto;
+        right: 90%;
+        top: -3%;
+    }
+    .second {
+        left: auto;
+        right: 40%;
+        top: 22%;
+    }
+    .third {
+        left: auto;
+        right: 96%;
+        top: 35%;
+    }
+    .third2 {
+        left: auto;
+        right: 40%;
+        bottom: 25%;
+        top: auto;
+    }
+    .four {
+        left: auto;
+        right: 90%;
+        top: auto;
+        bottom: 8%;
+    }
 
     .hx-limb-feet-item,
     .hx-limb-liners-point,
