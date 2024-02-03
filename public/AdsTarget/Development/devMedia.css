@@ -64,6 +64,9 @@
         font-size: var(--rem-cc);
         line-height: var(--rem-c);
     }
+    #hero {
+        padding: var(--rem-d) 0;
+    }
     .hx-at-hero-btns {
         flex-direction: column;
     }

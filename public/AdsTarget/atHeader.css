@@ -13,6 +13,12 @@
     gap: var(--rem-b);
     padding: var(--rem-a) 0;
 }
+#headerM {
+    padding: var(--rem-a) 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 .hx-at-hdr-logo {
     display: flex;
     align-items: center;
@@ -51,12 +57,6 @@
 @media screen and (max-width: 800px) {
     #headerPC {
         display: none;
-    }
-    #headerM {
-        padding: var(--rem-a) 0;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
     }
     #headerMenuButton {
         cursor: pointer;
