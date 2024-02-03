@@ -534,10 +534,10 @@ p, .p {
     justify-content: center;
     padding-top: 1rem;
 }
-.hx-limb-feet-point {
+.hx-limb-feet-item {
     flex: 1 0 15%;
     background-color: #FFFfff;
-    padding: 2rem 2rem 1.5rem 2rem;
+    padding: 1.5rem;
     border-radius: 1rem;
     transition: all .3s ease-out;
     cursor: default;
@@ -545,7 +545,7 @@ p, .p {
     border: 1px solid #0099A050;
     box-shadow: 0 0 5px #00000040 inset;
 }
-.hx-limb-feet-point:hover {
+.hx-limb-feet-item:hover {
     scale: 1.01;
     border-radius: 1.2rem;
     box-shadow: 0 0 5px #00000000 inset;
@@ -616,7 +616,7 @@ p, .p {
     flex-direction: column;
     gap: .5rem;
     margin-top: 1rem;
-    padding: 2rem;
+    padding: 1.5rem;
     background-color: #FFFfff;
 
     border-radius: 1rem;
@@ -751,6 +751,9 @@ p, .p {
 
     width: 100%;
     max-width: 1200px;
+}
+.hx-limb-slide > p {
+    padding-top: .5rem;
 }
 .hx-limb-slider-arrows {
     content: '';

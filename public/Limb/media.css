@@ -14,7 +14,7 @@
     .hx-limb-modules-wbttn p {
         font-size: 1rem;
     }
-    .hx-limb-feet-point,
+    .hx-limb-feet-item,
     .hx-limb-liners-point,
     .hx-limb-liners-materials-ul
     {
@@ -133,7 +133,7 @@
     .hx-limb-tab-in {
         align-items: center;
     }
-    .hx-limb-feet-point {
+    .hx-limb-feet-item {
         flex: 1 1 30%;
     }
     .hx-limb-liners-materials-point:nth-child(2) {
@@ -347,7 +347,7 @@
             right: 3rem;
         }
 
-    .hx-limb-feet-point,
+    .hx-limb-feet-item,
     .hx-limb-liners-point,
     .hx-limb-liners-materials-ul,
     .hx-limb-devices-list-point {
