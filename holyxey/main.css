@@ -30,7 +30,7 @@
     background: var(--blue);
 }
 body, html {
-    font-family: "Open Sans",Manrope,sans-serif;
+    font-family: 'Manrope', 'Helvetica', sans-serif;
     background-color: var(--light);
     box-sizing: border-box;
     scroll-behavior: smooth;
