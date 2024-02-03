@@ -79,6 +79,7 @@ h3, .h3 {
         translate: -50%;
 
         z-index: -1;
+        box-shadow: 0 0 10px #33333380;
     }
 
 .hx-section {
@@ -98,7 +99,7 @@ h3, .h3 {
 
     background-color: var(--blue);
     padding: var(--c);
-    margin-block: var(--a);
+    /*margin-block: var(--a);*/
     /*border-radius: var(--d);*/
 
     font-size: var(--b);
@@ -107,14 +108,18 @@ h3, .h3 {
     font-weight: 500;
     color: var(--light);
     text-align: center;
+    margin-top: var(--c);
 }
 
 .hx-case-block {
     display: flex;
+    border-bottom: 1px solid var(--gray);
 }
 .hx-case-clmn {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    padding-block: var(--c);
 }
 
 header {
