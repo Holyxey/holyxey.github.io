@@ -1,0 +1,120 @@
+@media screen and (max-width: 1300px) {
+    .hx-section {
+        margin: var(--aa) auto;
+        max-width: 1000px;
+    }
+    header > * {
+        padding: 1rem;
+    }
+    .hx-imgcase {
+        max-width: unset;
+        margin-right: unset;
+    }
+    h2, .h2 {
+        max-width: 90%;
+    }
+
+    .hx-case-block {
+        flex-direction: column;
+        gap: var(--a);
+    }
+
+    header {
+        /*position: fixed;*/
+        top: auto;
+        bottom: 0;
+        left: 0;
+
+        flex-direction: row;
+        height: unset;
+        width: 100%;
+
+        border-right: unset;
+        border-top: 1px solid var(--gray);
+
+        z-index: 100;
+        background-color: var(--light);
+    }
+    header > * {
+        padding: var(--c);
+        list-style: none;
+
+        display: flex;
+        flex-direction: row;
+        gap: var(--c);
+    }
+    .hx-header {
+    }
+    .hx-header-socials {
+        display: flex;
+    }
+    .hx-header-socials svg {
+        fill: var(--dark);
+        height: 2rem;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .hx-section {
+        padding-inline: 1rem;
+    }
+    h1, .h1, h2, .h2 {
+        max-width: 70%;
+    }
+    #hx-repaired {
+        font-size: var(--c);
+    }
+    .hx-case-button {
+        font-size: var(--c);
+    }
+    #hx-repaired {
+        top: var(--c);
+    }
+}
+
+@media screen and (max-width: 640px) {
+    h1, .h1 {
+        font-size: calc(var(--b) * 1.5);
+        line-height: calc(var(--line-b) * 1.2);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    h1, .h1 {
+        font-size: var(--b);
+        line-height: var(--line-b);
+    }
+    #hx-repaired {
+        padding-block: var(--d);
+        position: fixed;
+        top: 0;
+        right: 50%;
+        translate: 50%;
+        transform: unset;
+    }
+    body {
+        padding-top: var(--aa);
+    }
+
+    h1, .h1, h2, .h2 {
+        max-width: unset;
+    }
+
+    .hx-section {
+        margin: var(--a) auto;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .hx-header-socials {
+        flex-wrap: wrap;
+
+        justify-content: space-around;
+    }
+    .hx-header-socials svg {
+        height: 1.5rem;
+    }
+    #hx-repaired {
+        font-size: calc(var(--c) * 0.8);
+    }
+}
