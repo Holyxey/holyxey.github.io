@@ -575,9 +575,12 @@ p, .p {
     flex: 1 1 100px;
 
     padding: 1rem 2rem;
-    border: 1px solid #0099A090;
+    border: 1px solid #0099A050;
     width: fit-content;
     border-radius: 1rem;
+
+    background-color: #FFFfff;
+    box-shadow: 0 0 5px #00000040 inset;
 
     min-width: 20%;
 }

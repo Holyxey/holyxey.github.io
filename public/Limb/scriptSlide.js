@@ -4,6 +4,7 @@ $('.hx-limb-slider').slick({
     centerPadding: '2px',
     slidesToShow: 3,
     adaptiveHeight: true,
+    autoplay: true,
     responsive: [
         {
             breakpoint: 1025,
