@@ -31,7 +31,7 @@
     translate: 0 calc(var(--rem-a) / 6);
 }
 .hx-at-review-position {
-    padding: var(--rem-b) var(--rem-a) var(--rem-a) var(--rem-a);
+    padding: var(--rem-b) var(--rem-a) 0 var(--rem-a);
     font-weight: 500;
 }
 .hx-at-review-in {
