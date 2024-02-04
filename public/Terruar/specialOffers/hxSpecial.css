@@ -202,6 +202,7 @@
     .hxSpecialItemHeader {
         padding-left: 1rem;
         width: unset;
+        font-size: 2.5rem;
     }
     #hxSpecialPopupClose {
         position: absolute;
