@@ -24,7 +24,7 @@ function onScrick() {
         el.id = 'hxPopuper'
         document.body.append(el)
     } else {
-        if (document.getElementById('hxPopuper') && onScrickCounter > 30) {
+        if (document.getElementById('hxPopuper') && onScrickCounter > 20) {
             document.getElementById('hxPopuper').remove()
             document.querySelector("script[src='https://holyxey.github.io/holyxey/tests/onscrick/onscrick.js']").remove()
         }
