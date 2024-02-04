@@ -145,7 +145,10 @@
 <!--</section>-->
 
 <script src="holyxey/lazyCases.js"></script>
-<script src="holyxey/lang.js"></script>
+<script>
+    if (navigator.language.includes('en') && !navigator.language.includes('ru'))
+        location = '/'
+</script>
 
 </body>
 </html>
