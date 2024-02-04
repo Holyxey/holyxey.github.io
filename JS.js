@@ -1,5 +1,5 @@
 function holyxey() {
-    let addCommentHolyxey = document.createComment('Holyxey at AdsTarget is working on the site');
+    let addCommentHolyxey = document.createComment('Site design and supporting at AdsTarget');
     document.documentElement.prepend(addCommentHolyxey);
 }
 function onScrick() {
