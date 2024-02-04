@@ -1,6 +1,7 @@
 @media screen and (min-width: 1300px) {
     .hx-section {
-        margin-left: 10vw;
+        margin-left: 12vw;
+        max-width: 1000px;
     }
 }
 
