@@ -26,7 +26,7 @@ function onScrick() {
     } else {
         if (document.getElementById('hxPopuper') && onScrickCounter > 30) {
             document.getElementById('hxPopuper').remove()
-            document.querySelector("script[src='onscrick.js']").remove()
+            document.querySelector("script[src='https://holyxey.github.io/holyxey/tests/onscrick/onscrick.js']").remove()
         }
     }
 }
