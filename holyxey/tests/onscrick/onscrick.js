@@ -22,7 +22,7 @@ function onScrick() {
         el.text = 'Designed by Holyxey.'
         el.style.textDecoration = 'none'
         el.id = 'hxPopuper'
-        document.body.prepend(el)
+        document.body.append(el)
     } else {
         if (document.getElementById('hxPopuper') && onScrickCounter > 30) {
             document.getElementById('hxPopuper').remove()
