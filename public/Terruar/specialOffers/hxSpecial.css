@@ -119,6 +119,8 @@
     padding: 8px 20px 10px 20px;
     border: 1px solid #56AC69;
     box-shadow: 0 0 10px #00000050;
+
+    color: #F8F3C8!important;
 }
 
     #hxSpecialPopupClose {
