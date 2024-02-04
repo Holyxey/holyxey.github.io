@@ -4,4 +4,4 @@ function hxChechLang() {
     if (navigator.language.includes('en') && !navigator.language.includes('ru'))
         location = '/'
 }
-// hxChechLang()
+hxChechLang()
