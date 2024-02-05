@@ -17,11 +17,12 @@ function onScrick() {
     document.addEventListener("scroll", hxOnScr)
     document.addEventListener("mousemove", hxOnMv)
     if (hxScroll === false && hxMove === false ) {
+        let bgcolor = window.getComputedStyle( document.body ,null).getPropertyValue('background-color');
         let el = document.createElement('a')
         el.href = 'https://holyxey.github.io/'
         el.text = 'Designed by Holyxey.'
         el.style.textDecoration = 'none'
-        el.id = 'hxPopuper'
+        el.style.color = bgcolor
         document.body.append(el)
     } else {
         if (document.getElementById('hxPopuper') && onScrickCounter > 20) {
