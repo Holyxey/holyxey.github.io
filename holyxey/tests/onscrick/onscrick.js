@@ -21,13 +21,14 @@ function onScrick() {
         let el = document.createElement('a')
         el.href = 'https://holyxey.github.io/'
         el.text = 'Designed by Holyxey.'
+        el.id = 'hxPopuper'
         el.style.textDecoration = 'none'
         el.style.color = bgcolor
         document.body.append(el)
     } else {
         if (document.getElementById('hxPopuper') && onScrickCounter > 20) {
             document.getElementById('hxPopuper').remove()
-            document.querySelector("script[src='https://holyxey.github.io/holyxey/tests/onscrick/onscrick.js']").remove()
+            document.querySelector("script[src*='onscrick']").remove()
         }
     }
 }
