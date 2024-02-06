@@ -22,7 +22,7 @@
     background-color: var(--c-bl-tr);
     padding: 15px 20px 13px 20px;
     border-radius: var(--rem-aa);
-    color: var(--c-gr);
+    color: var(--c-gr)!important;
     font-weight: 500;
 
     cursor: pointer;

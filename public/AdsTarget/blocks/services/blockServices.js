@@ -10,7 +10,7 @@ function blockServicesJS() {
         createArrow.src = 'https://holyxey.github.io/public/AdsTarget/elements/arrow.svg';
         createArrow.alt = 'Decorative arrow';
         createArrow.classList.add('createArrow')
-        // 
+        //
         servicesItem[i].prepend(createArrow)
     }
 }
