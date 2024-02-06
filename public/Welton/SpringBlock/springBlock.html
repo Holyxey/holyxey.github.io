@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="springBlock.css">
+</head>
+<body>
+
+    <div id="springBlock">
+        <div class="springBlockSection springBlockSectionImg"></div>
+        <div class="springBlockSection">
+            <p class="springBlockSectionText">Порадуйте ваших близких в предстоящие весенние праздники</p>
+            <p class="springBlockSectionText">Отличные предложения на 14, 23 февраля, и конечно на 8 марта!</p>
+            <br>
+            <p class="springBlockSectionText">Забронировать номер:
+                <a href="tel:+78123465555">+7 812 346 55 55</a></p>
+            <a href="/specialoffers" class="springBlockSectionButton">Подробнее</a>
+        </div>
+    </div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let springBlock = document.getElementById('springBlock');
+        let springLink = springBlock.querySelector('a[class="springBlockSectionButton"]').href;
+        console.log(springLink)
+
+        springBlock.addEventListener("click", function () {
+            location.href = springLink;
+        })
+    })
+</script>
+
+</body>
+</html>

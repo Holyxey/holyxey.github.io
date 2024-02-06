@@ -1,0 +1,74 @@
+#springBlock {
+    display: flex;
+    gap: 2rem;
+    margin: 1rem auto;
+    max-width: 1200px;
+    border-radius: 1rem;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.20);
+    background-color: #ECE3DE;
+    cursor: pointer;
+}
+.springBlockSection {
+    flex: 1;
+    padding: 2rem 1rem;
+    border-radius: 1rem 0 0 1rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.springBlockSectionImg {
+    background-image: url(https://thumb.tildacdn.com/tild6131-6136-4235-a564-326239376163/-/format/webp/h_01.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.springBlockSectionText {
+    font-size: 15px;
+    line-height: 1.3;
+    color: #454953;
+    font-weight: 400;
+    font-family: 'CeraPro';
+
+    margin: 0;
+}
+    .springBlockSectionText > a {
+        font-weight: 500;
+        color: #334e3e!important;
+    }
+.springBlockSectionButton {
+    text-decoration: none;
+    color: #334e3e!important;
+    border: 1px solid #334e3e;
+    background-color: #ebe3de;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    font-family: CeraPro;
+    font-weight: 400;
+
+    padding: .5rem 1rem;
+    width: fit-content;
+    font-size: 13px;
+
+    transition: all .3s ease-out;
+}
+.springBlockSectionButton:hover {
+    color: #ebe3de!important;
+    background-color: #334e3e;
+}
+
+@media screen and (max-width: 960px) {
+    #springBlock {
+        flex-direction: column;
+        padding: .5rem;
+        gap: 0;
+        margin: .5rem;
+    }
+    .springBlockSectionImg {
+        border-radius:  .8rem;
+        min-height: 200px;
+    }
+    .springBlockSection {
+        padding-bottom: 1rem;
+    }
+}
