@@ -41,6 +41,8 @@
     color: #F8F3C8;
 
     max-width: 70%;
+
+    position: relative;
 }
 .hxSpecialItem * {
     padding: 0;
@@ -74,6 +76,8 @@
     flex-direction: column;
     gap: 1rem;
     padding: 1rem;
+
+    position: relative;
 }
     .hxSpecialItemColumnHeader {
         color: #ffffff;
@@ -158,6 +162,20 @@
         rotate: -45deg;
     }
 
+.hxSpecialItemColumnDiscount {
+    position: absolute;
+    top: -1rem;
+    right: 0;
+
+    font-size: 30px;
+    font-weight: 800;
+    opacity: 0;
+
+    color: #56AC69;
+    text-shadow: 0 0 10px #000000;
+
+    animation: hxSpecialDiscount 2s .3s ease-out forwards;
+}
 
 /*
 */
@@ -173,7 +191,11 @@
     to {opacity: 0}
 }
     .hxSpecialPopupHide {animation: hxSpecialPopupHide .5s ease-out forwards}
-
+@keyframes hxSpecialDiscount {
+    from {opacity: 0}
+    20% {opacity: 0}
+    to {translate: -2rem 5rem; rotate: 10deg; opacity: 1}
+}
 
 /*
 */
@@ -216,6 +238,11 @@
         justify-content: center;
 
         cursor: pointer;
+    }
+
+    .hxSpecialItemColumnDiscount {
+        top: 2rem;
+        color: #ffffff;
     }
 }
 @media screen and (max-width: 450px) {
