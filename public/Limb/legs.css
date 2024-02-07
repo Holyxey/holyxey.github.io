@@ -232,6 +232,7 @@
             rotate: unset;
             width: 2rem;
             height: 2rem;
+            animation: unset;
         }
         .hx-limb-government-steps-item-header {
             /*text-align: center;*/
