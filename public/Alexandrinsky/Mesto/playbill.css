@@ -64,8 +64,11 @@ body, html {
     border: 1px solid #ffca3a;
     border-radius: 15px;
 
-    font-family: 'Opinion Pro', Helvetica, sans-serif;
+    /*font-family: 'Opinion Pro', Helvetica, sans-serif;*/
     font-size: 18px;
+    /*font-weight: 300;*/
+
+    font-family: 'Vetrino',Arial,sans-serif;
     font-weight: 300;
 
     padding: 17px 30px 15px 30px;
