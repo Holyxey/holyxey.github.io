@@ -1,0 +1,82 @@
+@font-face {
+    font-family: 'Vetrino';
+    src: url("https://static.tildacdn.com/tild3633-6330-4661-a561-326462393931/Vetrino.woff");
+}
+@font-face {
+    font-family: 'Opinion Pro';
+    src: url("https://static.tildacdn.com/tild3562-6530-4566-b861-613835653335/OpinionProExtended-L.woff");
+}
+
+body, html {
+    background-color: black;
+}
+
+.al-block {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: black;
+}
+    .al-block * {
+        padding: 0;
+        margin: 0;
+    }
+.playbill-h {
+    font-family: 'Vetrino', Helvetica, sans-serif;
+    font-size: 50px;
+}
+.playbill-p {
+    font-family: 'Opinion Pro', Helvetica, sans-serif;
+    font-size: 23px;
+    font-weight: 100;
+}
+    .w {
+        color: #FFFfff;
+    }
+    .y {
+        color: #ffca3a;
+    }
+
+
+    .playbill-day {
+        padding: 3rem 0;
+
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+        justify-content: space-between;
+    }
+.playbill-day-item {
+    flex: 2;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+
+    text-align: center;
+}
+    .playbill-day-item:nth-child(1), .playbill-day-item:nth-child(3) {
+        flex: unset;
+    }
+.playbill-day-button {
+    color: black;
+    background-color: #ffca3a;
+    border: 1px solid #ffca3a;
+    border-radius: 15px;
+
+    font-family: 'Opinion Pro', Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+
+    padding: 17px 30px 15px 30px;
+    width: fit-content;
+    text-decoration: none;
+
+    transition: all .2s ease-out;
+
+    cursor: pointer;
+}
+    .playbill-day-button:hover {
+        color: #ffffff;
+        background-color: #181202;
+    }
