@@ -88,6 +88,46 @@
         margin-bottom: .5rem;
     }
 
+    #hx-limb-government-steps {
+        counter-reset: qwe;
+
+        display: flex;
+        gap: 2rem;
+
+        margin-top: 5rem;
+    }
+.hx-limb-government-steps-item {
+    flex: 1 0 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+    .hx-limb-government-steps-item::before {
+    counter-increment: qwe;
+    content: counter(qwe);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFfff;
+    font-weight: 500;
+
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 2rem 2rem .3rem 2rem;
+        rotate: -5deg;
+    background-color: #0099A0;
+    translate: -1rem -1.5rem;
+    z-index: -1;
+}
+.hx-limb-government-steps-item-header {
+    padding-left: 3rem;
+}
+.hx-limb-government-steps-item-text {
+
+}
 
 /*
 */
