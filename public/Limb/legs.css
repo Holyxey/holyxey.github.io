@@ -121,6 +121,8 @@
     background-color: #0099A0;
     translate: -1rem -1.5rem;
     z-index: -1;
+
+        animation: govcount 5s infinite ease-out;
 }
 .hx-limb-government-steps-item-header {
     padding-left: 3rem;
@@ -130,6 +132,7 @@
 }
 
     .hx-limb-government-doc {
+        margin-block: 3rem 0;
 }
 .hx-limb-government-doc-item {
     padding: 2rem;
@@ -147,6 +150,7 @@
     .hx-limb-government-doc-item > .h5 {
         margin-bottom: 2rem;
         text-align: left;
+        font-weight: 500;
     }
     .hx-limb-government-doc-item > .h6 {
         text-align: left;
@@ -164,12 +168,13 @@
         transform: translate(-1rem, -1rem);
     }
 
+
 /*
 */
-
-    .slick-arrow {
+    #slider-modules .slick-arrow {
         transform: translate(0, 25%);
     }
+
 
 /*
 */
@@ -199,7 +204,7 @@
     }
     @media screen and (max-width: 480px) {
         .hx-limb-mobis-tabs-item {
-            min-width: 50%;
+            min-width: 30%;
         }
         .hx-limb-mobis-block-item-column:first-child {
             position: unset;
@@ -208,6 +213,7 @@
             align-items: center;
         }
         .hx-limb-mobis-block-item-column img {
+            order: +1;
             max-width: calc(50% - 2rem);
             margin: 1rem;
         }
@@ -231,4 +237,13 @@
             /*text-align: center;*/
             padding: 0 3rem;
         }
+    }
+
+
+/*
+*/
+    @keyframes govcount {
+        from {rotate: -5deg; translate: -1rem -1.5rem;}
+        60% {rotate: 5deg; translate: -.6rem -1.8rem;}
+        to {rotate: -5deg; translate: -1rem -1.5rem;}
     }
