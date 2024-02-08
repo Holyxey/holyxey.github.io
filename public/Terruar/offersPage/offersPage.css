@@ -165,6 +165,7 @@ header li a {
         font-size: 3rem;
         font-weight: 500;
         z-index: 200;
+        margin-block: 2rem;
     }
     .p {
         font-family: Roboto, Helvetica, sans-serif;
