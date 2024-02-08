@@ -7,10 +7,6 @@
     src: url("https://static.tildacdn.com/tild3562-6530-4566-b861-613835653335/OpinionProExtended-L.woff");
 }
 
-body, html {
-    background-color: black;
-}
-
 .al-block {
     max-width: 1200px;
     margin: 0 auto;
@@ -84,7 +80,7 @@ body, html {
 
 /*
 */
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1280px) {
     .al-block {
         margin: 0 2rem;
     }
