@@ -1,0 +1,28 @@
+#kate-awards {
+    position: relative;
+
+    display: flex;
+    gap: 2rem;
+}
+    #kate-awards::before {
+        content: '';
+        left: 0;
+        top: 0;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 200;
+    }
+    .kate-awards-img {
+        flex: .7;
+        background: url("Kate.png"), linear-gradient(10deg, #000000, transparent 30%), linear-gradient(120deg, #000000 5px, transparent 20%);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        height: 30vh;
+    }
+    .kate-awards-text {
+        flex: 1.5;
+        padding: 1rem;
+    }
