@@ -19,7 +19,8 @@ html {
     position: relative;
 }
 ul {
-    margin-bottom: 0!important;
+    margin-bottom: 0;
+    padding-left: 0;
 }
 header li a {
     color: white!important;
