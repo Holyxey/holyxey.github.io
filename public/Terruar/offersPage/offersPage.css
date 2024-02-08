@@ -89,14 +89,16 @@ html {
         }
 
         #header-m {
-                                        display: none;
+            display: none;
             position: fixed;
             top: 7rem;
             right: 3.5rem;
             flex-direction: column;
             border-radius: 1rem;
+            width: 100%;
+            height: 100%;
 
-            z-index: 995595607309;
+            z-index: 995595000;
         }
             #header-m:before {
                 content: '';
@@ -132,6 +134,8 @@ html {
             background-color: #F8F3C8;
             border-radius: 2px;
             position: absolute;
+
+            transition: all .4s ease-out;
         }
             .open-menu-line:last-child {
                 translate: 0 5px;
@@ -142,6 +146,8 @@ html {
             #header-m ul {
                 flex-direction: column;
                 align-items: center;
+                right: 5rem;
+                top: -4rem;
             }
             #header-m li {
                 width: unset;
@@ -195,6 +201,8 @@ html {
         right: -4rem;
 
         z-index: 995595607309;
+
+        transition: all .3s ease-out;
     }
     #offers-social img {
         height: 1.5rem;
@@ -237,6 +245,7 @@ html {
     .page-offer-block-section-benefits {
         gap: 1rem;
         opacity: .8;
+        flex-wrap: wrap;
     }
     .page-offer-block-section-benefits li, .offer-price {
         height: unset;
@@ -262,6 +271,7 @@ html {
 .page-offer-block-section-second {
     margin-top: 2rem;
     align-items: center;
+    flex-wrap: wrap;
 }
     .whats-app {
         display: flex;
@@ -281,6 +291,7 @@ html {
         height: 1.5rem;
     }
 
+
 /*
 */
 @media screen and (max-width: 1300px) {
@@ -297,6 +308,12 @@ html {
         flex: 1;
     }
 }
+@media screen and (max-width: 1440px) {
+    #offers-social {
+        top: 6rem;
+        right: 2rem;
+    }
+}
 @media screen and (min-width: 1000px) {
     #header-m, .open-menu {
         display: none;
@@ -309,6 +326,16 @@ html {
     h1 {
         margin: 2rem auto;
         max-width: 80%;
+    }
+
+    #offers-social {
+        display: none;
+
+        flex-direction: column;
+        position: fixed;
+        right: 3.2rem;
+        left: auto;
+        top: 9rem;
     }
 }
 @media screen and (max-width: 800px) {
@@ -337,4 +364,64 @@ html {
         padding: 2rem 1rem 1rem 1rem;
     }
 
+    #offers-social {
+        right: 2.3rem;
+        left: auto;
+        top: 8rem;
+    }
+    #header-m ul {
+        flex-direction: column;
+        align-items: center;
+        right: 5rem;
+    }
 }
+@media screen and (max-width: 460px) {
+    #offers-social {
+        right: 0;
+        left: 0;
+        top: auto;
+        bottom: 2rem;
+        flex-direction: row;
+
+        justify-content: center;
+    }
+    #header-m {
+        top: auto;
+        left: auto;
+        right: auto;
+        bottom: auto;
+    }
+    #header-m ul {
+        position: absolute;
+
+        top: auto;
+        left: auto;
+        right: auto;
+        bottom: auto;
+
+        width: calc(100vw - 5rem);
+    }
+    .page-offer-block-section-second {
+        justify-content: center;
+    }
+}
+
+
+/*
+*/
+@keyframes offersMenuItems {
+    from {opacity: 0; transform: translate(0, -2rem)}
+    to {opacity: 1; transform: translate(0, 0)}
+}
+    .offersMenuItems {animation: offersMenuItems .4s ease-in-out forwards}
+
+@keyframes offersOpacity {
+    from {opacity: 0}
+    to {opacity: 1}
+}
+    .offersOpacity {animation: offersOpacity .4s ease-in-out forwards}
+@keyframes offersOpacityB {
+    from {opacity: 1}
+    to {opacity: 0}
+}
+    .offersOpacityB {animation: offersOpacityB .4s ease-in-out forwards}
