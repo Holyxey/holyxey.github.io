@@ -399,7 +399,7 @@ html {
         right: auto;
         bottom: auto;
 
-        width: calc(100vw - 5rem);
+        width: calc(100vw - 4rem);
     }
     .page-offer-block-section-second {
         justify-content: center;
