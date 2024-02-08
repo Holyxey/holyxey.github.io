@@ -18,6 +18,9 @@ html {
 * {
     position: relative;
 }
+ul {
+    margin-bottom: 0!important;
+}
     #page-offer {
         display: flex;
         flex-direction: column;
