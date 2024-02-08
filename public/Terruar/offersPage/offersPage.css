@@ -21,6 +21,10 @@ html {
 ul {
     margin-bottom: 0!important;
 }
+header li a {
+    color: white!important;
+}
+
     #page-offer {
         display: flex;
         flex-direction: column;
