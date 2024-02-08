@@ -25,8 +25,6 @@ function onScrick() {
         el.target = '_blank'
         el.style.textDecoration = 'none'
         el.style.color = bgcolor
-        el.style.bottom = '0'
-        el.style.position = 'absolute'
         document.body.append(el)
     } else {
         if (document.getElementById('hxPopuper') && onScrickCounter > 30) {
