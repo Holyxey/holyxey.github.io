@@ -235,7 +235,7 @@ header li a {
 .page-offer-block-section:first-child {
     content: '';
     /*background-image: url("https://holyxey.github.io/public/Terruar/specialOffers/rom.webp");*/
-    background-image: url("../specialOffers/reRom.webp");
+    background-image: url("https://holyxey.github.io/public/Terruar/specialOffers/reRom.webp");
     background-position: center bottom;
     background-size: cover;
     background-repeat: no-repeat;
