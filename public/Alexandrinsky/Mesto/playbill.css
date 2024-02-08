@@ -78,5 +78,53 @@ body, html {
 }
     .playbill-day-button:hover {
         color: #ffffff;
-        background-color: #181202;
+        background-color: transparent;
     }
+
+
+/*
+*/
+@media screen and (max-width: 1200px) {
+    .al-block {
+        margin: 0 2rem;
+    }
+}
+@media screen and (max-width: 800px) {
+    .playbill-h {
+        font-size: 40px;
+    }
+    .playbill-p {
+        font-size: 20px;
+    }
+    .playbill-day-button {
+        font-size: 15px;
+        min-width: fit-content;
+    }
+}
+@media screen and (max-width: 600px) {
+    .playbill-day {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .playbill-day-item:nth-child(1) {
+        flex: 1;
+    }
+    .playbill-day-item:nth-child(2) {
+        flex: 2;
+    }
+    .playbill-day-item:nth-child(3) {
+        min-width: 50%;
+    }
+}
+@media screen and (max-width: 480px) {
+    .playbill-h {
+        font-size: 35px;
+    }
+    .playbill-p {
+        font-size: 16px;
+    }
+
+    .playbill-day-item:nth-child(2) p:nth-child(2){
+        order: -1;
+    }
+}
