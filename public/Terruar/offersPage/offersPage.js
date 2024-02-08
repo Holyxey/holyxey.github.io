@@ -35,6 +35,8 @@ function offersShowMenu() {
     offersSocials.classList.add('offersOpacity')
     offersSocials.classList.remove('offersOpacityB')
 
+    document.body.style.overflow = 'hidden'
+
     offersOpened = true;
 
     for (let i = 0; i < offersMMenuItems.length; i++) {
@@ -50,6 +52,7 @@ function offersHideMenu() {
             offersMMenuItems[i].classList.remove('offersMenuItems')
         }, 50 * i)
     }
+    offersPopup.style.display = ''
 
     offersPopupButtonLines[0].style.translate = ''
 
@@ -60,6 +63,7 @@ function offersHideMenu() {
     offersSocials.classList.remove('offersOpacity')
 
     offersOpened = false;
+    document.body.style.overflow = ''
 }
 
 

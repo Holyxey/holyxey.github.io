@@ -404,6 +404,9 @@ html {
     .page-offer-block-section-second {
         justify-content: center;
     }
+    #page-offer {
+        padding: .5rem;
+    }
 }
 
 
