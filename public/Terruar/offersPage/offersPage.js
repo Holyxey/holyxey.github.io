@@ -4,6 +4,7 @@ let offersPopupButtonLines;
 let offersSocials;
 let offersMMenuItems;
 
+
 let offersOpened = false;
 
 function offersMenuLet() {
@@ -14,6 +15,9 @@ function offersMenuLet() {
     offersMMenuItems = document.getElementById('header-m').querySelectorAll('li')
 
     offersPopupButton.addEventListener('click', offersMenuClick)
+
+    let bodypaddingtop = parseInt(window.getComputedStyle(document.body).paddingTop);
+    document.body.style.minHeight = ((window.innerHeight - (bodypaddingtop * 2)) + 'px');
 }
 
 function offersMenuClick(el) {
