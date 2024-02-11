@@ -2,6 +2,7 @@
     box-shadow: 0 0 0 #F8F3C800;
     cursor: pointer;
     border: 1px solid #575541;
+    border-radius: .6rem;
 }
 .hx-special:hover {
     box-shadow: 0 0 .5rem #F8F3C840;
