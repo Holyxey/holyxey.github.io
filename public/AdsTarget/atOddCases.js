@@ -15,8 +15,7 @@ function oddCasesStart(el) {
         oddCaseDiv.classList.add('hx-at-case-img')
         oddCaseDiv.style.backgroundImage = 'url("https://static.tildacdn.com/tild6663-6639-4166-a462-316239353461/SVG_logo_1.svg")'
         oddCaseDiv.style.cssText += `
-        background-size: 15%;
-        filter: grayscale(50%);
+        background-size: 120%;
         opacity: .5;`
 
         let oddCaseA = document.createElement("a");
