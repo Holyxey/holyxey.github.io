@@ -24,7 +24,7 @@
     display: flex;
     justify-content: center;
 
-    cursor: default;
+    cursor: pointer;
 
     transition: all .3s ease-out, filter .2s ease-out, opacity .4s ease-out;
     filter: grayscale(100%) blur(0);
