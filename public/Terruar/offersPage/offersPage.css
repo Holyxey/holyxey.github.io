@@ -358,7 +358,7 @@ header li a {
     }
     #page-offer {
         margin: 0 1rem;
-        background-position: center -500px;
+        /*background-position: center -500px;*/
     }
     .open-menu {
         top: 2rem;
@@ -422,6 +422,9 @@ header li a {
     #page-offer {
         padding: .5rem;
         margin-inline: .5rem;
+        background-position: top;
+        background-size: 300%;
+        background-repeat: no-repeat;
     }
     .open-menu {
         right: 1.5rem;
