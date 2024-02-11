@@ -37,11 +37,8 @@ header li a {
         margin: 0 auto;
         padding: 1rem;
 
-        /*background-image: url("https://static.tildacdn.com/tild6436-6464-4933-a231-633331653566/KIR_5409.jpg");*/
-        /*background-image: url("https://holyxey.github.io/public/Terruar/specialOffers/reAct.webp");*/
-        background-image: url("https://holyxey.github.io/public/Terruar/specialOffers/rom1.jpg");
+        background-image: url("https://holyxey.github.io/public/Terruar/specialOffers/rom1.wepb");
         background-position: center -150rem;
-        /*background-position: center;*/
         background-size: cover;
         border-radius: 1rem;
         box-shadow: 0 4px 20px 0 #00000025;
