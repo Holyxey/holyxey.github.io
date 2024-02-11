@@ -37,10 +37,14 @@ header li a {
         margin: 0 auto;
         padding: 1rem;
 
-        background-image: url("https://static.tildacdn.com/tild6436-6464-4933-a231-633331653566/KIR_5409.jpg");
-        background-position: center;
+        /*background-image: url("https://static.tildacdn.com/tild6436-6464-4933-a231-633331653566/KIR_5409.jpg");*/
+        /*background-image: url("https://holyxey.github.io/public/Terruar/specialOffers/reAct.webp");*/
+        background-image: url("/holyxey.github.io/public/Terruar/specialOffers/rom1.jpg");
+        background-position: center -150rem;
+        /*background-position: center;*/
+        background-size: cover;
         border-radius: 1rem;
-        box-shadow: 0px 4px 20px 0px #00000025;
+        box-shadow: 0 4px 20px 0 #00000025;
         position: relative;
     }
     #page-offer:after {
@@ -234,9 +238,10 @@ header li a {
 }
 .page-offer-block-section:first-child {
     content: '';
-    /*background-image: url("https://holyxey.github.io/public/Terruar/specialOffers/rom.webp");*/
-    background-image: url("https://holyxey.github.io/public/Terruar/specialOffers/reRom.webp");
-    background-position: center bottom;
+    /*background-image: url("https://holyxey.github.io/public/Terruar/specialOffers/reRom.webp");*/
+    background-image: url("https://static.tildacdn.com/tild6436-6464-4933-a231-633331653566/KIR_5409.jpg");
+    /*background-position: center bottom;*/
+    background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     box-shadow: 0 4px 20px 0 #000000EA;
@@ -369,6 +374,7 @@ header li a {
     }
     .page-offer-block-section:first-child {
         min-height: 250px;
+        order: +1;
     }
     .page-offer-block-section:last-child {
         padding: 2rem 1rem 1rem 1rem;
@@ -409,13 +415,17 @@ header li a {
         right: auto;
         bottom: auto;
 
-        width: calc(100vw - 4rem);
+        width: calc(100vw - 3rem);
     }
     .page-offer-block-section-second {
         justify-content: center;
     }
     #page-offer {
         padding: .5rem;
+        margin-inline: .5rem;
+    }
+    .open-menu {
+        right: 1.5rem;
     }
 }
 
