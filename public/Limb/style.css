@@ -342,7 +342,7 @@ p, .p {
     justify-content: left;
     flex: 1;
     text-align: left;
-    align-items: flex-start;
+    align-items: center;
     padding: 1rem;
     border: 1px solid #0099A050;
     box-shadow: 0 0 5px #00000040 inset;
