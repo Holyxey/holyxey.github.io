@@ -370,10 +370,8 @@ h4, .h4 {
 
 @keyframes scrollShow {
     from {translate: 0 3rem;
-        rotate: 1deg;
         opacity: 0}
     to {translate: 0;
-        rotate: 0;
         opacity: 1}
 }
 .scrollShow {animation: scrollShow 1s ease-out forwards;}
