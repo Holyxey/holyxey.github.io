@@ -17,7 +17,7 @@ const checkVisibilityAndShow = () => {
     showThisScroll.forEach(el => {
         el.style.opacity = '0';
         if (atOnScroll(el, true)) {
-            setTimeout(() => {el.classList.add('scrollShow')}, 100 * tmt)
+            setTimeout(() => {el.classList.add('scrollShow')}, 150 * tmt)
             tmt++;
         } else
             el.style.opacity = '0';
