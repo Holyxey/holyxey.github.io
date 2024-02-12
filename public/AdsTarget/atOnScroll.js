@@ -19,7 +19,8 @@ const checkVisibilityAndShow = () => {
         if (atOnScroll(el, true)) {
             setTimeout(() => {el.classList.add('scrollShow')}, 100 * tmt)
             tmt++;
-        }
+        } else
+            el.style.opacity = '0';
     });
 };
 window.addEventListener('scroll', checkVisibilityAndShow);
