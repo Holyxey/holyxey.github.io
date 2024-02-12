@@ -487,6 +487,10 @@ p, .p {
     padding-top: 1rem;
 }
 
+    #slider-feet {
+        padding-top: 0;
+    }
+
     #hx-limb-liners {
 
     }
