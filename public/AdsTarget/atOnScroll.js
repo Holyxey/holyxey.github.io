@@ -19,8 +19,10 @@ const checkVisibilityAndShow = () => {
         if (atOnScroll(el, true)) {
             setTimeout(() => {el.classList.add('scrollShow')}, 150 * tmt)
             tmt++;
-        } else
+        } else {
+            el.classList.remove('scrollShow')
             el.style.opacity = '0';
+        }
     });
 };
 window.addEventListener('scroll', checkVisibilityAndShow);
