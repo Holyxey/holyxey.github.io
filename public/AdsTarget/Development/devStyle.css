@@ -374,4 +374,4 @@ h4, .h4 {
     to {translate: 0;
         opacity: 1}
 }
-.scrollShow {animation: scrollShow 1s ease-out forwards;}
+.scrollShow {animation: scrollShow .7s ease-out forwards;}
