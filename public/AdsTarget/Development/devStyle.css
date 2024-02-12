@@ -367,3 +367,13 @@ h4, .h4 {
     to {opacity: 0}
 }
 .hidepopup {animation: hidepopup .3s forwards;}
+
+@keyframes scrollShow {
+    from {translate: 0 5rem;
+        rotate: 2deg;
+        opacity: 0}
+    to {translate: 0;
+        rotate: 0;
+        opacity: 1}
+}
+.scrollShow {animation: scrollShow 1s forwards;}
