@@ -124,7 +124,7 @@ p, .p {
 
 #hx-limb-full-hero {
     background-color: #0099A0;
-    background-image: url('https://static.tildacdn.com/tild6666-3132-4038-b838-356466633035/Wireframe_-_7_2.jpg')
+    background-image: url('https://static.tildacdn.com/tild6666-3132-4038-b838-356466633035/Wireframe_-_7_2.jpg');
 }
 #hx-limb-hero {
     display: flex;
@@ -488,7 +488,7 @@ p, .p {
 }
 
     #slider-feet {
-        padding-top: 0;
+        padding: 1rem 0 0 0;
     }
 
     #hx-limb-liners {
@@ -672,7 +672,18 @@ p, .p {
     border-radius: .5rem;
 }
 
+    #hx-limb-feet {
 
+    }
+    #hx-limb-feet img {
+        height: 25vh;
+    }
+    #hx-limb-feet .hx-limb-slide {
+        background-color: #FFFfff;
+        box-shadow: 0 0 5px #00000000 inset;
+        border: 1px solid #0099A050;
+        /*margin: 0;*/
+    }
 
 /**/
 /**/
