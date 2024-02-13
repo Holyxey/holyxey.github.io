@@ -6,7 +6,6 @@
     flex-wrap: wrap;
     gap: var(--rem-b) var(--rem-e);
     justify-content: center;
-    padding-top: 1rem;
 }
 .hx-at-staff-person {
     flex: 1;
