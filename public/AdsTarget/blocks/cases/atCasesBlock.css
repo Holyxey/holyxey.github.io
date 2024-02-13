@@ -11,16 +11,3 @@
     padding: 5px;
     max-width: calc(100% - 10px);
 }
-.hx-at-case-category {
-    background-color: #FFFFFFE2;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    padding: var(--rem-a) var(--rem-b) var(--rem-aa) var(--rem-b);
-    border-radius: calc(var(--rem-aaa) - 2.5px);
-}
-
-@media screen and (max-width: 500px) {
-    .hx-at-case-category {
-        padding: var(--rem-aa) var(--rem-aa) calc(var(--rem-aa) - 2.5px) var(--rem-aa)
-    }
-}

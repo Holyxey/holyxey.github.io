@@ -285,6 +285,13 @@ h4, .h4 {
     width: unset;
     text-align: center;
 }
+.hx-at-case-category {
+    background-color: #FFFFFFE2;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    padding: var(--rem-a) var(--rem-b) var(--rem-aa) var(--rem-b);
+    border-radius: calc(var(--rem-aaa) - 2.5px);
+}
 
     #price {
         background-color: var(--c-bl-tr);

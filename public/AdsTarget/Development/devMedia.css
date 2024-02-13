@@ -57,6 +57,9 @@
     .hx-at-case-img {
         max-width: none;
     }
+    .hx-at-case-category {
+        padding: var(--rem-aa) var(--rem-aa) calc(var(--rem-aa) - 2.5px) var(--rem-aa)
+    }
 }
 
 @media screen and (max-width: 480px) {
