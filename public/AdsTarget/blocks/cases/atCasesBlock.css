@@ -1,61 +1,6 @@
-    #atStaffBlock {
-
-    }
-.hx-at-staff-block {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--rem-b) var(--rem-e);
-    justify-content: center;
+.hx-at-case-web {
+    min-width: 30%;
 }
-.hx-at-staff-person {
-    flex: 1;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--rem-aa);
-
-    min-width: 200px;
+.hx-at-case-img {
+    aspect-ratio: 1 / 1;
 }
-.hx-at-staff-img {
-    max-width: 100%;
-    max-height: 100%;
-    border-radius: 100%;
-    margin: 0 auto;
-}
-.hx-at-staff-name {
-    text-align: center;
-    font-weight: 500;
-}
-.hx-at-staff-position {
-    text-align: center;
-    font-weight: 300;
-}
-
-/*
-*/
-    @media screen and (max-width: 1280px) {
-        .hx-at-staff-block {
-            gap: var(--rem-b) var(--rem-c);
-        }
-    }
-    @media screen and (max-width: 800px) {
-        .hx-at-staff-block {
-            gap: var(--rem-b) var(--rem-c);
-        }
-        .hx-at-staff-person {
-            gap: var(--rem-aa);
-            min-width: 35%;
-        }
-    }
-    @media screen and (max-width: 500px) {
-        .hx-at-staff-block {
-            gap: var(--rem-b) var(--rem-b);
-        }
-        .hx-at-staff-name {
-            font-size: var(--rem-bb);
-        }
-        .hx-at-staff-position {
-            font-size: var(--rem-aa);
-        }
-    }

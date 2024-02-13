@@ -22,7 +22,7 @@ function oddCasesStart(el) {
         let oddCaseA = document.createElement("a");
         oddCaseA.classList.add('hx-at-btn-bl', 'hx-at-case-btn');
         oddCaseA.innerHTML = 'Получить консультацию'
-        oddCaseA.href = '#popup:ContactButton'
+        oddCaseA.href = '#popup:menu'
         oddCaseA.style.cssText +=
             `color: var(--c-wht)!important;
             background-color: var(--c-pk);
