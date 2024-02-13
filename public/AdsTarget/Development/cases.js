@@ -5,6 +5,10 @@ for (let i = 0; i < caseWeb.length; i++) {
 
 function caseWebClick(el) {
     let l = el.querySelector('a');
-    if (l && l.href)
-        window.open(l.href, '_blank');
+    if (l && l.href) {
+        if (!l.href.includes('adstarget'))
+            window.open(l.href, '_blank');
+        else
+            window.open(l.href, '_self');
+    }
 }
