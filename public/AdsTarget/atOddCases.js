@@ -5,6 +5,7 @@ function oddCasesStart(el) {
         let oddCaseLi = document.createElement("li");
         oddCaseLi.classList.add('hx-at-case-web')
         oddCaseLi.classList.add('hx-at-case-plag')
+        oddCaseLi.classList.add('showThisScroll')
         oddCaseLi.style.justifyContent = 'flex-end'
 
         let oddCaseP = document.createElement("p");
