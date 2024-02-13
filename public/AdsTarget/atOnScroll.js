@@ -11,6 +11,7 @@ const atOnScroll = (el, partiallyVisible = false) => {
 // atOnScroll(el, true);
 
 let showThisScroll = document.querySelectorAll('.showThisScroll')
+showThisScroll.forEach(el=>{el.style.opacity = '0'})
 
 const checkVisibilityAndShow = () => {
     let tmt = 2;
