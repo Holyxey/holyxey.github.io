@@ -1,0 +1,17 @@
+    body {
+        overflow: hidden;
+    }
+    #mainHeroImg {
+        position: absolute;
+        right: 5%;
+        bottom: -5%;
+
+        height: 550px;
+
+        z-index: 100;
+        transform: rotate(-100deg);
+        transition: all .3s ease-out;
+    }
+    #hero h1, #hero h2 {
+        max-width: 50%;
+    }
