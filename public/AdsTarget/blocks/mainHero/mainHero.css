@@ -1,17 +1,45 @@
     body {
-        overflow: hidden;
+        overflow-x: hidden;
     }
     #mainHeroImg {
         position: absolute;
-        right: 5%;
-        bottom: -5%;
+        pointer-events: none;
 
         height: 550px;
 
-        z-index: 100;
-        transform: rotate(-100deg);
-        transition: all .3s ease-out;
+        z-index: 10;
+        opacity: 0;
+
+        animation: showLogoHero 1.5s .5s ease-in-out forwards;
     }
     #hero h1, #hero h2 {
-        max-width: 50%;
+        max-width: 60%;
+    }
+    .hx-at-blk:not(#hero) {
+        padding-block: var(--rem-c)!important;
+    }
+
+/*
+*/
+    @keyframes showLogoHero {
+        from {
+            right: -2%;
+            bottom: 10%;
+            transform: rotate(-90deg);
+            opacity: 0;
+            filter: drop-shadow(0 0 10px #00000000);
+            -webkit-filter: drop-shadow(0 0 10px #00000000);
+        }
+        50% {
+            filter: drop-shadow(0 0 10px #00000000);
+            -webkit-filter: drop-shadow(0 0 10px #00000000);
+        }
+        to {
+            right: -5%;
+            bottom: -6%;
+            transform: rotate(-100deg);
+            opacity: 1;
+            filter: drop-shadow(0 0 10px #00000020);
+            -webkit-filter: drop-shadow(0 0 10px #00000020);
+        }
     }

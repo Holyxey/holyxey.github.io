@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="../../atHeader.css">
     <link rel="stylesheet" href="../../footer.css">
 
-    <link rel="stylesheet" href="mainHero.css">
+<!--    <link rel="stylesheet" href="mainHero.css">-->
 
 </head>
 
@@ -65,6 +65,53 @@
 </header>
 
 <!--Hero-->
+<style>
+    body {
+        overflow-x: hidden;
+    }
+    #mainHeroImg {
+        position: absolute;
+        pointer-events: none;
+
+        height: 550px;
+
+        z-index: 10;
+        opacity: 0;
+
+        animation: showLogoHero 1.5s .5s ease-in-out forwards;
+    }
+    #hero h1, #hero h2 {
+        max-width: 60%;
+    }
+    .hx-at-blk:not(#hero, #headerPC) {
+        padding-block: var(--rem-d)!important;
+    }
+
+    /*
+    */
+    @keyframes showLogoHero {
+        from {
+            right: -2%;
+            bottom: 10%;
+            transform: rotate(-90deg);
+            opacity: 0;
+            filter: drop-shadow(0 0 10px #00000000);
+            -webkit-filter: drop-shadow(0 0 10px #00000000);
+        }
+        50% {
+            filter: drop-shadow(0 0 10px #00000000);
+            -webkit-filter: drop-shadow(0 0 10px #00000000);
+        }
+        to {
+            right: -5%;
+            bottom: -6%;
+            transform: rotate(-100deg);
+            opacity: 1;
+            filter: drop-shadow(0 0 10px #00000020);
+            -webkit-filter: drop-shadow(0 0 10px #00000020);
+        }
+    }
+</style>
 <section class="hx-at-sct" id="hrsctn">
     <div class="hx-at-blk" id="hero">
         <div>
@@ -75,8 +122,18 @@
             <a href="#popup:menu" class="hx-at-btn-p" style="box-shadow: var(--shdw)">бесплатная консультация</a>
             <a href="#blockServices" class="hx-at-btn-p-tr" >наши услуги</a>
         </div>
+        <img id="mainHeroImg" src="https://static.tildacdn.com/tild6135-3866-4230-a666-313233633030/logoHero.svg" alt="AdsTarget Logo">
+
     </div>
-    <img id="mainHeroImg" src="https://static.tildacdn.com/tild6135-3866-4230-a666-313233633030/logoHero.svg" alt="AdsTarget Logo">
+</section>
+
+<section class="hx-at-sct" style="background-color: var(--c-bl-tr)">
+    <div class="hx-at-blk" style="padding-bottom: var(--rem-d); background-color: transparent">
+        <div>
+            <h3 class="h1">Наши кейсы</h3>
+            <p class="h4">Работы, которыми мы гордимся</p>
+        </div>
+    </div>
 </section>
 
 <!--Footer-->
