@@ -8,6 +8,6 @@ function hxCaseCounter() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    console.log('** Alpha 0.25')
+    console.log('** Alpha 0.35')
     hxCaseCounter()
 })
