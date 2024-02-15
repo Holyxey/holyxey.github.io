@@ -23,6 +23,7 @@
     padding: 0;
     position: relative;
     z-index: 1;
+    transition: all .3s ease-out;
 }
 ::selection {
     text-shadow: none;
@@ -181,7 +182,11 @@ header > * {
 }
     #backButton {
         height: 1.5rem;
-        margin-bottom: 2rem;
+    }
+    #back {
+        opacity: 0;
+        animation: back .5s 3s ease-out forwards;
+        margin-bottom: 0;
     }
 
 #hx-about {
@@ -195,6 +200,10 @@ header > * {
 @keyframes showOpacity {
     from {opacity: 0}
     to {opacity: 1}
+}
+@keyframes back {
+    from {opacity: 0;}
+    to {opacity: 1; margin-bottom: 2rem;}
 }
 
 
@@ -262,11 +271,11 @@ header > * {
         fill: var(--dark);
         height: 2rem;
     }
-        #backButton {
-            height: 1.5rem;
-            margin-bottom: unset;
-            /*margin-right: 2rem;*/
-        }
+
+    @keyframes back {
+        from {opacity: 0;}
+        to {opacity: 1; margin-bottom: unset; margin-right: 2rem;}
+    }
 }
 
 @media screen and (max-width: 1024px) {
