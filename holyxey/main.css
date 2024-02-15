@@ -170,15 +170,26 @@ header > * {
 .hx-header-socials {
     display: flex;
 }
+.hx-header-socials li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .hx-header-socials svg {
     fill: var(--dark);
     height: 2rem;
 }
+    #backButton {
+        height: 1.5rem;
+        margin-bottom: 2rem;
+    }
 
 #hx-about {
     display: none;
 }
 
+/*
+*/
 
 .showOpacity {animation: showOpacity 1s ease-out}
 @keyframes showOpacity {
@@ -251,6 +262,11 @@ header > * {
         fill: var(--dark);
         height: 2rem;
     }
+        #backButton {
+            height: 1.5rem;
+            margin-bottom: unset;
+            /*margin-right: 2rem;*/
+        }
 }
 
 @media screen and (max-width: 1024px) {
