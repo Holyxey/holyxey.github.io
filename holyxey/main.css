@@ -95,7 +95,7 @@ h3, .h3 {
 
     border-radius: var(--d) 0 0 0;
 
-    transition: all 1s ease-out;
+    transition: all .5s ease-out;
 }
 .hx-case-button {
     display: block;
@@ -125,6 +125,9 @@ h3, .h3 {
     display: flex;
     border-bottom: 1px solid var(--gray);
 }
+.hx-case-block:last-of-type {
+    border-bottom: none;
+}
 .hx-case-clmn {
     display: flex;
     flex-direction: column;
@@ -147,7 +150,7 @@ header {
 
     text-align: center;
 
-    border-right: 1px solid var(--gray);
+    /*border-right: 1px solid var(--gray);*/
     box-shadow: 0 0 10px #6e5e51;
 }
 header a{
@@ -190,8 +193,8 @@ header > * {
     .hx-section {
         margin-left: 12vw;
         max-width: 1000px;
+        padding-bottom: var(--d);
     }
-
 }
 
 @media screen and (max-width: 1300px) {
@@ -215,12 +218,8 @@ header > * {
         flex-direction: column;
         gap: var(--d);
     }
-    .hx-case-block:last-of-type {
-        border-bottom: none;
-    }
 
     header {
-        /*position: fixed;*/
         top: auto;
         bottom: 0;
         left: 0;
@@ -230,7 +229,7 @@ header > * {
         width: 100%;
 
         border-right: unset;
-        border-top: 1px solid var(--gray);
+        /*border-top: 1px solid var(--gray);*/
 
         z-index: 100;
         background-color: var(--light);
@@ -295,6 +294,7 @@ header > * {
     }
     body {
         padding-top: var(--aa);
+        padding-bottom: var(--b);
     }
 
     h1, .h1, h2, .h2 {
