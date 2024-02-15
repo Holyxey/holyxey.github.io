@@ -70,7 +70,6 @@ body, html {
 
     padding: 17px 30px 15px 30px;
     width: fit-content;
-    min-height: 45px;
     text-decoration: none;
 
     transition: all .2s ease-out;
