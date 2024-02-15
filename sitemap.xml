@@ -3,30 +3,58 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
     <url>
         <loc>https://holyxey.com/</loc>
-        <lastmod>2024-02-01</lastmod>
+        <lastmod>2024-02-15T19:36:48+01:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <xhtml:link
+                rel="alternate"
+                hreflang="ru"
+                href="https://holyxey.com/ru"/>
+        <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://holyxey.com"/>
+    </url>
+    <url>
+        <loc>https://holyxey.com/ru</loc>
+        <lastmod>2024-02-15T19:36:48+01:00</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
         <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://holyxey.com/"/>
+                href="https://holyxey.com"/>
         <xhtml:link
                 rel="alternate"
                 hreflang="ru"
                 href="https://holyxey.com/ru"/>
     </url>
     <url>
-        <loc>https://holyxey.com/ru</loc>
-        <lastmod>2024-02-01</lastmod>
+        <loc>https://holyxey.com/portfolio/</loc>
+        <lastmod>2024-02-15T19:36:48+01:00</lastmod>
         <changefreq>weekly</changefreq>
-        <priority>1.0</priority>
+        <priority>0.9</priority>
         <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://holyxey.com/"/>
+                href="https://holyxey.com/portfolio"/>
         <xhtml:link
                 rel="alternate"
                 hreflang="ru"
-                href="https://holyxey.com/ru"/>
+                href="https://holyxey.com/portfolio/ru"/>
+    </url>
+    <url>
+        <loc>https://holyxey.com/portfolio/ru</loc>
+        <lastmod>2024-02-15T19:36:48+01:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+        <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://holyxey.com/portfolio"/>
+        <xhtml:link
+                rel="alternate"
+                hreflang="ru"
+                href="https://holyxey.com/portfolio/ru"/>
     </url>
 </urlset>
