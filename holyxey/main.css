@@ -92,6 +92,8 @@ h3, .h3 {
 
     margin-right: var(--line-b);
     pointer-events: none;
+
+    border-radius: var(--d) 0 0 0;
 }
 .hx-case-button {
     display: block;
@@ -106,6 +108,7 @@ h3, .h3 {
     color: var(--light);
     text-align: center;
     margin-top: var(--c);
+    border-radius: 0 0 0 var(--d);
 
     max-width: fit-content;
 
