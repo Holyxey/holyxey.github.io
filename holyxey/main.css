@@ -94,6 +94,8 @@ h3, .h3 {
     pointer-events: none;
 
     border-radius: var(--d) 0 0 0;
+
+    transition: all 1s ease-out;
 }
 .hx-case-button {
     display: block;
@@ -146,7 +148,7 @@ header {
     text-align: center;
 
     border-right: 1px solid var(--gray);
-    box-shadow: 0 0 10px var(--gray);
+    box-shadow: 0 0 10px #6e5e51;
 }
 header a{
     color: var(--dark);
