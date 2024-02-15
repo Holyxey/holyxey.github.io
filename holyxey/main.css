@@ -108,6 +108,12 @@ h3, .h3 {
     margin-top: var(--c);
 
     max-width: fit-content;
+
+    transition: background-color .3s ease-out, color .2s ease-out;
+}
+.hx-case-button:hover {
+    background-color: var(--warning);
+    color: var(--dark);
 }
 
 .hx-case-block {
@@ -137,6 +143,7 @@ header {
     text-align: center;
 
     border-right: 1px solid var(--gray);
+    box-shadow: 0 0 10px var(--gray);
 }
 header a{
     color: var(--dark);
