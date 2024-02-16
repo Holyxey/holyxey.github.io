@@ -1,6 +1,3 @@
-body, html {
-    /*background: #EBE3DE;*/
-}
 .deviver {
     background-color: #454953;
     height: 1px;
@@ -35,7 +32,25 @@ body, html {
         color: #334E3E;
         font-weight: 600;
     }
-    
+
+.offerHeader {
+    background: #454953;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #EBE3DE;
+    font-size: 20px;
+    border-left: 5px inset #EBE3DE;
+    border-right: 5px inset #EBE3DE;
+    border-top: 5px inset #EBE3DE;
+    border-bottom: 5px inset #EBE3DE;
+}
+.offerImage {
+    width: 100%;
+    max-width: 100%;
+}
+.offerContent {
+
+}
     
 /*
 */
