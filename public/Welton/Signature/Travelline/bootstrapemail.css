@@ -16,13 +16,13 @@ body, html {
     border-radius: 5px;
     border: 10px inset #EBE3DE;
 }
-.header {
-    padding-top: 20px;
-    padding-bottom: 20px;
+.header, .body {
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 .logo {
     width: 100%;
-    max-width: 200px;
+    max-width: 300px;
     border-radius: 5px;
 }
     .address * {
