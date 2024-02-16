@@ -179,7 +179,7 @@ h4, .h4 {
     flex: 1;
     min-width: 20%;
 
-    border: 1px solid var(--c-gr-tr);
+    /*border: 1px solid var(--c-gr-tr);*/
     transition: all .4s ease-out;
     cursor: default;
     background-color: var(--c-wht);
