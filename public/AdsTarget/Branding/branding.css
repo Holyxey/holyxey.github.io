@@ -1,0 +1,17 @@
+    #hrsctn {
+        background-color: #F9D9CA;
+        background-image: url("imgs/4.webp");
+        background-size: contain;
+        background-position: center right;
+        background-repeat: no-repeat;
+
+
+        box-shadow: 0 10px 10px #00000010 inset, 0 -10px 10px #00000010 inset;
+    }
+    #hero {
+        background-color: transparent;
+    }
+    #hero h1, #hero h2 {
+        max-width: 50%;
+        color: #111111;
+    }
