@@ -5,7 +5,7 @@ for (let i = 0; i < caseWeb.length; i++) {
 
 function caseWebClick(el) {
     let l = el.querySelector('a');
-    if (l && l.href) {
+    if (l && l.href && !document.location.href.includes('videoproduction')) {
         if (!l.href.includes('adstarget'))
             window.open(l.href, '_blank');
         else
