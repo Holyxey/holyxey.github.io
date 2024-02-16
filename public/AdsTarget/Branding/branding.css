@@ -37,4 +37,7 @@
             background-size: cover;
             background-position: center;
         }
+        #hero h1, #hero h2 {
+            max-width: unset;
+        }
     }
