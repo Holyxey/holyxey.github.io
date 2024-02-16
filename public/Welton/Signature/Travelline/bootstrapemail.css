@@ -37,7 +37,7 @@
     background: #454953;
     padding-top: 10px;
     padding-bottom: 10px;
-    color: #EBE3DE;
+    color: #ffffff;
     font-size: 20px;
     border-left: 5px inset #EBE3DE;
     border-right: 5px inset #EBE3DE;
@@ -49,7 +49,54 @@
     max-width: 100%;
 }
 .offerContent {
+    margin: 0;
+    text-align: left;
+    font-size: 14px;
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+}
+.buttonDiv {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    /*padding-right: 20px;*/
 
+    text-align: right;
+}
+.button {
+    background: #334e3e;
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+
+    padding-top: 14px;
+    padding-right: 25px;
+    padding-bottom: 15px;
+    padding-left: 25px;
+
+    border-left: 2px inset #EBE3DE;
+    /*border-right: 2px inset #EBE3DE;*/
+    border-top: 2px inset #EBE3DE;
+    border-bottom: 5px inset #EBE3DE;
+}
+
+.footer {
+    border-left: 5px inset #EBE3DE;
+    border-right: 5px inset #EBE3DE;
+    border-top: 5px inset #EBE3DE;
+    border-bottom: 5px inset #EBE3DE;
+    padding: 10px;
+    background: #7F292D;
+}
+.unsubscribe {
+    text-decoration: none!important;
+    text-transform: uppercase;
+    color: #FFFfff;
 }
     
 /*
