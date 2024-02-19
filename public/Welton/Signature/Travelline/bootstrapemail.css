@@ -11,11 +11,20 @@
 .header, .body {
     margin-top: 20px;
     margin-bottom: 20px;
+    background: #ffffff;
 }
 .logo {
-    width: 100%;
-    max-width: 300px;
+    flex: 1;
+    max-width: 150px;
     border-radius: 5px;
+}
+.address {
+    flex: 3;
+    font-size: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
     .address * {
         text-align: center;
@@ -25,7 +34,7 @@
     }
     .address a {
         color: #334E3E;
-        font-weight: 600;
+        font-weight: 200;
     }
 
 .offerHeader {
@@ -44,18 +53,18 @@
     max-width: 100%;
 }
 .offerContent {
-    margin: 0;
     text-align: left;
     font-size: 14px;
-    padding-top: 10px;
-    padding-right: 20px;
-    padding-bottom: 10px;
-    padding-left: 20px;
+    margin-top: 15px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    margin-left: 20px;
 }
 .buttonDiv {
     padding-top: 20px;
     padding-bottom: 40px;
     padding-left: 20px;
+    padding-right: 20px;
 
     text-align: right;
 }
@@ -65,18 +74,16 @@
     text-decoration: none;
     text-transform: uppercase;
 
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
+    border-radius: 10px;
 
     padding-top: 14px;
     padding-right: 25px;
     padding-bottom: 15px;
     padding-left: 25px;
 
-    border-left: 2px inset #EBE3DE;
-    /*border-right: 2px inset #EBE3DE;*/
-    border-top: 2px inset #EBE3DE;
-    border-bottom: 5px inset #EBE3DE;
+    font-size: 15px;
+
+    border: 2px inset #EBE3DE;
 }
 
 .footer {
@@ -88,4 +95,21 @@
     text-decoration: none!important;
     text-transform: uppercase;
     color: #FFFfff;
+}
+
+.details {
+    width: calc(100% - 20px);
+    margin-inline: 10px;
+    text-align: left;
+    border-radius: 3px;
+
+    font-size: 14px;
+}
+.details .row {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-left: 10px;
+    margin-top: 10px;
+    border: 1px solid #334e3e;
+    border-radius: 3px;
 }

@@ -1,0 +1,43 @@
+<style>
+    @font-face {
+        font-family: 'Vetrino';
+        src: url("https://static.tildacdn.com/tild3633-6330-4661-a561-326462393931/Vetrino.woff");
+    }
+    @font-face {
+        font-family: 'Opinion Pro';
+        src: url("https://static.tildacdn.com/tild3562-6530-4566-b861-613835653335/OpinionProExtended-L.woff");
+    }
+    .pg {
+        position: absolute;
+        right: 1rem;
+        top: 0;
+        margin: 0;
+        padding: 0;
+        max-width: 1200px;
+
+        pointer-events: none;
+        opacity: 0;
+
+        font-family: Vetrino, sans-serif;
+        font-size: 2rem;
+        color: #ffca3a;
+
+        animation: pg 1s 1.5s ease-in-out forwards;
+    }
+    @keyframes pg {
+        from {transform: rotate(10deg) scale(.5);}
+        to {opacity: 1; right: 1rem; top: 1rem}
+    }
+    @media screen and (max-width: 640px) {
+        .pg {
+            font-size: 1.5rem;
+        }
+    }
+</style>
+<html>
+    <body style="background: black">
+    <div class="pg">
+        12+
+    </div>
+    </body>
+</html>

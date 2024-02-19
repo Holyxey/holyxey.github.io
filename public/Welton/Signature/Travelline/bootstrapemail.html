@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" style="background: #EBE3DE!important; margin: 0; padding: 0;">
+<html lang="ru" style="margin: 0!important; padding: 0!important;">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport">
@@ -9,20 +9,40 @@
     <link rel="stylesheet" href="bootstrapemail.css">
 
 </head>
-<body style="background: #EBE3DE!important; margin: 0; padding: 0;">
+<body style="margin: 0!important; padding: 0!important;">
 
 <div class="table">
     <div class="header">
-        <img class="logo" src="https://holyxey.github.io/public/Welton/Signature/Travelline/newLogo.png" alt="Логотип">
-<!--        <div class="deviver"></div>-->
+        <div>
+            <img class="logo" src="https://holyxey.github.io/public/Welton/Signature/Travelline/w_logoTravel.jpg" alt="Логотип">
+        </div>
         <div class="address">
-            <span>197110, Россия, Санкт-Петербург
-                <br>ул.Малая Разночинная 11, строение 1</span>
-            <div>
-                <br>
-                <a href="tel:+78123465555">+7 812 346 55 55</a></div>
-            <div>
-                <a href="tel:+79990354193">+7 999 035 41 93</a></div>
+            <div><br><a href="https://yandex.ru/maps/-/CDBHn2n2" target="_blank">197110, Россия, Санкт-Петербург
+                <br>ул.Малая Разночинная 11, строение 1</a>
+                <div><br><a href="tel:+78123465555">+7 812 346 55 55</a><br>
+                    <a href="tel:+79990354193">+7 999 035 41 93</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="body">
+        <div class="offerHeader" style="background: #334e3e">Здравствуйте, ##FirstName## ##MiddleName##!</div>
+        <div class="offerContent">
+            Вы забронировали номер в Welton Club hotel & Apartments.
+            <br>До даты Вашего заезда осталось 3 дня <i>(дата заселения - ##CheckInDate##)</i>, мы любезно просим Вас подтвердить бронирование <a href="mailto:##HotelEmail##">ответным письмом</a> и уточнить примерное время прибытия в отель.
+        </div>
+        <div class="offerContent" style="padding-top: 10px">
+            <b>Детали бронирования:</b>
+        </div>
+        <div class="details">
+            <div class="row">Заезд: ##CheckInTime##</div>
+            <div class="row">Выезд: ##CheckOutTime##</div>
+        </div>
+    </div>
+    <div class="body" style="border-top: 5px inset #EBE3DE;">
+        <div class="offerContent" style="font-size: 15px">
+            Для вашего комфортного пребывания в Welton Club Hotel & Apartments рады предложить дополнительные услуги отеля:
         </div>
     </div>
     <div class="body">
