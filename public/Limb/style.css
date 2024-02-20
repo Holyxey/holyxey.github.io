@@ -125,6 +125,7 @@ p, .p {
 #hx-limb-full-hero {
     background-color: #0099A0;
     background-image: url('https://static.tildacdn.com/tild6666-3132-4038-b838-356466633035/Wireframe_-_7_2.jpg');
+    position: relative;
 }
 #hx-limb-hero {
     display: flex;
@@ -162,6 +163,10 @@ p, .p {
     color: #2f2b2a;
     font-weight: 500;
     text-transform: uppercase;
+}
+
+#herovideo {
+
 }
 
 .hx-limb-tabs {

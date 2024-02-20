@@ -1,6 +1,37 @@
     #hx-limb-full-hero {
-    background-color: #0099A0;
-}
+        background-color: #0099A0;
+        background-image: none;
+        overflow: hidden;
+    }
+    #herovideo {
+        position: absolute;
+        right: 0;
+        top: 0;
+
+        width: auto;
+        height: 100%;
+        aspect-ratio: 16 / 9;
+        border: 0;
+
+        pointer-events: none;
+        z-index: -2;
+        opacity: .7;
+    }
+    #hx-limb-full-hero::before {
+        content: '';
+        position: fixed;
+        right: 5px;
+        top: 0;
+        height: 100%;
+        width: auto;
+        aspect-ratio: 16 / 9;
+
+        background: linear-gradient(100deg, #0099A0 15%, #0099A080 30%, transparent 45%);
+        z-index: 0;
+    }
+    #hx-limb-hero {
+        z-index: 1;
+    }
 .hx-limb-tabs {
     background-color: #ffffff;
 }
@@ -236,6 +267,10 @@
         .hx-limb-government-steps-item-header {
             /*text-align: center;*/
             padding: 0 3rem;
+        }
+
+        #herovideo {
+            display: none;
         }
     }
 
