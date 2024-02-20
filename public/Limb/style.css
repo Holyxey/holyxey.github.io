@@ -56,6 +56,64 @@ p, .p {
     font-size: .9rem;
 }
 
+header {
+    border-bottom: #0099A0 1px solid;
+    z-index: 100;
+    position: sticky;
+    top: 0;
+    background: #ffffff;
+}
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+#headerLogo {
+    max-width: 100px;
+}
+#headerMenu {
+    display: flex;
+    position: relative;
+    list-style: none;
+    gap: 20px;
+    text-transform: uppercase;
+}
+#headerMenu > * {
+    cursor: pointer;
+}
+#headerPhones {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+}
+#headerPhones > * {
+    font-weight: 600;
+    color: #0099A0!important;
+    text-decoration: none;
+}
+    .headerAbout, .headerServices{
+        position: absolute;
+        list-style: none;
+
+        top: 30px;
+        left: -20px;
+        height: 10px;
+
+        display: none;
+        flex-direction: column;
+        gap: 15px;
+        background: #FFFfff;
+        padding: 20px;
+        border-radius: .5rem;
+        border: 1px solid #0099A0;
+
+        opacity: 0;
+        transition: all .5s ease-out;
+    }
+
 .orange-button {
     width: fit-content;
     padding: 1.3rem 3rem;
@@ -165,10 +223,6 @@ p, .p {
     text-transform: uppercase;
 }
 
-#herovideo {
-
-}
-
 .hx-limb-tabs {
     display: flex;
     flex-wrap: wrap;
@@ -204,6 +258,13 @@ p, .p {
     background-color: #0099A0;
     color: #ffffff;
     border-radius: .3rem;
+}
+.holyxey {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    transform: translateX(100%);
 }
 
 .hx-limb-tab-in {

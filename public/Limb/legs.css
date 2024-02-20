@@ -14,8 +14,7 @@
         border: 0;
 
         pointer-events: none;
-        z-index: -2;
-        opacity: .7;
+        z-index: 3;
     }
     #hx-limb-full-hero::before {
         content: '';
@@ -26,11 +25,11 @@
         width: auto;
         aspect-ratio: 16 / 9;
 
-        background: linear-gradient(100deg, #0099A0 15%, #0099A080 30%, transparent 45%);
-        z-index: 0;
+        background: linear-gradient(100deg, #0099A0 25%, #0099A080 50%, transparent 65%);
+        z-index: 4;
     }
     #hx-limb-hero {
-        z-index: 1;
+        z-index: 5;
     }
 .hx-limb-tabs {
     background-color: #ffffff;
