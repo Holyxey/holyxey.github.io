@@ -27,3 +27,4 @@
         document.addEventListener("click", el.remove())
         document.documentElement.style.overflow = ''
     }
+    setTimeout(reload(), 2500)
