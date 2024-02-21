@@ -20,7 +20,10 @@
         createPopupImg.src = imageUrl;
         document.body.append(createPopupDiv)
         createPopupDiv.append(createPopupImg)
+
+        document.documentElement.style.overflow = 'hidden'
     }
     function phClosePopup(el) {
         document.addEventListener("click", el.remove())
+        document.documentElement.style.overflow = ''
     }
