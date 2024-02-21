@@ -835,6 +835,7 @@ header {
     border-radius: 1rem;
     margin-inline: 1rem;
     cursor: pointer;
+    border: 1px solid #0099A090;
 }
 .reviewShortsEmbedDiv {
     position: fixed;
@@ -849,6 +850,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 
     z-index: 995595607309;
 }

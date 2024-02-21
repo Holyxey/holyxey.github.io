@@ -13,9 +13,12 @@ function reviewOpen(el) {
     document.body.append(reviewCreate)
     reviewCreate.append(reviewIframe)
     reviewCreate.setAttribute('onclick', 'reviewClose(this)')
+
+    document.documentElement.style.overflow = 'hidden'
 }
 function reviewClose(el) {
     el.remove();
+    document.documentElement.style.overflow = ''
 }
 
 document.addEventListener("DOMContentLoaded", function (){
