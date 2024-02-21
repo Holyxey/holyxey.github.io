@@ -193,9 +193,34 @@ header > * {
     display: none;
 }
 
+
 /*
 */
+#loader {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: var(--light);
+    z-index: 995595609309;
+    transition: all 0s linear;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#loader svg {
+    animation: loader 2s infinite linear;
+}
+@keyframes loader {
+    from {rotate: 0deg}
+    50% {rotate: 180deg; scale: .8}
+    to {rotate: 360deg}
+}
+
+
+/*
+*/
 .showOpacity {animation: showOpacity 1s ease-out}
 @keyframes showOpacity {
     from {opacity: 0}
