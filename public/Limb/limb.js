@@ -274,7 +274,8 @@ function reviewOpen(el) {
     let reviewIframe = document.createElement('iframe')
     let dataembed = el.getAttribute('dataEmbed')
     reviewIframe.classList.add('reviewShortsEmbed')
-    reviewIframe.src = ('https://www.youtube.com/embed/' + dataembed + '?playsinline=1&autoplay=1&muted=1')
+    // reviewIframe.src = ('https://www.youtube.com/embed/' + dataembed + '?playsinline=1&autoplay=1&muted=1')
+    reviewIframe.src = ('https://vk.com/video_ext.php?' + dataembed + '&autoplay=1&muted=0')
     reviewIframe.frameBorder = false;
     reviewIframe.title = 'YouTube video player'
     reviewIframe.allowFullscreen = true;

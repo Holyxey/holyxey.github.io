@@ -58,7 +58,7 @@ p, .p {
 
 header {
     border-bottom: #0099A0 1px solid;
-    z-index: 100;
+    z-index: 995595607309;
     position: sticky;
     top: 0;
     background: #ffffff;
@@ -836,6 +836,10 @@ header {
     margin-inline: 1rem;
     cursor: pointer;
     border: 1px solid #0099A090;
+    transition: scale .3s ease-out;
+}
+.reviewShortsPreview:hover {
+    scale: 0.98;
 }
 .reviewShortsEmbedDiv {
     position: fixed;
