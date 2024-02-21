@@ -830,14 +830,34 @@ header {
 }
 
 /**/
-.reviewShorts {
-    display: block;
-    height: 300px;
+.reviewShortsPreview {
     aspect-ratio: 9 / 16;
     border-radius: 1rem;
-
     margin-inline: 1rem;
+    cursor: pointer;
 }
+.reviewShortsEmbedDiv {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+
+    background: #00000080;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 995595607309;
+}
+.reviewShortsEmbed {
+    height: calc(100% - 4rem);
+    aspect-ratio: 9 / 16;
+    border-radius: 1rem;
+}
+
 
 /**/
 @keyframes anishow {
