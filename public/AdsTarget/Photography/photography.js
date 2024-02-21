@@ -2,14 +2,14 @@
     let phCaseItem = document.getElementsByClassName('hx-at-photo-case-item')
     for (let i = 0; i < phCaseItem.length; i++) {
         phCaseItem[i].classList.add('case_' + (i + 1))
-        phCaseItem[i].style.cssText += ('background-image: url("imgs/' + (i + 1) + '.webp")')
+        phCaseItem[i].style.cssText += ('background-image: url("https://holyxey.github.io/public/AdsTarget/Photography/imgs/' + (i + 1) + '.webp")')
         phCaseItem[i].setAttribute('onclick', 'phCaseClick(this)')
     }
 
 // CASES POPUP ==========
     function phCaseClick(el) {
         let image = el.style.backgroundImage;
-        let imageUrl = image.slice(5, -3);
+        let imageUrl = image.slice(5, -2);
         let createPopupImg = document.createElement('img')
         let createPopupDiv = document.createElement('div')
 
