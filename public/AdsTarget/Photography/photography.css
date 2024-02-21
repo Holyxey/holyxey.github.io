@@ -49,6 +49,8 @@ body, html {
     background-color: #5ED7CF;
     background-repeat: no-repeat;
 
+    cursor: pointer;
+
     transition: all .5s ease-out;
 }
 
@@ -258,7 +260,7 @@ body, html {
     }
     .case_3 {
         grid-column: span 4;
-        grid-row: span 3;
+        grid-row: span 2;
     }
     .case_4 {
         grid-row: span 2;
@@ -267,6 +269,38 @@ body, html {
         border-radius: 0 0 var(--rem-aa) var(--rem-aa);
     }
     .hx-at-photo-cases > .hx-at-btn-p {
-        grid-column: span 9;
+        display: flex;
+        align-items: center;
+        grid-column: span 4;
+        grid-row: span 1;
+        align-self: stretch;
     }
+}
+
+
+/*
+*/
+.hx-at-photo-popup-div {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100vw;
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #22222260;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 995595607309;
+}
+.hx-at-photo-popup {
+    border-radius: var(--rem-aa);
+
+    max-width: calc(100vw - 4rem);
+    max-height: calc(100vh - 4rem);
+
+    animation: showpopup .7s ease-out forwards
 }
