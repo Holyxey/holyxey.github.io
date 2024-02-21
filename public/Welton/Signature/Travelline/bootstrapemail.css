@@ -14,28 +14,30 @@
     background: #ffffff;
 }
 .logo {
-    flex: 1;
     max-width: 150px;
     border-radius: 5px;
 }
 .address {
-    flex: 3;
     font-size: 12px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    min-width: 100%;
 }
     .address * {
         text-align: center;
         text-decoration: none;
         color: #454953;
-        padding-block: 2px;
+        padding-inline: 12px;
     }
     .address a {
         color: #334E3E;
-        font-weight: 200;
     }
+.headerPhone {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px 10px 0 10px;
+    border: 1px solid #334e3e;
+    border-radius: 3px;
+    font-weight: 8001!important;
+}
 
 .offerHeader {
     background: #454953;
@@ -98,18 +100,23 @@
 }
 
 .details {
-    width: calc(100% - 20px);
-    margin-inline: 10px;
-    text-align: left;
-    border-radius: 3px;
-
     font-size: 14px;
+    text-align: left;
+    padding-left: 10px;
+    padding-right: 10px;
 }
-.details .row {
-    display: inline-block;
-    padding: 10px 20px;
-    margin-left: 10px;
+.row {
+    padding: 10px;
+    border-radius: 3px;
     margin-top: 10px;
     border: 1px solid #334e3e;
-    border-radius: 3px;
+}
+
+.warning {
+    margin-block: 20px;
+    padding: 5px 15px;
+    border-left: 5px solid #7F292D;
+    border-right: 5px solid #7F292D;
+    border-radius: 5px;
+    background: #dce8e2;
 }

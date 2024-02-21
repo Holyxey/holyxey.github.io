@@ -8,6 +8,9 @@
 
     <link rel="stylesheet" href="bootstrapemail.css">
 
+    <style>
+
+    </style>
 </head>
 <body style="margin: 0!important; padding: 0!important;">
 
@@ -16,28 +19,24 @@
         <div>
             <img class="logo" src="https://holyxey.github.io/public/Welton/Signature/Travelline/w_logoTravel.jpg" alt="Логотип">
         </div>
+        <div class="address" style="padding-top: 10px">
+            <a href="https://yandex.ru/maps/-/CDBHn2n2" target="_blank">197110, Россия, Санкт-Петербург
+            <br>ул.Малая Разночинная 11, строение 1</a>
+        </div>
         <div class="address">
-            <div><br><a href="https://yandex.ru/maps/-/CDBHn2n2" target="_blank">197110, Россия, Санкт-Петербург
-                <br>ул.Малая Разночинная 11, строение 1</a>
-                <div><br><a href="tel:+78123465555">+7 812 346 55 55</a><br>
-                    <a href="tel:+79990354193">+7 999 035 41 93</a>
-                </div>
-            </div>
-
+            <a class="headerPhone" href="tel:+78123465555">+7 812 346 55 55</a>
+            <a class="headerPhone" href="tel:+79990354193">+7 999 035 41 93</a>
         </div>
     </div>
     <div class="body">
         <div class="offerHeader" style="background: #334e3e">Здравствуйте, ##FirstName## ##MiddleName##!</div>
         <div class="offerContent">
             Вы забронировали номер в Welton Club hotel & Apartments.
-            <br>До даты Вашего заезда осталось 3 дня <i>(дата заселения - ##CheckInDate##)</i>, мы любезно просим Вас подтвердить бронирование <a href="mailto:##HotelEmail##">ответным письмом</a> и уточнить примерное время прибытия в отель.
-        </div>
-        <div class="offerContent" style="padding-top: 10px">
-            <b>Детали бронирования:</b>
+            <br><p class="warning">До даты Вашего заезда осталось 3&nbsp;дня, мы любезно просим Вас подтвердить бронирование&nbsp;<a href="mailto:##HotelEmail##">ответным письмом</a>&nbsp;и&nbsp;уточнить примерное время прибытия в&nbsp;отель.</p>
         </div>
         <div class="details">
-            <div class="row">Заезд: ##CheckInTime##</div>
-            <div class="row">Выезд: ##CheckOutTime##</div>
+            <div class="row">##BookingDetails##</div>
+            <div class="row">##CancellationRules##</div>
         </div>
     </div>
     <div class="body" style="border-top: 5px inset #EBE3DE;">
