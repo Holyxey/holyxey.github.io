@@ -1,5 +1,18 @@
 #hrsctn {
-    background: url("casesImgs/altai.webp") no-repeat center / cover;
+    background: url("casesImgs/altai.webp") no-repeat center left / cover;
+    z-index: 1;
+}
+#hrsctn:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    background: #00000050;
 }
 #hero {
     background: none;
