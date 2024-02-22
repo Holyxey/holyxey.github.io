@@ -5,6 +5,7 @@ body {
     margin: 0;
     padding: 0;
     position: relative;
+    z-index: 1;
 }
 .hx-limb-section {
     display: flex;
@@ -130,7 +131,7 @@ header {
     font-weight: 500;
     text-decoration: none;
     text-transform: uppercase;
-    color: #fafafa;
+    color: #fafafa!important;
 
     background-color: #ff5b00;
 
@@ -145,7 +146,7 @@ header {
     font-weight: 500;
     text-decoration: none;
     text-transform: uppercase;
-    color: #fafafa;
+    color: #fafafa!important;
 
     background-color: #ff5b00;
     border: 1px solid #ff5b00;
@@ -154,7 +155,7 @@ header {
 }
 .orange-button:hover, .orange-button-woshdw:hover {
     background-color: #FFFfff;
-    color: #ff5b00;
+    color: #ff5b00!important;
     border-color: #ff5b00;
     box-shadow: unset;
 }
@@ -171,7 +172,7 @@ header {
     padding: 2rem;
     border-radius: 2rem;
 
-    z-index: -1;
+    z-index: 0;
 }
 .hx-limb-block {
     display: flex;
@@ -393,6 +394,7 @@ header {
  }
 .hx-limb-structure-block {
     display: flex;
+    z-index: 1;
 }
 .hx-limb-structure-block-info {
     display: flex;
