@@ -41,24 +41,34 @@ function allCasesSchema() {
 //
 function allCasesFilters() {
     let categories = document.querySelectorAll('button[active]')
-    categories.forEach((el)=> allCasesCheckActive(el))
-}
-function allCasesCheckActive (el){
-    if (el) {
-        el.addEventListener('click', function (){
-            switch (el.getAttribute('active')) {
-                case ('false'):
-                    el.setAttribute('active', 'true')
-                    el.style.cssText += "color: var(--c-pk)!important; box-shadow: 0 0 5px #00000050; border-color: var(--c-pk)"
-                    break
-                case ('true'):
-                    el.setAttribute('active', 'false')
-                    el.style.cssText -= ""
-                    break
+    categories.forEach(function (el){
+            if (el) {
+                el.addEventListener('click', function (){
+                    switch (el.getAttribute('active')) {
+                        case ('false'):
+                            el.setAttribute('active', 'true')
+                            el.style.cssText += "color: var(--c-pk)!important; box-shadow: 0 0 1px #00000090; border-color: var(--c-pk)"
+                            break
+                        case ('true'):
+                            el.setAttribute('active', 'false')
+                            el.style.cssText -= ""
+                            break
+                        case ('all'):
+                            categories.forEach((el)=> {
+                                if (el.getAttribute('active') === 'true') {
+                                    el.setAttribute('active', 'false')
+                                    el.style.cssText -= ""
+                                }
+                            })
+                            break
+                    }
+                })
             }
-        })
-    }
+        }
+
+    )
 }
+
 
 
 
