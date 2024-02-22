@@ -23,6 +23,10 @@
 
 }
 
+.newCover {
+    background-position: top center!important;
+}
+
 /**/
 @media screen and (min-width: 1100px) {
     .hx-at-allcases-item {
