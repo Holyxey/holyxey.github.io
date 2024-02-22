@@ -37,41 +37,46 @@ function allCasesSchema() {
 }
 
 
-// =================== FILTER BUTTONS
+// ========================= FILTERS
 //
-function allCasesFilters() {
-    let categories = document.querySelectorAll('button[active]')
-    categories.forEach(function (el){
-            if (el) {
-                el.addEventListener('click', function (){
-                        switch (el.getAttribute('active')) {
-                            case ('false'):
-                                el.setAttribute('active', 'true')
-                                el.style.cssText += "color: var(--c-pk)!important; box-shadow: 0 0 1px #00000090; border-color: var(--c-pk)"
-                                break
-                            case ('true'):
-                                el.setAttribute('active', 'false')
-                                el.style.cssText -= ""
-                                break
-                            case ('all'):
-                                categories.forEach((el)=> {
-                                    if (el.getAttribute('active') === 'true') {
-                                        el.setAttribute('active', 'false')
-                                        el.style.cssText -= ""
-                                    }
-                                })
-                                break
-                        }
-                    // allCasesCheck(el)
+function caseFilterStart() {
+    let caseButtons = document.querySelectorAll('button[category]')
+    caseButtons.forEach(function (el) {
+        el.addEventListener('click', function () {
+            let cat = el.getAttribute('category')
+            if (cat !== 'all') {
+                caseButtons.forEach(function (el){el.classList.remove('caseActiveFilter')})
+                el.classList.add('caseActiveFilter')
+                console.log(cat)
+
+                let showCases = document.querySelectorAll('li[category]')
+                showCases.forEach(function (el) {
+                    if (el.getAttribute('category') === cat) {
+                        el.style.display = ''
+                    } else {
+                        el.style.display = 'none'
+                    }
                 })
+                window.location = '#cases'
+                window.scrollBy(0, 1)
+            } else {
+                caseButtons.forEach(function (el) {
+                    el.classList.remove('caseActiveFilter')
+                })
+                let showCases = document.querySelectorAll('li[category]')
+                showCases.forEach(function (el) {
+                    el.style.display = ''
+                })
+                el.classList.add('caseActiveFilter')
+                window.location = '#cases'
+                window.scrollBy(0, 1)
             }
+        })
     })
 }
-// function allCasesCheck(el) {}
 
 
-
-// =================== DOM LOADED
+// ====================== DOM LOADED
 //
 document.addEventListener("DOMContentLoaded", allCasesSchema)
-document.addEventListener("DOMContentLoaded", allCasesFilters)
+document.addEventListener("DOMContentLoaded", caseFilterStart)
