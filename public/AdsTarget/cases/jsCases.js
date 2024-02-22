@@ -37,6 +37,33 @@ function allCasesSchema() {
 }
 
 
+// =================== FILTERS
+//
+function allCasesFilters() {
+    let categories = document.querySelectorAll('button[active]')
+    categories.forEach((el)=> allCasesCheckActive(el))
+}
+function allCasesCheckActive (el){
+    if (el) {
+        el.addEventListener('click', function (){
+            switch (el.getAttribute('active')) {
+                case ('false'):
+                    el.setAttribute('active', 'true')
+                    el.style.cssText += "color: var(--c-pk)!important; box-shadow: 0 0 5px #00000050; border-color: var(--c-pk)"
+                    break
+                case ('true'):
+                    el.setAttribute('active', 'false')
+                    el.style.cssText -= ""
+                    break
+            }
+        })
+    }
+}
+
+
+
+
 // =================== DOM LOADED
 //
 document.addEventListener("DOMContentLoaded", allCasesSchema)
+document.addEventListener("DOMContentLoaded", allCasesFilters)
