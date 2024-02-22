@@ -1,63 +1,120 @@
-<link href="https://fonts.cdnfonts.com/css/geometria" rel="stylesheet">
-<!--<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">-->
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Все кейсы | AdsTarget</title>
 
-<link rel="stylesheet" href="https://holyxey.github.io/public/AdsTarget/holyfilters2/styleHolyFilter2.css">
-<link rel="stylesheet" href="https://holyxey.github.io/public/AdsTarget/holyfilters2/keyHolyFilter2.css">
-<link rel="stylesheet" href="styleCases.css">
+    <link href="https://fonts.cdnfonts.com/css/geometria" rel="stylesheet">
 
-<div class="h_at_filterButtonsBlock">
-    <div id="h_all" class="filter_active">все категории</div>
-    <div class="filter_button">Таргетированная реклама</div>
-    <div class="filter_button">Создание контента</div>
-</div>
+    <!--Основные стили-->
+    <link rel="stylesheet" href="https://holyxey.github.io/public/AdsTarget/Development/devStyle.css">
+    <link rel="stylesheet" href="https://holyxey.github.io/public/AdsTarget/Development/devMedia.css">
+    <link rel="stylesheet" href="https://holyxey.github.io/public/AdsTarget/atHeader.css">
+    <link rel="stylesheet" href="https://holyxey.github.io/public/AdsTarget/atPartners.css">
+    <link rel="stylesheet" href="https://holyxey.github.io/public/AdsTarget/atReviews.css">
+    <link rel="stylesheet" href="https://holyxey.github.io/public/AdsTarget/footer.css">
+    <!--Основные стили-->
 
-<section id="h_at_cases">
-    <article class="h_at_caseBlock holyxeyCategory_1">
-        <div class="h_at_caseBlockImg" style="background-image: url(https://thumb.tildacdn.com/tild3964-6330-4563-b434-346534393836/pXOG5hHTs_8.jpg)">
-            <div class="p">Таргетированная реклама в ВК</div>
+    <link rel="stylesheet" href="https://holyxey.github.io/public/AdsTarget/blocks/cases/atCasesBlock.css">
+    <link rel="stylesheet" href="styleCases.css">
+
+</head>
+<body>
+
+<!--Header-->
+<header class="hx-at-sct" id="hx-at-sct-hdr">
+    <div class="hx-at-blk" id="headerPC">
+        <a href="/" class="hx-at-hdr-logo" style="color: var(--c-gr)">
+            <img src="https://static.tildacdn.com/tild6663-6639-4166-a462-316239353461/SVG_logo_1.svg" alt="AdsTarget Logo" srcset="">
+            AdsTarget
+        </a>
+        <div class="hx-at-hdr-menu">
+            <a href="/services" class="hx-at-hdr-li">Услуги</a>
+            <a href="/cases" class="hx-at-hdr-li">Кейсы</a>
+            <a href="#reviews" class="hx-at-hdr-li">Отзывы</a>
+            <a href="/contacts" class="hx-at-hdr-li">Контакты</a>
+            <a href="#popup:ContactButton" class="hx-at-btn-p">оставить&nbsp;заявку</a>
         </div>
-        <div class="h_at_caseBlockHeader">Регистрации на&nbsp;Летний кампус&nbsp;Skillbox за&nbsp;360₽</div>
-        <a class="h_at_caseBlockLink" href="/skillbox">Подробнее</a>
-    </article>
-    <article class="h_at_caseBlock holyxeyCategory_1">
-        <div class="h_at_caseBlockImg" style="background-image: url(https://thumb.tildacdn.com/tild3061-6233-4863-b730-396632643736/IMG_7729_fin.jpeg)">
-            <div class="p">Таргетированная реклама в TikTok</div>
+    </div>
+    <div id="headerM">
+        <a href="/" class="hx-at-hdr-logo" style="color: var(--c-gr)">
+            <img src="https://static.tildacdn.com/tild6663-6639-4166-a462-316239353461/SVG_logo_1.svg" alt="AdsTarget Logo" srcset="">
+            AdsTarget
+        </a>
+        <div id="headerMenuButton">
+            <div class="mbd"></div>
+            <div class="mbd"></div>
+            <div class="mbd"></div>
         </div>
-        <div class="h_at_caseBlockHeader">Соискатели из&nbsp;TikTok для&nbsp;СберМаркета за&nbsp;240₽</div>
-        <a class="h_at_caseBlockLink" href="/hh_tiktok" >Подробнее</a>
-    </article>
-    <article class="h_at_caseBlock holyxeyCategory_2">
-        <div class="h_at_caseBlockImg" style="background-image: url(https://thumb.tildacdn.com/tild3239-6363-4539-b461-373638653632/img-093_2.jpg)">
-            <div class="p">Создание контента</div>
+    </div>
+    <div class="hx-at-hdr-mobile-menu">
+        <a href="/services" class="hx-at-hdr-mob-li">Услуги</a>
+        <a href="/cases" class="hx-at-hdr-mob-li">Кейсы</a>
+        <a href="#reviews" class="hx-at-hdr-mob-li">Отзывы</a>
+        <a href="/contacts" class="hx-at-hdr-mob-li">Контакты</a>
+        <a href="tel:+78129564299" class="hx-at-hdr-mob-li">+7(812) 956-42-99</a>
+        <a href="#popup:ContactButton" class="hx-at-btn-mob-p">оставить&nbsp;заявку</a>
+        <p class="hx-at-hdr-mob-li">© 2024 AdsTarget</p>
+        <div class="hx-at-hdr-mob-social">
+            <a href="https://vk.com/adstarget" target="_blank"><img src="https://static.tildacdn.com/tild3366-6336-4663-a665-636439336436/vk_b.svg" alt="VK.com" title="VK.com"></a>
+            <a href="https://t.me/Provatory" target="_blank"><img src="https://static.tildacdn.com/tild6330-6466-4966-a533-313264373931/tg_b.svg" alt="Telegram" title="Telegram"></a>
+            <a href="https://wa.me/79533579900?text=Добрый%20день%21%20Хочу%20узнать%20подробнее%20про%20продвижение%20бизнеса%20в%20интернете" target="_blank"><img src="https://static.tildacdn.com/tild3838-3761-4431-a164-623239326636/wa_b.svg" alt="WhatsApp" title="WhatsApp"></a>
+            <a href="https://www.instagram.com/adstarget.ru/" target="_blank"><img src="https://static.tildacdn.com/tild6538-3733-4539-b564-646537343233/ig_b.svg" alt="Instagram" title="признан экстремистским и запрещен в РФ"></a>
         </div>
-        <div class="h_at_caseBlockHeader">Полный sold&nbsp;out отеля благодаря&nbsp;контенту</div>
-        <a class="h_at_caseBlockLink" href="/duplex_content" >Подробнее</a>
-    </article>
-    <article class="h_at_caseBlock holyxeyCategory_2">
-        <div class="h_at_caseBlockImg" style="background-image: url(https://thumb.tildacdn.com/tild3639-3235-4834-b439-663630356462/owRM1Hh1BPEbiWenuAuw.jpeg)">
-            <div class="p">Реклама в Telegram + чат-бот</div>
+    </div>
+    <div id="hx-at-hdr-mobile-back"></div>
+</header>
+
+<!--Hero-->
+<section class="hx-at-sct" id="hrsctn">
+    <div class="hx-at-blk" id="hero">
+        <div>
+            <h1>Портфолио выполненных работ AdsTarget</h1>
+            <h2 class="h4">На странице собраны выполненные командой AdsTarget работы.
+                Каждый клиент и бизнес, представленные в этом разделе получили высококачественные услуги.
+                И многие из них решили работать с нами постоянно</h2>
         </div>
-        <div class="h_at_caseBlockHeader">Telegram-канал с&nbsp;нуля до&nbsp;28&nbsp;тысяч подписчиков</div>
-        <a class="h_at_caseBlockLink" href="/evrasia_tg" >Подробнее</a>
-    </article>
-    <article class="h_at_caseBlock holyxeyCategory_1">
-        <div class="h_at_caseBlockImg" style="background-image: url(https://thumb.tildacdn.com/tild6437-3930-4234-b633-616236316331/10801920__212887191.jpg)">
-            <div class="p">Таргетированная реклама в ВК</div>
+        <div class="hx-at-hero-btns">
+            <a href="#popup:ContactButton" class="hx-at-btn-p" style="box-shadow: var(--shdw)">бесплатная консультация</a>
+            <a href="#cases" class="hx-at-btn-p-tr" >наши работы</a>
         </div>
-        <div class="h_at_caseBlockHeader">Рост показателей рекламы в&nbsp;6&nbsp;раз</div>
-        <a class="h_at_caseBlockLink" href="/jewerly" >Подробнее</a>
-    </article>
-    <article class="h_at_caseBlock holyxeyCategory_1">
-        <div class="h_at_caseBlockImg" style="background-image: url(https://thumb.tildacdn.com/tild3065-3137-4031-a630-303064333234/Untitled-1.png)">
-            <div class="p">Таргетированная реклама в ВК</div>
-        </div>
-        <div class="h_at_caseBlockHeader">28&nbsp;миллионов выручки с&nbsp;рекламы для&nbsp;ресторанов</div>
-        <a class="h_at_caseBlockLink" href="/evrasia_loyalty" >Подробнее</a>
-    </article>
+    </div>
 </section>
-<a href="/cases" target="_blank" class="h_at_allCasesButton">смотреть все кейсы</a>
+
+<!--Cases-->
+<section class="hx-at-sct" id="cases">
+    <div class="hx-at-blk">
+                <div>
+                    <h3 class="h1">Наши кейсы</h3>
+                    <p class="h4">Работы, которыми мы гордимся</p>
+                </div>
+        <ul class="hx-at-cases-block" itemscope itemtype="http://schema.org/ItemList">
+
+            <li class="hx-at-case-web hx-at-allcases-item showThisScroll"
+                itemprop="itemListElement" itemscope itemtype="http://schema.org/CreativeWork">
+                <h4 class="hx-at-case-h">Регистрации на&nbsp;Летний кампус Skillbox за&nbsp;360₽</h4>
+                <div class="hx-at-case-img" style="background-image: url(https://optim.tildacdn.com/tild3964-6330-4563-b434-346534393836/format/webp/pXOG5hHTs_8.jpg)"
+                     itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+                    <meta itemprop="url" content="ссылка_на_изображение.jpg">
+                    <span class="hx-at-case-category">Таргетированная реклама в ВК</span>
+                </div>
+                <a href="/skillbox" class="hx-at-btn-bl hx-at-case-btn" target="_blank">
+                    подробнее
+                </a>
+            </li>
 
 
-<script src="https://holyxey.github.io/public/AdsTarget/cases/jsCases.js"></script>
-<script src="https://holyxey.github.io/public/AdsTarget/holyfilters2/holyFilter2.js"></script>
-<script src="https://holyxey.github.io/public/AdsTarget/videoproduction/case_links.js"></script>
+        </ul>
+        <a href="/cases" class="hx-at-btn-p" id="allCasesButton" style="box-shadow: var(--shdw)">смотреть все кейсы</a>
+    </div>
+</section>
+
+<script src="https://holyxey.github.io/public/AdsTarget/atReferrerBack.js"></script>
+<script src="/atOnScroll.js"></script>
+<script src="jsCases.js"></script>
+
+</body>
+</html>
