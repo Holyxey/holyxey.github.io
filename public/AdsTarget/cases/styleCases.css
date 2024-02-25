@@ -32,8 +32,8 @@
     border-radius: var(--rem-bb);
     background-color: #5ED7CF10;
 
+    /*margin: 0 auto;*/
     max-width: fit-content;
-    margin: 0 auto;
     position: sticky;
     top: 90px;
     z-index: 995595607309;
@@ -50,7 +50,7 @@
 }
     .hx-at-cases-categories .hx-at-btn-p-tr {
         padding: var(--rem-a) var(--rem-b);
-        min-width: fit-content;
+        /*min-width: fit-content;*/
         cursor: pointer;
     }
         .hx-at-cases-categories .hx-at-btn-p-tr {
@@ -71,5 +71,13 @@
 @media screen and (min-width: 1100px) {
     .hx-at-allcases-item {
         max-width: 31%;
+    }
+}
+@media screen and (max-width: 1280px) {
+    .hx-at-cases-filters {
+        display: none;
+    }
+    .hx-at-cases-categories {
+
     }
 }
