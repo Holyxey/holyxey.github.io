@@ -32,7 +32,7 @@
     border-radius: var(--rem-bb);
     background-color: #5ED7CF10;
 
-    /*margin: 0 auto;*/
+    margin: 0 auto;
     max-width: fit-content;
     position: sticky;
     top: 90px;
@@ -76,8 +76,5 @@
 @media screen and (max-width: 1280px) {
     .hx-at-cases-filters {
         display: none;
-    }
-    .hx-at-cases-categories {
-
     }
 }
