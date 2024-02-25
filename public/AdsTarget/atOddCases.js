@@ -1,5 +1,5 @@
 function oddCasesStart(el) {
-    if (document.getElementsByClassName('hx-at-case-web').length % 2 !== 0) {
+    if (document.getElementsByClassName('hx-at-case-web').length % 2 !== 0 && !document.location.href.includes('cases')) {
         let casesBlock = document.getElementsByClassName('hx-at-cases-block')[0];
 
         let oddCaseLi = document.createElement("li");
