@@ -862,7 +862,7 @@ header {
     justify-content: center;
     cursor: pointer;
 
-    z-index: 995595607309;
+    z-index: 995595607;
 }
 .reviewShortsEmbed {
     height: calc(100% - 4rem);
@@ -870,6 +870,15 @@ header {
     border-radius: 1rem;
 }
 
+#close-button {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    width: 2rem;
+    z-index: 9999595607310;
+    cursor: pointer;
+    pointer-events: none;
+}
 
 /**/
 @keyframes anishow {

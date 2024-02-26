@@ -41,7 +41,7 @@ function getCounter(el) {
     return counter;
 }
 
-//
+            //
 // Изначальное положение вкладок
 
 function presentTabs() {
@@ -273,21 +273,27 @@ function reviewOpen(el) {
     let reviewIframe = document.createElement('iframe')
     let dataembed = el.getAttribute('dataEmbed')
     reviewIframe.classList.add('reviewShortsEmbed')
-    // reviewIframe.src = ('https://www.youtube.com/embed/' + dataembed + '?playsinline=1&autoplay=1&muted=1')
-    reviewIframe.src = ('https://vk.com/video_ext.php?' + dataembed + '&autoplay=1&muted=0')
-    reviewIframe.frameBorder = false;
-    reviewIframe.title = 'YouTube video player'
+    reviewIframe.src = ('https://vk.com/video_ext.php?' + dataembed + '&autoplay=1')
+    reviewIframe.frameBorder = '0';
     reviewIframe.allowFullscreen = true;
+    reviewIframe.allow = "autoplay; encrypted-media; fullscreen; picture-in-picture"
+
+    let closeButton = document.createElement("div")
+    closeButton.classList.add('close-button')
 
     document.body.append(reviewCreate)
     reviewCreate.append(reviewIframe)
     reviewCreate.setAttribute('onclick', 'reviewClose(this)')
 
     document.documentElement.style.overflow = 'hidden'
+    document.getElementById('header').setAttribute('hidden', '')
+    document.getElementById('close-button').style.display = 'flex'
 }
 function reviewClose(el) {
     el.remove();
     document.documentElement.style.overflow = ''
+    document.getElementById('header').removeAttribute('hidden')
+    document.getElementById('close-button').style.display = 'none'
 }
 
 document.addEventListener("DOMContentLoaded", function (){
