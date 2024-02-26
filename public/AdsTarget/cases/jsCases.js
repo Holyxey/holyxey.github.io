@@ -100,15 +100,6 @@ function mobFilters() {
 }
 
 
-// =============== FILTERS SCROLLING
-//
-function filtersMobile() {
-    let filtersSection = document.querySelector('.hx-at-cases-filters')
-    let filtersBlock = document.querySelector('.hx-at-cases-block')
-}
-
-
-
 // ====================== DOM LOADED
 //
 document.addEventListener("DOMContentLoaded", allCasesSchema)
