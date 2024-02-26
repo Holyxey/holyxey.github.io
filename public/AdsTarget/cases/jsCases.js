@@ -76,6 +76,30 @@ function caseFilterStart() {
 }
 
 
+// ================== MOBILE FILTERS
+//
+function mobFilters() {
+    if (innerWidth < 1280) {
+        let choseCategory = document.getElementById('choseCategory')
+        choseCategory.addEventListener("click", function () {
+            this.style.display = 'none'
+            document.querySelectorAll("button[category]").forEach(function (el) {
+                el.style.display = 'block'
+                el.classList.add('scrollShow')
+                el.addEventListener('click', function () {
+                    let chosen = el.textContent;
+                    document.querySelectorAll("button[category]").forEach((el)=>{
+                        el.style.display = 'none'
+                        choseCategory.textContent = chosen
+                        choseCategory.style.display = ''
+                    })
+                })
+            })
+        })
+    }
+}
+
+
 // =============== FILTERS SCROLLING
 //
 function filtersMobile() {
@@ -89,4 +113,4 @@ function filtersMobile() {
 //
 document.addEventListener("DOMContentLoaded", allCasesSchema)
 document.addEventListener("DOMContentLoaded", caseFilterStart)
-document.addEventListener("DOMContentLoaded", filtersOnScroll)
+document.addEventListener("DOMContentLoaded", mobFilters)
