@@ -84,7 +84,6 @@ body {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
-    padding-block: 2rem;
     justify-content: center;
 }
 .compVideo {
