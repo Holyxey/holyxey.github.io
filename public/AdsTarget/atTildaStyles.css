@@ -5,8 +5,9 @@
     font-size: var(--rem-aa)!important;
     padding: var(--rem-a) var(--rem-b) calc(var(--rem-a) - 2px) var(--rem-b)!important;
     height: unset!important;
-    text-transform: uppercase;
+    text-transform: uppercase!important;
     width: unset!important;
+    border-radius: var(--rem-aa)!important;
 }
 .t-section__descr {
     max-width: unset!important;
