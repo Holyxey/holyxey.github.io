@@ -235,7 +235,7 @@ body, html {
         grid-column: 1 / span 9;
         grid-row: 1 / span 2;
         border-radius: var(--rem-aa);
-        background-position: center -2rem;
+        background-size: cover;
     }
     .hx-at-photo-case-about {
         grid-column: 1 / 10;
@@ -244,10 +244,12 @@ body, html {
     .case_1 {
         grid-column: 1 / span 5;
         grid-row: span 2;
+        border-top-left-radius: var(--rem-aa);
     }
     .case_2 {
         grid-column: 6 / span 4;
         grid-row: 5 / span 5;
+        border-top-right-radius: var(--rem-aa);
     }
     .case_3 {
         grid-column: span 5;
@@ -255,12 +257,15 @@ body, html {
     }
     .case_4 {
         grid-column: span 5;
+        border-bottom-left-radius: var(--rem-aa);
     }
     .case_5 {
         grid-column: span 4;
     }
     .case_6 {
         grid-column: 5 / span 5;
+        border-bottom-left-radius: var(--rem-aa);
+        border-bottom-right-radius: var(--rem-aa);
     }
     .hx-at-photo-cases > .hx-at-btn-p {
         grid-column: span 4;
@@ -271,6 +276,7 @@ body, html {
     .hx-at-photo-case-item {
         grid-column: span 9;
         grid-row: span 1;
+        border-radius: unset;
     }
     .hx-at-photo-case-person {
         grid-row: span 1;
@@ -290,9 +296,11 @@ body, html {
     .case_3 {
         grid-column: span 4;
         grid-row: span 2;
+        border-bottom-right-radius: var(--rem-aa);
     }
     .case_4 {
         grid-row: span 2;
+        border-top-right-radius: var(--rem-aa);
     }
     .case_6 {
         border-radius: 0 0 var(--rem-aa) var(--rem-aa);
