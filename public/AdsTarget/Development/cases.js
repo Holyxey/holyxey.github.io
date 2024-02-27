@@ -12,3 +12,9 @@ function caseWebClick(el) {
             window.open(l.href, '_self');
     }
 }
+
+let butt = document.querySelectorAll('.hx-at-case-btn')
+butt.forEach(function (el) {
+    if (!el.href.includes('adstarget'))
+        el.textContent = 'смотреть результат'
+})
