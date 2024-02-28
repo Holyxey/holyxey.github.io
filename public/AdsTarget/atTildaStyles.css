@@ -1,7 +1,7 @@
 .t-popup_show .t-popup__container {
     border-radius: var(--rem-a);
 }
-.t-form button {
+.t-form button, .buttonTildaClass {
     font-size: var(--rem-aa)!important;
     padding: var(--rem-a) var(--rem-b) calc(var(--rem-a) - 2px) var(--rem-b)!important;
     height: unset!important;
@@ -19,11 +19,10 @@
     margin-bottom: 0!important;
 }
 .t-input {
-    font-size: var(--rem-aa)!important;
-    padding: var(--rem-a) var(--rem-b) calc(var(--rem-a) - 2px) var(--rem-b)!important;
+    font-size: var(--rem-a)!important;
+    padding: var(--rem-aa) var(--rem-b) calc(var(--rem-aa) - 2px) var(--rem-b)!important;
     height: unset!important;
     border-radius: var(--rem-aa)!important;
-    text-transform: uppercase!important;
 }
 .t-col, .t-col_12 {
     margin-left: unset!important;
