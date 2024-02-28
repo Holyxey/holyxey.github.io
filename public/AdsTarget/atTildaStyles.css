@@ -19,10 +19,11 @@
     margin-bottom: 0!important;
 }
 .t-input {
-    font-size: var(--rem-a)!important;
+    font-size: var(--rem-aa)!important;
     padding: var(--rem-a) var(--rem-b) calc(var(--rem-a) - 2px) var(--rem-b)!important;
     height: unset!important;
     border-radius: var(--rem-aa)!important;
+    text-transform: uppercase!important;
 }
 .t-col, .t-col_12 {
     margin-left: unset!important;
