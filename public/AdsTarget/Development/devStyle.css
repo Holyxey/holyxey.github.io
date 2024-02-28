@@ -131,6 +131,21 @@ h4, .h4 {
     width: -webkit-fit-content;
     width: fit-content;
 }
+.hx-at-btn-gr-tr {
+    color: var(--c-gr)!important;
+    font-size: var(--rem-aa);
+    padding: var(--rem-a) var(--rem-b) calc(var(--rem-a) - 2px) var(--rem-b);
+    border-radius: var(--rem-aa);
+    font-weight: 500;
+    text-transform: uppercase;
+
+    background-color: var(--c-wht);
+    border: 1px var(--c-gr) solid;
+    transition: background-color .4s ease;
+
+    width: -webkit-fit-content;
+    width: fit-content;
+}
 
     #hero {
         padding: calc(var(--rem-d) * 2) 0;

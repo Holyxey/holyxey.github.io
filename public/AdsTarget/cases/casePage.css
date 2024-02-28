@@ -1,0 +1,94 @@
+#hero {
+    max-height: none;
+}
+.hx-at-sct {
+    overflow: hidden;
+}
+
+.hx-at-blk {
+    padding: var(--rem-d) 0;
+}
+.hx-at-casepage-checklist {
+    display: flex;
+    gap: var(--rem-a);
+    max-width: fit-content;
+    flex-wrap: wrap;
+}
+.hx-at-casepage-checklist-button {
+    flex: 1;
+    text-align: center;
+    min-width: fit-content;
+}
+
+    #firstStep, #thirdStep, #fifthStep {
+        background-color: var(--c-gr);
+        color: var(--c-wht);
+    }
+    .first-step-rev {
+        background-color: var(--c-wht);
+        padding: var(--rem-aa) var(--rem-bb);
+        margin-top: var(--rem-a);
+        border-radius: var(--rem-aa);
+        color: #0E1114!important;
+
+        display: flex;
+        align-items: center;
+        gap: var(--rem-aaa);
+        flex-wrap: wrap;
+
+        max-width: fit-content;
+    }
+    .bblue, .yyellow, .rred, .wwhite, .bblack {
+        content: '';
+        min-width: var(--rem-b);
+        min-height: var(--rem-b);
+        max-width: var(--rem-b);
+        max-height: var(--rem-b);
+        border-radius: var(--rem-aaa);
+        box-shadow: -1px -1px 0 #00000080 inset, 1px 1px 0 #ffffff99 inset;
+    }
+        .bblack {
+            background-color: #0E1114;
+        }
+        .wwhite {
+            background-color: #FAE8EB;
+        }
+        .bblue {
+            background-color: #019EF7;
+        }
+        .yyellow {
+            background-color: #F7B801;
+        }
+        .rred {
+            background-color: #D70000;
+        }
+
+.case-journey {
+    /*background-color: var(--c-bl-tr);*/
+    max-width: fit-content;
+
+    padding: var(--rem-aa) var(--rem-a);
+    border-radius: var(--rem-aa);
+    border: var(--c-bl) 1px solid;
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--rem-aaa);
+}
+.casepage-step-img {
+    border-radius: var(--rem-aa) var(--rem-aa) 0 0;
+    /*pointer-events: none;*/
+}
+.casepage-comment {
+    margin-top: calc(var(--rem-b) * -1);
+    background-color: #444444;
+    border-top: #ffffff 1px solid;
+    padding: var(--rem-aa) var(--rem-b);
+    border-radius: 0 0 var(--rem-aa) var(--rem-aa);
+    text-align: center;
+    box-shadow: inset 0 0 10px #333333;
+}
+    .comment-white {
+        background-color: #eeeeed50;
+        box-shadow: inset 0 0 10px #a8a6a650;
+    }
