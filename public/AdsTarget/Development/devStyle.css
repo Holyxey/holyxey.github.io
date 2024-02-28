@@ -99,7 +99,7 @@ h4, .h4 {
     color: var(--c-pk)!important;
 }
 .hx-at-btn-bl {
-    color: #333333!important;
+    color: #111111!important;
     font-size: var(--rem-aa);
     padding: var(--rem-a) var(--rem-b) var(--rem-aa) var(--rem-b);
     border-radius: var(--rem-aa);
