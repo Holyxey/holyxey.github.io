@@ -65,7 +65,8 @@
         font-size: 1rem;
     }
     .hx-limb-variants-list-point {
-        width: 70%;
+        width: unset;
+        flex: 1;
     }
     .hx-limb-modules-wbttn p {
         max-width: 80vw;
@@ -90,6 +91,15 @@
         flex: 1.5;
         padding: 1rem;
     }
+    .hx-limb-variants-list-img {
+        /*flex: 1;*/
+        position: relative;
+        right: unset;
+        bottom: unset;
+        z-index: unset;
+        height: unset;
+        max-width: 100%;
+    }
     .hx-limb-tab-in-info {
         padding-top: unset;
     }
@@ -110,6 +120,9 @@
     }
     .hx-limb-liners-materials-point {
         min-width: 40%;
+    }
+    .hx-limb-liners-point {
+        align-items: flex-start;
     }
     .hx-limb-devices-list-header img {
         display: none;
@@ -219,15 +232,6 @@
         width: auto;
         background-color: #FFFfff99;
     }
-    .hx-limb-variants-list-img {
-        /*flex: 1;*/
-        position: relative;
-        right: unset;
-        bottom: unset;
-        z-index: unset;
-        height: unset;
-        max-width: 100%;
-    }
     .hx-limb-devices-list {
         flex-direction: column;
     }
@@ -279,7 +283,7 @@
     .second {
         left: auto;
         right: 40%;
-        top: 22%;
+        top: 45%;
     }
     .third {
         left: auto;
@@ -300,7 +304,7 @@
     }
 
     .hx-limb-feet-item,
-    .hx-limb-liners-point,
+    /*.hx-limb-liners-point,*/
     .hx-limb-liners-materials-ul,
     .hx-limb-devices-list-point {
         padding: 1rem 1rem;
