@@ -838,6 +838,7 @@ header {
     box-shadow: 0 0 5px #00000030 inset;
     text-align: center;
     background: #fff;
+    color: black!important;
 }
 .hx-limb-slide img {
     height: 30vh;
