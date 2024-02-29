@@ -635,6 +635,7 @@ header {
     display: flex;
     gap: 1rem;
     padding-top: 1rem;
+    flex-wrap: wrap;
 }
 .hx-limb-devices-list-point {
     display: flex;
@@ -673,7 +674,16 @@ header {
     font-weight: 300;
 }
 
-.hx-reviews-slider {
+.hx-limb-devices-img {
+    position: absolute;
+    top: 50%;
+    translate: 0 -50%;
+    right: 2rem;
+    max-height: 50%;
+    max-width: 100px;
+}
+
+    .hx-reviews-slider {
     padding-top: 1rem;
 }
 .hx-review-slide {
