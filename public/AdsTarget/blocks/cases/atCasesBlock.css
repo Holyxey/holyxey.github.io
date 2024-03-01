@@ -15,3 +15,6 @@
     translate: -50%;
     left: 50%;
 }
+    .newCover {
+        background-position: top center!important;
+    }
