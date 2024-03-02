@@ -26,5 +26,5 @@ function backUTMButton() {
 //
 
 
-document.addEventListener("DOMContentLoaded", backUTMButton)
+window.addEventListener("load", backUTMButton)
 document.addEventListener("DOMContentLoaded", holyxey)
