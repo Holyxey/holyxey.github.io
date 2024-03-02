@@ -1,0 +1,98 @@
+a {
+    color: var(--c-pk);
+}
+.holyxeyBrandingImg {
+    position: absolute;
+    width: 7rem;
+    border-radius: 100%;
+    left: -2rem;
+    top: -5rem;
+    rotate: 10deg;
+    z-index: 10;
+    transform: scale(-1, 1);
+}
+
+        #fontBlock, #logoBlock, #emojiBlock {
+            background-color: var(--c-bl-tr);
+        }
+
+.hx-at-blk {
+    padding: var(--rem-d) 0;
+}
+
+    .logoBlock {
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-start;
+    }
+.logo-downloads {
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: .5rem;
+    background-color: var(--c-bl-tr);
+    box-shadow: 0 0 4px #00000040;
+
+    color: #111111!important;
+}
+.logo-downloads img {
+    max-width: 50px;
+    background-color: #fff;
+    padding: .5rem;
+    border-radius: .5rem;
+}
+
+    .colorsBlock {
+        display: flex;
+        gap: 2rem;
+        flex-wrap: wrap;
+        justify-items: flex-start;
+    }
+    .colorItem {
+        flex: 1;
+        padding: 1rem;
+        border-radius: .5rem;
+        box-shadow: 0 0 4px #00000040;
+
+        position: relative;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        gap: .5rem;
+
+        text-align: center;
+        z-index: 999000;
+    }
+    .colorItem:nth-of-type(1) {
+        background-color: var(--c-wht);
+    }
+    .colorItem:nth-of-type(2) {
+        background-color: var(--c-gr);
+        color: var(--c-wht);
+    }
+    .colorItem:nth-of-type(3) {
+        background-color: var(--c-pk);
+        color: var(--c-wht);
+    }
+    .colorItem:nth-of-type(4) {
+        background-color: var(--c-pk-tr);
+    }
+    .colorItem:nth-of-type(5) {
+        background-color: var(--c-bl);
+        color: #333333;
+    }
+    .colorItem:nth-of-type(6) {
+        background-color: var(--c-bl-tr);
+    }
+
+.hx-at-staff-name {
+    color: var(--c-gr)!important;
+}
