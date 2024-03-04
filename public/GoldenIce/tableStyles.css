@@ -1,6 +1,4 @@
 /*Стили для таблиц*/
-
-
 .table_div {
      /* max-width: 40%; */
      display: flex;
@@ -114,6 +112,8 @@ td, th {
     background-position: center center;
     border-color: transparent;
     border-style: solid;
+
+    text-align: left;
 
     margin: 3rem 0 2rem 0;
     max-width: 1200px;
