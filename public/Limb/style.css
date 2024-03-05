@@ -893,9 +893,330 @@ header {
     pointer-events: none;
 }
 
-/**/
+/*
+*/
 @keyframes anishow {
     from {opacity: 0; translate: 0 -15px}
     to {opacity: 1; translate: 0}
 }
 .anishow {animation: anishow .5s ease-out forwards}
+
+/*
+*/
+@media screen and (max-width: 1600px) {
+    h1, .h1 {
+        max-width: 80%;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .hx-limb-section {
+        padding: 0 4rem;
+    }
+    .hx-limb-variants-list-img {
+        height: 80%;
+    }
+    .hx-limb-modules-wbttn p {
+        font-size: 1rem;
+    }
+    .hx-limb-feet-item,
+    .hx-limb-liners-point,
+    .hx-limb-liners-materials-ul
+    {
+        padding: 1rem 1.5rem;
+    }
+
+    #slider-reviews {
+        .slick-prev
+        {
+            left: -3.5rem;
+        }
+        [dir='rtl'] .slick-prev
+        {
+            right: -3.5rem;
+            left: auto;
+        }
+        .slick-next
+        {
+            right: -3.5rem;
+        }
+        [dir='rtl'] .slick-next
+        {
+            right: auto;
+            left: -3.5rem;
+        }
+    }
+
+    .headerPC {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    h1, .h1 {
+        font-size: 2.5rem;
+    }
+    h3, .h3 {
+        font-size: 2rem;
+    }
+    h4, .h4 {
+        font-size: 1.2rem;
+    }
+
+    #hx-limb-hero p {
+        margin-top: -2rem;
+    }
+    .orange-button, .orange-button-woshdw {
+        font-size: 1rem;
+    }
+    .hx-limb-variants-list-point {
+        width: unset;
+        flex: 1;
+    }
+    .hx-limb-modules-wbttn p {
+        max-width: 80vw;
+    }
+
+    .hx-limb-structure-block-info-in {
+        padding: 1rem;
+    }
+
+}
+
+@media screen and (max-width: 900px) {
+    h1, .h1 {
+
+        max-width: unset;
+    }
+
+    .hx-limb-tab {
+        flex: 1 0 40%;
+    }
+    .hx-limb-tab-in-img {
+        flex: 1.5;
+        padding: 1rem;
+    }
+    .hx-limb-variants-list-img {
+        /*flex: 1;*/
+        position: relative;
+        right: unset;
+        bottom: unset;
+        z-index: unset;
+        height: unset;
+        max-width: 100%;
+    }
+    .hx-limb-tab-in-info {
+        padding-top: unset;
+    }
+    .hx-limb-tab-in {
+        align-items: center;
+    }
+    .hx-limb-feet-item {
+        flex: 1 1 30%;
+    }
+    .hx-limb-liners-materials-point:nth-child(2) {
+        flex: 1.3;
+    }
+    .hx-limb-liners-materials-list {
+        flex-wrap: wrap;
+    }
+    .hx-limb-liners-materials-ul {
+        height: 100%;
+    }
+    .hx-limb-liners-materials-point {
+        min-width: 40%;
+    }
+    .hx-limb-liners-point {
+        align-items: flex-start;
+    }
+    .hx-limb-devices-list-header img {
+        display: none;
+    }
+
+    .hx-limb-structure-block {
+        display: flex;
+    }
+    .hx-limb-structure-block-info {
+        flex-direction: column;
+        flex: 1;
+        max-width: 70%;
+    }
+    .hx-limb-structure-block-img {
+        flex: 1;
+        padding-inline: unset;
+    }
+    .hx-limb-structure-block-img-select {
+        translate: 8vw;
+    }
+
+    .hx-limb-structure-block-info-in {
+        padding: 1rem;
+    }
+    #hx-limb-structure .hx-limb-structure-block:last-child {
+        display: none;
+    }
+
+    .slick-prev,
+    .slick-next {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    h1, .h1 {
+        font-size: 2rem;
+    }
+    h3, .h3 {
+        font-size: 1.5rem;
+    }
+
+    #hx-limb-full-hero {
+        background-image: none;
+    }
+    .hx-limb-section {
+        padding: 0 1rem;
+    }
+    .hx-limb-block {
+        padding: 5rem 1rem;
+        overflow: hidden;
+    }
+    #hx-limb-bread {
+        flex-wrap: wrap;
+    }
+
+    .backFrame {
+        border-radius: 0;
+    }
+
+    .orange-button, .orange-button-woshdw {
+        width: auto;
+        text-align: center;
+    }
+    .hx-limb-tab {
+        flex: 1 0 70%;
+    }
+    .hx-limb-tab-in {
+        flex-direction: column;
+        margin-top: -1rem;
+    }
+    .hx-limb-tab-in-img {
+        width: calc(100% - 2rem);
+        width: -webkit-fill-available;
+    }
+    .hx-limb-modules-list {
+        padding: 0 1rem;
+    }
+    .hx-limb-modules-list-point {
+        align-items: center;
+    }
+
+    .hx-limb-feet-list {
+        flex-direction: column;
+    }
+
+    .hx-limb-liners-list {
+        flex-direction: column;
+    }
+    .hx-limb-liners-materials-list {
+        flex-direction: column;
+        gap: .5rem;
+    }
+    .hx-limb-liners-point {
+        align-items: flex-start;
+        flex: none;
+        width: auto;
+        font-size: .9rem;
+    }
+
+    .hx-limb-materials-list {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .hx-limb-variants-list-point {
+        width: auto;
+        background-color: #FFFfff99;
+    }
+    .hx-limb-devices-list {
+        flex-direction: column;
+    }
+    .hx-limb-form-block {
+        flex-direction: column;
+    }
+    .hx-limb-form-column:nth-child(1) {
+        order: +2;
+    }
+    .hx-limb-form-column a, .hx-limb-form-column p {
+        text-align: center;
+    }
+
+    .hx-limb-liners-materials-ul {
+        margin-top: unset;
+    }
+    .hx-limb-devices-perks-p {
+        max-width: unset;
+    }
+
+    .hx-limb-structure-block {
+        gap: 1rem;
+    }
+    .hx-limb-structure-block-info {
+        gap: 1rem;
+        max-width: unset;
+    }
+    .hx-limb-structure-block-img {
+        flex: unset;
+    }
+    .hx-limb-structure-block-img-select {
+        z-index: 2;
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+    .hx-limb-structure-block-info-in {
+        padding: 1rem;
+        justify-content: left;
+        text-align: left;
+        font-size: .8rem;
+    }
+
+
+    .first {
+        left: auto;
+        right: 90%;
+        top: -3%;
+    }
+    .second {
+        left: auto;
+        right: 40%;
+        top: 45%;
+    }
+    .third {
+        left: auto;
+        right: 96%;
+        top: 35%;
+    }
+    .third2 {
+        left: auto;
+        right: 40%;
+        bottom: 25%;
+        top: auto;
+    }
+    .four {
+        left: auto;
+        right: 90%;
+        top: auto;
+        bottom: 8%;
+    }
+
+    .hx-limb-feet-item,
+        /*.hx-limb-liners-point,*/
+    .hx-limb-liners-materials-ul,
+    .hx-limb-devices-list-point {
+        padding: 1rem 1rem;
+    }
+    .hx-limb-devices-img {
+        position: relative;
+        translate: -50% 0;
+        left: 50%;
+    }
+}
