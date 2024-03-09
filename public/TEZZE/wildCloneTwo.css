@@ -216,7 +216,7 @@
         text-decoration: none;
         text-align: center;
         max-width: fit-content;
-        box-shadow: 10px 0 30px #00000020;
+        box-shadow: 0 0 20px #00000005;
     }
 
 /*
@@ -265,7 +265,7 @@
     }
     .wbMainImg {
         max-height: 70vh;
-        border-radius: .5rem;
+        border-radius: 1rem 1rem .5rem .5rem;
     }
     .wbMainPic {
         order: -2;
@@ -277,6 +277,7 @@
         max-width: 100%;
         gap: .5rem;
         max-height: unset;
+        overflow: visible;
     }
     .wbList {
         flex-direction: row;
@@ -285,9 +286,10 @@
         overflow-x: auto;
         gap: .5rem;
         scroll-snap-type: x;
+        border-radius: .5rem;
     }
     .wbListImg {
-        max-width: 4rem;
+        max-width: 14%;
         width: unset;
         min-height: unset;
         aspect-ratio: 3 / 4;
@@ -300,5 +302,21 @@
         max-width: unset;
         min-width: unset;
         align-self: stretch;
+    }
+    #wbListUP, #wbListDown {
+        position: absolute;
+        display: block;
+        top: 40%;
+        left: unset;
+        bottom: unset;
+        right: unset;
+    }
+    #wbListUP {
+        rotate: -90deg;
+        left: 1rem!important;
+    }
+    #wbListDown {
+        rotate: 90deg;
+        right: 1rem!important;
     }
 }

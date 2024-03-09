@@ -24,26 +24,44 @@ function wbStart() {
     for (let i = 0; i < wbListImg.length; i++) {
         wbListImg[i].setAttribute('onmouseenter', 'imgHover(this)')
     }
+    if (window.innerWidth <= 650) {
+        wbListImg = document.querySelectorAll('.wbListImg')
+        for (let i = 0; i < wbListImg.length; i++) {
+            wbListImg[i].setAttribute('orderImg', i)
+        }
+    }
+
 }
 function arrowClick(el) {
-    switch (el) {
-        case (upButton): {
-            wbList.scroll({
-                top: listScrollPosition - listScrollHeight,
-                left: 0,
-                behavior: "smooth",
-            });
-            listScrollPosition-=listScrollHeight;
-            break;
+    if (window.innerWidth <= 650) {
+        switch (el) {
+            case (upButton): {
+                break;
+            }
+            case (downButton): {
+                break;
+            }
         }
-        case (downButton): {
-            wbList.scroll({
-                top: listScrollPosition + listScrollHeight,
-                left: 0,
-                behavior: "smooth",
-            });
-            listScrollPosition+=listScrollHeight;
-            break;
+    } else {
+        switch (el) {
+            case (upButton): {
+                wbList.scroll({
+                    top: listScrollPosition - listScrollHeight,
+                    left: 0,
+                    behavior: "smooth",
+                });
+                listScrollPosition-=listScrollHeight;
+                break;
+            }
+            case (downButton): {
+                wbList.scroll({
+                    top: listScrollPosition + listScrollHeight,
+                    left: 0,
+                    behavior: "smooth",
+                });
+                listScrollPosition+=listScrollHeight;
+                break;
+            }
         }
     }
 }
