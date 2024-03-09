@@ -1,0 +1,201 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.abwb-sctn {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.abwb-main {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+/*
+*/
+#abwb-gallery {
+    flex: 1;
+
+    display: flex;
+    gap: .4rem;
+    /*max-height: 100%;*/
+    height: fit-content;
+    overflow: hidden;
+    position: relative;
+}
+    #abwb-gallerylist::-webkit-scrollbar{
+        display: none;
+    }
+    #abwb-gallerylist {
+        /*border: 1px solid red;*/
+        flex: 1;
+        overflow-y: scroll;
+
+        display: flex;
+        flex-direction: column;
+        gap: .3rem;
+        scroll-snap-type: y;
+
+        align-self: initial;
+        position: relative;
+    }
+    .abwb-galleryitem {
+        border-radius: 1rem;
+        aspect-ratio: 3 / 4;
+        width: 100%;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        border: 2px solid white;
+        transition: all .3s linear;
+
+        background-color: #f1f1f5;
+        scroll-snap-align: start;
+    }
+    .abwb-galleryitem:hover {
+        border: 2px solid rgb(207, 148, 96);
+        cursor: pointer;
+    }
+    #abwb-mainimg {
+        /*border: 1px solid red;*/
+        flex: 5;
+        border-radius: 1rem;
+        max-width: 80%;
+        aspect-ratio: 3 / 4;
+        background-color: #f1f1f5;
+        background-position: center;
+        background-size: cover;
+    }
+
+    #abwb-galleryup {
+        content: '';
+        position: absolute;
+        top: .5rem;
+        left: 9%;
+        translate: -50%;
+        border-radius: 100%;
+        border: 0;
+        width: 2rem;
+        height: 2rem;
+        background-color: white;
+        cursor: pointer;
+        z-index: 100;
+        box-shadow: 0 0 10px #00000020;
+    }
+    #abwb-gallerydown {
+        content: '';
+        position: absolute;
+        bottom: .5rem;
+        left: 9%;
+        translate: -50%;
+        border-radius: 100%;
+        border: 0;
+        width: 2rem;
+        height: 2rem;
+        background-color: white;
+        cursor: pointer;
+        z-index: 100;
+        box-shadow: 0 0 10px #00000020;
+        rotate: 180deg;
+    }
+
+#abwb-descr {
+    font-family: 'MADEEvolveSans', 'MADE Evolve Sans', sans-serif;
+    flex: 1.1;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-block: 1rem;
+    /*flex-wrap: wrap;*/
+}
+#abwb-descr > * {
+    margin-block: .5rem;
+}
+    #abwb-brand {
+        width: fit-content;
+        padding: .4rem 1rem;
+        background-color: #f1f1f5;
+        color: #242424;
+        border-radius: .5rem;
+
+        font-size: .9rem;
+        font-weight: 500;
+
+        text-transform: uppercase;
+        text-decoration: none;
+    }
+    #abwb-title {
+        width: fit-content;
+        font-size: 1.5rem;
+        font-weight: 400;
+        padding-top: .5rem;
+    }
+    #abwb-colortitle {
+        color: #868695;
+    }
+    #abwb-chosencolor {
+        color: #242424;
+    }
+    #abwb-colorvariants {
+        display: flex;
+        gap: 1rem;
+    }
+    .abwb-colorvariantitem {
+        width: 2rem;
+        height: 2rem;
+        border-radius: 100%;
+        margin-top: .5rem;
+        cursor: pointer;
+    }
+
+#abwb-descrmain ul {
+    list-style: none;
+    padding-top: .5rem;
+}
+#abwb-descrmain a {
+    background-color: rgba(167,58,253,.9);
+    padding: .5rem 1rem;
+    border-radius: .5rem;
+    color: white;
+    text-decoration: none;
+}
+
+#abwb-costblock {
+    background-color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 1rem;
+    width: fit-content;
+    box-shadow: 0 2px 16px rgba(0,0,0,.08);
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+    #abwb-costnow {
+        font-size: 2rem;
+        font-weight: 900;
+        color: rgba(167,58,253,.9);
+    }
+    #abwb-costbefore {
+        font-size: 1rem;
+        font-weight: 400;
+        color: #868695;
+        text-decoration: line-through;
+    }
+    #abwb-buybutton {
+        padding: 1rem 1.5rem;
+        background-color: rgba(167,58,253,1);
+        border-radius: .5rem;
+        text-align: center;
+        color: white;
+        text-decoration: none;
+        font-weight: 400;
+        font-size: 1.2rem;
+    }
+        #abwb-buybutton:hover {
+    background-color: rgba(167,58,253,.9);
+}

@@ -443,7 +443,7 @@ a {
     }
     .arena_card {
         min-width: calc(100% - 2rem);
-        animation: scrollable 3s infinite;
+        /*animation: scrollable 3s infinite;*/
     }
     .arena_block:hover .arena_card{
         animation: none;
