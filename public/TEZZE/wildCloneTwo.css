@@ -265,6 +265,7 @@
     }
     .wbMainImg {
         max-height: 70vh;
+        border-radius: .5rem;
     }
     .wbMainPic {
         order: -2;
@@ -275,6 +276,7 @@
         flex-direction: column;
         max-width: 100%;
         gap: .5rem;
+        max-height: unset;
     }
     .wbList {
         flex-direction: row;
@@ -289,8 +291,14 @@
         width: unset;
         min-height: unset;
         aspect-ratio: 3 / 4;
+        border-radius: .5rem;
     }
     #wbListUP, #wbListDown {
         display: none;
+    }
+    .wbPriceBlock {
+        max-width: unset;
+        min-width: unset;
+        align-self: stretch;
     }
 }
