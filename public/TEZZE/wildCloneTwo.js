@@ -6,9 +6,7 @@ let listScrollHeight;
 let wbMainImg;
 let wbListImg;
 function prestart() {
-    if (location.href.includes('muzhskie_remni_flat_charcoal/ab')) {
         document.querySelector('#rec716277636').display = 'none'
-    }
 }
 function wbStart() {
     if (window.innerWidth > 900) {
@@ -76,5 +74,8 @@ function imgHover(el) {
 
 //
 //
-window.addEventListener("load", wbStart)
-document.addEventListener("DOMContentLoaded", prestart)
+if (location.href.includes('muzhskie_remni_flat_charcoal/ab')) {
+    window.addEventListener("load", wbStart)
+    document.addEventListener("DOMContentLoaded", prestart)
+}
+
