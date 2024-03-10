@@ -5,6 +5,10 @@ let listScrollPosition;
 let listScrollHeight;
 let wbMainImg;
 let wbListImg;
+function prestart() {
+    document.querySelector('#rec716277636').display = 'none'
+    
+}
 function wbStart() {
     if (window.innerWidth > 900) {
         document.querySelector('.wbGallery').style.maxHeight += (document.querySelector('.wbMainImg').clientHeight + 'px')
@@ -72,3 +76,4 @@ function imgHover(el) {
 //
 //
 window.addEventListener("load", wbStart)
+document.addEventListener("DOMContentLoaded", prestart)
