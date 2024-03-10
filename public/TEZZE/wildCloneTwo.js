@@ -6,8 +6,9 @@ let listScrollHeight;
 let wbMainImg;
 let wbListImg;
 function prestart() {
-    document.querySelector('#rec716277636').display = 'none'
-    
+    if (location.href.includes('muzhskie_remni_flat_charcoal/ab')) {
+        document.querySelector('#rec716277636').display = 'none'
+    }
 }
 function wbStart() {
     if (window.innerWidth > 900) {
