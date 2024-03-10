@@ -6,7 +6,7 @@ let listScrollHeight;
 let wbMainImg;
 let wbListImg;
 function prestart() {
-        document.querySelector('#rec716277636').display = 'none'
+        document.querySelector('#rec716277636').style.display = 'none'
 }
 function wbStart() {
     if (window.innerWidth > 900) {
@@ -74,8 +74,7 @@ function imgHover(el) {
 
 //
 //
-if (location.href.includes('muzhskie_remni_flat_charcoal/ab')) {
+// if (location.href.includes('muzhskie_remni_flat_charcoal/ab')) {
     window.addEventListener("load", wbStart)
     document.addEventListener("DOMContentLoaded", prestart)
-}
 
