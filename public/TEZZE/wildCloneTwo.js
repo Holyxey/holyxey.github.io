@@ -29,20 +29,38 @@ function wbStart() {
     }
     if (window.innerWidth <= 650) {
         wbListImg = document.querySelectorAll('.wbListImg')
+        wbListImg[0].classList.add('wbListImgChosen')
         for (let i = 0; i < wbListImg.length; i++) {
             wbListImg[i].setAttribute('orderImg', i)
+            wbListImg[i].setAttribute('onclick', 'wbMobImgChosen(this)')
         }
     }
 
 }
 function arrowClick(el) {
     if (window.innerWidth <= 650) {
+        wbListImg = document.querySelectorAll('.wbListImg')
+        wbMobImgChosen()
         switch (el) {
             case (upButton): {
-                break;
+                for (let i = 0; i < wbListImg.length; i++) {
+                    if (wbListImg[i].classList.contains('wbListImgChosen')) {
+                        wbListImg[i].classList.remove('wbListImgChosen')
+                        wbListImg[i - 2].classList.add('wbListImgChosen')
+                        wbMobImgChosen()
+                        break;
+                    }
+                }
             }
             case (downButton): {
-                break;
+                for (let i = 0; i < wbListImg.length; i++) {
+                    if (wbListImg[i].classList.contains('wbListImgChosen') && wbListImg[i + 1]) {
+                        wbListImg[i].classList.remove('wbListImgChosen')
+                        wbListImg[i + 1].classList.add('wbListImgChosen')
+                        wbMobImgChosen()
+                        break;
+                    }
+                }
             }
         }
     } else {
@@ -70,6 +88,24 @@ function arrowClick(el) {
 }
 function imgHover(el) {
     wbMainImg.setAttribute('src', el.getAttribute('src'))
+}
+function wbMobImgChosen(el) {
+    if (window.innerWidth <= 650) {
+        wbMainImg = document.querySelector('.wbMainImg');
+        wbListImg = document.querySelectorAll('.wbListImg')
+        if (el) {
+            for (let i = 0; i < wbListImg.length; i++) {
+                wbListImg[i].classList.remove('wbListImgChosen')
+                el.classList.add('wbListImgChosen')
+                if (wbListImg[i].classList.contains('wbListImgChosen')) {
+                    wbMainImg.setAttribute('src', wbListImg[i].getAttribute('src'))
+                }
+            }
+        } else {
+            chosenImg = document.querySelector('.wbListImgChosen')
+            wbMainImg.setAttribute('src', chosenImg.getAttribute('src'))
+        }
+    }
 }
 
 //

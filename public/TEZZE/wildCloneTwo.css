@@ -57,7 +57,7 @@
 
             transition: border .3s ease-out;
         }
-        .wbListImg:hover{
+        .wbListImg:hover, .wbListImgChosen {
             border: 2px solid #CF9460FF;
         }
         #wbListUP {
@@ -167,6 +167,13 @@
         color: #cacaca;
 
         text-decoration: line-through;
+    }
+    .wbPriceButtons {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
     }
     .wbPriceW {
         padding: 1rem 1.5rem;
@@ -314,8 +321,8 @@
         position: absolute;
         display: block;
         top: 40%;
+        translate: none;
         left: unset;
-        bottom: unset;
         right: unset;
     }
     #wbListUP {
@@ -325,5 +332,12 @@
     #wbListDown {
         rotate: 90deg;
         right: 1rem!important;
+    }
+    .wbPriceButtons {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: flex-start;
     }
 }
