@@ -15,6 +15,12 @@
 
     font-family: 'MADEEvolveSans', 'MADE Evolve Sans', sans-serif;
 }
+#rec716277636 {
+    display: none;
+}
+#rec716277634 {
+    padding-top: 45px;
+}
 
 .wbGallery {
     max-width: 50%;
@@ -168,7 +174,7 @@
         background-color: #A73AFD;
 
         font-size: 1.2rem;
-        color: #ffffff;
+        color: #ffffff!important;
         text-decoration: none;
         text-align: center;
         font-weight: 500;
@@ -179,7 +185,7 @@
         background-color: #005BFF;
 
         font-size: 1.2rem;
-        color: #ffffff;
+        color: #ffffff!important;
         text-decoration: none;
         text-align: center;
         font-weight: 500;
@@ -197,6 +203,7 @@
 
 .wbBenefits {
     margin-top: 4rem;
+    margin-bottom: 4rem;
     flex-direction: column;
     font-size: 1.2rem;
 }
