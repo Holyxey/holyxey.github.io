@@ -321,7 +321,7 @@
     #wbListUP, #wbListDown {
         position: absolute;
         display: block;
-        top: 25%;
+        top: 40%;
         translate: none;
         left: unset;
         right: unset;
