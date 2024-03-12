@@ -37,7 +37,6 @@ if (location.href.includes('muzhskie_remni_flat_charcoal/ab') || location.href.i
     }
     function setImgListHeight() {
         document.querySelector('.wbList').style.maxHeight = (mainImg.clientHeight + 'px')
-        document.querySelector('.wbList').style.height = (mainImg.clientHeight + 'px')
     }
     function setImgListPosition() {
         let imgChosenTop = document.querySelector('.wbListImgChosen').getBoundingClientRect().top
