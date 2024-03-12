@@ -272,6 +272,9 @@
     #wbListUP, #wbListDown {
         left: 50px;
     }
+    .wbBenefits ul {
+        padding-left: 0!important;
+    }
 }
 @media screen and (max-width: 650px) {
     #wb, .wbBenefits {
