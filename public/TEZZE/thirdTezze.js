@@ -5,12 +5,12 @@ let arrowNext = document.querySelector('#wbListDown');
 let arrowPrev = document.querySelector('#wbListUP');
 
 if (location.href.includes('muzhskie_remni_flat_charcoal/ab') || location.href.includes('muzhskie_remni_Flat_charcoal/ab')) {
-//
+    //
     //
 
     mainImg.addEventListener('load', setImgListHeight)
 
-//
+    //
     //
 
     function setMainImgSrc() {
@@ -68,7 +68,7 @@ if (location.href.includes('muzhskie_remni_flat_charcoal/ab') || location.href.i
         setImgListPosition()
     }
 
-//
+    //
     //
 
     for (let i = 0; i < listOfImg.length; i++) {
@@ -80,12 +80,9 @@ if (location.href.includes('muzhskie_remni_flat_charcoal/ab') || location.href.i
     window.addEventListener("resize", setImgListHeight)
     document.querySelector('#rec716277636').style.display = 'none'
 
-//
-//
+    //
+    //
 
     setImgChosenClass()
     setImgListPosition()
-
-//
-//
 }
