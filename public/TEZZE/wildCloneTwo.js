@@ -110,7 +110,7 @@ function wbMobImgChosen(el) {
 
 //
 //
-if (location.href.includes('muzhskie_remni_flat_charcoal/ab')) {
+if (location.href.includes('muzhskie_remni_flat_charcoal/ab') || location.href.includes('muzhskie_remni_Flat_charcoal/ab')) {
     window.addEventListener("load", wbStart)
     document.addEventListener("DOMContentLoaded", prestart)
 }
