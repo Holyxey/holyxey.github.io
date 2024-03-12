@@ -303,11 +303,12 @@
         border-radius: .5rem;
     }
     .wbListImg {
-        max-width: 14%;
+        /* max-width: 14%; */
         width: unset;
         min-height: unset;
-        aspect-ratio: 3 / 4;
+        /* aspect-ratio: 3 / 4; */
         border-radius: .5rem;
+        max-height: 100px;
     }
     #wbListUP, #wbListDown {
         display: none;
@@ -320,7 +321,7 @@
     #wbListUP, #wbListDown {
         position: absolute;
         display: block;
-        top: 40%;
+        top: 25%;
         translate: none;
         left: unset;
         right: unset;
