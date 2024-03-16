@@ -429,6 +429,9 @@ header li a {
     .open-menu {
         right: 1.5rem;
     }
+    h1 {
+        margin-top: 4rem;
+    }
 }
 
 
