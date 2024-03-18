@@ -27,5 +27,9 @@ document.addEventListener("DOMContentLoaded", function () {
         let cat = el.getAttribute('category')
         el.addEventListener('click', setCat(cat))
     })
+    document.querySelectorAll('.hx-at-case-web').forEach(function (el) {
+        let cat = el.getAttribute('category')
+        el.addEventListener('click', setCat(cat))
+    })
     atCatPrior()
 })
