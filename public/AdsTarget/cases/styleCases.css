@@ -26,6 +26,10 @@
 .newCover {
     background-position: top center!important;
 }
+#choseCategory {
+    border-color: var(--c-bl-tr);
+    background-color: white;
+}
 
 .hx-at-cases-filters {
     border: 1px solid #5ED7CF80;
@@ -91,16 +95,17 @@
 @media screen and (max-width: 1100px) {
     .hx-at-cases-filters {
         top: unset;
-        bottom: var(--rem-a);
-        left: var(--rem-a);
-        right: var(--rem-a);
+        bottom: var(--rem-aa);
+        left: var(--rem-aa);
+        right: var(--rem-aa);
         position: fixed;
         margin: 0 auto;
 
-        background-color: #ffffff99;
+        background-color: rgba(116, 215, 208, 0.38);
         -webkit-backdrop-filter: blur(10px);
         backdrop-filter: blur(10px);
-        border: 1px solid #5ED7CF50;
+        border: none;
+        box-shadow: 0 0 10px #0c333090;
         max-width: none;
     }
     .hx-at-cases-categories {
