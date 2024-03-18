@@ -1,7 +1,7 @@
 let atCat = localStorage.getItem('_atFirstCat');
 function setCat(cat) {
     return function() {
-        if (cat && !atCat) {
+        if (cat) {
             localStorage.setItem('_atFirstCat', cat);
             atCat = localStorage.getItem('_atFirstCat');
             atCatPrior()
