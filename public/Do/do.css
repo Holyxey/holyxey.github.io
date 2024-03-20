@@ -1,6 +1,6 @@
 body {
+    background: black;
     animation: body 2s linear forwards;
-    background-color: black
 }
 .logoLoader {
     position: fixed;
@@ -8,13 +8,13 @@ body {
     top: 50%;
     translate: -50% -50%;
 
-    animation: logoLoader 2s infinite;
+    animation: logoLoader 2s infinite ease;
 }
 
 /**/
 @keyframes body {
-    from {background-color: white}
-    to {background-color: black}
+    from {background: white}
+    to {background: black}
 }
 @keyframes logoLoader {
     from {scale: 1}
