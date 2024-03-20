@@ -17,11 +17,11 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    animation: body 2s linear forwards;
+    animation: wnbload 2s ease-in forwards;
 }
 
 /**/
-@keyframes body {
+@keyframes wnbload {
     from {background: white}
     to {background: black}
 }
