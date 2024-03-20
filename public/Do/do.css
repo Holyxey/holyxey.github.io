@@ -1,0 +1,9 @@
+body {
+    animation: body 2s linear forwards;
+}
+
+/**/
+@keyframes body {
+    from {background-color: white}
+    to {background-color: black}
+}
