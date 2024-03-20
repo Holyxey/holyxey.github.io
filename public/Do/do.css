@@ -6,10 +6,17 @@ body {
     left: 50%;
     top: 50%;
     translate: -50% -50%;
+
+    animation: logoLoader 2s infinite;
 }
 
 /**/
 @keyframes body {
     from {background-color: white}
     to {background-color: black}
+}
+@keyframes logoLoader {
+    from {scale: 1}
+    50% {scale: 0.95}
+    to {scale: 1}
 }
