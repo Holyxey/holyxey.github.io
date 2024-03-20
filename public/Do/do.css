@@ -4,12 +4,19 @@
 }
 body {
     background: black;
+    animation: wnbload 2s ease-in forwards;
 }
 .logoLoader {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
     max-width: 20vw;
 
     animation: logoLoader 3s infinite ease;
-    transition: all .3s ease-out;
+}
+.logoLoader::after {
+
 }
 #DoStart {
     height: 100%;
@@ -17,7 +24,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    animation: wnbload 2s ease-in forwards;
 }
 
 /**/
@@ -29,6 +35,17 @@ body {
     from {scale: 1; opacity: .09}
     80% {scale: .95; opacity: 1}
     to {scale: 1; opacity: .09}
+}
+@keyframes logoLoaded {
+    from {}
+    to {
+        position: fixed;
+        top: 0;
+        left: 0;
+        translate: 2rem -3rem;
+        rotate: -90deg;
+        width: 5rem;
+    }
 }
 
 /**/
