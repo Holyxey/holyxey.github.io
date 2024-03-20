@@ -86,4 +86,5 @@ if (location.href.includes('muzhskie_remni_flat_charcoal/ab') || location.href.i
     setImgListPosition()
 
     document.querySelector('#rec716277634').style.paddingTop = '45px'
+    document.querySelector('#rec722280499').style.paddingTop = '45px'
 }
