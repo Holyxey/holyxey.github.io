@@ -1,6 +1,12 @@
 body {
     animation: body 2s linear forwards;
 }
+.logoLoader {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+}
 
 /**/
 @keyframes body {
