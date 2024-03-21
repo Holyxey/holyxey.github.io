@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'doFont';
+    src: url("https://holyxey.github.io/public/Do/eina/Eina02-SemiBold.ttf");
+    font-weight: 600;
+}
+
+/**/
 * {
     margin: 0;
     padding: 0;
@@ -18,11 +25,29 @@ body {
 .logoLetter {
 }
 #DoStart {
-    height: 100%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
 
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 1rem
+}
+
+.doButton {
+    font-family: 'doFont', Helvetica, sans-serif;
+    font-size: .9rem;
+
+    background-color: #ffffff10;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    padding: 1rem 1rem .8rem 1rem;
+    border-radius: .5rem;
+    border: 1px solid white;
 }
 
 /**/
@@ -55,11 +80,4 @@ body {
         opacity: 0;
         translate: -15px;
     }
-}
-
-/**/
-@font-face {
-    font-family: 'doFont';
-    src: url("https://holyxey.github.io/public/Do/eina/Eina02-SemiBold.ttf");
-    font-weight: 600;
 }
