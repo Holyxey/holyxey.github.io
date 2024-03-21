@@ -15,8 +15,7 @@ body {
 
     animation: logoLoader 3s infinite ease;
 }
-.logoLoader::after {
-
+.logoLetter {
 }
 #DoStart {
     height: 100%;
@@ -36,16 +35,16 @@ body {
     80% {scale: .95; opacity: 1}
     to {scale: 1; opacity: .09}
 }
-@keyframes logoLoaded {
-    from {}
-    to {
-        position: fixed;
-        top: 0;
-        left: 0;
-        translate: 2rem -3rem;
-        rotate: -90deg;
-        width: 5rem;
-    }
+@keyframes logoLetter {
+    from {opacity: 1; translate: 0 0}
+    to {opacity: 0; translate: 30px}
+}
+@keyframes logoLast {
+    /*from {opacity: 1; translate: 0 0}*/
+    /*to {translate: -30px}*/
+    from {opacity: 1}
+    50% {opacity: 1; translate: -30px}
+    to {opacity: 0; translate: -30px}
 }
 
 /**/
