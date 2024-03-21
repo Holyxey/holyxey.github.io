@@ -51,7 +51,7 @@ body {
     font-size: .9rem;
 
     background-color: #ffffff10;
-    color: white;
+    color: white!important;
     text-decoration: none;
     text-transform: uppercase;
 
