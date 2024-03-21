@@ -1,6 +1,6 @@
 
 function logoLoaded() {
-    document.querySelector('.logoLast').style.animation = 'logoLast 2.5s forwards ease-in-out'
+    document.querySelector('.logoLast').style.animation = 'logoLast 1s 1s forwards ease-in-out'
 
     let letter = document.querySelectorAll('.logoLetter')
     for (let i = 0; i < letter.length; i++) {
@@ -8,6 +8,5 @@ function logoLoaded() {
     }
 }
 window.addEventListener("load", function () {
-    setTimeout(logoLoaded, 3000)
     setTimeout(logoLoaded, 3000)
 })
