@@ -1,0 +1,122 @@
+.t-rec_pb_135 {
+    display: none;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+#ozonPage {
+    max-width: 1200px;
+    margin: 3rem auto 3rem auto;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+@font-face {
+    font-family: 'thisIsFont';
+    src: url("https://static.tildacdn.com/tild6530-3132-4539-b461-666637633933/made_evolve_sans_bol.woff");
+}
+
+.itemOzon {
+    flex: 1;
+    min-width: 250px;
+    max-width: 25%;
+    border-radius: 1rem;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+
+    box-shadow: 0 0 5px #00000015;
+}
+    .itemOzonImg {
+        max-width: 250px;
+        margin: auto;
+    }
+    .itemOzonDescription {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    padding-bottom: 1rem;
+    margin: auto 1rem;
+
+    font-family: 'MADEEvolveSans', 'MADE Evolve Sans', sans-serif;
+}
+        .itemOzonPrice {
+            color: #A73AFD;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+            .itemOzonPriceOld {
+                font-weight: 500;
+                color: #cacaca;
+                text-decoration: line-through;
+                font-size: 1rem;
+                padding-left: .5rem;
+            }
+        .itemOzonCategory {
+            color: #5c5c5c;
+            margin-bottom: -.2rem;
+        }
+        .itemOzonName {
+            font-size: 1.5rem;
+            color: #CF9460FF;
+            font-weight: 500;
+        }
+
+        .itemOzonLine {
+            background: #00000009;
+            height: 1px;
+            margin-block: .5rem;
+            margin-inline: -1rem;
+            border-radius: 1px;
+        }
+
+        .itemOzonRatingBlock {
+            display: flex;
+            align-items: center;
+            gap: .2rem;
+            font-size: .9rem;
+        }
+        .itemOzonDot {
+            background: #00000050;
+            border-radius: 100%;
+            width: 5px;
+            height: 5px;
+            margin-inline: .5rem;
+        }
+
+        .itemOzonReviewsCounter, .itemOzonReviewsCounterDescr {
+            color: #00000050;
+        }
+    .itemOzonLink {
+        flex: 1;
+        background-color: #005bff;
+        text-align: center;
+        padding-block: 1rem;
+        border: 1px solid transparent;
+        color: #ffffff!important;
+        text-decoration: none!important;
+        font-family: 'MADEEvolveSans', 'MADE Evolve Sans', sans-serif;
+        border-radius: .25rem .25rem .8rem .8rem;
+        margin: .25rem;
+
+        transition: all .3s ease-out;
+    }
+    .itemOzonLink:hover {
+        box-shadow: 0 0 8px inset #00000035;
+    }
+    
+/*    */
+@media screen and (max-width: 1240px) {
+    #ozonPage {
+        padding-inline: 1rem;
+    }
+}
+@media screen and (max-width: 600px) {
+    .itemOzon {
+        max-width: 100%;
+    }
+}
