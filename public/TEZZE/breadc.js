@@ -11,5 +11,5 @@ window.addEventListener("load", function () {
 
         blockBread.style.transition = 'all .3s ease-out'
         blockBread.style.paddingTop = (paddingDifference + 'px')
-    }, 300)
+    }, 3000)
 })
