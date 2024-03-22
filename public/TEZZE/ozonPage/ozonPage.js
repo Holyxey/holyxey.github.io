@@ -33,6 +33,8 @@ function ozonStart() {
     newCatalog = document.querySelector('#ozonPage');
     oldItems = document.querySelectorAll('.t-item');
 
+    document.querySelector('footer').style.display = 'block'
+
     function reviewCounter() {
         const randomNumber = Math.floor(Math.random() * (15000 - 3000 + 1)) + 3000;
         const numberString = randomNumber.toString();
@@ -54,6 +56,7 @@ function ozonStart() {
 
     function itemOzonOnLeave() {
         this.querySelector('.itemOzonImg').src = imgFirst
+        this.querySelector('.itemOzonImg').style.animation = ''
     }
 
     function createNewItem() {
