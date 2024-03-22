@@ -4,6 +4,12 @@ let tHeaderHeight = document.querySelector('#t-header').clientHeight
 
 window.addEventListener("load", function () {
     // blockBread.style.paddingTop = ((headerHeight - tHeaderHeight) + 'px')
-    blockBread.style.paddingTop = ((headerHeight) + 'px')
-    blockBread.style.transition = 'all .3s ease-out'
+    if (headerHeight > tHeaderHeight) {
+        blockBread.style.paddingTop = ((headerHeight - tHeaderHeight) + 'px')
+        blockBread.style.paddingTop = ((headerHeight) + 'px')
+        blockBread.style.transition = 'all .3s ease-out'
+    } else {
+        blockBread.style.paddingTop = ((headerHeight) + 'px')
+        blockBread.style.transition = 'all .3s ease-out'
+    }
 })
