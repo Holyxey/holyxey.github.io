@@ -9,7 +9,7 @@ window.addEventListener("load", function () {
 
         let paddingDifference = (headerBottom - breadTop)
 
-        blockBread.style.transition = 'all .3s ease-out'
+        blockBread.style.transition = 'all 1s ease-out'
         blockBread.style.paddingTop = (paddingDifference + 'px')
     }, 3000)
 })
