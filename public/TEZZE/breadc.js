@@ -8,5 +8,6 @@ let breadTop = blockBread.getBoundingClientRect().top
 let paddingDifference = (headerBottom - breadTop)
 
 window.addEventListener("load", function () {
+    blockBread.style.transition = 'all .3s ease-out'
     blockBread.style.paddingTop = (paddingDifference + 'px')
 })
