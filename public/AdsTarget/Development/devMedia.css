@@ -61,8 +61,8 @@
         padding: var(--rem-aa) var(--rem-aa) calc(var(--rem-aa) - 2.5px) var(--rem-aa)
     }
 
-    .t-popup__container {
-        padding-top: 10rem;
+    .t-popup > .t-popup__container {
+        padding-top: 10rem!important;
     }
 }
 
