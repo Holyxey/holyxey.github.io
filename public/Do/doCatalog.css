@@ -118,6 +118,7 @@ body {
 @media screen and (max-width: 800px) {
     .catHeader {
         padding-left: 1rem;
+        margin-inline: -.5rem;
     }
     .catItemList {
         padding-left: 0;
