@@ -57,7 +57,8 @@ function caseFilterStart() {
                         el.style.display = 'none'
                     }
                 })
-                window.location = '#cases'
+                // window.location = '#cases'
+                document.getElementById("cases").scrollIntoView();
                 window.scrollBy(0, 1)
             } else {
                 caseButtons.forEach(function (el) {
@@ -68,7 +69,8 @@ function caseFilterStart() {
                     el.style.display = ''
                 })
                 el.classList.add('caseActiveFilter')
-                window.location = '#cases'
+                // window.location += '#cases'
+                document.getElementById("cases").scrollIntoView();
                 window.scrollBy(0, 1)
             }
         })
