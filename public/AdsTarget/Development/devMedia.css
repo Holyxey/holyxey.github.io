@@ -63,6 +63,7 @@
 
     .t-popup > .t-popup__container {
         padding-top: 10rem!important;
+        min-height: unset!important;
     }
 }
 
