@@ -60,6 +60,10 @@
     .hx-at-case-category {
         padding: var(--rem-aa) var(--rem-aa) calc(var(--rem-aa) - 2.5px) var(--rem-aa)
     }
+
+    .t-popup__container {
+        padding-top: 10rem;
+    }
 }
 
 @media screen and (max-width: 480px) {
