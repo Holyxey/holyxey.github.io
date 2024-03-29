@@ -1,2 +1,2 @@
 if (location.href.includes('/eng'))
-    localStorage.setItem('_lang', 'eng')
+    localStorage.setItem('_atLang', 'eng')
