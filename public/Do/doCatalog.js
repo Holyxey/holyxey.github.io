@@ -5,34 +5,49 @@ let doItems;
 let catId;
 let catHeader;
 let moreButton;
-//
-//
-function findCategories() {
-    if (document.querySelector('.js-store-load-more-btn') && document.querySelector('.js-store-load-more-btn').style.display !== 'none') {
-        moreButton = document.querySelector('.js-store-load-more-btn');
-        setTimeout(() => {
-            moreButton.click()
-        },1500)
-        return;
-    } else {
-        doCatalogDiv = document.querySelector('.js-store').parentNode.parentNode
-        if (doCatalogDiv) {
-            doCatalogDiv.style.display = 'none'
-            doCatalog = document.querySelector('.js-store')
-            doCategories = document.querySelectorAll('[data-storepart-uid]')
+let menuItems;
+let createMenu = document.createElement('ul')
+    createMenu.classList.add('menu')
+if (document.querySelector('#allrecords'))
+    document.querySelector('#allrecords').parentNode.prepend(createMenu)
 
-            setTimeout(() => {
-                if (doCategories.length > 0) {
-                    newProductArray()
-                    clearInterval(startDoCatalog)
-                }
-            }, 500)
+function menuItemClick(el) {
+    let q = document.querySelectorAll('.catHeader')
+    for (let i = 0; i < q.length; i++) {
+        if (q[i].textContent === el.textContent) {
+            q[i].scrollIntoView()
+            window.scrollBy({
+                top: - document.querySelector('.menu').clientHeight,
+                left: 0,
+                behavior: 'smooth'
+            });
+            break;
         }
-
     }
 }
 
+//
+//
+function findCategories() {
+        if (document.querySelector('.js-store')) {
+            doCatalog = document.querySelector('.js-store')
+            doCatalogDiv = document.querySelector('.js-store').parentNode.parentNode
+            if (doCatalogDiv) {
+                // doCatalogDiv.style.display = 'none'
+                doCategories = document.querySelectorAll('[data-storepart-uid]')
+
+                setTimeout(() => {
+                    if (doCategories.length > 0) {
+                        newProductArray()
+                    }
+                }, 500)
+            }
+            menuItems = document.querySelectorAll('.menuItem')
+        }
+}
 function newProductArray() {
+    clearInterval(startTimer)
+
     for (let i = 1; i < doCategories.length; i++) {
         catId = doCategories[i].getAttribute('data-storepart-uid')
         doItems = document.querySelectorAll('[data-product-part-uid="' + catId + '"]')
@@ -52,9 +67,16 @@ function newProductArray() {
         createCatItemList.classList.add('catItemList')
         createCatalogCategory.append(createCatItemList)
 
+        let createMenuItem = document.createElement('li')
+        createMenuItem.classList.add('menuItem')
+        createMenuItem.textContent = doCategories[i].textContent
+        createMenuItem.setAttribute('onclick', 'menuItemClick(this)')
+        createMenu.append(createMenuItem)
+
         for (let j = 0; j < doItems.length; j++) {
             let createCatItem = document.createElement('div')
             createCatItem.classList.add('catItem')
+
             let createItemName = document.createElement('h4')
             createItemName.classList.add('itemName')
             createItemName.textContent = doItems[j].querySelector('.js-store-prod-name').textContent
@@ -96,9 +118,52 @@ function newProductArray() {
                 createCatItem.append(createItemPrice)
             }
         }
+
+        let doDeviver = document.createElement('div')
+        doDeviver.classList.add('doHr')
+        createCatalogCategory.parentNode.append(doDeviver)
     }
 }
 
 //
 //
-const startDoCatalog = setInterval(findCategories, 200)
+function menuCatChose(chosen) {
+    if (menuItems && chosen) {
+        menuItems.forEach((el)=>{
+            el.classList.remove('menuItemChosen')
+        })
+        chosen.classList.add('menuItemChosen')
+        let q = document.querySelector('.menu')
+        q.scrollBy({
+            behavior: "smooth",
+            left: document.querySelector('.menuItemChosen').getBoundingClientRect().left,
+            top: 0
+        })
+    }
+}
+window.addEventListener("scroll", () => {
+    if (document.querySelector('.menuItem')) {
+        menuItems = document.querySelectorAll('.menuItem')
+        let c = document.querySelectorAll('.catalogCategory')
+        for (let i = 0; i < c.length; i++) {
+            if (c[i].getBoundingClientRect().bottom > 0) {
+                let chosenText = c[i].querySelector('.catHeader').textContent;
+                for (let j = 0; j < menuItems.length; j++) {
+                    if (menuItems[j].textContent === chosenText) {
+                        menuCatChose(menuItems[j])
+                    }
+                }
+                break;
+            }
+        }
+    }
+})
+
+//
+//
+const startTimer  = setInterval(()=>{
+    findCategories()
+},1000)
+findCategories()
+//
+//

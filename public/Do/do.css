@@ -1,117 +1,194 @@
-@font-face {
-    font-family: 'doFont';
-    src: url("https://holyxey.github.io/public/Do/eina/Eina02-SemiBold.ttf");
-    font-weight: 600;
-}
-
-/**/
 * {
-    margin: 0;
     padding: 0;
+    margin: 0;
 }
 body {
-    background: black;
-    animation: wnbload 2s ease-in forwards;
+    background-color: #090712;
+    color: #f5f1ed;
+    font-family: 'Roboto', 'Helvetica', sans-serif;
+    z-index: 1;
 }
-.logoLoader {
+.img {
     position: fixed;
-    top: 50%;
-    left: 50%;
-    translate: -50% -50%;
-    max-width: 20vw;
+    top: 0;
+    right: 0;
 
-    animation: logoLoader 3s infinite ease;
-}
-.logoLetter {
-}
-.logoAfterLoad {
-    position: fixed;
-    top: 2rem;
-    left: 50%;
-    width: 60px;
-    height: 40px;
-    opacity: 0;
-}
-#DoStart {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    translate: -50% -50%;
+    max-height: 100dvh;
 
+    background: #252323;
+}
+
+::-webkit-scrollbar, ::-webkit-scrollbar-thumb, ::-webkit-scrollbar-track {
+    width: 0;
+    height: 0;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    border-radius: 1rem;
+}
+
+.do * {
+    line-height: 1;
+    font-size: 4rem;
+}
+h1 {
+    flex: 1;
+    display: flex;
+    align-items: center;
+
+    font-size: 4rem;
+
+    color: #f8f8f8!important;
+    text-decoration: none!important;
+    margin: 2rem;
+    font-weight: 900;
+}
+.do {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
+    gap: 2rem;
+    height: 100dvh;
+
+    z-index: 2;
+    margin: auto;
+
+    align-items: stretch;
+    justify-content: stretch;
+    transition: height ease-in-out .5s;
 }
+.doMenuItem {
+    flex: 1;
+    display: flex;
+    align-items: center;
 
-.doButton {
-    font-family: 'doFont', Helvetica, sans-serif;
-    font-size: .9rem;
-
-    background-color: #ffffff10;
-    color: white!important;
-    text-decoration: none;
+    justify-self: stretch;
     text-transform: uppercase;
 
-    padding: 1rem 1.3rem .8rem 1.3rem;
-    border-radius: .5rem;
-    border: 1px solid white;
+    font-size: 4rem;
+    font-weight: 200;
+
+    cursor: pointer;
+
+    color: #f8f8f8!important;
+    text-decoration: none!important;
+    margin: 2rem;
+}
+.doMenuItem:hover {
+    font-weight: 900;
 }
 
-/**/
-@keyframes wnbload {
-    from {background: white}
-    to {background: black}
+#logoImg {
+    flex: 1;
+
+    justify-self: stretch;
+    text-transform: uppercase;
+    fill: #f8f8f8!important;
+    margin: 2rem;
+
+    max-width: 100px;
+    /*max-height: 80px;*/
 }
-@keyframes logoLoader {
-    from {scale: 1; opacity: .09}
-    80% {scale: .95; opacity: 1}
-    to {scale: 1; opacity: .09}
+.logoDo {
 }
-@keyframes logoLetter {
-    from {
-        opacity: 1;
-        translate: 0 0;
-        transform: scaleY(100%);
+
+
+/*
+*/
+@media screen and (max-width: 800px) {
+    .do, h1, .doMenuItem {
+        font-size: 3rem;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
     }
-    to {opacity: 0;
-        translate: 30px;
-        transform: scaleY(80%);
+
+    .img {
+        display: none;
     }
 }
-@keyframes logoLast {
+
+
+/*
+*/
+.uc-DoForm * {
+    font-family: 'Roboto', 'Helvetica', sans-serif;
+}
+.t-inputquantity__wrapper {
+    justify-content: center
+}
+.t-input-title {
+    text-align: center;
+    padding-bottom: .5rem!important;
+    font-weight: 500;
+}
+
+@media screen and (min-width: 800px) {
+    .uc-DoForm {
+        padding: 2rem 3rem!important;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+
+        opacity: 0;
+        display: none;
+    }
+    .uc-DoForm * {
+        border-radius: .25rem!important;
+    }
+    .uc-DoForm button {
+        width: 100%;
+    }
+
+    .t-form__errorbox-wrapper {
+        background: #DB2763;
+    }
+    .t-input-error {
+        color: #DB2763;
+        font-size: 1rem;
+        text-align: center;
+        padding-top: 1rem;
+    }
+    .t-form .js-error-control-box .t-input:not(.t-input-phonemask):not(.t-input-ownanswer):not(.t-input__own-answer), .t-form .js-error-control-box .t-checkbox__control, .t-form .js-error-control-box .t-checkboxes__wrapper, .t-form .js-error-control-box .t-select, .t-form .js-error-control-box .t-radio__wrapper, .t-form .js-error-control-box .t-rate__wrapper, .t-form .js-error-control-box .uploadcare-widget {
+        border: 1px solid #DB2763!important;
+    }
+    .t-form__successbox {
+        background: #A5E6BA;
+        color: #090712;
+    }
+
+    .t-datepicker__wrapper {
+        max-width: 100%!important;
+    }
+    .t_datepicker__inner {
+        translate: 0 -100%!important;
+    }
+    .t-prefix_4 {
+        padding-left: unset!important;
+    }
+}
+
+@keyframes showReservation {
     from {
-        opacity: 1;
-        translate: 0 0;
+        display: block;
+        opacity: 0;
+        bottom: 0;
+        right: -100%;
     }
     to {
-        opacity: 0;
-        translate: -15px;
+        opacity: 1;
+        bottom: 0;
+        right: 0;
     }
 }
-@keyframes DoStart {
-    from {
-        display: flex;
-        opacity: 0;
-        gap: 5rem;
+
+
+/*
+*/
+@keyframes logoAnimate {
+    from {}
+    50% {
+        translate: 1px 2px;
+        rotate: .5deg;
     }
-    to {
-        display: flex;
-        opacity: 1;
-        gap: 1rem;
-    }
-}
-@keyframes logoAfterLoad {
-    from {
-        opacity: 0;
-        translate: -50% -50px;
-        transform: scaleX(80%);
-    }
-    to {
-        opacity: 1;
-        translate: -50% 50%;
-        transform: scaleX(100%);
-    }
+    to {}
 }
