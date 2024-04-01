@@ -7,5 +7,10 @@ if (document.location.href.includes('adstarget-ru')) {
             if (el.getAttribute('href').includes('#popup:menu') || el.getAttribute('href').includes('#popup:cover'))
             el.href = 'mailto:mail@adstarget.ru'
         })
+        document.querySelectorAll("button[type='submit']").forEach((el)=>{
+            el.addEventListener('click', ()=>{
+                window.open('mailto:mail@adstarget.ru');
+            })
+        })
     },500)
 }
