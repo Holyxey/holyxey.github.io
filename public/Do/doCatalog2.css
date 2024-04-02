@@ -219,6 +219,7 @@ header {
     padding: 1rem;
 
     display: flex;
+    animation: backButton 5s ease-in-out infinite;
 }
 /*
 */
@@ -227,8 +228,20 @@ header {
     to {translate: 0 0; opacity: 1;}
 }
 @keyframes backButton {
-    from {translate: -50% -10px; opacity: 0;}
-    to {translate: -50% 0;opacity: 1;}
+    from {}
+    30% {
+        translate: 0;
+        rotate: 0deg;
+    }
+    60% {
+        translate: 0 5%;
+        rotate: 15deg;
+    }
+    90% {
+        translate: 0;
+        rotate: 0deg;
+    }
+    to {}
 }
 
 /*
