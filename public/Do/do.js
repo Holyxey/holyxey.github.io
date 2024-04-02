@@ -9,5 +9,8 @@ window.addEventListener("load", function () {
         let d = document.querySelector('.wTime');
         let a = document.querySelector('.address');
         d.style.top = a.getBoundingClientRect().height + 'px'
+        window.addEventListener("resize", ()=> {
+            d.style.top = a.getBoundingClientRect().height + 'px'
+        })
     }
 })
