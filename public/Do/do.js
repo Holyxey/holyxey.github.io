@@ -8,6 +8,6 @@ window.addEventListener("load", function () {
     if (document.querySelector('.wTime') && document.querySelector('.address')) {
         let d = document.querySelector('.wTime');
         let a = document.querySelector('.address');
-        d.style.paddingTop = a.getBoundingClientRect().height + 'px'
+        d.style.top = a.getBoundingClientRect().height + 'px'
     }
 })
