@@ -1,0 +1,79 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    body {
+        background-color: #090712;
+        color: #f5f1ed;
+        font-family: 'Roboto', 'Helvetica', sans-serif;
+        z-index: 1;
+    }
+    ::-webkit-scrollbar, ::-webkit-scrollbar-thumb, ::-webkit-scrollbar-track {
+        width: 0;
+        height: 0;
+        background: transparent;
+        padding: 0;
+        margin: 0;
+        border-radius: 1rem;
+    }
+
+    #menul {
+        max-width: 1200px;
+
+        font-size: 1rem;
+        font-weight: 300;
+        text-transform: uppercase;
+
+        position: fixed;
+        top: 0;
+        left: 50%;
+        translate: -50%;
+    }
+    #menul ul {
+        list-style: none;
+        margin: 0 1rem 1rem 1rem;
+
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+    #menul a {
+        color: #f5f1ed!important;
+        text-decoration: none!important;
+    }
+    .t-input-title {
+        padding-right: unset!important;
+    }
+
+    @media screen and (max-width: 480px) {
+        .t678 {
+            width: 90dvw;
+        }
+        .t-form__submit {
+            padding-bottom: unset!important;
+            margin-top: unset!important;
+            margin-bottom: unset!important;
+        }
+    }
+
+</style>
+
+<body>
+<section id="menul">
+    <ul>
+        <li>
+            <a href="/">главная</a>
+        </li>
+        <li>
+            <a href="/menu">меню</a>
+        </li>
+    </ul>
+</section>
+</body>

@@ -1,0 +1,54 @@
+.engSubmit {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    margin: auto;
+    padding: 1.5rem 2rem 1.5rem 2rem;
+    border-radius: 1.5rem;
+
+    max-width: 80dvw;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+
+    border: 1px solid #5ED7CF;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+.engHeader {
+    display: flex;
+    gap: 2rem;
+
+    align-items: center;
+}
+.logoAdsTarget {
+    max-height: 3rem;
+}
+.engName {
+    font-family: 'Geometria',Helvetica,Arial,sans-serif;
+    font-size: 1.5rem;
+    color: #555555;
+}
+
+.engSubmitButtons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    justify-content: center;
+}
+.engButton {
+    flex: 1;
+    text-align: center;
+
+    border-radius: .5rem;
+    line-height: 1;
+    min-width: 3rem;
+    max-width: 3rem;
+}
+.engButtonImg {
+    flex: 1;
+    fill: #222;
+}

@@ -16,6 +16,7 @@ body {
     max-height: 100dvh;
 
     background: #252323;
+    pointer-events: none;
 }
 
 ::-webkit-scrollbar, ::-webkit-scrollbar-thumb, ::-webkit-scrollbar-track {
@@ -91,6 +92,31 @@ h1 {
 .logoDo {
 }
 
+.wTime {
+    flex: .1;
+
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    max-width: fit-content;
+    flex-wrap: wrap;
+    /*margin: 0 auto;*/
+    margin: 0;
+    padding: .25rem 2rem .5rem 2rem;
+
+    position: fixed;
+    top: 0;
+    background-color: #090712;
+    border-radius: 0 0 1rem 1rem;
+
+    transition: margin .3s ease-out;
+}
+.wTime > span {
+    font-weight: 300;
+    font-size: 1rem;
+}
+
 
 /*
 */
@@ -103,7 +129,22 @@ h1 {
     }
 
     .img {
+        left: 50%;
+        translate: -50%;
+        opacity: .07;
+    }
+
+    .wTime {
+        gap:  .5rem 1rem;
+        /*margin: 0 .5rem;*/
+        padding: .5rem .75rem;
+        border-radius: 0 0 .5rem .75rem;
+    }
+    .wTime > .wTimeBullet {
         display: none;
+    }
+    .wTime > span {
+        font-size: .8rem;
     }
 }
 

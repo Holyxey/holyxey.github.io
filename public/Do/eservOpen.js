@@ -11,7 +11,22 @@ const reserveOpen = () => {
 }
 
 if ((document.querySelector('.img').clientWidth * 2) > window.innerWidth ) {
-    document.querySelector('.img').style.display = 'none'
+    // document.querySelector('.img').style.display = 'none'
+    const randomMath = Math.floor(Math.random() * 3)
+    let img = document.querySelector('.img');
+    if (img) {
+        switch (randomMath) {
+            case 0:
+                img.src = 'https://thumb.tildacdn.com/tild3163-6232-4335-a562-383966336465/-/format/webp/1.jpg'
+                break;
+            case 1:
+                img.src = 'https://thumb.tildacdn.com/tild3234-3630-4635-a265-376336333332/-/format/webp/3.jpg'
+                break;
+            case 2:
+                img.src = 'https://thumb.tildacdn.com/tild3633-3630-4637-a664-633333663139/-/format/webp/2.jpg'
+                break;
+        }
+    }
 }
 if (document.querySelectorAll('.logoDo')) {
     let q = document.querySelectorAll('.logoDo')

@@ -173,25 +173,53 @@ body {
     background-color: #090712;
 }
 
-.backButton {
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+
     position: sticky;
-    display: block;
-    top: 7rem;
-    left: auto;
-    right: 1rem;
-    max-width: fit-content;
+    top: -.5rem;
+    width: calc(100% - 2rem);
+    margin-block: 1rem;
+    padding-inline: 1rem;
+}
+.backButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .backButton:nth-child(1) {
-
-}
-.backButton:nth-child(2) {
-
+    /*display: none;*/
 }
 .backButton svg {
     width: 2rem;
-    height: 2rem;
 }
 
+#menuf {
+    position: fixed;
+    bottom: 0;
+
+    width: 100dvw;
+    z-index: 100;
+}
+#menuf ul {
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+    justify-content: space-between;
+    padding-left: 0!important;
+    margin-bottom: 0!important;
+    margin-block-start: 0!important;
+    margin-block-end: 0!important;
+    padding-inline-start: 0!important;
+}
+#menuf a {
+    padding: 1rem;
+
+    display: flex;
+}
 /*
 */
 @keyframes showHeader {

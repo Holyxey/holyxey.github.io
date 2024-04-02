@@ -89,6 +89,11 @@ function newProductArray() {
                 createItemDescription.classList.add('itemDescription')
                 createItemDescription.textContent = doItems[j].querySelector('.js-store-prod-descr').textContent
                 createCatItem.append(createItemDescription)
+            } else {
+                let createItemDescription = document.createElement('p')
+                createItemDescription.classList.add('itemDescription')
+                createItemDescription.textContent = ''
+                createCatItem.append(createItemDescription)
             }
 
             if (doItems[j].querySelectorAll('.t-product__option-item').length > 0) {
