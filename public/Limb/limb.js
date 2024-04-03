@@ -16,6 +16,7 @@ const setHeroPadding = () => {
             hero = document.querySelector('#hx-limb-full-hero')
             check(header, hero)
         } else  if (document.querySelector('.uc-hero')) {
+            document.querySelector('.uc-hero').style.cssText += 'transition: padding .3s ease-out';
             hero = document.querySelector('.uc-hero')
             check(header, hero)
         }
@@ -26,6 +27,7 @@ const setHeroPadding = () => {
             hero = document.querySelector('#hx-limb-full-hero')
             check(header, hero)
         } else  if (document.querySelector('.uc-hero')) {
+            document.querySelector('.uc-hero').style.cssText += 'transition: padding .3s ease-out';
             hero = document.querySelector('.uc-hero')
             check(header, hero)
         }
