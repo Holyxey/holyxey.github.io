@@ -302,3 +302,27 @@ document.addEventListener("DOMContentLoaded", function (){
         reviews[i].setAttribute('onclick', 'reviewOpen(this)')
     }
 })
+
+
+
+            // МЕЛОЧИ =======
+            // ================================================
+            // ================================================
+            // ================================================
+const setHeroPadding = (header) => {
+    if (header && document.querySelector('#hx-limb-full-hero')) {
+        let b = document.querySelector('#hx-limb-full-hero')
+        b.style.paddingTop = header.getBoundingClientRect().height + 'px'
+    }
+}
+
+window.addEventListener("load", () => {
+    if (document.querySelector('.tmenu-mobile').getBoundingClientRect().height !== 0) {
+        let header = document.querySelector('.tmenu-mobile')
+        setHeroPadding(header)
+    } else if (document.querySelector('.t228').getBoundingClientRect().height !== 0) {
+        let header = document.querySelector('.t228')
+        setHeroPadding(header)
+    }
+    let mob = (document.querySelector('.t228').getBoundingClientRect().height !== 0) ? setHeroPadding(document.querySelector('.t228')) ? (document.querySelector('.tmenu-mobile').getBoundingClientRect().height !== 0) : setHeroPadding(document.querySelector('.tmenu-mobile'))
+})
