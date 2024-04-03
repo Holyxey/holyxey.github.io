@@ -85,22 +85,26 @@ for (let i = 0; i < linersCounter.length; i++) {
             // ================================================
             // ================================================
             // ================================================
-let headerAbout = document.getElementById('headerAbout');
-let headerServices = document.getElementById('headerServices');
+let headerAbout ;
+let headerServices ;
+if (document.getElementById('headerAbout') && document.getElementById('headerServices')) {
+    let headerAbout = document.getElementById('headerAbout');
+    let headerServices = document.getElementById('headerServices');
 
-headerAbout.addEventListener('mouseenter', showHeaderList)
-headerServices.addEventListener('mouseenter', showHeaderList)
+    headerAbout.addEventListener('mouseenter', showHeaderList)
+    headerServices.addEventListener('mouseenter', showHeaderList)
 
-function hideHeaderList(el) {
-    this.style.display = 'none'
-}
-function showHeaderList() {
-    let list = this.querySelector('ul')
-    if (list) {
-        list.addEventListener('mouseleave', hideHeaderList)
-        let listList = list.querySelectorAll('*')
-        list.style.cssText += `display: flex; opacity: 1; height: unset;`
-        listList.forEach( (el) => {el.classList.add('anishow')})
+    function hideHeaderList(el) {
+        this.style.display = 'none'
+    }
+    function showHeaderList() {
+        let list = this.querySelector('ul')
+        if (list) {
+            list.addEventListener('mouseleave', hideHeaderList)
+            let listList = list.querySelectorAll('*')
+            list.style.cssText += `display: flex; opacity: 1; height: unset;`
+            listList.forEach( (el) => {el.classList.add('anishow')})
+        }
     }
 }
 
