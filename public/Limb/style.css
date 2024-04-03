@@ -80,6 +80,9 @@ header {
     justify-content: space-between;
     padding: 20px;
 }
+header #header {
+    display: none!important;
+}
 #headerLogo {
     max-width: 100px;
     cursor: pointer;
