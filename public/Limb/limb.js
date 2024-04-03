@@ -309,19 +309,26 @@ document.addEventListener("DOMContentLoaded", function (){
             // ================================================
             // ================================================
             // ================================================
-const setHeroPadding = (header) => {
-    if (header && document.querySelector('#hx-limb-full-hero')) {
-        let b = document.querySelector('#hx-limb-full-hero')
-        b.style.paddingTop = header.getBoundingClientRect().height + 'px'
+const setHeroPadding = () => {
+    const check = (header, hero) => {
+        if (header && hero) {
+            hero.style.paddingTop = header.getBoundingClientRect().height + 'px'
+        }
+    }
+
+    if (document.querySelector('.tmenu-mobile').getBoundingClientRect().height !== 0) {
+        let header = document.querySelector('.tmenu-mobile')
+        let hero;
+        document.querySelector('#hx-limb-full-hero') ? hero = document.querySelector('#hx-limb-full-hero') : document.querySelector('.t-cover__filter') ? hero = document.querySelector('.t-cover__filter') : console.log('hero is undefined');
+            check(header, hero)
+    } else if (document.querySelector('.t228').getBoundingClientRect().height !== 0) {
+        let header = document.querySelector('.t228')
+        let hero;
+        document.querySelector('#hx-limb-full-hero') ? hero = document.querySelector('#hx-limb-full-hero') : document.querySelector('.t-cover__filter') ? hero = document.querySelector('.t-cover__filter') : console.log('hero is undefined');
+            check(header, hero)
     }
 }
 
 window.addEventListener("load", () => {
-    if (document.querySelector('.tmenu-mobile').getBoundingClientRect().height !== 0) {
-        let header = document.querySelector('.tmenu-mobile')
-        setHeroPadding(header)
-    } else if (document.querySelector('.t228').getBoundingClientRect().height !== 0) {
-        let header = document.querySelector('.t228')
-        setHeroPadding(header)
-    }
+    setHeroPadding();
 })
