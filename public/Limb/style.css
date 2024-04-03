@@ -66,20 +66,20 @@ p, .p {
     font-size: .9rem;
 }
 
-header {
-    border-bottom: #0099A0 1px solid;
-    z-index: 995595607309;
-    position: sticky;
-    top: 0;
-    background: #ffffff;
-}
-.header {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px;
-}
+/*header {*/
+/*    border-bottom: #0099A0 1px solid;*/
+/*    z-index: 995595607309;*/
+/*    position: sticky;*/
+/*    top: 0;*/
+/*    background: #ffffff;*/
+/*}*/
+/*.header {*/
+/*    display: flex;*/
+/*    flex-direction: row;*/
+/*    align-items: center;*/
+/*    justify-content: space-between;*/
+/*    padding: 20px;*/
+/*}*/
 header #header {
     display: none!important;
 }
