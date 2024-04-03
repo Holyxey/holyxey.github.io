@@ -24,6 +24,15 @@ li {
     list-style-position: inside;
 }
 
+.t228__rightside .t228__rightcontainer {
+    text-align: right;
+}
+#rec648441099 {
+    position: sticky;
+    top: 0;
+    z-index: 100500;
+    border-bottom: 1px solid #0099A0;
+}
 
 h1, .h1 {
     font-weight: 500;
@@ -73,6 +82,7 @@ header {
 }
 #headerLogo {
     max-width: 100px;
+    cursor: pointer;
 }
 #headerMenu {
     display: flex;
