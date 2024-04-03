@@ -916,6 +916,10 @@ header #header {
 }
 #rec729208512 .t-submit {
     background-color: #0099A0!important;
+    border-radius: .5rem !important;
+}
+#rec729208512 .t-input {
+    border-radius: .5rem !important;
 }
 
 /*
