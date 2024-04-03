@@ -203,6 +203,7 @@ header #header {
     background-color: #0099A0;
     background-image: url('https://static.tildacdn.com/tild6666-3132-4038-b838-356466633035/Wireframe_-_7_2.jpg');
     position: relative;
+    transition: padding-top .3s ease-out;
 }
 #hx-limb-hero {
     display: flex;
