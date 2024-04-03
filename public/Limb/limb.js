@@ -319,13 +319,23 @@ const setHeroPadding = () => {
     if (document.querySelector('.tmenu-mobile').getBoundingClientRect().height !== 0) {
         let header = document.querySelector('.tmenu-mobile')
         let hero;
-        document.querySelector('#hx-limb-full-hero') ? hero = document.querySelector('#hx-limb-full-hero') : document.querySelector('.uc-hero') ? hero = document.querySelector('.uc-hero') : console.log('hero is undefined');
+        if (document.querySelector('#hx-limb-full-hero')) {
+            hero = document.querySelector('#hx-limb-full-hero')
             check(header, hero)
+        } else  if (document.querySelector('.uc-hero')) {
+            hero = document.querySelector('.uc-hero')
+            check(header, hero)
+        }
     } else if (document.querySelector('.t228').getBoundingClientRect().height !== 0) {
         let header = document.querySelector('.t228')
         let hero;
-        document.querySelector('#hx-limb-full-hero') ? hero = document.querySelector('#hx-limb-full-hero') : document.querySelector('.uc-hero') ? hero = document.querySelector('.uc-hero') : console.log('hero is undefined');
+        if (document.querySelector('#hx-limb-full-hero')) {
+            hero = document.querySelector('#hx-limb-full-hero')
             check(header, hero)
+        } else  if (document.querySelector('.uc-hero')) {
+            hero = document.querySelector('.uc-hero')
+            check(header, hero)
+        }
     }
 }
 window.addEventListener("load", () => {
