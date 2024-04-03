@@ -83,54 +83,54 @@ p, .p {
 header #header {
     display: none!important;
 }
-#headerLogo {
-    max-width: 100px;
-    cursor: pointer;
-}
-#headerMenu {
-    display: flex;
-    position: relative;
-    list-style: none;
-    gap: 20px;
-    text-transform: uppercase;
-}
-#headerMenu > * {
-    cursor: pointer;
-}
-#headerPhones {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 5px;
-}
-#headerPhones > * {
-    font-weight: 600;
-    color: #0099A0!important;
-    text-decoration: none;
-}
-    .headerAbout, .headerServices{
-        position: absolute;
-        list-style: none;
+/*#headerLogo {*/
+/*    max-width: 100px;*/
+/*    cursor: pointer;*/
+/*}*/
+/*#headerMenu {*/
+/*    display: flex;*/
+/*    position: relative;*/
+/*    list-style: none;*/
+/*    gap: 20px;*/
+/*    text-transform: uppercase;*/
+/*}*/
+/*#headerMenu > * {*/
+/*    cursor: pointer;*/
+/*}*/
+/*#headerPhones {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    align-items: flex-start;*/
+/*    gap: 5px;*/
+/*}*/
+/*#headerPhones > * {*/
+/*    font-weight: 600;*/
+/*    color: #0099A0!important;*/
+/*    text-decoration: none;*/
+/*}*/
+/*    .headerAbout, .headerServices{*/
+/*        position: absolute;*/
+/*        list-style: none;*/
 
-        top: 30px;
-        left: -20px;
-        height: 10px;
+/*        top: 30px;*/
+/*        left: -20px;*/
+/*        height: 10px;*/
 
-        display: none;
-        flex-direction: column;
-        gap: 15px;
-        background: #FFFfff;
-        padding: 20px;
-        border-radius: .5rem;
-        border: 1px solid #0099A0;
+/*        display: none;*/
+/*        flex-direction: column;*/
+/*        gap: 15px;*/
+/*        background: #FFFfff;*/
+/*        padding: 20px;*/
+/*        border-radius: .5rem;*/
+/*        border: 1px solid #0099A0;*/
 
-        opacity: 0;
-        transition: all .5s ease-out;
-    }
-    .header a {
-        text-decoration: none!important;
-        color: unset!important;
-    }
+/*        opacity: 0;*/
+/*        transition: all .5s ease-out;*/
+/*    }*/
+/*    .header a {*/
+/*        text-decoration: none!important;*/
+/*        color: unset!important;*/
+/*    }*/
 
 .orange-button {
     width: fit-content;
@@ -961,9 +961,9 @@ header #header {
         }
     }
 
-    .headerPC {
-        display: none;
-    }
+    /*.headerPC {*/
+    /*    display: none;*/
+    /*}*/
 }
 
 @media screen and (max-width: 1024px) {
