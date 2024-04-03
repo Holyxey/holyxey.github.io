@@ -1,3 +1,42 @@
+// МЕЛОЧИ =======
+// ================================================
+// ================================================
+// ================================================
+const setHeroPadding = () => {
+    const check = (header, hero) => {
+        if (header && hero) {
+            hero.style.paddingTop = header.getBoundingClientRect().height + 'px'
+        }
+    }
+
+    if (document.querySelector('.tmenu-mobile').getBoundingClientRect().height !== 0) {
+        let header = document.querySelector('.tmenu-mobile')
+        let hero;
+        if (document.querySelector('#hx-limb-full-hero')) {
+            hero = document.querySelector('#hx-limb-full-hero')
+            check(header, hero)
+        } else  if (document.querySelector('.uc-hero')) {
+            hero = document.querySelector('.uc-hero')
+            check(header, hero)
+        }
+    } else if (document.querySelector('.t228').getBoundingClientRect().height !== 0) {
+        let header = document.querySelector('.t228')
+        let hero;
+        if (document.querySelector('#hx-limb-full-hero')) {
+            hero = document.querySelector('#hx-limb-full-hero')
+            check(header, hero)
+        } else  if (document.querySelector('.uc-hero')) {
+            hero = document.querySelector('.uc-hero')
+            check(header, hero)
+        }
+    }
+}
+window.addEventListener("load", () => {
+    setHeroPadding();
+})
+
+
+
             // ВКЛАДКИ ОСНОВА (limbTabs.js) ===================
             // ================================================
             // ================================================
@@ -305,43 +344,4 @@ document.addEventListener("DOMContentLoaded", function (){
     for (let i = 0; i < reviews.length; i++) {
         reviews[i].setAttribute('onclick', 'reviewOpen(this)')
     }
-})
-
-
-
-            // МЕЛОЧИ =======
-            // ================================================
-            // ================================================
-            // ================================================
-const setHeroPadding = () => {
-    const check = (header, hero) => {
-        if (header && hero) {
-            hero.style.paddingTop = header.getBoundingClientRect().height + 'px'
-        }
-    }
-
-    if (document.querySelector('.tmenu-mobile').getBoundingClientRect().height !== 0) {
-        let header = document.querySelector('.tmenu-mobile')
-        let hero;
-        if (document.querySelector('#hx-limb-full-hero')) {
-            hero = document.querySelector('#hx-limb-full-hero')
-            check(header, hero)
-        } else  if (document.querySelector('.uc-hero')) {
-            hero = document.querySelector('.uc-hero')
-            check(header, hero)
-        }
-    } else if (document.querySelector('.t228').getBoundingClientRect().height !== 0) {
-        let header = document.querySelector('.t228')
-        let hero;
-        if (document.querySelector('#hx-limb-full-hero')) {
-            hero = document.querySelector('#hx-limb-full-hero')
-            check(header, hero)
-        } else  if (document.querySelector('.uc-hero')) {
-            hero = document.querySelector('.uc-hero')
-            check(header, hero)
-        }
-    }
-}
-window.addEventListener("load", () => {
-    setHeroPadding();
 })
