@@ -328,7 +328,6 @@ const setHeroPadding = () => {
             check(header, hero)
     }
 }
-
 window.addEventListener("load", () => {
     setHeroPadding();
 })
