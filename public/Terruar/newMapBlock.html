@@ -1,0 +1,30 @@
+
+<link rel="stylesheet" href="/tent/mainStyles.css">
+<link rel="stylesheet" href="/specialOffers/hxSpecial.css">
+<link rel="stylesheet" href="style.css">
+
+<!-- The map -->
+<section class="basic_section" id="map">
+    <div class="basic_header">
+        <h4 class="h1">Территория и окрестности</h4>
+        <a href="?znms_widget_open=5428" class="basic_buttons ">
+            Забронировать
+        </a>
+<!--        <a class="basic_buttons" target="_blank" href="https://static.tildacdn.com/tild6361-3334-4736-a265-376536373836/image_4.png" download>-->
+<!--            Загрузить карту-->
+<!--        </a>-->
+    </div>
+    <div class="basic_block" style="gap: 0; align-items: initial;">
+        <img class="newMapImg" src="https://thumb.tildacdn.com/tild6361-3334-4736-a265-376536373836/-/format/webp/image_4.png" alt="Map" onclick="newMapImg(this)">
+        <img class="newMapImg" src="https://thumb.tildacdn.com/tild6361-3334-4736-a265-376536373836/-/format/webp/image_4.png" alt="Map" onclick="newMapImg(this)">
+    </div>
+</section>
+<!-- /The map -->
+<script>
+    const newMapImg = (src) => {
+        if (src) {
+            let ht = src.getAttribute('src');
+            window.open(ht, 'popup')
+        }
+    }
+</script>

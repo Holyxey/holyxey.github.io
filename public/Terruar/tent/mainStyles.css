@@ -1308,6 +1308,9 @@ a {
     .mapvid {
         pointer-events: none;
     }
+    .newMapImg {
+        max-width: 50%;
+    }
 
     /*
 */
@@ -1976,6 +1979,10 @@ a {
         .map_img {
             width: 100%!important;
         }
+        .newMapImg {
+            max-width: unset;
+        }
+
 
         .reviews_block {
             flex-direction: column!important;

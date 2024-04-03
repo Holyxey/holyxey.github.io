@@ -168,6 +168,7 @@ header {
     height: calc(100% - 10rem);
     background-color: #0099A020;
     border: 1px solid #0099A010;
+    box-shadow: 0 0 10px #0099A070;
 
     padding: 2rem;
     border-radius: 2rem;

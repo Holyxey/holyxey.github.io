@@ -1,0 +1,27 @@
+.hx-limb-feet-item-big {
+    flex: 1 0 35%;
+}
+.schoolIframe {
+    border-radius: 1rem;
+    border: 1px transparent!important;
+    height: fit-content;
+    aspect-ratio: 16 / 9;
+    float: left;
+    box-shadow: 3px 3px 0 #0099A0;
+}
+.hx-limb-devices-list-point {
+    background-color: #FFFfff;
+}
+
+
+/*
+*/
+@media screen and (max-width: 1200px) {
+    .schoolIframe {
+        max-width: unset;
+    }
+    .hx-limb-devices-list-header img {
+        display: unset;
+        width: 2rem;
+    }
+}
