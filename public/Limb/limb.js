@@ -324,5 +324,4 @@ window.addEventListener("load", () => {
         let header = document.querySelector('.t228')
         setHeroPadding(header)
     }
-    let mob = (document.querySelector('.t228').getBoundingClientRect().height !== 0) ? setHeroPadding(document.querySelector('.t228')) ? (document.querySelector('.tmenu-mobile').getBoundingClientRect().height !== 0) : setHeroPadding(document.querySelector('.tmenu-mobile'))
 })
