@@ -319,12 +319,12 @@ const setHeroPadding = () => {
     if (document.querySelector('.tmenu-mobile').getBoundingClientRect().height !== 0) {
         let header = document.querySelector('.tmenu-mobile')
         let hero;
-        document.querySelector('#hx-limb-full-hero') ? hero = document.querySelector('#hx-limb-full-hero') : document.querySelector('.t-rec') ? hero = document.querySelector('.t-rec') : console.log('hero is undefined');
+        document.querySelector('#hx-limb-full-hero') ? hero = document.querySelector('#hx-limb-full-hero') : document.querySelector('.uc-hero') ? hero = document.querySelector('.uc-hero') : console.log('hero is undefined');
             check(header, hero)
     } else if (document.querySelector('.t228').getBoundingClientRect().height !== 0) {
         let header = document.querySelector('.t228')
         let hero;
-        document.querySelector('#hx-limb-full-hero') ? hero = document.querySelector('#hx-limb-full-hero') : document.querySelector('.t-rec') ? hero = document.querySelector('.t-rec') : console.log('hero is undefined');
+        document.querySelector('#hx-limb-full-hero') ? hero = document.querySelector('#hx-limb-full-hero') : document.querySelector('.uc-hero') ? hero = document.querySelector('.uc-hero') : console.log('hero is undefined');
             check(header, hero)
     }
 }
