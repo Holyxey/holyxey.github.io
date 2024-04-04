@@ -12,7 +12,6 @@ function atCatPrior() {
     if (atCat) {
         document.querySelectorAll('.hx-at-case-web[category="' + atCat + '"]').forEach(function (el) {
             el.style.cssText += 'order: -10'
-            console.log(el)
         })
     }
 }
