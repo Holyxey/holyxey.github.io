@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>David's Garden Menu</title>
+    <title>Vangoghi Menu</title>
 
     <style>
         * {
@@ -14,9 +14,6 @@
             font-family: 'Helvetica', sans-serif;
         }
         body {
-            /*background-color: #091B48;*/
-            background: url("https://images.yourstory.com/cs/2/96eabe90392211eb93f18319e8c07a74/Imagejtb7-1684960500563.jpg");
-            background-size: cover;
             height: 100dvh;
         }
         section {
@@ -46,22 +43,29 @@
 
             padding: 1rem 2rem;
             color: white;
-            border: 1px solid #EED351;
             text-decoration: none;
             font-size: 1.5rem;
             text-transform: uppercase;
             font-weight: 500;
 
-            background-color: #2B76B2;
+            background-color: #21212170;
             box-shadow: 0 0 2rem #21212121;
+
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
         }
         .holyxey {
             text-decoration: none;
             position: absolute;
-            bottom: 1rem;
+            bottom: 0;
             left: 50%;
             translate: -50%;
-            color: #2B76B2!important;
+            color: #ffffff!important;
+
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: .5rem 1rem;
+            border-radius: 1rem 1rem 0 0;
 
             transition: all .5s ease-out;
         }
@@ -80,19 +84,37 @@
             position: absolute;
             top: 0;
             right: 0;
-            /*opacity: 0;*/
+            opacity: 0;
 
             padding: .5rem 1rem;
-            background-color: #768860;
             border-radius: 0 0 0 1rem;
             color: white;
             cursor: pointer;
+            background-color: #21212170;
+
+            border-left: 1px solid #EED351;
+            border-bottom: 1px solid #EED351;
+
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
 
             z-index: 595607309;
             transition: all .5s ease-out;
         }
-        .logo {
-            width: 100px;
+
+        @media screen and (orientation: landscape) {
+            body {
+                background-image: url("https://holyxey.github.io/public/DavidsGarden/2.webp");
+                background-position: center;
+                background-size: cover;
+            }
+        }
+        @media screen and (orientation: portrait) {
+            body {
+                background-image: url("https://holyxey.github.io/public/DavidsGarden/1.webp");
+                background-position: center;
+                background-size: cover;
+            }
         }
     </style>
 </head>
