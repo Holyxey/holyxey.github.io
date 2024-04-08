@@ -4,7 +4,7 @@
 .hx-at-staff-block {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--rem-b) var(--rem-e);
+    gap: var(--rem-c) var(--rem-d);
     justify-content: center;
     padding-top: 1rem;
 }
@@ -16,7 +16,8 @@
     align-items: center;
     gap: var(--rem-aa);
 
-    min-width: 200px;
+    min-width: 150px;
+    max-width: 30%;
 }
 .hx-at-staff-img {
     max-width: 100%;
