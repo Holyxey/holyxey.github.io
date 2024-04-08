@@ -1068,7 +1068,7 @@ header #header {
     .hx-limb-structure-block-info {
         flex-direction: column;
         flex: 1;
-        max-width: 70%;
+        /*max-width: 70%;*/
     }
     .hx-limb-structure-block-img {
         flex: 1;
@@ -1081,8 +1081,16 @@ header #header {
     .hx-limb-structure-block-info-in {
         padding: 1rem;
     }
-    #hx-limb-structure .hx-limb-structure-block:last-child {
+    #hx-limb-structure .hx-limb-structure-block:nth-child(3) {
         display: none;
+    }
+    .hx-limb-structure-block-img {
+        order: -3;
+        min-height: 50dvh;
+        margin: 0 auto;
+    }
+    #hx-limb-structure .hx-limb-structure-block:last-child {
+        flex-direction: column;
     }
 
     .slick-prev,
