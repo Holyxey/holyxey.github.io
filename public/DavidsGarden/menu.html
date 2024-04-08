@@ -1,3 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Van Goghi | Menu</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: 'Helvetica', sans-serif;
+        }
+        body {
+            height: 100dvh;
+            background-color: #f5e38d;
+        }
+        section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            translate: -50% -50%;
+
+            max-width: 1200px;
+            padding: 1rem;
+
+            transition: filter .5s ease-out;
+        }
+        section a {
+            flex: 1;
+            align-content: center;
+            justify-content: center;
+            text-align: center;
+            border-radius: 1rem;
+
+            padding: 1rem 2rem;
+            color: white;
+            text-decoration: none;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            font-weight: 500;
+
+            background-color: #21212170;
+            box-shadow: 0 0 2rem #21212121;
+
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .holyxey {
+            text-decoration: none;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            translate: -50%;
+            color: #ffffff!important;
+
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: .5rem 1rem;
+            border-radius: 1rem 1rem 0 0;
+
+            transition: all .5s ease-out;
+        }
+        .iframe {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            translate: -50% -50%;
+            height: 99dvh;
+            width: 99dvw;
+            border-radius: .251rem;
+            margin: 0;
+            padding: 0;
+        }
+        .closeButton {
+            position: absolute;
+            top: 0;
+            right: 0;
+            opacity: 0;
+
+            padding: .5rem 1rem;
+            border-radius: 0 0 0 1rem;
+            color: white;
+            cursor: pointer;
+            background-color: #21212170;
+
+            border-left: 1px solid #EED351;
+            border-bottom: 1px solid #EED351;
+
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+
+            z-index: 595607309;
+            transition: all .5s ease-out;
+        }
+
+        @media screen and (orientation: landscape) {
+            body {
+                background-image: url("https://holyxey.github.io/public/DavidsGarden/2.webp");
+                background-position: center;
+                background-size: cover;
+            }
+        }
+        @media screen and (orientation: portrait) {
+            body {
+                background-image: url("https://holyxey.github.io/public/DavidsGarden/1.webp");
+                background-position: center;
+                background-size: cover;
+            }
+        }
+    </style>
+</head>
+<body>
+<section>
+    <a href="#" onclick="menuClick(this)" data-iframe="https://drive.google.com/file/d/18wJWyw62gWJyZ6HcV6kcsMCG-Fynvacl/preview" class="link">ქართული</a>
+    <a href="#" onclick="menuClick(this)" data-iframe="https://drive.google.com/file/d/1kL_d0GJAuIl3S-URmP34We5AV3TCQ9KT/preview" class="link">english</a>
+    <a href="#" onclick="menuClick(this)" data-iframe="https://drive.google.com/file/d/1_kLKqO6L_lthd7VKq-a5xKuE9lbbL9mN/preview" class="link">русский</a>
+</section>
+<div onclick="closeClick()" class="closeButton">close</div>
+<a href="https://holyxey.com" class="holyxey" target="_blank">by Holyxey</a>
 <script>
-    window.location.replace("https://drive.google.com/file/d/1BhZFxJw8XFrmB4qIuIVNiNObrfcfXUl1/preview")
+    const menuClick = (el) => {
+        let c = document.querySelector('.closeButton')
+        c.style.cssText = 'opacity: 1';
+
+        let f = document.createElement("iframe")
+        f.classList.add('iframe')
+        f.src = el.getAttribute('data-iframe')
+        f.frameborder = 0;
+        document.documentElement.append(f)
+
+        document.querySelector('section').style.cssText = 'filter: blur(10px);'
+    }
+    const closeClick = (el) => {
+        document.querySelector('section').style.cssText = 'filter: blur(0);'
+
+        let f = document.querySelector('iframe');
+        f.remove();
+
+        let h = document.querySelector('.holyxey')
+        h.style.cssText =
+            `
+                    bottom: 1rem;
+                    left: 50%;
+                    translate: -50%;
+                `
+        let c = document.querySelector('.closeButton')
+        c.style.cssText = 'opacity: 0';
+    }
 </script>
+</body>
+</html>
+
+<!--<script>-->
+<!--    window.location.replace("https://drive.google.com/file/d/1BhZFxJw8XFrmB4qIuIVNiNObrfcfXUl1/preview")-->
+<!--</script>-->
