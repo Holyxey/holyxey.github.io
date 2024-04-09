@@ -54,23 +54,175 @@
             .vk-hero {
                 width: 2rem;
             }
+            #command {
+                margin: 2rem 0 0 1rem;
+            }
         }
     </style>
 <body>
 
     <div class="holyxey-hero-date">
-        <p class="wadik-hero">28 апреля<br>19:30</p>
+        <p class="wadik-hero">22 июня<br>19:30</p>
         <a href="https://yandex.ru/maps/-/CDFauY6r" target="_blank">
-            <p class="manrope-hero">107023, Москва
+            <p class="manrope-hero">
+                <span style="color: #FDD941!important;">Дворец на Яузе</span>
+                <br>107023, Москва
                 <br>пл. Журавлева, 1</p>
         </a>
         <a href="https://vk.com/mickheevaproject" target="_blank">
             <svg class="vk-hero" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 51 29" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M24.962 28.405h2.989s.902-.1 1.364-.596c.424-.456.41-1.313.41-1.313s-.058-4.01 1.803-4.6c1.835-.582 4.19 3.875 6.688 5.59 1.888 1.296 3.323 1.012 3.323 1.012l6.677-.093s3.493-.215 1.837-2.962c-.136-.224-.965-2.031-4.965-5.744-4.187-3.886-3.626-3.257 1.417-9.98 3.072-4.093 4.3-6.592 3.916-7.663-.366-1.02-2.625-.75-2.625-.75l-7.518.047s-.558-.076-.97.17c-.405.243-.664.807-.664.807s-1.19 3.168-2.777 5.862c-3.348 5.685-4.686 5.986-5.234 5.632-1.273-.823-.955-3.304-.955-5.068 0-5.51.836-7.806-1.627-8.4-.817-.198-1.419-.328-3.509-.35-2.683-.027-4.953.009-6.238.638-.856.42-1.516 1.352-1.113 1.406.497.066 1.622.304 2.218 1.115.77 1.049.744 3.403.744 3.403s.443 6.485-1.034 7.29c-1.013.553-2.404-.575-5.388-5.733-1.53-2.641-2.684-5.562-2.684-5.562s-.222-.545-.62-.838c-.481-.353-1.154-.466-1.154-.466l-7.145.047s-1.072.03-1.466.496c-.35.416-.028 1.273-.028 1.273s5.593 13.086 11.926 19.68c5.808 6.047 12.402 5.65 12.402 5.65" fill="#fff"/></svg>
         </a>
+        <p class="wadik-hero" style="color: #FDD941!important;">12+</p>
     </div>
 
     <div class="holyxey-date">
         <p class="wadik-hero">19:30<br>28 апреля</p>
     </div>
+
+    <!--video-->
+        <style>
+        #vimeovideoholyxey {
+
+            padding: .5rem;
+            background-color: #FDD941;
+            aspect-ratio: 16 / 9;
+            border-radius: 1rem;
+            margin: 2rem auto;
+            max-height: 100dvh;
+        }
+        </style>
+        <iframe id="vimeovideoholyxey" src="https://player.vimeo.com/video/854456708?h=59c1c213e7&loop=1&autoplay=1&muted=1&autopause=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+        <script>
+            document.addEventListener("DOMContentLoaded", ()=>{
+                if (document.querySelector('#vimeovideoholyxey')) {
+                    let i = document.querySelector('#vimeovideoholyxey')
+                    i.style.cssText =
+                        `
+                    width: calc(${window.innerWidth}px - 3rem);
+                    `
+                }
+            })
+            window.addEventListener("resize", ()=>{
+                if (document.querySelector('#vimeovideoholyxey')) {
+                    let i = document.querySelector('#vimeovideoholyxey')
+                    i.style.cssText =
+                        `
+                    width: calc(${window.innerWidth}px - 3rem);
+                    `
+                }
+            })
+        </script>
+    <!--/video-->
+
+<!--command-->
+    <style>
+        .command {
+            font-family: 'Wadik', Arial, sans-serif;
+            font-size: 2rem;
+
+            margin: 2rem 0 2rem 2rem;
+            color: white;
+
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: flex-start;
+        }
+        .command * {
+            padding: 0;
+            margin: 0;
+        }
+        .command .comHead {
+            min-width: 100%;
+        }
+        .command .comPerson {
+            flex: 1 1 50%;
+            border: 1px solid #FDD94150;
+            max-width: fit-content;
+            padding: 1rem 1.5rem;
+            border-radius: .5rem;
+            line-height: 1;
+            font-size: 1rem;
+            width: 100%;
+        }
+        .command .comName {
+            font-size: 1rem;
+            font-family: 'Raleway',Arial,sans-serif;
+            color: #FDD941;
+        }
+        .command .comPosition {
+            font-size: 1rem;
+            font-family: 'Raleway',Arial,sans-serif;
+            font-weight: 600;
+        }
+
+        @media screen and (max-width: 640px) {
+            .command {
+                margin: 2rem 0 2rem 1rem;
+            }
+            .command .comPerson {
+                flex: 1 1 70%;
+                width: unset;
+                max-width: unset;
+                margin-right: 1rem;
+            }
+        }
+    </style>
+    <section class="command">
+        <p class="comHead">Команда спектакля</p>
+        <div class="comPerson">
+            <span class="comName">Хореограф-постановщик:</span>
+            <span class="comPosition">Ксения&nbsp;Михеева</span>
+        </div>
+        <div class="comPerson">
+            <span class="comName">Танц-драматург:</span>
+            <span class="comPosition">Катя&nbsp;Ганюшина</span>
+        </div>
+        <div class="comPerson">
+            <span class="comName">Продюсер:</span>
+            <span class="comPosition">Павел&nbsp;Шевченко</span>
+        </div>
+        <div class="comPerson">
+            <span class="comName">Мультимедиа куратор:</span>
+            <span class="comPosition">Юлия&nbsp;Кузьмина</span>
+        </div>
+        <div class="comPerson">
+            <span class="comName">Лазерное шоу:</span>
+            <span class="comPosition">Ольга&nbsp;Степанова</span>
+        </div>
+        <div class="comPerson">
+            <span class="comName">Художник по свету:</span>
+            <span class="comPosition">Эмиль&nbsp;Авраменко</span>
+        </div>
+        <div class="comPerson">
+            <span class="comName">Видеоинженер:</span>
+            <span class="comPosition">Григорий&nbsp;Федосев</span>
+        </div>
+    </section>
+    <section class="command">
+        <p class="comHead">Исполнители</p>
+        <div class="comPerson">
+            <span class="comPosition">Станислав Пономарев</span>
+        </div>
+        <div class="comPerson">
+            <span class="comPosition">Никита Маркелов</span>
+        </div>
+        <div class="comPerson">
+            <span class="comPosition">Ярослав Дидин</span>
+        </div>
+        <div class="comPerson">
+            <span class="comPosition">Лиза Шульгина</span>
+        </div>
+        <div class="comPerson">
+            <span class="comPosition">Ксения Михеева</span>
+        </div>
+        <div class="comPerson">
+            <span class="comPosition">Александр Перцев</span>
+        </div>
+        <div class="comPerson">
+            <span class="comPosition">Сергей Липовский</span>
+        </div>
+    </section>
+<!--/command-->
 
 </body>
