@@ -39,7 +39,8 @@ article {
 
     rotate: 0;
     opacity: 0;
-    translate: 30px 50px;
+    translate: 150px 0;
+    transform: scale(.9);
     transition: transform .3s ease-out, opacity .3s ease-out;
 }
 header, #cases {
@@ -122,10 +123,10 @@ h2, .h2 {
 /*
 */
 @keyframes showArticle {
-    from {opacity: 0; translate: 30px 50px}
+    from {opacity: 0; translate: 150px 0; transform: scale(.9)}
     to {opacity: 1; translate: 0 0}
 }
 @keyframes hideArticle {
     from {opacity: 1; translate: 0 0}
-    to {opacity: 0; translate: 30px 50px}
+    to {opacity: 0; translate: 150px 0}
 }
