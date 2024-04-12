@@ -29,6 +29,7 @@ a {
 }
 body {
     background-color: var(--white);
+    overflow-x: hidden;
 }
 article {
     padding: calc(var(--rem) * 1);
@@ -144,6 +145,7 @@ h2, .h2 {
         border-radius: calc(var(--rem) * 2);
         background-color: var(--white);
         color: var(--brown);
+        min-width: fit-content;
         max-width: fit-content;
     }
 
@@ -163,6 +165,7 @@ h2, .h2 {
     }
 
 #about {
+    overflow-x: hidden;
 }
 
 /*
@@ -176,6 +179,8 @@ h2, .h2 {
     transform: rotate(3deg);
     opacity: 0;
     translate: 150px 0;
+    transition: transform .3s ease-out, opacity .3s ease-out;
+    z-index: 2;
 }
     #up svg {
         width: calc(var(--rem) * 5);
@@ -188,10 +193,10 @@ h2, .h2 {
 /*
 */
 @keyframes showArticle {
-    from {opacity: 0; translate: 150px 0;}
+    /*from {opacity: 0; translate: 150px 0;}*/
     to {opacity: 1; translate: 0 0}
 }
 @keyframes hideArticle {
-    from {opacity: 1; translate: 0 0}
+    /*from {opacity: 1; translate: 0 0}*/
     to {opacity: 0; translate: 150px 0}
 }
