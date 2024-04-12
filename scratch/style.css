@@ -26,6 +26,7 @@ a {
 }
 body {
     background-color: var(--white);
+    overflow-x: hidden;
 }
 article {
     padding: calc(var(--rem) * 1);
@@ -40,6 +41,9 @@ article {
     opacity: 0;
     translate: 30px 50px;
     transition: transform .3s ease-out, opacity .3s ease-out;
+}
+header, #cases {
+    overflow-x: hidden;
 }
 
 h1, .h1 {
