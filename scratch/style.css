@@ -4,6 +4,7 @@
     margin: 0;
     line-height: 1;
     font-family: 'Manrope', 'Helvetica Neue', sans-serif;
+    position: relative;
 }
 :root {
     --brown: #2B2024;
@@ -26,7 +27,6 @@ a {
 }
 body {
     background-color: var(--white);
-    overflow-x: hidden;
 }
 article {
     padding: calc(var(--rem) * 1);
@@ -40,10 +40,9 @@ article {
     rotate: 0;
     opacity: 0;
     translate: 150px 0;
-    transform: scale(.9);
     transition: transform .3s ease-out, opacity .3s ease-out;
 }
-header, #cases {
+#cases {
     overflow-x: hidden;
 }
 
@@ -61,6 +60,8 @@ h2, .h2 {
 
 #menu {
     background-color: var(--red);
+    position: sticky;
+    top: 1rem;
 }
     #menu a {
         flex: 1;
@@ -123,7 +124,7 @@ h2, .h2 {
 /*
 */
 @keyframes showArticle {
-    from {opacity: 0; translate: 150px 0; transform: scale(.9)}
+    from {opacity: 0; translate: 150px 0;}
     to {opacity: 1; translate: 0 0}
 }
 @keyframes hideArticle {

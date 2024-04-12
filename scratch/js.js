@@ -9,12 +9,14 @@ const randomNumber = (max) => {
 const randomDeg = (el) => {
     if (el) {
         el.style.transform = `rotate(${randomNumber(2)}deg)`;
-        el.style.opacity = '.5'
     }
 }
 const showArticle = (el) => {
     if (el && (el.getBoundingClientRect().top < window.innerHeight) ) {
-        el.style.animation = 'showArticle .8s ease-out forwards';
+        setInterval(() => {
+            el.style.animation = 'showArticle .8s ease-out forwards';
+        }, randomNumber(300))
+
     }
     if (el.getBoundingClientRect().top > window.innerHeight) {
         el.style.animation = 'hideArticle .5s ease-out forwards'
