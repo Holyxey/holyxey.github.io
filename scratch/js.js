@@ -12,19 +12,13 @@ const randomDeg = (el) => {
     }
 }
 const showArticle = (el) => {
-    if (el.getBoundingClientRect().top < window.innerHeight && el.getBoundingClientRect().bottom > 0) {
-        setInterval(() => {
+    if (el.getBoundingClientRect().top < (window.innerHeight - 50) && el.getBoundingClientRect().bottom > -50) {
+        // setInterval(() => {
             el.style.cssText = 'animation: showArticle .8s ease-out forwards';
-        }, randomNumber(300))
+        // }, randomNumber(100))
 
     } else
         el.style.cssText = 'animation: hideArticle .5s ease-out forwards'
-}
-const arrowCase = (el) => {
-    let arrow = document.createElement('a')
-    arrow.innerHTML = `
-    
-    `
 }
 const showUpArrow = () => {
     let arrow = document.querySelector('#up')
@@ -38,8 +32,8 @@ const hideUpArrow = () => {
 //
 
 articles.forEach((el) => {
-    randomDeg(el)
     showArticle(el)
+    randomDeg(el)
 })
 window.addEventListener("scroll", () => {
     articles.forEach((el) => {
