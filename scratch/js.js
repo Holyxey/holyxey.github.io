@@ -31,7 +31,7 @@ const arrowCase = (el) => {
 const showUpArrow = () => {
     let arrow = document.querySelector('#up')
     arrow.style.display = 'block';
-    arrow.style.animation = 'showArticle .8s ease-out forwards'
+    arrow.style.animation = 'showArticle .3s ease-out forwards'
 }
 const hideUpArrow = () => {
     let arrow = document.querySelector('#up')
