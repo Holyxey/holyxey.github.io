@@ -28,6 +28,18 @@ const arrowCase = (el) => {
     
     `
 }
+const showUpArrow = () => {
+    let arrow = document.querySelector('#up')
+    arrow.style.display = 'block';
+    arrow.style.animation = 'showArticle .8s ease-out forwards'
+}
+const hideUpArrow = () => {
+    let arrow = document.querySelector('#up')
+    arrow.style.animation = 'hideArticle .3s ease-out forwards'
+    setTimeout(() => {
+        arrow.style.display = 'none';
+    },300)
+}
 //
 //
 
@@ -37,7 +49,13 @@ articles.forEach((el) => {
         showArticle(el)
     },300)
 })
-window.addEventListener("scroll", () => {articles.forEach((el) => {
+window.addEventListener("scroll", () => {
+    articles.forEach((el) => {
         showArticle(el)
-    })
+        if (document.querySelector('#menu').getBoundingClientRect().bottom < 0) {
+            showUpArrow()
+        } else {
+            hideUpArrow()
+        }
+    });
 })
