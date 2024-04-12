@@ -9,6 +9,7 @@
 }
 :root {
     --brown: #2B2024;
+    --brownSoft: #44383c;
     --white: #FBF9FA;
     --red: #FD0054;
     --deep: #A80038;
@@ -119,6 +120,31 @@ h2, .h2 {
         width: calc(var(--rem) * 4);
         height: calc(var(--rem) * 4);
         fill: var(--white);
+    }
+    .caseNavBar {
+        display: flex;
+        width: 100%;
+        gap: calc(var(--rem));
+        overflow: hidden;
+        border-radius: calc(var(--rem)) calc(var(--rem)) calc(var(--rem) * 2) calc(var(--rem) * 2);
+    }
+    .caseButton {
+        flex: 1;
+        text-align: center;
+        padding: calc(var(--rem));
+        text-transform: uppercase;
+        font-weight: 900;
+        font-size: calc(var(--rem) * 1.5);
+    }
+    .caseButton:nth-child(1) {
+        border-radius: calc(var(--rem)) calc(var(--rem)) calc(var(--rem)) calc(var(--rem) * 2);
+        background-color: var(--brownSoft);
+        color: white;
+    }
+    .caseButton:nth-child(2) {
+        border-radius: calc(var(--rem)) calc(var(--rem)) calc(var(--rem) * 2) calc(var(--rem));
+        background-color: white;
+        color: var(--brownSoft);
     }
 
 /*
