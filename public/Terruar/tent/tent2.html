@@ -1,0 +1,139 @@
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="mainStyles.css">
+    <link rel="stylesheet" href="/specialOffers/hxSpecial.css">
+    <link rel="stylesheet" href="../style.css">
+
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+        }
+    </style>
+                                        <div class="t-width">
+
+
+<!--Tent-->
+<style>
+        #glampingVideo {
+            flex: .1;
+
+            position: fixed;
+            top: 0;
+            z-index: 995595607309;
+            pointer-events: none;
+
+            border-radius: 1rem;
+        }
+        #glampingVideoBlock {
+        }
+</style>
+<section class="basic_section" id="tent">
+        <div class="basic_header">
+            <div class="h1">Глэмпинг</div>
+            <a href="#popup:Camping" class="basic_buttons" style="max-width: fit-content">
+                Посмотреть&nbsp;фото
+            </a>
+            <div onclick="campingVideoBig()" class="basic_buttons" style="max-width: fit-content; cursor: pointer">
+                Посмотреть&nbsp;видео
+            </div>
+        </div>
+        <div id="glampingVideoBlock" class="basic_block" style="position: relative; overflow: hidden; min-height: 40vh; background-image: url('https://thumb.tildacdn.com/tild6466-3033-4762-a335-623866383961/-/format/webp/DSC_8979.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat">
+            <iframe id="glampingVideo" width="100%" height="100%"
+                    src="https://www.youtube.com/embed/AhzqNwb0e60?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=AhzqNwb0e60"
+                    title="YouTube video player" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="">
+            </iframe>
+<!--            <div class="basic_column">-->
+<!--            </div>-->
+        </div>
+        <div class="basic_block" style="position: relative; overflow: hidden">
+            <div class="basic_column" style="width: 60%;">
+                <p class="basic_h1">Единение с природой</p>
+                <p class="basic_p">Идеально для любителей романтики и комфорта. </p>
+                <p class="basic_p">Внутри каждой палатки предусмотрена кровать, камин, а также свой стол и холодильник. Вместе с палаткой вы также получите доступ в индивидуальный санузел (такого же размера что и в домиках), а еще к беседке (рекомендуем для отдыха компанией).</p>
+            </div>
+        </div>
+</section>
+<section class="basic_section" id="soon">
+    <div class="basic_header">
+        <div class="h1">Скоро открытие</div>
+    </div>
+    <div class="services" style="padding: 1rem; margin: 1rem; box-shadow: 0 0 10px #F8F3C890; border-radius: 1rem;">
+        <div class="services_row" style="animation-delay: 5s; width: 100%">
+            <div class="services_item" style="background-image: url(https://thumb.tildacdn.com/tild6635-6334-4634-a433-306263636639/-/format/webp/1.png); background-position: bottom center; background-size: cover;">
+<!--                    <div class="p">от 1500 р</div>-->
+                <div class="h">Панорамная баня с фуракко</div>
+            </div>
+            <div class="services_item" style="background-image: url(https://thumb.tildacdn.com/tild3439-6138-4337-b836-313963333731/-/format/webp/2.png); background-position: center; background-size: cover;">
+<!--                    <div class="p">200 р/час</div>-->
+                <div class="h">Бассейн</div>
+            </div>
+            <div class="services_item" style="background-image: url(https://thumb.tildacdn.com/tild3962-6336-4231-a531-333938636433/-/format/webp/3.png); background-position: center 60%; background-size: cover;">
+<!--                    <div class="p">от 900 р</div>-->
+                <div class="h">Эко-тропа</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--Some Scripts-->
+    <script>
+        const campingVideo = () => {
+            document.removeEventListener("click", campingVideo)
+
+            let v = document.querySelector('#glampingVideo')
+            let b = document.querySelector('#glampingVideoBlock');
+            let top = b.getBoundingClientRect().y
+            let left = b.getBoundingClientRect().x
+            let right = b.getBoundingClientRect().width + left - v.clientWidth
+            let width = b.getBoundingClientRect().width
+            let height = b.clientHeight
+
+            if (window.innerWidth > 800) {
+                v.style.cssText =
+                    `
+                    top: ${top}px;
+                    left: ${right}px;
+                    max-height: ${height}px;
+                    max-width: ${height * 9 / 16}px;
+                    border-radius: 0 1rem 1rem 0;
+                    z-index: 1;
+                    box-shadow: -10px 0 10px #00000080;
+                    `
+            } else {
+
+                v.style.cssText =
+                    `
+                    top: 1rem;
+                    max-width: calc(${window.innerWidth}px - 2rem);
+                    min-height: ${v.clientWidth * 16 / 9}px;
+                    left: calc(${left}px + 1rem);
+                    position: relative;
+                    z-index: 1;
+                    `
+                b.style.cssText = 'background-image: unset'
+            }
+        }
+        document.addEventListener("DOMContentLoaded", campingVideo)
+        document.addEventListener("scroll", campingVideo)
+        window.addEventListener("resize", campingVideo)
+        const campingVideoBig = () => {
+            let v = document.querySelector('#glampingVideo')
+            v.style.cssText = `
+            transition: all .3s ease-out;
+            max-height: 90dvh;
+            max-width: ${v.clientHeight * 16 / 9};
+            top: 5dvh;
+            left: 50%;
+            translate: -50%;
+            z-index: 100500100500100500;
+            `
+            setTimeout(()=>{
+                document.addEventListener("click", campingVideo)
+            },300)
+        }
+    </script>
+<!--/Some Scripts-->
+                                        </div>
