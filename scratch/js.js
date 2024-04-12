@@ -14,11 +14,11 @@ const randomDeg = (el) => {
 const showArticle = (el) => {
     if (el.getBoundingClientRect().top < window.innerHeight && el.getBoundingClientRect().bottom > 0) {
         setInterval(() => {
-            el.style.animation = 'showArticle .8s ease-out forwards';
+            el.style.cssText = 'animation: showArticle .8s ease-out forwards';
         }, randomNumber(300))
 
     } else
-        el.style.animation = 'hideArticle .5s ease-out forwards'
+        el.style.cssText = 'animation: hideArticle .5s ease-out forwards'
 }
 const arrowCase = (el) => {
     let arrow = document.createElement('a')
@@ -42,6 +42,9 @@ articles.forEach((el) => {
         randomDeg(el)
         showArticle(el)
     },300)
+    el.addEventListener('click', () => {
+        el.style.cssText = `animation: clickAnim .3s ease-out forwards; translate: 0;`
+    })
 })
 window.addEventListener("scroll", () => {
     articles.forEach((el) => {
