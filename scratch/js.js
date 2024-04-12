@@ -38,13 +38,8 @@ const hideUpArrow = () => {
 //
 
 articles.forEach((el) => {
-    setTimeout(()=> {
-        randomDeg(el)
-        showArticle(el)
-    },300)
-    el.addEventListener('click', () => {
-        el.style.cssText = `animation: clickAnim .3s ease-out forwards; translate: 0;`
-    })
+    randomDeg(el)
+    showArticle(el)
 })
 window.addEventListener("scroll", () => {
     articles.forEach((el) => {

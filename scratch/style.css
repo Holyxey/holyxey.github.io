@@ -202,5 +202,6 @@ h2, .h2 {
 }
 @keyframes clickAnim {
     from {opacity: 1; translate: 0 0}
-    5% {scale: .95; translate: 0 1%}
+    5% {scale: 1.15}
+    to {opacity: 1; translate: 0; scale: 1}
 }
