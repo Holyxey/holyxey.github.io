@@ -84,7 +84,13 @@ h2, .h2 {
 .case {
     background-color: var(--brownSoft);
     gap: 0;
+    cursor: pointer;
+
+    transition: scale .5s ease-out;
 }
+    .case:hover {
+        scale: 1.01;
+    }
     .caseHeader {
         color: var(--brown);
         font-weight: 900;
