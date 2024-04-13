@@ -1,4 +1,5 @@
 let articles = document.querySelectorAll('article')
+let cases = document.querySelectorAll('.case')
 //
 //
 
@@ -25,6 +26,11 @@ const hideUpArrow = () => {
 
 articles.forEach((el) => {
     showArticle(el)
+})
+cases.forEach((el) => {
+    el.onclick = () => {
+        window.location.href = el.getAttribute('data-href')
+    }
 })
 window.addEventListener("scroll", () => {
     articles.forEach((el) => {

@@ -5,15 +5,63 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Holyxey - Design & web development</title>
+
+    <title>Website developer | Holyxey.</title>
+
+    <link type="text/css" rel="stylesheet" href="/scratch/style.css">
+
+    <meta name="description" content="Turnkey website design and development from a professional. Custom website development">
+    <meta name="keywords" content="web development, website design, HTML, CSS, JavaScript, responsive design, user experience design, user interface design, mobile-first design, UI, UX, Tilda, WiX, WordPress, Shopify, e-commerce, web security, SEO, web analytics">
+    <meta name="author" content="Alex Yurin">
+
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Website developer | Holyxey.">
+    <meta property="og:description" content="Turnkey website design and development from a professional. Custom website development">
+    <meta property="og:url" content="https://holyxey.com/">
+    <meta property="og:site_name" content="Website development | Holyxey.">
+
+    <meta property="og:image" content="https://holyxey.github.io/holyxey/imgs/cases/supreme.webp" />
+    <meta name="twitter:image" content="https://holyxey.github.io/holyxey/imgs/cases/supreme.webp" />
+
+    <link rel="icon" href="https://holyxey.github.io/holyxey/imgs/32.png" sizes="32x32">
+    <link rel="icon" href="https://holyxey.github.io/holyxey/imgs/192.png" sizes="192x192">
+    <link rel="apple-touch-icon" href="https://holyxey.github.io/holyxey/imgs/192.png">
+    <meta name="msapplication-TileImage" content="https://holyxey.github.io/holyxey/imgs/192.png">
+
+    <link rel="canonical" href="https://holyxey.com/">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K1530636SN"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-K1530636SN');
+    </script>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NW8BWG4G');</script>
+    <!-- End Google Tag Manager -->
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NW8BWG4G"
+                      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 </head>
 <body>
+    <!--Loader-->
+    <div id="loader">
+        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 16 16" fill="none" class="hds-flight-icon--animation-loading"><g fill="#000" fill-rule="evenodd" clip-rule="evenodd"><path d="M8 1.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8" opacity=".2"/><path d="M7.25.75A.75.75 0 0 1 8 0a8 8 0 0 1 8 8 .75.75 0 0 1-1.5 0A6.5 6.5 0 0 0 8 1.5a.75.75 0 0 1-.75-.75"/></g></svg>
+    </div>
+    <!--/Loader-->
     <header>
         <article id="h1">
             <h1>DESIGN & WEB DEVELOPMENT</h1>
@@ -23,7 +71,7 @@
         </article>
         <article id="menu">
             <a href="#about">about</a>
-            <a href="/contacts">contacts</a>
+            <a href="#contactButton">contacts</a>
             <a href="/portfolio">portfolio</a>
         </article>
 
@@ -39,15 +87,15 @@
         <article>
             <p class="h1">My recent cases</p>
         </article>
-        <article class="case">
+        <article class="case" data-href="/portfolio">
             <h3 class="caseHeader">Custom design and development of a website for glamping in the woods</h3>
             <img src="https://holyxey.github.io/holyxey/imgs/cases/terruar.webp" alt="">
         </article>
-        <article class="case">
+        <article class="case" data-href="/portfolio">
             <h3 class="caseHeader">Web playbill for the theater with reservation and purchase of tickets</h3>
             <img src="https://holyxey.github.io/holyxey/imgs/cases/mesto.webp" alt="">
         </article>
-        <article class="case">
+        <article class="case" data-href="/portfolio">
             <h3 class="caseHeader">Website for St. Petersburg hotel with booking module</h3>
             <img src="https://holyxey.github.io/holyxey/imgs/cases/welton.webp" alt="">
         </article>
@@ -55,7 +103,10 @@
 
     <div id="about">
         <article id="contactButton">
-            <a href="#">Get a quote</a>
+<!--            <a id="getAQuote">Get a quote</a>-->
+            <a id="contactButtonTelegram" href="https://t.me/holyxey" target="_blank">Telegram</a>
+            <a id="contactButtonWhatsapp" href="https://wa.me/995595607309?text=Hello!" target="_blank">WhatsApp</a>
+            <a id="contactButtonEmail" href="mailto:contact@holyxey.com" target="_blank">eMail</a>
         </article>
         <article>
             <p class="h1">Who I am</p>
@@ -67,8 +118,10 @@
                 <br><br>I'm doing turnkey work, from UX researching and UI design to SEO setup and A/B testing of my code.
                 <br><br>My partner list has advertising agencies that can put together advertising campaigns for your product after design and development
             </p>
+            <a id="aboutPortfolio" href="/portfolio">show portfolio</a>
         </article>
     </div>
 </body>
+    <script src="/holyxey/loader.js"></script>
     <script src="js.js"></script>
 </html>

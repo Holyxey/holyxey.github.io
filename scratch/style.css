@@ -146,24 +146,55 @@ h2, .h2 {
     }
 
 #contactButton {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    /*flex-direction: column;*/
 }
     #contactButton a {
-        background-color: var(--red);
+        flex: 1;
         width: fit-content;
         margin-inline: auto;
         text-align: center;
         font-weight: 900;
         font-size: calc(var(--rem) * 1.5);
         text-transform: uppercase;
-        padding: calc(var(--rem) * 2) calc(var(--rem) * 4);
-        color: var(--white);
+        padding: calc(var(--rem) * 2) calc(var(--rem) * 3);
+        color: var(--brown);
         border-radius: calc(var(--rem) * 3);
 
+        cursor: pointer;
+
         animation: smoothScale 3s ease-in-out infinite;
+    }
+    #contactButtonTelegram {
+        border: 2px solid #2AABEE;
+    }
+    #contactButtonWhatsapp {
+        border: 2px solid #25D366;
+    }
+    #contactButtonEmail {
+        border: 2px solid var(--red);
     }
 
 #about {
     overflow-x: hidden;
+}
+#about #aboutPortfolio {
+    flex: 1;
+    min-width: fit-content;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: var(--red);
+
+    color: var(--white);
+    font-weight: 900;
+    font-size: calc(var(--rem) * 1.5);
+
+    margin-top: var(--rem);
+    padding: calc(var(--rem) * 2);
+    border-radius: calc(var(--rem) * 2);
 }
 
 /*
@@ -190,6 +221,39 @@ h2, .h2 {
 
 /*
 */
+#loader {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: var(--white);
+    z-index: 995595609309;
+    transition: all 0s linear;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#loader svg {
+    animation: loader 2s infinite linear;
+}
+@keyframes loader {
+    from {rotate: 0deg}
+    50% {rotate: 180deg; scale: .8}
+    to {rotate: 360deg}
+}
+
+/*
+*/
+@media screen and (min-width: 700px) {
+    article {
+        max-width: 700px;
+        margin-inline: auto;
+    }
+}
+
+/*
+*/
 @keyframes showArticleLeft {
     from {opacity: 0; translate: -50px 0}
     to {opacity: 1; translate: 0 0}
@@ -204,6 +268,6 @@ h2, .h2 {
 }
 @keyframes smoothScale {
     from {transform: scale(1)}
-    50% {transform: scale(1.05)}
+    50% {transform: scale(1.02)}
     from {transform: scale(1)}
 }
