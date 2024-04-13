@@ -1,5 +1,6 @@
 let articles = document.querySelectorAll('article')
 let cases = document.querySelectorAll('.case')
+let arrow = document.querySelector('#up')
 //
 //
 
@@ -14,12 +15,10 @@ const showArticle = (el) => {
         el.style.cssText += 'animation: hideArticle .5s ease-out forwards'
 }
 const showUpArrow = () => {
-    let arrow = document.querySelector('#up')
-    arrow.style.animation = 'showArticle .3s ease-out forwards'
+    arrow.style.animation = 'showUpButton .3s ease-in-out forwards'
 }
 const hideUpArrow = () => {
-    let arrow = document.querySelector('#up')
-    arrow.style.animation = 'hideArticle .3s ease-out forwards'
+    arrow.style.animation = 'hideUpButton .3s ease-in-out forwards'
 }
 //
 //
