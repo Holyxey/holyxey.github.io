@@ -44,7 +44,10 @@ body {
     }
 
     h1 {
-        position: absolute;
+        max-width: fit-content;
+        font-weight: 300;
+        font-size: 1rem;
+        text-align: center;
     }
 
 #address {
@@ -154,6 +157,11 @@ footer {
 
 /*
 */
+@media screen and (max-width: 1280px) {
+    h1 {
+        margin: auto;
+    }
+}
 @media screen and (min-width: 1280px) {
     header li {
         text-align: left;
