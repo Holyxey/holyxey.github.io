@@ -9,15 +9,15 @@ function backUTMButton() {
         let referrerLink = document.referrer
         bb.href = referrerLink
         bb.style.cssText = `
-        position: fixed;
-        top: 2rem;
-        left: 2rem;
+        position: fixed!important;
+        top: 2rem!important;
+        left: 2rem!important;
         content: url("https://static.tildacdn.com/tild6663-6639-4166-a462-316239353461/SVG_logo_1.svg");
-        width: 2.5rem;
+        width: 2.5rem!important;
         z-index: 995595607309995595607309;
         background: #ffffff;
-        border-radius: 1rem;
-        padding: .5rem;
+        border-radius: 1rem!important;
+        padding: .5rem!important;
         box-shadow: 0 0 10px #00000050;
         `;
 
