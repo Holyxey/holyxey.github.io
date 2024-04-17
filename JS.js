@@ -14,7 +14,8 @@ function backUTMButton() {
         position: fixed!important;
         top: 2rem!important;
         left: 2rem!important;
-        width: 2.5rem!important;
+        width: 2rem!important;
+        max-width: 2rem!important;
         z-index: 995595607309995595607309;
         background: #ffffff;
         border-radius: 1rem!important;
