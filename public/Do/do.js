@@ -5,10 +5,9 @@ const removeTilda = setInterval(() => {
         document.querySelectorAll('.t-tildalabel').forEach((el) => {
             el.remove()
         })
-        clearInterval(removeTilda)
     }
     
-}, 100)
+}, 700)
 if (document.location.href.includes('tproduct')) {
     document.location.href = '/menu'
 }
