@@ -14,15 +14,15 @@ function backUTMButton() {
         position: fixed!important;
         top: 2rem!important;
         left: 2rem!important;
-        content: url("https://static.tildacdn.com/tild6663-6639-4166-a462-316239353461/SVG_logo_1.svg");
         width: 2.5rem!important;
         z-index: 995595607309995595607309;
         background: #ffffff;
         border-radius: 1rem!important;
         padding: .5rem!important;
         box-shadow: 0 0 10px #00000050;
+        content: url("https://static.tildacdn.com/tild6663-6639-4166-a462-316239353461/SVG_logo_1.svg");
+        cursor: pointer;
         `;
-
         document.documentElement.append(bb)
     }
 }
