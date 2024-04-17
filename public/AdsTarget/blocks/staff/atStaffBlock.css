@@ -53,6 +53,7 @@
     @media screen and (max-width: 500px) {
         .hx-at-staff-block {
             gap: var(--rem-b) var(--rem-b);
+            justify-content: space-around;
         }
         .hx-at-staff-name {
             font-size: var(--rem-bb);
