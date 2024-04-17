@@ -5,14 +5,6 @@ const randomNumber = (max) => {
         return result;
     }
 }
-const removeTilda = setInterval(() => {
-    if (document.querySelector('#tildacopy')) {
-        document.querySelector('#tildacopy').querySelector('img').setAttribute('alt', 'Made by Holyxey.com on Tilda.cc')
-        console.log(document.querySelector('#tildacopy').querySelector('img').getAttribute('alt'))
-        document.querySelector('#tildacopy').remove()
-        clearInterval(removeTilda)
-    }
-}, 100)
 const randomBodyBack = () => {
     let b = document.querySelector('#mainSection')
     let images = ['https://thumb.tildacdn.com/tild3736-6437-4531-a234-396638353763/-/format/webp/Movement.jpeg', 'https://thumb.tildacdn.com/tild3432-6132-4431-b363-663537666335/-/format/webp/Freedom.jpeg', 'https://thumb.tildacdn.com/tild6436-3662-4865-b563-653263306338/-/format/webp/Love.jpeg',]
