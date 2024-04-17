@@ -17,7 +17,7 @@
     gap: var(--rem-aa);
 
     min-width: 150px;
-    max-width: 30%;
+    max-width: 20%;
 }
 .hx-at-staff-img {
     max-width: 100%;

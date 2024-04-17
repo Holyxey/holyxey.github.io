@@ -1,0 +1,118 @@
+:root {
+    --clr-brown: #CF9460;
+    --clr-telegram: #2BACEF;
+    --clr-gray: #F1F1F1;
+    --sz-main: 10px;
+}
+@font-face {
+    font-family: "MADE Evolve Sans";
+    src: url(https://static.tildacdn.com/tild3433-3937-4230-b336-303164383137/made_evolve_sans_lig.woff) format("woff");
+    font-weight: 300;
+}
+@font-face {
+    font-family: "MADE Evolve Sans";
+    src: url(https://static.tildacdn.com/tild3537-3431-4438-b831-306433666637/made_evolve_sans_reg.woff) format("woff");
+    font-weight: 600;
+}
+.contactShadow {
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    line-height: 1;
+}
+#contactsBlock {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sz-main);
+    border-radius: var(--sz-main);
+
+    padding: var(--sz-main);
+    font-family: 'MADEEvolveSans','MADE Evolve Sans', Arial,sans-serif
+}
+    .contactsColumn, .contactsRow {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        border-radius: var(--sz-main);
+
+        padding: 57px 35px;
+    }
+#contactsColumnFirst {
+    background: radial-gradient(398.06% 354.24% at -13.78% -78.58%, #494746 0%, #151311 100%);
+}
+    .contactsText {
+        display: flex;
+        flex-direction: column;
+        gap: calc(var(--sz-main) * 2);
+    }
+    .contactsHeader {
+        color: white;
+        font-size: calc(var(--sz-main) * 4.5);
+    }
+    .contactsParagraph {
+        color: white;
+    }
+    #contactsBlock a svg {
+        width: 25px;
+        height: 25px;
+    }
+    .contactsButton {
+        text-decoration: none;
+
+        display: flex;
+        align-items: center;
+        justify-items: center;
+        max-width: fit-content;
+        padding: 15px calc(var(--sz-main) * 2);
+        border-radius: var(--sz-main);
+        gap: calc(var(--sz-main) * 2);
+        color: #FFF!important;
+        /*font-size: calc(var(--sz-main) * 2);*/
+        /*font-weight: 600;*/
+
+        background-color: var(--clr-brown);
+    }
+    #contactsTelegram {
+        background-color: var(--clr-telegram);
+    }
+    #contactsInfoButton, #contactsKarpychButton {
+
+    }
+
+#contactsRows {
+    flex: 1;
+    padding: 0;
+    color: black;
+    gap: var(--sz-main);
+}
+#contactsRows p {
+    color: black;
+}
+.contactsRow {
+    flex: 1;
+    background-color: var(--clr-gray);
+}
+
+@media screen and (max-width: 1024px) {
+    :root {
+        --sz-main: 7px;
+    }
+    #contactsColumnFirst {
+        flex: 1;
+    }
+}
+@media screen and (max-width: 480px) {
+    .contactsColumn, .contactsRow {
+        border-radius: calc(var(--sz-main) * 3);
+        padding: calc(var(--sz-main) * 4) calc(var(--sz-main) * 3) calc(var(--sz-main) * 3) calc(var(--sz-main) * 3);
+        gap: calc(var(--sz-main) * 4);
+    }
+    .contactsButton {
+        border-radius: calc(var(--sz-main) * 2);
+    }
+    .contactsText {
+        gap: calc(var(--sz-main) * 1);
+    }
+}
