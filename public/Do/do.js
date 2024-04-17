@@ -2,7 +2,9 @@ const removeTilda = setInterval(() => {
     if (document.querySelector('.t-tildalabel')) {
         document.querySelector('.t-tildalabel').querySelector('img').setAttribute('alt', 'Made by Holyxey.com on Tilda.cc')
         console.log(document.querySelector('.t-tildalabel').querySelector('img').getAttribute('alt'))
-        document.querySelector('.t-tildalabel').remove()
+        document.querySelector('.t-tildalabel').forEach((el) => {
+            el.remove()
+        })
         clearInterval(removeTilda)
     }
     
