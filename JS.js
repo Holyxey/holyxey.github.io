@@ -6,8 +6,10 @@ function holyxey() {
 function backUTMButton() {
     if (location.href.includes('?utm_source=AdsTarget') && document.referrer.includes('adstarget')) {
         let bb = document.createElement("a")
-        let referrerLink = document.referrer
-        bb.href = referrerLink
+        // let referrerLink = document.referrer
+        bb.onclick = () => {
+            history.back()
+        }
         bb.style.cssText = `
         position: fixed!important;
         top: 2rem!important;
