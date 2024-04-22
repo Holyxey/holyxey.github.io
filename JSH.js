@@ -1,5 +1,5 @@
 function wHolyxey() {
-    let addCommentHolyxey = document.createComment('Holyxey is working on the site');
+    let addCommentHolyxey = document.createComment('Website supporting by Holyxey at AdsTarget');
     document.documentElement.prepend(addCommentHolyxey);
 }
 //
