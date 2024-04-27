@@ -55,7 +55,7 @@ body {
         display: none;
         max-width: calc(100% + 2rem);
         pointer-events: none;
-        border-radius: 1rem;
+        border-radius: .5rem;
         background-color: white;
     }
 
