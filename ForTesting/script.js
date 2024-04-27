@@ -28,8 +28,8 @@ let holyxey = {
                 <video class="project-video" src="" autoplay muted loop playsinline preload="none"></video>
                 <p class="project-description">${description}</p>
                 <div class="project-footer">
-                    <a href="#" class="project-footer-result">Результат</a>
                     <a class="project-link" href="${link}">Узнать процесс</a>
+                    <a href="#" class="project-footer-result">Результат</a>
                 </div>
             `;
 
@@ -50,21 +50,21 @@ let holyxey = {
             image: 'https://holyxey.github.io/holyxey/imgs/cases/terruar.webp',
             description: 'Описание первого проекта',
             link: '#',
-            videoPreview: '/videoPreviews/TerruarPreview.mp4',
+            videoPreview: '/ForTesting/videoPreviews/TerruarPreview.mp4',
         },
         project2: {
             name: 'Редизайн сайта отеля со встроенноым модулем бронирования',
             image: 'https://holyxey.github.io/holyxey/imgs/cases/welton.webp',
             description: 'Описание второго проекта',
             link: '#',
-            videoPreview: '/videoPreviews/WeltonPreview.mp4',
+            videoPreview: '/ForTesting/videoPreviews/WeltonPreview.mp4',
         },
         project3: {
             name: 'Веб-афиша для спектакля в Александринском театре',
             image: 'https://holyxey.github.io/holyxey/imgs/cases/mesto.webp',
             description: 'Описание третьего проекта',
             link: '#',
-            videoPreview: '/videoPreviews/MestoPreview.mp4',
+            videoPreview: '/ForTesting/videoPreviews/MestoPreview.mp4',
         }
     }
 }
