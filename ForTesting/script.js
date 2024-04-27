@@ -2,7 +2,7 @@
 
 const videoPreview = (el, videoPreviewSource) => {
     let video = el.parentNode.querySelector(".project-video")
-    if (window.innerWidth > 600) {
+    // if (window.innerWidth > 600) {
         setTimeout(()=>{
             video.src= videoPreviewSource;
         }, 2500)
@@ -13,9 +13,9 @@ const videoPreview = (el, videoPreviewSource) => {
                 el.style.cssText += `display: none;`
             }, 1000)
         }
-    } else {
-        video.remove()
-    }
+    // } else {
+    //     video.remove()
+    // }
 }
 const fragment = new DocumentFragment();
 
