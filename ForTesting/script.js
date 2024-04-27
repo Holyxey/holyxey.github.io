@@ -4,8 +4,11 @@ const videoPreview = (el, videoPreviewSource) => {
     let video = el.parentNode.querySelector(".project-video")
     video.src= videoPreviewSource;
     video.oncanplay = () => {
-        video.style.display = 'block'
-        el.style.display = 'none'
+        el.style.cssText += `animation: easeHide .5s ease-out forwards`
+        setTimeout(() => {
+            video.style.cssText += `display: block;`
+            el.style.cssText += `display: none;`
+        }, 1000)
     }
 }
 const fragment = new DocumentFragment();
@@ -26,7 +29,7 @@ let holyxey = {
                 <img loading="lazy" class="project-image" src="${image}" onload="videoPreview(this, '${videoPreview}')" alt="${name}">
                 <video class="project-video" src="" autoplay muted loop playsinline></video>
                 <p class="project-description">${description}</p>
-                <a class="project-link" href="${link}">Поднобнее о кейсе</a>
+                <a class="project-link" href="${link}">Узнать процесс</a>
             `;
 
             fragment.append(article);
