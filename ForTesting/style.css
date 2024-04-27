@@ -71,6 +71,9 @@ body {
     body {
         padding: .5rem;
     }
+    #portfolio {
+        gap: 1rem;
+    }
     .project {
         padding: 1rem 0;
         max-width: unset;
