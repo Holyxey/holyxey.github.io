@@ -5,10 +5,14 @@ const fragment = new DocumentFragment();
 const videoPreview = (el, videoPreviewSource) => {
     let video = el.parentNode.querySelector(".project-video")
     video.src = videoPreviewSource;
-    video.oncanplay = () => {
-        el.style.cssText += `animation: easeHide .5s ease-out forwards`
-        video.style.cssText += `display: block`
-        el.style.cssText += `display: none;`
+    if (window.innerWidth > 550) {
+        video.oncanplay = () => {
+            el.style.cssText += `animation: easeHide .5s ease-out forwards`
+            video.style.cssText += `display: block`
+            el.style.cssText += `display: none;`
+        }
+    } else {
+        video.src = '';
     }
 }
 
