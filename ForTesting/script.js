@@ -11,7 +11,8 @@ const videoPreview = (el, videoPreviewSource) => {
         b.innerHTML = 'превью'
         b.style.cssText +=
             `top: ${'calc(' + el.parentNode.querySelector('.project-name').getBoundingClientRect().height + 'px + 2.5rem)'};
-            animation: previewShow 2s ease-out forwards;`
+            right: ${el.parentNode.getBoundingClientRect().paddingRight} + px;
+            animation: previewShow 1s ease-out forwards;`
         b.addEventListener("click", () => {
                 el.style.cssText += `animation: easeHide .5s ease-out forwards`
                 video.style.cssText += `display: block`

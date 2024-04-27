@@ -65,7 +65,6 @@ body {
         color: white;
         text-decoration: none;
         text-align: center;
-        transition: all 1s ease-out;
         font-size: 1rem;
     }
     .project-footer-result {
@@ -76,10 +75,17 @@ body {
     }
     .project-show-preview {
         background-color: #F2F4FF;
-        border-radius: 100vmax;
+        border-radius: .5rem;
         max-width: fit-content;
         color: #2F323A;
         border: 0;
+
+        padding: .5rem 1rem;
+        cursor: pointer;
+        box-shadow: 0 0 10px #00000030;
+
+        position: absolute;
+        right: .5rem;
     }
     .project-video {
         display: none;
