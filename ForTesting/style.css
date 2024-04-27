@@ -33,7 +33,6 @@ body {
     }
     .project-image {
         max-width: calc(100% + 2rem);
-        margin-inline: -.5rem;
         pointer-events: none;
         border-radius: .5rem;
         background-color: white;

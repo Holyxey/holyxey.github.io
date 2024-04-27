@@ -1,7 +1,8 @@
 // "use strict"; // нахуя? что это вообще
 
-const videoPreview = (el) => {
+const videoPreview = (el, videoPreviewSource) => {
     let video = el.parentNode.querySelector(".project-video")
+    video.src= videoPreviewSource;
     video.addEventListener('loadeddata', () => {
         video.style.display = 'block'
         el.style.display = 'none'
@@ -22,8 +23,8 @@ let holyxey = {
             article.classList.add('project')
             article.innerHTML = `
                 <h3 class="project-name">${name}</h3>
-                <img class="project-image" src="${image}" onload="videoPreview(this)" alt="${name}">
-                <video class="project-video" src="${videoPreview}" autoplay muted loop playsinline></video>
+                <img class="project-image" src="${image}" onload="videoPreview(this, '${videoPreview}')" alt="${name}">
+                <video class="project-video" src="" autoplay muted loop playsinline></video>
                 <p class="project-description">${description}</p>
                 <a class="project-link" href="${link}">Поднобнее о кейсе</a>
             `;
