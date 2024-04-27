@@ -1,11 +1,39 @@
 <meta charset="UTF-8">
 <title>Title</title>
-<link rel="stylesheet" href="tent/mainStyles.css">
-<link rel="stylesheet" href="/specialOffers/hxSpecial.css">
-<link rel="stylesheet" href="style.css">
+<link href="tent/mainStyles.css" rel="stylesheet">
+<link href="/specialOffers/hxSpecial.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
 
-<div id="ww_444a7acb1f27c" v='1.3' loc='id'
-     a='{"t":"responsive","lang":"ru","ids":[],"font":"Arial","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"image","cl_font":"#FFFFFF","cl_cloud":"#FFFFFF","cl_persp":"#81D4FA","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722"}'>
-    <a href="https://weatherwidget.org/" id="ww_444a7acb1f27c_u" target="_blank">Free weather widget</a>
-</div>
-<script async src="https://app2.weatherwidget.org/js/?id=ww_444a7acb1f27c"></script>
+<style>
+    #stream {
+        width: 70%;
+        aspect-ratio: 16 / 9;
+        border-radius: 1rem;
+        margin-top: 1rem;
+        pointer-events: none;
+    }
+
+    @media screen and (max-width: 500px) {
+        #stream {
+            width: calc(100dvw - 1rem);
+            translate: .5rem;
+        }
+    }
+</style>
+
+
+<iframe allow="autoplay; fullscreen; clipboard-write; picture-in-picture" class="iv-i" frameborder="0"
+        id="stream"
+        src="https://open.ivideon.com/embed/v3/?server=100-dd0c99522fc0f47e849431c7d3a75341&amp;camera=0&amp;lang=ru&amp;ap"
+
+></iframe>
+
+
+
+
+<!--        <div a='{"t":"responsive","lang":"ru","ids":[],"font":"Arial","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"image","cl_font":"#FFFFFF","cl_cloud":"#FFFFFF","cl_persp":"#81D4FA","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722"}'-->
+<!--             id="ww_444a7acb1f27c" loc='id'-->
+<!--             v='1.3'>-->
+<!--            <a href="https://weatherwidget.org/" id="ww_444a7acb1f27c_u" target="_blank">Free weather widget</a>-->
+<!--        </div>-->
+<!--        <script async src="https://app2.weatherwidget.org/js/?id=ww_444a7acb1f27c"></script>-->

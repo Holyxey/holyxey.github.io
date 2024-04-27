@@ -1,112 +1,252 @@
-<link rel="stylesheet" href="https://holyxey.github.io/public/GoldenIce/Competitions/list.css">
+<link href="https://holyxey.github.io/public/GoldenIce/Competitions/list.css" rel="stylesheet">
+<style>
+    #competitionsIframe {
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        translate: -50% -50%;
+        border: 0;
+        width: calc(100dvw - 2rem);
+        height: calc(100dvh - 1rem);
+        border-radius: 1rem;
+        box-shadow: 0 0 10px #212121;
+        transition: scale .3s ease-out, opacity .3s ease-out;
 
-<!--<div class="complist">-->
-<!--    <p class="h1">Предстоящие соревнования</p>-->
+        display: none;
+        opacity: 0;
+        scale: .8;
+    }
 
+    #closeCompetitionsIframe {
+        content: '';
+        position: fixed;
+        right: 1rem;
+        top: 1rem;
+        width: 2rem;
+        height: 2rem;
+        border-radius: .6rem;
+        background-color: #1B998B;
+        z-index: 100;
+        cursor: pointer;
+        padding: 5px;
+    }
+</style>
+
+<!--<iframe id="competitionsIframe"-->
+<!--        src="https://drive.google.com/file/d/1OgsdeYOA57fzX4drSgCf7rIsMR1lWQqr/preview"></iframe>-->
+<!--<div id="closeCompetitionsIframe">-->
+<!--    <svg fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">-->
+<!--        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>-->
+<!--        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>-->
+<!--        <g id="SVGRepo_iconCarrier">-->
+<!--            <path d="M14.5 9.50002L9.5 14.5M9.49998 9.5L14.5 14.5" stroke="#ffffff" stroke-linecap="round"-->
+<!--                  stroke-width="1.5"></path>-->
+<!--            <path d="M22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2C16.714 2 19.0711 2 20.5355 3.46447C21.5093 4.43821 21.8356 5.80655 21.9449 8"-->
+<!--                  stroke="#ffffff" stroke-linecap="round" stroke-width="1.5"></path>-->
+<!--        </g>-->
+<!--    </svg>-->
 <!--</div>-->
+
+<div class="complist">
+    <p class="h1">Предстоящие соревнования</p>
+
+    <p class="h2">Весенний фестиваль «Голден Айс» СК «Рубеж» 12.05.2024г.</p>
+    <a class="button" data-pup="https://drive.google.com/file/d/1OgsdeYOA57fzX4drSgCf7rIsMR1lWQqr/preview"
+       target="_blank">Положение
+        фестиваля</a>
+</div>
+
+<script>
+    const createIframe = (data) => {
+        let f = document.createElement("iframe")
+        f.id = 'competitionsIframe'
+        f.src = data
+        f.style.cssText += `display: block; scale: 1; opacity: 1; z-index: 100500`
+        document.body.prepend(f)
+        closeButtonIframe()
+    }
+    const closeButtonIframe = () => {
+        let d = document.createElement("div")
+        d.id = 'closeCompetitionsIframe'
+        d.innerHTML = `
+    <svg fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+        <g id="SVGRepo_iconCarrier">
+            <path d="M14.5 9.50002L9.5 14.5M9.49998 9.5L14.5 14.5" stroke="#ffffff" stroke-linecap="round"
+                  stroke-width="1.5"></path>
+            <path d="M22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2C16.714 2 19.0711 2 20.5355 3.46447C21.5093 4.43821 21.8356 5.80655 21.9449 8"
+                  stroke="#ffffff" stroke-linecap="round" stroke-width="1.5"></path>
+        </g>
+    </svg>
+`
+        document.documentElement.append(d)
+    }
+    const closeIframe = () => {
+    }
+    const openIframe = () => {
+        let previewButtons = document.querySelectorAll('[data-pup]')
+        previewButtons.forEach((el) => {
+            el.addEventListener('click', () => {
+                createIframe(el.getAttribute('data-pup'))
+            })
+        })
+    }
+    openIframe()
+</script>
+
 <div class="complist">
     <p class="h1">Текущие и завершённые соревнования</p>
 
     <p class="h2">Межмуниципальные соревнования «Кубок ЧОУ ДО ДЮСШ «Голден Айс»<br>СК «Стрельна Арена» 1-5.04.2024г.</p>
-    <a href="https://drive.google.com/file/d/11pBjDlGelQcwQJiDWFYyD2PCSJw69zlt/preview" class="button" target="_blank">Регламент соревнований</a>
-    <a href="https://freeskating.info/results/2324/spb/golden-ice-2024-04-01/" class="button" target="_blank">Онлайн-табло соревнований</a>
-    <a href="https://drive.google.com/file/d/18aa7TuWBvQHBHK5iXkWvwj7xQA8eHRdB/preview" class="button" target="_blank">Протокол соревнований</a>
+    <a class="button" href="https://drive.google.com/file/d/11pBjDlGelQcwQJiDWFYyD2PCSJw69zlt/preview" target="_blank">Регламент
+        соревнований</a>
+    <a class="button" href="https://freeskating.info/results/2324/spb/golden-ice-2024-04-01/" target="_blank">Онлайн-табло
+        соревнований</a>
+    <a class="button" href="https://drive.google.com/file/d/18aa7TuWBvQHBHK5iXkWvwj7xQA8eHRdB/preview" target="_blank">Протокол
+        соревнований</a>
 
     <p class="h2">Фестиваль «Голден Айс» СК «Стрельна Арена» 31.03.2024г.</p>
-    <a href="https://drive.google.com/file/d/1Ar6Le_ks10FR_YS_7YXMgYFWmatM6qjb/preview" class="button" target="_blank">Положение фестиваля</a>
-    <a href="https://freeskating.info/results/2324/spb/golden-ice-festival-2024-03-31/" class="button" target="_blank">Онлайн-табло соревнований</a>
+    <a class="button" href="https://drive.google.com/file/d/1Ar6Le_ks10FR_YS_7YXMgYFWmatM6qjb/preview" target="_blank">Положение
+        фестиваля</a>
+    <a class="button" href="https://freeskating.info/results/2324/spb/golden-ice-festival-2024-03-31/" target="_blank">Онлайн-табло
+        соревнований</a>
 
     <p class="h2">Фестиваль «Голден Айс»<br>СК «Шанс Арена» 14-15.03.2024г.</p>
-    <a href="https://drive.google.com/file/d/1M6u4K2fP9OTGn0-Ykqzcw-GlMMitLtl2/preview" class="button" target="_blank">Положение Фестиваля</a>
-    <a href="https://freeskating.info/results/2324/spb/golden-ice-festival-2024-03-15/" class="button" target="_blank">Онлайн-табло фестиваля</a>
+    <a class="button" href="https://drive.google.com/file/d/1M6u4K2fP9OTGn0-Ykqzcw-GlMMitLtl2/preview" target="_blank">Положение
+        Фестиваля</a>
+    <a class="button" href="https://freeskating.info/results/2324/spb/golden-ice-festival-2024-03-15/" target="_blank">Онлайн-табло
+        фестиваля</a>
 
-    <p class="h2">Межмуниципальные соревнования «На призы ЧОУ ДО ДЮСШ «Голден Айс»<br>ДС «Юбилейный» 12.02.2024 - 15.02.2024г.</p>
-    <a href="https://drive.google.com/file/d/1zLG_9fNOZsx9X5UX-uGYvFkANacUpki0/preview" class="button" target="_blank">Регламент соревнований</a>
-    <a href="https://freeskating.info/results/2324/spb/golden-ice-2024-02-10/" class="button" target="_blank">Онлайн-табло соревнований</a>
-    <a href="https://drive.google.com/file/d/1pzBJRtFeXMOOVXzAVBoGoOE0mDRgMXbK/preview" class="button" target="_blank">Протокол соревнований</a>
+    <p class="h2">Межмуниципальные соревнования «На призы ЧОУ ДО ДЮСШ «Голден Айс»<br>ДС «Юбилейный» 12.02.2024 -
+        15.02.2024г.</p>
+    <a class="button" href="https://drive.google.com/file/d/1zLG_9fNOZsx9X5UX-uGYvFkANacUpki0/preview" target="_blank">Регламент
+        соревнований</a>
+    <a class="button" href="https://freeskating.info/results/2324/spb/golden-ice-2024-02-10/" target="_blank">Онлайн-табло
+        соревнований</a>
+    <a class="button" href="https://drive.google.com/file/d/1pzBJRtFeXMOOVXzAVBoGoOE0mDRgMXbK/preview" target="_blank">Протокол
+        соревнований</a>
 
     <p class="h2">Фестиваль «Голден Айс»<br>ДС «Юбилейный» 11.02.2024г.</p>
-    <a href="https://drive.google.com/file/d/1Zf7xnrwt4cjGt-9hKF8Tv5dQ-pGOcJv-/preview" class="button" target="_blank">Положение Фестиваля</a>
-    <a href="https://freeskating.info/results/2324/spb/golden-ice-festival-2024-02-11/" class="button" target="_blank">Онлайн-табло фестиваля</a>
+    <a class="button" href="https://drive.google.com/file/d/1Zf7xnrwt4cjGt-9hKF8Tv5dQ-pGOcJv-/preview" target="_blank">Положение
+        Фестиваля</a>
+    <a class="button" href="https://freeskating.info/results/2324/spb/golden-ice-festival-2024-02-11/" target="_blank">Онлайн-табло
+        фестиваля</a>
 
     <p class="h2">Фестиваль «Голден Айс»<br>СК «Рубеж» 10.12.2023г.</p>
-    <a href="https://drive.google.com/file/d/1hLAxaYXaaQw_kXyNtzhPUxXS4oR18g5M/preview" class="button" target="_blank">Положение Фестиваля</a>
-    <a href="https://freeskating.info/results/2324/spb/golden-ice-festival-2023-12-10/" class="button" target="_blank">Онлайн-табло фестиваля</a>
+    <a class="button" href="https://drive.google.com/file/d/1hLAxaYXaaQw_kXyNtzhPUxXS4oR18g5M/preview" target="_blank">Положение
+        Фестиваля</a>
+    <a class="button" href="https://freeskating.info/results/2324/spb/golden-ice-festival-2023-12-10/" target="_blank">Онлайн-табло
+        фестиваля</a>
 
     <p class="h2">Межмуниципальные соревнования «Золотая осень» СК «Стрельна Арена» 1–5.11.2023г.</p>
-    <a href="https://drive.google.com/file/d/1V8wTlCa22PT3d5_tUbXHiSUAUWVIsNFb/preview" class="button" target="_blank">Регламент соревнований</a>
-    <a href="https://freeskating.info/results/2324/spb/golden-ice-2023-11-01/" class="button" target="_blank">Онлайн-табло Соревнований</a>
-    <a href="https://drive.google.com/file/d/1oOldoXCiyp-ixMV4X7xeWv6qdigTGC3y/preview" class="button" target="_blank">Протокол соревнований</a>
+    <a class="button" href="https://drive.google.com/file/d/1V8wTlCa22PT3d5_tUbXHiSUAUWVIsNFb/preview" target="_blank">Регламент
+        соревнований</a>
+    <a class="button" href="https://freeskating.info/results/2324/spb/golden-ice-2023-11-01/" target="_blank">Онлайн-табло
+        Соревнований</a>
+    <a class="button" href="https://drive.google.com/file/d/1oOldoXCiyp-ixMV4X7xeWv6qdigTGC3y/preview" target="_blank">Протокол
+        соревнований</a>
 
     <p class="h2">Фестиваль «Золотая осень» СК «Стрельна Арена» 04.11.2023г.</p>
-    <a href="https://freeskating.info/results/2324/spb/golden-ice-festival-2023-11-05/" class="button" target="_blank">Онлайн-табло Фестиваля</a>
+    <a class="button" href="https://freeskating.info/results/2324/spb/golden-ice-festival-2023-11-05/" target="_blank">Онлайн-табло
+        Фестиваля</a>
 
     <p class="h2">Фестиваль «Голден Айс» СК «Рубеж»<br> 27-28.05.2023 г.</p>
-    <a href="https://drive.google.com/file/d/1KA3rboVM64ZpCPDefTRK2ve_EQrE1tpb/view?usp=sharing" class="button" target="_blank">Положение</a>
-    <a href="https://freeskating.info/results/2223/spb/golden-ice-festival-2023-05-27/" class="button" target="_blank">Онлайн-табло</a>
+    <a class="button" href="https://drive.google.com/file/d/1KA3rboVM64ZpCPDefTRK2ve_EQrE1tpb/view?usp=sharing"
+       target="_blank">Положение</a>
+    <a class="button" href="https://freeskating.info/results/2223/spb/golden-ice-festival-2023-05-27/" target="_blank">Онлайн-табло</a>
 
-    <p class="h2">Межмуниципальные соревнования «На призы ЧОУ ДО ДЮСШ "Голден Айс"»<br>ОАО «Дворец Спорта» 12-15.05.2023г.</p>
-    <a href="https://drive.google.com/file/d/16XzTlXD2H5l5KpRiuqX1FljFGYa8HpPH/view?usp=share_link" class="button" target="_blank">Регламент соревнований</a>
-    <a href="https://freeskating.info/results/2223/spb/golden-ice-2023-05-12/" class="button" target="_blank">Онлайн-табло соревнований</a>
-    <a href="https://drive.google.com/file/d/1vn2I08irY5PSM_FU-H1Tnp-HljLwF-mE/view?usp=share_link" class="button" target="_blank">Протокол соревнований</a>
+    <p class="h2">Межмуниципальные соревнования «На призы ЧОУ ДО ДЮСШ "Голден Айс"»<br>ОАО «Дворец Спорта»
+        12-15.05.2023г.</p>
+    <a class="button" href="https://drive.google.com/file/d/16XzTlXD2H5l5KpRiuqX1FljFGYa8HpPH/view?usp=share_link"
+       target="_blank">Регламент соревнований</a>
+    <a class="button" href="https://freeskating.info/results/2223/spb/golden-ice-2023-05-12/" target="_blank">Онлайн-табло
+        соревнований</a>
+    <a class="button" href="https://drive.google.com/file/d/1vn2I08irY5PSM_FU-H1Tnp-HljLwF-mE/view?usp=share_link"
+       target="_blank">Протокол соревнований</a>
 
     <p class="h2">Фестиваль «Голден Айс» ОАО «Дворец Спорта» 14.05.2023г.</p>
-    <a href="https://drive.google.com/file/d/1tqYYuDtF3URt_cejAUT8X1zQXwS2MyZX/view?usp=share_link" class="button" target="_blank">Положение</a>
-    <a href="https://freeskating.info/results/2223/spb/golden-ice-festival-2023-05-14/" class="button" target="_blank">Онлайн-табло Фестиваля</a>
+    <a class="button" href="https://drive.google.com/file/d/1tqYYuDtF3URt_cejAUT8X1zQXwS2MyZX/view?usp=share_link"
+       target="_blank">Положение</a>
+    <a class="button" href="https://freeskating.info/results/2223/spb/golden-ice-festival-2023-05-14/" target="_blank">Онлайн-табло
+        Фестиваля</a>
 
     <p class="h2">Фестиваль «Голден Айс» СК «Шанс Арена» 13-14.04.2023г.</p>
-    <a href="https://freeskating.info/results/2223/spb/golden-ice-festival-2023-04-13/" class="button" target="_blank">Онлайн-табло Фестиваля</a>
-    <a href="https://drive.google.com/file/d/1YowGcLcsQgmJXZyNrmLrK2ngjReobquG/view?usp=share_link" class="button" target="_blank">Положение Фестиваля</a>
+    <a class="button" href="https://freeskating.info/results/2223/spb/golden-ice-festival-2023-04-13/" target="_blank">Онлайн-табло
+        Фестиваля</a>
+    <a class="button" href="https://drive.google.com/file/d/1YowGcLcsQgmJXZyNrmLrK2ngjReobquG/view?usp=share_link"
+       target="_blank">Положение Фестиваля</a>
 
     <p class="h2">Фестиваль «Голден Айс» ОАО «Дворец Спорта» 12.02.2023г.</p>
-    <a href="https://freeskating.info/results/2223/spb/golden-ice-festival-2023-02-12/" class="button" target="_blank">Онлайн-табло Фестиваля</a>
+    <a class="button" href="https://freeskating.info/results/2223/spb/golden-ice-festival-2023-02-12/" target="_blank">Онлайн-табло
+        Фестиваля</a>
 
-    <p class="h2">Межмуниципальные соревнования «На призы ЗТР И.А. Яковлевой»<br> ОАО «Дворец Спорта» 11-14.02.2023г.</p>
-    <a href="https://freeskating.info/results/2223/spb/golden-ice-2023-02-11/" class="button" target="_blank">Онлайн-табло соревнований</a>
-    <a href="https://drive.google.com/file/d/1708AChp_USmp5n4ULjB30H2uPyQu2IxF/view?usp=share_link" class="button" target="_blank">Протокол соревнований</a>
+    <p class="h2">Межмуниципальные соревнования «На призы ЗТР И.А. Яковлевой»<br> ОАО «Дворец Спорта» 11-14.02.2023г.
+    </p>
+    <a class="button" href="https://freeskating.info/results/2223/spb/golden-ice-2023-02-11/" target="_blank">Онлайн-табло
+        соревнований</a>
+    <a class="button" href="https://drive.google.com/file/d/1708AChp_USmp5n4ULjB30H2uPyQu2IxF/view?usp=share_link"
+       target="_blank">Протокол соревнований</a>
 
     <p class="h2">Фестиваль «Голден Айс» СК «Рубеж» 25.12.2022г.</p>
-    <a href="https://drive.google.com/file/d/1K6NgcZKVG_4TkcOB0iZDYKxcgEA5nbUj/view?usp=share_link" class="button" target="_blank">Положение Фестиваля</a>
-    <a href="https://freeskating.info/results/2223/spb/golden-ice-festival-2022-12-25/" class="button" target="_blank">Онлайн-табло Фестиваля</a>
+    <a class="button" href="https://drive.google.com/file/d/1K6NgcZKVG_4TkcOB0iZDYKxcgEA5nbUj/view?usp=share_link"
+       target="_blank">Положение Фестиваля</a>
+    <a class="button" href="https://freeskating.info/results/2223/spb/golden-ice-festival-2022-12-25/" target="_blank">Онлайн-табло
+        Фестиваля</a>
 
     <p class="h2">Фестиваль «Голден Айс» ОАО «Дворец Спорта» 19.11.2022г.</p>
-    <a href="https://drive.google.com/file/d/1T8wmTac6S82Z8aw_8Et4In4ecBjHQxyM/view?usp=share_link" class="button" target="_blank">Положение Фестиваля</a>
-    <a href="https://freeskating.info/results/2223/spb/golden-ice-festival-2022-11-19/" class="button" target="_blank">Онлайн-табло Фестиваля</a>
+    <a class="button" href="https://drive.google.com/file/d/1T8wmTac6S82Z8aw_8Et4In4ecBjHQxyM/view?usp=share_link"
+       target="_blank">Положение Фестиваля</a>
+    <a class="button" href="https://freeskating.info/results/2223/spb/golden-ice-festival-2022-11-19/" target="_blank">Онлайн-табло
+        Фестиваля</a>
 
     <p class="h2">Первенство ЧОУ ДО ДЮСШ "Голден Айс"<br>
         ОАО «Дворец Спорта» 13-19.11.2022г.</p>
-    <a href="https://drive.google.com/file/d/1oGpkmVp8NEyE4k-yAKPibj6fjnYVTH3C/view?usp=share_link" class="button" target="_blank">Положение Первенства с изменением</a>
-    <a href="https://drive.google.com/file/d/1mZwZad9_IDiGO2sVpjyFJPe-oJv-UJaA/view?usp=share_link" class="button" target="_blank">Протоколы Первенства</a>
-    <a href="https://freeskating.info/results/2223/spb/golden-ice-2022-11-17/" class="button" target="_blank">Онлайн-табло Первенства</a>
+    <a class="button" href="https://drive.google.com/file/d/1oGpkmVp8NEyE4k-yAKPibj6fjnYVTH3C/view?usp=share_link"
+       target="_blank">Положение Первенства с изменением</a>
+    <a class="button" href="https://drive.google.com/file/d/1mZwZad9_IDiGO2sVpjyFJPe-oJv-UJaA/view?usp=share_link"
+       target="_blank">Протоколы Первенства</a>
+    <a class="button" href="https://freeskating.info/results/2223/spb/golden-ice-2022-11-17/" target="_blank">Онлайн-табло
+        Первенства</a>
 
     <p class="h2">Региональные соревнования "Кубок ЧОУ ДО ДЮСШ ГОЛДЕН АЙС"<br>
         ДС "Юбилейный" 16-19.05.2022г.</p>
-    <a href="https://drive.google.com/file/d/189nTBR4xJvnzUeZZnzr5RVH9eHAK4dRc/view?usp=sharing" class="button" target="_blank">Протоколы Кубка 16-19.05.2022 г.</a>
-    <a href="https://freeskating.info/results/2122/spb/golden_ice_2022_05_16/" class="button" target="_blank">Онлайн-табло Кубка 16-19.05.2022г.</a>
+    <a class="button" href="https://drive.google.com/file/d/189nTBR4xJvnzUeZZnzr5RVH9eHAK4dRc/view?usp=sharing"
+       target="_blank">Протоколы Кубка 16-19.05.2022 г.</a>
+    <a class="button" href="https://freeskating.info/results/2122/spb/golden_ice_2022_05_16/" target="_blank">Онлайн-табло
+        Кубка 16-19.05.2022г.</a>
 
     <p class="h2">Фестиваль «Голден Айс» ДС «Юбилейный» 20.05.2022г.</p>
-    <a href="https://freeskating.info/results/2122/spb/golden_ice_festival_2022_05_20/" class="button" target="_blank">Онлайн-табло Фестиваля 20.05.2022 г.</a>
+    <a class="button" href="https://freeskating.info/results/2122/spb/golden_ice_festival_2022_05_20/" target="_blank">Онлайн-табло
+        Фестиваля 20.05.2022 г.</a>
 
     <p class="h2">Фестиваль «Голден Айс» СК «Рубеж» 01.05.2022г.</p>
-    <a href="https://freeskating.info/results/2122/spb/golden_ice_festival_2022_05_01/" class="button" target="_blank">Онлайн-табло Фестиваля 01.05.2022г.</a>
+    <a class="button" href="https://freeskating.info/results/2122/spb/golden_ice_festival_2022_05_01/" target="_blank">Онлайн-табло
+        Фестиваля 01.05.2022г.</a>
 
     <p class="h2">Фестиваль «Голден Айс» СК «Рубеж» 03.04.2022г.</p>
-    <a href="https://freeskating.info/results/2122/spb/golden_ice_festival_2022_04_03/" class="button" target="_blank">Онлайн-табло Фестиваля 03.04.2022г.</a>
+    <a class="button" href="https://freeskating.info/results/2122/spb/golden_ice_festival_2022_04_03/" target="_blank">Онлайн-табло
+        Фестиваля 03.04.2022г.</a>
 
     <p class="h2">Фестиваль «Голден Айс» СК «Рубеж» 27.02.2022г.</p>
-    <a href="https://freeskating.info/results/2122/spb/golden_ice_festival_2022_02_27/" class="button" target="_blank">Онлайн-табло Фестиваля 27.02.2022г.</a>
+    <a class="button" href="https://freeskating.info/results/2122/spb/golden_ice_festival_2022_02_27/" target="_blank">Онлайн-табло
+        Фестиваля 27.02.2022г.</a>
 
     <p class="h2">Фестиваль «Голден Айс» СК «Рубеж» 26.12.2021г.</p>
-    <a href="https://freeskating.info/results/2122/spb/golden_ice_festival_2021_12_26/" class="button" target="_blank">Онлайн-табло Фестиваля</a>
+    <a class="button" href="https://freeskating.info/results/2122/spb/golden_ice_festival_2021_12_26/" target="_blank">Онлайн-табло
+        Фестиваля</a>
 
     <p class="h2">Фестиваль «Голден Айс» ДС«Юбилейный» 24.11.2021г.</p>
-    <a href="https://freeskating.info/results/2122/golden_ice_festival/" class="button" target="_blank">Онлайн-табло Фестиваля</a>
+    <a class="button" href="https://freeskating.info/results/2122/golden_ice_festival/" target="_blank">Онлайн-табло
+        Фестиваля</a>
 
     <p class="h2">Кубок «Голден Айс» ДС «Юбилейный» 21-23.11.2021г.</p>
-    <a href="https://freeskating.info/results/2122/golden_ice_2021_11_21/" class="button" target="_blank">Онлайн-табло Кубка</a>
-    <a href="https://drive.google.com/file/d/1uv3diAvTLsuV9AsD4J3LKeMH_C_j1nvH/preview" class="button" target="_blank">Протоколы</a>
+    <a class="button" href="https://freeskating.info/results/2122/golden_ice_2021_11_21/" target="_blank">Онлайн-табло
+        Кубка</a>
+    <a class="button" href="https://drive.google.com/file/d/1uv3diAvTLsuV9AsD4J3LKeMH_C_j1nvH/preview" target="_blank">Протоколы</a>
 
     <p class="h2">Первенство «Голден Айс» ДС «Юбилейный» 25–27.05.2021г.</p>
-    <a href="https://freeskating.info/results/2021/golden_ice_2021_05_25" class="button" target="_blank">Онлайн-табло Первенства</a>
-    <a href="https://drive.google.com/file/d/1NYnX0VfnrhGDOboIIbfzONXILoqr8DCP/preview" class="button" target="_blank">Протоколы</a>
+    <a class="button" href="https://freeskating.info/results/2021/golden_ice_2021_05_25" target="_blank">Онлайн-табло
+        Первенства</a>
+    <a class="button" href="https://drive.google.com/file/d/1NYnX0VfnrhGDOboIIbfzONXILoqr8DCP/preview" target="_blank">Протоколы</a>
 </div>
