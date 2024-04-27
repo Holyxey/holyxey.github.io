@@ -5,7 +5,7 @@ const videoPreview = (el, videoPreviewSource) => {
     if (window.innerWidth > 600) {
         setTimeout(()=>{
             video.src= videoPreviewSource;
-        }, 1000)
+        }, 2500)
         video.oncanplay = () => {
             el.style.cssText += `animation: easeHide .5s ease-out forwards`
             setTimeout(() => {
