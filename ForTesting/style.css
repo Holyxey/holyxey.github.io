@@ -6,7 +6,7 @@
 body {
     padding: 3rem;
     background-color: #d2caf620;
-    max-width: 1200px;
+    /*max-width: 1200px;*/
     margin: auto;
 }
 #portfolio {
@@ -18,7 +18,7 @@ body {
 }
 
 .project {
-    flex: 1 1 450px;
+    flex: 1 1 300px;
     max-width: 50%;
 
     display: flex;
@@ -67,7 +67,7 @@ body {
 
 /*
 */
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 1200px) {
     body {
         padding: .5rem;
     }
