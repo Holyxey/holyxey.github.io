@@ -5,7 +5,7 @@
 }
 body {
     padding: 3rem;
-    background-color: #d2caf620;
+    background-color: #F2F4FF;
     /*max-width: 1200px;*/
     margin: auto;
 }
@@ -26,7 +26,7 @@ body {
     gap: 1rem;
 
     background-color: white;
-    padding: 1rem;
+    padding: 1.5rem 1rem 1rem 1rem;
     border-radius: 1rem;
     box-shadow: 0 0 1rem #7e76a420;
 
@@ -66,12 +66,13 @@ body {
         text-align: center;
     }
     .project-footer-result {
-        background-color: gray;
+        background-color: #FFBF46;
+        color: #2F323A;
+        max-width: fit-content;
     }
     .project-video {
         display: none;
         max-width: calc(100% + 2rem);
-        pointer-events: none;
         border-radius: .5rem;
         background-color: white;
         animation: easeShow 2s ease-out forwards;

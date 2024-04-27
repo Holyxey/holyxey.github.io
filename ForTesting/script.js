@@ -25,10 +25,10 @@ let holyxey = {
             article.innerHTML = `
                 <h3 class="project-name">${name}</h3>
                 <img class="project-image" src="${image}" onload="setTimeout(()=>{videoPreview(this, '${videoPreview}')}, 1000)" alt="${name}">
-                <video class="project-video" src="" autoplay muted loop playsinline preload="none"></video>
+                <video class="project-video" src="" autoplay muted loop playsinline preload="none" controls></video>
                 <p class="project-description">${description}</p>
                 <div class="project-footer">
-                    <a class="project-link" href="${link}">Узнать процесс</a>
+                    <a class="project-link" href="${link}">Читать кейс</a>
                     <a href="#" class="project-footer-result">Результат</a>
                 </div>
             `;
