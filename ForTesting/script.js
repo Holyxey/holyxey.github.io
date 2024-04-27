@@ -2,20 +2,12 @@
 
 const videoPreview = (el, videoPreviewSource) => {
     let video = el.parentNode.querySelector(".project-video")
-    // if (window.innerWidth > 600) {
-        setTimeout(()=>{
-            video.src= videoPreviewSource;
-        }, 2500)
+        video.src = videoPreviewSource;
         video.oncanplay = () => {
             el.style.cssText += `animation: easeHide .5s ease-out forwards`
-            setTimeout(() => {
-                video.style.cssText += `display: block`
-                el.style.cssText += `display: none;`
-            }, 1000)
+            video.style.cssText += `display: block`
+            el.style.cssText += `display: none;`
         }
-    // } else {
-    //     video.remove()
-    // }
 }
 const fragment = new DocumentFragment();
 
@@ -32,7 +24,7 @@ let holyxey = {
             article.classList.add('project')
             article.innerHTML = `
                 <h3 class="project-name">${name}</h3>
-                <img loading="lazy" class="project-image" src="${image}" onload="videoPreview(this, '${videoPreview}')" alt="${name}">
+                <img class="project-image" src="${image}" onload="setTimeout(()=>{videoPreview(this, '${videoPreview}')}, 1000)" alt="${name}">
                 <video class="project-video" src="" autoplay muted loop playsinline></video>
                 <p class="project-description">${description}</p>
                 <a class="project-link" href="${link}">Узнать процесс</a>
