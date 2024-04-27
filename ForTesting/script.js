@@ -23,7 +23,7 @@ let holyxey = {
             article.innerHTML = `
                 <h3 class="project-name">${name}</h3>
                 <img class="project-image" src="${image}" onload="videoPreview(this)" alt="${name}">
-                <video class="project-video" src="${videoPreview}" autoplay="" muted="" loop=""></video>
+                <video class="project-video" src="${videoPreview}" autoplay muted loop playsinline></video>
                 <p class="project-description">${description}</p>
                 <a class="project-link" href="${link}">Поднобнее о кейсе</a>
             `;
