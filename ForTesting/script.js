@@ -3,10 +3,10 @@
 const videoPreview = (el, videoPreviewSource) => {
     let video = el.parentNode.querySelector(".project-video")
     video.src= videoPreviewSource;
-    video.addEventListener('loadeddata', () => {
+    video.oncanplay = () => {
         video.style.display = 'block'
         el.style.display = 'none'
-    })
+    }
 }
 const fragment = new DocumentFragment();
 
@@ -48,11 +48,11 @@ let holyxey = {
             link: '#',
             videoPreview: 'https://holyxey.github.io/ForTesting/videoPreviews/TerruarPreview.WebM',
         }, project2: {
-            name: 'Второй проект',
+            name: 'Редизайн сайта отеля со встроенноым модулем бронирования',
             image: 'https://holyxey.github.io/holyxey/imgs/cases/welton.webp',
             description: 'Описание второго проекта',
             link: '#',
-            videoPreview: 'https://holyxey.github.io/ForTesting/videoPreviews/TerruarPreview.WebM',
+            videoPreview: 'https://holyxey.github.io/ForTesting/videoPreviews/WeltonPreview.mp4',
         }, project3: {
             name: 'Третий проект',
             image: 'https://holyxey.github.io/holyxey/imgs/cases/mesto.webp',
