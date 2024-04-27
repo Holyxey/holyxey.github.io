@@ -6,7 +6,6 @@
 body {
     padding: 3rem;
     background-color: #F2F4FF;
-    /*max-width: 1200px;*/
     margin: auto;
 }
 #portfolio {
@@ -54,8 +53,9 @@ body {
         flex-wrap: wrap;
         gap: 1rem;
         justify-content: flex-end;
+        align-items: center;
     }
-    .project-link, .project-footer-result, .project-show-preview {
+    .project-link, .project-footer-result {
         flex: 1;
         background-color: #0177f6;
         padding: 1rem 2rem;
@@ -73,19 +73,29 @@ body {
         max-width: fit-content;
         border-radius: 100vmax;
     }
-    .project-show-preview {
-        background-color: #F2F4FF;
-        border-radius: .5rem;
-        max-width: fit-content;
-        color: #2F323A;
-        border: 0;
-
-        padding: .5rem 1rem;
-        cursor: pointer;
-        box-shadow: 0 0 10px #00000030;
-
+    .project-online {
+        content: '';
         position: absolute;
-        right: .5rem;
+        background-color: #17C3B2;
+        border-radius: 100vmin;
+        height: .25rem;
+        width: .25rem;
+        box-shadow: 0 0 5px #F2F4FF;
+        right: .75rem;
+        bottom: .75rem;
+    }
+    .project-online:before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        translate: -50% -50%;
+        border-radius: 100vmin;
+        width: 100%;
+        height: 100%;
+        background-color: #17C3B2;
+        z-index: 2;
+        animation: online 2s ease-out infinite;
     }
     .project-video {
         display: none;
@@ -124,7 +134,6 @@ body {
     .project-video {
         border-radius: 0;
     }
-
 }
 
 /*
@@ -137,7 +146,8 @@ body {
     from {opacity: 0}
     to {opacity: 1}
 }
-@keyframes previewShow {
-    from {opacity: 0; translate: calc(100%); width: 0}
-    to {opacity: 1;}
+@keyframes online {
+    from {opacity: 1; scale: 1}
+    50% {opacity: 0; scale: 3}
+    to {opacity: 0; scale: 3}
 }

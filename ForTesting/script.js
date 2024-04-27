@@ -6,26 +6,15 @@ const videoPreview = (el, videoPreviewSource) => {
     let video = el.parentNode.querySelector(".project-video")
     video.src = videoPreviewSource;
     video.oncanplay = () => {
-        let b = document.createElement('button')
-        b.classList.add('project-show-preview')
-        b.innerHTML = 'превью'
-        b.style.cssText +=
-            `top: ${'calc(' + el.parentNode.querySelector('.project-name').getBoundingClientRect().height + 'px + 2.5rem)'};
-            right: ${el.parentNode.getBoundingClientRect().paddingRight} + px;
-            animation: previewShow 1s ease-out forwards;`
-        b.addEventListener("click", () => {
-                el.style.cssText += `animation: easeHide .5s ease-out forwards`
-                video.style.cssText += `display: block`
-                el.style.cssText += `display: none;`
-        })
-        fragment.append(b);
-        el.parentNode.querySelector('.project-footer').append(b)
+        el.style.cssText += `animation: easeHide .5s ease-out forwards`
+        video.style.cssText += `display: block`
+        el.style.cssText += `display: none;`
     }
 }
 
 let holyxey = {
     getProjects() {
-        const renderProject = (name, image, description, link, videoPreview, result) => {
+        const renderProject = (name, image, description, link, videoPreview, result, onlineDetector) => {
             let portfolioList = document.querySelector('#portfolio')
             if (!portfolioList) {
                 console.error('Portfolio list not found');
@@ -39,6 +28,7 @@ let holyxey = {
                 <img class="project-image" src="${image}" onload="setTimeout(()=>{videoPreview(this, '${videoPreview}')}, 1000)" alt="${name}">
                 ${videoPreview ? `<video class="project-video" src="" autoplay muted loop playsinline preload="none"></video>` : ''}
                 ${description ? `<p class="project-description">${description}</p>` : ''}
+                ${onlineDetector ? `<div class="project-online"></div>` : ''}
                 <div class="project-footer">
                     ${link ? `<a class="project-link" href="${link}">Процесс</a>` : ''}
                     <a href="${result}" target="_blank" class="project-footer-result">Результат</a>
@@ -52,7 +42,7 @@ let holyxey = {
         for (let key in holyxey.portfolio) {
             if (key.startsWith('project')) {
                 let project = holyxey.portfolio[key];
-                renderProject(project.name, project.image, project.description, project.link, project.videoPreview, project.result);
+                renderProject(project.name, project.image, project.description, project.link, project.videoPreview, project.result, project.onlineDetector);
             }
         }
     },
@@ -64,14 +54,16 @@ let holyxey = {
             link: '#',
             result: 'https://terruarhome.ru/',
             videoPreview: '/ForTesting/videoPreviews/TerruarPreview.mp4',
+            onlineDetector: true,
         },
         project2: {
-            name: 'Редизайн сайта отеля Редизайн сайта отеля Редизайн сайта отеля Редизайн сайта отеля',
+            name: 'Редизайн сайта отеля',
             image: 'https://holyxey.github.io/holyxey/imgs/cases/welton.webp',
             description: 'Описание второго проекта',
             link: '',
             result: 'https://weltonhotel.ru',
             videoPreview: '/ForTesting/videoPreviews/WeltonPreview.mp4',
+            onlineDetector: true,
         },
         project3: {
             name: 'Веб-афиша для спектакля',
@@ -80,6 +72,7 @@ let holyxey = {
             link: '',
             result: 'https://mesto.dance',
             videoPreview: '/ForTesting/videoPreviews/MestoPreview.mp4',
+            onlineDetector: true,
         }
     }
 }
