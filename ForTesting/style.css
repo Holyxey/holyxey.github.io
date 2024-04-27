@@ -73,6 +73,7 @@ body {
     }
     .project {
         padding: 1rem 0;
+        max-width: unset;
     }
     .project-name {
         padding: 0 1rem 0 1rem;
@@ -89,6 +90,7 @@ body {
     .project-video {
         border-radius: 0;
     }
+
 }
 
 /*
