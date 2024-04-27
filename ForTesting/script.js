@@ -49,7 +49,7 @@ let holyxey = {
             image: 'https://holyxey.github.io/holyxey/imgs/cases/terruar.webp',
             description: 'Описание первого проекта',
             link: '#',
-            videoPreview: 'https://holyxey.github.io/ForTesting/videoPreviews/TerruarPreview.WebM',
+            videoPreview: 'https://holyxey.github.io/ForTesting/videoPreviews/TerruarPreview.mp4',
         }, project2: {
             name: 'Редизайн сайта отеля со встроенноым модулем бронирования',
             image: 'https://holyxey.github.io/holyxey/imgs/cases/welton.webp',
@@ -61,7 +61,7 @@ let holyxey = {
             image: 'https://holyxey.github.io/holyxey/imgs/cases/mesto.webp',
             description: 'Описание третьего проекта',
             link: '#',
-            videoPreview: 'https://holyxey.github.io/ForTesting/videoPreviews/TerruarPreview.WebM',
+            videoPreview: 'https://holyxey.github.io/ForTesting/videoPreviews/TerruarPreview.mp4',
         }
     }
 }
