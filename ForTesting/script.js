@@ -64,7 +64,7 @@ let holyxey = {
             image: 'https://holyxey.github.io/holyxey/imgs/cases/mesto.webp',
             description: 'Описание третьего проекта',
             link: '#',
-            videoPreview: '/videoPreviews/WeltonPreview.mp4',
+            videoPreview: '/videoPreviews/MestoPreview.mp4',
         }
     }
 }
