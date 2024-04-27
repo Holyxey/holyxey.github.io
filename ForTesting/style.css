@@ -69,6 +69,24 @@ body {
     body {
         padding: .5rem;
     }
+    .project {
+        padding: 1rem 0;
+    }
+    .project-name {
+        padding: 0 1rem 0 1rem;
+    }
+    .project-description {
+        padding: 0 1rem 0 1rem;
+    }
+    .project-link {
+        margin-right: .5rem;
+    }
+    .project-image {
+        border-radius: 0;
+    }
+    .project-video {
+        border-radius: 0;
+    }
 }
 
 /*
