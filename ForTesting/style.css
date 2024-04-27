@@ -38,6 +38,7 @@ body {
         pointer-events: none;
         border-radius: .5rem;
         background-color: white;
+        transition: height .3s ease-out;
     }
     .project-description {
         flex: 1;
