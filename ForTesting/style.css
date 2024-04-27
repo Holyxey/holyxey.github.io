@@ -18,7 +18,7 @@ body {
 }
 
 .project {
-    flex: 1 1 300px;
+    flex: 1 1 400px;
     max-width: 50%;
 
     display: flex;
@@ -34,6 +34,8 @@ body {
     }
     .project-name {
         font-size: 1.2rem;
+        line-height: 1;
+        font-weight: 500;
     }
     .project-image {
         max-width: calc(100% + 2rem);
@@ -46,15 +48,25 @@ body {
         flex: 1;
         width: 100%;
     }
-    .project-link {
+    .project-footer {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: flex-end;
+    }
+    .project-link, .project-footer-result {
+        flex: 1;
         background-color: #0177f6;
         padding: 1rem 2rem;
         border-radius: .5rem;
-        max-width: fit-content;
+        width: 100%;
+        min-width: fit-content;
         color: white;
         text-decoration: none;
         text-align: center;
-        margin-left: auto;
+    }
+    .project-footer-result {
+        background-color: gray;
     }
     .project-video {
         display: none;
@@ -77,6 +89,7 @@ body {
     .project {
         padding: 1rem 0;
         max-width: unset;
+        min-width: unset;
     }
     .project-name {
         padding: 0 1rem 0 1rem;
@@ -84,8 +97,8 @@ body {
     .project-description {
         padding: 0 1rem 0 1rem;
     }
-    .project-link {
-        margin-right: 1rem;
+    .project-footer {
+        margin-inline: 1rem;
     }
     .project-image {
         border-radius: 0;

@@ -2,12 +2,12 @@
 
 const videoPreview = (el, videoPreviewSource) => {
     let video = el.parentNode.querySelector(".project-video")
-        video.src = videoPreviewSource;
-        video.oncanplay = () => {
-            el.style.cssText += `animation: easeHide .5s ease-out forwards`
-            video.style.cssText += `display: block`
-            el.style.cssText += `display: none;`
-        }
+    video.src = videoPreviewSource;
+    video.oncanplay = () => {
+        el.style.cssText += `animation: easeHide .5s ease-out forwards`
+        video.style.cssText += `display: block`
+        el.style.cssText += `display: none;`
+    }
 }
 const fragment = new DocumentFragment();
 
@@ -25,9 +25,12 @@ let holyxey = {
             article.innerHTML = `
                 <h3 class="project-name">${name}</h3>
                 <img class="project-image" src="${image}" onload="setTimeout(()=>{videoPreview(this, '${videoPreview}')}, 1000)" alt="${name}">
-                <video class="project-video" src="" autoplay muted loop playsinline></video>
+                <video class="project-video" src="" autoplay muted loop playsinline preload="none"></video>
                 <p class="project-description">${description}</p>
-                <a class="project-link" href="${link}">Узнать процесс</a>
+                <div class="project-footer">
+                    <a href="#" class="project-footer-result">Результат</a>
+                    <a class="project-link" href="${link}">Узнать процесс</a>
+                </div>
             `;
 
             fragment.append(article);
@@ -43,23 +46,25 @@ let holyxey = {
     },
     portfolio: {
         project1: {
-            name: 'CUSTOM DESIGN AND DEVELOPMENT OF A WEBSITE FOR GLAMPING IN THE WOODS',
+            name: 'Разработка дизайна и верстка для загородного глэмпинга',
             image: 'https://holyxey.github.io/holyxey/imgs/cases/terruar.webp',
             description: 'Описание первого проекта',
             link: '#',
-            videoPreview: 'https://holyxey.github.io/ForTesting/videoPreviews/TerruarPreview.mp4',
-        }, project2: {
+            videoPreview: '/videoPreviews/TerruarPreview.mp4',
+        },
+        project2: {
             name: 'Редизайн сайта отеля со встроенноым модулем бронирования',
             image: 'https://holyxey.github.io/holyxey/imgs/cases/welton.webp',
             description: 'Описание второго проекта',
             link: '#',
-            videoPreview: 'https://holyxey.github.io/ForTesting/videoPreviews/WeltonPreview.mp4',
-        }, project3: {
-            name: 'Третий проект',
+            videoPreview: '/videoPreviews/WeltonPreview.mp4',
+        },
+        project3: {
+            name: 'Веб-афиша для спектакля в Александринском театре',
             image: 'https://holyxey.github.io/holyxey/imgs/cases/mesto.webp',
             description: 'Описание третьего проекта',
             link: '#',
-            videoPreview: 'https://holyxey.github.io/ForTesting/videoPreviews/TerruarPreview.mp4',
+            videoPreview: '/videoPreviews/WeltonPreview.mp4',
         }
     }
 }
