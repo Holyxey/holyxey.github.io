@@ -8,6 +8,11 @@ body {
     background-color: #F2F4FF;
     margin: auto;
 }
+header {
+    background-color: white;
+    padding: 1.5rem 1rem 1rem 1rem;
+    border-radius: 1rem;
+}
 #portfolio {
     display: flex;
     flex-wrap: wrap;
@@ -15,6 +20,7 @@ body {
     padding-block: 3rem;
     justify-content: center;
 }
+
 
 .project {
     flex: 1 1 400px;
@@ -68,10 +74,13 @@ body {
         font-size: 1rem;
     }
     .project-footer-result {
-        background-color: #FFBF46;
+        /*background-color: #FFBF46;*/
+        /*color: #2F323A;*/
+        background-color: white;
+        border: 1px solid #17C3B2;
         color: #2F323A;
         max-width: fit-content;
-        border-radius: 100vmax;
+        border-radius: 100vmin;
     }
     .project-online {
         content: '';
@@ -84,19 +93,19 @@ body {
         right: .75rem;
         bottom: .75rem;
     }
-    .project-online:before {
-        content: '';
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        translate: -50% -50%;
-        border-radius: 100vmin;
-        width: 100%;
-        height: 100%;
-        background-color: #17C3B2;
-        z-index: 2;
-        animation: online 2s ease-out infinite;
-    }
+        .project-online:before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            translate: -50% -50%;
+            border-radius: 100vmin;
+            width: 100%;
+            height: 100%;
+            background-color: #17C3B2;
+            z-index: 2;
+            animation: online 2s ease-out infinite;
+        }
     .project-video {
         display: none;
         max-width: calc(100% + 2rem);

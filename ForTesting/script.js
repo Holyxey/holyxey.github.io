@@ -1,4 +1,4 @@
-// "use strict"; // нахуя? что это вообще
+"use strict"; // нахуя? что это вообще
 
 const fragment = new DocumentFragment();
 
