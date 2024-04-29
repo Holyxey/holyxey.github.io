@@ -32,10 +32,9 @@ let holyxey = {
                 <img class="project-image" src="${image}" onload="setTimeout(()=>{videoPreview(this, '${videoPreview}')}, 1000)" alt="${name}">
                 ${videoPreview ? `<video class="project-video" src="" autoplay muted loop playsinline preload="none"></video>` : ''}
                 ${description ? `<p class="project-description">${description}</p>` : ''}
-                ${onlineDetector ? `<div class="project-online"></div>` : ''}
                 <div class="project-footer">
                     ${link ? `<a class="project-link" href="${link}">Процесс</a>` : ''}
-                    <a href="${result}" target="_blank" class="project-footer-result">Результат</a>
+                    <a href="${result}" target="_blank" class="project-footer-result">Результат${onlineDetector ? `<div class="project-online"></div>` : ''}</a>
                 </div>
             `;
 

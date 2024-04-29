@@ -62,6 +62,7 @@ header {
         align-items: center;
     }
     .project-link, .project-footer-result {
+        position: relative;
         flex: 1;
         background-color: #0177f6;
         padding: 1rem 2rem;
@@ -74,13 +75,10 @@ header {
         font-size: 1rem;
     }
     .project-footer-result {
-        /*background-color: #FFBF46;*/
-        /*color: #2F323A;*/
         background-color: white;
         border: 1px solid #17C3B2;
         color: #2F323A;
         max-width: fit-content;
-        border-radius: 100vmin;
     }
     .project-online {
         content: '';
@@ -91,7 +89,7 @@ header {
         width: .25rem;
         box-shadow: 0 0 5px #F2F4FF;
         right: .75rem;
-        bottom: .75rem;
+        top: .75rem;
     }
         .project-online:before {
             content: '';
