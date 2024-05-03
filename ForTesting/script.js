@@ -1,4 +1,4 @@
-"use strict"; // нахуя? что это вообще
+// "use strict"; // нахуя? что это вообще
 
 const fragment = new DocumentFragment();
 
@@ -29,13 +29,45 @@ let holyxey = {
             article.classList.add('project')
             article.innerHTML = `
                 <h3 class="project-name">${name}</h3>
-                <img class="project-image" src="${image}" onload="setTimeout(()=>{videoPreview(this, '${videoPreview}')}, 1000)" alt="${name}">
+                <img class="project-image" src="${image}" onload="${videoPreview ? `setTimeout(()=>{videoPreview(this, '${videoPreview}')}, 1000)` : ''}" alt="${name}">
                 ${videoPreview ? `<video class="project-video" src="" autoplay muted loop playsinline preload="none"></video>` : ''}
                 ${description ? `<p class="project-description">${description}</p>` : ''}
                 <div class="project-footer">
                     ${link ? `<a class="project-link" href="${link}">Процесс</a>` : ''}
-                    <a href="${result}" target="_blank" class="project-footer-result">Результат${onlineDetector ? `<div class="project-online"></div>` : ''}</a>
+                    ${result ? `<a href="${result}" target="_blank" class="project-footer-result">Результат${onlineDetector ? `<div class="project-online"></div>` : ''}</a>` : ''}
                 </div>
+                <script type="application/ld+json">
+                    {
+                      "@context": "http://schema.org",
+                      "@type": "CreativeWork",
+                      "name": "${name}",
+                      "description": "${description}",
+                      "url": "${result}",
+                      "image": {
+                        "@type": "ImageObject",
+                        "url": "${image}",
+                        "caption": "${name}"
+                      },
+                      ${videoPreview ? `
+                      "video": {
+                        "@type": "VideoObject",
+                        "url": "${videoPreview}",
+                        "description": "${name}"
+                      },` : ''}
+                      ${link ? `
+                      "isBasedOn": "${link}",
+                      "mainEntityOfPage": {
+                        "@type": "WebPage",
+                        "url": "${link}"
+                      },` : ''}
+                      "creator": {
+                        "@type": "Person",
+                        "name": "Holyxey - Alex Yurin",
+                        "email": "contact@holyxey.com",
+                        "url": "https://holyxey.com"
+                      }
+                    }
+                </script>
             `;
 
             fragment.append(article);
@@ -51,32 +83,59 @@ let holyxey = {
     },
     portfolio: {
         project1: {
-            name: 'Разработка дизайна глэмпинга',
-            image: 'https://holyxey.github.io/holyxey/imgs/cases/terruar.webp',
-            description: 'Описание первого проекта',
+            name: 'Header',
+            image: 'imagePreview/Terruar.png',
+            description: 'Description',
             link: '#',
             result: 'https://terruarhome.ru/',
-            videoPreview: '/ForTesting/videoPreviews/TerruarPreview.mp4',
+            // videoPreview: 'videoPreviews/TerruarPreview.mp4',
             onlineDetector: true,
-        },
+        }, // Terruar
         project2: {
-            name: 'Редизайн сайта отеля',
-            image: 'https://holyxey.github.io/holyxey/imgs/cases/welton.webp',
-            description: 'Описание второго проекта',
+            name: 'Header',
+            image: 'imagePreview/Welton.png',
+            description: 'Description',
             link: '',
             result: 'https://weltonhotel.ru',
-            videoPreview: '/ForTesting/videoPreviews/WeltonPreview.mp4',
+            // videoPreview: 'videoPreviews/WeltonPreview.mp4',
             onlineDetector: true,
-        },
+        }, // Welton
         project3: {
-            name: 'Веб-афиша для спектакля',
+            name: 'Header',
+            image: 'imagePreview/Do.png',
+            description: 'Description',
+            link: '',
+            result: 'https://dowine.bar',
+            // videoPreview: 'videoPreviews/MestoPreview.mp4',
+            onlineDetector: true,
+        }, // Do
+        project4: {
+            name: 'Header',
             image: 'https://holyxey.github.io/holyxey/imgs/cases/mesto.webp',
-            description: 'Описание третьего проекта',
+            description: 'Description',
             link: '',
             result: 'https://mesto.dance',
-            videoPreview: '/ForTesting/videoPreviews/MestoPreview.mp4',
+            // videoPreview: 'videoPreviews/MestoPreview.mp4',
+            onlineDetector: false,
+        }, // Mesto
+        project5: {
+            name: 'Header',
+            image: 'imagePreview/Supreme.png',
+            description: 'Description',
+            link: '',
+            result: 'https://supremehuckster.ru/premium',
+            // videoPreview: 'videoPreviews/MestoPreview.mp4',
             onlineDetector: true,
-        }
+        }, // Supreme
+        project6: {
+            name: 'Header',
+            image: 'imagePreview/El-teacher.png',
+            description: 'Description',
+            link: '',
+            result: 'https://esl-teacher.webflow.io',
+            // videoPreview: 'videoPreviews/MestoPreview.mp4',
+            onlineDetector: true,
+        }, // El-teacher
     }
 }
 holyxey.getProjects()

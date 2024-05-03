@@ -4,15 +4,6 @@ const showCart = () => {
     let button = document.querySelector('.t706__carticon')
     button.style.cssText += `display: block!important; opacity: 0!important;`
 
-    // Удали условия ниже перед пушем
-    // if (document.querySelector('.t762__btn')) {
-    //     document.querySelector('#rec730237440').style.cssText += `opacity: 0!important`
-    //     document.querySelector('.t762__btn').click()
-    // }
-    // document.querySelector('.js-product') ? document.querySelector('.js-product').click() : ''
-    // document.querySelector('#rec740985508').style.display = 'none';
-    //
-
     setCartStyles();
     button.click();
     window.addEventListener("load", () => {
@@ -23,7 +14,6 @@ const showCart = () => {
                 document.querySelector('#rec730237440').style.cssText += `opacity: 0!important`
                 document.querySelector('.t762__btn').click()
             }
-            document.querySelector('.js-product') ? document.querySelector('.js-product').click() : ''
         //
 
         setCartStyles()
