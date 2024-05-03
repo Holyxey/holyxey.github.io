@@ -1,0 +1,13 @@
+#rec740985508 {
+    opacity: .5;
+}
+.t706__sidebar, .t706__sidebar-content, .t706__cartpage, .t706__sidebar_showed {
+    position: initial !important;
+    min-height: unset !important;
+    width:  unset !important;
+    max-height:  unset !important;
+    box-shadow: unset !important;
+}
+body {
+    overflow: auto !important;
+}

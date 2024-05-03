@@ -4,11 +4,13 @@ const showCart = () => {
     let button = document.querySelector('.t706__carticon')
     button.style.cssText += `display: block!important; opacity: 0!important;`
 
-    // Удали условия ниже
-    if (document.querySelector('.t762__btn')) {
-        document.querySelector('#rec730237440').style.cssText += `opacity: 0!important`
-        document.querySelector('.t762__btn').click()
-    }
+    // Удали условия ниже перед пушем
+    // if (document.querySelector('.t762__btn')) {
+    //     document.querySelector('#rec730237440').style.cssText += `opacity: 0!important`
+    //     document.querySelector('.t762__btn').click()
+    // }
+    // document.querySelector('.js-product') ? document.querySelector('.js-product').click() : ''
+    // document.querySelector('#rec740985508').style.display = 'none';
     //
 
     setCartStyles();
@@ -16,11 +18,12 @@ const showCart = () => {
     window.addEventListener("load", () => {
         button.style.cssText += `display: block!important; opacity: 0!important;`
 
-        // Удали условия ниже
-        if (document.querySelector('.t762__btn')) {
-            document.querySelector('#rec730237440').style.cssText += `opacity: 0!important`
-            document.querySelector('.t762__btn').click()
-        }
+        // Удали условия ниже перед пушем
+            if (document.querySelector('.t762__btn')) {
+                document.querySelector('#rec730237440').style.cssText += `opacity: 0!important`
+                document.querySelector('.t762__btn').click()
+            }
+            document.querySelector('.js-product') ? document.querySelector('.js-product').click() : ''
         //
 
         setCartStyles()
@@ -38,17 +41,6 @@ const setCartStyles = () => {
     let cartPurchaseButton = document.querySelector('.t706__sidebar-bottom')
     let cartProductList = document.querySelector('.t706__sidebar-products')
     let cartProductPrice = document.querySelector('.t706__sidebar-prodamount-wrap')
-
-    if (cartContent) {
-        let hh;
-        if (headerPCHeight) {
-            hh = headerPCHeight
-        }
-        cartContent.style.cssText = `
-        z-index: 1 !important;
-        padding-top: ${hh}px !important;
-        `
-    }
 
     if (cartBlock) {
         cart.style.cssText += `
