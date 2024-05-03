@@ -86,7 +86,7 @@ let holyxey = {
             name: 'Header',
             image: 'imagePreview/Terruar.webp',
             description: 'Description',
-            link: '#',
+            link: '',
             result: 'https://terruarhome.ru/',
             // videoPreview: 'videoPreviews/TerruarPreview.mp4',
             onlineDetector: true,
