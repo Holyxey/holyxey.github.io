@@ -84,7 +84,7 @@ let holyxey = {
     portfolio: {
         project1: {
             name: 'Header',
-            image: 'imagePreview/Terruar.png',
+            image: 'imagePreview/Terruar.webp',
             description: 'Description',
             link: '#',
             result: 'https://terruarhome.ru/',
@@ -93,7 +93,7 @@ let holyxey = {
         }, // Terruar
         project2: {
             name: 'Header',
-            image: 'imagePreview/Welton.png',
+            image: 'imagePreview/Welton.webp',
             description: 'Description',
             link: '',
             result: 'https://weltonhotel.ru',
@@ -102,7 +102,7 @@ let holyxey = {
         }, // Welton
         project3: {
             name: 'Header',
-            image: 'imagePreview/Do.png',
+            image: 'imagePreview/Do.webp',
             description: 'Description',
             link: '',
             result: 'https://dowine.bar',
@@ -120,7 +120,7 @@ let holyxey = {
         }, // Mesto
         project5: {
             name: 'Header',
-            image: 'imagePreview/Supreme.png',
+            image: 'imagePreview/Supreme.webp',
             description: 'Description',
             link: '',
             result: 'https://supremehuckster.ru/premium',
@@ -129,7 +129,7 @@ let holyxey = {
         }, // Supreme
         project6: {
             name: 'Header',
-            image: 'imagePreview/El-teacher.png',
+            image: 'imagePreview/El-teacher.webp',
             description: 'Description',
             link: '',
             result: 'https://esl-teacher.webflow.io',
