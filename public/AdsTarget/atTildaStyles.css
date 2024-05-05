@@ -18,7 +18,7 @@
 .uc-atTildaStyles .t690 .t-section__title {
     margin-bottom: 0!important;
 }
-.uc-atTildaStyles .t-input {
+.uc-atTildaStyles .t-input, .uc-atTildaStyles .t-select {
     font-size: var(--rem-a)!important;
     padding: var(--rem-aa) var(--rem-b) calc(var(--rem-aa) - 2px) var(--rem-b)!important;
     height: unset!important;
