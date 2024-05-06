@@ -1,5 +1,3 @@
-// "use strict"; // нахуя? что это вообще
-
 const fragment = new DocumentFragment();
 
 const videoPreview = (el, videoPreviewSource) => {
@@ -111,14 +109,23 @@ let holyxey = {
         }, // Do
         project4: {
             name: 'Header',
-            image: 'https://holyxey.github.io/holyxey/imgs/cases/mesto.webp',
+            image: 'imagePreview/Mesto.webp',
             description: 'Description',
             link: '',
             result: 'https://mesto.dance',
             // videoPreview: 'videoPreviews/MestoPreview.mp4',
-            onlineDetector: false,
+            onlineDetector: true,
         }, // Mesto
         project5: {
+            name: 'Header',
+            image: 'imagePreview/Nepokoi.webp',
+            description: 'Description',
+            link: '',
+            result: 'https://nepokoi.art',
+            // videoPreview: 'videoPreviews/MestoPreview.mp4',
+            onlineDetector: true,
+        }, // Nepokoi
+        project6: {
             name: 'Header',
             image: 'imagePreview/Supreme.webp',
             description: 'Description',
@@ -127,7 +134,7 @@ let holyxey = {
             // videoPreview: 'videoPreviews/MestoPreview.mp4',
             onlineDetector: true,
         }, // Supreme
-        project6: {
+        project7: {
             name: 'Header',
             image: 'imagePreview/El-teacher.webp',
             description: 'Description',
