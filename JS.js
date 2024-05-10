@@ -2,6 +2,36 @@ function holyxey() {
     let addCommentHolyxey = document.createComment('Site design and supporting at AdsTarget by Holyxey');
     document.documentElement.prepend(addCommentHolyxey);
 }
+const holyxeySchema = () => {
+    let schemaData = {
+        path: 'https://' + window.location.hostname.toString(),
+        year: new Date().getFullYear().toString()
+    }
+    let addSchemaWebSite = document.createElement('script')
+    addSchemaWebSite.type = 'application/ld+json'
+    addSchemaWebSite.innerHTML = `
+        {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "url": "${schemaData.path}",
+        "copyrightYear": "${schemaData.year}",
+        "author": {
+            "@type": "Person",
+            "email": "contact@holyxey.com",
+            "url": "https://holyxey.com",
+            "brand": "holyxey"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "brand": "AdsTarget",
+            "legalName": "AdsTarget",
+            "email": "mail@adstarget.ru",
+            "image": "https://optim.tildacdn.com/tild6631-3263-4136-b435-396234613533/x300.png"
+        }
+        }
+    `;
+    document.body.append(addSchemaWebSite);
+}
 //
 function backUTMButton() {
     if (location.href.includes('?utm_source=AdsTarget') && document.referrer.includes('adstarget')) {
@@ -31,4 +61,7 @@ function backUTMButton() {
 
 
 window.addEventListener("load", backUTMButton)
-document.addEventListener("DOMContentLoaded", holyxey)
+document.addEventListener("DOMContentLoaded", () => {
+    holyxey();
+    holyxeySchema();
+})
