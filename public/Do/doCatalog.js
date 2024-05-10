@@ -26,6 +26,18 @@ function menuItemClick(el) {
     }
 }
 
+const openImgFull = (el) => {
+    let src = el.getAttribute('src')
+    let imgElement =
+        `
+        <div id="fullItemImg" onclick="this.remove()">
+            <img src="${src}" alt="alt">
+        </div>
+        `
+
+    document.documentElement.insertAdjacentHTML('afterbegin', imgElement)
+}
+
 //
 //
 function findCategories() {
@@ -84,6 +96,7 @@ function newProductArray() {
             createCatItemList.append(createCatItem)
             createCatItem.prepend(createItemName)
 
+
             if (doItems[j].querySelector('.js-store-prod-descr')) {
                 let createItemDescription = document.createElement('p')
                 createItemDescription.classList.add('itemDescription')
@@ -94,6 +107,16 @@ function newProductArray() {
                 createItemDescription.classList.add('itemDescription')
                 createItemDescription.textContent = ''
                 createCatItem.append(createItemDescription)
+            }
+
+            if (doItems[j].querySelector('.js-product-img')) {
+                let img = doItems[j].querySelector('.js-product-img')
+                let name = doItems[j].querySelector('.js-store-prod-name').textContent
+                let itemImg =
+                    `<div class="itemImg">
+                        <img src="${img.getAttribute('data-original')}" alt="${name}" onclick="openImgFull(this)">
+                    </div>`
+                createCatItem.insertAdjacentHTML('beforeend', itemImg)
             }
 
             if (doItems[j].querySelectorAll('.t-product__option-item').length > 0) {
@@ -119,7 +142,7 @@ function newProductArray() {
             } else {
                 let createItemPrice = document.createElement('p')
                 createItemPrice.classList.add('itemPrice')
-                createItemPrice.textContent = 'уточните у сотрудника'
+                createItemPrice.textContent = ''
                 createCatItem.append(createItemPrice)
             }
         }

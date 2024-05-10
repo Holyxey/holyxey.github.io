@@ -4,7 +4,7 @@ function holyxey() {
 }
 const holyxeySchema = () => {
     let schemaData = {
-        path: 'https://' + window.location.hostname.toString(),
+        path: window.location.origin.toString(),
         year: new Date().getFullYear().toString()
     }
     let addSchemaWebSite = document.createElement('script')
