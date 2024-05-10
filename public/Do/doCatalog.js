@@ -114,7 +114,7 @@ function newProductArray() {
                 let name = doItems[j].querySelector('.js-store-prod-name').textContent
                 let itemImg =
                     `<div class="itemImg">
-                        <img src="${img.getAttribute('data-original')}" alt="${name}" onclick="openImgFull(this)">
+                        <img loading="lazy" src="${img.getAttribute('data-original')}" alt="${name}" onclick="openImgFull(this)">
                     </div>`
                 createCatItem.insertAdjacentHTML('beforeend', itemImg)
             }
