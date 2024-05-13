@@ -19,6 +19,10 @@ html {
     --cormorant: "Cormorant Garamond", sans-serif;
     --inter: "Inter", sans-serif;
 }
+:focus {
+    outline: 2px solid #DE541E;
+    outline-offset: 1px;
+}
 body {
     background-color: var(--back);
     line-height: 1;
