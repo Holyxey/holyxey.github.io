@@ -71,10 +71,42 @@ body {
     translate: 0px -1px 0px;
     background: #ffef8f;
     border-radius: 21px;
+    cursor: pointer;
 }
 .noButton {
     background: transparent;
     cursor: not-allowed!important;
+}
+#competitionsIframe {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    border: 0;
+    width: 100dvw;
+    height: 100dvh;
+    box-shadow: 0 0 10px #212121;
+    transition: scale .3s ease-out, opacity .3s ease-out;
+
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+
+    display: none;
+    opacity: 0;
+    scale: .8;
+}
+#closeCompetitionsIframe {
+    content: '';
+    position: fixed;
+    right: 1dvw;
+    top: 1dvh;
+    width: 2rem;
+    height: 2rem;
+    border-radius: .6rem;
+    background-color: #1B998B;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 100500;
 }
 
 #videos {
