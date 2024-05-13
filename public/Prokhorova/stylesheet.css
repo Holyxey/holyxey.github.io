@@ -98,7 +98,7 @@ h2, .h2 {
         height: 100%;
 
         flex: .5;
-        background: url("/imgs/hero.png") no-repeat center top;
+        background: url("https://holyxey.github.io/public/Prokhorova/imgs/hero.png") no-repeat center top;
         background-size: cover;
         border-radius: 5rem 5rem 100vmin 100vmin;
     }
