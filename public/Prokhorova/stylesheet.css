@@ -7,11 +7,9 @@
     line-height: 1;
     color: var(--black);
 }
-
 html {
     font-size: 21px;
 }
-
 :root {
     --back: #FFF8F1;
     --back-dark: #E6E0DA;
@@ -21,18 +19,15 @@ html {
     --cormorant: "Cormorant Garamond", sans-serif;
     --inter: "Inter", sans-serif;
 }
-
 body {
     background-color: var(--back);
     line-height: 1;
 }
-
 .hr {
     background-color: var(--back-dark);
     border: none;
     height: 1px;
 }
-
 section {
     display: flex;
     flex-direction: column;
@@ -58,27 +53,23 @@ h2, .h2 {
     min-width: fit-content;
     width: fit-content;
 }
-
 .b-main {
     background-color: var(--main);
     color: var(--back) !important;
     border: 0;
     color: white !important;
 }
-
 .b-second {
     background-color: var(--back);
     border: 1px dashed var(--main);
     color: var(--black) !important;
 }
-
 .buttons-row {
     display: flex;
     flex-direction: row;
     gap: 1rem;
     flex-wrap: wrap;
 }
-
 .form-input {
     border: 1px solid var(--back-dark);
     border-radius: 1rem;
@@ -93,16 +84,14 @@ h2, .h2 {
     position: relative;
     font-family: var(--cormorant);
     gap: 2rem;
+    padding-block: 4rem;
 }
-
 #hero-headers {
     display: flex;
 }
-
 #hero-headers > div:first-child {
     flex: 1;
 }
-
 #hero-headers > #hero-img {
     position: absolute;
     top: 0;
@@ -115,19 +104,16 @@ h2, .h2 {
     background-size: cover;
     border-radius: 5rem 5rem 100vmin 100vmin;
 }
-
 #hero h1 {
     color: var(--gray);
     font-size: 1.2rem;
     font-weight: 300;
     line-height: 1;
 }
-
 #hero h2 {
     line-height: 1;
     font-size: 2rem;
 }
-
 #preferences {
     display: flex;
     flex-wrap: wrap;
@@ -138,16 +124,13 @@ h2, .h2 {
 
     font-size: 1.1rem;
 }
-
 #preferences > * {
     flex: 1 0 250px;
 }
-
 #preferences > li span:first-child {
     color: var(--main);
     line-height: 1;
 }
-
 #hero-form {
     font-family: var(--cormorant);
 }
@@ -156,7 +139,6 @@ h2, .h2 {
     #hero-headers {
         gap: 1rem;
     }
-
     #hero-headers > div:first-child {
         flex: 1;
         padding-block: 1rem;
@@ -166,7 +148,6 @@ h2, .h2 {
         flex-direction: column;
         justify-content: center;
     }
-
     #hero-headers > #hero-img {
         position: relative;
         top: unset;
@@ -178,13 +159,14 @@ h2, .h2 {
         order: -1;
         transform: scaleX(-1);
     }
-
     #preferences {
         max-width: unset;
     }
-
     #preferences li {
         min-width: fit-content;
+    }
+    #hero {
+        padding-block: 1rem;
     }
 }
 
@@ -192,39 +174,32 @@ h2, .h2 {
     section {
         padding-inline: 1rem;
     }
-
     #preferences {
         gap: 1rem .5rem;
     }
-
     #preferences li {
         min-width: unset;
         max-width: 50%;
         flex: 1 0 40%;
     }
-
     #hero-headers > #hero-img {
         border-radius: 2rem 1rem;
         max-width: 45%;
     }
-
     #hero h1 {
         font-size: 1.2rem;
         line-height: 1;
         padding-bottom: .5rem;
         font-weight: 500;
     }
-
     #hero h2 {
         line-height: 1;
         font-size: 1.5rem;
     }
-
     .button {
         flex: 1;
         text-align: center;
     }
-
     form.buttons-row > * {
         width: 100%;
     }
