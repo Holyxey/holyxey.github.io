@@ -56,6 +56,7 @@ h2, .h2 {
 
     min-width: fit-content;
     width: fit-content;
+    cursor: pointer;
 }
 .b-main {
     background-color: var(--main);
@@ -73,15 +74,6 @@ h2, .h2 {
     flex-direction: row;
     gap: 1rem;
     flex-wrap: wrap;
-}
-.form-input {
-    border: 1px solid var(--back-dark);
-    border-radius: 1rem;
-    padding: .8rem 1.5rem;
-    font-size: .8rem !important;
-    font-family: var(--inter);
-
-    color: var(--black) !important;
 }
 
 #hero {
@@ -138,7 +130,22 @@ h2, .h2 {
 #hero-form {
     font-family: var(--cormorant);
 }
+#hero-form input::placeholder {
+    color: var(--black);
+    opacity: .7;
+}
+#hero-form .form-input {
+    border: 1px solid var(--back-dark);
+    border-radius: 1rem;
+    padding: .8rem 1.5rem;
+    font-size: .8rem !important;
+    font-family: var(--inter);
 
+    color: var(--black) !important;
+}
+
+/*
+*/
 @media (max-width: 800px) {
     #hero-headers {
         gap: 1rem;
