@@ -6,7 +6,7 @@
           name="viewport">
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
     <title>Document</title>
-    <link rel="stylesheet" href="../stylesheet.css">
+    <link href="../stylesheet.css" rel="stylesheet">
 </head>
 <body>
 
@@ -29,8 +29,8 @@
             </ul>
         </article>
         <div class="buttons-row">
-            <a href="#" class="button b-main">Готовые решения</a>
-            <a href="#" class="button b-second">Все услуги</a>
+            <a class="button b-main" href="#">Готовые решения</a>
+            <a class="button b-second" href="#">Все услуги</a>
         </div>
     </section>
     <div class="hr"></div>
@@ -38,12 +38,12 @@
 <main>
     <section id="hero-form">
         <p class="h2">Оставьте заявку на бесплатную консультацию</p>
-        <form action="#" method="post" class="buttons-row">
-                <label for="hero-tel" hidden></label>
-            <input type="tel" name="hero-tel" id="hero-tel" class="form-input" placeholder="+7 922 016 016 5">
-                <label for="hero-name" hidden></label>
-            <input type="tel" name="hero-name" id="hero-name" class="form-input" placeholder="Ваше имя">
-            <button type="submit" class="button b-main">Получить консультацию</button>
+        <form action="#" class="buttons-row" method="post">
+            <label for="hero-tel" hidden></label>
+            <input class="form-input" id="hero-tel" name="hero-tel" placeholder="+7 922 016 016 5" type="tel">
+            <label for="hero-name" hidden></label>
+            <input class="form-input" id="hero-name" name="hero-name" placeholder="Ваше имя" type="tel">
+            <button class="button b-main" type="submit">Получить консультацию</button>
         </form>
     </section>
 </main>
