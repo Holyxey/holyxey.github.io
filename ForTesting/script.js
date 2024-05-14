@@ -65,7 +65,7 @@ let holyxey = {
                         "url": "https://holyxey.com"
                       }
                     }
-                </script>
+                </script> 
             `;
 
             fragment.append(article);
