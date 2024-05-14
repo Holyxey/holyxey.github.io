@@ -18,5 +18,5 @@ const checkAvailability = (el, url, status) => {
 projects.forEach(project => {
     let url = project.querySelector('.project-footer-result').href;
     let status = project.querySelector('.project-online');
-    checkAvailability(this, url);
+    checkAvailability(this, url, status);
 })
