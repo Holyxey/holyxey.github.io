@@ -262,9 +262,9 @@ a {
     -webkit-backdrop-filter: blur(5px);
 }
 
- .white_fill {
-     width: unset;
- }
+.white_fill {
+    width: unset;
+}
 .green {
     width: unset;
     background-color: #1B998B;
@@ -289,11 +289,11 @@ a {
 }
 
 #allrecords {
-     background-color: unset!important;
+    background-color: unset!important;
 }
 .t-popup__container {
-     border-radius: 1rem;
- }
+    border-radius: 1rem;
+}
 .t702 .t702__wrapper {
     padding: 1.5rem;
 }
@@ -320,7 +320,7 @@ a {
     color: #10121F!important;
 }
 .t-records {
-     background-color: unset!important;
+    background-color: unset!important;
 }
 .t-slds__bgimg {
     border-radius: 1rem;

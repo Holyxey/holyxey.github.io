@@ -1,0 +1,407 @@
+/*font-family: "Playfair Display", serif;*/
+/*font-family: 'CirceRounded', Arial, sans-serif;*/
+@import url('https://fonts.cdnfonts.com/css/circe-rounded');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+/*
+*/
+
+body, .t-body {
+    background-color: #DBD3E1;
+    background-image: url(https://static.tildacdn.com/tild3231-3862-4361-a631-393639303438/pattern.png);
+    background-attachment: fixed;
+}
+* {
+    padding: 0;
+    margin: 0;
+    line-height: 1;
+    scroll-behavior: smooth;
+}
+
+#new-camp {
+    max-width: 1200px;
+    margin: 12rem auto 0 auto;
+    padding: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+#new-camp * {
+    font-family: "Playfair Display", sans-serif;
+}
+#new-camp .plane {
+    padding: .7rem 1rem .5rem 1rem;
+    border-radius: .5rem;
+    font-family: 'CirceRounded', 'Circe Rounded', Arial, sans-serif;
+}
+#new-camp .white {
+    background-color: white;
+}
+#new-camp .shadow {
+    box-shadow: 0 0 10px #21212140;
+}
+#new-camp .button {
+    text-decoration: none !important;
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    background-color: #FDEC81;
+    border: 2px solid white;
+    font-family: 'CirceRounded', "Circe Rounded", Arial, sans-serif;
+    font-weight: 500;
+    font-size: 1.2rem;
+    color: #10121F !important;
+    text-align: center;
+}
+
+#new-camp .head {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+#new-camp .head .head-img {
+    max-width: 800px;
+}
+#new-camp .head .head-img img {
+    display: block;
+    max-width: 100%;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px #21212140;
+}
+#new-camp .head #camp-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+#new-camp .head #camp-info .month {
+    opacity: .6;
+    font-size: 1.6rem;
+}
+#new-camp .head #camp-info .header {
+    font-size: 2rem;
+    font-weight: 600;
+}
+#new-camp .head .info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .5rem;
+}
+#new-camp .head .info .date {
+    flex: 1;
+}
+#new-camp .head .info .arenas {
+    margin-block: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+}
+#new-camp .head .info .arenas ul {
+    list-style: none;
+    padding: 1rem;
+}
+#new-camp .head .info .arenas li {
+    padding: .25rem;
+    font-size: 1.1rem;
+    font-family: 'CirceRounded', 'Circe Rounded', Arial, sans-serif;
+}
+#new-camp .head .info .head-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+#new-camp .head .info .head-buttons > a {
+    justify-self: stretch;
+}
+#new-camp #camp-program {
+    background-color: #ffffff90;
+    border-radius: 1rem;
+    padding: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+}
+#new-camp #camp-program .program-header {
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+}
+#new-camp #camp-program .program-list {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+#new-camp #camp-program .program-list .program-item {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+
+    align-items: center;
+}
+#new-camp #camp-program .program-list .program-item-header {
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: .5rem;
+    align-self: stretch;
+}
+#new-camp #camp-program .program-list .program-item-point {
+    font-family: 'CirceRounded', 'Circe Rounded', Arial, sans-serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    text-align: center;
+}
+#new-camp #camp-program a {
+    max-width: fit-content;
+    margin: auto;
+}
+
+#new-camp #price {
+    background-color: #ffffff90;
+    border-radius: 1rem;
+    padding: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+}
+#new-camp #price .price-header {
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    min-width: 100%;
+}
+#new-camp #price .price-list {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+#new-camp #price .price-list .price-item {
+    flex: 1;
+    min-width: 300px;
+
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+
+    align-items: center;
+
+    background-color: white;
+}
+#new-camp #price .price-list .price-item .price-item-header {
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: .5rem;
+    align-self: stretch;
+
+    border-radius: unset;
+    border-bottom: 1px solid #10121F50;
+}
+#new-camp #price .price-list .price-hours {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+}
+#new-camp #price .price-list .price-hours .price-hours-item {
+    flex: 1;
+    background-color: white;
+    text-align: center;
+
+    min-width: fit-content;
+}
+#new-camp #price .price-list .price-list-cost {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5rem;
+}
+#new-camp #price .price-list .price-list-cost .price-cost-item {
+    background-color: #FDEC81;
+    padding: .5rem 1rem .7rem 1rem;
+    border-radius: .25rem;
+    font-size: 1.1rem;
+}
+#new-camp #price .price-list .price-list-cost .price-cost-once {
+    font-weight: 300;
+    opacity: .5;
+    text-align: center;
+}
+
+#new-camp #price .price-payments {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+#new-camp #price .price-payments .price-payments-item {
+    flex: 1;
+    min-width: 300px;
+
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+
+    align-items: center;
+
+    background-color: white;
+}
+#new-camp #price .price-payments .price-payments-item .payments-item-header {
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: .5rem;
+    align-self: stretch;
+
+    border-radius: unset;
+    border-bottom: 1px solid #10121F50;
+}
+#new-camp #price .price-payments .price-payments-item .payments-rules {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+}
+#new-camp #price .price-payments .price-payments-item .payments-rules.payments-rules-item {
+    flex: 1;
+    background-color: white;
+    text-align: center;
+
+    min-width: fit-content;
+}
+
+#new-camp #arena {
+    /*background-color: #21212190;*/
+    border-radius: 1rem;
+    padding: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+}
+#new-camp #arena .arena-header {
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    min-width: 100%;
+}
+#new-camp #arena .arena-list {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: nowrap;
+    padding-bottom: 5px;
+
+    scrollbar-color: red orange;
+
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+}
+#new-camp #arena .arena-list::-webkit-scrollbar {
+    background-color: transparent;
+    height: 5px;
+    border-radius: 5px;
+}
+#new-camp #arena .arena-list::-webkit-scrollbar-thumb {
+    background-color: #fffbd4;
+    border-radius: 5px;
+}
+#new-camp #arena .arena-list .arena-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: .5rem;
+
+    background-color: #ffffffcd;
+    border-radius: 2rem;
+    overflow: hidden;
+    min-width: 350px;
+    scroll-snap-align: center;
+}
+#new-camp #arena .arena-list .arena-item .arena-item-header {
+    padding: 1rem;
+
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 500;
+    align-self: stretch;
+    font-family: 'CirceRounded', 'Circe Rounded', Arial, sans-serif;
+}
+#new-camp #arena .arena-list .arena-item .arena-item-image {
+    aspect-ratio: 16 / 10;
+    background-size: cover;
+
+    border-radius: .5rem;
+}
+#new-camp #arena .arena-list .arena-item .arena-item-address {
+    padding: 1rem;
+    font-family: 'CirceRounded', 'Circe Rounded', Arial, sans-serif;
+}
+#new-camp #arena .arena-list .arena-item a {
+    margin-top: auto;
+}
+
+/*
+*/
+@media (max-width: 1024px) {
+    #new-camp, #new-camp #camp-program,
+    #new-camp #price,
+    #new-camp #arena {
+        padding: 1rem .5rem;
+    }
+    #new-camp .head {
+        flex-direction: column;
+    }
+    #new-camp .head .head-img {
+        /*order: 1;*/
+        max-width: 400px;
+    }
+    #new-camp .head #camp-info,
+    #new-camp .head .info,
+    #new-camp .head .info .arenas {
+        align-items: center;
+    }
+    #new-camp .head .info .head-buttons {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    #new-camp .head .info .head-buttons a {
+        flex: 1;
+        min-width: fit-content;
+        align-self: stretch;
+    }
+    #new-camp .head .info .arenas li {
+        text-align: center;
+    }
+    #new-camp #camp-program .program-list .program-item,
+    #new-camp #price .price-list .price-item,
+    #new-camp #price .price-payments .price-payments-item {
+        min-width: 300px;
+    }
+}
+@media (max-width: 500px) {
+    #new-camp .head .head-img {
+        max-width: unset;
+    }
+    #new-camp #arena .arena-list .arena-item {
+        min-width: 70dvw;
+    }
+}
