@@ -1,6 +1,7 @@
 let fetchCata;
 let fetchCataCategories;
 let fetchCataProducts;
+let jjprod = {};
 
 
 //
@@ -17,22 +18,18 @@ let fetchCataGet = () => {
             let r = JSON.parse(s);
 
             fetchCata = r;
-            fetchCataCategories = fetchCata.parts;
-            fetchCataProducts = fetchCata.products;
-
-            console.log('fetchCataCategories is:')
-            console.log(fetchCataCategories)
-            console.log('fetchCataProducts is:')
-            console.log(fetchCataProducts)
+            jjprod = r;
         })
         .catch(error => {
             console.error('There was a problem with the fetch operation:', error);
         });
 }
-// window.onload = fetchCataGet;
-//
-//
-const jjssoonn = {
+window.onload = fetchCataGet;
+
+
+
+
+const j = {
     "partuid": 227151755511,
     "filter": "y",
     "filters": {
@@ -1873,8 +1870,9 @@ const jjssoonn = {
     }],
     "slice": 1,
     "partlinks": [],
-    "parts": [{"uid": 453748185671, "title": "Закуски", "recordid": 0, "sort": 100, "hideonpublic": ""}, {
-        "uid": 577637998211, "title": "Горячее", "recordid": 0, "sort": 200, "hideonpublic": ""
+    "parts": [
+        {"uid": 453748185671, "title": "Закуски", "recordid": 0, "sort": 100, "hideonpublic": ""},
+        {"uid": 577637998211, "title": "Горячее", "recordid": 0, "sort": 200, "hideonpublic": ""
     }, {"uid": 251472980961, "title": "Десерты", "recordid": 0, "sort": 300, "hideonpublic": ""}, {
         "uid": 659691513621, "title": "Вино по бокалам", "recordid": 0, "sort": 400, "hideonpublic": ""
     }, {"uid": 760961766521, "title": "Коктейли", "recordid": 0, "sort": 600, "hideonpublic": ""}, {
@@ -1920,33 +1918,98 @@ const jjssoonn = {
         "title": "черный", "params": {"view": "select", "hasColor": false, "linkImage": false}, "values": []
     }, {"title": "травяной", "params": {"view": "select", "hasColor": false, "linkImage": false}, "values": []}]
 }
-const categories = jjssoonn.parts
-const products = jjssoonn.products
+const jProducts = jjprod.products
 
-const addProdToCat = () => {
+let menuBlock;
 
+const createMenu = (el) => {
+    function parseNumber(stroke) {
+        return Number(stroke.match(/(\d+)/)[0]);
+    }
+
+    function createMenuBlock() {
+        if (menuBlock === undefined) {
+            let q = document.createElement("section");
+            q.id = 'menuBlock'
+            document.body.appendChild(q);
+            menuBlock = document.getElementById('menuBlock')
+        }
+    }
+    function createCatalogCategory() {
+        let c = parseNumber(el.partuids);
+        if (!document.querySelector(`[data-partuid="${c}"]`)) {
+            const getTitle = () => {
+                let q;
+                j.parts.forEach((el) => {
+                    if (el.uid === c) {
+                        q = el.title.toString();
+                    }
+                })
+                return q;
+            }
+
+            let q = document.createElement("article");
+            q.className = 'catItemList'
+            q.setAttribute('data-partuid', `${c}`)
+            q.setAttribute('cat-name', `${getTitle()}`)
+            q.innerHTML = `<h3 class="catHeader">${getTitle()}</h3>`
+            menuBlock.appendChild(q);
+        }
+
+    }
+    function createElement() {
+        let c = parseNumber(el.partuids); // айди категории
+        let variants; // варианты товара при наличии
+        let gallery;
+        el.json_options ? variants = JSON.parse(el.json_options)[0].values : ''
+        el.gallery[1] ? gallery = JSON.parse(el.gallery)[0] : ''
+
+        const addGalleryItems = (elid) => {
+            JSON.parse(el.gallery).forEach((objImg) => {
+                let gal = document.querySelector(`[data-productid="${elid}"]`).querySelector('.gallery');
+                let img = document.createElement('img');
+                img.src = objImg.img;
+                img.className = 'itemImg';
+                gal.appendChild(img);
+            })
+        }
+        const addGalleryVariants = (elid) => {
+            if (el.json_options) {
+                variants.forEach((objVariant) => {
+                    let vrnts = document.querySelector(`[data-productid="${elid}"]`).querySelector('.variants');
+                    let v = document.createElement("span");
+                    v.textContent = objVariant;
+                    v.className = 'product-variant';
+                    vrnts.appendChild(v);
+                })
+            }
+        }
+
+        let q = document.createElement("article");
+        q.className = 'catItem'
+        q.setAttribute('data-productid', `${el.uid}`)
+        q.setAttribute('prod-name', `${el.title}`)
+        q.innerHTML = `
+            <h4 class="itemName">${el.title}</h4>
+            <p class="itemDescription">${el.descr}</p>
+            ${Number(el.price) !== 0 ? `<p class="itemPrice">${Number(el.price) + 'р.'}</p>` : ''}
+            ${el.json_options ? `<div class="variants"></div>` : ''}
+            ${typeof gallery === "object" ? `<div class="gallery"></div>` : ''}
+        `;
+
+        document.querySelector(`[data-partuid="${c}"]`).appendChild(q);
+        addGalleryVariants(el.uid)
+        addGalleryItems(el.uid)
+    }
+
+    createMenuBlock()
+    createCatalogCategory()
+    createElement()
 }
-const catCreate = (selector, id, title) => {
-    let s = document.createElement(selector)
-    s.setAttribute('data-id', id)
-    s.setAttribute('data-title', title)
-    s.classList.add('catItem')
-    document.body.insertBefore(s, document.body.firstChild);
-}
 
-categories.forEach((el) => {
-    let id = '[' + el.uid + ']'
-    let title = el.title
-    catCreate('div', id, title)
-})
-products.forEach((el) => {
-    let parId = el.partuids
-    let id = el.uid
-    let title = el.title
-    let price = Number(el.price)
-    document.querySelector(`[data-id="${parId}"]`).innerHTML +=
-        `<div data-prod-id="${id}" >
-            <h4 class="itemName">${title}</h4>
-            <p class="itemPrice">${price}</p>
-        </div>`
+jProducts.forEach(product => {
+    pID = product.uid;
+    pCategoryID = product.partuids
+
+    createMenu(product)
 })
