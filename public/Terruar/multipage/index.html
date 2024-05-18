@@ -10,20 +10,12 @@
 </head>
 <body>
 <div id="multi-page">
-    <div class="blur" id="popup-block">
-        <h1>Трансляция</h1>
-        <article class="weather">
-            <h2>Виджет погоды</h2>
-        </article>
-        <article id="video-stream">
-            <div id='sldp_player_wrapper'></div>
-        </article>
-    </div>
+
     <nav class="shadow">
         <ul>
             <li><a href="#">Главная</a></li>
             <li><a href="#">Домики и палатки</a></li>
-            <li><a href="#">Трансляция</a></li>
+            <li><a href="#" onclick="multipage.popup(this)">Трансляция</a></li>
             <li><a href="#">Меню и доставка</a></li>
             <li><a href="#">Услуги</a></li>
             <li><a href="#">Акции</a></li>
@@ -81,34 +73,30 @@
         <a class="header-info-buttons" href="#popup:callback">Заказать звонок</a>
     </article>
 
-    <main>
-        <section class="delthis" style="background-color: var(--white-o); height: 100dvh"></section>
-    </main>
-
 </div>
-<!--<script src="main.js"></script>-->
+
+<!--Основа-->
+<script src="main.js"></script>
+<!--/Основа-->
+
+<!--Инициализация стрима-->
 <script src='https://softvelum.ru/player/releases/sldp-v2.12.2.min.js' type='text/javascript'></script>
+<script src="stream-init.js"></script>
+<!--/Инициализация стрима-->
+
+<!--Виджет погоды
+<script src="https://weatherwidget.io/js/widget.min.js"></script>
 <script>
-    document.addEventListener('DOMContentLoaded', initPlayer);
-    let sldpPlayer;
-    let getWidth = document.getElementById('video-stream').width
-    let getHeigth = (getWidth / 16) * 9
-
-    function initPlayer() {
-        sldpPlayer = SLDP.init({
-                container: 'sldp_player_wrapper',
-                stream_url: "wss://b2o-vcore155.video.goodline.info:443/main/linkvideo_125009",
-                width: `${getWidth}`,
-                height: `${getHeigth}`,
-                muted: true,
-                autoplay: true
-            }
-        );
-    }
-
-    function removePlayer() {
-        sldpPlayer.destroy();
-    }
+    !function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (!d.getElementById(id)) {
+            js = d.createElement(s);
+            js.id = id;
+            js.src = 'https://weatherwidget.io/js/widget.min.js';
+            fjs.parentNode.insertBefore(js, fjs);
+        }
+    }(document, 'script', 'weatherwidget-io-js');
 </script>
+/Виджет погоды-->
 </body>
 </html>

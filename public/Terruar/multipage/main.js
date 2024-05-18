@@ -1,7 +1,45 @@
-async function logMovies() {
-    // const response = await fetch("https://openweathermap.org/city/505299");
-    const response = await fetch("https://api.openweathermap.org/data/3.0/onecall?lat=54.41&lon=37.52&exclude=hourly,daily&appid=fbaf4d80dc7675e5118f511c8ceac3c2");
-    const movies = await response.json();
-    console.log(movies);
-}
+const multipage = {
+    // Pop-up init
+    popup(target){
+        let multiPage = document.getElementById('multi-page')
+        multiPage.insertAdjacentHTML('afterbegin',
+            `<div class="blur" id="popup-block">
+                    <h1>${target.textContent}</h1>
+<!--                    <article class="weather">-->
+<!--                        <a class="weatherwidget-io" -->
+<!--                        data-days="5" -->
+<!--                        data-font="Roboto" -->
+<!--                        data-icons="Climacons Animated" -->
+<!--                        data-label_1="ТЕРРУАР" -->
+<!--                        data-label_2="Погода" -->
+<!--                        data-theme="original" -->
+<!--                        href="https://forecast7.com/ru/54d7037d87/kuzmishchevo/"></a>-->
+<!--                    </article>-->
+                    ${target.textContent === 'Трансляция' 
+                        ? `<article id="video-stream">
+                                <div id='sldp_player_wrapper'></div>
+                            </article>` 
+                        : ''}
+                    <div id="close-popup" onclick="multipage.remPopup()">
+                        <svg width="2rem" viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg"><g stroke-width="0"/><g stroke-linecap="round" stroke-linejoin="round"/><path d="M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2 2 6.5 2 12s4.5 10 10 10m-2.83-7.17 5.66-5.66m0 5.66L9.17 9.17" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                </div>`
+        )
+        target.textContent === 'Трансляция' ? initPlayer() : '';
+        __weatherwidget_init()
+        this.changeScroll()
+    }, //Показ поп-апа
+    remPopup(){
+        let popup = document.getElementById('popup-block')
+        popup.style.animation = 'hidepopup .3s ease-out forwards'
+        setTimeout(()=>{popup.remove()}, 300)
+        this.changeScroll()
+    },
+    changeScroll(){
+        if (document.body.style.overflow === 'hidden')
+            document.body.style.overflow = 'unset'
+        else document.body.style.overflow = 'hidden'
 
+    } // Запрет/разрешение на скролл ( прим. при открытии поп-апа )
+
+}

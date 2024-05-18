@@ -235,14 +235,20 @@ body {
         flex-direction: column;
         gap: 2rem;
 
-        padding: 2rem;
+        /*padding: 2rem;*/
+
+        opacity: 0;
+        animation: showpopup .3s ease-out forwards;
     }
     #popup-block .weather {
         background-color: var(--blue);
-        padding: 1rem 2rem;
+        /*padding: 1rem 2rem;*/
         max-width: 1200px;
         border-radius: 1rem;
         width: 100%;
+    }
+    #popup-block .weather > a {
+        border-radius: 1rem;
     }
     #popup-block #video-stream {
         max-width: 1200px;
@@ -250,8 +256,32 @@ body {
         overflow: hidden;
         width: 100%;
         aspect-ratio: 16 / 9;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     .sldp_volume_desktop {
         display: none;
     }
+    #popup-block #close-popup {
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        width: 2rem;
+        height: 2rem;
+        background-color: transparent;
+        cursor: pointer;
+    }
+
+
+}
+
+@keyframes showpopup {
+    from { opacity: 0; translate: 0 -2rem}
+    to { opacity: 1; translate: 0 0}
+}
+@keyframes hidepopup {
+    from { opacity: 1; translate: 0 0 }
+    to { opacity: 0; translate: 0 -2rem}
 }
