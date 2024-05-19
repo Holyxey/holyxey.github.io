@@ -22,7 +22,7 @@ const multipage = {
 <!--                    </article>-->
                     ${target.textContent === 'Трансляция' 
                         ? `<article id="video-stream">
-                                <div id='sldp_player_wrapper'></div>
+                                <div id='streamPlayer'></div>
                             </article>` 
                         : ''}
                     <div id="close-popup" onclick="multipage.remPopup()">
