@@ -1,6 +1,11 @@
+let weatherInfo;
+let output = document.querySelectorAll('#outputWeather');
+// fetch('https://api.open-meteo.com/v1/forecast?latitude=59.9386&longitude=30.3141&hourly=temperature_2m,rain&forecast_days=3')
+
 const multipage = {
     // Pop-up init
     popup(target){
+        this.changeScroll()
         let multiPage = document.getElementById('multi-page')
         multiPage.insertAdjacentHTML('afterbegin',
             `<div class="blur" id="popup-block">
@@ -27,19 +32,18 @@ const multipage = {
         )
         target.textContent === 'Трансляция' ? initPlayer() : '';
         __weatherwidget_init()
-        this.changeScroll()
     }, //Показ поп-апа
     remPopup(){
+        this.changeScroll()
         let popup = document.getElementById('popup-block')
         popup.style.animation = 'hidepopup .3s ease-out forwards'
         setTimeout(()=>{popup.remove()}, 300)
-        this.changeScroll()
     },
     changeScroll(){
         if (document.body.style.overflow === 'hidden')
             document.body.style.overflow = 'unset'
         else document.body.style.overflow = 'hidden'
 
-    } // Запрет/разрешение на скролл ( прим. при открытии поп-апа )
+    }, // Запрет/разрешение на скролл ( прим. при открытии поп-апа )
 
 }

@@ -6,7 +6,8 @@
           name="viewport">
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
     <title>Terruar | Multipage</title>
-    <link href="main.css" rel="stylesheet">
+    <link href="../stylesheets/main.css" rel="stylesheet">
+    <link href="../stylesheets/main-page.css" rel="stylesheet">
 </head>
 <body>
 <div id="multi-page">
@@ -23,23 +24,6 @@
             </li>
         </ul>
     </nav>
-    <header>
-        <section class="blur shadow border" id="hero">
-            <article id="hero-video">
-                <iframe allow="autoplay; encrypted-media"
-                        allowfullscreen="" frameborder="0"
-                        src="https://www.youtube.com/embed/kTnf0cAlhjk?controls=0&amp;showinfo=0&amp;rel=0&amp;autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=kTnf0cAlhjk"
-                        title="YouTube video player"></iframe>
-            </article>
-            <article id="head-lines">
-                <h1>Глэмпинг Терруар в 120 км от Москвы</h1>
-                <h2>Станьте ближе к природе на земле без забот</h2>
-            </article>
-            <article id="booking">
-                *Модуль бронирования*
-            </article>
-        </section>
-    </header>
     <article id="info-block">
         <a class="header-info-buttons" href="tel:+74994951245">+7 (499) 495-12-45</a>
         <div id="header-socials">
@@ -72,16 +56,36 @@
         </div>
         <a class="header-info-buttons" href="#popup:callback">Заказать звонок</a>
     </article>
+    <header>
+        <div class="shadow" id="hero">
+            <article id="hero-video">
+                <iframe allow="autoplay; encrypted-media"
+                        allowfullscreen="" frameborder="0"
+                        src="https://www.youtube.com/embed/kTnf0cAlhjk?controls=0&amp;showinfo=0&amp;rel=0&amp;autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=kTnf0cAlhjk"
+                        title="YouTube video player"></iframe>
+            </article>
+            <article id="head-lines">
+                <h1>Глэмпинг Терруар в 120 км от Москвы</h1>
+                <h2>Станьте ближе к природе на земле без забот</h2>
+            </article>
+            <article id="booking">
+                *Модуль бронирования*
+            </article>
+        </div>
+    </header>
+
+    <p id="outputWeather"
+       style="position: absolute; top: 1rem; right: 1rem">2</p>
 
 </div>
 
 <!--Основа-->
-<script src="main.js"></script>
+<script src="../scripts/main.js"></script>
 <!--/Основа-->
 
 <!--Инициализация стрима-->
 <script src='https://softvelum.ru/player/releases/sldp-v2.12.2.min.js' type='text/javascript'></script>
-<script src="stream-init.js"></script>
+<script src="../scripts/stream-init.js"></script>
 <!--/Инициализация стрима-->
 
 <!--Виджет погоды
@@ -98,5 +102,8 @@
     }(document, 'script', 'weatherwidget-io-js');
 </script>
 /Виджет погоды-->
+<!--testweather-->
+<script src="../scripts/delThis.js"></script>
+<!--/testweather-->
 </body>
 </html>
