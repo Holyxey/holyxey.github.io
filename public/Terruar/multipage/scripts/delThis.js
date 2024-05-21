@@ -9,7 +9,7 @@ let weatherTomorrow;
 let weatherAfterTomorrow;
 
 async function getWeather() {
-    const response = await fetch("https://api.open-meteo.com/v1/forecast?latitude=59.9386&longitude=30.3141&hourly=temperature_2m,rain&forecast_days=3");
+    const response = await fetch("https://api.open-meteo.com/v1/forecast?latitude=54.702&longitude=37.856&hourly=temperature_2m,rain&forecast_days=3");
     const weatheresult = await response.json();
     console.log(weatheresult);
     weatherRain = weatheresult.hourly.rain;

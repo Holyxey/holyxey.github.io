@@ -333,7 +333,7 @@ body, .t-body {
     flex-wrap: nowrap;
     padding-bottom: 5px;
 
-    scrollbar-color: red orange;
+    scrollbar-color: #FDEC81 transparent;
 
     overflow-x: scroll;
     scroll-snap-type: x mandatory;

@@ -213,18 +213,17 @@ body {
     #popup-block {
         position: fixed;
         width: 100dvw;
-        height: 100dvh;
+        min-height: 100dvh;
         z-index: 100500;
+        overflow-y: scroll;
 
         background-color: var(--back-o);
 
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
         flex-direction: column;
         gap: 2rem;
-
-        /*padding: 2rem;*/
 
         opacity: 0;
         animation: showpopup .3s ease-out forwards;
@@ -306,6 +305,42 @@ body {
     #info-block svg {
         display: block;
         height: 1.5rem;
+    }
+
+    #weatherTest {
+        display: flex;
+        gap: 1rem;
+        max-width: 1200px;
+        background-color: var(--blue);
+        padding: 1rem;
+        border-radius: 2rem;
+    }
+    #weatherTest * {
+        transition: all .3s ease-out;
+    }
+    #weatherTest .todayHeader {
+        font-family: var(--unbounded);
+        padding: 0 1rem 1rem 1rem;
+        text-align: center;
+    }
+    #weatherTest .hourly {
+        color: var(--back);
+        font-size: 1rem;
+        padding: .5rem;
+        background-color: var(--white);
+        border-radius: 1rem;
+    }
+    #weatherTest .hourly .hour {
+        padding: .25rem;
+    }
+    #weatherTest .hourly .morning {
+
+    }
+    #weatherTest .hourly .day {
+
+    }
+    #weatherTest .hourly .evening {
+
     }
 /*}*/
 

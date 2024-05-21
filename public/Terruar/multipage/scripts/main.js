@@ -1,6 +1,4 @@
-let weatherInfo;
-let output = document.querySelectorAll('#outputWeather');
-// fetch('https://api.open-meteo.com/v1/forecast?latitude=59.9386&longitude=30.3141&hourly=temperature_2m,rain&forecast_days=3')
+'use strict';
 
 const multipage = {
     // Pop-up init
@@ -9,17 +7,9 @@ const multipage = {
         let multiPage = document.getElementById('multi-page')
         multiPage.insertAdjacentHTML('afterbegin',
             `<div class="blur" id="popup-block">
+                    <article id="weatherTest">
+                    </article>
                     <h1>${target.textContent}</h1>
-<!--                    <article class="weather">-->
-<!--                        <a class="weatherwidget-io" -->
-<!--                        data-days="5" -->
-<!--                        data-font="Roboto" -->
-<!--                        data-icons="Climacons Animated" -->
-<!--                        data-label_1="ТЕРРУАР" -->
-<!--                        data-label_2="Погода" -->
-<!--                        data-theme="original" -->
-<!--                        href="https://forecast7.com/ru/54d7037d87/kuzmishchevo/"></a>-->
-<!--                    </article>-->
                     ${target.textContent === 'Трансляция' 
                         ? `<article id="video-stream">
                                 <div id='streamPlayer'></div>
@@ -31,7 +21,7 @@ const multipage = {
                 </div>`
         )
         target.textContent === 'Трансляция' ? initPlayer() : '';
-        __weatherwidget_init()
+        getWeatherForecast();
     }, //Показ поп-апа
     remPopup(){
         this.changeScroll()
@@ -45,5 +35,67 @@ const multipage = {
         else document.body.style.overflow = 'hidden'
 
     }, // Запрет/разрешение на скролл ( прим. при открытии поп-апа )
-
 }
+
+// weather
+const latitude = 54.702;
+const longitude = 37.856;
+const days = 3;
+const apiUrl = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m,rain&forecast_days=${days}`;
+let hourlyList = {};
+async function getWeatherForecast() {
+    try {
+        const response = await fetch(apiUrl);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        const { hourly } = data;
+        const { temperature_2m, rain, time } = hourly;
+        hourlyList = temperature_2m
+
+
+        // for (let i = 0; i < time.length; i++) {
+        //     console.log(`Hour ${i}: Temperature - ${temperature_2m[i]}°C, Rain - ${rain[i]}mm`);
+        // }
+        weatherTestRender(days);
+    } catch (error) {
+        console.error('Error fetching weather data:', error);
+    }
+}
+const weatherTestRender = (days) => {
+    if (document.getElementById('weatherTest') && days > 0) {
+        let b = document.getElementById('weatherTest')
+        const today = (i) => {
+            let q;
+            switch(i) {
+                case 0:
+                    q = 'Сегодня'
+                    break;
+                case 1:
+                    q = 'Завтра'
+                    break;
+                case 2:
+                    q = 'Послезавтра'
+                    break;
+            }
+            return q;
+        };
+        const getStroke = (day, hour) => {
+            return (24 * day + hour)
+        }
+        for (let i = 0; i < days; i++) {
+            b.insertAdjacentHTML(`beforeend`, `
+                <article class="weatherDay">
+                    <p class="todayHeader">${today(i)}</p>
+                    <div class="hourly">
+                        <p class="hour">Утром: ${hourlyList[(getStroke(i, 6))]}℃</p>
+                        <p class="hour">Днем: ${hourlyList[(getStroke(i, 14))]}℃</p>
+                        <p class="hour">Вечером: ${hourlyList[(getStroke(i, 20))]}℃</p>
+                    </div>
+                </article>
+            `)
+        }
+    } else return('Days is not defined')
+}
+// !weather
