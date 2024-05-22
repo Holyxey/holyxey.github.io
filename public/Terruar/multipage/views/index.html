@@ -78,25 +78,52 @@
                     <h1>Глэмпинг Терруар в 120 км от Москвы</h1>
                     <h2>Станьте ближе к природе на земле без забот</h2>
                 </article>
-                <article id="booking">
-                    *Модуль бронирования*
-                </article>
+                <article id="booking">Модуль бронированися</article>
             </div>
         </header>
 
-        <div style="height: 100vw"></div>
+        <!-- <div style="height: 100vw"></div>-->
     </div>
 
+<!-- Инициализация модуля бронирования-->
+<script src="https://widget.bronirui-online.ru/js/app.js" type="text/javascript"></script>
+<script>
+    window.znmsWidget.init('#booking', {
+        moduleId: 5428,
+        index: 0,
+        widget: {
+            position: {
+                top: '100px',
+            },
+            mobile: {
+                absolute: false, // Абсолютное позиционирование в мобильной версии при виде отображения "У шапки сайта"
+                color: undefined, // HEX-код цвета виджета в мобильной версии
+                position: {
+                    top: '100px',
+                },
+            },
+        },
+        // Настройки позиции плавающей кнопки
+        button: {
+            position: {
+                bottom: 'auto',
+                top: '1rem',
+                left: '2rem',
+                right: '1rem',
+            },
+        },
+    })
+</script>
+<!-- /Инициализация модуля бронирования-->
 
+<!--Инициализация стрима-->
+<!--<script src='https://softvelum.com/player/releases/sldp-v2.26.1.min.js' type='text/javascript'></script>-->
+<script src='../scripts/sldp-v2.26.1.js' type='text/javascript'></script>
+<script src="../scripts/stream-init.js" type="text/javascript"></script>
+<!--/Инициализация стрима-->
 
-    <!--Инициализация стрима-->
-    <!--<script src='https://softvelum.com/player/releases/sldp-v2.26.1.min.js' type='text/javascript'></script>-->
-    <script src='../scripts/sldp-v2.26.1.js' type='text/javascript'></script>
-    <script src="../scripts/stream-init.js" type="text/javascript"></script>
-    <!--/Инициализация стрима-->
-
-    <!--Основа-->
-    <script src="../scripts/main.js" type="text/javascript"></script>
-    <!--/Основа-->
+<!--Основа-->
+<script src="../scripts/main.js" type="text/javascript"></script>
+<!--/Основа-->
 </body>
 </html>
