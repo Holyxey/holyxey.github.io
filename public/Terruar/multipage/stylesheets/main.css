@@ -416,6 +416,9 @@ body {
     nav ul {
         height: 100%;
     }
+    nav ul .navPCItem {
+        display: none;
+    }
     #mobileNavStroke {
         width: 100%;
         margin-top: auto;
@@ -464,20 +467,44 @@ body {
     #info-block *:nth-child(2){
         order: 2;
     }
-    nav ul .navPCItem {
-        display: none;
-    }
     header #hero #booking {
         border-radius: 1.75rem;
         height: 50dvw;
         margin-top: unset;
     }
-    .znms-widget__module-form-block {
+        .znms-widget__module-form-block {
         bottom: 0 !important;
         left: 0 !important;
     }
     #head-lines {
         padding-inline: 1rem;
         padding-block: 3rem;
+    }
+
+    #popup-block {
+        padding-block: 2rem;
+    }
+    #weatherTest {
+        position: fixed;
+        top: auto;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        gap: .25rem;
+        flex-wrap: wrap;
+        border-radius: 0;
+    }
+    #weatherTest p {
+        text-align: center;
+    }
+    #weatherTest .weatherDay:nth-child(1) {
+        width: 100%;
+    }
+    #weatherTest .weatherDay:not(:nth-child(1)) {
+        flex: 1;
+    }
+    #weatherTest .weatherDay:not(:nth-child(1)) .morning,
+    #weatherTest .weatherDay:not(:nth-child(1)) .evening {
+        display: none;
     }
 }

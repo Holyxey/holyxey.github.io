@@ -11,7 +11,7 @@ const multipage = {
                     <h2>${target.textContent}</h2>
                     ${target.textContent === 'Трансляция' && this.getUserAgent() !== 'Safari'
                     ? `<article id="video-stream"><div id='streamPlayer'></div></article>` 
-                    : '<p>Трансляция не поддерживается Вашим браузером. Приносим свои извинения</p>'}
+                    : ''}
                     <div id="close-popup" onclick="multipage.remPopup()">
                         <svg width="50px" viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg"><g stroke-width="0"/><g stroke-linecap="round" stroke-linejoin="round"/><path d="M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2 2 6.5 2 12s4.5 10 10 10m-2.83-7.17 5.66-5.66m0 5.66L9.17 9.17" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                     </div>
@@ -87,6 +87,61 @@ const multipage = {
                 el.setAttribute('data-clicked', '0')
             }
         }
+    },
+    menuList: {
+        categories: [
+            "Завтраки",
+            "Напитки",
+            "Бургеры",
+            "Закуски",
+            "Стейки",
+            "Супы",
+            "Салаты",
+            "Десерты",
+            "Гарниры"
+        ],
+        products: {
+            "Завтрак": {
+                title: `Яичница глазунья (из 2-х яиц), сосиски (2 шт)<br>
+                    Овощи свежие (Помидор, огурец)<br>
+                    Сырники (2 шт), сметана, топинт маракуя<br>
+                    Каша овсяная (ягоды - черника, клубника, брусника<br>
+                    Хлеб, масло сл. порция`,
+                price: 490,
+                description: '',
+                category: "Завтраки"
+            },
+            "Чай": {
+                title: 'Чай (черный/зеленый)',
+                price: '',
+                description: '',
+                category: "Напитки"
+            },
+            "Кофе": {
+                title: 'Кофе (с молоком)',
+                price: '',
+                description: '',
+                category: "Напитки"
+            },
+            "Бургер вегетарианский": {
+                title: 'Бургер вегетарианский',
+                price: 300,
+                description: 'Булочка, микс салатов, сыр чеддер, помидор, котлета из нута, соус дзадзики',
+                category: "Бургеры"
+            },
+            "Чизбургер Пайпс": {
+                title: `Чизбургер "Пайпс"`,
+                price: 480,
+                description: 'Булочка, микс салатов, сыр чеддер, помидор, котлета из говядины, лук, бекон, соус сырный/медово-горчичный',
+                category: "Бургеры"
+            },
+            "Кесадилья": {
+                title: `Чизбургер "Пайпс"`,
+                price: 300,
+                description: 'Булочка, микс салатов, сыр чеддер, помидор, котлета из говядины, лук, бекон, соус сырный/медово-горчичный',
+                category: "Закуски"
+            },
+        },
     }
 }
 
@@ -119,6 +174,10 @@ async function getWeatherForecast() {
 const weatherTestRender = (days) => {
     if (document.getElementById('weatherTest') && days > 0) {
         let b = document.getElementById('weatherTest')
+        b.onclick = () => {
+            b.style.animation = 'hidepopup .3s ease-out forwards'
+            setTimeout(()=>{b.remove()}, 300)
+        }
         const today = (i) => {
             let q;
             switch(i) {
@@ -145,9 +204,9 @@ const weatherTestRender = (days) => {
                 <article class="weatherDay">
                     <p class="todayHeader">${today(i)}</p>
                     <div class="hourly">
-                        <p class="hour">Утром: ${hourlyList[(getStroke(i, 6))]}℃</p>
-                        <p class="hour">Днем: ${hourlyList[(getStroke(i, 14))]}℃</p>
-                        <p class="hour">Вечером: ${hourlyList[(getStroke(i, 20))]}℃</p>
+                        <p class="hour morning">Утром: ${hourlyList[(getStroke(i, 6))]}℃</p>
+                        <p class="hour day">Днем: ${hourlyList[(getStroke(i, 14))]}℃</p>
+                        <p class="hour evening">Вечером: ${hourlyList[(getStroke(i, 20))]}℃</p>
                     </div>
                 </article>
             `)
