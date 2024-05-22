@@ -29,6 +29,9 @@ body {
     background-color: var(--dark);
 
     z-index: 2;
+
+    scroll-snap-type: x mandatory;
+    transition: all .5s ease-out;
 }
 #menuNavbar > button {
     min-width: fit-content;
@@ -42,16 +45,53 @@ body {
     text-decoration: none;
     cursor: pointer;
     font-size: 1rem;
+
+    scroll-snap-align: center;
+    transition: all .5s ease-out;
 }
 #menuNavbar > button:hover {
     color: black;
+    padding: .5rem 1.5rem;
     background-color: white;
+}
+#menuNavbar > .active {
+    color: black;
+    padding: .5rem 1.5rem;
+    background-color: white;
+}
+
+#mobMenu {
+    position: fixed;
+    top: 4rem;
+    right: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+
+
+    width: 3rem;
+    height: 3rem;
+    background-color: var(--dark);
+
+    border-radius: 100%;
+    z-index: 2;
+
+    transition: all .5s ease-out;
+}
+#mobMenu .hr {
+    height: 3px;
+    width: 50%;
+    background: var(--back);
+    border-radius: 100vmin;
 }
 
 #fetchCatalog {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 5rem;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -60,25 +100,31 @@ body {
 
     display: flex;
     flex-wrap: wrap;
-    gap: .5rem 2rem;
+    gap: 1rem 2rem;
+}
+#fetchCatalog > .category > .product {
+    flex: 1 0 40%;
+    padding: .5rem 0;
+    max-width: calc(50% - 1rem);
+
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
 }
 #fetchCatalog > .category > .categoryHeader {
     flex: 1 0 100%;
+    border-top: 2px solid var(--dark);
+    border-radius: 0;
 }
 #fetchCatalog > .category > .categoryHeader .categoryTitle {
     width: fit-content;
     background-color: var(--dark);
     color: var(--back);
     padding: .5rem 1rem;
-    border-radius: 1rem 1rem 1rem .25rem;
+    border-radius: 0 0 1rem .25rem;
 
     font-weight: 300;
     font-size: 1.2rem;
-}
-#fetchCatalog > .category > .product {
-    flex: 1 0 40%;
-    padding: .5rem 0;
-    max-width: calc(50% - 1rem);
 }
 #fetchCatalog > .category > .product > .productHeader {
     border-bottom: 1px solid var(--gray);
@@ -88,26 +134,98 @@ body {
     gap: 1rem
 }
 #fetchCatalog > .category > .product > .productHeader > .productTitle {
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+#fetchCatalog > .category > .product > .productDescription {
+    font-weight: 300;
 }
 #fetchCatalog > .category > .product > .productVariants {
     display: flex;
-    margin-top: .5rem;
-    padding: 0 .5rem .5rem .5rem;
     flex-wrap: wrap;
-    gap: 1rem;
-    border: 1px solid var(--gray);
-    border-top: 1px solid transparent;
-    border-right: 1px solid transparent;
+    gap: .5rem;
 }
 #fetchCatalog > .category > .product > .productVariants .variant {
-    flex: 1;
     display: flex;
+    width: fit-content;
+    justify-content: center;
+    padding: .5rem 1rem;
+    border: 1px solid #99999950;
+    border-radius: .25rem;
 }
-
+#fetchCatalog > .category > .product > .productGallery {
+    display: flex;
+    padding-left: 1rem;
+    overflow-x: auto;
+    height: 250px;
+    gap: 1rem;
+    border-radius: 1rem;
+}
+#fetchCatalog > .category > .product > .productGallery .productImage {
+    background-position: center;
+    background-size: cover;
+    display: block;
+    max-height: 300px;
+    border-radius: 1rem;
+}
 #fetchCatalog > article > article > div > .productPrice {
     width: fit-content;
-    border: 1px solid var(--gray);
+    font-weight: 500;
     translate: 0 1px;
     padding: .25rem .5rem .25rem .5rem;
     border-radius: .25rem .25rem 0 0;
+}
+
+#productImgOpened {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #20202080;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 5;
+}
+#productImgOpened > img {
+    display: block;
+    max-width: 95%;
+    max-height: 95%;
+    border-radius: 2rem;
+
+    animation: show .3s ease-out forwards;
+}
+
+#backButton {
+    position: fixed;
+    bottom: 2rem;
+    left: 2rem;
+}
+
+@keyframes show {
+    from {opacity: 0; translate: 0 1rem}
+    to {opacity: 1; translate: 0 0}
+}
+
+@media (max-width: 450px) {
+    #fetchCatalog {
+        gap: 2rem;
+    }
+    #fetchCatalog > .category {
+        padding: .25rem .5rem;
+        flex-direction: column;
+    }
+    #fetchCatalog > .category > .product {
+        max-width: 100%;
+    }
+}
+@media (min-width: 450px) {
+    #mobMenu {
+        display: none;
+    }
 }

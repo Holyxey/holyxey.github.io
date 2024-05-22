@@ -2389,19 +2389,56 @@ let catalogData = {
 };
 
 const catalogLink = `https://store.tildaapi.com/api/getproductslist/?storepartuid=227151755511&recid=748764525&c=1715780724989&getparts=true&getoptions=true&slice=1&size=100`;
-const catalogRenderCheck = (uid) => {
-    return !!document.getElementById(`category_${uid}`);
-} // Определяем наличие блока с категорией на сайте (boolean)
-const catalogGetCategoryHeader = (productId) => {
-    for (let i = 0; i < catalogData.parts.length; i++) {
-        if (catalogData.parts[i].uid === Number(productId)) {
-            return (catalogData.parts[i].title)
-        }
+const catalogNavOnScroll = () => {
+    let c = document.querySelector('.active')
+    c.scrollIntoView()
+}
+    // Скроллим к активному пункту
+const catalogMenuButton = () => {
+    let nav = document.getElementById('menuNavbar')
+    let navButton = document.getElementById('mobMenu')
+    switch (navButton.getAttribute('clicked')) {
+        case '0':
+            nav.style.cssText += `flex-wrap: wrap; 
+                                    flex-direction: column; 
+                                    width: 100%; 
+                                    height: fit-content; 
+                                    top: auto; 
+                                    transition: all .5s ease-out;`
+            navButton.style.cssText += 'right: -5rem; opacity: 0'
+            navButton.setAttribute('clicked', '1')
+            break
+        case '1':
+            nav.style.cssText += `flex-wrap: unset; 
+                                    flex-direction: row; 
+                                    width: fit-content(); 
+                                    height: usnet; 
+                                    top: 0; 
+                                    bottom: auto; 
+                                    transition: all .5s ease-out;`
+            navButton.style.cssText += 'right: 1rem; opacity: 1'
+            navButton.setAttribute('clicked', '0')
+            break
     }
-} // Ищем заголовок категории по ID товара (string)
-
+}
+    // Кнопка "меню" в мобилке
 const catalogNavScroll = (navButton) => {
+    document.querySelectorAll('.navButton').forEach(el => {el.classList.remove('active')})
+    navButton.classList.add('active');
     let title = navButton.textContent
+    let nav = document.getElementById('menuNavbar')
+    let navMenuButton = document.getElementById('mobMenu')
+    if (navMenuButton.getAttribute('clicked') === '1') {
+        nav.style.cssText += `flex-wrap: unset; 
+                                    flex-direction: row;
+                                    width: fit-content(); 
+                                    height: usnet; 
+                                    top: 0; 
+                                    bottom: auto; 
+                                    transition: all .5s ease-out;`
+        navMenuButton.setAttribute('clicked', '0')
+        navMenuButton.style.cssText += 'right: 1rem; opacity: 1'
+    }
     document.querySelectorAll('h1').forEach(el => {
         if (el.textContent === title) {
             window.scroll({
@@ -2410,15 +2447,19 @@ const catalogNavScroll = (navButton) => {
             });
         }
     })
-} // Обработчик кликов по навбару
+    catalogNavOnScroll();
+}
+    // Обработчик кликов по навбару
 const catalogRenderMenuNav = () => {
     let body = document.getElementsByTagName('body')[0];
     body.insertAdjacentHTML('afterbegin', `<nav id="menuNavbar"></nav>`); // Создаем блок навбара
     let nav = document.getElementById('menuNavbar');
     catalogData.parts.forEach(part => {
-        nav.insertAdjacentHTML('beforeend', `<button onclick="catalogNavScroll(this)">${part.title}</button>`);
+        nav.insertAdjacentHTML('beforeend', `<button title="${part.title}" class="navButton" onclick="catalogNavScroll(this)">${part.title}</button>`);
     })
-} // Рендерим навбар для меню
+    body.insertAdjacentHTML('beforeend', `<div id="mobMenu" clicked="0" onclick="catalogMenuButton()"><div class="hr"></div><div class="hr"></div></div>`);
+}
+    // Рендерим навбар для меню
 const catalogRenderProduct = (productCounter) => {
     const getPrice = (price) => {
         if (price.slice(0, -5).length <= 3) {
@@ -2432,6 +2473,13 @@ const catalogRenderProduct = (productCounter) => {
         })
         return `<div class="productVariants">${q}</div>`
     }
+    const getImages = (gallery) => {
+        let q = '';
+        gallery.forEach(g => {
+            q += `<img class="productImage" src="${g.img}" alt="Product Photo" loading="lazy" onclick="catalogImgOpen(this)">`
+        })
+        return `<div class="productGallery">${q}</div>`
+    }
     return `
 <article class="product">
         <div class="productHeader">
@@ -2440,14 +2488,38 @@ const catalogRenderProduct = (productCounter) => {
                 ? `${getPrice(catalogData.products[productCounter].price)}`
                 : ``}
         </div>
-        <p>${catalogData.products[productCounter].descr}</p>
-        ${(catalogData.products[productCounter].editions.length > 1) 
+        ${catalogData.products[productCounter].descr
+            ? `<p class="productDescription">${catalogData.products[productCounter].descr}</p>`
+            : ''}
+        ${(catalogData.products[productCounter].editions.length > 1)
             ? `${getVariants(catalogData.products[productCounter].editions)}`
             : ``}
+        ${(JSON.parse(catalogData.products[productCounter].gallery).length >= 1)
+            ? `${getImages(JSON.parse(catalogData.products[productCounter].gallery))}`
+            : ``}
 </article>`
-}  // Производим рендер товара по его ID (string)
+}
+    // Производим рендер товара по его ID (string)
+const catalogImgOpen = (img) => {
+    document.body.insertAdjacentHTML( `afterbegin`, `<div id="productImgOpened" onclick="catalogImgClose(this)"><img src="${img.src}" alt=""></div>`)
+}
+// Открываем картинку на весь экран
+const catalogImgClose = (img) => {
+    img.remove()
+}
+// Закрываем картинку на весь экран
 const catalogRender = (data) => {
     catalogRenderMenuNav()
+    const catalogRenderCheck = (uid) => {
+        return !!document.getElementById(`category_${uid}`);
+    } // Определяем наличие блока с категорией на сайте (boolean)
+    const catalogGetCategoryHeader = (productId) => {
+        for (let i = 0; i < catalogData.parts.length; i++) {
+            if (catalogData.parts[i].uid === Number(productId)) {
+                return (catalogData.parts[i].title)
+            }
+        }
+    } // Ищем заголовок категории по ID товара (string)
     for (let i = 0; i < data.products.length; i++) {
         let catalogDiv = document.getElementById('fetchCatalog')
         let catID = data.products[i].partuids.slice(1, -1)
@@ -2455,7 +2527,7 @@ const catalogRender = (data) => {
         if (catalogRenderCheck(catID) === false) {
             catalogDiv.innerHTML +=
                 `<article id="category_${catID}" class="category">
-                    <div class="categoryHeader"><h1 class="categoryTitle">${catalogGetCategoryHeader(catID)}</h1></div>
+                    <div class="categoryHeader"><h1 title="${catalogGetCategoryHeader(catID)}" class="categoryTitle">${catalogGetCategoryHeader(catID)}</h1></div>
                     ${catalogRenderProduct(i)}
                 </article>`
         }  // Рендерим категорию и продукт внутри
@@ -2465,7 +2537,8 @@ const catalogRender = (data) => {
         } // Если категория найдена - рендерим внутрь
     }
     document.getElementById('fetchCatalog').style.paddingTop = document.getElementById('menuNavbar').offsetHeight + 10 + 'px'
-}  // Основной запуск
+}
+    // Основной запуск
 
 const catalogResponse = async () => {
     const response = await fetch(catalogLink)

@@ -5,8 +5,9 @@ function initPlayer() {
     let getHeigth = getWidth * 9 / 16
     sldpPlayer = SLDP.init({
         container: 'streamPlayer',
-        stream_url: 'wss://b2o-vcore155.video.goodline.info:443/main/linkvideo_125009',
+        stream_url: 'wss://b2o-vcore156.video.goodline.info:443/main/linkvideo_125009',
         autoplay: true,
+        muted: true,
         height: getHeigth,
         width: getWidth
     });
