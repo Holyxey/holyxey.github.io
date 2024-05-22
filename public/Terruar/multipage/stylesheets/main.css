@@ -107,7 +107,7 @@ body {
         background-color: var(--wine);
         border-radius: 2rem;
 
-        transition: height .3s ease-out;
+        transition: height .5s ease-out, opacity .5s ease-out;
     }
     nav ul {
         flex: 1;
@@ -125,7 +125,8 @@ body {
     nav ul li {
         display: flex;
         min-width: fit-content;
-        transition: height .3s ease-out;
+        transition: height .5s ease-out, opacity .5s ease-out;
+
     }
     nav ul .navPCItem {
     }
@@ -144,6 +145,9 @@ body {
     }
     nav li:not(.navPCItem) {
         display: none;
+    }
+    #mobileNavStroke, #monMenuButton {
+        transition: all ease-out .5s;
     }
 
     header {
@@ -439,7 +443,7 @@ body {
         border-radius: 100vmin;
         border: 1px solid var(--white);
     }
-    nav #monMenuButton .hr {
+    nav #monMenuButton .menuButtonHR {
         width: 50%;
         height: 2px;
         background-color: var(--white);

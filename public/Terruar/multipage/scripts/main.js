@@ -54,14 +54,23 @@ const multipage = {
             let menuPoints = document.querySelectorAll('.navPCItem')
             let nav = document.querySelector('nav')
             let mainList = document.getElementById('menuList')
+            let buttonLines = document.querySelectorAll('.menuButtonHR')
             if (el.getAttribute('data-clicked') === '0') {
+                let tmt = 100;
                 menuPoints.forEach(point => {
+                    point.style.opacity = '0'
+                        setTimeout(function () {point.style.opacity = 1}, tmt)
+                        tmt+=70
                     point.style.display = 'block'
                     point.style.width = '100%'
                     point.style.textAlign = 'center'
                     point.style.marginBlock = '.5rem'
                 })
                 nav.style.height = '70vh'
+                el.style.backgroundColor = 'var(--white)'
+                buttonLines.forEach(line => {
+                    line.style.backgroundColor = 'var(--wine)'
+                })
 
                 el.setAttribute('data-clicked', '1')
             } else
@@ -70,6 +79,10 @@ const multipage = {
                     point.style.display = 'none'
                 })
                 nav.style.height = '4rem'
+                el.style.backgroundColor = 'var(--wine)'
+                buttonLines.forEach(line => {
+                    line.style.backgroundColor = 'var(--white)'
+                })
 
                 el.setAttribute('data-clicked', '0')
             }
