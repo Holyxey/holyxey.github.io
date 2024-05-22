@@ -33,4 +33,3 @@ async function videoPlayBack() {
         console.error('Error fetching weather data:', error);
     }
 }
-videoPlayBack()

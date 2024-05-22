@@ -5,13 +5,24 @@ const multipage = {
     popup(target){
         this.changeScroll()
         let multiPage = document.getElementById('multi-page')
+        const getVideoStream = (target) => {
+            let q;
+            if (target.textContent === 'Трансляция' && this.getUserAgent() === 'Safari') {
+                q = `<article id="video-stream">
+                    <video controls autoplay muted playsinline loop style="width: 100%">
+                        <source id="videoPlayBack" src="" type="video/mp4">
+                    </video></article>`
+                videoPlayBack()
+            } else if (target.textContent === 'Трансляция' && this.getUserAgent() !== 'Safari') {
+                q = `<article id="video-stream"><div id='streamPlayer'></div></article>`
+            }
+            return q;
+        }
         multiPage.insertAdjacentHTML('afterbegin',
             `<div class="blur" id="popup-block">
                     <article id="weatherTest"></article>
                     <h2>${target.textContent}</h2>
-                    ${target.textContent === 'Трансляция' && this.getUserAgent() !== 'Safari'
-                    ? `<article id="video-stream"><div id='streamPlayer'></div></article>` 
-                    : ''}
+                    ${getVideoStream(target)}
                     <div id="close-popup" onclick="multipage.remPopup()">
                         <svg width="50px" viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg"><g stroke-width="0"/><g stroke-linecap="round" stroke-linejoin="round"/><path d="M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2 2 6.5 2 12s4.5 10 10 10m-2.83-7.17 5.66-5.66m0 5.66L9.17 9.17" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                     </div>
