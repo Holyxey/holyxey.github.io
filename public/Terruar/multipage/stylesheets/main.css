@@ -4,7 +4,7 @@
 
 :root {
     --back: #1e1b23;
-    --back-o: #1e1b23de;
+    --back-o: rgba(19, 18, 21, 0.87);
     --white: #EEF0F2;
     --white-o: #EEF0F2de;
     --white-oo: #EEF0F250;
@@ -101,7 +101,7 @@ body {
 
         width: fit-content;
         max-width: 1200px;
-        max-height: 4.5rem;
+        /*max-height: 4.5rem;*/
         margin: 0 auto;
 
         padding: 1rem;
@@ -117,17 +117,17 @@ body {
 
         display: flex;
         flex-wrap: wrap;
-        gap: 1rem 2rem;
         justify-content: center;
-    }
-    nav ul {
+        align-items: center;
         gap: 1rem;
     }
     nav ul li {
         display: flex;
         min-width: fit-content;
     }
-    nav ul li a {
+    nav ul .navPCItem {
+    }
+    nav ul .navPCItem a {
         color: var(--white) !important;
         text-decoration: none !important;
         padding: .5rem 1rem;
@@ -136,9 +136,12 @@ body {
 
         transition: background .2s ease-out, color .1s ease-out;
     }
-    nav ul li a:hover {
+    nav ul .navPCItem a:hover {
         background-color: var(--white-o);
         color: var(--back-o) !important;
+    }
+    nav li:not(.navPCItem) {
+        display: none;
     }
 
     header {
@@ -152,7 +155,7 @@ body {
         margin: 2rem auto;
         margin-inline: 2rem;
 
-        padding: 2rem 1rem 1rem 1rem;
+        padding: 1rem;
 
         display: flex;
         flex-direction: column;
@@ -195,7 +198,6 @@ body {
     }
 
     header #hero #booking {
-        margin-top: auto;
         background-color: var(--back-o);
         width: 100%;
         padding: 2rem 4rem;
@@ -207,22 +209,26 @@ body {
         flex-direction: column;
         gap: 1rem;
         border-radius: 1rem;
-        margin-top: auto;
+        margin-block: auto;
     }
 
     #popup-block {
         position: fixed;
-        width: 100dvw;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
         min-height: 100dvh;
-        z-index: 100500;
-        overflow-y: scroll;
+        z-index: 100;
+        overflow-y: auto;
 
         background-color: var(--back-o);
 
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: flex-start;
-        flex-direction: column;
+        padding-block: 2rem;
         gap: 2rem;
 
         opacity: 0;
@@ -230,7 +236,6 @@ body {
     }
     #popup-block .weather {
         background-color: var(--blue);
-        /*padding: 1rem 2rem;*/
         max-width: 1200px;
         border-radius: 1rem;
         width: 100%;
@@ -256,22 +261,18 @@ body {
         position: absolute;
         top: 2rem;
         right: 2rem;
-        width: 2rem;
-        height: 2rem;
+        width: 50px;
+        height: 50px;
         background-color: transparent;
         cursor: pointer;
     }
 
     #info-block {
-        position: absolute !important;
-        margin: auto;
-        top: 7rem;
-        left: 50%;
-        transform: translateX(-50%);
         z-index: 2;
 
         background-color: var(--back);
 
+        width: unset !important;
         max-width: fit-content;
 
         display: flex;
@@ -281,6 +282,7 @@ body {
         padding: 1rem;
         border-radius: 1rem;
         gap: 2rem;
+        align-self: center;
     }
     #info-block #header-socials {
         display: flex;
@@ -293,11 +295,11 @@ body {
         padding: .5rem 1rem;
         background-color: var(--white-o);
         border-radius: .5rem;
-        /*width: 100%;*/
+        width: fit-content;
         text-align: center;
         color: var(--back) !important;
     }
-    #info-block a {
+    #info-block > a {
         color: var(--white) !important;
         text-decoration: none !important;
         width: fit-content;
@@ -318,12 +320,16 @@ body {
     #weatherTest * {
         transition: all .3s ease-out;
     }
+    #weatherTest .weatherDay {
+
+    }
     #weatherTest .todayHeader {
         font-family: var(--unbounded);
         padding: 0 1rem 1rem 1rem;
         text-align: center;
     }
     #weatherTest .hourly {
+        flex: 1;
         color: var(--back);
         font-size: 1rem;
         padding: .5rem;
@@ -332,6 +338,7 @@ body {
     }
     #weatherTest .hourly .hour {
         padding: .25rem;
+        font-size: 1rem;
     }
     #weatherTest .hourly .morning {
 
@@ -351,4 +358,75 @@ body {
 @keyframes hidepopup {
     from { opacity: 1; translate: 0 0 }
     to { opacity: 0; translate: 0 -2rem}
+}
+
+/*
+*/
+@media (max-width: 600px) {
+    #multi-page {
+        gap: .25rem;
+    }
+    nav {
+        margin: .5rem;
+        width: calc(100% - 1rem);
+        max-height: unset;
+        top: 0;
+        padding: .5rem;
+    }
+    nav ul {
+        height: 100%;
+        justify-content: space-between;
+    }
+    nav li:not(.navPCItem) {
+        display: unset;
+    }
+    nav #mobLogo {
+        max-height: 50px;
+        display: block;
+        border-radius: 100vmin;
+    }
+    nav #monMenuButton {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: .5rem;
+
+        height: 50px;
+        aspect-ratio: 1 / 1;
+        border-radius: 100vmin;
+        border: 1px solid var(--white);
+    }
+    nav #monMenuButton .hr {
+        width: 50%;
+        height: 2px;
+        background-color: var(--white);
+        border-radius: 100vmin;
+    }
+    header #hero {
+        margin: .25rem;
+        margin-inline: .5rem;
+        min-height: calc(100dvh - 6rem);
+        padding: .5rem;
+    }
+    #info-block {
+        transform: unset;
+        background-color: var(--back-o);
+        border-radius: 1.75rem;
+        gap: 1rem;
+    }
+    #info-block *:nth-child(2){
+        order: 2;
+    }
+    nav ul .navPCItem {
+        display: none;
+    }
+    header #hero #booking {
+        border-radius: 1.75rem;
+        height: 50dvw;
+        margin-top: unset;
+    }
+    #head-lines {
+        padding-inline: 1rem;
+    }
 }

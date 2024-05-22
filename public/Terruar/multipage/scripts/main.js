@@ -7,34 +7,48 @@ const multipage = {
         let multiPage = document.getElementById('multi-page')
         multiPage.insertAdjacentHTML('afterbegin',
             `<div class="blur" id="popup-block">
-                    <article id="weatherTest">
-                    </article>
-                    <h1>${target.textContent}</h1>
-                    ${target.textContent === 'Трансляция' 
-                        ? `<article id="video-stream">
-                                <div id='streamPlayer'></div>
-                            </article>` 
-                        : ''}
+                    <h2>${target.textContent}</h2>
+                    <article id="weatherTest"></article>
+                    ${target.textContent === 'Трансляция' && this.getUserAgent() !== 'Safari'
+                    ? `<article id="video-stream"><div id='streamPlayer'></div></article>` 
+                    : '<p>Трансляция не поддерживается Вашим браузером. Приносим свои извинения</p>'}
                     <div id="close-popup" onclick="multipage.remPopup()">
-                        <svg width="2rem" viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg"><g stroke-width="0"/><g stroke-linecap="round" stroke-linejoin="round"/><path d="M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2 2 6.5 2 12s4.5 10 10 10m-2.83-7.17 5.66-5.66m0 5.66L9.17 9.17" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        <svg width="50px" viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg"><g stroke-width="0"/><g stroke-linecap="round" stroke-linejoin="round"/><path d="M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2 2 6.5 2 12s4.5 10 10 10m-2.83-7.17 5.66-5.66m0 5.66L9.17 9.17" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                     </div>
                 </div>`
         )
         target.textContent === 'Трансляция' ? initPlayer() : '';
         getWeatherForecast();
-    }, //Показ поп-апа
+    }, // Показ поп-апа
     remPopup(){
         this.changeScroll()
         let popup = document.getElementById('popup-block')
         popup.style.animation = 'hidepopup .3s ease-out forwards'
         setTimeout(()=>{popup.remove()}, 300)
-    },
+    }, // Сброс поп-апа
     changeScroll(){
         if (document.body.style.overflow === 'hidden')
             document.body.style.overflow = 'unset'
         else document.body.style.overflow = 'hidden'
-
     }, // Запрет/разрешение на скролл ( прим. при открытии поп-апа )
+    getUserAgent(){
+            if ((navigator.userAgent.indexOf("Opera") || navigator.userAgent.indexOf('OPR')) != -1) {
+                return('Opera');
+            } else if (navigator.userAgent.indexOf("Edg") != -1) {
+                return('Edge');
+            } else if (navigator.userAgent.indexOf("Chrome") != -1) {
+                return('Chrome');
+            } else if (navigator.userAgent.indexOf("Safari") != -1) {
+                return('Safari');
+            } else if (navigator.userAgent.indexOf("Firefox") != -1) {
+                return('Firefox');
+            } else if ((navigator.userAgent.indexOf("MSIE") != -1) || (!!document.documentMode == true)) //IF IE > 10
+            {
+                return('IE');
+            } else {
+                return('unknown');
+            }
+    }, // Строкой получаем название браузера
 }
 
 // weather
@@ -45,23 +59,23 @@ const apiUrl = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&long
 let hourlyList = {};
 async function getWeatherForecast() {
     try {
-        const response = await fetch(apiUrl);
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
+            const response = await fetch(apiUrl);
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            const data = await response.json();
+            const { hourly } = data;
+            const { temperature_2m, rain, time } = hourly;
+            hourlyList = temperature_2m
+
+
+            // for (let i = 0; i < time.length; i++) {
+            //     console.log(`Hour ${i}: Temperature - ${temperature_2m[i]}°C, Rain - ${rain[i]}mm`);
+            // }
+            weatherTestRender(days);
+        } catch (error) {
+            console.error('Error fetching weather data:', error);
         }
-        const data = await response.json();
-        const { hourly } = data;
-        const { temperature_2m, rain, time } = hourly;
-        hourlyList = temperature_2m
-
-
-        // for (let i = 0; i < time.length; i++) {
-        //     console.log(`Hour ${i}: Temperature - ${temperature_2m[i]}°C, Rain - ${rain[i]}mm`);
-        // }
-        weatherTestRender(days);
-    } catch (error) {
-        console.error('Error fetching weather data:', error);
-    }
 }
 const weatherTestRender = (days) => {
     if (document.getElementById('weatherTest') && days > 0) {
@@ -77,6 +91,9 @@ const weatherTestRender = (days) => {
                     break;
                 case 2:
                     q = 'Послезавтра'
+                    break;
+                default:
+                    q = 'Погода'
                     break;
             }
             return q;
