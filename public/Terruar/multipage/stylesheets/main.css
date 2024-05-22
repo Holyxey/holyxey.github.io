@@ -103,7 +103,7 @@ body {
         margin: 0 auto;
 
         padding: 1rem;
-        z-index: 5;
+        z-index: 100500800;
         background-color: var(--wine);
         border-radius: 2rem;
 
@@ -478,5 +478,6 @@ body {
     }
     #head-lines {
         padding-inline: 1rem;
+        padding-block: 3rem;
     }
 }
