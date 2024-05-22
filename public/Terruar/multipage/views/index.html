@@ -13,7 +13,7 @@
     <div id="multi-page">
 
         <nav class="shadow">
-            <ul>
+            <ul id="menuList">
                 <li class="navPCItem"><a href="#">Главная</a></li>
                 <li class="navPCItem"><a href="#">Домики и палатки</a></li>
                 <li class="navPCItem"><a onclick="multipage.popup(this)">Трансляция</a></li>
@@ -21,16 +21,20 @@
                 <li class="navPCItem"><a href="#">Услуги</a></li>
                 <li class="navPCItem"><a href="#">Акции</a></li>
                 <li class="navPCItem"><a href="#" style="background-color: var(--white-o); color: var(--back)!important;">Забронировать</a></li>
-                <li>
-                    <img id="mobLogo" src="../sources/img/logoTerruar.svg" alt="Logo">
-                </li>
-                <li>
-                    <img src="../sources/img/textLogoTerruar.svg" alt="Terruar name" style="height: 20px">
-                </li>
-                <li>
-                    <div id="monMenuButton">
-                        <div class="hr"></div>
-                        <div class="hr"></div></div>
+                <li id="mobileNavStroke">
+                    <ul>
+                        <li>
+                            <img id="mobLogo" src="../sources/img/logoTerruar.svg" alt="Logo">
+                        </li>
+                        <li>
+                            <img src="../sources/img/textLogoTerruar.svg" alt="Terruar name" style="height: 20px">
+                        </li>
+                        <li>
+                        <div id="monMenuButton" onclick="multipage.mobileMenu.btnClck(this)" data-clicked="0">
+                            <div class="hr"></div>
+                            <div class="hr"></div></div>
+                    </li>
+                    </ul>
                 </li>
             </ul>
         </nav>
@@ -75,7 +79,7 @@
                             title="YouTube video player"></iframe>
                 </article>
                 <article id="head-lines">
-                    <h1>Глэмпинг Терруар в 120 км от Москвы</h1>
+                    <h1>Глэмпинг Терруар в 120 км от Москвы</h1>
                     <h2>Станьте ближе к природе на земле без забот</h2>
                 </article>
                 <article id="booking">Модуль бронированися</article>

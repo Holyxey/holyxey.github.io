@@ -7,8 +7,8 @@ const multipage = {
         let multiPage = document.getElementById('multi-page')
         multiPage.insertAdjacentHTML('afterbegin',
             `<div class="blur" id="popup-block">
-                    <h2>${target.textContent}</h2>
                     <article id="weatherTest"></article>
+                    <h2>${target.textContent}</h2>
                     ${target.textContent === 'Трансляция' && this.getUserAgent() !== 'Safari'
                     ? `<article id="video-stream"><div id='streamPlayer'></div></article>` 
                     : '<p>Трансляция не поддерживается Вашим браузером. Приносим свои извинения</p>'}
@@ -49,6 +49,32 @@ const multipage = {
                 return('unknown');
             }
     }, // Строкой получаем название браузера
+    mobileMenu: {
+        btnClck(el){
+            let menuPoints = document.querySelectorAll('.navPCItem')
+            let nav = document.querySelector('nav')
+            let mainList = document.getElementById('menuList')
+            if (el.getAttribute('data-clicked') === '0') {
+                menuPoints.forEach(point => {
+                    point.style.display = 'block'
+                    point.style.width = '100%'
+                    point.style.textAlign = 'center'
+                    point.style.marginBlock = '.5rem'
+                })
+                nav.style.height = '70vh'
+
+                el.setAttribute('data-clicked', '1')
+            } else
+            if (el.getAttribute('data-clicked') === '1') {
+                menuPoints.forEach(point => {
+                    point.style.display = 'none'
+                })
+                nav.style.height = '4rem'
+
+                el.setAttribute('data-clicked', '0')
+            }
+        }
+    }
 }
 
 // weather
