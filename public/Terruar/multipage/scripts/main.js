@@ -7,6 +7,7 @@ const multipage = {
         let multiPage = document.getElementById('multi-page')
         const getVideoStream = (target) => {
             let q;
+            initPlayer()
             if (target.textContent === 'Трансляция' && this.getUserAgent() === 'Safari') {
                 q = `<article id="video-stream">
                     <video controls autoplay muted playsinline loop style="width: 100%">
@@ -18,17 +19,63 @@ const multipage = {
             }
             return q;
         }
-        multiPage.insertAdjacentHTML('afterbegin',
+        const getProductImages = (product) => {
+            console.log(product.images)
+            let q = '';
+            product.images.forEach(image => {
+                q += `<img loading="lazy" class="productImage" src="${image}" alt="${product.title}">`
+            })
+            return q;
+        } // Рендерим изображения внутрь продукта
+        const getProducts = (catName) => {
+            // catName is name of category
+            let q = '';
+            const products =  multipage.menuList.products;
+            Object.values(products).forEach(product => {
+                if (product.category === catName) {
+                    q += `
+<div class="product">
+<p class="productTitle">${product.title}</p>
+${(!product.description) ? '' : `<p class="productDescription">${product.description}</p>`}
+${(!product.price) ? '' : `<p class="productPrice">${product.price} p.</p>`}
+${(!product.images) ? '' : `<div class="productImages">${getProductImages(product)}</div>`}
+</div>`
+                }
+            })
+            return q;
+        } // Рендерим продукты внутрь подходящей категории
+        const getMenu = (target) => {
+            let q = ``;
+            const getCategories = () => {
+                let q = '';
+                multipage.menuList.categories.forEach(item => {
+                    q+=`<article class="categories">
+                            <div class="categoryHeader">
+                                <h4>${item}</h4>
+                            </div>
+                            <div class="categoryItems">
+                                ${getProducts(item.toString())}
+                            </div>
+                        </article>`
+                }) // Рендерим категории внутрь id="restaurantMenu"
+                return q;
+            }
+            q =
+                `<section id="restaurantMenu">${getCategories()}</section>`
+            return q;
+        }
+        multiPage.insertAdjacentHTML(
+            'afterbegin',
             `<div class="blur" id="popup-block">
                     <article id="weatherTest"></article>
                     <h2>${target.textContent}</h2>
-                    ${getVideoStream(target)}
+                    ${target.textContent === 'Трансляция' ? getVideoStream(target) : ''}
+                    ${target.textContent === 'Меню и доставка' ? getMenu(target) : ''}
                     <div id="close-popup" onclick="multipage.remPopup()">
                         <svg width="50px" viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg"><g stroke-width="0"/><g stroke-linecap="round" stroke-linejoin="round"/><path d="M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2 2 6.5 2 12s4.5 10 10 10m-2.83-7.17 5.66-5.66m0 5.66L9.17 9.17" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                     </div>
                 </div>`
         )
-        target.textContent === 'Трансляция' ? initPlayer() : '';
         getWeatherForecast();
     }, // Показ поп-апа
     remPopup(){
@@ -113,20 +160,27 @@ const multipage = {
         ],
         products: {
             "Завтрак": {
-                title: `Яичница глазунья (из 2-х яиц), сосиски (2 шт)<br>
+                title: `Завтраки`,
+                price: 490,
+                description: `Яичница глазунья (из 2-х яиц), сосиски (2 шт)<br>
                     Овощи свежие (Помидор, огурец)<br>
                     Сырники (2 шт), сметана, топинт маракуя<br>
                     Каша овсяная (ягоды - черника, клубника, брусника<br>
                     Хлеб, масло сл. порция`,
-                price: 490,
-                description: '',
                 category: "Завтраки"
             },
             "Чай": {
                 title: 'Чай (черный/зеленый)',
                 price: '',
                 description: '',
-                category: "Напитки"
+                category: "Напитки",
+                images:[
+                    'https://static.tildacdn.com/stor3330-6330-4965-a138-646466396637/30003652.jpg',
+                    'https://static.tildacdn.com/stor3838-3730-4664-b933-373937653831/98515642.jpg',
+                    'https://static.tildacdn.com/stor3230-3136-4033-a130-613361393065/49497028.jpg',
+                    'https://static.tildacdn.com/stor3937-3533-4762-b439-663763313366/73145240.jpg',
+                    'https://static.tildacdn.com/stor3330-6330-4965-a138-646466396637/30003652.jpg'
+                ]
             },
             "Кофе": {
                 title: 'Кофе (с молоком)',
@@ -147,11 +201,107 @@ const multipage = {
                 category: "Бургеры"
             },
             "Кесадилья": {
-                title: `Чизбургер "Пайпс"`,
+                title: `Кесадилья`,
                 price: 300,
-                description: 'Булочка, микс салатов, сыр чеддер, помидор, котлета из говядины, лук, бекон, соус сырный/медово-горчичный',
+                description: 'Кукурузная лепешка, кукуруза, курица сувит, помидоры, сыр чеддер, болгарский перец, бобы, кинза/петрушка, соус сальса/сметана',
                 category: "Закуски"
             },
+            "Френч фрайс": {
+                title: `Френч фрайс`,
+                price: 350,
+                description: 'Картофель фри, лук фри, бекон фри, микс салатов, топинг чеддер',
+                category: "Закуски"
+            },
+            "Крылышки": {
+                title: `Крылышки`,
+                price: 400,
+                description: 'Крылышки маринованые, кунжут, соус барбекю/мармайт',
+                category: "Закуски"
+            },
+            "Стриплойн": {
+                title: `Стриплойн`,
+                price: 850,
+                description: 'Говядина',
+                category: "Стейки"
+            },
+            "Рибай": {
+                title: `Рибай`,
+                price: 980,
+                description: 'Говядина',
+                category: "Стейки"
+            },
+            "Стейк из сёмги": {
+                title: `Стейк из сёмги`,
+                price: 1200,
+                description: '',
+                category: "Стейки"
+            },
+            "Суп дня": {
+                title: `Суп дня`,
+                price: 400,
+                description: '',
+                category: "Супы"
+            },
+            "Грузинский": {
+                title: `Грузинский`,
+                price: 300,
+                description: 'Помидор, огурец, лук красный, кинза, базилик, грецкий орех',
+                category: "Салаты"
+            },
+            "Ростбиф": {
+                title: `Ростбиф`,
+                price: 520,
+                description: 'Микс салатов, говядина сувит, помидоры черри, лук, соус медово-горчичный',
+                category: "Салаты"
+            },
+            "Лосось": {
+                title: `Лосось`,
+                price: 580,
+                description: 'Микс салатов, помидоры черри, руккола, лосось, апельсиновая заправка',
+                category: "Салаты"
+            },
+            "Цезарь с курицей": {
+                title: `Цезарь с курицей`,
+                price: 480,
+                description: 'Салат айсберг, филе куриное, помидоры черри, сыр пармезан, заправка',
+                category: "Салаты"
+            },
+            "Honey day": {
+                title: `Honey day`,
+                price: 260,
+                description: '',
+                category: "Десерты"
+            },
+            "Чизкейк": {
+                title: `Чизкейк`,
+                price: 260,
+                description: '',
+                category: "Десерты"
+            },
+            "Профитроли": {
+                title: `Профитроли`,
+                price: 260,
+                description: '',
+                category: "Десерты"
+            },
+            "Картофель фри": {
+                title: `Картофель фри`,
+                price: 150,
+                description: '',
+                category: "Гарниры"
+            },
+            "Картофель по-деревенски": {
+                title: `Картофель по-деревенски`,
+                price: 150,
+                description: '',
+                category: "Гарниры"
+            },
+            "Батат фри": {
+                title: `Батат фри`,
+                price: 150,
+                description: '',
+                category: "Гарниры"
+            }
         },
     }
 }

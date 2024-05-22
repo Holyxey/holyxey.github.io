@@ -10,7 +10,8 @@ async function videoPlayBack() {
                 "cache-control": "no-cache",
                 "pragma": "no-cache",
                 "priority": "u=1, i",
-                "token": "190D1533-5AFF-5C18-E065-025056B67B70"
+                // "token": "18F83E3B-AF20-07CB-E065-025056B67B70"
+                "token": "190EFBDF-DAE1-6775-E065-025056B67B70"
             },
             "referrer": "https://video.linkvideo.ru/",
             "referrerPolicy": "strict-origin-when-cross-origin",
