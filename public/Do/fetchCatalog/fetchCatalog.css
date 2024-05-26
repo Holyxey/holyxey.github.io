@@ -176,6 +176,24 @@ body {
     border-radius: .25rem .25rem 0 0;
 }
 
+#langButton {
+    position: fixed;
+    top: 4rem;
+    left: 2rem;
+    cursor: pointer;
+    font-family: 'Roboto', 'Helvetica', sans-serif;
+
+    padding: .75rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100vmin;
+
+    background-color: var(--dark);
+    color: var(--back);
+    border: 1px solid var(--back);
+}
+
 #productImgOpened {
     position: fixed;
     top: 0;
@@ -212,6 +230,13 @@ body {
     to {opacity: 1; translate: 0 0}
 }
 
+@media (max-width: 1366px) {
+    #langButton {
+        left: 5rem;
+        top: auto;
+        bottom: 2rem;
+    }
+}
 @media (max-width: 450px) {
     #fetchCatalog {
         gap: 2rem;

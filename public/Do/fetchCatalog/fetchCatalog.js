@@ -2173,7 +2173,12 @@ let catalogData = {
         }
     ],
     "slice": 1,
-    "partlinks": [],
+    "partlinks": {
+        "440476826831": {
+            "infotext": "Non-alcoholic",
+            "infourl": "Non-alcoholic"
+        }
+    },
     "parts": [
         {
             "uid": 453748185671,
@@ -2249,14 +2254,6 @@ let catalogData = {
             },
             "values": [
                 {
-                    "id": 28145390,
-                    "value": "Bombay Sapphire &amp; Tonic"
-                },
-                {
-                    "id": 28145394,
-                    "value": "Gin &amp; Tonic"
-                },
-                {
                     "id": 28105302,
                     "value": "американо"
                 },
@@ -2267,14 +2264,6 @@ let catalogData = {
                 {
                     "id": 27866602,
                     "value": "базовый"
-                },
-                {
-                    "id": 27866646,
-                    "value": "вар 1"
-                },
-                {
-                    "id": 27866650,
-                    "value": "вар 2"
                 },
                 {
                     "id": 27866638,
@@ -2317,10 +2306,6 @@ let catalogData = {
                     "value": "мандарин"
                 },
                 {
-                    "id": 28145482,
-                    "value": "пиво Khoffner 0.45"
-                },
-                {
                     "id": 28201098,
                     "value": "с камамбером, страчателлой и томленой грушей, луковым мармеладом"
                 },
@@ -2335,10 +2320,6 @@ let catalogData = {
                 {
                     "id": 27866622,
                     "value": "сезонный"
-                },
-                {
-                    "id": 28145486,
-                    "value": "сидр Andreev Meridian Breeze 0.75"
                 },
                 {
                     "id": 28105270,
@@ -2389,6 +2370,34 @@ let catalogData = {
 };
 
 const catalogLink = `https://store.tildaapi.com/api/getproductslist/?storepartuid=227151755511&recid=748764525&c=1715780724989&getparts=true&getoptions=true&slice=1&size=100`;
+const catalogLanguageCheck = () => {
+    let localStorageLang = localStorage.getItem("doMenuLanguage");
+    let byHref = '/eng';
+    const agentLang = navigator.language || navigator.userLanguage;
+    let href = window.location.href;
+    const renderLangButton = (inner, changeTo) => {
+        if (!document.getElementById('langButton')) {
+            document.body.insertAdjacentHTML("afterbegin", `<a id="langButton">${inner}</a>`);
+        }
+        document.getElementById('langButton').onclick = () => {
+            localStorage.setItem("doMenuLanguage", changeTo);
+            location.reload()
+        }
+    }
+    if (localStorageLang === 'eng') {
+        renderLangButton('На русском', "rus")
+        return 'eng';
+    } else
+    if (localStorageLang === 'rus') {
+        renderLangButton('In English', "eng")
+        return 'rus';
+    } else
+    if (href.includes(byHref) || agentLang.includes('en')) {
+        renderLangButton('На русском', "rus")
+        return 'eng'
+    }
+}
+    // Языковой обработчик. Возвращает "eng" / "rus" в зависимости от правил
 const catalogNavOnScroll = () => {
     let c = document.querySelector('.active')
     c.scrollIntoView()
@@ -2455,7 +2464,18 @@ const catalogRenderMenuNav = () => {
     body.insertAdjacentHTML('afterbegin', `<nav id="menuNavbar"></nav>`); // Создаем блок навбара
     let nav = document.getElementById('menuNavbar');
     catalogData.parts.forEach(part => {
-        nav.insertAdjacentHTML('beforeend', `<button title="${part.title}" class="navButton" onclick="catalogNavScroll(this)">${part.title}</button>`);
+        let catID = part.uid.toString();
+        let engList = catalogData.partlinks;
+        if (catalogLanguageCheck() === 'eng' && engList.hasOwnProperty(catID)) {
+            let name = engList[catID].infotext;
+            nav.insertAdjacentHTML('beforeend',
+                `<button title="${name}" class="navButton" onclick="catalogNavScroll(this)">${name}</button>`
+            );
+        } else {
+            nav.insertAdjacentHTML('beforeend',
+                `<button title="${part.title}" class="navButton" onclick="catalogNavScroll(this)">${part.title}</button>`
+            );
+        }
     })
     body.insertAdjacentHTML('beforeend', `<div id="mobMenu" clicked="0" onclick="catalogMenuButton()"><div class="hr"></div><div class="hr"></div></div>`);
 }
@@ -2463,13 +2483,28 @@ const catalogRenderMenuNav = () => {
 const catalogRenderProduct = (productCounter) => {
     const getPrice = (price) => {
         if (price.slice(0, -5).length <= 3) {
-            return `<div class="productPrice">${Number(price)} p.</div>`
-        } else return `<div class="productPrice">${Number(price/1000)} т.p.</div>`
+            if (catalogLanguageCheck() === 'eng') {
+                return `<div class="productPrice">${Number(price)} rub.</div>`
+            } else {
+                return `<div class="productPrice">${Number(price)} p.</div>`
+            }
+        }
+        else {
+            if (catalogLanguageCheck() === 'eng') {
+                return `<div class="productPrice">${Number(price)} rub.</div>`
+            } else {
+                return `<div class="productPrice">${Number(price)/1000} т.p.</div>`
+            }
+        }
     }
     const getVariants = (variants) => {
         let q = '';
         variants.forEach(key => {
-            q += `<p class="variant">${key["Вариант"]}</p>`
+            if (catalogLanguageCheck() === 'eng' && key.hasOwnProperty("Variant")) {
+                q += `<p class="variant">${key["Variant"]}</p>`
+            } else {
+                q += `<p class="variant">${key["Вариант"]}</p>`
+            }
         })
         return `<div class="productVariants">${q}</div>`
     }
@@ -2480,34 +2515,57 @@ const catalogRenderProduct = (productCounter) => {
         })
         return `<div class="productGallery">${q}</div>`
     }
-    return `
-<article class="product">
-        <div class="productHeader">
-            <h4 class="productTitle">${catalogData.products[productCounter].title}</h4>
-            ${(catalogData.products[productCounter].price > 1)
-                ? `${getPrice(catalogData.products[productCounter].price)}`
-                : ``}
-        </div>
-        ${catalogData.products[productCounter].descr
-            ? `<p class="productDescription">${catalogData.products[productCounter].descr}</p>`
-            : ''}
-        ${(catalogData.products[productCounter].editions.length > 1)
+    if (catalogLanguageCheck() === 'eng') {
+        return `
+        <article class="product">
+                <div class="productHeader">
+                    ${catalogData.products[productCounter].prod_variants
+            ? `<h4 class="productTitle">${catalogData.products[productCounter].prod_variants}</h4>` 
+            : `<h4 class="productTitle">${catalogData.products[productCounter].title}</h4>`}
+                    ${(catalogData.products[productCounter].price > 1)
+            ? `${getPrice(catalogData.products[productCounter].price)}`
+            : ``}
+                </div>
+                ${catalogData.products[productCounter].prod_variants2
+            ? `<p class="productDescription">${catalogData.products[productCounter].prod_variants2}</p>`
+            : `<p class="productDescription">${catalogData.products[productCounter].descr}</p>`}
+                ${(catalogData.products[productCounter].editions.length > 1)
             ? `${getVariants(catalogData.products[productCounter].editions)}`
             : ``}
-        ${(JSON.parse(catalogData.products[productCounter].gallery).length >= 1)
+                ${(JSON.parse(catalogData.products[productCounter].gallery).length >= 1)
             ? `${getImages(JSON.parse(catalogData.products[productCounter].gallery))}`
             : ``}
-</article>`
+        </article>`
+    } else {
+        return `
+        <article class="product">
+                <div class="productHeader">
+                    <h4 class="productTitle">${catalogData.products[productCounter].title}</h4>
+                    ${(catalogData.products[productCounter].price > 1)
+                    ? `${getPrice(catalogData.products[productCounter].price)}`
+                    : ``}
+                </div>
+                ${catalogData.products[productCounter].descr
+                    ? `<p class="productDescription">${catalogData.products[productCounter].descr}</p>`
+                    : ''}
+                ${(catalogData.products[productCounter].editions.length > 1)
+                    ? `${getVariants(catalogData.products[productCounter].editions)}`
+                    : ``}
+                ${(JSON.parse(catalogData.products[productCounter].gallery).length >= 1)
+                    ? `${getImages(JSON.parse(catalogData.products[productCounter].gallery))}`
+                    : ``}
+        </article>`
+    }
 }
     // Производим рендер товара по его ID (string)
 const catalogImgOpen = (img) => {
     document.body.insertAdjacentHTML( `afterbegin`, `<div id="productImgOpened" onclick="catalogImgClose(this)"><img src="${img.src}" alt=""></div>`)
 }
-// Открываем картинку на весь экран
+    // Открываем картинку на весь экран
 const catalogImgClose = (img) => {
     img.remove()
 }
-// Закрываем картинку на весь экран
+    // Закрываем картинку на весь экран
 const catalogRender = (data) => {
     catalogRenderMenuNav()
     const catalogRenderCheck = (uid) => {
@@ -2523,13 +2581,24 @@ const catalogRender = (data) => {
     for (let i = 0; i < data.products.length; i++) {
         let catalogDiv = document.getElementById('fetchCatalog')
         let catID = data.products[i].partuids.slice(1, -1)
+        let engList = catalogData.partlinks;
         
         if (catalogRenderCheck(catID) === false) {
-            catalogDiv.innerHTML +=
-                `<article id="category_${catID}" class="category">
+            if (catalogLanguageCheck() === 'eng' && engList.hasOwnProperty(catID)) {
+                let name = engList[catID].infotext;
+                catalogDiv.innerHTML +=
+                    `<article id="category_${catID}" class="category">
+                    <div class="categoryHeader"><h1 title="${name}" class="categoryTitle">${name}</h1></div>
+                    ${catalogRenderProduct(i)}
+                </article>`
+            }
+            else {
+                catalogDiv.innerHTML +=
+                    `<article id="category_${catID}" class="category">
                     <div class="categoryHeader"><h1 title="${catalogGetCategoryHeader(catID)}" class="categoryTitle">${catalogGetCategoryHeader(catID)}</h1></div>
                     ${catalogRenderProduct(i)}
                 </article>`
+            }
         }  // Рендерим категорию и продукт внутри
         else if (catalogRenderCheck(catID) === true) {
             document.getElementById(`category_${catID}`).innerHTML +=
