@@ -1,0 +1,646 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Unbounded:wght@200..900&display=swap');
+/*
+*/
+
+:root {
+    --back: #1e1b23;
+    --back-o: rgba(19, 18, 21, 0.87);
+    --white: #EEF0F2;
+    --white-o: #EEF0F2de;
+    --white-oo: #EEF0F250;
+    --good : #158763;
+    --bad: #EF767A;
+    --blue: #0081AF;
+    --wine: #a4315b;
+
+    --unbounded: "Unbounded", sans-serif;
+    --roboto: "Roboto", sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    scrollbar-color: var(--white-o) var(--back);
+    scrollbar-width: thin;
+    scroll-behavior: smooth;
+}
+body {
+    background: url("https://optim.tildacdn.com/tild3963-6339-4231-a231-633830323034/-/format/webp/pattern5.png") var(--back) fixed;
+    background-size: 5rem;
+    font-family: var(--roboto);
+    color: var(--white);
+    overflow-x: hidden;
+}
+::-webkit-scrollbar-thumb {
+    background: #F8F3C8;
+    border-radius: 1rem;
+}
+::-webkit-scrollbar-track {
+    background: #222;
+}
+::-webkit-scrollbar {
+    height: 2px;
+    width: 2px;
+    background: transparent;
+}
+#multi-page {
+    width: 100%;
+}
+#multi-page ul {
+    list-style: none !important;
+    padding-left: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+#multi-page h1 {
+    font-size: 2.5rem;
+    font-family: var(--unbounded);
+    line-height: 1;
+}
+#multi-page h2 {
+    font-size: 2.2rem;
+    font-family: var(--roboto);
+    font-weight: 500;
+    line-height: 1;
+}
+
+#multi-page .blur {
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+}
+#multi-page .shadow {
+    box-shadow: 0 0 20px #111111;
+}
+#multi-page .border {
+    border: 1px solid #ffffff20;
+}
+
+/*nav*/
+#multi-page nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: fixed;
+    top: 1rem;
+    left: 0;
+    right: 0;
+
+    z-index: 922016;
+}
+#multi-page nav * {
+    transition: .3s;
+}
+#multi-page menu#menuList {
+    list-style: none;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-inline-start: 0;
+    width: fit-content;
+    margin-inline: 1rem;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    gap: .25rem;
+    border-radius: 2rem;
+
+    background-color: var(--wine);
+}
+#multi-page menu#menuList li.navPCItem {
+    width: fit-content;
+    margin-inline: auto;
+}
+#multi-page menu#menuList li.navPCItem a {
+    display: block;
+    padding: .5rem 1rem;
+    text-decoration: none !important;
+    color: var(--white);
+    border-radius: 100vmin;
+    cursor: pointer;
+    text-align: center;
+
+    &:hover {
+        transition: color .3s, background-color .3s;
+        background-color: var(--white);
+        color: var(--back);
+    }
+}
+#multi-page menu#menuList li#mobileNavStroke {
+    display: none;
+}
+#multi-page menu#menuList li#mobileNavStroke img {
+    display: block;
+}
+#multi-page menu#menuList li#mobileNavStroke ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+#multi-page menu#menuList li#mobileNavStroke ul li {
+}
+#multi-page menu#menuList li#mobileNavStroke ul #mobLogo {
+    height: 3rem;
+    width: 3rem;
+}
+#multi-page menu#menuList li#mobileNavStroke ul #monMenuButton {
+    height: 3rem;
+    width: 3rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+
+    background-color: var(--wine);
+    border: 1px solid var(--white-o);
+    border-radius: 100vmin;
+}
+#multi-page menu#menuList li#mobileNavStroke ul #monMenuButton .menuButtonHR {
+    width: 60%;
+    height: 1px;
+    background-color: var(--white-o);
+}
+
+/*Header*/
+#multi-page header #hero {
+    background: url(https://optim.tildacdn.com/tild3562-3163-4965-a330-643466333938/-/format/webp/heroBlurred.jpg) center / cover;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 2rem;
+
+    position: relative;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+}
+#multi-page header #heroContactButtons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+#multi-page header #heroContactButtons #buttonsList {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    background-color: var(--back-o);
+    padding: .5rem !important;
+    border-radius: 1rem;
+}
+#multi-page header #heroContactButtons .heroButton {
+    display: block;
+    background-color: var(--white);
+    padding: .5rem 1rem;
+    border-radius: .5rem;
+
+    text-decoration: none !important;
+    color: var(--back) !important;
+}
+#multi-page header #heroContactButtons .heroSocialButtons {
+}
+#multi-page header #heroContactButtons .heroSocialButtons a {
+    text-decoration: none !important;
+}
+#multi-page header #heroContactButtons .heroSocialButtons svg {
+    margin: auto .5rem;
+    height: 1.5rem;
+}
+#multi-page header #hero #booking {
+    background-color: var(--back-o);
+    width: 100%;
+    padding: 2rem 4rem;
+    border-radius: 1rem;
+}
+#multi-page header #heroHeadLines {
+    padding: 4rem 1rem;
+    margin: auto;
+    width: 100%;
+    max-width: 1200px;
+    z-index: 2;
+}
+#multi-page header #heroVideo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    background-color: #13121550;
+    z-index: 1;
+    overflow: hidden;
+}
+#multi-page header #heroVideo > * {
+    /*min-width: 100%;*/
+    /*min-height: 100%;*/
+    aspect-ratio: 16 / 9;
+    pointer-events: none;
+}
+
+.znms-widget__module-form-block {
+    top: auto !important;
+    bottom: 2rem !important;
+    left: 2rem !important;
+    right: 2rem !important;
+    border-radius: 2rem !important;
+}
+.znms-widget__module-form-block__wrap {
+    max-width: unset !important;
+}
+.znms-widget__v-color8 {
+    background-color: var(--wine) !important;
+}
+.znms-widget__module-form-block__item--lg {
+    display: none !important;
+}
+
+/*Pop-up*/
+#popup-block {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 100dvh;
+    z-index: 100500900;
+    overflow-y: auto;
+
+    background-color: var(--back-o);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-block: 0 2rem;
+    gap: 2rem;
+
+    opacity: 0;
+    animation: showpopup .3s ease-out forwards;
+}
+#popup-block .popUpHeader {
+    padding-top: 2rem;
+}
+#popup-block .weather {
+    background-color: var(--blue);
+    max-width: 1200px;
+    border-radius: 1rem;
+    width: 100%;
+}
+#popup-block .weather > a {
+    border-radius: 1rem;
+}
+#popup-block #video-stream {
+    max-width: 1200px;
+    border-radius: 1rem;
+    width: 100%;
+    aspect-ratio: 16 / 9 !important;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#popup-block #video-stream .sldp_player_wrp {
+    border-radius: 1rem;
+}
+#popup-block #video-stream .sldp_player_wrp  video {
+    border-radius: 1rem;
+}
+.sldp_volume_desktop {
+    display: none;
+}
+#popup-block video {
+    border-radius: 1rem;
+}
+#close-popup {
+    position: fixed;
+    display: block;
+    top: 2rem;
+    right: 2rem;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    cursor: pointer;
+    z-index: 100900500;
+}
+
+/*Weather*/
+#weatherTest {
+    display: flex;
+    gap: .5rem;
+    max-width: 1200px;
+    background-color: var(--blue);
+    padding: .5rem;
+    border-radius: 0 0 2rem 2rem;
+}
+#weatherTest * {
+    transition: all .3s ease-out;
+}
+#weatherTest .weatherDay {
+}
+#weatherTest .todayHeader {
+    font-family: var(--unbounded);
+    padding: 0 1rem .5rem 1rem;
+    text-align: center;
+}
+#weatherTest .hourly {
+    flex: 1;
+    color: var(--back);
+    font-size: 1rem;
+    padding: .5rem;
+    background-color: var(--white);
+    border-radius: 1.5rem;
+}
+#weatherTest .hourly .hour {
+    padding: .25rem;
+    font-size: 1rem;
+}
+#weatherTest .hourly .morning {
+
+}
+#weatherTest .hourly .day {
+
+}
+#weatherTest .hourly .evening {
+
+}
+
+/*Restaurant menu*/
+#terruarMenu {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 2rem;
+    max-width: 1200px;
+    margin-inline: .5rem;
+}
+#terruarMenu .menuCategory {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 2rem 1rem;
+    min-width: fit-content;
+
+    background-color: var(--wine);
+    padding: 1rem;
+    border-radius: 1rem;
+}
+#terruarMenu .menuCategory .categoryHeader {
+    width: 100%;
+    height: fit-content;
+    font-weight: 500;
+    border-bottom: 1px solid var(--white-oo);
+}
+#terruarMenu .menuCategory .product {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+#terruarMenu .menuCategory .product .productTitle {
+    font-size: 1.2rem;
+    font-weight: 500;
+    width: fit-content;
+}
+#terruarMenu .menuCategory .product .productDescription {
+    width: fit-content;
+    color: var(--white-o);
+    font-weight: 300;
+}
+#terruarMenu .menuCategory .product .productPrice {
+    background-color: var(--white);
+    width: fit-content;
+    padding: .5rem 1rem;
+    border-radius: 1rem;
+    color: var(--wine);
+    margin-top: auto;
+}
+#restaurantGallery {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1200px;
+    aspect-ratio: 16 / 9;
+    min-height: 50dvh;
+    gap: 1rem;
+    overflow-x: auto;
+    border-radius: 1rem;
+    scroll-snap-type: x mandatory;
+    direction: ltr;
+}
+#restaurantGallery img {
+    display: block;
+    max-height: 100%;
+    max-width: 95dvw;
+    border-radius: 1rem;
+    scroll-snap-align: center;
+
+    animation: showpopup .3s ease-out forwards;
+}
+#restaurantGallery[class=vertical] {
+    max-width: 100%;
+    aspect-ratio: unset;
+}
+
+/*Base section*/
+#multi-page .base-section {
+    max-width: 1400px;
+    margin: 4rem auto;
+}
+#multi-page .section-inner {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/*Hero offers*/
+#multi-page #hero-offers {
+    /*margin: 1rem auto 4rem auto;*/
+    margin: 1rem auto 1rem auto;
+} /*Измени маржин после того как доделаешь все страницы!*/
+#multi-page #hero-offers .section-inner > article {
+    flex: 1 0 300px;
+    max-width: calc(1400px / 3);
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem;
+    border-radius: 3rem;
+    margin-inline: .5rem;
+
+    cursor: pointer;
+    background-color: var(--back-o);
+    border: 1px solid transparent;
+
+    transition: scale .3s ease-out;
+
+    &:active {
+        scale: 0.98;
+    }
+}
+#multi-page #hero-offers .section-inner > article > .hero-offer-text {
+    display: flex;
+    flex-direction: column;
+    padding-inline: 1rem;
+    gap: .5rem;
+}
+#multi-page #hero-offers .section-inner > article > .hero-offer-text .hero-offer-header {
+    display: flex;
+    gap: 1rem;
+}
+#multi-page #hero-offers .section-inner > article > .hero-offer-text .hero-offer-header img {
+    display: none;
+
+    height: 25px;
+    width: 25px;
+    pointer-events: none;
+
+        border-radius: 100vmin;
+        background-color: var(--white-oo);
+        color: transparent;
+}
+#multi-page #hero-offers .section-inner > article > .hero-offer-text .hero-offer-header h4 {
+    font-family: var(--unbounded);
+    font-weight: 500;
+    font-size: 1.3rem;
+}
+#multi-page #hero-offers .section-inner > article > img {
+    flex: 1;
+    display: block;
+    width: 100%;
+    border-radius: 2rem;
+}
+#multi-page #hero-offers .section-inner > article .hero-offer-description {
+    font-size: 1.1rem;
+    font-family: var(--roboto);
+    font-weight: 300;
+    color: var(--white-o);
+}
+#multi-page #hero-offers .section-inner > article a {
+    text-decoration: none !important;
+    color: var(--white) !important;
+    margin: 0 1rem 0 auto;
+}
+
+/*}*/
+
+@keyframes showpopup {
+    from { opacity: 0; translate: 0 -2rem}
+    to { opacity: 1; translate: 0 0}
+}
+@keyframes hidepopup {
+    from { opacity: 1; translate: 0 0 }
+    to { opacity: 0; translate: 0 -2rem}
+}
+@keyframes showVideoOpacity {
+    from { opacity: 0; filter: blur(25px); -webkit-filter: blur(25px);}
+    to { opacity: .5; filter: blur(0); -webkit-filter: blur(0);}
+}
+@keyframes smoothShowHorizontal {
+    5% {scale: 1; transform: perspective(100rem) rotate3d(0,1,0, 0deg); translateX(0) margin-right: initial; z-index: 0}
+    40% {scale: .8; transform: perspective(100rem) rotate3d(0,1,0, 40deg) translateX(-20%); margin-right: -45%; z-index: -1}
+    50% {scale: .8; transform: perspective(100rem) rotate3d(0,1,0, 40deg) translateX(-20%); margin-right: -45%; z-index: -1}
+    95% {scale: 1; transform: perspective(100rem) rotate3d(0,1,0, 0deg) translateX(0); margin-right: initial; z-index: 0}
+}
+
+/*
+*/
+@media screen and (max-width: 600px) {
+    .znms-widget__module-form-block {
+        top: auto !important;
+        bottom: 0rem !important;
+        left: 0rem !important;
+        right: 0rem !important;
+        border-radius: 2rem !important;
+    }
+
+    #multi-page h1 {
+        font-size: 2rem;
+    }
+    #multi-page h2 {
+        font-size: 1.7rem;
+    }
+
+    #multi-page menu#menuList {
+        width: 100%;
+        padding: .5rem;
+        display: block;
+        margin-inline: .5rem;
+    }
+    #multi-page menu#menuList li#mobileNavStroke {
+        display: block;
+    }
+    #multi-page menu#menuList li.navPCItem {
+        display: none;
+    }
+
+    #multi-page header #hero {
+        padding: .5rem;
+        margin-inline: .5rem;
+    }
+    #multi-page header #heroContactButtons #buttonsList {
+        border-radius: 2rem;
+        background-color: transparent;
+    }
+
+    #popup-block {
+        padding-bottom: 2rem;
+    }
+    #weatherTest {
+        top: 0;
+        left: 0;
+        right: 0;
+        gap: .25rem;
+        flex-wrap: wrap;
+        border-radius: 0 0 1.5rem 1.5rem;
+    }
+    #weatherTest p {
+        text-align: center;
+    }
+    #weatherTest .weatherDay:nth-child(1) {
+        width: 100%;
+    }
+    #weatherTest .weatherDay:not(:nth-child(1)) {
+        flex: 1;
+    }
+    #weatherTest .weatherDay:not(:nth-child(1)) .morning,
+    #weatherTest .weatherDay:not(:nth-child(1)) .evening {
+        display: none;
+    }
+
+    #terruarMenu .menuCategory {
+        gap: 1rem;
+        width: unset;
+    }
+    #terruarMenu .menuCategory .product {
+        flex: 1 0 60%;
+    }
+
+    /*Hero offers*/
+    #multi-page #hero-offers .section-inner {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        width: 100%;
+        overflow: visible;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding-inline: 5dvw;
+    }
+    #multi-page #hero-offers .section-inner > article {
+        flex: 1 0 90dvw;
+        scroll-snap-align: center;
+    }
+}

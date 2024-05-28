@@ -111,14 +111,14 @@ const multipage = {
         const multiPage = document.getElementById('multi-page')
         const getVideoStream = (target) => {
             let q;
-            if (target.textContent === 'Трансляция' && this.getUserAgent() === 'Safari') {
+            if (target.textContent === 'Терруар онлайн' && this.getUserAgent() === 'Safari') {
                 q = `<article id="video-stream">
                     <video controls autoplay muted playsinline loop style="width: 100%">
                         <source id="videoPlayBack" src="" type="video/mp4">
                     </video></article>`
                 videoPlayBack().then()
             }
-            else if (target.textContent === 'Трансляция' && this.getUserAgent() !== 'Safari') {
+            else if (target.textContent === 'Терруар онлайн' && this.getUserAgent() !== 'Safari') {
                 q = `<article id="video-stream"><div id='streamPlayer'></div></article>`
             }
             return q;
@@ -146,14 +146,14 @@ const multipage = {
                         <svg width="50px" viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg"><g stroke-width="0"/><g stroke-linecap="round" stroke-linejoin="round"/><path d="M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2 2 6.5 2 12s4.5 10 10 10m-2.83-7.17 5.66-5.66m0 5.66L9.17 9.17" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                     </div>
                 <div class="blur" id="popup-block">
-                    <article id="weatherTest"></article>
-                    <h2>${target.textContent}</h2>
-                    ${target.textContent === 'Трансляция' ? getVideoStream(target) : ''}
-                    ${target.textContent === 'Трансляция' ? initPlayer() : ''}
+                    ${target.textContent === 'Терруар онлайн' ? `<article id="weatherTest"></article>` : ''}
+                    <h2 class="popUpHeader">${target.textContent}</h2>
+                    ${target.textContent === 'Терруар онлайн' ? getVideoStream(target) : ''}
+                    ${target.textContent === 'Терруар онлайн' ? initPlayer() : ''}
                     ${target.textContent === 'Ресторан' ? getGallery() : ''}
                     ${target.textContent === 'Ресторан' ? getMenu(target) : ''}
                 </div>`) // Рендер поп-апа
-        getWeatherForecast();
+        getWeatherForecast().then()
     }, // Показ поп-апа
     remPopup(){
         this.changeScroll()
@@ -163,7 +163,7 @@ const multipage = {
         const mobileMenuButton = document.getElementById('monMenuButton')
         popup.style.animation = 'hidepopup .3s ease-out forwards'
         closeButton.style.animation = 'hidepopup .3s ease-out forwards'
-        weatherBlock.style.animation = 'hidepopup .3s ease-out forwards'
+        // weatherBlock.style.animation = 'hidepopup .3s ease-out forwards'
         setTimeout(()=>{popup.remove(); closeButton.remove(); weatherBlock.remove()}, 300)
     }, // Сброс поп-апа
     changeScroll(){
@@ -201,18 +201,45 @@ const multipage = {
         let mobNav = document.getElementById('mobileNavStroke');
         let widgetBooking = document.querySelector('.znms-widget__module-form-block');
         if (mobNav.offsetHeight < 1) {
-            let height = `calc(${window.innerHeight}px - ${nav.offsetHeight}px - 3rem)`;
-            let margin = `${nav.offsetHeight}px`
-            hero.style.cssText = `height:${height}; margin-top: ${margin}`;
+            let height = `calc(${window.innerHeight}px - ${nav.clientHeight}px - 3rem)`;
+            let margin = `calc(${nav.clientHeight}px + 2rem)`
+            hero.style.cssText += `min-height:${height}; margin-top: ${margin}`;
         } else {
             let height = `unset`;
-            let margin = `calc(${mobNav.offsetHeight}px + 2rem)`
-            hero.style.cssText = `height:${height}; margin-top: ${margin}`;
+            let margin = `calc(${nav.offsetHeight}px)`
+            hero.style.cssText += `min-height:${height}; margin-top: ${margin}`;
         }
     },
     hideMobileMenu() {
         let btn = document.getElementById('monMenuButton');
         if (btn.getBoundingClientRect().width > 0) return btn.click();
+    },
+    randomIng: function (max) {
+        return  Math.floor(Math.random() * (max));
+    },
+    mobileBackImages: [
+        'https://optim.tildacdn.com/tild3534-3435-4839-b839-366337373937/-/format/webp/IMAGE_2024-04-11_170.jpg',
+        'https://optim.tildacdn.com/tild3837-6638-4535-a238-663235623730/-/format/webp/KIR_3052.jpg',
+        'https://optim.tildacdn.com/tild3739-6138-4236-a436-313339626532/-/format/webp/IMAGE_2024-04-11_173.jpg',
+        //'https://optim.tildacdn.com/tild3539-6266-4461-a633-376165353133/-/format/webp/IMAGE_2024-04-11_174.jpg',
+    ],
+    heroVideoStart: function () {
+        const videoBlock = document.getElementById('heroVideo');
+        const hero = document.getElementById('hero');
+        if (window.innerWidth > 600) {
+            videoBlock.insertAdjacentHTML("beforeend",
+                `<video style="opacity: 0" loop autoplay playsinline muted src="https://holyxey.github.io/public/Terruar/multipage/sources/video/Terruar%20Summer.mp4" title="Terruar hero video"></video>`)
+            videoBlock.querySelector('video').oncanplay = function(e) {
+                const videoPlayer = e.target;
+                videoPlayer.play();
+                videoPlayer.style.cssText += 'animation: showVideoOpacity 1s ease-out forwards'
+                hero.style.cssText = `background: none`
+                multipage.getHeaderHeight()
+            };
+        } else {
+            hero.style.cssText = `background: url(${multipage.mobileBackImages[multipage.randomIng(multipage.mobileBackImages.length)]}) center / cover`
+            multipage.getHeaderHeight()
+        }
     },
     mobileMenu: {
         btnClck(el){
@@ -221,17 +248,14 @@ const multipage = {
             let mainList = document.getElementById('menuList')
             let buttonLines = document.querySelectorAll('.menuButtonHR')
             if (el.getAttribute('data-clicked') === '0') {
-                let tmt = 100;
+                let tmt = 0;
                 menuPoints.forEach(point => {
                     point.style.opacity = '0'
                         setTimeout(function () {point.style.opacity = 1}, tmt)
-                        tmt+=70
+                        tmt+=20
                     point.style.display = 'block'
-                    point.style.width = '100%'
-                    point.style.textAlign = 'center'
                     point.style.marginBlock = '.5rem'
                 })
-                nav.style.height = '70vh'
                 el.style.backgroundColor = 'var(--white)'
                 buttonLines.forEach(line => {
                     line.style.backgroundColor = 'var(--wine)'
@@ -243,7 +267,6 @@ const multipage = {
                 menuPoints.forEach(point => {
                     point.style.display = 'none'
                 })
-                nav.style.height = '4rem'
                 el.style.backgroundColor = 'var(--wine)'
                 buttonLines.forEach(line => {
                     line.style.backgroundColor = 'var(--white)'
@@ -252,14 +275,36 @@ const multipage = {
                 el.setAttribute('data-clicked', '0')
             }
         }
+    },
+    smoothShowHorizontal: function () {
+        const parentElements = [
+            document.getElementById('hero-offers').children[0],
+        ]
+        parentElements.forEach(parentElement => {
+            const waitOnTheViewPort = setInterval(() => {
+                if (parentElement.getBoundingClientRect().top + 250 > window.innerHeight) {
+
+                } else {
+                    parentElement.children[0].style.animation = `smoothShowHorizontal 3s ease-in-out`
+                    clearInterval(waitOnTheViewPort);
+                }
+            }, 1000)
+        })
     }
 }
-window.onresize = () => {
+window.addEventListener("resize", () => {
     multipage.getHeaderHeight()
-}
-window.onload = () => {
+})
+window.addEventListener("load", () => {
     multipage.getHeaderHeight()
-}
+    if (window.innerWidth < 600) {
+        multipage.smoothShowHorizontal()
+    }
+})
+document.addEventListener("DOMContentLoaded", () => {
+    multipage.getHeaderHeight()
+    multipage.heroVideoStart()
+})
 
 // Инициализация трансляции
 function initPlayer() {
@@ -330,11 +375,6 @@ async function getWeatherForecast() {
         const { hourly } = data;
         const { temperature_2m, rain, time } = hourly;
         hourlyList = temperature_2m
-
-
-        // for (let i = 0; i < time.length; i++) {
-        //     console.log(`Hour ${i}: Temperature - ${temperature_2m[i]}°C, Rain - ${rain[i]}mm`);
-        // }
         weatherTestRender(days);
     } catch (error) {
         console.error('Error fetching weather data:', error);
