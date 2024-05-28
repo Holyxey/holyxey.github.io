@@ -244,7 +244,7 @@ body {
     overflow: hidden;
 }
 #multi-page header #heroVideo > * {
-    /*min-width: 100%;*/
+    min-width: 100%;
     /*min-height: 100%;*/
     aspect-ratio: 16 / 9;
     pointer-events: none;
@@ -593,6 +593,7 @@ body {
     }
     #multi-page header #heroContactButtons #buttonsList {
         border-radius: 2rem;
+        flex-direction: column;
         background-color: transparent;
     }
 
