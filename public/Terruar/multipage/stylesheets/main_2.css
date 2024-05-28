@@ -167,6 +167,7 @@ body {
     height: 1px;
     background-color: var(--white-o);
 }
+/*!nav*/
 
 /*Header*/
 #multi-page header #hero {
@@ -250,6 +251,7 @@ body {
     pointer-events: none;
 }
 
+/*Booking*/
 .znms-widget__module-form-block {
     top: auto !important;
     bottom: 2rem !important;
@@ -266,6 +268,7 @@ body {
 .znms-widget__module-form-block__item--lg {
     display: none !important;
 }
+/*!Header*/
 
 /*Pop-up*/
 #popup-block {
@@ -335,6 +338,7 @@ body {
     cursor: pointer;
     z-index: 100900500;
 }
+/*!Pop-up*/
 
 /*Weather*/
 #weatherTest {
@@ -376,6 +380,7 @@ body {
 #weatherTest .hourly .evening {
 
 }
+/*!Weather*/
 
 /*Restaurant menu*/
 #terruarMenu {
@@ -454,6 +459,7 @@ body {
     max-width: 100%;
     aspect-ratio: unset;
 }
+/*!Restaurant menu*/
 
 /*Base section*/
 #multi-page .base-section {
@@ -464,7 +470,9 @@ body {
     display: flex;
     flex-wrap: wrap;
 }
+/*!Base section*/
 
+/*Main page*/
 /*Hero offers*/
 #multi-page #hero-offers {
     /*margin: 1rem auto 4rem auto;*/
@@ -534,6 +542,7 @@ body {
     color: var(--white) !important;
     margin: 0 1rem 0 auto;
 }
+/*!Hero offers*/
 
 /*}*/
 

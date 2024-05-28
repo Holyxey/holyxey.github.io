@@ -265,6 +265,7 @@ body, .t-body {
     border-radius: .5rem;
     font-family: 'CirceRounded', 'Circe Rounded', Arial, sans-serif;
     align-self: stretch;
+    cursor: pointer;
 }
 
 #new-camp #price .price-payments {

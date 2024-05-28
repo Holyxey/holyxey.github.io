@@ -2,6 +2,7 @@
 const videoPlayBackToken = '195C3CAD-85F2-05B9-E065-025056B67B70'
 const terruarCatalogue = {
     link: 'https://store.tildaapi.com/api/getproductslist/?storepartuid=513452425241&recid=752306605&c=1716436482010&getparts=true&getoptions=true&slice=1&size=36&projectid=5131025',
+    catalog: {},
     get parts() {
         return this.catalog.parts;
     },
@@ -36,31 +37,35 @@ const terruarCatalogue = {
     renderCategories: () => {
         if (document.getElementById('terruarMenu')) {
             let menu = document.getElementById('terruarMenu');
-            terruarCatalogue.parts.forEach(part => {
-                menu.insertAdjacentHTML('beforeend', `<div class="menuCategory" id="${part.uid}"><h4 class="categoryHeader">${part.title}</h4></div>`)
-            })
+            if (terruarCatalogue.parts) {
+                terruarCatalogue.parts.forEach(part => {
+                    menu.insertAdjacentHTML('beforeend', `<div class="menuCategory" id="${part.uid}"><h4 class="categoryHeader">${part.title}</h4></div>`)
+                })
+            }
         } else {console.log('Не обнаружен <div id="terruarMenu"></div>')}
     },
     renderProducts: () => {
         if (document.getElementById('terruarMenu')) {
             let menu = document.getElementById('terruarMenu');
-            terruarCatalogue.products.forEach(product => {
-                let partID = terruarCatalogue.getProductPart(product)
-                document.getElementById(partID).insertAdjacentHTML("beforeend",
-                    `
+            if (terruarCatalogue.products) {
+                terruarCatalogue.products.forEach(product => {
+                    let partID = terruarCatalogue.getProductPart(product)
+                    document.getElementById(partID).insertAdjacentHTML("beforeend",
+                        `
 <div class="product" id="${terruarCatalogue.getProductId(product)}">
                         ${product.title
-                        ? `<p class="productTitle">${terruarCatalogue.getProductTitle(product)}</p>`
-                        : ''}
+                            ? `<p class="productTitle">${terruarCatalogue.getProductTitle(product)}</p>`
+                            : ''}
                         ${product.descr
-                        ? `<p class="productDescription">${terruarCatalogue.getProductDescription(product)}</p> `
-                        : ''}
+                            ? `<p class="productDescription">${terruarCatalogue.getProductDescription(product)}</p> `
+                            : ''}
                         ${product.price
-                        ? `<p class="productPrice">${terruarCatalogue.getProductPrice(product)} p.</p> `
-                        : ''}
+                            ? `<p class="productPrice">${terruarCatalogue.getProductPrice(product)} p.</p> `
+                            : ''}
 </div>
 `)
-            })
+                })
+            }
         } else {
             console.log('Не обнаружен <div id="terruarMenu"></div>')}
     },
@@ -70,8 +75,12 @@ const terruarCatalogue = {
             if (!response.ok) {
                 throw new Error(`HTTP error! Status: ${response.status}`);
             }
-            terruarCatalogue.catalog = await response.json();
-        } catch (error) {console.error('Error fetching catalog:', error);}
+            if (response.ok) {
+                terruarCatalogue.catalog = await response.json();
+            }
+        } catch (error) {
+            // console.error('Error fetching catalog:', error)
+        }
     },
 }
 const restaurantGallery = {
@@ -91,34 +100,50 @@ const restaurantGallery = {
         "https://optim.tildacdn.com/tild6538-3838-4332-b963-333761386339/-/format/webp/DSC_4611-2_.JPG",
     ],
     vertical: [
-        "https://static.tildacdn.com/tild6234-3262-4536-a465-373837626336/DSC_4432-2_.JPG",
-        "https://static.tildacdn.com/tild6466-3038-4463-b737-363630623662/DSC_4876-2_.JPG",
-        "https://static.tildacdn.com/tild6462-6533-4762-b666-313337666537/DSC_4435-2_.JPG",
-        "https://static.tildacdn.com/tild6330-3664-4339-b364-383535363434/DSC_4930-2_.JPG",
-        "https://static.tildacdn.com/tild3534-6537-4563-b536-303465323663/DSC_4870-2_.JPG",
-        "https://static.tildacdn.com/tild6662-3538-4636-b637-643961333535/DSC_4448-2_.JPG",
-        "https://static.tildacdn.com/tild6239-3665-4137-b937-323531623161/DSC_4456-2_.JPG",
-        "https://static.tildacdn.com/tild3432-3438-4661-a366-366137363137/DSC_4577-2_.JPG",
-        "https://static.tildacdn.com/tild6361-3539-4533-b466-383833316338/DSC_4893-2_.JPG",
-        "https://static.tildacdn.com/tild6264-3164-4465-a432-646533636363/DSC_4915-2_.JPG",
-        "https://static.tildacdn.com/tild6364-3030-4437-b934-633130393034/DSC_4558-2_.JPG",
+        "https://optim.tildacdn.com/tild6234-3262-4536-a465-373837626336/-/format/webp/DSC_4432-2_.JPG",
+        "https://optim.tildacdn.com/tild6466-3038-4463-b737-363630623662/-/format/webp/DSC_4876-2_.JPG",
+        "https://optim.tildacdn.com/tild6462-6533-4762-b666-313337666537/-/format/webp/DSC_4435-2_.JPG",
+        "https://optim.tildacdn.com/tild6330-3664-4339-b364-383535363434/-/format/webp/DSC_4930-2_.JPG",
+        "https://optim.tildacdn.com/tild3534-6537-4563-b536-303465323663/-/format/webp/DSC_4870-2_.JPG",
+        "https://optim.tildacdn.com/tild6662-3538-4636-b637-643961333535/-/format/webp/DSC_4448-2_.JPG",
+        "https://optim.tildacdn.com/tild6239-3665-4137-b937-323531623161/-/format/webp/DSC_4456-2_.JPG",
+        "https://optim.tildacdn.com/tild3432-3438-4661-a366-366137363137/-/format/webp/DSC_4577-2_.JPG",
+        "https://optim.tildacdn.com/tild6361-3539-4533-b466-383833316338/-/format/webp/DSC_4893-2_.JPG",
+        "https://optim.tildacdn.com/tild6264-3164-4465-a432-646533636363/-/format/webp/DSC_4915-2_.JPG",
+        "https://optim.tildacdn.com/tild6364-3030-4437-b934-633130393034/-/format/webp/DSC_4558-2_.JPG",
     ]
 }
 const multipage = {
     // Pop-up init
+    popupButtonsInit: function () {
+        const buttons = document.querySelectorAll("[data-popup]")
+        buttons.forEach(button => {
+            const insideTheButton = button.querySelectorAll("*")
+            insideTheButton.forEach(el => {
+                el.setAttribute('data-popup', button.getAttribute("data-popup"));
+                el.setAttribute('data-header', button.getAttribute("data-header"));
+            })
+            button.addEventListener('click', (e) => {
+                multipage.popup(e.target)
+            })
+        })
+    },
     popup(target){
+        const dataPopup= target.getAttribute('data-popup')
+        const dataHeader = target.getAttribute('data-header')
         this.changeScroll()
+
         const multiPage = document.getElementById('multi-page')
-        const getVideoStream = (target) => {
+        const getVideoStream = () => {
             let q;
-            if (target.textContent === 'Терруар онлайн' && this.getUserAgent() === 'Safari') {
+            if (this.getUserAgent() === 'Safari') {
                 q = `<article id="video-stream">
                     <video controls autoplay muted playsinline loop style="width: 100%">
                         <source id="videoPlayBack" src="" type="video/mp4">
                     </video></article>`
                 videoPlayBack().then()
             }
-            else if (target.textContent === 'Терруар онлайн' && this.getUserAgent() !== 'Safari') {
+            else if (this.getUserAgent() !== 'Safari') {
                 q = `<article id="video-stream"><div id='streamPlayer'></div></article>`
             }
             return q;
@@ -141,17 +166,18 @@ const multipage = {
                 return `<article id="restaurantGallery" class="vertical">${q}</article>`;
             }
         }
+
         multiPage.insertAdjacentHTML('afterbegin', `
                 <div id="close-popup" onclick="multipage.remPopup()">
                         <svg width="50px" viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg"><g stroke-width="0"/><g stroke-linecap="round" stroke-linejoin="round"/><path d="M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2 2 6.5 2 12s4.5 10 10 10m-2.83-7.17 5.66-5.66m0 5.66L9.17 9.17" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </div>
-                <div class="blur" id="popup-block">
-                    ${target.textContent === 'Терруар онлайн' ? `<article id="weatherTest"></article>` : ''}
-                    <h2 class="popUpHeader">${target.textContent}</h2>
-                    ${target.textContent === 'Терруар онлайн' ? getVideoStream(target) : ''}
-                    ${target.textContent === 'Терруар онлайн' ? initPlayer() : ''}
-                    ${target.textContent === 'Ресторан' ? getGallery() : ''}
-                    ${target.textContent === 'Ресторан' ? getMenu(target) : ''}
+                    </div> <!--кнопка закрытия поп-апа-->
+                <div class="blur" id="popup-block"> <!--тело поп-апа-->
+                    ${dataPopup === 'online' ? `<article id="weatherTest"></article>` : ''} <!--условие рендера виджета с погодой-->
+                    <h2 class="popUpHeader">${dataHeader}</h2> 
+                    ${dataPopup === 'online' ? getVideoStream() : ''}
+                    ${dataPopup === 'online' ? initPlayer() : ''}
+                    ${dataPopup === 'restaurant' ? getGallery() : ''}
+                    ${dataPopup === 'restaurant' ? getMenu(target) : ''}
                 </div>`) // Рендер поп-апа
         getWeatherForecast().then()
     }, // Показ поп-апа
@@ -164,7 +190,11 @@ const multipage = {
         popup.style.animation = 'hidepopup .3s ease-out forwards'
         closeButton.style.animation = 'hidepopup .3s ease-out forwards'
         // weatherBlock.style.animation = 'hidepopup .3s ease-out forwards'
-        setTimeout(()=>{popup.remove(); closeButton.remove(); weatherBlock.remove()}, 300)
+        setTimeout(()=>{
+            popup ? popup.remove() : null;
+            closeButton ? closeButton.remove() : null;
+            weatherBlock ? weatherBlock.remove() : null;
+        }, 300)
     }, // Сброс поп-апа
     changeScroll(){
         if (document.body.style.overflow === 'hidden')
@@ -202,11 +232,11 @@ const multipage = {
         let widgetBooking = document.querySelector('.znms-widget__module-form-block');
         if (mobNav.offsetHeight < 1) {
             let height = `calc(${window.innerHeight}px - ${nav.clientHeight}px - 3rem)`;
-            let margin = `calc(${nav.clientHeight}px + 2rem)`
+            let margin = `calc(${nav.clientHeight}px)`
             hero.style.cssText += `min-height:${height}; margin-top: ${margin}`;
         } else {
             let height = `unset`;
-            let margin = `calc(${nav.offsetHeight}px)`
+            let margin = `calc(${nav.offsetHeight}px + 2rem)`
             hero.style.cssText += `min-height:${height}; margin-top: ${margin}`;
         }
     },
@@ -302,6 +332,7 @@ window.addEventListener("load", () => {
     }
 })
 document.addEventListener("DOMContentLoaded", () => {
+    multipage.popupButtonsInit()
     multipage.getHeaderHeight()
     multipage.heroVideoStart()
 })

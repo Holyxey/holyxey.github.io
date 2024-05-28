@@ -12,37 +12,37 @@
 
 <div id="multi-page">
 <header>
-    <nav>
-        <menu class="shadow" id="menuList">
-            <li class="navPCItem"><a href="#about" onclick="multipage.hideMobileMenu()">О нас</a></li>
-            <li class="navPCItem"><a href="#variants" onclick="multipage.hideMobileMenu()">Наши домики</a></li>
-            <li class="navPCItem"><a onclick="multipage.popup(this); multipage.hideMobileMenu()">Терруар онлайн</a></li>
-            <li class="navPCItem"><a onclick="multipage.popup(this); multipage.hideMobileMenu()">Ресторан</a></li>
-            <li class="navPCItem"><a href="#services" onclick="multipage.hideMobileMenu()">Услуги</a></li>
-            <li class="navPCItem"><a href="#offers" onclick="multipage.hideMobileMenu()">Акции</a></li>
-            <li class="navPCItem"><a href="#map" onclick="multipage.hideMobileMenu()">Карта</a></li>
-            <li class="navPCItem"><a href="#reviews" onclick="multipage.hideMobileMenu()">Отзывы</a></li>
-            <li class="navPCItem"><a href="#contacts" onclick="multipage.hideMobileMenu()">Контакты</a></li>
-            <li class="navPCItem"><a href="#" onclick="multipage.bookingClick(); multipage.hideMobileMenu()" style="background-color: var(--white-o); color: var(--back)!important;">Забронировать</a></li>
-            <li id="mobileNavStroke">
-                <ul>
-                    <li>
-                        <img id="mobLogo" src="https://static.tildacdn.com/tild6663-6330-4639-a131-383131653266/logoTerruar.svg" alt="Logo">
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="https://static.tildacdn.com/tild6537-3834-4232-b435-396662393032/textLogoTerruar.svg" alt="Terruar name" style="height: 20px">
-                        </a>
-                    </li>
-                    <li>
-                        <div id="monMenuButton" onclick="multipage.mobileMenu.btnClck(this)" data-clicked="0">
-                            <div class="menuButtonHR"></div>
-                            <div class="menuButtonHR"></div></div>
-                    </li>
-                </ul>
-            </li>
-        </menu>
-    </nav>
+        <nav>
+            <menu class="shadow" id="menuList">
+                <li class="navPCItem"><a href="#about" data-popup="online" data-header="Терруар онлайн" onclick="multipage.hideMobileMenu()">О нас</a></li>
+                <li class="navPCItem"><a href="#variants" onclick="multipage.hideMobileMenu()">Наши домики</a></li>
+                <li class="navPCItem"><a data-popup="online" data-header="Терруар онлайн" onclick="multipage.hideMobileMenu()">Терруар онлайн</a></li>
+                <li class="navPCItem"><a data-popup="restaurant" data-header="Ресторан" onclick="multipage.hideMobileMenu()">Ресторан</a></li>
+                <li class="navPCItem"><a href="#services" onclick="multipage.hideMobileMenu()">Услуги</a></li>
+                <li class="navPCItem"><a href="#offers" onclick="multipage.hideMobileMenu()">Акции</a></li>
+                <li class="navPCItem"><a href="#map" onclick="multipage.hideMobileMenu()">Карта</a></li>
+                <li class="navPCItem"><a href="#reviews" onclick="multipage.hideMobileMenu()">Отзывы</a></li>
+                <li class="navPCItem"><a href="#contacts" onclick="multipage.hideMobileMenu()">Контакты</a></li>
+                <li class="navPCItem"><a onclick="multipage.bookingClick(); multipage.hideMobileMenu()" style="background-color: var(--white-o); color: var(--back)!important;">Забронировать</a></li>
+                <li id="mobileNavStroke">
+                    <ul>
+                        <li>
+                            <img id="mobLogo" src="https://static.tildacdn.com/tild6663-6330-4639-a131-383131653266/logoTerruar.svg" alt="Logo">
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="https://static.tildacdn.com/tild6537-3834-4232-b435-396662393032/textLogoTerruar.svg" alt="Terruar name" style="height: 20px">
+                            </a>
+                        </li>
+                        <li>
+                            <div id="monMenuButton" onclick="multipage.mobileMenu.btnClck(this)" data-clicked="0">
+                                <div class="menuButtonHR"></div>
+                                <div class="menuButtonHR"></div></div>
+                        </li>
+                    </ul>
+                </li>
+            </menu>
+        </nav>
         <section class="shadow" id="hero">
             <article id="heroContactButtons">
                 <ul id="buttonsList" class="blur">
@@ -96,7 +96,7 @@
 <main>
     <section class="base-section" id="hero-offers">
         <div class="section-inner" onwaiting="multipage.smoothShowHorizontal(this)">
-            <article class="shadow" onclick="multipage.popup(this.querySelector('h4'))">
+            <article class="shadow"  data-popup="online" data-header="Терруар онлайн" >
                 <div class="hero-offer-text">
                     <div class="hero-offer-header">
                         <img src="" alt="">
@@ -116,7 +116,7 @@
                     <p class="hero-offer-description">Активный и тихий отдых, много развлечений для каждого</p>
                 </div>
                 <img src="https://optim.tildacdn.com/tild6230-3462-4431-b436-386138613338/-/format/webp/photo.jpg" alt="Активный и тихий отдых, много развлечений для каждого" class="hero-offer-img">
-                <a href="#offers" class="hero-offer-button">Подробнее</a>
+                <a href="#services" class="hero-offer-button">Подробнее</a>
             </article>
             <article class="shadow" onclick="showStaff()">
                 <div class="hero-offer-text">
@@ -129,6 +129,10 @@
                 <img src="https://optim.tildacdn.com/tild6631-6137-4133-b161-336134656332/-/format/webp/main.jpg" alt="Небольшие рассказы о каждом из нас!" class="hero-offer-img">
                 <a class="hero-offer-button">Подробнее</a>
             </article>
+        </div>
+    </section>
+    <section class="base-section" id="about">
+        <div class="section-inner">
         </div>
     </section>
 </main>
