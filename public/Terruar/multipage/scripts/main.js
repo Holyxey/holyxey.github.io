@@ -277,12 +277,12 @@ const multipage = {
             let q = ''
             if (window.innerWidth > window.innerHeight) {
                 for (const img of restaurantGallery["horizontal"]) {
-                    q += `<img loading="lazy" src="${img}" alt="Фотографии ресторана">`
+                    q += `<img src="${img}" alt="Фотографии ресторана">`
                 }
                 return `<article id="restaurantGallery">${q}</article>`;
             } else {
                 for (const img of restaurantGallery["vertical"]) {
-                    q += `<img loading="lazy" src="${img}" alt="Фотографии ресторана">`
+                    q += `<img src="${img}" alt="Фотографии ресторана">`
                 }
                 return `<article id="restaurantGallery" class="vertical">${q}</article>`;
             }
