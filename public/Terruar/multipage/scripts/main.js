@@ -4,6 +4,123 @@ const whatPageIs = {
     mainPageBlock: document.getElementById('multi-page'),
     data: document.getElementById('multi-page').getAttribute('data-page')
 }
+const lists = {
+    servicesList: [
+        {
+            id: 'bath',
+            title: 'Баня',
+            header: '',
+            price: '',
+            shortDescr: 'от 1500 р',
+            fullDescr: '',
+            benefits: ['', '', ''],
+            images: ['https://thumb.tildacdn.com/tild3933-6233-4938-b230-643539623531/-/format/webp/511.jpg', '', ''],
+        },
+        {
+            id: 'bicycle',
+            title: 'Велосипед',
+            header: '',
+            price: '',
+            shortDescr: '400 р/час',
+            fullDescr: '',
+            benefits: ['', '', ''],
+            images: ['https://thumb.tildacdn.com/tild6465-6438-4934-b630-616231316662/-/format/webp/image.png', '', ''],
+        },
+        {
+            id: 'xbox',
+            title: 'Xbox',
+            header: '',
+            price: '',
+            shortDescr: 'от 900 р',
+            fullDescr: '',
+            benefits: ['', '', ''],
+            images: ['https://thumb.tildacdn.com/tild3630-3036-4563-b134-326462623439/-/format/webp/jose-gil-2pNdTBn4C7U.jpg', '', ''],
+        },
+        {
+            id: 'bathvat',
+            title: 'Банный чан',
+            header: '',
+            price: '',
+            shortDescr: 'от 1500 р',
+            fullDescr: '',
+            benefits: ['', '', ''],
+            images: ['https://thumb.tildacdn.com/tild3435-6233-4833-b861-366330383062/-/format/webp/KIR_5744_1.jpg', '', ''],
+        },
+        {
+            id: 'projector',
+            title: 'Проектор',
+            header: '',
+            price: '',
+            shortDescr: 'от 700 р',
+            fullDescr: '',
+            benefits: ['', '', ''],
+            images: ['https://thumb.tildacdn.com/tild3337-3031-4236-a638-363235343733/-/format/webp/600A3332.png', '', ''],
+        },
+        {
+            id: 'quadbike',
+            title: 'Квадроцикл',
+            header: '',
+            price: '',
+            shortDescr: 'от 3000 р',
+            fullDescr: '',
+            benefits: ['', '', ''],
+            images: ['https://thumb.tildacdn.com/tild6230-3462-4431-b436-386138613338/-/format/webp/photo.jpg', '', ''],
+        },
+        {
+            id: 'jeeptour',
+            title: 'Джип-тур',
+            header: '',
+            price: '',
+            shortDescr: '8000 за 3 часа',
+            fullDescr: '',
+            benefits: ['', '', ''],
+            images: ['https://thumb.tildacdn.com/tild3264-6431-4131-a234-663461616431/-/format/webp/c45331ec-7b02-4c17-8.jpg', '', ''],
+        },
+        {
+            id: 'horseriding',
+            title: 'Конные прогулки',
+            header: '',
+            price: '',
+            shortDescr: 'Рядом с нами',
+            fullDescr: '',
+            benefits: ['', '', ''],
+            images: ['https://thumb.tildacdn.com/tild3433-3561-4364-b363-643465653962/-/format/webp/tim-schmidbauer-7RdZ.jpg', '', ''],
+        }
+    ],
+    offersList: [],
+    other: [
+        {
+            id: 'online',
+            title: 'Терруар онлайн',
+            header: '',
+            price: '',
+            shortDescr: 'Трансляция с камеры нашей территории, и прогноз погоды на пару дней',
+            fullDescr: '',
+            benefits: ['', '', ''],
+            images: ['https://optim.tildacdn.com/tild3530-3138-4862-a135-633935343735/-/format/webp/heroImg.png', '', ''],
+        },
+        {
+            id: 'restaurant',
+            title: 'Ресторан',
+            header: '',
+            price: '',
+            shortDescr: 'Ресторан в 3х минутах ходьбы, со специальным предложением для наших гостей',
+            fullDescr: '',
+            benefits: ['', '', ''],
+            images: ['https://optim.tildacdn.com/tild6336-3166-4539-b933-646265376165/-/format/webp/DSC_4878-2_.JPG', '', ''],
+        },
+        {
+            id: 'team',
+            title: 'Наша команда',
+            header: '',
+            price: '',
+            shortDescr: 'Небольшие рассказы о каждом из нас!',
+            fullDescr: '',
+            benefits: ['', '', ''],
+            images: ['https://optim.tildacdn.com/tild6336-3166-4539-b933-646265376165/-/format/webp/DSC_4878-2_.JPG', '', ''],
+        },
+    ]
+}
 
 const terruarCatalogue = {
     link: 'https://store.tildaapi.com/api/getproductslist/?storepartuid=513452425241&recid=752306605&c=1716436482010&getparts=true&getoptions=true&slice=1&size=36&projectid=5131025',
@@ -328,104 +445,12 @@ const multipage = {
 
 const checkInViewHorizontal = function (element) {
     return element.getBoundingClientRect().left > 0 && element.getBoundingClientRect().right < window.innerWidth;
-}
+} // Используется для назначения каунтера, который ниже рендерится
+const renderCounter = function (where, max, whatIsScrolling, itemsList) {
+    if (!itemsList) return (console.log('Нет элементов для renderCounter'))
 
-const servicesPage = {
-    servicesList: [
-        {
-            id: 'bath',
-            title: 'Баня',
-            header: '',
-            price: '',
-            shortDescr: 'от 1500 р',
-            fullDescr: '',
-            benefits: ['', '', ''],
-            images: ['https://thumb.tildacdn.com/tild3933-6233-4938-b230-643539623531/-/format/webp/511.jpg', '', ''],
-        },
-        {
-            id: 'bicycle',
-            title: 'Велосипед',
-            header: '',
-            price: '',
-            shortDescr: '400 р/час',
-            fullDescr: '',
-            benefits: ['', '', ''],
-            images: ['https://thumb.tildacdn.com/tild6465-6438-4934-b630-616231316662/-/format/webp/image.png', '', ''],
-        },
-        {
-            id: 'xbox',
-            title: 'Xbox',
-            header: '',
-            price: '',
-            shortDescr: 'от 900 р',
-            fullDescr: '',
-            benefits: ['', '', ''],
-            images: ['https://thumb.tildacdn.com/tild3630-3036-4563-b134-326462623439/-/format/webp/jose-gil-2pNdTBn4C7U.jpg', '', ''],
-        },
-        {
-            id: 'bathvat',
-            title: 'Банный чан',
-            header: '',
-            price: '',
-            shortDescr: 'от 1500 р',
-            fullDescr: '',
-            benefits: ['', '', ''],
-            images: ['https://thumb.tildacdn.com/tild3435-6233-4833-b861-366330383062/-/format/webp/KIR_5744_1.jpg', '', ''],
-        },
-        {
-            id: 'projector',
-            title: 'Проектор',
-            header: '',
-            price: '',
-            shortDescr: 'от 700 р',
-            fullDescr: '',
-            benefits: ['', '', ''],
-            images: ['https://thumb.tildacdn.com/tild3337-3031-4236-a638-363235343733/-/format/webp/600A3332.png', '', ''],
-        },
-        {
-            id: 'quadbike',
-            title: 'Квадроцикл',
-            header: '',
-            price: '',
-            shortDescr: 'от 3000 р',
-            fullDescr: '',
-            benefits: ['', '', ''],
-            images: ['https://thumb.tildacdn.com/tild6230-3462-4431-b436-386138613338/-/format/webp/photo.jpg', '', ''],
-        },
-        {
-            id: 'jeeptour',
-            title: 'Джип-тур',
-            header: '',
-            price: '',
-            shortDescr: '8000 за 3 часа',
-            fullDescr: '',
-            benefits: ['', '', ''],
-            images: ['https://thumb.tildacdn.com/tild3264-6431-4131-a234-663461616431/-/format/webp/c45331ec-7b02-4c17-8.jpg', '', ''],
-        },
-        {
-            id: 'horseriding',
-            title: 'Конные прогулки',
-            header: '',
-            price: '',
-            shortDescr: 'Рядом с нами',
-            fullDescr: '',
-            benefits: ['', '', ''],
-            images: ['https://thumb.tildacdn.com/tild3433-3561-4364-b363-643465653962/-/format/webp/tim-schmidbauer-7RdZ.jpg', '', ''],
-        }
-    ],
-    renderCounter: function (where, max, whatIsScrolling) {
-        where.insertAdjacentHTML("beforeend",
-            `<div style="opacity: .8">
-                <span class="counterSpan">1</span>
-                <span> / </span>
-                <span>${max}</span>
-                </div>`)
-        whatIsScrolling.addEventListener('scroll', () => {
-            this.counterChange(where, whatIsScrolling)
-        })
-    },
-    counterChange: function (where, whatIsScrolling) {
-        const items = whatIsScrolling.querySelectorAll('.services-article')
+    const counterChange = function (where, itemsList) {
+        const items = itemsList
         const counterSpan = where.querySelector('.counterSpan');
 
         let count = 1;
@@ -434,17 +459,89 @@ const servicesPage = {
                 counterSpan.textContent = (index + 1).toString();
             }
         })
-    },
+    }
+    where.insertAdjacentHTML("beforeend",
+        `<div style="opacity: .8">
+                <span class="counterSpan">1</span>
+                <span> / </span>
+                <span>${max}</span>
+                </div>`)
+    whatIsScrolling.addEventListener('scroll', () => {
+        counterChange(where, itemsList)
+    })
+}
+const whereToRenderCounter = function () {
+    const where = document.querySelectorAll('[data-counter-where]')
+    where.forEach(item => {
+        const whatIsScrolling = (
+            item.querySelector('[data-counter-scrollIt]')
+            ? item.querySelector('[data-counter-scrollIt]')
+            : item.parentNode.querySelector('[data-counter-scrollIt]')
+        )
+        const itemsList = (
+            item.querySelectorAll('[data-counter-item]').length > 1
+            ? item.querySelectorAll('[data-counter-item]')
+            : item.parentNode.querySelectorAll('[data-counter-item]')
+        )
+        const max = itemsList.length;
+        console.log(item, max, whatIsScrolling, itemsList)
+        renderCounter(item, max, whatIsScrolling, itemsList)
+    })
+}
+// аттрибуты data-counter(-where/-scrollIt/-item)
+
+const mainPage = {
+    renderHeroOffers: function () {
+        if (!document.getElementById('hero-offers')) return
+        const sectionHere = document.getElementById('hero-offers')
+
+        const renderAllOffers = function () {
+            const offersHere = lists.other;
+            const headOfSection = sectionHere.querySelector('.base-section-header')
+            const sectionInner = sectionHere.querySelector('.section-inner');
+            let result = ''
+
+            offersHere.forEach((item, index) => {
+                result +=
+                    `<article class="services-article" data-counter-item data-popup="${item.id}" data-header="${item.title}">
+                        <div class="services-headlines">
+                            ${item.icon ? `<img src="" alt="">` : ''}
+                            <h4>${item.title}</h4>
+                            ${item.shortDescr ? `<p class="services-description">${item.shortDescr}</p>` : '' }
+                        </div>
+                        <div class="services-img-block">
+                            <img src="${item.images[0]}" alt="${item.fullDescr ? item.fullDescr : item.shortDescr}">
+                        </div>
+                        <a ${item.link ? `href='${item.link}'` : ''} class="hero-offer-button">Подробнее</a>
+                    </article>`
+            })
+
+            return result
+        }
+
+        sectionHere.insertAdjacentHTML('beforeend',
+            `
+            <div class="base-section-header" data-counter-where>
+                <h3>${sectionHere.getAttribute('title')}</h3>
+            </div>
+            <div class="section-inner" data-smooth-mobile="1" data-counter-scrollIt>
+                ${renderAllOffers()}
+            </div>
+            `)
+    }
+}
+const servicesPage = {
     renderServices: function () {
         if (!document.getElementById('services-offers')) return
         const sectionOfServices = document.getElementById('services-offers')
         const headOfSection = sectionOfServices.querySelector('.base-section-header');
         const sectionInner = sectionOfServices.querySelector('.section-inner');
+        headOfSection.setAttribute('data-counter-where', '')
+        sectionInner.setAttribute('data-counter-scrollIt', '')
 
-        if (window.innerWidth < 600) this.renderCounter(headOfSection, this.servicesList.length, sectionInner) // Рендерим каунтер на мобильнйо версии
-        servicesPage.servicesList.forEach((service) => {
+        lists.servicesList.forEach((service) => {
             sectionInner.insertAdjacentHTML("beforeend",
-                `<article class="services-article" data-popup="${service.id}" data-header="${service.title}">
+                `<article class="services-article" data-popup="${service.id}" data-header="${service.title}" data-counter-item>
                         <div class="services-headlines">
                             <h4>${service.title}</h4>
                             <p class="services-description">${service.fullDescr ? service.fullDescr : service.shortDescr}</p>
@@ -463,15 +560,20 @@ window.addEventListener("resize", () => {
 })
 window.addEventListener("load", () => {
     multipage.getHeaderHeight()
+
     if (window.innerWidth < 600) {
         multipage.smoothShowHorizontal()
     }
 })
 document.addEventListener("DOMContentLoaded", () => {
+    whatPageIs.data === 'main' ? mainPage.renderHeroOffers() : null
     whatPageIs.data === 'services' ? servicesPage.renderServices() : null
     multipage.getHeaderHeight()
     multipage.heroVideoStart()
     multipage.popupButtonsInit()
+    if (window.innerWidth < 600) {
+        whereToRenderCounter()
+    }
 })
 
 // Инициализация трансляции
