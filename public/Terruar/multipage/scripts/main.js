@@ -416,7 +416,7 @@ const servicesPage = {
     renderCounter: function (where, max, whatIsScrolling) {
         where.insertAdjacentHTML("beforeend",
             `<div style="opacity: .8">
-                <span class="counterSpan"></span>
+                <span class="counterSpan">1</span>
                 <span> / </span>
                 <span>${max}</span>
                 </div>`)
