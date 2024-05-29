@@ -1,5 +1,5 @@
 // 'use strict';
-const videoPlayBackToken = '1989F428-B406-0380-E065-025056B67B70'
+const videoPlayBackToken = ''
 const whatPageIs = {
     mainPageBlock: document.getElementById('multi-page'),
     data: document.getElementById('multi-page').getAttribute('data-page')
