@@ -10,11 +10,11 @@
 </head>
 <body>
 
-<div id="multi-page">
+<div id="multi-page" data-page="main">
 <header>
         <nav>
             <menu class="shadow" id="menuList">
-                <li class="navPCItem"><a href="#about" data-popup="online" data-header="Терруар онлайн" onclick="multipage.hideMobileMenu()">О нас</a></li>
+                <li class="navPCItem"><a href="#about" onclick="multipage.hideMobileMenu()">О нас</a></li>
                 <li class="navPCItem"><a href="#variants" onclick="multipage.hideMobileMenu()">Наши домики</a></li>
                 <li class="navPCItem"><a data-popup="online" data-header="Терруар онлайн" onclick="multipage.hideMobileMenu()">Терруар онлайн</a></li>
                 <li class="navPCItem"><a data-popup="restaurant" data-header="Ресторан" onclick="multipage.hideMobileMenu()">Ресторан</a></li>
@@ -95,8 +95,8 @@
 </header>
 <main>
     <section class="base-section" id="hero-offers">
-        <div class="section-inner" onwaiting="multipage.smoothShowHorizontal(this)">
-            <article class="shadow"  data-popup="online" data-header="Терруар онлайн" >
+        <div class="section-inner" data-smooth-mobile="1" >
+            <article class="shadow" data-popup="online" data-header="Терруар онлайн">
                 <div class="hero-offer-text">
                     <div class="hero-offer-header">
                         <img src="" alt="">
@@ -107,16 +107,16 @@
                 <img src="https://optim.tildacdn.com/tild3530-3138-4862-a135-633935343735/-/format/webp/heroImg.png" alt="Трансляция с камеры нашей территории, и прогноз погоды на пару дней" class="hero-offer-img">
                 <a class="hero-offer-button">Подробнее</a>
             </article>
-            <article class="shadow" onclick="this.querySelector('a').click()">
+            <article class="shadow" data-popup="restaurant" data-header="Ресторан">
                 <div class="hero-offer-text">
                     <div class="hero-offer-header">
                         <img src="" alt="">
-                        <h4>Развлечения</h4>
+                        <h4>Ресторан</h4>
                     </div>
-                    <p class="hero-offer-description">Активный и тихий отдых, много развлечений для каждого</p>
+                    <p class="hero-offer-description">Ресторан в 3х минутах ходьбы, со специальным предложением для наших гостей</p>
                 </div>
-                <img src="https://optim.tildacdn.com/tild6230-3462-4431-b436-386138613338/-/format/webp/photo.jpg" alt="Активный и тихий отдых, много развлечений для каждого" class="hero-offer-img">
-                <a href="#services" class="hero-offer-button">Подробнее</a>
+                <img src="https://optim.tildacdn.com/tild6336-3166-4539-b933-646265376165/-/format/webp/DSC_4878-2_.JPG" alt="Активный и тихий отдых, много развлечений для каждого" class="hero-offer-img">
+                <a class="hero-offer-button">Подробнее</a>
             </article>
             <article class="shadow" onclick="showStaff()">
                 <div class="hero-offer-text">
@@ -131,14 +131,11 @@
             </article>
         </div>
     </section>
-    <section class="base-section" id="about">
-        <div class="section-inner">
-        </div>
-    </section>
 </main>
 </div>
 
 <script src="../scripts/main.js"></script>
+
 
 <!-- Инициализация модуля бронирования-->
 <script>
@@ -168,6 +165,8 @@
     })
 </script>
 <!-- /Инициализация модуля бронирования-->
-
+<!--Инициализация стрима-->
+<script src='https://softvelum.com/player/releases/sldp-v2.26.1.min.js' type='text/javascript'></script>
+<!--/Инициализация стрима-->
 </body>
 </html>

@@ -1,5 +1,10 @@
 // 'use strict';
-const videoPlayBackToken = '195C3CAD-85F2-05B9-E065-025056B67B70'
+const videoPlayBackToken = '1989F428-B406-0380-E065-025056B67B70'
+const whatPageIs = {
+    mainPageBlock: document.getElementById('multi-page'),
+    data: document.getElementById('multi-page').getAttribute('data-page')
+}
+
 const terruarCatalogue = {
     link: 'https://store.tildaapi.com/api/getproductslist/?storepartuid=513452425241&recid=752306605&c=1716436482010&getparts=true&getoptions=true&slice=1&size=36&projectid=5131025',
     catalog: {},
@@ -114,7 +119,6 @@ const restaurantGallery = {
     ]
 }
 const multipage = {
-    // Pop-up init
     popupButtonsInit: function () {
         const buttons = document.querySelectorAll("[data-popup]")
         buttons.forEach(button => {
@@ -232,7 +236,7 @@ const multipage = {
         let widgetBooking = document.querySelector('.znms-widget__module-form-block');
         if (mobNav.offsetHeight < 1) {
             let height = `calc(${window.innerHeight}px - ${nav.clientHeight}px - 3rem)`;
-            let margin = `calc(${nav.clientHeight}px)`
+            let margin = `calc(${nav.clientHeight}px + 2rem)`
             hero.style.cssText += `min-height:${height}; margin-top: ${margin}`;
         } else {
             let height = `unset`;
@@ -256,6 +260,7 @@ const multipage = {
     heroVideoStart: function () {
         const videoBlock = document.getElementById('heroVideo');
         const hero = document.getElementById('hero');
+        if (hero.getAttribute('data-nomain')) return
         if (window.innerWidth > 600) {
             videoBlock.insertAdjacentHTML("beforeend",
                 `<video style="opacity: 0" loop autoplay playsinline muted src="https://holyxey.github.io/public/Terruar/multipage/sources/video/Terruar%20Summer.mp4" title="Terruar hero video"></video>`)
@@ -307,9 +312,7 @@ const multipage = {
         }
     },
     smoothShowHorizontal: function () {
-        const parentElements = [
-            document.getElementById('hero-offers').children[0],
-        ]
+        const parentElements = document.querySelectorAll('[data-smooth-mobile]')
         parentElements.forEach(parentElement => {
             const waitOnTheViewPort = setInterval(() => {
                 if (parentElement.getBoundingClientRect().top + 250 > window.innerHeight) {
@@ -322,6 +325,139 @@ const multipage = {
         })
     }
 }
+
+const checkInViewHorizontal = function (element) {
+    return element.getBoundingClientRect().left > 0 && element.getBoundingClientRect().right < window.innerWidth;
+}
+
+const servicesPage = {
+    servicesList: [
+        {
+            id: 'bath',
+            title: 'Баня',
+            header: '',
+            price: '',
+            shortDescr: 'от 1500 р',
+            fullDescr: '',
+            benefits: ['', '', ''],
+            images: ['https://thumb.tildacdn.com/tild3933-6233-4938-b230-643539623531/-/format/webp/511.jpg', '', ''],
+        },
+        {
+            id: 'bicycle',
+            title: 'Велосипед',
+            header: '',
+            price: '',
+            shortDescr: '400 р/час',
+            fullDescr: '',
+            benefits: ['', '', ''],
+            images: ['https://thumb.tildacdn.com/tild6465-6438-4934-b630-616231316662/-/format/webp/image.png', '', ''],
+        },
+        {
+            id: 'xbox',
+            title: 'Xbox',
+            header: '',
+            price: '',
+            shortDescr: 'от 900 р',
+            fullDescr: '',
+            benefits: ['', '', ''],
+            images: ['https://thumb.tildacdn.com/tild3630-3036-4563-b134-326462623439/-/format/webp/jose-gil-2pNdTBn4C7U.jpg', '', ''],
+        },
+        {
+            id: 'bathvat',
+            title: 'Банный чан',
+            header: '',
+            price: '',
+            shortDescr: 'от 1500 р',
+            fullDescr: '',
+            benefits: ['', '', ''],
+            images: ['https://thumb.tildacdn.com/tild3435-6233-4833-b861-366330383062/-/format/webp/KIR_5744_1.jpg', '', ''],
+        },
+        {
+            id: 'projector',
+            title: 'Проектор',
+            header: '',
+            price: '',
+            shortDescr: 'от 700 р',
+            fullDescr: '',
+            benefits: ['', '', ''],
+            images: ['https://thumb.tildacdn.com/tild3337-3031-4236-a638-363235343733/-/format/webp/600A3332.png', '', ''],
+        },
+        {
+            id: 'quadbike',
+            title: 'Квадроцикл',
+            header: '',
+            price: '',
+            shortDescr: 'от 3000 р',
+            fullDescr: '',
+            benefits: ['', '', ''],
+            images: ['https://thumb.tildacdn.com/tild6230-3462-4431-b436-386138613338/-/format/webp/photo.jpg', '', ''],
+        },
+        {
+            id: 'jeeptour',
+            title: 'Джип-тур',
+            header: '',
+            price: '',
+            shortDescr: '8000 за 3 часа',
+            fullDescr: '',
+            benefits: ['', '', ''],
+            images: ['https://thumb.tildacdn.com/tild3264-6431-4131-a234-663461616431/-/format/webp/c45331ec-7b02-4c17-8.jpg', '', ''],
+        },
+        {
+            id: 'horseriding',
+            title: 'Конные прогулки',
+            header: '',
+            price: '',
+            shortDescr: 'Рядом с нами',
+            fullDescr: '',
+            benefits: ['', '', ''],
+            images: ['https://thumb.tildacdn.com/tild3433-3561-4364-b363-643465653962/-/format/webp/tim-schmidbauer-7RdZ.jpg', '', ''],
+        }
+    ],
+    renderCounter: function (where, max, whatIsScrolling) {
+        where.insertAdjacentHTML("beforeend",
+            `<div style="opacity: .8">
+                <span class="counterSpan"></span>
+                <span> / </span>
+                <span>${max}</span>
+                </div>`)
+        whatIsScrolling.addEventListener('scroll', () => {
+            this.counterChange(where, whatIsScrolling)
+        })
+    },
+    counterChange: function (where, whatIsScrolling) {
+        const items = whatIsScrolling.querySelectorAll('.services-article')
+        const counterSpan = where.querySelector('.counterSpan');
+
+        let count = 1;
+        items.forEach((item, index) => {
+            if (checkInViewHorizontal(item)) {
+                counterSpan.textContent = (index + 1).toString();
+            }
+        })
+    },
+    renderServices: function () {
+        if (!document.getElementById('services-offers')) return
+        const sectionOfServices = document.getElementById('services-offers')
+        const headOfSection = sectionOfServices.querySelector('.base-section-header');
+        const sectionInner = sectionOfServices.querySelector('.section-inner');
+
+        if (window.innerWidth < 600) this.renderCounter(headOfSection, this.servicesList.length, sectionInner) // Рендерим каунтер на мобильнйо версии
+        servicesPage.servicesList.forEach((service) => {
+            sectionInner.insertAdjacentHTML("beforeend",
+                `<article class="services-article" data-popup="${service.id}" data-header="${service.title}">
+                        <div class="services-headlines">
+                            <h4>${service.title}</h4>
+                            <p class="services-description">${service.fullDescr ? service.fullDescr : service.shortDescr}</p>
+                        </div>
+                        ${service.images
+                    ? `<div class="services-img-block"><img loading="lazy" src="${service.images[0]}" alt="${service.fullDescr ? service.fullDescr : service.shortDescr}"></div>`
+                    : ''}
+                        <a>Подробнее</a>
+                    </article>`)
+        })
+    }
+}
+
 window.addEventListener("resize", () => {
     multipage.getHeaderHeight()
 })
@@ -332,9 +468,10 @@ window.addEventListener("load", () => {
     }
 })
 document.addEventListener("DOMContentLoaded", () => {
-    multipage.popupButtonsInit()
+    whatPageIs.data === 'services' ? servicesPage.renderServices() : null
     multipage.getHeaderHeight()
     multipage.heroVideoStart()
+    multipage.popupButtonsInit()
 })
 
 // Инициализация трансляции
