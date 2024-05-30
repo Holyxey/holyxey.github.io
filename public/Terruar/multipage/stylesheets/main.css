@@ -631,6 +631,8 @@ body {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem 0;
+    align-items: center;
+    justify-content: center;
 }
 #multi-page .classic-hb {
     display: flex;
