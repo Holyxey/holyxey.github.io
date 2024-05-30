@@ -14,10 +14,18 @@ const lists = {
             shortDescr: 'от 1500 р',
             fullDescr: '',
             benefits: ['', '', ''],
-            images: ['https://thumb.tildacdn.com/tild3933-6233-4938-b230-643539623531/-/format/webp/511.jpg', '', ''],
+            images: ['https://thumb.tildacdn.com/tild3933-6233-4938-b230-643539623531/-/format/webp/511.jpg',
+                'https://thumb.tildacdn.com/tild3933-6233-4938-b230-643539623531/-/format/webp/511.jpg',
+                'https://thumb.tildacdn.com/tild3933-6233-4938-b230-643539623531/-/format/webp/511.jpg',
+                'https://thumb.tildacdn.com/tild3933-6233-4938-b230-643539623531/-/format/webp/511.jpg',
+                'https://thumb.tildacdn.com/tild3933-6233-4938-b230-643539623531/-/format/webp/511.jpg',
+                'https://thumb.tildacdn.com/tild3933-6233-4938-b230-643539623531/-/format/webp/511.jpg',
+            ],
             popUp: true,
+            popUpType: 'service',
             readMoreLink: '',
             readMoreText: 'Подробнее',
+            withGallery: true,
         },
         {
             id: 'bicycle',
@@ -27,10 +35,13 @@ const lists = {
             shortDescr: '400 р/час',
             fullDescr: '',
             benefits: ['', '', ''],
-            images: ['https://thumb.tildacdn.com/tild6465-6438-4934-b630-616231316662/-/format/webp/image.png', '', ''],
+            images: ['https://thumb.tildacdn.com/tild6465-6438-4934-b630-616231316662/-/format/webp/image.png',
+            ],
             popUp: true,
+            popUpType: 'service',
             readMoreLink: '',
             readMoreText: 'Подробнее',
+            withGallery: true,
         },
         {
             id: 'xbox',
@@ -40,10 +51,13 @@ const lists = {
             shortDescr: 'от 900 р',
             fullDescr: '',
             benefits: ['', '', ''],
-            images: ['https://thumb.tildacdn.com/tild3630-3036-4563-b134-326462623439/-/format/webp/jose-gil-2pNdTBn4C7U.jpg', '', ''],
+            images: ['https://thumb.tildacdn.com/tild3630-3036-4563-b134-326462623439/-/format/webp/jose-gil-2pNdTBn4C7U.jpg',
+            ],
             popUp: true,
+            popUpType: 'service',
             readMoreLink: '',
             readMoreText: 'Подробнее',
+            withGallery: true,
         },
         {
             id: 'bathvat',
@@ -53,10 +67,13 @@ const lists = {
             shortDescr: 'от 1500 р',
             fullDescr: '',
             benefits: ['', '', ''],
-            images: ['https://thumb.tildacdn.com/tild3435-6233-4833-b861-366330383062/-/format/webp/KIR_5744_1.jpg', '', ''],
+            images: ['https://thumb.tildacdn.com/tild3435-6233-4833-b861-366330383062/-/format/webp/KIR_5744_1.jpg',
+            ],
             popUp: true,
+            popUpType: 'service',
             readMoreLink: '',
             readMoreText: 'Подробнее',
+            withGallery: true,
         },
         {
             id: 'projector',
@@ -66,10 +83,13 @@ const lists = {
             shortDescr: 'от 700 р',
             fullDescr: '',
             benefits: ['', '', ''],
-            images: ['https://thumb.tildacdn.com/tild3337-3031-4236-a638-363235343733/-/format/webp/600A3332.png', '', ''],
+            images: ['https://thumb.tildacdn.com/tild3337-3031-4236-a638-363235343733/-/format/webp/600A3332.png',
+            ],
             popUp: true,
+            popUpType: 'service',
             readMoreLink: '',
             readMoreText: 'Подробнее',
+            withGallery: true,
         },
         {
             id: 'quadbike',
@@ -79,10 +99,13 @@ const lists = {
             shortDescr: 'от 3000 р',
             fullDescr: '',
             benefits: ['', '', ''],
-            images: ['https://thumb.tildacdn.com/tild6230-3462-4431-b436-386138613338/-/format/webp/photo.jpg', '', ''],
+            images: ['https://thumb.tildacdn.com/tild6230-3462-4431-b436-386138613338/-/format/webp/photo.jpg',
+            ],
             popUp: true,
+            popUpType: 'service',
             readMoreLink: '',
             readMoreText: 'Подробнее',
+            withGallery: true,
         },
         {
             id: 'jeeptour',
@@ -92,10 +115,13 @@ const lists = {
             shortDescr: '8000 за 3 часа',
             fullDescr: '',
             benefits: ['', '', ''],
-            images: ['https://thumb.tildacdn.com/tild3264-6431-4131-a234-663461616431/-/format/webp/c45331ec-7b02-4c17-8.jpg', '', ''],
+            images: ['https://thumb.tildacdn.com/tild3264-6431-4131-a234-663461616431/-/format/webp/c45331ec-7b02-4c17-8.jpg',
+            ],
             popUp: true,
+            popUpType: 'service',
             readMoreLink: '',
             readMoreText: 'Подробнее',
+            withGallery: true,
         },
         {
             id: 'horseriding',
@@ -105,10 +131,13 @@ const lists = {
             shortDescr: 'Рядом с нами',
             fullDescr: '',
             benefits: ['', '', ''],
-            images: ['https://thumb.tildacdn.com/tild3433-3561-4364-b363-643465653962/-/format/webp/tim-schmidbauer-7RdZ.jpg', '', ''],
+            images: ['https://thumb.tildacdn.com/tild3433-3561-4364-b363-643465653962/-/format/webp/tim-schmidbauer-7RdZ.jpg',
+            ],
             popUp: true,
+            popUpType: 'service',
             readMoreLink: '',
             readMoreText: 'Подробнее',
+            withGallery: true,
         }
     ],
     offersList: [],
@@ -121,10 +150,11 @@ const lists = {
             shortDescr: 'Трансляция с камеры нашей территории, и прогноз погоды на пару дней',
             fullDescr: '',
             benefits: ['', '', ''],
-            images: ['https://optim.tildacdn.com/tild3530-3138-4862-a135-633935343735/-/format/webp/heroImg.png', '', ''],
+            images: ['https://optim.tildacdn.com/tild3530-3138-4862-a135-633935343735/-/format/webp/heroImg.png'],
             popUp: true,
             readMoreLink: '',
             readMoreText: 'Подробнее',
+            withGallery: false,
         },
         {
             id: 'restaurant',
@@ -134,10 +164,36 @@ const lists = {
             shortDescr: 'Ресторан в 3х минутах ходьбы, со специальным предложением для наших гостей',
             fullDescr: '',
             benefits: ['', '', ''],
-            images: ['https://optim.tildacdn.com/tild6336-3166-4539-b933-646265376165/-/format/webp/DSC_4878-2_.JPG', '', ''],
+            images: [
+                // "https://optim.tildacdn.com/tild3862-3466-4135-a662-666565663861/-/format/webp/DSC_4429-2_.JPG",
+                // "https://optim.tildacdn.com/tild3437-3138-4262-b363-626433353334/-/format/webp/DSC_4434-2_.JPG",
+                // "https://optim.tildacdn.com/tild6664-3532-4735-b462-633139333135/-/format/webp/DSC_4440-2_.JPG",
+                // "https://optim.tildacdn.com/tild3433-3235-4663-b232-643536333365/-/format/webp/DSC_4443-2_.JPG",
+                // "https://optim.tildacdn.com/tild6162-6562-4463-a437-636434366233/-/format/webp/DSC_4445-2_.JPG",
+                // "https://optim.tildacdn.com/tild6336-3166-4539-b933-646265376165/-/format/webp/DSC_4878-2_.JPG",
+                // "https://optim.tildacdn.com/tild6633-3865-4561-b134-376231613366/-/format/webp/DSC_4575-2_.JPG",
+                // "https://optim.tildacdn.com/tild3661-6230-4561-a565-376134643135/-/format/webp/DSC_4453-2_.JPG",
+                // "https://optim.tildacdn.com/tild6334-3865-4563-b063-353037343638/-/format/webp/DSC_4902-2_.JPG",
+                // "https://optim.tildacdn.com/tild3134-3434-4562-a631-316133326565/-/format/webp/DSC_4454-2_.JPG",
+                // "https://optim.tildacdn.com/tild3837-3564-4233-b164-306238613366/-/format/webp/DSC_4638-2_.JPG",
+                // "https://optim.tildacdn.com/tild6635-3839-4761-a336-323563613861/-/format/webp/DSC_4462-2_.JPG",
+                // "https://optim.tildacdn.com/tild6538-3838-4332-b963-333761386339/-/format/webp/DSC_4611-2_.JPG",
+                "https://optim.tildacdn.com/tild6234-3262-4536-a465-373837626336/-/format/webp/DSC_4432-2_.JPG",
+                "https://optim.tildacdn.com/tild6466-3038-4463-b737-363630623662/-/format/webp/DSC_4876-2_.JPG",
+                "https://optim.tildacdn.com/tild6462-6533-4762-b666-313337666537/-/format/webp/DSC_4435-2_.JPG",
+                "https://optim.tildacdn.com/tild6330-3664-4339-b364-383535363434/-/format/webp/DSC_4930-2_.JPG",
+                "https://optim.tildacdn.com/tild3534-6537-4563-b536-303465323663/-/format/webp/DSC_4870-2_.JPG",
+                "https://optim.tildacdn.com/tild6662-3538-4636-b637-643961333535/-/format/webp/DSC_4448-2_.JPG",
+                "https://optim.tildacdn.com/tild6239-3665-4137-b937-323531623161/-/format/webp/DSC_4456-2_.JPG",
+                "https://optim.tildacdn.com/tild3432-3438-4661-a366-366137363137/-/format/webp/DSC_4577-2_.JPG",
+                "https://optim.tildacdn.com/tild6361-3539-4533-b466-383833316338/-/format/webp/DSC_4893-2_.JPG",
+                "https://optim.tildacdn.com/tild6264-3164-4465-a432-646533636363/-/format/webp/DSC_4915-2_.JPG",
+                "https://optim.tildacdn.com/tild6364-3030-4437-b934-633130393034/-/format/webp/DSC_4558-2_.JPG",
+            ],
             popUp: true,
             readMoreLink: '',
             readMoreText: 'Подробнее',
+            withGallery: true,
         },
         {
             id: 'team',
@@ -147,12 +203,57 @@ const lists = {
             shortDescr: 'Небольшие рассказы о каждом из нас!',
             fullDescr: '',
             benefits: ['', '', ''],
-            images: ['https://optim.tildacdn.com/tild6336-3166-4539-b933-646265376165/-/format/webp/DSC_4878-2_.JPG', '', ''],
-            popUp: false,
+            images: ['https://optim.tildacdn.com/tild6631-6137-4133-b161-336134656332/-/format/webp/main.jpg'],
+            popUp: true,
             readMoreLink: '',
             readMoreText: 'Подробнее',
+            withGallery: false,
         },
-    ]
+    ],
+    team: [
+        {
+            name: 'Маша',
+            photo: ['https://thumb.tildacdn.com/tild6238-6563-4363-a361-353138383736/-/format/webp/image_5.jpg'
+            ],
+            position: 'Менеджер по бронированию',
+            about: 'Любит людей и давать скидки, за что находится под пристальным вниманием руководителя.'
+        },
+        {
+            name: 'Лена',
+            photo: ['https://thumb.tildacdn.com/tild6463-3632-4739-a238-643861303266/-/format/webp/image_6.jpg'
+            ],
+            position: 'Администратор',
+            about: 'Накормит, заселит, поможет. Перфекционистка: любит, чтобы все работало как швейцарские часы (четко, безотказно и по расписанию).'
+        },
+        {
+            name: 'Нурали',
+            photo: ['https://thumb.tildacdn.com/tild6330-3161-4064-b063-386662646232/-/format/webp/image_12.jpg'
+            ],
+            position: 'Хаус-мен',
+            about: 'Напарит, нагреет, починит. Крепкий хозяйственник. Не успокоится пока у вас не будет идеальная температура в бане.'
+        },
+        {
+            name: 'Ксюша',
+            photo: ['https://thumb.tildacdn.com/tild6137-3132-4636-b863-643633363534/-/format/webp/image_7.jpg'
+            ],
+            position: 'SMM-отдел',
+            about: 'Любит красивые фотки, продающие тексты и выбирать смайлики. Не любит ВК.'
+        },
+        {
+            name: 'Илья',
+            photo: ['https://thumb.tildacdn.com/tild6666-6433-4364-b233-653839346236/-/format/webp/image_8.jpg'
+            ],
+            position: 'Старпом',
+            about: 'Любит экстремальные виды спорта и Авито. Следит за тем, чтобы мы хоть что-то заработали.'
+        },
+        {
+            name: 'Ярослав',
+            photo: ['https://thumb.tildacdn.com/tild3965-6562-4962-b564-346138643566/-/format/webp/image_9.jpg'
+            ],
+            position: 'Начальник',
+            about: 'Он тут все придумал (ну почти). Любит работать менеджером по бронированию, администратором и хаус-меном, но не успевает. Если Маша вдруг отвечает вам «забронировал» - знайте, с вами уже переписывается Ярослав.'
+        },
+    ],
 }
 const styleClassLists = [
     {
@@ -196,7 +297,7 @@ const whatIsMax = function(img) {
 const needToRender = function (where) {
     const sections = document.querySelectorAll('[data-need-to-render]')
 
-    const renderNow = function (where, what, design) {
+    const renderNow = function (where, what, design, listName) {
         where.classList = `${design.section}`;
         if (design.needHeader) {
             where.insertAdjacentHTML('afterbegin',
@@ -225,7 +326,7 @@ const needToRender = function (where) {
             itemsParent.insertAdjacentHTML('beforeend',
                 `
                 <article class="${design.article}"
-                ${item.popUp ? `data-popup="${item.id}" data-header="${item.title}"` : ''}
+                ${item.popUp ? `data-popup="${item.id}"` : ''}
                 ${design.needCounter ? 'data-counter-item' : ''}>
                     ${design.artHeads 
                     ? `<div class="${design.artHeads}">
@@ -255,7 +356,7 @@ const needToRender = function (where) {
         const elements = lists[listName]
 
         console.log(`Rendering "${title}":"${listName}, ${styleNumber + 1}"...`)
-        renderNow(section, elements, design)
+        renderNow(section, elements, design, listName)
 
     }
     sections.forEach(section => {
@@ -346,53 +447,47 @@ const terruarCatalogue = {
         }
     },
 }
-const restaurantGallery = {
-    horizontal: [
-        "https://optim.tildacdn.com/tild3862-3466-4135-a662-666565663861/-/format/webp/DSC_4429-2_.JPG",
-        "https://optim.tildacdn.com/tild3437-3138-4262-b363-626433353334/-/format/webp/DSC_4434-2_.JPG",
-        "https://optim.tildacdn.com/tild6664-3532-4735-b462-633139333135/-/format/webp/DSC_4440-2_.JPG",
-        "https://optim.tildacdn.com/tild3433-3235-4663-b232-643536333365/-/format/webp/DSC_4443-2_.JPG",
-        "https://optim.tildacdn.com/tild6162-6562-4463-a437-636434366233/-/format/webp/DSC_4445-2_.JPG",
-        "https://optim.tildacdn.com/tild6336-3166-4539-b933-646265376165/-/format/webp/DSC_4878-2_.JPG",
-        "https://optim.tildacdn.com/tild6633-3865-4561-b134-376231613366/-/format/webp/DSC_4575-2_.JPG",
-        "https://optim.tildacdn.com/tild3661-6230-4561-a565-376134643135/-/format/webp/DSC_4453-2_.JPG",
-        "https://optim.tildacdn.com/tild6334-3865-4563-b063-353037343638/-/format/webp/DSC_4902-2_.JPG",
-        "https://optim.tildacdn.com/tild3134-3434-4562-a631-316133326565/-/format/webp/DSC_4454-2_.JPG",
-        "https://optim.tildacdn.com/tild3837-3564-4233-b164-306238613366/-/format/webp/DSC_4638-2_.JPG",
-        "https://optim.tildacdn.com/tild6635-3839-4761-a336-323563613861/-/format/webp/DSC_4462-2_.JPG",
-        "https://optim.tildacdn.com/tild6538-3838-4332-b963-333761386339/-/format/webp/DSC_4611-2_.JPG",
-    ],
-    vertical: [
-        "https://optim.tildacdn.com/tild6234-3262-4536-a465-373837626336/-/format/webp/DSC_4432-2_.JPG",
-        "https://optim.tildacdn.com/tild6466-3038-4463-b737-363630623662/-/format/webp/DSC_4876-2_.JPG",
-        "https://optim.tildacdn.com/tild6462-6533-4762-b666-313337666537/-/format/webp/DSC_4435-2_.JPG",
-        "https://optim.tildacdn.com/tild6330-3664-4339-b364-383535363434/-/format/webp/DSC_4930-2_.JPG",
-        "https://optim.tildacdn.com/tild3534-6537-4563-b536-303465323663/-/format/webp/DSC_4870-2_.JPG",
-        "https://optim.tildacdn.com/tild6662-3538-4636-b637-643961333535/-/format/webp/DSC_4448-2_.JPG",
-        "https://optim.tildacdn.com/tild6239-3665-4137-b937-323531623161/-/format/webp/DSC_4456-2_.JPG",
-        "https://optim.tildacdn.com/tild3432-3438-4661-a366-366137363137/-/format/webp/DSC_4577-2_.JPG",
-        "https://optim.tildacdn.com/tild6361-3539-4533-b466-383833316338/-/format/webp/DSC_4893-2_.JPG",
-        "https://optim.tildacdn.com/tild6264-3164-4465-a432-646533636363/-/format/webp/DSC_4915-2_.JPG",
-        "https://optim.tildacdn.com/tild6364-3030-4437-b934-633130393034/-/format/webp/DSC_4558-2_.JPG",
-    ]
-}
 const multipage = {
     popupButtonsInit: function () {
-        const buttons = document.querySelectorAll("[data-popup]")
-        buttons.forEach(button => {
-            const insideTheButton = button.querySelectorAll("*")
-            insideTheButton.forEach(el => {
-                el.setAttribute('data-popup', button.getAttribute("data-popup"));
-                el.setAttribute('data-header', button.getAttribute("data-header"));
-            })
-            button.addEventListener('click', (e) => {
+        document.querySelectorAll("[data-popup]").forEach(bttn => {
+            const data = bttn.getAttribute("data-popup")
+            bttn.addEventListener('click', (e) => {
                 multipage.popup(e.target)
             })
+            bttn.querySelectorAll('*').forEach(button => {
+                button.setAttribute('data-popup', data)
+            })
         })
+        const buttons = document.querySelectorAll("[data-popup]")
+
+        buttons.forEach(button => {
+            const id = button.getAttribute("data-popup")
+            const listName = this.findListNameById(id)
+            const obj = this.findObjectById(id);
+            button.setAttribute('data-list', listName)
+            button.setAttribute('data-popup-type', obj.popUpType)
+            button.setAttribute('data-header', obj.title)
+        })
+    },
+    findListNameById: function (id) {
+        for (const listName in lists) {
+            if (lists[listName].some(service => service.id === id)) {
+                return listName
+            }
+        }
+    },
+    findObjectById: function (id) {
+        for (const listName in lists) {
+            if (lists[listName].find(service => service.id === id)) {
+                return lists[listName].find(service => service.id === id)
+            }
+        }
     },
     popup(target){
         const dataPopup= target.getAttribute('data-popup')
         const dataHeader = target.getAttribute('data-header')
+        const dataType = target.getAttribute('data-popup-type')
+        const dataList = this.findListNameById(dataPopup)
         this.changeScroll()
 
         const multiPage = document.getElementById('multi-page')
@@ -414,31 +509,45 @@ const multipage = {
             terruarCatalogue.getCatalogues().then(r => {terruarCatalogue.renderCategories();terruarCatalogue.renderProducts()})
             return `<div id="terruarMenu"></div>`
         }
-        const getGallery = () => {
-            let q = ''
-            if (window.innerWidth > window.innerHeight) {
-                for (const img of restaurantGallery["horizontal"]) {
-                    q += `<img src="${img}" alt="Фотографии ресторана">`
-                }
-                return `<article id="restaurantGallery">${q}</article>`;
-            } else {
-                for (const img of restaurantGallery["vertical"]) {
-                    q += `<img src="${img}" alt="Фотографии ресторана">`
-                }
-                return `<article id="restaurantGallery" class="vertical">${q}</article>`;
+        const getGallery = (service) => {
+            let q = '';
+            const id = service.getAttribute('data-popup')
+            const obj = this.findObjectById(id)
+            if (!obj.withGallery) return q;
+
+            for (const img of obj.images) {
+                q += `<img src="${img}" alt="Фотографии ресторана">`
             }
+            return `<article id="pop-up-gallery">${q}</article>`;
+        }
+        const getTeam = (target) => {
+            let q = ''
+            lists.team.forEach(person => {
+                q += `<article class="team-person">
+                <div class="person-photo-block">
+                    <img onload="whatIsMax(this)" class="shadow person-photo" src="${person.photo[0]}" alt="${person.name}">
+                </div>
+                <div class="person-text-content">
+                    <p class="person-name">${person.name}</p>
+                    <p class="person-about">${person.about}</p>
+                    <p class="person-position">${person.position}</p>
+                </div>
+                </article>`
+            })
+            return `<section id="team" data-smooth-mobile>${q}</section>`
         }
 
         multiPage.insertAdjacentHTML('afterbegin', `
                 <div id="close-popup" onclick="multipage.remPopup()">
                         <svg width="50px" viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg"><g stroke-width="0"/><g stroke-linecap="round" stroke-linejoin="round"/><path d="M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2 2 6.5 2 12s4.5 10 10 10m-2.83-7.17 5.66-5.66m0 5.66L9.17 9.17" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </div> <!--кнопка закрытия поп-апа-->
+                    </div>
                 <div class="blur" id="popup-block"> <!--тело поп-апа-->
-                    ${dataPopup === 'online' ? `<article id="weatherTest"></article>` : ''} <!--условие рендера виджета с погодой-->
+                    ${dataPopup === 'online' ? `<article id="weatherTest"></article>` : ''}
                     <h2 class="popUpHeader">${dataHeader}</h2> 
+                    ${getGallery(target)}
                     ${dataPopup === 'online' ? getVideoStream() : ''}
+                    ${dataPopup === 'team' ? getTeam(target) : ''}
                     ${dataPopup === 'online' ? initPlayer() : ''}
-                    ${dataPopup === 'restaurant' ? getGallery() : ''}
                     ${dataPopup === 'restaurant' ? getMenu(target) : ''}
                 </div>`) // Рендер поп-апа
         getWeatherForecast().then()
