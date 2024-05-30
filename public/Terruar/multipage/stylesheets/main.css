@@ -723,6 +723,64 @@ body {
     }
     /* !second design */
 
+/*Dolyami section*/
+#sectionDolyami {
+    background: url("https://optim.tildacdn.com/tild3963-6339-4231-a231-633830323034/-/format/webp/pattern5.png") var(--white) fixed;
+    background-size: 5rem;
+    color: var(--white);
+    padding: 3rem;
+    color: var(--back-o);
+}
+#dolyami-inner {
+    max-width: 1440px;
+    margin: 0 auto;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+#dolyamiCard {
+    font-family: var(--unbounded);
+    color: var(--white);
+    background-color: var(--back);
+    width: fit-content;
+    padding: 2rem;
+    border-radius: 2rem;
+
+    display: flex;
+    gap: .5rem;
+}
+#dolyamiCard p {
+    margin-right: 1rem;
+    font-size: 1.3rem;
+    font-weight: 400;
+    text-align: center;
+    min-width: fit-content;
+    align-self: center;
+}
+#dolyamiLogos {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    height: 100%;
+    flex-wrap: wrap;
+}
+#dolyamiCard img {
+    display: block;
+}
+#dolyamiBooking {
+    font-family: var(--unbounded);
+    color: var(--white);
+    background-color: var(--wine);
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+/*Dolyami section*/
+
 /*}*/
 
 @keyframes showpopup {
@@ -860,4 +918,37 @@ body {
         transform: translate(-50%, -50%);
     }
     /*!Блок команды в поп-апе*/
+
+
+    /*Dolyami section*/
+    #sectionDolyami {
+        padding: 4rem 1rem;
+        flex-direction: column;
+    }
+    #dolyami-inner {
+        flex-direction: column;
+    }
+    #dolyamiCard {
+        flex-direction: column;
+        gap: 2rem;
+        border-radius: 1rem;
+    }
+    #dolyamiCard p {
+        width: unset;
+        margin-right: 0;
+    }
+    #dolyamiLogos {
+        align-items: center;
+        justify-content: center;
+    }
+    #dolyamiCard img {
+        display: block;
+        height: 1rem;
+    }
+    #dolyamiBooking {
+        width: 100%;
+        text-align: center;
+        border-radius: 1rem;
+    }
+    /*Dolyami section*/
 }
