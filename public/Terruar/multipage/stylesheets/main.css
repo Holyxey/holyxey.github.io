@@ -631,7 +631,6 @@ body {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem 0;
-    align-items: center;
     justify-content: center;
 }
 #multi-page .classic-hb {
@@ -895,7 +894,6 @@ body {
         overflow-x: auto;
         scroll-snap-type: x mandatory;
         padding-inline: 5dvw;
-        align-items: flex-start;
         justify-content: flex-start;
     }
     /* !Base section */
