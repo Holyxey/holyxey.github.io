@@ -183,12 +183,15 @@ body {
     border-radius: 2rem;
 
     position: relative;
-    height: 100%;
+    margin-top: 5rem;
+    height: calc(100vh - 5rem);
 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     overflow: hidden;
+
+    transition: all .3s linear;
 }
 #multi-page header #hero[data-nomain="services"] {
     background: url(https://static.tildacdn.com/tild3837-3564-4233-b164-306238613366/DSC_4638-2_.JPG) center / cover;

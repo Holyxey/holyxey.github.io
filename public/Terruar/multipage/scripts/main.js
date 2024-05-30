@@ -187,7 +187,11 @@ const styleClassLists = [
     } // design #2
 ]
 const whatIsMax = function(img) {
-    img.width > img.height ? img.style.height = '120%' : img.style.width = '120%'
+    if (img.width / img.height <= img.parentNode.clientWidth / img.parentNode.clientHeight) {
+        img.style.cssText = 'max-height: unset; max-width: 100%'
+    } else {
+        img.style.cssText = 'max-height: 100%; max-width: unset'
+    }
 }
 const needToRender = function (where) {
     const sections = document.querySelectorAll('[data-need-to-render]')
@@ -491,11 +495,11 @@ const multipage = {
         if (mobNav.offsetHeight < 1) {
             let height = `calc(${window.innerHeight}px - ${nav.clientHeight}px - 3rem)`;
             let margin = `calc(${nav.clientHeight}px + 2rem)`
-            hero.style.cssText += `min-height:${height}; margin-top: ${margin}`;
+            hero.style.cssText += `height:${height}; margin-top: ${margin}`;
         } else {
             let height = `unset`;
             let margin = `calc(${nav.offsetHeight}px + 2rem)`
-            hero.style.cssText += `min-height:${height}; margin-top: ${margin}`;
+            hero.style.cssText += `height:${height}; margin-top: ${margin}`;
         }
     },
     hideMobileMenu() {
@@ -628,11 +632,6 @@ const whereToRenderCounter = function () {
 }
 // аттрибуты data-counter(-where/-scrollIt/-item)
 
-const mainPage = {
-}
-const servicesPage = {
-}
-
 window.addEventListener("resize", () => {
     multipage.getHeaderHeight()
 })
@@ -644,11 +643,10 @@ window.addEventListener("load", () => {
     }
 })
 document.addEventListener("DOMContentLoaded", () => {
-    // whatPageIs.data === 'main' ? SOMEFUNCTION() : null
+    whatPageIs.data === 'main' ? multipage.heroVideoStart() : null
     // whatPageIs.data === 'services' ? SOMEFUNCTION() : null
     needToRender()
     multipage.getHeaderHeight()
-    multipage.heroVideoStart()
     multipage.popupButtonsInit()
     if (window.innerWidth < 600) {
         whereToRenderCounter()
