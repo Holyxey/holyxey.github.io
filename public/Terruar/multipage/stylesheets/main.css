@@ -843,10 +843,12 @@ body {
         padding: 1rem;
         flex-direction: row;
         gap: 1.5rem;
+        border-radius: 2rem;
+        border: 1px solid #00000010;
     }
     .person-photo-block {
         aspect-ratio: unset;
-        border-radius: 3rem 1.9rem 2.1rem 3rem;
+        border-radius: 100vmin;
         overflow: hidden;
     }
     .person-photo {
