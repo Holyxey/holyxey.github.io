@@ -342,8 +342,6 @@ const needToRender = function (where) {
                     : ''}
                 </article>
                 `)
-
-            console.log(`.."${item.id}" —OK`)
         })
     }
     const getData = function (section) {
@@ -735,7 +733,6 @@ const whereToRenderCounter = function () {
             : item.parentNode.querySelectorAll('[data-counter-item]')
         )
         const max = itemsList.length;
-        console.log(item, max, whatIsScrolling, itemsList)
         renderCounter(item, max, whatIsScrolling, itemsList)
     })
 }
