@@ -272,7 +272,7 @@ const styleClassLists = [
         artLink: 'classic-art-link',
     }, // design #1
     {
-        needHeader: true,
+        needHeader: false,
         needCounter: true,
         needToSmooth: true,
         section: 'classic-sec classic-sec-second',

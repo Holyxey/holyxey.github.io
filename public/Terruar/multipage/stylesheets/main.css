@@ -432,7 +432,7 @@ body {
     flex-wrap: wrap;
     gap: 1rem;
 }
-.team-person {
+#multi-page .team-person {
     flex: 1 0 300px;
 
     display: flex;
@@ -444,7 +444,7 @@ body {
     background-color: var(--back);
     border-radius: 4rem;
 }
-.person-photo-block {
+#multi-page .person-photo-block {
     flex: 1 0 100px;
     max-width: 100px;
     max-height: 100px;
@@ -454,26 +454,26 @@ body {
 
     overflow: hidden;
 }
-.person-photo {
+#multi-page .person-photo {
     display: block;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
-.person-text-content {
+#multi-page .person-text-content {
     flex: 1;
     display: flex;
     flex-direction: column;
     gap: .25rem;
     height: 100%;
 }
-.person-name {
+#multi-page .person-name {
     font-family: var(--unbounded);
     font-weight: 500;
     font-size: 1.2rem;
 }
-.person-position {
+#multi-page .person-position {
     color: var(--back-o);
     background-color: var(--white);
     width: fit-content;
@@ -482,7 +482,7 @@ body {
     border-radius: .5rem;
     font-weight: 500;
 }
-.person-about {
+#multi-page .person-about {
     font-family: var(--roboto);
     opacity: .8;
 }
@@ -620,26 +620,26 @@ body {
 /*!Можно удалять*/
 
 /* needToRender (base design) */
-.classic-sec {
+#multi-page .classic-sec {
     max-width: 1400px;
     margin: 4rem auto;
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
-.classic-ip {
+#multi-page .classic-ip {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem 0;
 }
-.classic-hb {
+#multi-page .classic-hb {
     display: flex;
     padding-left: 3rem;
     padding-right: 1rem;
     flex-direction: column;
     gap: .5rem;
 }
-.classic-art {
+#multi-page .classic-art {
     flex: 1 0 300px;
     display: flex;
     flex-direction: column;
@@ -652,24 +652,24 @@ body {
     border: 1px solid transparent;
     transition: scale .3s ease-out;
 }
-.classic-art-hb {
+#multi-page .classic-art-hb {
     display: flex;
     flex-direction: column;
     padding-inline: 1rem;
     gap: .5rem;
 }
-.classic-art-header {
+#multi-page .classic-art-header {
     font-family: var(--unbounded);
     font-weight: 500;
     font-size: 1.3rem;
 }
-.classic-art-descr {
+#multi-page .classic-art-descr {
     font-size: 1.1rem;
     font-family: var(--roboto);
     font-weight: 300;
     color: var(--white-o);
 }
-.classic-art-imgBlck {
+#multi-page .classic-art-imgBlck {
     flex: 1;
     min-height: 200px;
     width: 100%;
@@ -677,13 +677,13 @@ body {
     border-radius: 1rem;
     position: relative;
 }
-.classic-art-img {
+#multi-page .classic-art-img {
     position: absolute;
     top: 50%;
     left: 50%;
     translate: -50% -50%;
 }
-.classic-art-link {
+#multi-page .classic-art-link {
     text-decoration: none !important;
     color: var(--white) !important;
     margin: 0 1rem 0 auto;
@@ -691,34 +691,34 @@ body {
 /* !needToRender */
 
     /* second design */
-    .classic-sec-second {
+    #multi-page .classic-sec-second {
 
     }
-    .classic-hb-second {
+    #multi-page .classic-hb-second {
     }
-    .classic-ip-second {
+    #multi-page .classic-ip-second {
 
     }
-    .classic-art-second {
+    #multi-page .classic-art-second {
         flex: 1 0 30%;
         max-width: calc(1400px / 3);
     }
-    .classic-art-hb-second {
+    #multi-page .classic-art-hb-second {
 
     }
-    .classic-art-header-second {
+    #multi-page .classic-art-header-second {
 
     }
-    .classic-art-descr-second {
+    #multi-page .classic-art-descr-second {
 
     }
-    .classic-art-imgBlck-second {
+    #multi-page .classic-art-imgBlck-second {
 
     }
-    .classic-art-img-second {
+    #multi-page .classic-art-img-second {
 
     }
-    .classic-art-link-second {
+    #multi-page .classic-art-link-second {
 
     }
     /* !second design */
@@ -822,12 +822,12 @@ body {
     }
 
     /* Base section */
-    .classic-art {
+    #multi-page .classic-art {
         flex: 1 0 90dvw;
         scroll-snap-align: center;
         max-width: unset;
     }
-    .classic-ip {
+    #multi-page .classic-ip {
         flex-direction: row;
         flex-wrap: nowrap;
         width: 100%;
@@ -839,19 +839,19 @@ body {
     /* !Base section */
 
     /*Блок команды в поп-апе*/
-    .team-person {
+    #multi-page .team-person {
         padding: 1rem;
         flex-direction: row;
         gap: 1.5rem;
         border-radius: 2rem;
         border: 1px solid #00000010;
     }
-    .person-photo-block {
+    #multi-page .person-photo-block {
         aspect-ratio: unset;
         border-radius: 100vmin;
         overflow: hidden;
     }
-    .person-photo {
+    #multi-page .person-photo {
         min-height: 100%;
         display: block;
         position: absolute;
