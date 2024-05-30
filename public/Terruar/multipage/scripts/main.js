@@ -15,6 +15,9 @@ const lists = {
             fullDescr: '',
             benefits: ['', '', ''],
             images: ['https://thumb.tildacdn.com/tild3933-6233-4938-b230-643539623531/-/format/webp/511.jpg', '', ''],
+            popUp: true,
+            readMoreLink: '',
+            readMoreText: 'Подробнее',
         },
         {
             id: 'bicycle',
@@ -25,6 +28,9 @@ const lists = {
             fullDescr: '',
             benefits: ['', '', ''],
             images: ['https://thumb.tildacdn.com/tild6465-6438-4934-b630-616231316662/-/format/webp/image.png', '', ''],
+            popUp: true,
+            readMoreLink: '',
+            readMoreText: 'Подробнее',
         },
         {
             id: 'xbox',
@@ -35,6 +41,9 @@ const lists = {
             fullDescr: '',
             benefits: ['', '', ''],
             images: ['https://thumb.tildacdn.com/tild3630-3036-4563-b134-326462623439/-/format/webp/jose-gil-2pNdTBn4C7U.jpg', '', ''],
+            popUp: true,
+            readMoreLink: '',
+            readMoreText: 'Подробнее',
         },
         {
             id: 'bathvat',
@@ -45,6 +54,9 @@ const lists = {
             fullDescr: '',
             benefits: ['', '', ''],
             images: ['https://thumb.tildacdn.com/tild3435-6233-4833-b861-366330383062/-/format/webp/KIR_5744_1.jpg', '', ''],
+            popUp: true,
+            readMoreLink: '',
+            readMoreText: 'Подробнее',
         },
         {
             id: 'projector',
@@ -55,6 +67,9 @@ const lists = {
             fullDescr: '',
             benefits: ['', '', ''],
             images: ['https://thumb.tildacdn.com/tild3337-3031-4236-a638-363235343733/-/format/webp/600A3332.png', '', ''],
+            popUp: true,
+            readMoreLink: '',
+            readMoreText: 'Подробнее',
         },
         {
             id: 'quadbike',
@@ -65,6 +80,9 @@ const lists = {
             fullDescr: '',
             benefits: ['', '', ''],
             images: ['https://thumb.tildacdn.com/tild6230-3462-4431-b436-386138613338/-/format/webp/photo.jpg', '', ''],
+            popUp: true,
+            readMoreLink: '',
+            readMoreText: 'Подробнее',
         },
         {
             id: 'jeeptour',
@@ -75,6 +93,9 @@ const lists = {
             fullDescr: '',
             benefits: ['', '', ''],
             images: ['https://thumb.tildacdn.com/tild3264-6431-4131-a234-663461616431/-/format/webp/c45331ec-7b02-4c17-8.jpg', '', ''],
+            popUp: true,
+            readMoreLink: '',
+            readMoreText: 'Подробнее',
         },
         {
             id: 'horseriding',
@@ -85,6 +106,9 @@ const lists = {
             fullDescr: '',
             benefits: ['', '', ''],
             images: ['https://thumb.tildacdn.com/tild3433-3561-4364-b363-643465653962/-/format/webp/tim-schmidbauer-7RdZ.jpg', '', ''],
+            popUp: true,
+            readMoreLink: '',
+            readMoreText: 'Подробнее',
         }
     ],
     offersList: [],
