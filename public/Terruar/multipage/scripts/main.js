@@ -501,7 +501,6 @@ const needToRender = function (where) {
         const styleNumber = setups[1] - 1
         const design = styleClassLists[styleNumber]
         const elements = lists[listName]
-        console.log(elements)
 
         console.log(`Rendering "${title}":"${listName}, ${styleNumber + 1}"...`)
         renderNow(section, elements, design, listName)
@@ -841,7 +840,19 @@ const multipage = {
                 }
             }, 1000)
         })
-    }
+    },
+    renderShowAllButton: function () {
+        const elements = document.querySelectorAll('[data-show-all]')
+        elements.forEach((element, index) => {
+            const firstPopUpButtonId = element.querySelector('[data-popup]').getAttribute('data-popup')
+            const listName = this.findListNameById(firstPopUpButtonId)
+            const whereToRender = element.querySelector('.classic-hb') || element
+            whereToRender.insertAdjacentHTML('beforeend', `<div onclick="multipage.clickShowAllButton(this)" id="showAllButton" class="blur"><div></div><div></div></div>`)
+        })
+    },
+    clickShowAllButton: function (el) {
+        // делаем обработчик, который в поп-ап передает имя листа и соответственно рендерит категории в нем в компактном виде
+    },
 }
 
 const checkInViewHorizontal = function (element) {
@@ -909,6 +920,7 @@ document.addEventListener("DOMContentLoaded", () => {
     multipage.popupButtonsInit()
     if (window.innerWidth < 600) {
         whereToRenderCounter()
+        multipage.renderShowAllButton()
     }
 })
 

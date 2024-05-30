@@ -626,12 +626,14 @@ body {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    position: relative;
 }
 #multi-page .classic-ip {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem 0;
     justify-content: center;
+    position: relative;
 }
 #multi-page .classic-hb {
     display: flex;
@@ -639,6 +641,7 @@ body {
     padding-right: 1rem;
     flex-direction: column;
     gap: .5rem;
+    position: relative;
 }
 #multi-page .classic-art {
     flex: 1 0 300px;
@@ -723,6 +726,33 @@ body {
 
     }
     /* !second design */
+
+#showAllButton {
+    position: absolute;
+    top: 1.5rem;
+    right: 2.5rem;
+    width: 50px;
+    height: 50px;
+    border: 1px solid var(--white-oo);
+    border-radius: 100vmin;
+    z-index: 100500;
+    transition: all .3s ease-out;
+}
+#showAllButton > div {
+    width: 60%;
+    height: 1px;
+    background-color: var(--white-o);
+    position: absolute;
+    left: 50%;
+    translate: -50% -50%;
+    transition: all .3s ease-out;
+}
+#showAllButton > div:first-child {
+    top: 40%;
+}
+#showAllButton > div:last-child {
+    top: 60%;
+}
 
 /*Dolyami section*/
 #sectionDolyami {
