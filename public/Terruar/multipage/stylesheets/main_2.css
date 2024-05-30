@@ -549,6 +549,109 @@ body {
 }
 /*!Base section*/
 
+/* needToRender (base design) */
+.classic-sec {
+    max-width: 1400px;
+    margin: 4rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.classic-ip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 0;
+}
+.classic-hb {
+    display: flex;
+    padding-left: 3rem;
+    padding-right: 1rem;
+    flex-direction: column;
+    gap: .5rem;
+}
+.classic-art {
+    flex: 1 0 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem 1rem;
+    border-radius: 3rem;
+    margin-inline: .5rem;
+    cursor: pointer;
+    background-color: var(--back-o);
+    border: 1px solid transparent;
+    transition: scale .3s ease-out;
+}
+.classic-art-hb {
+    display: flex;
+    flex-direction: column;
+    padding-inline: 1rem;
+    gap: .5rem;
+}
+.classic-art-header {
+    font-family: var(--unbounded);
+    font-weight: 500;
+    font-size: 1.3rem;
+}
+.classic-art-descr {
+    font-size: 1.1rem;
+    font-family: var(--roboto);
+    font-weight: 300;
+    color: var(--white-o);
+}
+.classic-art-imgBlck {
+    flex: 1;
+    min-height: 200px;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 1rem;
+    position: relative;
+}
+.classic-art-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+}
+.classic-art-link {
+    text-decoration: none !important;
+    color: var(--white) !important;
+    margin: 0 1rem 0 auto;
+}
+/* !needToRender */
+
+/* second design */
+.classic-sec-second {
+
+}
+.classic-hb-second {
+}
+.classic-ip-second {
+
+}
+.classic-art-second {
+    max-width: calc(1400px / 3);
+}
+.classic-art-hb-second {
+
+}
+.classic-art-header-second {
+
+}
+.classic-art-descr-second {
+
+}
+.classic-art-imgBlck-second {
+
+}
+.classic-art-img-second {
+
+}
+.classic-art-link-second {
+
+}
+/* !second design */
+
 /*}*/
 
 @keyframes showpopup {
@@ -647,7 +750,14 @@ body {
         flex: 1 0 60%;
     }
 
-    #multi-page .section-inner {
+
+    /* Base section */
+    .classic-art {
+        flex: 1 0 90dvw;
+        scroll-snap-align: center;
+        max-width: unset;
+    }
+    .classic-ip {
         flex-direction: row;
         flex-wrap: nowrap;
         width: 100%;
@@ -655,13 +765,6 @@ body {
         overflow-x: auto;
         scroll-snap-type: x mandatory;
         padding-inline: 5dvw;
-    }
-
-    /* Base section */
-    #multi-page .section-inner > article {
-        flex: 1 0 90dvw;
-        scroll-snap-align: center;
-        max-width: unset;
     }
     /* !Base section */
 }

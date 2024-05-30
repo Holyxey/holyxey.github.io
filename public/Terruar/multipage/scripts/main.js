@@ -98,6 +98,9 @@ const lists = {
             fullDescr: '',
             benefits: ['', '', ''],
             images: ['https://optim.tildacdn.com/tild3530-3138-4862-a135-633935343735/-/format/webp/heroImg.png', '', ''],
+            popUp: true,
+            readMoreLink: '',
+            readMoreText: 'Подробнее',
         },
         {
             id: 'restaurant',
@@ -108,6 +111,9 @@ const lists = {
             fullDescr: '',
             benefits: ['', '', ''],
             images: ['https://optim.tildacdn.com/tild6336-3166-4539-b933-646265376165/-/format/webp/DSC_4878-2_.JPG', '', ''],
+            popUp: true,
+            readMoreLink: '',
+            readMoreText: 'Подробнее',
         },
         {
             id: 'team',
@@ -118,8 +124,115 @@ const lists = {
             fullDescr: '',
             benefits: ['', '', ''],
             images: ['https://optim.tildacdn.com/tild6336-3166-4539-b933-646265376165/-/format/webp/DSC_4878-2_.JPG', '', ''],
+            popUp: false,
+            readMoreLink: '',
+            readMoreText: 'Подробнее',
         },
     ]
+}
+const styleClassLists = [
+    {
+        needHeader: true,
+        needCounter: true,
+        needToSmooth: true,
+        section: 'classic-sec',
+        headBlock: 'classic-hb',
+        itemsParent: 'classic-ip',
+        article: 'classic-art',
+        artHeads: 'classic-art-hb',
+        artHeader: 'classic-art-header',
+        artDescr: 'classic-art-descr',
+        artImgBlck: 'classic-art-imgBlck',
+        artImg: 'classic-art-img',
+        artLink: 'classic-art-link',
+    }, // design #1
+    {
+        needHeader: true,
+        needCounter: true,
+        needToSmooth: true,
+        section: 'classic-sec classic-sec-second',
+        headBlock: 'classic-hb classic-hb-second',
+        itemsParent: 'classic-ip classic-ip-second',
+        article: 'classic-art classic-art-second',
+        artHeads: 'classic-art-hb classic-art-hb-second',
+        artHeader: 'classic-art-header classic-art-header-second',
+        artDescr: 'classic-art-descr classic-art-descr-second',
+        artImgBlck: 'classic-art-imgBlck classic-art-imgBlck-second',
+        artImg: 'classic-art-img classic-art-img-second',
+        artLink: 'classic-art-link classic-art-link-second',
+    } // design #2
+]
+const whatIsMax = function(img) {
+    img.width > img.height ? img.style.height = '120%' : img.style.width = '120%'
+}
+const needToRender = function (where) {
+    const sections = document.querySelectorAll('[data-need-to-render]')
+
+    const renderNow = function (where, what, design) {
+        where.classList = `${design.section}`;
+        if (design.needHeader) {
+            where.insertAdjacentHTML('afterbegin',
+                `<div class="${design.headBlock}" ${design.needCounter ? 'data-counter-where' : ''}>
+                    <h3>${where.title}</h3>
+                </div> 
+                <div class="${design.itemsParent}" 
+                    ${design.needToSmooth ? 'data-smooth-mobile' : ''}
+                    ${design.needCounter ? 'data-counter-scrollIt' : ''}
+                    >
+                </div>
+                `)
+        } else {
+            where.insertAdjacentHTML('afterbegin',
+                `
+                <div class="${design.itemsParent}" 
+                    ${design.needToSmooth ? 'data-smooth-mobile' : ''}
+                    ${design.needCounter ? 'data-counter-scrollIt' : ''}
+                    >
+                </div>
+                `)
+        }// Рендерим (или нет) заголовок из аттрибута тайтл из "where"
+
+        const itemsParent = where.querySelector(`[class="${design.itemsParent}"]`)
+        what.forEach(function (item) {
+            itemsParent.insertAdjacentHTML('beforeend',
+                `
+                <article class="${design.article}"
+                ${item.popUp ? `data-popup="${item.id}" data-header="${item.title}"` : ''}
+                ${design.needCounter ? 'data-counter-item' : ''}>
+                    ${design.artHeads 
+                    ? `<div class="${design.artHeads}">
+                            <h4 class="${design.artHeader}">${item.title}</h4>
+                            <p class="${design.artDescr}">${item.shortDescr}</p>
+                        </div>` 
+                    : ''}
+                    ${design.artImgBlck 
+                    ? `<div class="${design.artImgBlck}"><img onload="whatIsMax(this)" class="${design.artImg}" src="${item.images[0]}" alt="${item.shortDescr}"></div>` 
+                    : ''}
+                    ${design.artLink 
+                    ? `<a class="${design.artLink}" ${item.readMoreLink ? `href="${item.readMoreLink}"` : ''}>${item.readMoreText}</a>` 
+                    : ''}
+                </article>
+                `)
+
+            console.log(`.."${item.id}" —OK`)
+        })
+    }
+    const getData = function (section) {
+        const data = section.getAttribute('data-need-to-render')
+        const title = section.getAttribute('title')
+        const setups = data.split(',')
+        const listName = setups[0]
+        const styleNumber = setups[1] - 1
+        const design = styleClassLists[styleNumber]
+        const elements = lists[listName]
+
+        console.log(`Rendering "${title}":"${listName}, ${styleNumber + 1}"...`)
+        renderNow(section, elements, design)
+
+    }
+    sections.forEach(section => {
+        getData(section)
+    })
 }
 
 const terruarCatalogue = {
@@ -472,6 +585,7 @@ const renderCounter = function (where, max, whatIsScrolling, itemsList) {
 }
 const whereToRenderCounter = function () {
     const where = document.querySelectorAll('[data-counter-where]')
+    if (where.length === 0) return
     where.forEach(item => {
         const whatIsScrolling = (
             item.querySelector('[data-counter-scrollIt]')
@@ -491,68 +605,8 @@ const whereToRenderCounter = function () {
 // аттрибуты data-counter(-where/-scrollIt/-item)
 
 const mainPage = {
-    renderHeroOffers: function () {
-        if (!document.getElementById('hero-offers')) return
-        const sectionHere = document.getElementById('hero-offers')
-
-        const renderAllOffers = function () {
-            const offersHere = lists.other;
-            const headOfSection = sectionHere.querySelector('.base-section-header')
-            const sectionInner = sectionHere.querySelector('.section-inner');
-            let result = ''
-
-            offersHere.forEach((item, index) => {
-                result +=
-                    `<article class="services-article" data-counter-item data-popup="${item.id}" data-header="${item.title}">
-                        <div class="services-headlines">
-                            ${item.icon ? `<img src="" alt="">` : ''}
-                            <h4>${item.title}</h4>
-                            ${item.shortDescr ? `<p class="services-description">${item.shortDescr}</p>` : '' }
-                        </div>
-                        <div class="services-img-block">
-                            <img src="${item.images[0]}" alt="${item.fullDescr ? item.fullDescr : item.shortDescr}">
-                        </div>
-                        <a ${item.link ? `href='${item.link}'` : ''} class="hero-offer-button">Подробнее</a>
-                    </article>`
-            })
-
-            return result
-        }
-
-        sectionHere.insertAdjacentHTML('beforeend',
-            `
-            <div class="base-section-header" data-counter-where>
-                <h3>${sectionHere.getAttribute('title')}</h3>
-            </div>
-            <div class="section-inner" data-smooth-mobile="1" data-counter-scrollIt>
-                ${renderAllOffers()}
-            </div>
-            `)
-    }
 }
 const servicesPage = {
-    renderServices: function () {
-        if (!document.getElementById('services-offers')) return
-        const sectionOfServices = document.getElementById('services-offers')
-        const headOfSection = sectionOfServices.querySelector('.base-section-header');
-        const sectionInner = sectionOfServices.querySelector('.section-inner');
-        headOfSection.setAttribute('data-counter-where', '')
-        sectionInner.setAttribute('data-counter-scrollIt', '')
-
-        lists.servicesList.forEach((service) => {
-            sectionInner.insertAdjacentHTML("beforeend",
-                `<article class="services-article" data-popup="${service.id}" data-header="${service.title}" data-counter-item>
-                        <div class="services-headlines">
-                            <h4>${service.title}</h4>
-                            <p class="services-description">${service.fullDescr ? service.fullDescr : service.shortDescr}</p>
-                        </div>
-                        ${service.images
-                    ? `<div class="services-img-block"><img loading="lazy" src="${service.images[0]}" alt="${service.fullDescr ? service.fullDescr : service.shortDescr}"></div>`
-                    : ''}
-                        <a>Подробнее</a>
-                    </article>`)
-        })
-    }
 }
 
 window.addEventListener("resize", () => {
@@ -566,8 +620,9 @@ window.addEventListener("load", () => {
     }
 })
 document.addEventListener("DOMContentLoaded", () => {
-    whatPageIs.data === 'main' ? mainPage.renderHeroOffers() : null
-    whatPageIs.data === 'services' ? servicesPage.renderServices() : null
+    // whatPageIs.data === 'main' ? SOMEFUNCTION() : null
+    // whatPageIs.data === 'services' ? SOMEFUNCTION() : null
+    needToRender()
     multipage.getHeaderHeight()
     multipage.heroVideoStart()
     multipage.popupButtonsInit()
