@@ -845,8 +845,6 @@ body {
         gap: 1.5rem;
     }
     .person-photo-block {
-        max-height: 100px;
-        height: calc(100% - 2rem);
         aspect-ratio: unset;
         border-radius: 3rem 1.9rem 2.1rem 3rem;
         overflow: hidden;
