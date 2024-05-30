@@ -426,7 +426,22 @@ const styleClassLists = [
         artImgBlck: 'classic-art-imgBlck classic-art-imgBlck-second',
         artImg: 'classic-art-img classic-art-img-second',
         artLink: 'classic-art-link classic-art-link-second',
-    } // design #2
+    }, // design #2 ()
+    {
+        needHeader: true,
+        needCounter: true,
+        needToSmooth: true,
+        section: 'classic-sec classic-sec-second',
+        headBlock: 'classic-hb classic-hb-second',
+        itemsParent: 'classic-ip classic-ip-second',
+        article: 'classic-art classic-art-second',
+        artHeads: 'classic-art-hb classic-art-hb-second',
+        artHeader: 'classic-art-header classic-art-header-second',
+        artDescr: 'classic-art-descr classic-art-descr-second',
+        artImgBlck: 'classic-art-imgBlck classic-art-imgBlck-second',
+        artImg: 'classic-art-img classic-art-img-second',
+        artLink: 'classic-art-link classic-art-link-second',
+    } // design #3 (Same like 2 but with section header)
 ]
 const whatIsMax = function(img) {
     if (img.width / img.height <= img.parentNode.clientWidth / img.parentNode.clientHeight) {
