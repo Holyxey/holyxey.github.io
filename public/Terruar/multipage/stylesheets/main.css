@@ -984,6 +984,7 @@ body {
         flex-direction: column;
         max-width: 1200px;
         gap: 2rem;
+        width: 100%;
     }
     #popup-service .popup-service-imgblock {
         min-height: 40dvh;
@@ -1056,7 +1057,8 @@ body {
     }
     #dolyamiCard {
         flex-direction: column;
-        gap: 2rem;
+        gap: 1rem;
+        padding: 1rem 2rem 1.3rem 2rem;
         border-radius: 1rem;
     }
     #dolyamiCard p {
@@ -1066,6 +1068,7 @@ body {
     #dolyamiLogos {
         align-items: center;
         justify-content: center;
+        gap: .5rem;
     }
     #dolyamiCard img {
         display: block;

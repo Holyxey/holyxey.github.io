@@ -94,11 +94,11 @@
     </header>
 
     <main>
-        <section id="services-offers" title="Все наши развлечения" data-show-all data-need-to-render="servicesList,2">
+        <section id="services-offers" title="Все наши развлечения" data-show-all data-need-to-render="servicesList,3">
         </section>
         <section id="sectionDolyami">
             <div id="dolyami-inner">
-                <article id="dolyamiCard" class="blur">
+                <article onclick="multipage.bookingClick()" id="dolyamiCard" class="blur">
                     <p>У нас есть оплата</p>
                     <div id="dolyamiLogos">
                         <img src="../sources/dolyami/Dolyame%20logo.svg" alt='"Долями" логотип'>
@@ -109,7 +109,7 @@
                         <img src="../sources/dolyami/Apple_Pay_Mark_RGB_041619%202.svg" alt='Apple pay'>
                     </div>
                 </article>
-                <div id="dolyamiBooking" class="shadow">Посмотреть даты</div>
+                <div onclick="multipage.bookingClick()" id="dolyamiBooking" class="shadow">Посмотреть даты</div>
             </div>
         </section>
     </main>
