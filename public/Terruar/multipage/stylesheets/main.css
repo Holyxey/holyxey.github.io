@@ -380,6 +380,79 @@ body {
 }
 /*!Pop-up*/
 
+/*services pop-up*/
+#popup-service {
+    display: flex;
+    max-width: 1200px;
+    gap: 2rem;
+}
+#popup-service .popup-service-imgblock {
+    flex: 1;
+    border-radius: 3rem;
+    overflow: hidden;
+    /*height: 500px;*/
+    position: relative;
+}
+#popup-service .popup-service-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#popup-service .popup-service-textblock {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    padding-block: 2rem;
+}
+#popup-service .popup-service-header {}
+#popup-service .popup-service-fulldescr {
+    font-size: 1.1rem;
+    font-family: var(--roboto);
+    font-weight: 300;
+    color: var(--white-o);
+}
+
+#popup-service .popup-service-buttons {
+    margin-top: 3rem;
+    display: flex;
+    gap: 1rem;
+}
+#popup-service .popup-service-buttons a {
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+    border-radius: 1rem;
+    padding: .8rem 1.5rem;
+    border: 1px solid #56AC69;
+    box-shadow: 0 0 10px #00000050;
+    color: #F8F3C8!important;
+
+    text-decoration: none !important;
+    translate: 0 1px;
+}
+#popup-service .popup-service-buttons svg {
+    fill: #56AC69;
+    height: 1.5rem;
+    translate: 0 1px;
+}
+#popup-service .popup-service-buttons p {
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+    border-radius: .7rem;
+    border: 1px solid #F8F3C840;
+    padding: .8rem 1.5rem;
+    max-width: fit-content;
+    pointer-events: none;
+    opacity: .6;
+    font-weight: 300;
+}
+/*!services pop-up*/
+
 /*Weather*/
 #weatherTest {
     display: flex;
@@ -880,6 +953,9 @@ body {
     #popup-block {
         padding: 2rem .5rem;
     }
+    #popup-block .popUpHeader {
+        max-width: calc(100dvw - 4rem);
+    }
     #weatherTest {
         top: 0;
         left: 0;
@@ -900,6 +976,24 @@ body {
     #weatherTest .weatherDay:not(:nth-child(1)) .morning,
     #weatherTest .weatherDay:not(:nth-child(1)) .evening {
         display: none;
+    }
+
+    /*services pop-up*/
+    #popup-service {
+        display: flex;
+        flex-direction: column;
+        max-width: 1200px;
+        gap: 2rem;
+    }
+    #popup-service .popup-service-imgblock {
+        min-height: 40dvh;
+    }
+    #popup-service .popup-service-header {
+        width: 100%;
+    }
+    #popup-service .popup-service-textblock {
+        padding-inline: 1rem;
+        align-items: center;
     }
 
     #terruarMenu .menuCategory {

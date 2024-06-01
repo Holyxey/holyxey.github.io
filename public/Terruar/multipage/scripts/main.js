@@ -683,6 +683,29 @@ const multipage = {
             })
             return `<section id="team" data-smooth-mobile>${q}</section>`
         }
+        const getService = (target) => {
+            const name = target.getAttribute('data-popup')
+            const list = target.getAttribute('data-list')
+            const obj = lists[list].find(service => service.id === name)
+
+            return `
+            <section id="popup-service">
+            <div class="popup-service-imgblock">
+                <img onload="whatIsMax(this)" src="${obj.images[0]}" alt="${obj.fullDescr}" class="popup-service-img">
+            </div>
+            <div class="popup-service-textblock">
+                <h3 class="popup-service-header">${obj.shortDescr}</h3>
+                <p class="popup-service-fulldescr">${obj.fullDescr}</p>
+                <div class="popup-service-buttons">
+                    <a href="https://wa.me/79670655655?text=Здравствуйте, пишу с сайта по предложению '${obj.title}'" target="_blank" class="hxSpecialItemColumnFooterWhatsApp" rel="noopener">
+                        <svg viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.799 11.61c-.039-.018-1.497-.736-1.756-.83a1.008 1.008 0 0 0-.34-.074c-.197 0-.362.098-.49.29-.146.217-.587.733-.724.886-.017.02-.042.045-.056.045-.013 0-.239-.093-.307-.122-1.564-.68-2.752-2.314-2.914-2.59-.024-.039-.025-.057-.025-.057a.48.48 0 0 1 .086-.1c.08-.08.165-.183.248-.283l.118-.14c.12-.14.175-.25.237-.376l.033-.065a.68.68 0 0 0-.02-.64c-.035-.07-.65-1.555-.716-1.711-.157-.377-.365-.552-.654-.552l-.113.004c-.137.006-.882.104-1.212.312-.35.22-.941.923-.941 2.16 0 1.111.705 2.162 1.009 2.561l.041.06c1.16 1.695 2.607 2.95 4.074 3.537 1.412.564 2.08.629 2.46.629.16 0 .289-.013.401-.024l.072-.006c.488-.044 1.56-.6 1.803-1.277.193-.533.243-1.117.115-1.328-.087-.144-.238-.216-.429-.308Z"></path><path d="M10.178.119C4.76.119.354 4.492.354 9.869c0 1.738.465 3.44 1.347 4.93L.014 19.776a.26.26 0 0 0 .324.33l5.19-1.649a9.89 9.89 0 0 0 4.65 1.16c5.416 0 9.822-4.374 9.822-9.749 0-5.376-4.406-9.75-9.822-9.75Zm0 17.467a7.783 7.783 0 0 1-4.282-1.277.26.26 0 0 0-.221-.03l-2.6.826.84-2.476a.26.26 0 0 0-.037-.236 7.613 7.613 0 0 1-1.481-4.525c0-4.256 3.49-7.718 7.78-7.718s7.78 3.462 7.78 7.718-3.49 7.718-7.78 7.718Z"></path></svg>
+                        WhatsApp
+                    </a>
+                </div>
+            </div>
+            </section>
+            `
+        }
 
         multiPage.insertAdjacentHTML('afterbegin', `
                 <div id="close-popup" onclick="multipage.remPopup()">
@@ -696,6 +719,7 @@ const multipage = {
                     ${dataPopup === 'team' ? getTeam(target) : ''}
                     ${dataPopup === 'online' ? initPlayer() : ''}
                     ${dataPopup === 'restaurant' ? getMenu(target) : ''}
+                    ${dataType === 'service' ? getService(target) : ''}
                 </div>`) // Рендер поп-апа
         getWeatherForecast().then()
     }, // Показ поп-апа
