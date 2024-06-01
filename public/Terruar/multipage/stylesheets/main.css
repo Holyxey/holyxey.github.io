@@ -12,6 +12,7 @@
     --bad: #EF767A;
     --blue: #0081AF;
     --wine: #a4315b;
+    --yellow: #F8F6CB;
 
     --unbounded: "Unbounded", sans-serif;
     --roboto: "Roboto", sans-serif;
@@ -282,6 +283,135 @@ body {
 }
 /*!Header*/
 
+
+/* needToRender (base design) */
+#multi-page .classic-sec {
+    max-width: 1400px;
+    margin: 4rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: relative;
+}
+#multi-page .classic-ip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 0;
+    justify-content: center;
+    position: relative;
+}
+#multi-page .classic-hb {
+    display: flex;
+    padding-left: 3rem;
+    padding-right: 1rem;
+    flex-direction: column;
+    gap: .5rem;
+    position: relative;
+}
+#multi-page .w-btn {
+    justify-content: space-between;
+    flex-direction: row;
+}
+#multi-page .w-btn > h3 {
+    width: 100%;
+}
+#multi-page .w-btn > * {
+    min-width: fit-content;
+}
+#multi-page .classic-art {
+    flex: 1 0 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem 1rem;
+    border-radius: 3rem;
+    margin-inline: .5rem;
+    cursor: pointer;
+    background-color: var(--back-o);
+    border: 1px solid transparent;
+    transition: scale .3s ease-out;
+}
+#multi-page .classic-art-hb {
+    display: flex;
+    flex-direction: column;
+    padding-inline: 1rem;
+    gap: .5rem;
+}
+#multi-page .classic-art-header {
+    font-family: var(--unbounded);
+    font-weight: 500;
+    font-size: 1.3rem;
+}
+#multi-page .classic-art-descr {
+    font-size: 1.1rem;
+    font-family: var(--roboto);
+    font-weight: 300;
+    color: var(--white-o);
+}
+#multi-page .classic-art-imgBlck {
+    flex: 1;
+    min-height: 200px;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 1rem;
+    position: relative;
+}
+#multi-page .classic-art-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+}
+#multi-page .classic-art-link {
+    text-decoration: none !important;
+    color: var(--white) !important;
+    margin: 0 1rem 0 auto;
+}
+#multi-page .classic-header-button-first {
+    background-color: var(--wine);
+    width: fit-content;
+    color: var(--white)!important;
+    text-decoration: none !important;
+    padding: .5rem 1rem;
+    border-radius: 100vmin;
+    text-align: center;
+    align-content: center;
+}
+/* !needToRender */
+
+    /* second design */
+    #multi-page .classic-sec-second {
+
+    }
+    #multi-page .classic-hb-second {
+    }
+    #multi-page .classic-ip-second {
+
+    }
+    #multi-page .classic-art-second {
+        flex: 1 0 30%;
+        max-width: calc(1400px / 3);
+    }
+    #multi-page .classic-art-hb-second {
+
+    }
+    #multi-page .classic-art-header-second {
+
+    }
+    #multi-page .classic-art-descr-second {
+
+    }
+    #multi-page .classic-art-imgBlck-second {
+
+    }
+    #multi-page .classic-art-img-second {
+
+    }
+    #multi-page .classic-art-link-second {
+
+    }
+    /* !second design */
+
 /* reviews */
 #multi-page #reviews .classic-ip {
     display: flex;
@@ -323,7 +453,27 @@ body {
 }
 /* !reviews */
 
-/*Pop-up*/
+/* Territory map */
+#multi-page #map .classic-ip {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    /*padding-inline: 1rem;*/
+}
+#multi-page #map .map-img {
+    flex: 1;
+    max-width: 50%;
+    position: relative;
+    overflow: hidden;
+    min-width: 500px;
+    border-radius: 3rem;
+    border: 2px solid var(--yellow);
+    background-color: var(--yellow);
+    padding: .25rem;
+}
+/* !Territory map */
+
+/*Pop-up base styles*/
 #popup-block {
     position: fixed;
     top: 0;
@@ -419,7 +569,7 @@ body {
     max-width: 100%;
     aspect-ratio: unset;
 }
-/*!Pop-up*/
+/*!Pop-up base styles*/
 
 /*services pop-up*/
 #popup-service {
@@ -428,6 +578,7 @@ body {
     gap: 2rem;
     padding-inline: .25rem;
     width: 100%;
+    margin-block: auto;
 }
 #popup-service .popup-service-imgblock {
     flex: 1;
@@ -656,193 +807,6 @@ body {
 }
 /*!Restaurant menu*/
 
-/*Можно удалять*/
-#multi-page .base-section {
-    max-width: 1400px;
-    margin: 4rem auto;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-#multi-page .base-section-header {
-    display: flex;
-    padding-left: 3rem;
-    padding-right: 1rem;
-    flex-direction: column;
-    gap: .5rem;
-}
-#multi-page .section-inner {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem 0;
-}
-#multi-page .section-inner > article {
-    flex: 1 0 300px;
-    max-width: calc(1400px / 4);
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    padding: 1.5rem 1rem;
-    border-radius: 3rem;
-    margin-inline: .5rem;
-    cursor: pointer;
-    background-color: var(--back-o);
-    border: 1px solid transparent;
-    transition: scale .3s ease-out;
-}
-#multi-page .section-inner > article .services-headlines {
-    display: flex;
-    flex-direction: column;
-    padding-inline: 1rem;
-    gap: .5rem;
-}
-#multi-page .section-inner > article .services-headlines h4 {
-    font-family: var(--unbounded);
-    font-weight: 500;
-    font-size: 1.3rem;
-}
-#multi-page .section-inner > article .services-description {
-    font-size: 1.1rem;
-    font-family: var(--roboto);
-    font-weight: 300;
-    color: var(--white-o);
-}
-#multi-page .section-inner > article .services-img-block {
-    flex: 1;
-    min-height: 200px;
-    width: 100%;
-    overflow: hidden;
-    border-radius: 1rem;
-    position: relative;
-}
-#multi-page .section-inner > article img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    translate: -50% -50%;
-
-    max-height: 100%;
-
-    /*min-height: 100%;*/
-    min-width: 100%;
-    /*max-width: 100%;*/
-    /*border-radius: 1rem;*/
-}
-#multi-page .section-inner > article a {
-    text-decoration: none !important;
-    color: var(--white) !important;
-    margin: 0 1rem 0 auto;
-}
-/*!Можно удалять*/
-
-/* needToRender (base design) */
-#multi-page .classic-sec {
-    max-width: 1400px;
-    margin: 4rem auto;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    position: relative;
-}
-#multi-page .classic-ip {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem 0;
-    justify-content: center;
-    position: relative;
-}
-#multi-page .classic-hb {
-    display: flex;
-    padding-left: 3rem;
-    padding-right: 1rem;
-    flex-direction: column;
-    gap: .5rem;
-    position: relative;
-}
-#multi-page .classic-art {
-    flex: 1 0 300px;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    padding: 1.5rem 1rem;
-    border-radius: 3rem;
-    margin-inline: .5rem;
-    cursor: pointer;
-    background-color: var(--back-o);
-    border: 1px solid transparent;
-    transition: scale .3s ease-out;
-}
-#multi-page .classic-art-hb {
-    display: flex;
-    flex-direction: column;
-    padding-inline: 1rem;
-    gap: .5rem;
-}
-#multi-page .classic-art-header {
-    font-family: var(--unbounded);
-    font-weight: 500;
-    font-size: 1.3rem;
-}
-#multi-page .classic-art-descr {
-    font-size: 1.1rem;
-    font-family: var(--roboto);
-    font-weight: 300;
-    color: var(--white-o);
-}
-#multi-page .classic-art-imgBlck {
-    flex: 1;
-    min-height: 200px;
-    width: 100%;
-    overflow: hidden;
-    border-radius: 1rem;
-    position: relative;
-}
-#multi-page .classic-art-img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    translate: -50% -50%;
-}
-#multi-page .classic-art-link {
-    text-decoration: none !important;
-    color: var(--white) !important;
-    margin: 0 1rem 0 auto;
-}
-/* !needToRender */
-
-    /* second design */
-    #multi-page .classic-sec-second {
-
-    }
-    #multi-page .classic-hb-second {
-    }
-    #multi-page .classic-ip-second {
-
-    }
-    #multi-page .classic-art-second {
-        flex: 1 0 30%;
-        max-width: calc(1400px / 3);
-    }
-    #multi-page .classic-art-hb-second {
-
-    }
-    #multi-page .classic-art-header-second {
-
-    }
-    #multi-page .classic-art-descr-second {
-
-    }
-    #multi-page .classic-art-imgBlck-second {
-
-    }
-    #multi-page .classic-art-img-second {
-
-    }
-    #multi-page .classic-art-link-second {
-
-    }
-    /* !second design */
-
 #showAllButton {
     position: absolute;
     top: 1.5rem;
@@ -995,6 +959,27 @@ body {
         background-color: transparent;
     }
 
+    /* Base section */
+    #multi-page .classic-art {
+        flex: 1 0 90dvw;
+        scroll-snap-align: center;
+        max-width: unset;
+    }
+    #multi-page .classic-ip {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        width: 100%;
+        overflow: visible;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding-inline: 5dvw;
+        justify-content: flex-start;
+    }
+    #multi-page .w-btn {
+        flex-direction: column;
+    }
+    /* !Base section */
+
     #popup-block {
         padding: 2rem .5rem;
     }
@@ -1040,7 +1025,62 @@ body {
     #popup-service .popup-service-textblock {
         padding-inline: 1rem;
         align-items: center;
+        padding-block: 0;
     }
+
+    /* reviews!*/
+    #multi-page #reviews .classic-ip {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    #multi-page #reviews iframe {
+        min-height: 60vh;
+    }
+    #multi-page #reviews .reviews-gallery {
+        flex: 1;
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 1rem;
+        overflow-x: auto;
+        border-radius: 3rem;
+
+        scroll-snap-type: x mandatory;
+    }
+    #multi-page #reviews .reviews-gallery .reviews-gallery-imgblock {
+        flex: 1;
+        position: relative;
+        overflow: hidden;
+        height: 50vh;
+        min-width: 80vw;
+        border-radius: 2rem;
+
+        scroll-snap-align: center;
+    }
+    #multi-page #reviews .reviews-gallery .reviews-gallery-imgblock:nth-child(2),
+    #multi-page #reviews .reviews-gallery .reviews-gallery-imgblock:nth-child(3) {
+        flex: 1;
+        min-width: 80vw;
+    }
+    /* !reviews!*/
+
+    /* Territory map */
+    #multi-page #map .classic-ip {
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+        flex-wrap: nowrap;
+        /*padding-inline: 1rem;*/
+    }
+    #multi-page #map .map-img {
+        max-width: 100%;
+        position: relative;
+        min-width: unset;
+        border-radius: 3rem;
+        border: 2px solid var(--yellow);
+        background-color: var(--yellow);
+        padding: .25rem;
+    }
+    /* !Territory map */
 
     #terruarMenu .menuCategory {
         gap: 1rem;
@@ -1049,24 +1089,6 @@ body {
     #terruarMenu .menuCategory .product {
         flex: 1 0 60%;
     }
-
-    /* Base section */
-    #multi-page .classic-art {
-        flex: 1 0 90dvw;
-        scroll-snap-align: center;
-        max-width: unset;
-    }
-    #multi-page .classic-ip {
-        flex-direction: row;
-        flex-wrap: nowrap;
-        width: 100%;
-        overflow: visible;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        padding-inline: 5dvw;
-        justify-content: flex-start;
-    }
-    /* !Base section */
 
     /*Блок команды в поп-апе*/
     #multi-page .team-person {

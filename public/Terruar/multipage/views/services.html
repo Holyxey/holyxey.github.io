@@ -94,32 +94,35 @@
     </header>
 
     <main>
-        <section id="services-offers" title="Все наши развлечения" data-show-all data-need-to-render="servicesList,3">
+        <section id="services-offers" title="Все наши развлечения" data-show-all data-need-to-render="servicesList,2">
         </section>
+    </main>
+    <footer>
         <section id="sectionDolyami">
             <div id="dolyami-inner">
                 <article onclick="multipage.bookingClick()" id="dolyamiCard" class="blur">
                     <p>У нас есть оплата</p>
                     <div id="dolyamiLogos">
-                        <img src="../sources/dolyami/Dolyame%20logo.svg" alt='"Долями" логотип'>
-                        <img src="../sources/dolyami/image%209.svg" alt='Visa'>
-                        <img src="../sources/dolyami/mc_vrt_rev%201.svg" alt='MasterCard'>
-                        <img src="../sources/dolyami/image%2010.svg" alt='"МИР"'>
-                        <img src="../sources/dolyami/Google%20Pay.svg" alt='Google pay'>
-                        <img src="../sources/dolyami/Apple_Pay_Mark_RGB_041619%202.svg" alt='Apple pay'>
+                        <img src="https://static.tildacdn.com/tild3438-3161-4831-b161-313062616539/DolyamiLogo.svg" alt='"Долями" логотип'>
+                        <img src="https://static.tildacdn.com/tild6263-6137-4231-a634-313661653465/VISALogo.svg" alt='Visa'>
+                        <img src="https://static.tildacdn.com/tild3861-6633-4930-b366-363132373062/MCLogo.svg" alt='MasterCard'>
+                        <img src="https://static.tildacdn.com/tild6439-3231-4434-b536-623137613662/MIRLogo.svg" alt='"МИР"'>
+                        <img src="https://static.tildacdn.com/tild3463-3166-4431-b336-623565636230/GPayLogo.svg" alt='Google pay'>
+                        <img src="https://static.tildacdn.com/tild6330-3432-4039-b763-653634323165/ApplePayLogo.svg" alt='Apple pay'>
                     </div>
                 </article>
                 <div onclick="multipage.bookingClick()" id="dolyamiBooking" class="shadow">Посмотреть даты</div>
             </div>
         </section>
         <section class="classic-sec" id="reviews">
-            <div class="classic-hb classic-hb-second" data-counter-where="">
-                <h3>Все наши развлечения</h3>
-                <a href="#">knopka</a>
+            <div class="classic-hb w-btn">
+                <h3>Отзывы и галерея</h3>
+                <a class="classic-header-button-first" href="#popup:sendphoto">Отправить нам фото</a>
+                <a class="classic-header-button-first" href="#popup:leavereview">Оставить отзыв</a>
             </div>
             <div class="classic-ip">
                 <iframe src="https://yandex.ru/maps-reviews-widget/195423529395?comments"></iframe>
-                <article class="reviews-gallery" data-reviews-gallery>
+                <article class="reviews-gallery" data-counter-scrollit>
                     <div class="reviews-gallery-imgblock"><img onload="whatIsMax(this)"
                             src="https://thumb.tildacdn.com/tild3564-3765-4235-a636-623162323762/-/format/webp/600A3825.png" alt="Фотография с территории Терруара" class="reviews-gallery-img"></div>
                     <div class="reviews-gallery-imgblock"><img onload="whatIsMax(this)"
@@ -131,7 +134,20 @@
                 </article>
             </div>
         </section>
-    </main>
+        <section id="map" class="classic-sec">
+            <div class="classic-hb w-btn">
+                <h3>Наша территория</h3>
+                <a class="classic-header-button-first" onclick="multipage.bookingClick(); multipage.hideMobileMenu()">Выбрать домик</a>
+            </div>
+            <div class="classic-ip">
+                    <img src="https://thumb.tildacdn.com/tild3531-3864-4261-b132-656332613330/-/format/webp/map1.png" class="map-img" alt="Территория близ Терруара">
+                    <img src="https://thumb.tildacdn.com/tild6433-6465-4338-b737-623733323836/-/format/webp/map2.png" class="map-img" alt="Территория Терруара">
+            </div>
+        </section>
+        <section id="faq" class="classic-sec">
+
+        </section>
+    </footer>
 </div>
 
 </body>
