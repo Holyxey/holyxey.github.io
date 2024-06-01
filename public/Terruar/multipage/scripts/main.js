@@ -691,10 +691,10 @@ const multipage = {
         const getService = (target) => {
             const name = target.getAttribute('data-popup')
             const list = target.getAttribute('data-list')
-            const obj = lists[list].find(service => service.id === name)
+            const obj = lists[list].find((service, id) => service.id === name)
 
             return `
-            <section id="popup-service">
+            <section data-ip-service="${obj.id}" id="popup-service">
             <div class="popup-service-imgblock">
                 <img onload="whatIsMax(this)" src="${obj.images[0]}" alt="${obj.fullDescr}" class="popup-service-img">
             </div>
