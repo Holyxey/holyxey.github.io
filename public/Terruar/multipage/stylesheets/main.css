@@ -282,6 +282,47 @@ body {
 }
 /*!Header*/
 
+/* reviews */
+#multi-page #reviews .classic-ip {
+    display: flex;
+    gap: 2rem;
+    flex-direction: row;
+}
+#multi-page #reviews iframe {
+    flex: .6;
+    height: 80vh;
+    border-radius: 2rem;
+    border: none;
+}
+#multi-page #reviews .reviews-gallery {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    overflow: hidden;
+    border-radius: 3rem;
+}
+#multi-page #reviews .reviews-gallery .reviews-gallery-imgblock {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    height: calc(50% - .5rem);
+    min-width: calc(30% - .5rem);
+    border-radius: 2rem;
+}
+#multi-page #reviews .reviews-gallery .reviews-gallery-imgblock:nth-child(2),
+#multi-page #reviews .reviews-gallery .reviews-gallery-imgblock:nth-child(3) {
+    flex: 2;
+    min-width: calc(60% - .5rem);
+}
+#multi-page #reviews .reviews-gallery .reviews-gallery-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+/* !reviews */
+
 /*Pop-up*/
 #popup-block {
     position: fixed;
@@ -385,6 +426,8 @@ body {
     display: flex;
     max-width: 1200px;
     gap: 2rem;
+    padding-inline: .25rem;
+    width: 100%;
 }
 #popup-service .popup-service-imgblock {
     flex: 1;
@@ -855,6 +898,7 @@ body {
 
     display: flex;
     gap: .5rem;
+    cursor: pointer;
 }
 #dolyamiCard p {
     margin-right: 1rem;
@@ -882,6 +926,7 @@ body {
     border-radius: 2rem;
     font-size: 1.3rem;
     font-weight: 400;
+    cursor: pointer;
 }
 /*Dolyami section*/
 
