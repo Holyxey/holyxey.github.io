@@ -972,7 +972,7 @@ const multipage = {
 "${el.textContent}"?`)) {
             navigator.clipboard.writeText(el.textContent);
         }
-    }
+    },
 }
 
 const checkInViewHorizontal = function (element) {

@@ -1035,7 +1035,7 @@ body {
     display: block;
 }
 #dolyamiBooking {
-    font-family: var(--unbounded);
+    /*font-family: var(--unbounded);*/
     color: var(--white);
     background-color: var(--wine);
     padding: 1rem 2rem;
@@ -1136,11 +1136,22 @@ body {
         background-color: transparent;
     }
 
-    /* Base section */
+    /* needToRender (base design) */
+    #multi-page .classic-sec {
+        margin-inline: .5rem;
+        max-width: 1400px;
+        margin: 4rem auto;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        position: relative;
+    }
     #multi-page .classic-art {
-        flex: 1 0 90dvw;
+        flex: 1 0 100%;
         scroll-snap-align: center;
         max-width: unset;
+        padding: 1.5rem .5rem;
+        border-radius: 2rem;
     }
     #multi-page .classic-ip {
         flex-direction: row;
@@ -1149,13 +1160,14 @@ body {
         overflow: visible;
         overflow-x: auto;
         scroll-snap-type: x mandatory;
-        padding-inline: 5dvw;
+        padding-inline: .5rem;
         justify-content: flex-start;
     }
     #multi-page .w-btn {
         flex-direction: column;
+        padding-left: 1rem;
     }
-    /* !Base section */
+    /* !needToRender (base design) */
 
     #popup-block {
         padding: 2rem .5rem;
@@ -1220,7 +1232,7 @@ body {
         flex-wrap: nowrap;
         gap: 1rem;
         overflow-x: auto;
-        border-radius: 3rem;
+        border-radius: 2rem;
 
         scroll-snap-type: x mandatory;
     }
@@ -1271,8 +1283,12 @@ body {
         flex-direction: column;
         gap: 1rem;
     }
+    #multi-page footer #contacts .classic-ip article {
+        padding-inline: 1rem;
+        order: -1;
+    }
     #multi-page footer #contacts .classic-ip iframe {
-        min-height: 40dvh;
+        min-height: 60dvh;
     }
     /* !contacts */
 
@@ -1307,10 +1323,9 @@ body {
     }
     /*!Блок команды в поп-апе*/
 
-
     /*Dolyami section*/
     #sectionDolyami {
-        padding: 4rem 1rem;
+        padding: 4rem .5rem;
         flex-direction: column;
     }
     #dolyami-inner {
@@ -1318,8 +1333,9 @@ body {
     }
     #dolyamiCard {
         flex-direction: column;
+        width: 100%;
         gap: 1rem;
-        padding: 1rem 2rem 1.3rem 2rem;
+        padding: 1rem 1rem 1.3rem 1rem;
         border-radius: 1rem;
     }
     #dolyamiCard p {
