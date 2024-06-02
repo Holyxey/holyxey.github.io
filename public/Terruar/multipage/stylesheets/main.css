@@ -694,6 +694,42 @@ body {
     background-color: transparent;
     cursor: pointer;
     z-index: 100900500;
+
+    opacity: 0;
+}
+
+#fullScreenPhoto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 100500900;
+
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    animation: showpopup .3s ease-out forwards;
+}
+#fullScreenPhotoButton {
+    position: fixed;
+    display: block;
+    top: 2rem;
+    right: 2rem;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    cursor: pointer;
+    z-index: 100900500;
+    opacity: 0;
+}
+#fullScreenPhoto img {
+    max-width: calc(100% - 1rem);
+    max-height: calc(100% - 1rem);
+    border-radius: 1rem;
 }
 
 #pop-up-gallery {
@@ -1042,7 +1078,31 @@ body {
 }
 /*!loadingImitator*/
 
-/*}*/
+/*Стили для Тильды*/
+.t-popup__close {
+    background-color: var(--white-oo);
+    border-radius: 2rem;
+}
+.t-popup__container {
+    border-radius: 2rem;
+}
+.t702__text-wrapper {
+    text-align: left;
+}
+.t702__title {
+    font-family: var(--unbounded);
+    font-size: 1.8rem;
+}
+.t-upwidget-container__button {
+    background-color: var(--wine);
+}
+.t-form__errorbox-wrapper {
+    background-color: var(--wine);
+}
+.t-submit {
+    background-color: var(--wine) !important;
+}
+/*Стили для Тильды*/
 
 @keyframes showpopup {
     from { opacity: 0; translate: 0 -2rem}
@@ -1331,4 +1391,23 @@ body {
         border-radius: 1rem;
     }
     /*Dolyami section*/
+
+    /*Стили для Тильды*/
+    .t-popup__close {
+        border-radius: 0;
+    }
+    .t-popup__container {
+        border-radius: 0;
+    }
+    .t702__text-wrapper {
+        text-align: left;
+    }
+    .t702__title {
+        font-family: var(--unbounded);
+        font-size: 1.8rem;
+    }
+    .t-upwidget-container__button {
+        background-color: var(--wine);
+    }
+    /*Стили для Тильды*/
 }
