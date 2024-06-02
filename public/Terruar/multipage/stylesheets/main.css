@@ -114,6 +114,8 @@ body {
     padding: 1rem;
     gap: .25rem;
     border-radius: 2rem;
+    overflow: hidden;
+    position: relative;
 
     background-color: var(--wine);
 }
@@ -959,33 +961,6 @@ body {
 }
 /*!Restaurant menu*/
 
-#showAllButton {
-    position: absolute;
-    top: 1.5rem;
-    right: 2.5rem;
-    width: 50px;
-    height: 50px;
-    border: 1px solid var(--white-oo);
-    border-radius: 100vmin;
-    z-index: 100500;
-    transition: all .3s ease-out;
-}
-#showAllButton > div {
-    width: 60%;
-    height: 1px;
-    background-color: var(--white-o);
-    position: absolute;
-    left: 50%;
-    translate: -50% -50%;
-    transition: all .3s ease-out;
-}
-#showAllButton > div:first-child {
-    top: 40%;
-}
-#showAllButton > div:last-child {
-    top: 60%;
-}
-
 /*Dolyami section*/
 #sectionDolyami {
     background: url("https://optim.tildacdn.com/tild3963-6339-4231-a231-633830323034/-/format/webp/pattern5.png") var(--white) fixed;
@@ -1165,7 +1140,7 @@ body {
     }
     #multi-page .w-btn {
         flex-direction: column;
-        padding-left: 1rem;
+        padding-left: 1.5rem;
     }
     /* !needToRender (base design) */
 
@@ -1263,10 +1238,9 @@ body {
     }
     #multi-page #map .map-img {
         max-width: 100%;
-        position: relative;
         min-width: unset;
-        border-radius: 3rem;
-        border: 2px solid var(--yellow);
+        border-radius: 2rem;
+        border: 1px solid var(--yellow);
         background-color: var(--yellow);
         padding: .25rem;
     }
