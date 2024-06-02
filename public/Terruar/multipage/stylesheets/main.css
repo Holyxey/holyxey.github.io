@@ -547,6 +547,84 @@ body {
 }
 /* !faq */
 
+/* contacts */
+#multi-page footer #contacts { }
+#multi-page footer #contacts .classic-ip {
+    display: flex;
+    gap: 2rem;
+}
+#multi-page footer #contacts .classic-ip iframe {
+    flex: 1;
+    border-radius: 2rem;
+}
+#multi-page footer #contacts .classic-ip article {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding-block: 1rem;
+}
+#multi-page footer #contacts .classic-ip article > div {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+#multi-page footer #contacts .classic-ip article .footerButton {
+    float: left;
+    background-color: var(--back-o);
+    padding: .5rem 1rem;
+    width: fit-content;
+    border: 1px solid var(--white-o);
+    display: inline-flex;
+    border-radius: 100vmin;
+    cursor: pointer;
+}
+#multi-page footer #contacts .classic-ip article a {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    color: var(--white)!important;
+    text-decoration: none !important;
+    border-radius: 100vmin;
+    cursor: pointer;
+    gap: 1rem;
+    width: fit-content;
+}
+#multi-page footer #contacts .classic-ip article h4 {
+    font-family: var(--unbounded);
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+#multi-page footer #contacts .classic-ip article ul {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+#multi-page footer #contacts .classic-ip article ul .footerSocialIconsBlock {
+    display: flex;
+    gap: .5rem;
+}
+#multi-page footer #contacts .classic-ip article ul .footerSocialIconsBlock a {
+    border: 0;
+    padding: 0;
+    background-color: transparent;
+}
+#multi-page footer #contacts .classic-ip article ul li {
+    width: fit-content;
+}
+#multi-page footer #contacts .classic-ip article svg {
+    display: inline-block;
+    height: 24px;
+}
+#multi-page footer #contacts .classic-ip article .footerFlexButtons {
+    display: flex;
+    gap: .5rem;
+    flex-wrap: wrap;
+}
+/* !contacts */
+
 /*Pop-up base styles*/
 #popup-block {
     position: fixed;
@@ -1126,6 +1204,7 @@ body {
         align-items: center;
         padding-block: 0;
     }
+    /*!services pop-up*/
 
     /* reviews!*/
     #multi-page #reviews .classic-ip {
@@ -1186,6 +1265,16 @@ body {
         margin-inline: -1rem;
     }
     /*!faq*/
+
+    /* contacts */
+    #multi-page footer #contacts .classic-ip {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    #multi-page footer #contacts .classic-ip iframe {
+        min-height: 40dvh;
+    }
+    /* !contacts */
 
     #terruarMenu .menuCategory {
         gap: 1rem;

@@ -657,6 +657,7 @@ const multipage = {
             }
         }
     },
+    //
     popup(target){
         const dataPopup= (target.getAttribute('data-popup') ? target.getAttribute('data-popup') : '')
         const dataHeader = target.getAttribute('data-header') ? target.getAttribute('data-header') : ''
@@ -766,35 +767,8 @@ const multipage = {
             weatherBlock ? weatherBlock.remove() : null;
         }, 300)
     }, // Сброс поп-апа
-    changeScroll(){
-        if (document.body.style.overflow === 'hidden')
-            document.body.style.overflow = 'unset'
-        else document.body.style.overflow = 'hidden'
-    }, // Запрет/разрешение на скролл ( прим. при открытии поп-апа )
-    getUserAgent(){
-            if ((navigator.userAgent.indexOf("Opera") || navigator.userAgent.indexOf('OPR')) != -1) {
-                return('Opera');
-            } else if (navigator.userAgent.indexOf("Edg") != -1) {
-                return('Edge');
-            } else if (navigator.userAgent.indexOf("Chrome") != -1) {
-                return('Chrome');
-            } else if (navigator.userAgent.indexOf("Safari") != -1) {
-                return('Safari');
-            } else if (navigator.userAgent.indexOf("Firefox") != -1) {
-                return('Firefox');
-            } else if ((navigator.userAgent.indexOf("MSIE") != -1) || (!!document.documentMode == true)) //IF IE > 10
-            {
-                return('IE');
-            } else {
-                return('unknown');
-            }
-    }, // Строкой получаем название браузера
-    bookingClick() {
-        let booking = document.querySelector('.znms-widget__widget-btn');
-        if (booking) {
-            booking.click()
-        }
-    },
+    //
+    //
     hideLoadingImitator: function () {
         document.getElementById('loadingImitator').style.animation = 'hidepopup .3s ease-out'
         setTimeout(()=>{document.getElementById('loadingImitator').remove()},300)
@@ -807,12 +781,15 @@ const multipage = {
                     `<div id="loadingImitator">
             <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g stroke-width="0"/><g stroke-linecap="round" stroke-linejoin="round"/><path d="M12 21a9 9 0 0 0 6.708-15L16 3m-4 0a9 9 0 0 0-6.708 15L8 21M21 3h-5m0 0v5M3 21h5m0 0v-5" stroke="var(--yellow)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </div>`)
+                document.getElementById('loadingImitator').addEventListener('click', e => {multipage.hideLoadingImitator()})
+                document.getElementById('loadingImitator').addEventListener("touchstart", e => {multipage.hideLoadingImitator()})
                 setTimeout(()=>{
                     multipage.hideLoadingImitator()
                 },2200)
             })
         })
     },
+    //
     getHeaderHeight() {
         let nav = document.querySelector('nav');
         let hero  = document.getElementById('hero');
@@ -832,34 +809,12 @@ const multipage = {
         let btn = document.getElementById('monMenuButton');
         if (btn.getBoundingClientRect().width > 0) return btn.click();
     },
-    randomIng: function (max) {
-        return  Math.floor(Math.random() * (max));
-    },
     mobileBackImages: [
         'https://optim.tildacdn.com/tild3534-3435-4839-b839-366337373937/-/format/webp/IMAGE_2024-04-11_170.jpg',
         'https://optim.tildacdn.com/tild3837-6638-4535-a238-663235623730/-/format/webp/KIR_3052.jpg',
         'https://optim.tildacdn.com/tild3739-6138-4236-a436-313339626532/-/format/webp/IMAGE_2024-04-11_173.jpg',
         //'https://optim.tildacdn.com/tild3539-6266-4461-a633-376165353133/-/format/webp/IMAGE_2024-04-11_174.jpg',
     ],
-    heroVideoStart: function () {
-        const videoBlock = document.getElementById('heroVideo');
-        const hero = document.getElementById('hero');
-        if (hero.getAttribute('data-nomain')) return
-        if (window.innerWidth > 600) {
-            videoBlock.insertAdjacentHTML("beforeend",
-                `<video style="opacity: 0" loop autoplay playsinline muted src="https://holyxey.github.io/public/Terruar/multipage/sources/video/Terruar%20Summer.mp4" title="Terruar hero video"></video>`)
-            videoBlock.querySelector('video').oncanplay = function(e) {
-                const videoPlayer = e.target;
-                videoPlayer.play();
-                videoPlayer.style.cssText += 'animation: showVideoOpacity 1s ease-out forwards'
-                hero.style.cssText = `background: none`
-                multipage.getHeaderHeight()
-            };
-        } else {
-            hero.style.cssText = `background: url(${multipage.mobileBackImages[multipage.randomIng(multipage.mobileBackImages.length)]}) center / cover`
-            multipage.getHeaderHeight()
-        }
-    },
     mobileMenu: {
         btnClck(el){
             let menuPoints = document.querySelectorAll('.navPCItem')
@@ -895,22 +850,7 @@ const multipage = {
             }
         }
     },
-    smoothShowHorizontal: function () {
-        const parentElements = document.querySelectorAll('[data-smooth-mobile]')
-        parentElements.forEach(parentElement => {
-            parentElement.addEventListener('touchmove', e => {
-                parentElement.children[0].style.animation = ``
-            })
-            const waitOnTheViewPort = setInterval(() => {
-                if (parentElement.getBoundingClientRect().top + 250 > window.innerHeight) {
-
-                } else {
-                    parentElement.children[0].style.animation = `smoothShowHorizontal 3s ease-in-out`
-                    clearInterval(waitOnTheViewPort);
-                }
-            }, 1000)
-        })
-    },
+    //
     renderFAQ: function () {
         const section = document.getElementById('faq')
         const list = lists.faq;
@@ -957,6 +897,80 @@ const multipage = {
                 textBlock.style.translate = `0 10px`
                 textBlock.style.opacity = `1`
             },70)
+        }
+    },
+    //
+    randomIng: function (max) {
+        return  Math.floor(Math.random() * (max));
+    },
+    smoothShowHorizontal: function () {
+        const parentElements = document.querySelectorAll('[data-smooth-mobile]')
+        parentElements.forEach(parentElement => {
+            parentElement.addEventListener('touchmove', e => {
+                parentElement.children[0].style.animation = ``
+            })
+            const waitOnTheViewPort = setInterval(() => {
+                if (parentElement.getBoundingClientRect().top + 250 > window.innerHeight) {
+
+                } else {
+                    parentElement.children[0].style.animation = `smoothShowHorizontal 3s ease-in-out`
+                    clearInterval(waitOnTheViewPort);
+                }
+            }, 1000)
+        })
+    },
+    heroVideoStart: function () {
+        const videoBlock = document.getElementById('heroVideo');
+        const hero = document.getElementById('hero');
+        if (hero.getAttribute('data-nomain')) return
+        if (window.innerWidth > 600) {
+            videoBlock.insertAdjacentHTML("beforeend",
+                `<video style="opacity: 0" loop autoplay playsinline muted src="https://holyxey.github.io/public/Terruar/multipage/sources/video/Terruar%20Summer.mp4" title="Terruar hero video"></video>`)
+            videoBlock.querySelector('video').oncanplay = function(e) {
+                const videoPlayer = e.target;
+                videoPlayer.play();
+                videoPlayer.style.cssText += 'animation: showVideoOpacity 1s ease-out forwards'
+                hero.style.cssText = `background: none`
+                multipage.getHeaderHeight()
+            };
+        } else {
+            hero.style.cssText = `background: url(${multipage.mobileBackImages[multipage.randomIng(multipage.mobileBackImages.length)]}) center / cover`
+            multipage.getHeaderHeight()
+        }
+    },
+    changeScroll(){
+        if (document.body.style.overflow === 'hidden')
+            document.body.style.overflow = 'unset'
+        else document.body.style.overflow = 'hidden'
+    }, // Запрет/разрешение на скролл body ( прим. при открытии поп-апа )
+    getUserAgent(){
+        if ((navigator.userAgent.indexOf("Opera") || navigator.userAgent.indexOf('OPR')) != -1) {
+            return('Opera');
+        } else if (navigator.userAgent.indexOf("Edg") != -1) {
+            return('Edge');
+        } else if (navigator.userAgent.indexOf("Chrome") != -1) {
+            return('Chrome');
+        } else if (navigator.userAgent.indexOf("Safari") != -1) {
+            return('Safari');
+        } else if (navigator.userAgent.indexOf("Firefox") != -1) {
+            return('Firefox');
+        } else if ((navigator.userAgent.indexOf("MSIE") != -1) || (!!document.documentMode == true)) //IF IE > 10
+        {
+            return('IE');
+        } else {
+            return('unknown');
+        }
+    }, // Строкой получаем название браузера ( для трансляции )
+    bookingClick() {
+        let booking = document.querySelector('.znms-widget__widget-btn');
+        if (booking) {
+            booking.click()
+        }
+    },
+    clickAndCopy: function (el) {
+        if (confirm(`Скопировать 
+"${el.textContent}"?`)) {
+            navigator.clipboard.writeText(el.textContent);
         }
     }
 }
@@ -1007,30 +1021,7 @@ const whereToRenderCounter = function () {
     })
 } // аттрибуты data-counter(-where/-scrollIt/-item)
 
-window.addEventListener("resize", () => {
-    multipage.getHeaderHeight()
-})
-window.addEventListener("load", () => {
-    multipage.getHeaderHeight()
-    multipage.loadingImitator()
-    setTimeout(multipage.loadingImitator, 1500)
-    if (window.innerWidth < 600) {
-        multipage.smoothShowHorizontal()
-    }
-})
-document.addEventListener("DOMContentLoaded", () => {
-    whatPageIs.data === 'main' ? multipage.heroVideoStart() : null
-    multipage.loadingImitator()
-    // whatPageIs.data === 'services' ? SOMEFUNCTION() : null
-    needToRender()
-    multipage.getHeaderHeight()
-    multipage.popupButtonsInit()
-    multipage.renderFAQ()
-    if (window.innerWidth < 600) {
-        whereToRenderCounter()
-    }
-    console.clear();
-})
+// ------------------------------------------------
 
 // Инициализация трансляции
 function initPlayer() {
@@ -1145,3 +1136,28 @@ const weatherTestRender = (days) => {
     } else return('Days is not defined')
 }
 // !weather
+
+window.addEventListener("resize", () => {
+    multipage.getHeaderHeight()
+})
+window.addEventListener("load", () => {
+    multipage.getHeaderHeight()
+    multipage.loadingImitator()
+    setTimeout(multipage.loadingImitator, 1500)
+    if (window.innerWidth < 600) {
+        multipage.smoothShowHorizontal()
+    }
+})
+document.addEventListener("DOMContentLoaded", () => {
+    whatPageIs.data === 'main' ? multipage.heroVideoStart() : null
+    multipage.loadingImitator()
+    // whatPageIs.data === 'services' ? SOMEFUNCTION() : null
+    needToRender()
+    multipage.getHeaderHeight()
+    multipage.popupButtonsInit()
+    multipage.renderFAQ()
+    if (window.innerWidth < 600) {
+        whereToRenderCounter()
+    }
+    console.clear();
+})
