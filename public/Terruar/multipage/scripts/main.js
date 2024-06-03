@@ -13,8 +13,8 @@ const lists = {
             header: '',
             price: '',
             shortDescr: 'От 1500 р',
-            fullDescr: 'Наша первая баня, отличается большой парилкой и комфортной зоной отдыха на несколько человек. Собрала кучу позитивных отзывов про качества пара. Минимальная бронь от двух часов. ',
-            benefits: ['', '', ''],
+            fullDescr: 'Наша первая баня, отличается большой парилкой и комфортной зоной отдыха на несколько человек. Собрала кучу позитивных отзывов про качества пара. Минимальная бронь от двух часов.',
+            benefits: ['Комфортный отдых', 'Настоящая баня', ''],
             images: ['https://thumb.tildacdn.com/tild3933-6233-4938-b230-643539623531/-/format/webp/511.jpg'],
             popUp: true,
             popUpType: 'service',
@@ -387,7 +387,7 @@ const lists = {
         },
     ],
     faq: {
-            'Сколько стоит размещение?': `Цена сильно зависит от многих факторов: сезона, дня недели, домика и т.д. Минимальная стоимость начинается от 5000р в сутки, не считая <a href="#offers" class="faqbtn"> акций </a>, которые у нас регулярно проходят.
+            'Сколько стоит размещение?': `Цена сильно зависит от многих факторов: сезона, дня недели, домика и т.д. Минимальная стоимость начинается от 5000р в сутки, не считая <a href="/#offers" class="faqbtn"> акций </a>, которые у нас регулярно проходят.
 <br>Чтобы узнать стоимость на интересующие вас даты, воспользуйтесь <span class="faqbtn" onclick="multipage.bookingClick()"> модулем бронирования.</span> Чтобы быть в курсе скидок и акций, подписывайтесь на нас в соц.сетях.`,
             'Как до нас добраться?': `Удобнее всего на машине по скоростным трассам М4 или M2 – просто наберите «Терруар» в<a target="_blank" href="https://yandex.ru/maps/?ll=37.859024%2C54.715259&mode=routes&rtext=~54.704664%2C37.859803&rtt=auto&ruri=~ymapsbm1%3A%2F%2Forg%3Foid%3D195423529395&z=10" class="faqbtn"> Я.Картах </a> или Навигаторе.
 <br>Общественным траснпортом также можно добраться – электричкой с Павелецкого вокзала до станции Кашира и далее на такси (телефон местного таксиста всегда подскажем или работает Я.Такси). У станции Кашира есть сетевой магазин, продукты удобно купить там &#x1F60A;`,
@@ -401,7 +401,7 @@ const lists = {
 <br>Можно взять домашние тапочки (мы предоставляем одноразовые, но в своих же уютнее?). Многое есть в домиках, многое мы уже учли, многое есть у Администратора, обращайтесь &#x1F60A;`,
             'Можно ли приехать с животными?': `Мы всегда рады вашим четвероногим друзьям. Доплата составляет 1000р на весь срок проживания.`,
             'Какие развлечения есть на территории?': `Как нам кажется, самое главное – побыть наедине с собой и природой &#x1F60A; но, конечно, мы стараемся привнести в отдых ярких красок.
-<br>Для любителей активности у нас можно <a href="#services" class="faqbtn"> взять в аренду </a> велосипеды, квадроциклы, лыжи или снегоступы. А можем организовать для вас целый джип-тур по местному бездорожью.
+<br>Для любителей активности у нас можно <a href="/#services" class="faqbtn"> взять в аренду </a> велосипеды, квадроциклы, лыжи или снегоступы. А можем организовать для вас целый джип-тур по местному бездорожью.
 <br>Любителям более спокойного отдыха – рекомендуем баню или подогреваемый чан (а лучше все сразу), аренду проектора для просмотра любимых фильмов или Xbox для любимых игр. А еще мы можем организовать фотоссесию для вас!`,
             'Сколько спальных мест в домиках?': `Наши домики рассчитаны на двоих (за исключением домика Шампань – там максимум 4 человека).
 <br>Если вам будет удобно, то за дополнительную плату можем предоставить дополнительно одноместную раскладушку.`,
@@ -459,9 +459,11 @@ const styleClassLists = [
 ]
 const whatIsMax = function(img) {
     if (img.width / img.height <= img.parentNode.clientWidth / img.parentNode.clientHeight) {
-        img.style.cssText = 'max-height: unset; max-width: 100%'
+        img.style.maxHeight = 'unset'
+        img.style.maxWidth = '100%'
     } else {
-        img.style.cssText = 'max-height: 100%; max-width: unset'
+        img.style.maxHeight = '100%'
+        img.style.maxWidth = 'unset'
     }
 }
 const needToRender = function (where) {
@@ -509,7 +511,7 @@ const needToRender = function (where) {
                         </div>` 
                     : ''}
                     ${design.artImgBlck 
-                    ? `<div class="${design.artImgBlck}"><img onload="whatIsMax(this)" class="${design.artImg}" src="${item.images[0]}" alt="${item.title}"></div>` 
+                    ? `<div class="${design.artImgBlck}"><img loading="lazy" class="${design.artImg}" src="${item.images[0]}" alt="${item.title}" onload="whatIsMax(this)"></div>` 
                     : ''}
                     ${design.artLink 
                     ? `<a class="${design.artLink}" ${item.readMoreLink ? `href="${item.readMoreLink}"` : ''}>${item.readMoreText}</a>` 
@@ -868,6 +870,7 @@ const multipage = {
                     </div>
                     </li>`)
         }
+        multipage.checkFAQlinks()
     },
     clickFAQ: function (li) {
         li.parentNode.querySelectorAll('.faq-item-body').forEach(item => {
@@ -996,6 +999,20 @@ const multipage = {
 "${el.textContent}"?`)) {
             navigator.clipboard.writeText(el.textContent);
         }
+    },
+    checkFAQlinks: function () {
+        let links = document.querySelectorAll('.faqbtn')
+        links.forEach(link => {
+            if (link.getAttribute('href')) {
+                const href = link.getAttribute('href')
+                const sharp = href.split('#')[1]
+                if (!document.getElementById(sharp)) {
+                    return
+                } else {
+                    link.href = `#${sharp}`
+                }
+            }
+        })
     },
 }
 
@@ -1173,11 +1190,10 @@ window.addEventListener("load", () => {
 })
 document.addEventListener("DOMContentLoaded", () => {
     whatPageIs.data === 'main' ? multipage.heroVideoStart() : null
-    multipage.loadingImitator()
-    // whatPageIs.data === 'services' ? SOMEFUNCTION() : null
-    needToRender()
     multipage.getHeaderHeight()
+    needToRender()
     multipage.popupButtonsInit()
+    multipage.loadingImitator()
     multipage.renderFAQ()
     if (window.innerWidth < 600) {
         whereToRenderCounter()
