@@ -2371,25 +2371,24 @@ let catalogData = {
 
 const catalogLink = `https://store.tildaapi.com/api/getproductslist/?storepartuid=227151755511&recid=748764525&c=1715780724989&getparts=true&getoptions=true&slice=1&size=100`;
 const catalogLanguageCheck = () => {
-    let localStorageLang = localStorage.getItem("doMenuLanguage");
-    let byHref = '/eng';
+    const localStorageLang = localStorage.getItem("doMenuLanguage");
+    const byHref = '/eng';
     const agentLang = navigator.language || navigator.userLanguage;
-    let href = window.location.href;
+    const href = window.location.href;
     const renderLangButton = (inner, changeTo) => {
-        if (!document.getElementById('langButton')) {
-            document.body.insertAdjacentHTML("afterbegin", `<a id="langButton">${inner}</a>`);
-        }
-        document.getElementById('langButton').onclick = () => {
+        document.getElementById('changeLanguage').onclick = () => {
             localStorage.setItem("doMenuLanguage", changeTo);
             location.reload()
         }
     }
     if (localStorageLang === 'eng') {
         renderLangButton('На русском', "rus")
+        document.getElementById('changeLanguage').textContent = 'In RUS'
         return 'eng';
     } else
     if (localStorageLang === 'rus') {
         renderLangButton('In English', "eng")
+        document.getElementById('changeLanguage').textContent = 'In ENG'
         return 'rus';
     } else
     if (href.includes(byHref) || agentLang.includes('en')) {
@@ -2463,6 +2462,8 @@ const catalogRenderMenuNav = () => {
     let body = document.getElementsByTagName('body')[0];
     body.insertAdjacentHTML('afterbegin', `<nav id="menuNavbar"></nav>`); // Создаем блок навбара
     let nav = document.getElementById('menuNavbar');
+    nav.insertAdjacentHTML('afterbegin',
+        `<button id="changeLanguage">In English</button>`)
     catalogData.parts.forEach(part => {
         let catID = part.uid.toString();
         let engList = catalogData.partlinks;

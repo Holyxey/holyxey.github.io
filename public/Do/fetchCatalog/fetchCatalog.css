@@ -18,7 +18,8 @@ body {
 }
 #menuNavbar {
     display: flex;
-    justify-content: space-around;
+    /*justify-content: space-around;*/
+    justify-content: flex-start;
     gap: 1rem;
 
     position: fixed;
@@ -176,22 +177,9 @@ body {
     border-radius: .25rem .25rem 0 0;
 }
 
-#langButton {
-    position: fixed;
-    top: 4rem;
-    left: 2rem;
-    cursor: pointer;
-    font-family: 'Roboto', 'Helvetica', sans-serif;
-
-    padding: .75rem 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 100vmin;
-
-    background-color: var(--dark);
-    color: var(--back);
-    border: 1px solid var(--back);
+#changeLanguage {
+    background-color: var(--back) !important;
+    color: var(--dark) !important;
 }
 
 #productImgOpened {
@@ -247,6 +235,10 @@ body {
     }
     #fetchCatalog > .category > .product {
         max-width: 100%;
+    }
+    #menuNavbar > button {
+        width: fit-content;
+        margin: 0 auto;
     }
 }
 @media (min-width: 450px) {

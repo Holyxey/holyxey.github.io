@@ -63,13 +63,15 @@ body {
     flex: .1;
 
     display: flex;
-    gap: 1rem;
+    gap: .5rem 1rem;
     justify-content: center;
+    flex-wrap: wrap;
 
     margin-inline: .5rem;
 }
     #workingTime li {
         color: #f5f1ed!important;
+        min-width: fit-content;
     }
 #phoneNumber {
     flex: .1;
@@ -141,6 +143,19 @@ footer {
         justify-content: center;
         padding-bottom: 1rem;
     }
+    #mainChangeLang {
+        color: #f5f1ed !important;
+        font-size: 1rem;
+        text-decoration: none!important;
+        text-align: center;
+        margin-inline: auto;
+        font-weight: 300;
+        border: 1px solid #f5f1ed30;
+        background-color: #090712ef;
+        max-width: fit-content;
+        padding: .5rem 1rem;
+        border-radius: .5rem;
+    }
 
 #holyxey {
     padding: .25rem;
@@ -185,8 +200,6 @@ footer {
         right: 1rem;
         top: 1rem;
         border-radius: 2rem;
-        opacity: 0;
-        animation: showDesktopImage 2.4s .5s ease-in-out forwards;
         transition: rotate .3s ease-out, src .3s ease-out;
     }
     #mainSection::before {
@@ -203,5 +216,10 @@ footer {
 }
 @keyframes showDesktopImage {
     from {opacity: 0}
+    to {opacity: 1}
+}
+@keyframes easeChange {
+    from {opacity: 1}
+    50% {opacity: 0}
     to {opacity: 1}
 }

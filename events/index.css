@@ -32,7 +32,7 @@
     flex-direction: column;
 }
     .project-card-header-block {
-        margin-top: auto;
+        /*margin-top: auto;*/
         padding: 1rem;
     }
         .project-card-header-h2 {

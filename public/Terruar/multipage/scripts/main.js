@@ -241,7 +241,7 @@ const lists = {
             header: '',
             price: '',
             shortDescr: 'от 900 р',
-            fullDescr: '',
+            fullDescr: 'У нас можно арендовать игровую консоль, чтобы поиграть вечером через проектор, или устроить соревнования с друзьями!',
             benefits: ['', '', ''],
             images: ['https://thumb.tildacdn.com/tild3630-3036-4563-b134-326462623439/-/format/webp/jose-gil-2pNdTBn4C7U.jpg',
             ],
@@ -258,10 +258,9 @@ const lists = {
             header: '',
             price: '',
             shortDescr: 'от 700 р',
-            fullDescr: '',
+            fullDescr: 'Для просмотра фильмов, или игр на Xbox',
             benefits: ['', '', ''],
-            images: ['https://thumb.tildacdn.com/tild3337-3031-4236-a638-363235343733/-/format/webp/600A3332.png',
-            ],
+            images: ['https://thumb.tildacdn.com/tild3337-3031-4236-a638-363235343733/-/format/webp/600A3332.png'],
             popUp: true,
             popUpType: 'service',
             readMoreLink: '',
@@ -281,6 +280,7 @@ const lists = {
             fullDescr: '',
             benefits: ['', '', ''],
             images: ['https://optim.tildacdn.com/tild3530-3138-4862-a135-633935343735/-/format/webp/heroImg.png'],
+            icon: '',
             popUp: true,
             readMoreLink: '',
             readMoreText: 'Подробнее',
@@ -321,6 +321,7 @@ const lists = {
                 "https://optim.tildacdn.com/tild6264-3164-4465-a432-646533636363/-/format/webp/DSC_4915-2_.JPG",
                 "https://optim.tildacdn.com/tild6364-3030-4437-b934-633130393034/-/format/webp/DSC_4558-2_.JPG",
             ],
+            icon: '',
             popUp: true,
             readMoreLink: '',
             readMoreText: 'Подробнее',
@@ -336,6 +337,7 @@ const lists = {
             fullDescr: '',
             benefits: ['', '', ''],
             images: ['https://optim.tildacdn.com/tild6631-6137-4133-b161-336134656332/-/format/webp/main.jpg'],
+            icon: '',
             popUp: true,
             readMoreLink: '',
             readMoreText: 'Подробнее',
@@ -415,6 +417,7 @@ const styleClassLists = [
         needHeader: true,
         needCounter: true,
         needToSmooth: true,
+        needIcon: false,
         section: 'classic-sec',
         headBlock: 'classic-hb',
         itemsParent: 'classic-ip',
@@ -430,6 +433,7 @@ const styleClassLists = [
         needHeader: false,
         needCounter: true,
         needToSmooth: true,
+        needIcon: false,
         section: 'classic-sec classic-sec-second',
         headBlock: 'classic-hb classic-hb-second',
         itemsParent: 'classic-ip classic-ip-second',
@@ -445,6 +449,7 @@ const styleClassLists = [
         needHeader: true,
         needCounter: true,
         needToSmooth: true,
+        needIcon: false,
         section: 'classic-sec classic-sec-second',
         headBlock: 'classic-hb classic-hb-second',
         itemsParent: 'classic-ip classic-ip-second',
@@ -511,11 +516,11 @@ const needToRender = function (where) {
                         </div>` 
                     : ''}
                     ${design.artImgBlck 
-                    ? `<div class="${design.artImgBlck}"><img loading="lazy" class="${design.artImg}" src="${item.images[0]}" alt="${item.title}" onload="whatIsMax(this)"></div>` 
-                    : ''}
+                        ? `<div class="${design.artImgBlck}"><img loading="lazy" class="${design.artImg}" src="${item.images[0]}" alt="${item.title}" onload="whatIsMax(this)"></div>` 
+                        : ''}
                     ${design.artLink 
-                    ? `<a class="${design.artLink}" ${item.readMoreLink ? `href="${item.readMoreLink}"` : ''}>${item.readMoreText}</a>` 
-                    : ''}
+                        ? `<a class="${design.artLink}" ${item.readMoreLink ? `href="${item.readMoreLink}"` : ''}>${item.readMoreText}</a>` 
+                        : ''}
                 </article>
                 `)
             number++
@@ -770,27 +775,6 @@ const multipage = {
         }, 300)
     }, // Сброс поп-апа
     //
-    //
-    hideLoadingImitator: function () {
-        document.getElementById('loadingImitator').style.animation = 'hidepopup .3s ease-out'
-        setTimeout(()=>{document.getElementById('loadingImitator').remove()},300)
-    },
-    loadingImitator: function () {
-        const initButtons = document.querySelectorAll('button[type="submit"].znms-widget__v-color8');
-        initButtons.forEach(button => {
-            button.addEventListener('click', e => {
-                document.body.insertAdjacentHTML('beforeend',
-                    `<div id="loadingImitator">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g stroke-width="0"/><g stroke-linecap="round" stroke-linejoin="round"/><path d="M12 21a9 9 0 0 0 6.708-15L16 3m-4 0a9 9 0 0 0-6.708 15L8 21M21 3h-5m0 0v5M3 21h5m0 0v-5" stroke="var(--yellow)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>`)
-                document.getElementById('loadingImitator').addEventListener('click', e => {multipage.hideLoadingImitator()})
-                document.getElementById('loadingImitator').addEventListener("touchstart", e => {multipage.hideLoadingImitator()})
-                setTimeout(()=>{
-                    multipage.hideLoadingImitator()
-                },2200)
-            })
-        })
-    },
     //
     getHeaderHeight() {
         let nav = document.querySelector('nav');
@@ -1182,8 +1166,6 @@ window.addEventListener("resize", () => {
 })
 window.addEventListener("load", () => {
     multipage.getHeaderHeight()
-    multipage.loadingImitator()
-    setTimeout(multipage.loadingImitator, 1500)
     if (window.innerWidth < 600) {
         multipage.smoothShowHorizontal()
     }
@@ -1193,7 +1175,6 @@ document.addEventListener("DOMContentLoaded", () => {
     multipage.getHeaderHeight()
     needToRender()
     multipage.popupButtonsInit()
-    multipage.loadingImitator()
     multipage.renderFAQ()
     if (window.innerWidth < 600) {
         whereToRenderCounter()

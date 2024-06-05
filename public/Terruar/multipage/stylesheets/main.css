@@ -4,7 +4,7 @@
 
 :root {
     --back: #1e1b23;
-    --back-o: rgba(19, 18, 21, 0.87);
+    --back-o: #131215DD;
     --white: #EEF0F2;
     --white-o: #EEF0F2de;
     --white-oo: #EEF0F250;
@@ -12,7 +12,7 @@
     --bad: #EF767A;
     --blue: #0081AF;
     --wine: #a4315b;
-    --yellow: #F8F6CB;
+    --yellow: #F8F3C8;
 
     --unbounded: "Unbounded", sans-serif;
     --roboto: "Roboto", sans-serif;
@@ -278,17 +278,25 @@ body {
 .znms-widget__module-form-block__wrap {
     max-width: unset !important;
 }
-.znms-widget__v-color8 {
+.znms-widget__module-form-block__btn,
+.znms-widget__place_form-btn,
+.znms-widget__btn,
+.znms-widget__tariffs_promo-btn,
+.znms-widget__btn2:hover,
+.znms-widget__v-calendar-day-content:hover {
     background-color: var(--wine) !important;
+    color: var(--white) !important;
+}
+.znms-widget__colored-text {
+    color: var(--wine) !important;
 }
 .znms-widget__module-form-block__item--lg {
     display: none !important;
 }
 /*!Header*/
 
-
 /* needToRender (base design) */
-#multi-page .classic-sec {
+.classic-sec {
     max-width: 1400px;
     margin: 4rem auto;
     display: flex;
@@ -296,14 +304,14 @@ body {
     gap: 1rem;
     position: relative;
 }
-#multi-page .classic-ip {
+.classic-ip {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem 0;
     justify-content: center;
     position: relative;
 }
-#multi-page .classic-hb {
+.classic-hb {
     display: flex;
     padding-left: 3rem;
     padding-right: 1rem;
@@ -311,17 +319,21 @@ body {
     gap: .5rem;
     position: relative;
 }
-#multi-page .w-btn {
+.w-btn {
     justify-content: space-between;
     flex-direction: row;
 }
-#multi-page .w-btn > h3 {
+.w-btn > h3 {
     width: 100%;
+    font-size: 2rem;
+    font-family: var(--unbounded);
+    font-weight: 400;
+    line-height: 1;
 }
-#multi-page .w-btn > * {
+.w-btn > * {
     min-width: fit-content;
 }
-#multi-page .classic-art {
+.classic-art {
     flex: 1 0 300px;
     display: flex;
     flex-direction: column;
@@ -334,24 +346,24 @@ body {
     border: 1px solid transparent;
     transition: scale .3s ease-out;
 }
-#multi-page .classic-art-hb {
+.classic-art-hb {
     display: flex;
     flex-direction: column;
     padding-inline: 1rem;
     gap: .5rem;
 }
-#multi-page .classic-art-header {
+.classic-art-header {
     font-family: var(--unbounded);
     font-weight: 500;
     font-size: 1.3rem;
 }
-#multi-page .classic-art-descr {
+.classic-art-descr {
     font-size: 1.1rem;
     font-family: var(--roboto);
     font-weight: 300;
     color: var(--white-o);
 }
-#multi-page .classic-art-imgBlck {
+.classic-art-imgBlck {
     flex: 1;
     min-height: 200px;
     width: 100%;
@@ -359,23 +371,24 @@ body {
     border-radius: 1rem;
     position: relative;
 }
-#multi-page .classic-art-img {
+.classic-art-img {
     position: absolute;
     top: 50%;
     left: 50%;
     translate: -50% -50%;
 }
-#multi-page .classic-art-link {
+.classic-art-link {
     text-decoration: none !important;
     color: var(--white) !important;
     margin: 0 1rem 0 auto;
 }
-#multi-page .classic-header-button-first {
-    background-color: var(--wine);
+.classic-header-button-first {
+    /*background-color: var(--wine);*/
+    background-color: var(--yellow);
+    color: var(--back-o)!important;
     width: fit-content;
-    color: var(--white)!important;
     text-decoration: none !important;
-    padding: .5rem 1rem;
+    padding: .7rem 1.4rem;
     border-radius: 100vmin;
     text-align: center;
     align-content: center;
@@ -384,34 +397,34 @@ body {
 /* !needToRender */
 
     /* second design */
-    #multi-page .classic-sec-second {
+    .classic-sec-second {
 
     }
-    #multi-page .classic-hb-second {
+    .classic-hb-second {
     }
-    #multi-page .classic-ip-second {
+    .classic-ip-second {
 
     }
-    #multi-page .classic-art-second {
+    .classic-art-second {
         flex: 1 0 30%;
         max-width: calc(1400px / 3);
     }
-    #multi-page .classic-art-hb-second {
+    .classic-art-hb-second {
 
     }
-    #multi-page .classic-art-header-second {
+    .classic-art-header-second {
 
     }
-    #multi-page .classic-art-descr-second {
+    .classic-art-descr-second {
 
     }
-    #multi-page .classic-art-imgBlck-second {
+    .classic-art-imgBlck-second {
 
     }
-    #multi-page .classic-art-img-second {
+    .classic-art-img-second {
 
     }
-    #multi-page .classic-art-link-second {
+    .classic-art-link-second {
 
     }
     /* !second design */
@@ -478,13 +491,13 @@ body {
 /* !Territory map */
 
 /* faq */
-#multi-page #faq-list {
+#faq-list {
     display: flex;
     flex-direction: column;
     gap: .5rem;
     padding-inline: 1rem !important;
 }
-#multi-page #faq-list .faq-item {
+#faq-list .faq-item {
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -495,14 +508,14 @@ body {
     position: relative;
     cursor: pointer;
 }
-#multi-page #faq-list .faq-item-header-block {
+#faq-list .faq-item-header-block {
 }
-#multi-page #faq-list .faq-item-header {
+#faq-list .faq-item-header {
     font-family: var(--roboto);
     font-size: 1.2rem;
     font-weight: 400;
 }
-#multi-page #faq-list .faq-item-header-icon {
+#faq-list .faq-item-header-icon {
     position: absolute;
     top: 50%;
     left: 1rem;
@@ -514,27 +527,27 @@ body {
     background-color: var(--yellow);
     transition: all .3s ease-out;
 }
-#multi-page #faq-list .faq-item-body {
+#faq-list .faq-item-body {
     height: 0;
     opacity: 0;
     transition: all .3s ease-out;
 }
-#multi-page #faq-list .faq-item-text {
+#faq-list .faq-item-text {
     font-weight: 300;
     opacity: .8;
 }
-#multi-page #faq-list a {
+#faq-list a {
     color: var(--yellow) !important;
     text-decoration: none;
     font-weight: 400;
     opacity: 1 !important;
 }
-#multi-page #faq-list .faqbtn {
+#faq-list .faqbtn {
     position: relative;
     font-weight: 400;
     color: var(--yellow) !important;
 }
-#multi-page #faq-list .faqbtn:before {
+#faq-list .faqbtn:before {
     content: '';
     position: absolute;
     background-color: var(--wine);
@@ -1059,27 +1072,6 @@ body {
 }
 /*Dolyami section*/
 
-/*loadingImitator*/
-#loadingImitator {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #22222250;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    z-index: 100500;
-    animation: showpopup .3s ease-out;
-}
-#loadingImitator svg {
-    animation: endlessRotating 2s ease infinite;
-}
-/*!loadingImitator*/
-
 /*Стили для Тильды*/
 .t-popup__close {
     background-color: var(--white-oo);
@@ -1190,7 +1182,7 @@ body {
     }
 
     /* needToRender (base design) */
-    #multi-page .classic-sec {
+    .classic-sec {
         margin-inline: .5rem;
         max-width: 1400px;
         margin: 4rem auto;
@@ -1199,14 +1191,14 @@ body {
         gap: 1rem;
         position: relative;
     }
-    #multi-page .classic-art {
+    .classic-art {
         flex: 1 0 100%;
         scroll-snap-align: center;
         max-width: unset;
         padding: 1.5rem .5rem;
         border-radius: 2rem;
     }
-    #multi-page .classic-ip {
+    .classic-ip {
         flex-direction: row;
         flex-wrap: nowrap;
         width: 100%;
@@ -1216,7 +1208,7 @@ body {
         padding-inline: .5rem;
         justify-content: flex-start;
     }
-    #multi-page .w-btn {
+    .w-btn {
         flex-direction: column;
         padding-left: 1.5rem;
     }
@@ -1325,7 +1317,7 @@ body {
     /* !Territory map */
 
     /*faq*/
-    #multi-page #faq-list .faq-item-text {
+    #faq-list .faq-item-text {
         margin-inline: -1rem;
     }
     /*!faq*/
