@@ -53,9 +53,9 @@ const render = async () => {
                 <img src="${project.values[codaData.codaPreviewLink]}" alt="${project.values[codaData.codaDescriptionS]}" class="project-preview">
             </div>
             <div class="project-card-buttons-block">
-            ${project.values[codaData.codaResult] ? `<a class="project-button project-card-result" href="${project.values[codaData.codaResult]}">Результат</a>` : ''}
-            ${project.values[codaData.codaProcess] ? `<a class="project-button project-card-result" href="${project.values[codaData.codaProcess]}">Процесс</a>` : ''}
-            ${project.values[codaData.codaFigma] ? `<a class="project-button project-card-result" href="${project.values[codaData.codaFigma]}">Фигма</a>` : ''}
+            ${project.values[codaData.codaProcess] ? `<a class="project-button project-card-process" href="${project.values[codaData.codaProcess]}" target="_blank">Процесс</a>` : ''}
+            ${project.values[codaData.codaResult] ? `<a class="project-button project-card-result" href="${project.values[codaData.codaResult]}" target="_blank">Результат</a>` : ''}
+            ${project.values[codaData.codaFigma] ? `<a class="project-button project-card-figma" href="${project.values[codaData.codaFigma]}" target="_blank">Фигма</a>` : ''}
             </div>
         </article>`)
     })
