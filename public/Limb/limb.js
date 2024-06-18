@@ -2,6 +2,12 @@
 // ================================================
 // ================================================
 // ================================================
+const delFcknArrow = setInterval(() => {
+    if (document.querySelector('.t794__arrow')) {
+        clearInterval(delFcknArrow)
+        document.querySelectorAll('.t794__arrow')[2].remove()
+    }
+}, 100) // костяль для разных Тильды пунктов меню
 const setHeroPadding = () => {
     const check = (header, hero) => {
         if (header && hero) {
@@ -34,7 +40,7 @@ const setHeroPadding = () => {
     }
 }
 window.addEventListener("load", () => {
-    setHeroPadding();
+    // setHeroPadding();
 })
 
 

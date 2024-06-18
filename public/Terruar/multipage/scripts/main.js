@@ -1165,13 +1165,13 @@ window.addEventListener("resize", () => {
     multipage.getHeaderHeight()
 })
 window.addEventListener("load", () => {
+    whatPageIs.data === 'main' ? multipage.heroVideoStart() : null
     multipage.getHeaderHeight()
     if (window.innerWidth < 600) {
         multipage.smoothShowHorizontal()
     }
 })
 document.addEventListener("DOMContentLoaded", () => {
-    whatPageIs.data === 'main' ? multipage.heroVideoStart() : null
     multipage.getHeaderHeight()
     needToRender()
     multipage.popupButtonsInit()
