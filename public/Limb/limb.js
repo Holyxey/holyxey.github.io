@@ -40,7 +40,7 @@ const setHeroPadding = () => {
     }
 }
 window.addEventListener("load", () => {
-    // setHeroPadding();
+    setHeroPadding();
 })
 
 
