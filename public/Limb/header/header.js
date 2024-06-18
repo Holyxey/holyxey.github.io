@@ -85,7 +85,7 @@ const showMobileMenu = () => {
 }
 const renderMenuItems = () => {
     const lists = document.querySelectorAll('[data-render]')
-    if (window.location.href.includes('n_legs')) {
+    if (window.location.href.includes('legs')) {
         lists.forEach(list => {
             list.setAttribute('data-render', '1')
         })
