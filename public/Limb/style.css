@@ -66,6 +66,7 @@ p, .p {
     font-size: .9rem;
 }
 
+/*
 header {
     border-bottom: #0099A0 1px solid;
     z-index: 995595607309;
@@ -131,6 +132,7 @@ header #header {
         text-decoration: none!important;
         color: unset!important;
     }
+*/
 
 .orange-button {
     width: fit-content;
@@ -976,9 +978,11 @@ header #header {
         }
     }
 
+    /*
     .headerPC {
         display: none;
     }
+     */
 }
 
 @media screen and (max-width: 1024px) {
@@ -1100,10 +1104,11 @@ header #header {
 }
 
 @media screen and (max-width: 500px) {
-
+    /*
     header a {
         text-align: center;
     }
+     */
 
     h1, .h1 {
         font-size: 2rem;
