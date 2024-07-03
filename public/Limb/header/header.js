@@ -4,7 +4,6 @@ const headerInteraction = () => {
         const items = listHeader.querySelectorAll(".listHidden a");
         const listHidden = listHeader.querySelector(".listHidden");
         const header = listHeader.querySelector("p")
-        const arrow = listHeader.querySelector(".arrow");
         if (!listHeader.querySelector("p")) {
             return
         }
@@ -21,15 +20,36 @@ const headerInteraction = () => {
                     item.style.animation = 'hideListItem .2s ease-out forwards';
                 })
             }
-        } else {
-            header.ontouchstart = () => {
-                listHidden.style.padding = '.5rem'
-                items.forEach((item, index) => {
-                    item.style.animation = 'showListItem .2s ease-out forwards';
-                })
+        }
+        else {
+            if (!listHeader.getAttribute('mobHidden') || listHeader.getAttribute('mobHidden') === '0') {
+                header.ontouchstart = () => {
+                    listHeader.setAttribute('mobHidden', '1')
+                    listHidden.style.padding = '.5rem'
+                    items.forEach((item, index) => {
+                        item.style.animation = 'showListItem .2s ease-out forwards';
+                    })
+                }
+            } else {
+                header.ontouchstart = () => {
+                    listHeader.setAttribute('mobHidden', '0')
+                    listHidden.style.padding = '.5rem'
+                    items.forEach((item, index) => {
+                        item.style.animation = 'hideListItem .2s ease-out forwards';
+                    })
+                }
             }
         }
     })
+
+    if (window.innerWidth < 1024) {
+        const a = document.querySelector('#newHeader').querySelectorAll("a");
+        a.forEach(links => {
+            links.onclick = () => {
+                document.querySelector('#mobileBurger').click()
+            }
+        })
+    }
 }
 const showMobileMenu = () => {
     const button = document.getElementById("mobileBurger");

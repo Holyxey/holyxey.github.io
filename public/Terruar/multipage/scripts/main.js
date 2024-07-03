@@ -39,7 +39,7 @@ const lists = {
             withGallery: false,
         },
         {
-            render: false,
+            render: true,
             id: 'furako',
             title: 'Баня с фурако и холодной купелью',
             header: '',
@@ -47,7 +47,7 @@ const lists = {
             shortDescr: 'От 3500р/час',
             fullDescr: 'Наша новая баня, отличается от первой наличием санузла и душа. В стоимость бани также входит горячая купель фурако и холодная купель. Целый СПА-комплекс. Минимальная бронь от двух часов.',
             benefits: ['', '', ''],
-            images: [''],
+            images: ['https://thumb.tildacdn.com/tild6630-3034-4132-a532-653463626536/-/format/webp/305A0845.JPG'],
             popUp: true,
             popUpType: 'service',
             readMoreLink: '',
@@ -55,7 +55,7 @@ const lists = {
             withGallery: false,
         },
         {
-            render: false,
+            render: true,
             id: 'pool',
             title: 'Бассейн',
             header: '',
@@ -63,7 +63,7 @@ const lists = {
             shortDescr: 'Бесплатно',
             fullDescr: 'Летний плавательный бассейн доступен для всех гостей Терруар. Рядом с бассейном предусмотрены зоны для приема солнечных ванн. А у администратора можно получить надувной диван (ламзак). ',
             benefits: ['', '', ''],
-            images: ['https://thumb.tildacdn.com/tild6265-6563-4665-b139-343737353365/-/format/webp/pool.jpeg'],
+            images: ['https://thumb.tildacdn.com/tild6363-3437-4238-b031-663535363161/-/format/webp/IMG_4025.JPG'],
             popUp: true,
             popUpType: 'service',
             readMoreLink: '',
@@ -268,6 +268,72 @@ const lists = {
             withGallery: false,
         },
     ],
+    servicesListPreview: [
+        {
+            render: true,
+            id: 'pool',
+            title: 'Бассейн',
+            header: '',
+            price: '',
+            shortDescr: 'Бесплатно',
+            fullDescr: 'Летний плавательный бассейн доступен для всех гостей Терруар. Рядом с бассейном предусмотрены зоны для приема солнечных ванн. А у администратора можно получить надувной диван (ламзак). ',
+            benefits: ['', '', ''],
+            images: ['https://thumb.tildacdn.com/tild6363-3437-4238-b031-663535363161/-/format/webp/IMG_4025.JPG'],
+            popUp: true,
+            popUpType: 'service',
+            readMoreLink: '',
+            readMoreText: 'Подробнее',
+            withGallery: false,
+        },
+        {
+            render: true,
+            id: 'bathvat',
+            title: 'Банный чан',
+            header: '',
+            price: '',
+            shortDescr: 'От 1500 р',
+            fullDescr: 'Банный чан до 3х-4 человек под навесом, чтобы можно было наслаждаться им в любую погоду. Находится недалеко от нашей первой бани, удобно арендовать баню и чан как вместе так и отдельно. Минимальная бронь от двух часов.',
+            benefits: ['', '', ''],
+            images: ['https://thumb.tildacdn.com/tild3435-6233-4833-b861-366330383062/-/format/webp/KIR_5744_1.jpg'],
+            popUp: true,
+            popUpType: 'service',
+            readMoreLink: '',
+            readMoreText: 'Подробнее',
+            withGallery: false,
+        },
+        {
+            render: true,
+            id: 'furako',
+            title: 'Баня с фурако и холодной купелью',
+            header: '',
+            price: '',
+            shortDescr: 'От 3500р/час',
+            fullDescr: 'Наша новая баня, отличается от первой наличием санузла и душа. В стоимость бани также входит горячая купель фурако и холодная купель. Целый СПА-комплекс. Минимальная бронь от двух часов.',
+            benefits: ['', '', ''],
+            images: ['https://thumb.tildacdn.com/tild6630-3034-4132-a532-653463626536/-/format/webp/305A0845.JPG'],
+            popUp: true,
+            popUpType: 'service',
+            readMoreLink: '',
+            readMoreText: 'Подробнее',
+            withGallery: false,
+        },
+        {
+            render: true,
+            id: 'more',
+            title: 'Посмотреть все',
+            header: '',
+            price: '',
+            shortDescr: ``,
+            fullDescr: '',
+            benefits: ['', '', ''],
+            images: ['https://thumb.tildacdn.com/tild3661-3564-4437-a630-383931616632/-/format/webp/AllServices.png'],
+            popUp: false,
+            popUpType: 'service',
+            readMoreLink: '/services',
+            readMoreText: 'Страница с услугами',
+            withGallery: false,
+        },
+    ],
     offersList: [],
     other: [
         {
@@ -280,7 +346,7 @@ const lists = {
             fullDescr: '',
             benefits: ['', '', ''],
             images: ['https://optim.tildacdn.com/tild3530-3138-4862-a135-633935343735/-/format/webp/heroImg.png'],
-            icon: '',
+            icon: 'https://static.tildacdn.com/tild6139-3036-4063-b835-343664383336/camera.svg',
             popUp: true,
             readMoreLink: '',
             readMoreText: 'Подробнее',
@@ -321,7 +387,7 @@ const lists = {
                 "https://optim.tildacdn.com/tild6264-3164-4465-a432-646533636363/-/format/webp/DSC_4915-2_.JPG",
                 "https://optim.tildacdn.com/tild6364-3030-4437-b934-633130393034/-/format/webp/DSC_4558-2_.JPG",
             ],
-            icon: '',
+            icon: 'https://static.tildacdn.com/tild6234-3863-4337-b562-633532656234/restaurant.svg',
             popUp: true,
             readMoreLink: '',
             readMoreText: 'Подробнее',
@@ -337,7 +403,7 @@ const lists = {
             fullDescr: '',
             benefits: ['', '', ''],
             images: ['https://optim.tildacdn.com/tild6631-6137-4133-b161-336134656332/-/format/webp/main.jpg'],
-            icon: '',
+            icon: 'https://static.tildacdn.com/tild3930-3739-4666-b961-643738633932/team.svg',
             popUp: true,
             readMoreLink: '',
             readMoreText: 'Подробнее',
@@ -408,18 +474,18 @@ const lists = {
             'Сколько спальных мест в домиках?': `Наши домики рассчитаны на двоих (за исключением домика Шампань – там максимум 4 человека).
 <br>Если вам будет удобно, то за дополнительную плату можем предоставить дополнительно одноместную раскладушку.`,
             'Как забронировать домик?': `Для бронирования воспользуйтесь сайтом,<span onclick="multipage.bookingClick()"> кнопкой забронировать </span>, необходимо будет внести предоплату – 50% (если что-то изменится и вы сообщите нам за 10 дней до заезда, мы вернем стоимость).
-<br>Если ничего с этим сайтом не получается, <a href="https://wa.me/79670655655?text=Здравствуйте,%20пишу%20с%20сайта" class="faqbtn" target="_blank"> напишите нам</a>, мы все забронируем и пришлем ссылку на предоплату! <br>А если что-то не работает на сайте - напишите пожалуйста <a href="https://t.me/holyxey" target="_blank" class="faqbtn"> Алексею</a>`,
+<br>Если ничего с этим сайтом не получается, <a href="https://wa.me/79670655655?text=Здравствуйте,%20пишу%20с%20сайта" class="faqbtn" target="_blank"> напишите нам</a>, мы все забронируем и пришлем ссылку на предоплату! <br>А если что-то не работает на сайте - напишите пожалуйста <a href="https://holyxey.ru" target="_blank" class="faqbtn"> Алексею</a>`,
             'Как устроить корпоратив / тимбилдинг?': `Напишите нам на почту<a href="mail:Terruar.msk@gmail.com" class="faqbtn"> Terruar.msk@gmail.com </a> поможем реализовать любую идею! У нас есть ведущие, фотографы, можем организовать лазертаг, джип-тур, банную программу с профессиональным банщиком, а также сделать специальную скидку для вас!`,
         }
 }
 const styleClassLists = [
     {
         needHeader: true,
-        needCounter: true,
+        needCounter: false,
         needToSmooth: true,
         needIcon: false,
         section: 'classic-sec',
-        headBlock: 'classic-hb',
+        headBlock: 'classic-hb w-btn',
         itemsParent: 'classic-ip',
         article: 'classic-art',
         artHeads: 'classic-art-hb',
@@ -508,10 +574,13 @@ const needToRender = function (where) {
                 <article class="${design.article}"
                 ${item.popUp ? `data-popup="${item.id}"` : ''}
                 ${item.title ? `title="${item.title}"` : ''}
-                ${design.needCounter ? 'data-counter-item' : ''}>
+                ${design.needCounter ? 'data-counter-item' : ''}
+                ${item.readMoreLink ? `style="border: 1px solid var(--white-oo)" onclick="this.querySelector('a').click()"` : ''}
+                >
                     ${design.artHeads 
                     ? `<div class="${design.artHeads}">
-                            <h4 class="${design.artHeader}">${item.title}</h4>
+                            ${item.icon ? `<img class="classic-art-icon" src="${item.icon}" alt="icon">` : ''}
+                            <h4 class="${design.artHeader}" ${item.icon ? `style="padding-left: 2.5rem"` : ''}>${item.title}</h4>
                             <p class="${design.artDescr}">${item.shortDescr}</p>
                         </div>` 
                     : ''}
