@@ -1,0 +1,537 @@
+:root {
+    --white: #FFFFFF;
+    --text_color: #111728;
+    --accent: #E8C0A3;
+    --back_brown: #A09389;
+    --shadow: 0 0 50px 0 rgba(90, 20, 115, 0.05);
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", "Helvetica Neue", sans-serif;
+    list-style: none;
+    text-decoration: none;
+    color: var(--text_color);
+    line-height: 1;
+}
+
+body {
+    overflow-x: hidden;
+}
+section {
+    padding-inline: 2rem;
+}
+header {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--white);
+    margin: 1rem auto;
+    border-radius: 100vmin;
+    padding: 2px 2px 2px 2rem;
+    box-shadow: var(--shadow);
+    z-index: 100500;
+}
+#mobileButtons {
+    display: none;
+}
+menu li {
+    flex: 1;
+}
+.headerButton {
+    font-size: 1rem;
+    display: flex;
+    padding: 1rem 1.5rem;
+    color: var(--text_color) !important;
+}
+.whiteBack {
+    background-color: #FFFFFF05;
+    border-radius: 100%;
+    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='1000' ry='1000' stroke='%23E8C0A3FF' stroke-width='3' stroke-dasharray='13' stroke-dashoffset='78' stroke-linecap='butt'/%3e%3c/svg%3e");
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+.mobileVisible {
+    display: none;
+}
+
+menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    color: var(--white);
+}
+header #headerButtons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0;
+}
+#headerButtons svg {
+    display: block;
+}
+
+.getButton,
+.uc-widthForm .t-submit {
+    background-color: var(--accent);
+    color: var(--text_color) !important;
+    border: 0;
+    padding: 1rem 1.5rem;
+    border-radius: 100vmin;
+    font-size: 1rem;
+    cursor: pointer;
+
+    max-width: fit-content;
+    font-weight: 300;
+}
+
+#hero {
+    background-image: url(https://thumb.tildacdn.com/tild3965-6539-4439-b361-353366613437/-/format/webp/hero.jpg);
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-block: 10rem 3rem;
+    gap: 2rem;
+    overflow: hidden;
+
+    position: relative;
+}
+#hero > * {
+    z-index: 2;
+}
+#heroLogoContainer {
+    width: 100%;
+    max-width: 1200px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+#heroLogoContainer img {
+    height: 3rem;
+    display: block;
+}
+#heroOffersContainer {
+    width: 100%;
+    max-width: 1200px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    color: var(--white);
+}
+#headerOffers,
+#areaOffers,
+#conceptionOffers,
+#missionOffers {
+    max-width: 1200px;
+    display: flex;
+    padding-top: 3rem;
+    gap: 4rem;
+
+    justify-content: center;
+    align-items: self-start;
+    flex-wrap: wrap;
+}
+#missionOffers {
+    padding-top: 1rem;
+}
+#conceptionOffers {
+    max-width: 1000px;
+}
+.offer {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    z-index: 10;
+    max-width: 400px;
+}
+.offer .imgBlock {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10rem;
+    width: 10rem;
+}
+.offer .imgBlock img {
+    height: 3rem;
+    z-index: 2;
+}
+.offer .imgBlock::before {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    border-radius: 100%;
+}
+.offer p {
+    text-align: center;
+}
+
+#hero #yogaImg {
+    position: absolute;
+    right: 5%;
+    bottom: 20%;
+    width: 25rem;
+    height: 25rem;
+    padding: 3rem;
+    z-index: 2;
+}
+#hero #yogaImg img {
+    max-width: 100%;
+}
+.p {
+    color: var(--white);
+}
+h1, .h1 {
+    color: var(--white);
+    font-size: 2rem;
+    font-weight: 500;
+}
+h2, .h2 {
+    color: var(--white);
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+h3, .h3 {
+    color: var(--white);
+    font-size: .9rem;
+    font-weight: 300;
+}
+
+.accent {
+    color: var(--accent);
+}
+.curved {
+    position: absolute;
+    bottom: -7dvw;
+    rotate: -5deg;
+    width: 110dvw;
+    height: 15dvw;
+    background-color: var(--back_brown);
+    z-index: 1;
+}
+
+#mission {
+    background-color: var(--back_brown);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 4rem;
+    position: relative;
+    overflow: hidden;
+}
+#mission h2 {
+    text-align: center;
+}
+#mission p {
+    color: var(--white);
+    max-width: 1200px;
+    text-align: center;
+}
+#mission .curved {
+    top: unset;
+    bottom: -14dvw;
+    rotate: -1deg;
+    background-color: var(--white);
+}
+
+#area {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 4rem;
+    background-color: var(--white);
+}
+#area * {
+    color: var(--text_color);
+}
+
+#conception {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 4rem;
+    /*background-image: url(https://thumb.tildacdn.com/tild3365-3134-4165-a430-353864663435/-/format/webp/CONCEPTION.png);*/
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+#rec772260985 #conception .curved {
+    top: -14dvw;
+    bottom: unset;
+    rotate: -1deg;
+    background-color: var(--white);
+}
+#rec772260985 .curved {
+    top: unset;
+    bottom: -14dvw;
+    rotate: -1deg;
+    background-color: var(--white);
+}
+#conception p {
+    color: var(--white);
+    max-width: 1200px;
+    text-align: center;
+}
+
+#partners {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    padding-block: 4rem;
+    background-color: var(--white);
+    margin: auto;
+}
+#partners img {
+    max-height: 50px;
+
+}
+
+footer {
+    background-color: var(--back_brown);
+    position: relative;
+    overflow: hidden;
+}
+footer .curved {
+    top: -14dvw;
+    left: -2rem;
+    bottom: unset;
+    rotate: -1deg;
+    background-color: var(--white);
+}
+#contacts {
+    position: relative;
+    overflow: hidden;
+    padding-top: 5rem;
+    max-width: 1200px;
+    margin: auto;
+}
+#contacts * {
+    color: var(--white) !important;
+}
+#contacts #footerLinks {
+    z-index: 2;
+    display: flex;
+    gap: 2rem;
+    padding: 0;
+}
+#contacts #footerLogo img {
+    height: 3rem;
+    display: block;
+}
+
+#contacts .footerBlock:first-child {
+    align-items: center;
+}
+#contacts .footerBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    z-index: 100;
+}
+#contacts .footerBlock #qr {
+    width: 6rem;
+}
+
+#footersFooter {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    max-width: 1200px;
+    margin: auto;
+    padding-block: 2rem;
+}
+#footersFooter * {
+    color: var(--white) !important;
+}
+
+#popUpVideo {
+    position: fixed;
+    right: 0;
+    bottom: 1rem;
+    z-index: 100500;
+
+    background-color: var(--white);
+    border-radius: 1rem 0 0 1rem;
+    padding: 5px;
+    transition: all .3s ease-out;
+}
+#embedPopUp {
+    border-radius: calc(1rem - 5px);
+    display: block;
+
+    transition: all .3s ease-out;
+}
+#showHide {
+    position: absolute;
+    right: 0;
+    top: calc(-3rem + 5px);
+    height: 3rem;
+    width: 3rem;
+    background-color: var(--white);
+    border-top-left-radius: 1rem;
+    transition: all .3s ease-out;
+}
+#showHide svg {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    transition: all .3s ease-out;
+}
+
+/*
+*/
+.uc-widthForm {
+
+}
+
+/*
+*/
+@media screen and (max-width: 1200px) {
+    header {
+        margin: 1rem;
+        width: calc(100% - 2rem);
+        transform: unset;
+        left: unset;
+    }
+    menu {
+        gap: 0;
+    }
+}
+@media screen and (max-width: 960px) {
+    #hero {
+        padding-block: unset;
+        padding: 4rem 3rem 10rem 3rem;
+    }
+    #hero #yogaImg {
+        width: 20rem;
+        height: 20rem;
+    }
+    .mobileVisible {
+        display: block;
+    }
+    header {
+        flex-direction: column;
+        right: 1rem;
+        top: 1rem;
+        width: fit-content;
+        left: unset;
+        transform: unset;
+        margin: 0;
+        border-radius: 2rem;
+        padding: 1rem;
+        background-color: #ffffffda;
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+    }
+    header menu {
+        flex-direction: column;
+        padding-bottom: 1rem;
+        overflow: hidden;
+
+        height: 0;
+        width: 0;
+        display: none;
+    }
+    header #headerButtons {
+        flex-direction: column;
+        gap: 1rem;
+        overflow: hidden;
+
+        height: 0;
+        width: 0;
+        display: none;
+    }
+    #burger {
+        display: flex;
+        justify-content: flex-end;
+        padding: 0;
+        /*padding: 0 1rem 1rem 1rem;*/
+    }
+    header #headerContactButtons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+    }
+    #mobileButtons {
+        display: block;
+    }
+    .headerButton {
+        padding: .5rem;
+    }
+}
+@media screen and (max-width: 640px) {
+    #hero #yogaImg {
+        display: none;
+    }
+    #headerOffers,
+    #areaOffers,
+    #conceptionOffers,
+    #missionOffers {
+        gap: 2rem;
+    }
+    #partners {
+        justify-content: center;
+        gap: 2rem;
+    }
+    #contacts #footerLinks {
+        flex-wrap: wrap;
+    }
+    h2 {
+        text-align: center;
+    }
+}
+@media screen and (max-width: 480px) {
+    section {
+        padding-inline: 1rem;
+    }
+    #missionOffers {
+        padding: 0;
+    }
+    .offer .imgBlock {
+        height: 6rem;
+        width: 6rem;
+    }
+    #partners img {
+        max-height: 40px;
+    }
+    #mission,
+    #conception {
+        padding: 3rem;
+    }
+}

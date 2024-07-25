@@ -55,15 +55,21 @@ body {
 }
 
 #multi-page h1 {
-    font-size: 2.5rem;
+    font-size: 2.3rem;
     font-family: var(--unbounded);
     line-height: 1;
+    color: var(--yellow);
+    font-weight: 500;
 }
 #multi-page h2 {
-    font-size: 2.2rem;
+    font-size: 1.2rem;
     font-family: var(--roboto);
-    font-weight: 500;
+    font-weight: 300;
     line-height: 1;
+}
+#multi-page h2.popUpHeader {
+    font-size: 2rem;
+    font-weight: 500;
 }
 #multi-page h3 {
     font-size: 2rem;
@@ -82,6 +88,15 @@ body {
 #multi-page .border {
     border: 1px solid #ffffff20;
 }
+.hideMobile {
+    display: inherit !important;
+}
+.hidePC {
+    display: none !important;
+}
+.counterBlock {
+    display: none;
+}
 
 /*nav*/
 #multi-page nav {
@@ -94,7 +109,7 @@ body {
     left: 0;
     right: 0;
 
-    z-index: 9220160;
+    z-index: 99999;
 }
 #multi-page nav * {
     transition: .3s;
@@ -180,52 +195,91 @@ body {
 
 /*Header*/
 #multi-page header #hero {
-    background: url(https://optim.tildacdn.com/tild3562-3163-4965-a330-643466333938/-/format/webp/heroBlurred.jpg) center / cover;
-    padding: 1rem;
-    margin: 1rem;
-    border-radius: 2rem;
-
     position: relative;
-    margin-top: 5rem;
-    height: calc(100vh - 5rem);
+    max-width: 1400px;
+    margin: auto;
+    padding: 1rem;
 
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     overflow: hidden;
+    flex-wrap: wrap;
+    gap: 2rem;
 
-    transition: all .3s linear;
+    transition: all .3s ease-in-out;
 }
-#multi-page header #hero[data-nomain="services"] {
-    /*background: url(https://static.tildacdn.com/tild3837-3564-4233-b164-306238613366/DSC_4638-2_.JPG) center / cover;*/
-    background: url(https://thumb.tildacdn.com/tild6563-3566-4264-b733-383436336232/-/format/webp/active.jpg) center / cover;
-}
-#multi-page header #heroContactButtons {
+#multi-page header #hero[data-nomain="services"] {}
+#multi-page header #hero #heroHeadlineContainer {}
+#multi-page header #hero #heroTextBlock {
     display: flex;
+    flex: 1;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    z-index: 2;
+    gap: 1rem;
+    padding-block: 2rem;
 }
-#multi-page header #heroContactButtons #buttonsList {
+/**/#multi-page header #hero #heroTextBlock #heroPreferences {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding-block: 2rem;
+    min-width: 200px;
+} /* Хайлайты hero */
+#multi-page header #hero #heroTextBlock .heroPreferencesBlock {
+    flex: 1 0 200px;
+}
+#multi-page header #hero #heroTextBlock .heroPreferencesBlock svg {
+    height: 25px;
+    display: block;
+    float: left;
+    margin: auto 1rem auto 0;
+}
+#multi-page header #hero #heroTextBlock .heroPreferencesBlock .blockTitle {
+    font-size: 1.2rem;
+    padding-bottom: 1rem;
+    color: var(--white);
+}
+#multi-page header #hero #heroTextBlock .heroPreferencesBlock .blockText {
+    font-size: 1rem;
+    color: var(--white-o);
+}
+#multi-page header #hero #heroImageBlock {
+    /*background: url(https://optim.tildacdn.com/tild6164-6236-4335-b061-383633653530/-/format/webp/DSC_8864_1.png) center / cover;*/
+    /*background: url(https://optim.tildacdn.com/tild6563-3566-4264-b733-383436336232/-/format/webp/active.jpg) center / cover;*/
+    background: url(https://thumb.tildacdn.com/tild3335-6365-4564-b639-333062663937/-/format/webp/5ZN_2626.jpg) center / cover;
+    flex: 1;
+    border-radius: 3rem;
+    min-height: 300px;
+    min-width: 550px;
+}
+/**/#multi-page header #heroContactButtons {
+    display: flex;
     flex-wrap: wrap;
     gap: 1rem;
-    background-color: var(--back-o);
-    padding: .5rem !important;
-    border-radius: 1rem;
-}
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+} /* Кнопки в hero */
 #multi-page header #heroContactButtons .heroButton {
     display: block;
     background-color: var(--white);
-    padding: .5rem 1rem;
-    border-radius: .5rem;
+    padding: .7rem 2rem;
+    border-radius: 100vmin;
 
     text-decoration: none !important;
     color: var(--back) !important;
 }
+#multi-page header #heroContactButtons .heroButton.phone {
+    background-color: var(--wine);
+    color: var(--white) !important;
+}
+#multi-page header #heroContactButtons .heroButton.book {
+    background-color: var(--yellow);
+    color: var(--back) !important;
+}
 #multi-page header #heroContactButtons .heroSocialButtons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 #multi-page header #heroContactButtons .heroSocialButtons a {
     text-decoration: none !important;
@@ -233,50 +287,32 @@ body {
 #multi-page header #heroContactButtons .heroSocialButtons svg {
     margin: auto .5rem;
     height: 1.5rem;
+    display: block;
+    transition: scale .1s ease-in;
 }
-#multi-page header #hero #booking {
+#multi-page header #heroContactButtons .heroSocialButtons svg:hover {
+    scale: 1.1;
+}
+/**/#multi-page header #hero #booking {
     background-color: var(--back-o);
     width: 100%;
     padding: 2rem 4rem;
     border-radius: 1rem;
 }
-#multi-page header #heroHeadLines {
-    padding: 4rem 1rem;
-    margin: auto;
-    width: 100%;
-    max-width: 1200px;
-    z-index: 2;
-}
-#multi-page header #heroVideo {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-
-    backdrop-filter: blur(3px);
-    -webkit-backdrop-filter: blur(3px);
-    background-color: #13121550;
-    z-index: 1;
-    overflow: hidden;
-}
-#multi-page header #heroVideo > * {
-    min-width: 100%;
-    /*min-height: 100%;*/
-    aspect-ratio: 16 / 9;
-    pointer-events: none;
-}
 
 /*Booking*/
 .znms-widget__module-form-block {
-    top: auto !important;
-    bottom: 2rem !important;
-    left: 2rem !important;
-    right: 2rem !important;
+    top: 620px !important;
+    left: .5rem !important;
+    right: .5rem !important;
     border-radius: 2rem !important;
 }
 .znms-widget__module-form-block__wrap {
     max-width: unset !important;
+}
+.znms-widget__module-form-block--opacity-bg {
+    max-width: 1400px;
+    background-color: var(--back-o) !important;
 }
 .znms-widget__module-form-block__btn,
 .znms-widget__place_form-btn,
@@ -292,6 +328,12 @@ body {
 }
 .znms-widget__module-form-block__item--lg {
     display: none !important;
+}
+.znms-widget__module-form-block--header {
+    z-index: 9999 !important;
+}
+.znms-widget__brononline_popup_full {
+    z-index: 999999 !important;
 }
 /*!Header*/
 
@@ -400,6 +442,7 @@ body {
     text-align: center;
     align-content: center;
     cursor: pointer;
+    display: block;
 }
 /* !needToRender */
 
@@ -477,6 +520,40 @@ body {
 }
 /* !reviews */
 
+/* variants */
+#variants {}
+.variantBlock {
+    flex: 1;
+    min-width: 400px;
+    max-width: 500px;
+    background-color: var(--back-o);
+    margin-inline: .5rem;
+    padding: 1rem;
+    border-radius: 3rem;
+    cursor: pointer;
+    scroll-snap-align: center;
+}
+.variantBlock .variantHeader {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-inline: 1rem;
+}
+.variantBlock svg {}
+.variantBlock .variantTitle {}
+.variantBlock .openVariantGallery {
+    margin-left: auto;
+}
+.variantBlock .variantPreviewImage {
+    background-size: cover;
+    background-position: center;
+    margin-top: .5rem;
+    border-radius: 1.5rem 1.5rem;
+    aspect-ratio: 1.8 / 1;
+}
+
+/* !variants */
+
 /* Territory map */
 #map .classic-ip {
     display: flex;
@@ -549,12 +626,13 @@ body {
     font-weight: 400;
     opacity: 1 !important;
 }
-#faq-list .faqbtn {
+.faqbtn {
     position: relative;
     font-weight: 400;
     color: var(--yellow) !important;
+    text-decoration: none !important;
 }
-#faq-list .faqbtn:before {
+.faqbtn:before {
     content: '';
     position: absolute;
     background-color: var(--wine);
@@ -673,6 +751,15 @@ body {
 }
 #popup-block .popUpHeader {
     padding-top: 2rem;
+}
+#popup-block .popUpDescr {
+    text-align: center;
+    font-size: 1.1rem;
+    max-width: 500px;
+    padding: 1rem;
+    margin-top: 1rem;
+    border: 1px solid var(--white-oo);
+    border-radius: 1rem;
 }
 #popup-block .weather {
     background-color: var(--blue);
@@ -1147,19 +1234,30 @@ body {
 /*
 */
 @media screen and (max-width: 600px) {
+    .hideMobile {
+        display: none !important;
+    }
+    .hidePC {
+        display: inherit !important;
+    }
     .znms-widget__module-form-block {
-        top: auto !important;
-        bottom: 0rem !important;
-        left: 0rem !important;
-        right: 0rem !important;
+        top: unset!important;
+        max-width: calc(100% - 2rem) !important;
+        left: 0 !important;
+        right: 0 !important;
         border-radius: 2rem !important;
+        transition: all 0.5s ;
+    }
+    .counterBlock {
+        display: block;
     }
 
     #multi-page h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
     #multi-page h2 {
-        font-size: 1.7rem;
+        font-size: 1.3rem;
+        padding-top: 1rem;
     }
     #multi-page h3 {
         font-size: 1.7rem;
@@ -1177,15 +1275,29 @@ body {
     #multi-page menu#menuList li.navPCItem {
         display: none;
     }
+    #multi-page menu .heroSocialButtons {
+        display: flex !important;
+    }
+    #multi-page menu .heroSocialButtons svg {
+        height: 20px;
+    }
 
+    /*hero*/
     #multi-page header #hero {
         padding: .5rem;
-        margin-inline: .5rem;
+        margin-inline: 0;
     }
-    #multi-page header #heroContactButtons #buttonsList {
-        border-radius: 2rem;
+    #multi-page header #heroContactButtons {
         flex-direction: column;
-        background-color: transparent;
+        justify-content: center;
+    }
+    #multi-page header #hero #heroImageBlock {
+        display: none;
+    }
+    #multi-page header #hero #heroTextBlock {
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.70) 0%, rgba(0, 0, 0, 0.70) 100%), url(https://optim.tildacdn.com/tild6563-3566-4264-b733-383436336232/-/format/webp/active.jpg) lightgray 50% / cover no-repeat;
+        padding: 2rem;
+        border-radius: 2rem;
     }
 
     /* needToRender (base design) */

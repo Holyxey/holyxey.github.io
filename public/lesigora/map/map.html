@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="map.css">
+</head>
+<body>
+
+<div class="genplancontent" id="fullscreen-element">
+    <div class="genleftcontent hide">
+        <button class="closebtngen" type="button">Закрыть
+            <svg height="16px" id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1"
+                 viewBox="0 0 512 512"
+                 width="16px" width="512px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+            ><polygon points="396.6,160 416,180.7 256,352 96,180.7 115.3,160 256,310.5 "/></svg>
+        </button>
+        <div class="genitem">
+            <div class="genitemtitle">
+                <b class="numberhouse"><span></span></b>
+                <div class="genitemtitlestatus">
+                    <div class="statustext"></div>
+                </div>
+            </div>
+            <div class="statustext areaploshyad">Площадь участка: <span></span> кв.м.</div>
+            <div class="statustext areatype">Тип: <span></span></div>
+            <div class="statustext areaprice">Стоимость: <span></span></div>
+            <div class="moreinfo">
+            </div>
+            <div class="btgros">
+                <button id="moreinfo" type="button">больше информации</button>
+                <a aria-haspopup="dialog" href="#popup:myformarea" id="needhome" onclick="broneBt()" role="button"
+                   style="color: inherit">забронировать!</a>
+
+            </div>
+        </div>
+    </div>
+    <div class="genmap">
+        <div class="mapbuttons">
+            <button id="fullscreenButton" type="button">
+                <svg class="nofullscreen" height="24" viewBox="0 0 32 32" width="24" xmlns="http://www.w3.org/2000/svg">
+                    <g data-name="Layer 22" id="Layer_22">
+                        <path d="M14.36,17.83a1,1,0,0,0-.14-.15,1,1,0,0,0-.65-.24H7.92a1,1,0,1,0,0,2h3.23l-7.4,7.4a1,1,0,1,0,1.41,1.41l7.4-7.4v3.23a1,1,0,1,0,2,0V18.44s0-.05,0-.08A1,1,0,0,0,14.36,17.83Z"/>
+                        <path d="M17.83,14.36a1,1,0,0,0,.54.2h5.72a1,1,0,1,0,0-2H20.85l7.4-7.4a1,1,0,0,0-1.41-1.41l-7.4,7.4V7.92a1,1,0,1,0-2,0v5.65h0a1,1,0,0,0,.24.65A1,1,0,0,0,17.83,14.36Z"/>
+                        <path d="M20.85,19.44h3.23a1,1,0,1,0,0-2H18.44a1,1,0,0,0-.65.24,1,1,0,0,0-.14.15,1,1,0,0,0-.2.54s0,.05,0,.08v5.64a1,1,0,1,0,2,0V20.85l7.4,7.4a1,1,0,0,0,1.41-1.41Z"/>
+                        <path d="M13.56,6.92a1,1,0,0,0-1,1v3.23l-7.4-7.4A1,1,0,0,0,3.75,5.17l7.4,7.4H7.92a1,1,0,1,0,0,2h5.65a1,1,0,0,0,.65-.24,1,1,0,0,0,.14-.15,1,1,0,0,0,.2-.54s0-.05,0-.08V7.92A1,1,0,0,0,13.56,6.92Z"/>
+                    </g>
+                </svg>
+                <svg class="fullscreen" height="24" viewBox="0 0 32 32" width="24" xmlns="http://www.w3.org/2000/svg">
+                    <g data-name="Layer 21" id="Layer_21">
+                        <path d="M12.86,17.73l-7.4,7.4V21.89a1,1,0,0,0-2,0v5.64s0,.05,0,.08a1,1,0,0,0,.2.54,1,1,0,0,0,.14.15,1,1,0,0,0,.65.24h5.65a1,1,0,0,0,0-2H6.87l7.4-7.4a1,1,0,0,0-1.41-1.41Z"/>
+                        <path d="M28.3,3.81a1,1,0,0,0-.15-.14,1,1,0,0,0-.54-.2H21.89a1,1,0,0,0,0,2h3.23l-7.4,7.4a1,1,0,1,0,1.41,1.41l7.4-7.4v3.23a1,1,0,0,0,2,0V4.46h0A1,1,0,0,0,28.3,3.81Z"/>
+                        <path d="M27.54,20.89a1,1,0,0,0-1,1v3.23l-7.4-7.4a1,1,0,0,0-1.41,1.41l7.4,7.4H21.89a1,1,0,0,0,0,2h5.65a1,1,0,0,0,.65-.24,1,1,0,0,0,.14-.15,1,1,0,0,0,.2-.54s0-.05,0-.08V21.89A1,1,0,0,0,27.54,20.89Z"/>
+                        <path d="M6.87,5.46h3.23a1,1,0,0,0,0-2H4.46a1,1,0,0,0-.65.24,1,1,0,0,0-.14.15,1,1,0,0,0-.2.54s0,.05,0,.08v5.64a1,1,0,0,0,2,0V6.87l7.4,7.4a1,1,0,0,0,1.41-1.41Z"/>
+                    </g>
+                </svg>
+            </button>
+            <button id="zoomInButton" type="button">+</button>
+            <button id="zoomOutButton" type="button">-</button>
+            <button id="home" onclick="changeBg(this)" type="button">
+                <svg fill="none" height="24" viewBox="0 0 32 32" width="24" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_26_110)">
+                        <path d="M30.8539 16.548C30.5229 17.43 29.7029 18 28.7639 18H27.9999V29C27.9999 29.552 27.5519 30 26.9999 30H20.9999V23C20.9999 20.243 18.7569 18 15.9999 18C13.2429 18 10.9999 20.243 10.9999 23V30H4.9999C4.4479 30 3.9999 29.552 3.9999 29V18H3.2349C2.2959 18 1.4759 17.431 1.1449 16.549C0.813904 15.667 1.0569 14.697 1.7649 14.079L13.4439 3.019C14.8779 1.662 17.1229 1.662 18.5559 3.019L30.2629 14.105C30.9409 14.696 31.1849 15.666 30.8539 16.548Z"
+                              fill="#000000"/>
+                        <rect fill="#000000" height="4" id="view" rx="2" stroke="#ffffff" transform="rotate(30 1.76138 4.96993)"
+                              width="35.1873" x="1.76138" y="4.96993"/>
+                    </g>
+                    <defs>
+                        <clipPath id="clip0_26_110">
+                            <rect fill="#ffffff" height="32" width="32"/>
+                        </clipPath>
+                    </defs>
+                </svg>
+                <span>Показать свободные участки и дома</span>
+            </button>
+        </div>
+        <main class="genmapcontent">
+            <img alt="" class="background-icon"
+                 src="https://static.tildacdn.com/tild3866-3736-4934-b738-613335373933/nh.jpg">
+            <img alt="" class="background-icon d-none"
+                 src="https://static.tildacdn.com/tild3631-3933-4632-a638-616439663930/wh.jpg">
+
+            <svg class="icon75" fill="none" height="171" viewBox="0 0 153 171" width="153"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M153 112.5L36.5 0L0.5 95L112.5 171L153 112.5Z" fill="#00bc907e" fill-opacity="0.6"/>
+            </svg>
+
+            <svg class="icon74" fill="none" height="168" viewBox="0 0 152 168" width="152"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M40 0L0.5 105.5L92.5 167.5L152 76L40 0Z" fill="#00bc907e" fill-opacity="0.6"/>
+            </svg>
+
+            <svg class="icon73" fill="none" height="213" viewBox="0 0 181 213" width="181"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.5 152L101 0.5L181 78L91.5 212.5L0.5 152Z" fill="#00bc907e" fill-opacity="0.6"/>
+            </svg>
+
+            <svg class="icon72" fill="none" height="196" viewBox="0 0 171 196" width="171"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M170.5 77L90.5 0.5L0.5 134L92.5 195.5L170.5 77Z" fill="#00bc907e" fill-opacity="0.6"/>
+            </svg>
+
+            <svg class="icon71" fill="none" height="178" viewBox="0 0 157 178" width="157"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M78 0.5L157 74L85.5 178L0.5 118.5L78 0.5Z" fill="#00bc907e" fill-opacity="0.6"/>
+            </svg>
+
+            <svg class="icon70" fill="none" height="169" viewBox="0 0 171 169" width="171"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M105 168.5L0.5 86.5L79.5 0.5L171 83.5L105 168.5Z" fill="#00bc907e" fill-opacity="0.6"/>
+            </svg>
+
+            <svg class="icon69" fill="none" height="166" viewBox="0 0 157 166" width="157"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.5 102.5L71 0.5L156.5 69L95 166L0.5 102.5Z" fill="#00bc907e" fill-opacity="0.6"/>
+            </svg>
+
+            <svg class="icon68" fill="none" height="160" viewBox="0 0 164 160" width="164"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M95.5 159.5L163.5 71.5L67 0L0 86L95.5 159.5Z" fill="#00bc907e" fill-opacity="0.6"/>
+            </svg>
+
+            <svg class="icon67" fill="none" height="164" viewBox="0 0 154 164" width="154"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M96.5 163.5L153.5 74L61.5 0.5L0 98L96.5 163.5Z" fill="#00bc907e" fill-opacity="0.6"/>
+            </svg>
+
+            <svg class="icon66" fill="none" height="179" viewBox="0 0 186 179" width="186"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M186 90.5L69 0L0.5 88L117.5 179L186 90.5Z" fill="#00bc907e" fill-opacity="0.6"/>
+            </svg>
+
+            <svg class="icon65" fill="none" height="161" viewBox="0 0 156 161" width="156"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M57.5 0L155.5 77L135 161L87.5 149.5L0.5 90L57.5 0Z" fill="#00bc907e" fill-opacity="0.6"/>
+            </svg>
+
+            <svg class="icon64" fill="none" height="221" viewBox="0 0 154 221" width="154"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 194L24.5 89L93.5 0.5L153.5 33L105.5 220.5L0 194Z" fill="#00bc907e" fill-opacity="0.6"/>
+            </svg>
+
+            <svg class="icon63" fill="none" height="207" viewBox="0 0 123 207" width="123"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M47.5 0L123 40.5L79 207L0 188L47.5 0Z" fill="#00bc907e" fill-opacity="0.6"/>
+            </svg>
+
+            <svg class="icon62" fill="none" height="189" viewBox="0 0 128 189" width="128"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M44 0.5L127.5 48L88.5 188.5L0 167.5L44 0.5Z" fill="#00bc907e" fill-opacity="0.6"/>
+            </svg>
+
+            <svg class="icon61" fill="none" height="166" viewBox="0 0 132 166" width="132"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M38.5 0L132 52L100 165.5L0 140.5L38.5 0Z" fill="#00bc907e" fill-opacity="0.6"/>
+            </svg>
+
+            <svg class="icon60" fill="none" height="189" viewBox="0 0 186 189" width="186"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M122.5 189L185.5 0L32 43L0 156.5L122.5 189Z" fill="#00bc907e" fill-opacity="0.6"/>
+            </svg>
+
+            <svg class="icon59" fill="none" height="204" viewBox="0 0 195 204" width="195"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M62.5 0L136 7L195 93.5L55 204L0 189L62.5 0Z" fill="#00bc907e" fill-opacity="0.6"/>
+            </svg>
+
+            <svg class="icon58" fill="none" height="209" viewBox="0 0 183 209" width="183"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M59.5 208.5L182.5 109L101 0L0 122.5L59.5 208.5Z" fill="#00bc907e" fill-opacity="0.6"/>
+            </svg>
+
+            <svg class="icon57" fill="none" height="259" viewBox="0 0 237 259" width="237"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.5 113L109 258.5L237 161.5L91 0L0.5 113Z" fill="#00bc907e" fill-opacity="0.6"/>
+            </svg>
+
+            <svg class="icon56" fill="none" height="169" viewBox="0 0 188 169" width="188"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M128 0L187.5 73.5L59 169L0.5 97L128 0Z" fill="#00bc907e" fill-opacity="0.6"/>
+            </svg>
+
+            <svg class="icon55" fill="none" height="169" viewBox="0 0 190 169" width="190"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M190 75.5L128.5 0.5L0 96.5L59.5 168.5L190 75.5Z" fill="#00bc907e" fill-opacity="0.6"/>
+            </svg>
+
+            <svg class="icon54" fill="none" height="167" viewBox="0 0 196 167" width="196"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M196 73.5L131 0L0 92.5L61.5 166.5L196 73.5Z" fill="#00bc907e" fill-opacity="0.6"/>
+            </svg>
+
+            <svg class="icon53" fill="none" height="170" viewBox="0 0 200 170" width="200"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M199.5 75L135 0.5L0.5 93.5L62 169.5L199.5 75Z" fill="#00bc907e" fill-opacity="0.6"/>
+            </svg>
+
+            <svg class="icon52" fill="none" height="180" viewBox="0 0 197 180" width="197"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M197 58.5L137.5 0L0 94.5L44.5 149L123 180L197 58.5Z" fill="#00bc907e" fill-opacity="0.6"/>
+            </svg>
+
+            <svg class="icon51" fill="none" height="169" viewBox="0 0 176 169" width="176"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.5 122L74 0L176 97L116.5 169L0.5 122Z" fill="#00bc907e" fill-opacity="0.6"/>
+            </svg>
+
+            <svg class="icon50" fill="none" height="196" viewBox="0 0 149 196" width="149"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M86 195.5L148.5 103.5L58 0.5L0 79.5L86 195.5Z" fill="#00bc907e" fill-opacity="0.6"/>
+            </svg>
+
+            <svg class="icon49" fill="none" height="193" viewBox="0 0 189 193" width="189"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M103.5 192.5L189 69.5L80.5 0.5L0 83.5L103.5 192.5Z" fill="#00bc907e" fill-opacity="0.6"/>
+            </svg>
+
+            <svg class="icon48" fill="none" height="194" viewBox="0 0 148 194" width="148"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M43.5 0L148 117L91 194L0 74L43.5 0Z" fill="#00bc907e" fill-opacity="0.6"/>
+            </svg>
+
+            <svg class="icon47" fill="none" height="164" viewBox="0 0 178 164" width="178"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.5 60L53 0L177.5 81.5L97.5 164L0.5 60Z" fill="#00bc907e" fill-opacity="0.6"/>
+            </svg>
+
+            <svg class="icon46" fill="none" height="196" viewBox="0 0 154 196" width="154"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M110.5 195.5L153.5 123.5L41.5 0L0 70.5L110.5 195.5Z" fill="#00bc907e" fill-opacity="0.6"/>
+            </svg>
+
+            <svg class="icon45" fill="none" height="162" viewBox="0 0 158 162" width="158"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M72 161.5L158 59L66.5 0L0.5 83.5L72 161.5Z" fill="#00bc907e" fill-opacity="0.6"/>
+            </svg>
+
+            <svg class="icon44" fill="none" height="165" viewBox="0 0 184 165" width="184"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 81.5L73 0.5L183.5 72.5L126 165L0 81.5Z" fill="#00bc907e" fill-opacity="0.6"/>
+            </svg>
+
+            <svg class="icon43" fill="none" height="168" viewBox="0 0 176 168" width="176"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M176 76L57 0.5L0 92.5L118.5 168L176 76Z" fill="#00bc907e" fill-opacity="0.6"/>
+            </svg>
+
+            <svg class="icon42" fill="none" height="167" viewBox="0 0 183 167" width="183"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M57 0.5L182.5 81L113 166.5L0 92.5L57 0.5Z" fill="#00bc907e" fill-opacity="0.6"/>
+            </svg>
+
+            <svg class="icon41" fill="none" height="201" viewBox="0 0 145 201" width="145"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 132L110.5 0L144.5 40L107.5 173L0.5 201L16 132Z" fill="#00bc907e" fill-opacity="0.6"/>
+            </svg>
+
+            <svg class="icon40" fill="none" height="230" viewBox="0 0 177 230" width="177"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M177 0L72.5 60L0.5 166.5L163.5 229.5L177 0Z" fill="#00bc907e" fill-opacity="0.6"/>
+            </svg>
+
+            <svg class="icon39" fill="none" height="167" viewBox="0 0 194 167" width="192"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M194 46L80 0.5L0.5 123.5L112.5 167L194 46Z" fill="#00bc907e" fill-opacity="0.6"/>
+            </svg>
+
+            <svg class="icon38" fill="none" height="171" viewBox="0 0 192 171" width="192"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M78 0.5L191.5 47.5L113 171L0.5 127.5L78 0.5Z" fill="#00bc907e" fill-opacity="0.6"/>
+            </svg>
+
+            <svg class="icon37" fill="none" height="181" viewBox="0 0 180 181" width="180"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M159.5 27.5L180 54L102.5 180.5L0.5 140L69.5 0.5L159.5 27.5Z" fill="#00bc907e"
+                      fill-opacity="0.6"/>
+            </svg>
+
+            <svg class="icon36" fill="none" height="167" viewBox="0 0 192 167" width="192"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M137.5 36.5L52.5 0.5L0.5 111.5L144.5 167L192 71L134 46L137.5 36.5Z" fill="#00bc907e"
+                      fill-opacity="0.6"/>
+            </svg>
+
+            <svg class="icon35" fill="none" height="155" viewBox="0 0 182 155" width="182"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M124.5 19L44.5 0L0 116.5L130.5 155L182 43.5L124.5 19Z" fill="#00bc907e" fill-opacity="0.6"/>
+            </svg>
+
+            <svg class="icon34" fill="none" height="170" viewBox="0 0 213 170" width="213"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M213 53.5L31.5 0L0 130.5L169 170L213 53.5Z" fill="#00bc907e" fill-opacity="0.6"/>
+            </svg>
+
+            <svg class="icon33" fill="none" height="172" viewBox="0 0 193 172" width="193"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M192.5 41L30 0L0.5 127.5L160.5 172L192.5 41Z" fill="#00bc907e" fill-opacity="0.6"/>
+            </svg>
+
+            <svg class="icon32" fill="none" height="155" viewBox="0 0 136 155" width="136"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M135.5 26.5L29 0.5L0 124L106.5 154.5L135.5 26.5Z" fill="#00bc907e" fill-opacity="0.6"/>
+            </svg>
+
+            <svg class="icon31" fill="none" height="151" viewBox="0 0 137 151" width="137"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M137 27.5L28.5 0.5L0 121L108 150.5L137 27.5Z" fill="#00bc907e" fill-opacity="0.6"/>
+            </svg>
+
+            <svg class="icon30" fill="none" height="150" viewBox="0 0 141 150" width="141"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M29 0.5L141 29.5L112.5 149.5L0.5 117.5L29 0.5Z" fill="#00bc907e" fill-opacity="0.6"/>
+            </svg>
+
+            <svg class="icon29" fill="none" height="147" viewBox="0 0 141 147" width="141"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M141 29.5L28 0.5L0.5 116L112.5 147L141 29.5Z" fill="#00bc907e" fill-opacity="0.6"/>
+            </svg>
+
+            <svg class="icon28" fill="none" height="160" viewBox="0 0 144 160" width="144"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M76.5 0L144 45L116 159.5L30.5 135.5L0 114.5L76.5 0Z" fill="#00bc907e" fill-opacity="0.6"/>
+            </svg>
+
+            <svg class="icon27" fill="none" height="172" viewBox="0 0 157 172" width="157"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M74 0.5L156.5 57L80 172L0 116L74 0.5Z" fill="#00bc907e" fill-opacity="0.6"/>
+            </svg>
+
+            <svg class="icon26" fill="none" height="170" viewBox="0 0 157 170" width="157"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.5 115.5L82 170L156.5 55L75 0L0.5 115.5Z" fill="#00bc907e" fill-opacity="0.6"/>
+            </svg>
+
+            <svg class="icon25" fill="none" height="171" viewBox="0 0 156 171" width="156"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.5 116L80.5 171L155.5 55L73.5 0L0.5 116Z" fill="#00bc907e" fill-opacity="0.6"/>
+            </svg>
+
+            <svg class="icon24" fill="none" height="172" viewBox="0 0 155 172" width="155"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.5 117L81.5 171.5L154.5 55L73 0L0.5 117Z" fill="#00bc907e" fill-opacity="0.6"/>
+            </svg>
+
+            <svg class="icon23" fill="none" height="172" viewBox="0 0 161 172" width="161"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M89 172L0.5 113L79 0L161 55L89 172Z" fill="#00bc907e" fill-opacity="0.6"/>
+            </svg>
+
+            <svg class="icon22" fill="none" height="170" viewBox="0 0 158 170" width="158"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 116L76 0.5L158 56.5L79.5 170L0 116Z" fill="#00bc907e" fill-opacity="0.6"/>
+            </svg>
+
+            <svg class="icon21" fill="none" height="211" viewBox="0 0 202 211" width="202"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M110 211L0.5 146.5L97 0L202 71.5L110 211Z" fill="#00bc907e" fill-opacity="0.6"/>
+            </svg>
+
+            <svg class="icon20" fill="none" height="160" viewBox="0 0 169 160" width="169"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M116 160L0.5 93.5L60.5 0L169 64L116 160Z" fill="#00bc907e" fill-opacity="0.6"/>
+            </svg>
+
+            <svg class="icon19" fill="none" height="162" viewBox="0 0 178 162" width="178"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M120 162L0 94L62 0L177.5 66.5L120 162Z" fill="#00bc907e" fill-opacity="0.6"/>
+            </svg>
+
+            <svg class="icon18" fill="none" height="161" viewBox="0 0 181 161" width="181"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M118 160.5L0 94.5L60.5 0L180.5 67L118 160.5Z" fill="#00bc907e" fill-opacity="0.6"/>
+            </svg>
+
+            <svg class="icon17" fill="none" height="199" viewBox="0 0 217 199" width="217"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M60 189.5L0.5 167L70.5 21.5L98.5 0L216.5 66L120.5 198.5L65 180L60 189.5Z" fill="#00bc907e"
+                      fill-opacity="0.6"/>
+            </svg>
+
+            <svg class="icon16" fill="none" height="161" viewBox="0 0 197 161" width="197"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M48.5 0.5L197 16.5L127 161L0 114.5L48.5 0.5Z" fill="#00bc907e" fill-opacity="0.6"/>
+            </svg>
+
+            <svg class="icon15" fill="none" height="138" viewBox="0 0 269 138" width="269"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 56.5L43 0.5L268.5 24L220 137.5L0 56.5Z" fill="#00bc907e" fill-opacity="0.6"/>
+            </svg>
+
+            <svg class="icon14" fill="none" height="225" viewBox="0 0 213 225" width="213"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M213 45L91.5 0L0.5 166L137.5 219.5L185.5 225L213 45Z" fill="#00bc907e" fill-opacity="0.6"/>
+            </svg>
+
+            <svg class="icon13" fill="none" height="214" viewBox="0 0 211 214" width="211"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M211 46L87 0L0 170L120 213.5L211 46Z" fill="#00bc907e" fill-opacity="0.6"/>
+            </svg>
+
+            <svg class="icon12" fill="none" height="216" viewBox="0 0 209 216" width="209"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M121.5 216L209 45.5L82.5 0.5L0.5 170.5L121.5 216Z" fill="#00bc907e" fill-opacity="0.6"/>
+            </svg>
+
+            <svg class="icon11" fill="none" height="211" viewBox="0 0 219 211" width="219"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M113.5 0L218.5 39.5L136.5 211L0.5 160L113.5 0Z" fill="#00bc907e" fill-opacity="0.6"/>
+            </svg>
+
+            <svg class="icon10" fill="none" height="300" viewBox="0 0 308 300" width="308"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 143L106.5 0L260 94L308 138.5L193.5 299.5L0 143Z" fill="#00bc907e" fill-opacity="0.6"/>
+            </svg>
+
+            <svg class="icon9" fill="none" height="263" viewBox="0 0 239 263" width="239"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.5 166L111 0L238.5 139L153 262.5L0.5 166Z" fill="#00bc907e" fill-opacity="0.6"/>
+            </svg>
+
+            <svg class="icon8" fill="none" height="145" viewBox="0 0 201 145" width="201"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.5 0L131 140L193 145L201 19L0.5 0Z" fill="#00bc907e" fill-opacity="0.6"/>
+            </svg>
+
+            <svg class="icon7" fill="none" height="139" viewBox="0 0 155 139" width="155"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M155 15.5L9.5 0L0.5 126L126 138.5L155 15.5Z" fill="#00bc907e" fill-opacity="0.6"/>
+            </svg>
+
+
+            <svg class="icon6" fill="none" height="134" viewBox="0 0 131 134" width="131"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M131 6.5L29.5 0.5L0 124L121 134L131 6.5Z" fill="#00bc907e" fill-opacity="0.6"/>
+            </svg>
+
+            <!--70 -->
+
+
+            <svg class="icon5" fill="none" height="137" viewBox="0 0 151 137" width="151"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M90 136.5L0 128L10.5 0L76.5 5L150.5 46.5L90 136.5Z" fill="#00bc907e" fill-opacity="0.6"/>
+            </svg>
+
+            <!--71 -->
+
+            <svg class="icon4" fill="none" height="107" viewBox="0 0 195 107" width="195"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M191 14.5L195 107L28.5 97.5L0 0.5L191 14.5Z" fill="#00bc907e" fill-opacity="0.6"/>
+            </svg>
+
+
+            <svg class="icon3" fill="none" height="275" viewBox="0 0 185 275" width="185"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.5 263.5L161.5 275L157.5 217.5H185L150.5 11.5L8 0.5L0.5 263.5Z" fill="#00bc907e"
+                      fill-opacity="0.6"/>
+            </svg>
+            <svg class="icon2" fill="none" height="213" viewBox="0 0 218 213" width="218"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 0L136 10L218 154L86 191.5V213L34 207L0 0Z" fill="#00bc907e" fill-opacity="0.6"/>
+            </svg>
+
+            <svg class="icon" fill="none" height="186" viewBox="0 0 201 186" width="201"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M201 96L38.5 0L0 42L83 185.5L196.5 113L201 96Z" fill="#00bc907e" fill-opacity="0.6"/>
+            </svg>
+
+            <svg class="icon1" fill="none" height="211" viewBox="0 0 176 211" width="176"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M6.5 182.5L0 38.5L133 0L176 32.5L57 211L6.5 182.5Z" fill="#00bc907e" fill-opacity="0.6"/>
+            </svg>
+
+
+        </main>
+        <div class="info-box" id="info-box"><span id="block-index"></span></div>
+    </div>
+</div>
+<script src="map.js"></script>
+
+</body>
+</html>

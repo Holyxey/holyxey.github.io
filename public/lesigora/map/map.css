@@ -1,0 +1,1202 @@
+body:not(.nolimPopUp) .genplancontent {
+    background-color: #717d41;
+    width: 96%;
+    margin: 0 auto;
+    border-radius: 30px;
+    overflow: hidden;
+    z-index: 99;
+    position: relative;
+}
+
+.genplancontent .div {
+    align-self: stretch;
+    position: relative;
+
+}
+
+.statustext {
+    position: relative;
+    font-size: 16px;
+}
+
+.numberhouse {
+    position: relative;
+    flex: 1;
+    font-size: 22px;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+.genitem,
+.genitemtitle,
+.genitemtitlestatus,
+.genleftcontent {
+    overflow: hidden;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.genitemtitlestatus {
+    border-radius: 4px;
+    flex-direction: row;
+    padding: 5px 15px;
+    font-size: 13px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+
+.genitem,
+.genitemtitle,
+.genleftcontent {
+    align-self: stretch;
+}
+
+.genitemtitle {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+}
+
+.genitem,
+.genleftcontent {
+    flex-direction: column;
+}
+
+.genitem {
+    gap: 6px;
+}
+
+#moreinfo {
+    padding: 0;
+    border: none;
+    text-decoration: underline;
+    font-weight: bold;
+    background-color: transparent;
+}
+
+.btgros > a,
+#needhome {
+    color: #46482e;
+    border: 1px solid #46482e;
+    background-color: #fff;
+    font-size: 15px;
+    padding: 10px 15px;
+    border-radius: 25px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    -o-border-radius: 25px;
+}
+
+#needhome:hover {
+    color: #fff;
+    background-color: #46482e;
+}
+
+#needhome {
+    color: #fff !important;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #46482e !important;
+    flex-grow: 1;
+    display: none;
+}
+
+#needhome:hover {
+    color: #46482e !important;
+    background-color: #fff !important;
+}
+
+#needhome.shown {
+    display: block;
+}
+
+.btgros {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 15px;
+}
+
+#brone {
+    color: #FFF;
+    border: 1px solid #7C6D27;
+    background-color: #7C6D27;
+    font-size: 15px;
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.genleftcontent {
+    background-color: #fff;
+    flex-shrink: 0;
+    padding: 15px 15px;
+    box-sizing: border-box;
+    gap: 10px;
+    position: absolute;
+    top: 20px;
+    z-index: 999;
+    right: 20px;
+    box-shadow: 3px 3px 10px #000;
+    max-width: 100%;
+    border-radius: 4px;
+    width: 400px;
+    opacity: .9;
+    transition: all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    -o-transition: all .5s;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+
+.genleftcontent.hide {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.background-icon {
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4096px;
+    height: 2304px;
+    object-fit: cover;
+    opacity: 1;
+    transition: .3s;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -ms-transition: .3s;
+    -o-transition: .3s;
+    z-index: 2;
+}
+
+.background-icon.d-none {
+    opacity: 0;
+    z-index: 1;
+}
+
+.icon {
+    position: absolute;
+    top: 574px;
+    left: 990px;
+    width: 201px;
+    height: 185.5px;
+}
+
+.icon1,
+.icon2,
+.icon3 {
+    position: absolute;
+    top: 759px;
+    left: 940px;
+    width: 176px;
+    height: 211px;
+}
+
+.icon2,
+.icon3 {
+    top: 606px;
+    left: 854px;
+    width: 218px;
+    height: 213px;
+}
+
+.icon3 {
+    top: 595.5px;
+    left: 703.5px;
+    width: 184.5px;
+    height: 274.5px;
+}
+
+.icon4,
+.icon5,
+.icon6 {
+    position: absolute;
+    top: 858.5px;
+    left: 704px;
+    width: 195px;
+    height: 106.5px;
+}
+
+.icon5,
+.icon6 {
+    top: 961px;
+    left: 823px;
+    width: 150.5px;
+    height: 136.5px;
+}
+
+.icon6 {
+    top: 955.5px;
+    left: 702px;
+    width: 131px;
+    height: 133.5px;
+}
+
+.icon7,
+.icon8,
+.icon9 {
+    position: absolute;
+    top: 940px;
+    left: 576.5px;
+    width: 154.5px;
+    height: 138.5px;
+}
+
+.icon8,
+.icon9 {
+    top: 921px;
+    left: 384.5px;
+    width: 200.5px;
+    height: 145px;
+}
+
+.icon9 {
+    top: 923px;
+    left: 274.5px;
+    width: 238px;
+    height: 262.5px;
+}
+
+.icon10,
+.icon11,
+.icon12 {
+    position: absolute;
+    top: 1091px;
+    left: 167px;
+    width: 308px;
+    height: 299.5px;
+}
+
+.icon11,
+.icon12 {
+    top: 1230px;
+    left: 361.5px;
+    width: 218px;
+    height: 211px;
+}
+
+.icon12 {
+    top: 1270.5px;
+    left: 497.5px;
+    width: 208.5px;
+    height: 215.5px;
+}
+
+.icon13,
+.icon14,
+.icon15 {
+    position: absolute;
+    top: 1316px;
+    left: 619px;
+    width: 211px;
+    height: 213.5px;
+}
+
+.icon14,
+.icon15 {
+    top: 1363px;
+    left: 739.5px;
+    width: 212.5px;
+    height: 225px;
+}
+
+.icon15 {
+    top: 1128.5px;
+    left: 496px;
+    width: 268.5px;
+    height: 137px;
+}
+
+.icon16,
+.icon17,
+.icon18 {
+    position: absolute;
+    top: 1151.5px;
+    left: 716px;
+    width: 197px;
+    height: 160.5px;
+}
+
+.icon17,
+.icon18 {
+    top: 1145px;
+    left: 843.5px;
+    width: 216px;
+    height: 198.5px;
+}
+
+.icon18 {
+    top: 1050px;
+    left: 942px;
+    width: 180.5px;
+    height: 160.5px;
+}
+
+.icon19,
+.icon20,
+.icon21 {
+    position: absolute;
+    top: 955px;
+    left: 1003px;
+    width: 177.5px;
+    height: 162px;
+}
+
+.icon20,
+.icon21 {
+    top: 861px;
+    left: 1065.5px;
+    width: 168.5px;
+    height: 160px;
+}
+
+.icon21 {
+    top: 714px;
+    left: 1125.5px;
+    width: 201.5px;
+    height: 211px;
+}
+
+.icon22,
+.icon23,
+.icon24 {
+    position: absolute;
+    top: 785.5px;
+    left: 1251px;
+    width: 158px;
+    height: 169.5px;
+}
+
+.icon23,
+.icon24 {
+    top: 842px;
+    left: 1330.5px;
+    width: 160.5px;
+    height: 172px;
+}
+
+.icon24 {
+    top: 897px;
+    left: 1418.5px;
+    width: 154px;
+    height: 171.5px;
+}
+
+.icon25,
+.icon26,
+.icon27 {
+    position: absolute;
+    top: 952px;
+    left: 1499.5px;
+    width: 155px;
+    height: 171px;
+}
+
+.icon26,
+.icon27 {
+    top: 1007px;
+    left: 1579.5px;
+    width: 156px;
+    height: 170px;
+}
+
+.icon27 {
+    top: 1061.5px;
+    left: 1661px;
+    width: 156.5px;
+    height: 171.5px;
+}
+
+.icon28,
+.icon29,
+.icon30 {
+    position: absolute;
+    top: 1118px;
+    left: 1741px;
+    width: 144px;
+    height: 159.5px;
+}
+
+.icon29,
+.icon30 {
+    top: 1162.5px;
+    left: 1857.5px;
+    width: 140.5px;
+    height: 146.5px;
+}
+
+.icon30 {
+    top: 1191.5px;
+    left: 1969.5px;
+    height: 149px;
+}
+
+.icon31,
+.icon32,
+.icon33 {
+    position: absolute;
+    top: 1220.5px;
+    left: 2082px;
+    width: 137px;
+    height: 150px;
+}
+
+.icon32,
+.icon33 {
+    top: 1247.5px;
+    left: 2190px;
+    width: 135.5px;
+    height: 154px;
+}
+
+.icon33 {
+    top: 1274px;
+    left: 2296.5px;
+    width: 192px;
+    height: 172px;
+}
+
+.icon34,
+.icon35,
+.icon36 {
+    position: absolute;
+    top: 1315px;
+    left: 2457px;
+    width: 213px;
+    height: 170px;
+}
+
+.icon35,
+.icon36 {
+    top: 1369px;
+    left: 2626px;
+    width: 182px;
+    height: 155px;
+}
+
+.icon36 {
+    top: 1412.5px;
+    left: 2756.5px;
+    width: 191.5px;
+    height: 166.5px;
+}
+
+.icon37,
+.icon38,
+.icon39 {
+    position: absolute;
+    top: 1439.5px;
+    left: 2900.5px;
+    width: 179.5px;
+    height: 180px;
+}
+
+.icon38,
+.icon39 {
+    top: 1492.5px;
+    left: 3002.5px;
+    width: 191px;
+    height: 170.5px;
+}
+
+.icon39 {
+    top: 1539.5px;
+    left: 3114.5px;
+    width: 193.5px;
+    height: 166.5px;
+}
+
+.icon40,
+.icon41,
+.icon42 {
+    position: absolute;
+    top: 1539px;
+    left: 3226.5px;
+    width: 176.5px;
+    height: 229.5px;
+}
+
+.icon41,
+.icon42 {
+    top: 1486px;
+    left: 3670.5px;
+    width: 144px;
+    height: 201px;
+}
+
+.icon42 {
+    top: 669.5px;
+    left: 3767px;
+    width: 182.5px;
+    height: 166px;
+}
+
+.icon43,
+.icon44,
+.icon45 {
+    position: absolute;
+    top: 594.5px;
+    left: 3648px;
+    width: 176px;
+    height: 167.5px;
+}
+
+.icon44,
+.icon45 {
+    top: 522.5px;
+    left: 3522px;
+    width: 183.5px;
+    height: 164.5px;
+}
+
+.icon45 {
+    top: 605px;
+    left: 3454.5px;
+    width: 157.5px;
+    height: 161.5px;
+}
+
+.icon46,
+.icon47,
+.icon48 {
+    position: absolute;
+    top: 688px;
+    left: 3412px;
+    width: 153.5px;
+    height: 195.5px;
+}
+
+.icon47,
+.icon48 {
+    top: 716px;
+    left: 3571.5px;
+    width: 177px;
+    height: 164px;
+}
+
+.icon48 {
+    top: 811px;
+    left: 3522px;
+    width: 148px;
+    height: 194px;
+}
+
+.icon49,
+.icon50,
+.icon51 {
+    position: absolute;
+    top: 797.5px;
+    left: 3668px;
+    width: 189px;
+    height: 192px;
+}
+
+.icon50,
+.icon51 {
+    top: 927.5px;
+    left: 3612px;
+    width: 148.5px;
+    height: 195px;
+}
+
+.icon51 {
+    top: 1366px;
+    left: 3189.5px;
+    width: 175.5px;
+    height: 169px;
+}
+
+.icon52,
+.icon53,
+.icon54 {
+    position: absolute;
+    top: 1308px;
+    left: 3066px;
+    width: 197px;
+    height: 180px;
+}
+
+.icon53,
+.icon54 {
+    top: 1233.5px;
+    left: 3004.5px;
+    width: 199px;
+    height: 169px;
+}
+
+.icon54 {
+    top: 1160px;
+    left: 2943px;
+    width: 196px;
+    height: 166.5px;
+}
+
+.icon55,
+.icon56,
+.icon57 {
+    position: absolute;
+    top: 1084.5px;
+    left: 2884px;
+    width: 190px;
+    height: 168px;
+}
+
+.icon56,
+.icon57 {
+    top: 1011px;
+    left: 2825.5px;
+    width: 187px;
+    height: 169px;
+}
+
+.icon57 {
+    top: 850px;
+    left: 2716.5px;
+    width: 236.5px;
+    height: 258.5px;
+}
+
+.icon58,
+.icon59,
+.icon60 {
+    position: absolute;
+    top: 963px;
+    left: 2615px;
+    width: 182.5px;
+    height: 208.5px;
+}
+
+.icon59,
+.icon60 {
+    top: 1078px;
+    left: 2479px;
+    width: 195px;
+    height: 204px;
+}
+
+.icon60 {
+    left: 2356px;
+    width: 185.5px;
+    height: 189px;
+}
+
+.icon61,
+.icon62,
+.icon63 {
+    position: absolute;
+    top: 1069px;
+    left: 2256px;
+    width: 132px;
+    height: 165.5px;
+}
+
+.icon62,
+.icon63 {
+    top: 1021.5px;
+    left: 2167px;
+    width: 127.5px;
+    height: 188px;
+}
+
+.icon63 {
+    top: 981px;
+    left: 2088px;
+    width: 123px;
+    height: 207px;
+}
+
+.icon64,
+.icon65,
+.icon66 {
+    position: absolute;
+    top: 948.5px;
+    left: 1982px;
+    width: 153.5px;
+    height: 220px;
+}
+
+.icon65,
+.icon66 {
+    top: 973px;
+    left: 1815.5px;
+    width: 155px;
+    height: 161px;
+}
+
+.icon66 {
+    top: 858px;
+    left: 1889.5px;
+    width: 185.5px;
+    height: 179px;
+}
+
+.icon67,
+.icon68,
+.icon69 {
+    position: absolute;
+    top: 899.5px;
+    left: 1719px;
+    width: 153.5px;
+    height: 163px;
+}
+
+.icon68,
+.icon69 {
+    top: 786px;
+    left: 1794px;
+    width: 163.5px;
+    height: 159.5px;
+}
+
+.icon69 {
+    top: 831.5px;
+    left: 1624.5px;
+    width: 156px;
+    height: 165.5px;
+}
+
+.icon70,
+.icon71,
+.icon72 {
+    position: absolute;
+    top: 703.5px;
+    left: 1690.5px;
+    width: 170.5px;
+    height: 168px;
+}
+
+.icon71,
+.icon72 {
+    top: 738.5px;
+    left: 1514.5px;
+    width: 156.5px;
+    height: 177.5px;
+}
+
+.icon72 {
+    top: 661.5px;
+    left: 1422.5px;
+    width: 170px;
+    height: 195px;
+}
+
+.icon73,
+.icon74,
+.icon75 {
+    position: absolute;
+    top: 583.5px;
+    left: 1331.5px;
+    width: 180.5px;
+    height: 212px;
+}
+
+.icon74,
+.icon75 {
+    top: 567px;
+    left: 1239.5px;
+    width: 151.5px;
+    height: 167.5px;
+}
+
+.icon75 {
+    top: 472px;
+    left: 1279.5px;
+    width: 152.5px;
+    height: 171px;
+}
+
+.genmapcontent {
+    position: relative;
+    background-color: #717d41;
+    width: fit-content;
+    height: 2304px;
+    transition: .7s;
+    -webkit-transition: .7s;
+    -moz-transition: .7s;
+    -ms-transition: .7s;
+    -o-transition: .7s;
+}
+
+.genmap,
+.genplancontent {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.genmap {
+    cursor: grab;
+    flex: 1;
+    background-color: #717d41;
+    overflow: hidden;
+    max-height: 90dvh;
+    flex-direction: column;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.genmap::-webkit-scrollbar {
+    display: none;
+}
+
+.genplancontent {
+    position: relative;
+    width: 100%;
+    flex-direction: row;
+    text-align: left;
+    color: var(--BackgroundColorСircle);
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.genmapcontent svg {
+    z-index: 3;
+    pointer-events: none;
+    transition: all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    -o-transition: all .5s;
+}
+
+.genmapcontent svg path {
+    cursor: pointer;
+    pointer-events: fill;
+    transition: all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    -o-transition: all .5s;
+}
+
+.genmapcontent svg path {
+    fill: #00bc907e;
+}
+
+.genmapcontent svg.red path {
+    fill: #bc00007e;
+}
+
+.genmapcontent svg.yellow path {
+    fill: #fff70076;
+}
+
+.genmap .genmapcontent svg path {
+    opacity: .4;
+}
+
+.genmap .genmapcontent svg path:hover {
+    opacity: 1;
+}
+
+.genmapcontent svg path:hover {
+    opacity: 1;
+    z-index: 2;
+}
+
+.genmap .genmapcontent svg path:hover,
+.genmap .genmapcontent svg.active path,
+.genmap .genmapcontent svg.active path {
+    opacity: 1;
+    fill: #00bc907e;
+}
+
+.genmap .genmapcontent svg.selected path,
+.genmap .genmapcontent svg.selected path {
+    opacity: 1;
+    stroke: #00bc90;
+    fill: #00bc907e;
+    stroke-width: 4px;
+}
+
+.genmap .genmapcontent svg.red path:hover,
+.genmap .genmapcontent svg.red.active path,
+.genmap .genmapcontent svg.red.active path {
+    opacity: 1;
+    fill: #bc00007e;
+}
+
+.genmap .genmapcontent svg.red.selected path,
+.genmap .genmapcontent svg.red.selected path {
+    opacity: 1;
+    stroke: #bc0000;
+    fill: #bc00007e;
+    stroke-width: 4px;
+}
+
+.genmap .genmapcontent svg.yellow path:hover,
+.genmap .genmapcontent svg.yellow.active path,
+.genmap .genmapcontent svg.yellow.active path {
+    opacity: 1;
+    fill: #acbc007e;
+}
+
+.genmap .genmapcontent svg.yellow.selected path,
+.genmap .genmapcontent svg.yellow.selected path {
+    opacity: 1;
+    stroke: #b6bc00;
+    fill: #acbc007e;
+    stroke-width: 4px;
+}
+
+.mapbuttons {
+    position: absolute;
+    z-index: 99;
+    top: 50%;
+    left: 40px;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+}
+
+.mapbuttons button {
+    font-size: 25px;
+    box-sizing: border-box;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    opacity: .8;
+    cursor: pointer;
+    border-radius: 25px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    -o-border-radius: 25px;
+    border: none;
+    white-space: nowrap;
+    padding: 20px;
+    overflow: hidden;
+    transition: .3s;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -ms-transition: .3s;
+    -o-transition: .3s;
+    max-width: 50px;
+}
+
+.mapbuttons button:not(#home) {
+    padding: 0;
+    justify-content: center;
+
+}
+
+#home.view #view {
+    opacity: 0;
+}
+
+.mapbuttons button > svg {
+    min-width: 24px;
+    margin: 0 0 0 -8px;
+    padding-right: 13px;
+}
+
+.mapbuttons button > span {
+    font-size: 15px;
+}
+
+.mapbuttons button:hover {
+    min-width: 50px;
+    max-width: 400px;
+    width: fit-content;
+}
+
+.modalmap .mapbuttons {
+    position: fixed;
+    z-index: 999;
+    top: 40%;
+    left: 20px;
+}
+
+.modalmap .genplancontent {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.modalmap .genleftcontent {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    width: 100%;
+}
+
+.modalmap .genmap {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.info-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    pointer-events: none;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+#moreinfo {
+    display: none;
+}
+
+#moreinfo.view {
+    display: inline-block;
+}
+
+.moreinfo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 10px;
+    overflow: hidden;
+    max-height: 0px;
+    opacity: 0;
+    transition: all .3s;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    -o-transition: all .3s;
+}
+
+.moreinfo.open {
+    max-height: 600px;
+    opacity: 1;
+}
+
+#fullscreenButton,
+.closebtngen {
+    display: none;
+}
+
+@media (max-width: 900px) {
+    #fullscreenButton {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+    }
+
+    #fullscreenButton > svg {
+        padding: 0;
+        margin: 0;
+        display: none;
+    }
+
+    #fullscreenButton.fullscreenopen > svg.nofullscreen,
+    #fullscreenButton:not(.fullscreenopen) > svg.fullscreen {
+        display: block;
+    }
+
+    .info-box {
+        display: none !important;
+    }
+
+    .genmap {
+        overflow: scroll !important;
+        max-height: 90vh;
+    }
+
+    .mapbuttons {
+        left: 10px;
+        top: 40%;
+    }
+
+    .mapbuttons button:hover {
+        min-width: 50px;
+        max-width: 50px;
+        width: fit-content;
+    }
+
+    .genleftcontent {
+        overflow: visible;
+        top: auto;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: auto;
+        box-shadow: 0 -10px 5px #00000010;
+        border-radius: 15px 0 0 0;
+    }
+
+    .closebtngen {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        position: absolute;
+        bottom: 100%;
+        right: 0;
+        z-index: 2;
+        background: #fff;
+        border: none;
+        border-radius: 15px 15px 0 0;
+        padding: 15px 25px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .genplancontent {
+        font-size: 14px;
+    }
+
+    .numberhouse {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 960px) {
+    .genplancontent {
+        font-size: 14px;
+    }
+
+    .numberhouse {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 640px) {
+    .genplancontent {
+        font-size: 12px;
+    }
+
+    .numberhouse {
+        font-size: 16px;
+    }
+}

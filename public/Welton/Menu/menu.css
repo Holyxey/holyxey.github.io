@@ -1,0 +1,71 @@
+@font-face {
+    font-family: 'Cera Pro';
+    src: url('https://static.tildacdn.com/tild3937-3062-4464-a661-373563376562/CeraPro-Regular.woff') format('woff'),
+       url("https://static.tildacdn.com/tild3433-6438-4430-b263-326139393039/CeraPro-Bold.woff");
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+    /*border: 1px solid #00000005;*/
+}
+#weltonMenu {
+    font-family: 'Cera Pro',Arial,sans-serif;
+
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    max-width: 1200px;
+    margin: 0 auto;
+}
+#weltonMenu, #weltonMenu * {
+    animation: showMenuPosition .5s ease-in-out;
+}
+.menuCategoryColumns {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    padding-block: .5rem;
+    border-bottom: dashed 1px #00000025;
+}
+.menuCategoryColumns > *:first-child{
+    flex: 1;
+}
+.menuCategoryColumns > *:not(:first-child) {
+    min-width: 100px;
+    text-align: right;
+}
+.menuCategoryTitle {
+    font-weight: 800;
+    font-size: 1.5rem;
+}
+.menuPositionList {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    padding-block: .5rem;
+}
+
+.menuPosition {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+.menuPosition > *:first-child{
+    flex: 1;
+}
+.menuPosition > *:not(:first-child) {
+    min-width: 100px;
+    text-align: right;
+}
+.menuPositionName {
+}
+
+/*
+*/
+@keyframes showMenuPosition {
+    from { opacity: 0; translate: 0 3px }
+    to { opacity: 1; translate: 0 0 }
+}
