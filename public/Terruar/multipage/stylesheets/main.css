@@ -3,34 +3,34 @@
 */
 
 :root {
-    --back: #1e1b23;
-    --back-o: #131215DD;
-    --white: #EEF0F2;
-    --white-o: #EEF0F2de;
-    --white-oo: #EEF0F250;
-    --good : #158763;
-    --bad: #EF767A;
-    --blue: #0081AF;
-    --wine: #a4315b;
-    --yellow: #F8F3C8;
+    --holyxey-back: #1e1b23;
+    --holyxey-back-o: #131215DD;
+    --holyxey-white: #EEF0F2;
+    --holyxey-white-o: #EEF0F2de;
+    --holyxey-white-oo: #EEF0F250;
+    --holyxey-good : #158763;
+    --holyxey-bad: #EF767A;
+    --holyxey-blue: #0081AF;
+    --holyxey-wine: #a4315b;
+    --holyxey-yellow: #F8F3C8;
 
-    --unbounded: "Unbounded", sans-serif;
-    --roboto: "Roboto", sans-serif;
+    --holyxey-unbounded: "Unbounded", sans-serif;
+    --holyxey-roboto: "Roboto", sans-serif;
 }
 
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    scrollbar-color: var(--white-o) var(--back);
+    scrollbar-color: var(--holyxey-white-o) var(--holyxey-back);
     scrollbar-width: thin;
     scroll-behavior: smooth;
 }
 body {
-    background: url("https://optim.tildacdn.com/tild3963-6339-4231-a231-633830323034/-/format/webp/pattern5.png") var(--back) fixed;
+    background: url("https://optim.tildacdn.com/tild3963-6339-4231-a231-633830323034/-/format/webp/pattern5.png") var(--holyxey-back) fixed;
     background-size: 5rem;
-    font-family: var(--roboto);
-    color: var(--white);
+    font-family: var(--holyxey-roboto);
+    color: var(--holyxey-white);
     overflow-x: hidden;
 }
 ::-webkit-scrollbar-thumb {
@@ -56,14 +56,14 @@ body {
 
 #multi-page h1 {
     font-size: 2.3rem;
-    font-family: var(--unbounded);
+    font-family: var(--holyxey-unbounded);
     line-height: 1;
-    color: var(--yellow);
+    color: var(--holyxey-yellow);
     font-weight: 500;
 }
 #multi-page h2 {
     font-size: 1.2rem;
-    font-family: var(--roboto);
+    font-family: var(--holyxey-roboto);
     font-weight: 300;
     line-height: 1;
 }
@@ -73,7 +73,7 @@ body {
 }
 #multi-page h3 {
     font-size: 2rem;
-    font-family: var(--unbounded);
+    font-family: var(--holyxey-unbounded);
     font-weight: 400;
     line-height: 1;
 }
@@ -132,7 +132,7 @@ body {
     overflow: hidden;
     position: relative;
 
-    background-color: var(--wine);
+    background-color: var(--holyxey-wine);
 }
 #multi-page menu#menuList li.navPCItem {
     width: fit-content;
@@ -142,15 +142,15 @@ body {
     display: block;
     padding: .5rem 1rem;
     text-decoration: none !important;
-    color: var(--white);
+    color: var(--holyxey-white);
     border-radius: 100vmin;
     cursor: pointer;
     text-align: center;
 
     &:hover {
         transition: color .3s, background-color .3s;
-        background-color: var(--white);
-        color: var(--back);
+        background-color: var(--holyxey-white);
+        color: var(--holyxey-back);
     }
 }
 #multi-page menu#menuList li#mobileNavStroke {
@@ -182,14 +182,14 @@ body {
     align-items: center;
     gap: .5rem;
 
-    background-color: var(--wine);
-    border: 1px solid var(--white-o);
+    background-color: var(--holyxey-wine);
+    border: 1px solid var(--holyxey-white-o);
     border-radius: 100vmin;
 }
 #multi-page menu#menuList li#mobileNavStroke ul #monMenuButton .menuButtonHR {
     width: 60%;
     height: 1px;
-    background-color: var(--white-o);
+    background-color: var(--holyxey-white-o);
 }
 /*!nav*/
 
@@ -236,21 +236,25 @@ body {
 #multi-page header #hero #heroTextBlock .heroPreferencesBlock .blockTitle {
     font-size: 1.2rem;
     padding-bottom: 1rem;
-    color: var(--white);
+    color: var(--holyxey-white);
 }
 #multi-page header #hero #heroTextBlock .heroPreferencesBlock .blockText {
     font-size: 1rem;
-    color: var(--white-o);
+    color: var(--holyxey-white-o);
 }
 #multi-page header #hero #heroImageBlock {
-    /*background: url(https://optim.tildacdn.com/tild6164-6236-4335-b061-383633653530/-/format/webp/DSC_8864_1.png) center / cover;*/
-    /*background: url(https://optim.tildacdn.com/tild6563-3566-4264-b733-383436336232/-/format/webp/active.jpg) center / cover;*/
-    background: url(https://thumb.tildacdn.com/tild3335-6365-4564-b639-333062663937/-/format/webp/5ZN_2626.jpg) center / cover;
+    background: url(https://optim.tildacdn.com/tild6164-6236-4335-b061-383633653530/-/format/webp/DSC_8864_1.png) center / cover;
     flex: 1;
     border-radius: 3rem;
     min-height: 300px;
     min-width: 550px;
 }
+    #multi-page.services header #hero #heroImageBlock {
+        background: url(https://optim.tildacdn.com/tild6563-3566-4264-b733-383436336232/-/format/webp/active.jpg) center / cover;
+    }
+    #multi-page.variants header #hero #heroImageBlock {
+        background: url(https://thumb.tildacdn.com/tild3335-6365-4564-b639-333062663937/-/format/webp/5ZN_2626.jpg) center / cover;
+    }
 /**/#multi-page header #heroContactButtons {
     display: flex;
     flex-wrap: wrap;
@@ -261,20 +265,20 @@ body {
 } /* Кнопки в hero */
 #multi-page header #heroContactButtons .heroButton {
     display: block;
-    background-color: var(--white);
+    background-color: var(--holyxey-white);
     padding: .7rem 2rem;
     border-radius: 100vmin;
 
     text-decoration: none !important;
-    color: var(--back) !important;
+    color: var(--holyxey-back) !important;
 }
 #multi-page header #heroContactButtons .heroButton.phone {
-    background-color: var(--wine);
-    color: var(--white) !important;
+    background-color: var(--holyxey-wine);
+    color: var(--holyxey-white) !important;
 }
 #multi-page header #heroContactButtons .heroButton.book {
-    background-color: var(--yellow);
-    color: var(--back) !important;
+    background-color: var(--holyxey-yellow);
+    color: var(--holyxey-back) !important;
 }
 #multi-page header #heroContactButtons .heroSocialButtons {
     display: flex;
@@ -294,7 +298,7 @@ body {
     scale: 1.1;
 }
 /**/#multi-page header #hero #booking {
-    background-color: var(--back-o);
+    background-color: var(--holyxey-back-o);
     width: 100%;
     padding: 2rem 4rem;
     border-radius: 1rem;
@@ -312,7 +316,7 @@ body {
 }
 .znms-widget__module-form-block--opacity-bg {
     max-width: 1400px;
-    background-color: var(--back-o) !important;
+    background-color: var(--holyxey-back-o) !important;
 }
 .znms-widget__module-form-block__btn,
 .znms-widget__place_form-btn,
@@ -320,11 +324,11 @@ body {
 .znms-widget__tariffs_promo-btn,
 .znms-widget__btn2:hover,
 .znms-widget__v-calendar-day-content:hover {
-    background-color: var(--wine) !important;
-    color: var(--white) !important;
+    background-color: var(--holyxey-wine) !important;
+    color: var(--holyxey-white) !important;
 }
 .znms-widget__colored-text {
-    color: var(--wine) !important;
+    color: var(--holyxey-wine) !important;
 }
 .znms-widget__module-form-block__item--lg {
     display: none !important;
@@ -356,6 +360,7 @@ body {
 }
 .classic-hb {
     display: flex;
+    /*flex-wrap: wrap;*/
     padding-left: 3rem;
     padding-right: 1rem;
     flex-direction: column;
@@ -369,7 +374,7 @@ body {
 .w-btn > h3 {
     width: 100%;
     font-size: 2rem;
-    font-family: var(--unbounded);
+    font-family: var(--holyxey-unbounded);
     font-weight: 400;
     line-height: 1;
 }
@@ -385,7 +390,7 @@ body {
     border-radius: 3rem;
     margin-inline: .5rem;
     cursor: pointer;
-    background-color: var(--back-o);
+    background-color: var(--holyxey-back-o);
     border: 1px solid transparent;
     transition: scale .3s ease-out;
 }
@@ -397,15 +402,16 @@ body {
     position: relative;
 }
 .classic-art-header {
-    font-family: var(--unbounded);
+    font-family: var(--holyxey-unbounded);
     font-weight: 500;
     font-size: 1.3rem;
+    color: var(--holyxey-yellow);
 }
 .classic-art-descr {
     font-size: 1.1rem;
-    font-family: var(--roboto);
+    font-family: var(--holyxey-roboto);
     font-weight: 300;
-    color: var(--white-o);
+    color: var(--holyxey-white-o);
 }
 .classic-art-imgBlck {
     flex: 1;
@@ -423,7 +429,7 @@ body {
 }
 .classic-art-link {
     text-decoration: none !important;
-    color: var(--white) !important;
+    color: var(--holyxey-white) !important;
     margin: 0 1rem 0 auto;
 }
 .classic-art-icon {
@@ -432,9 +438,9 @@ body {
     width: 24px;
 }
 .classic-header-button-first {
-    /*background-color: var(--wine);*/
-    background-color: var(--yellow);
-    color: var(--back-o)!important;
+    /*background-color: var(--holyxey-wine);*/
+    background-color: var(--holyxey-yellow);
+    color: var(--holyxey-back-o)!important;
     width: fit-content;
     text-decoration: none !important;
     padding: .7rem 1.4rem;
@@ -443,6 +449,7 @@ body {
     align-content: center;
     cursor: pointer;
     display: block;
+    float: left;
 }
 /* !needToRender */
 
@@ -526,7 +533,7 @@ body {
     flex: 1;
     min-width: 400px;
     max-width: 500px;
-    background-color: var(--back-o);
+    background-color: var(--holyxey-back-o);
     margin-inline: .5rem;
     padding: 1rem;
     border-radius: 3rem;
@@ -548,11 +555,229 @@ body {
     background-size: cover;
     background-position: center;
     margin-top: .5rem;
-    border-radius: 1.5rem 1.5rem;
+    border-radius:  1rem 1rem 2rem 2rem;
     aspect-ratio: 1.8 / 1;
 }
-
 /* !variants */
+
+/* about */
+#about {}
+#about #aboutBlock {
+    background:  url(https://thumb.tildacdn.com/tild3734-3333-4335-b235-623766363464/-/format/webp/KIR_3234.jpg) center center no-repeat;
+    background-size: cover;
+    padding-inline: .5rem;
+    border-radius: 3rem;
+    padding: 1rem;
+
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+#about #aboutBlock .aboutInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 500px;
+    padding: 2rem;
+    background-color: var(--holyxey-back);
+    border-radius: 2rem;
+}
+#about #aboutBlock .aboutInfo.whyTerruar {
+    opacity: 0;
+    height: 0;
+    color: var(--holyxey-yellow);
+}
+#about #aboutBlock .aboutInfo p {
+    font-size: 1.1rem;
+    color: var(--holyxey-white-o);
+}
+/* !about */
+
+/* offers */
+#offers {}
+#offers .offer.active {
+    cursor: pointer;
+    min-width: 300px;
+}
+#offers .offer.active .offerTitleBlock {
+    background-color: var(--holyxey-yellow);
+    margin-bottom: 10rem;
+}
+#offers .offer {
+    flex: 1;
+    background-size: cover;
+    background-position: center;
+
+    min-width: 400px;
+    margin-inline: .5rem;
+    padding: .5rem;
+    border-radius: 1rem;
+
+    max-width: 500px;
+    scroll-snap-align: center;
+}
+#offers .offer .classic-ip {
+    scroll-snap-type: x mandatory;
+}
+#offers .offer .offerTitleBlock {
+    background-color: var(--holyxey-white-o);
+    border-radius: 1rem;
+    margin-bottom: 7rem;
+    color: var(--holyxey-back);
+    padding: 1rem;
+    position: relative;
+}
+#offers .offer .offerTitleBlock > h4 {
+    font-family: var(--holyxey-unbounded);
+    padding-bottom: .5rem;
+}
+#offers .offer .offerTitleBlock .infoIcon {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    translate: 0 -50%;
+}
+#offers .offer {}
+
+.offerPopupBlock {}
+.offerPopupBlock * {
+    animation: showpopup .3s ease-out forwards;
+}
+.offerPopupBlock {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    max-width: 500px;
+}
+.offerPopupBlock .preview {
+    flex: 1;
+    background-size: cover;
+    background-position: center;
+    border-radius: 1rem;
+    min-width: 300px;
+    min-height: 300px;
+    position: relative;
+}
+.offerPopupBlock .preview .percentage {
+    position: absolute;
+    bottom: -2rem;
+    right: 1rem;
+    font-family: var(--holyxey-unbounded);
+    font-size: 1.5rem;
+    opacity: 0;
+
+    animation: percentage 1s 1.5s ease-out forwards;
+}
+.offerPopupBlock .info {
+    flex: 1;
+    padding-block: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    min-width: 300px;
+}
+.offerPopupBlock .info .infoTitle {
+    font-family: var(--holyxey-unbounded);
+    font-size: 1.5rem;
+}
+.offerPopupBlock .info #infoHL {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+}
+.offerPopupBlock .info #infoHL .hl {
+    padding: .75rem 1rem;
+    background-color: var(--holyxey-yellow);
+    border-radius: 1rem;
+    color: var(--holyxey-back);
+}
+.offerPopupBlock .info #infoText {}
+.offerPopupBlock .info #infoText .infoText {
+    padding-block: .5rem;
+}
+.offerPopupBlock .info #infoFooter {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+.offerPopupBlock .info #infoFooter .button {
+    padding: .75rem 1rem .5rem 1rem;
+    border-radius: 1rem;
+}
+.offerPopupBlock .info #infoFooter .button svg {
+    width: 100px;
+}
+.offerPopupBlock .info #infoFooter .price {
+    padding: .5rem 1rem;
+    background-color: var(--holyxey-wine);
+    border-radius: .25rem;
+}
+.offerPopupBlock {}
+/* !offers */
+
+/* videos */
+#videos {}
+#videos .videoBlocks {
+    display: flex;
+    gap: 2rem;
+}
+#videos .videoBlocks > * {
+    border-radius: 2rem;
+    position: relative;
+    cursor: pointer;
+}
+#videos .videoBlocks .button {
+    content: '';
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background-color: var(--holyxey-wine);
+    border-radius: 100vmin;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+#videos .videoBlocks .button svg {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-45%, -50%);
+}
+#videos .videoBlocks .verticalPreview {
+    aspect-ratio: 9 / 16;
+    background-image: url(https://thumb.tildacdn.com/tild3739-3438-4835-b765-663831646262/-/format/webp/m_preview.png);
+    background-position: center;
+    background-size: cover;
+    width: 30%;
+}
+#videos .videoBlocks .horizontalPreview {
+    aspect-ratio: 16 / 9;
+    background-image: url(https://thumb.tildacdn.com/tild6262-3330-4231-b630-646639343633/-/format/webp/pc_preview.png);
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+}
+#popUpVideo {
+    position: absolute;
+    z-index: 100500;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    max-width: 95%;
+    max-height: 95%;
+    border: 0;
+    box-shadow: 0 0 100px #000000;
+    border-radius: 1rem;
+}
+#popUpVideo.verticalPreview {
+    aspect-ratio: 9 / 16;
+}
+#popUpVideo.horizontalPreview {
+    aspect-ratio: 16 / 9;
+}
+/* !videos */
 
 /* Territory map */
 #map .classic-ip {
@@ -568,8 +793,8 @@ body {
     overflow: hidden;
     min-width: 500px;
     border-radius: 3rem;
-    border: 2px solid var(--yellow);
-    background-color: var(--yellow);
+    border: 2px solid var(--holyxey-yellow);
+    background-color: var(--holyxey-yellow);
     padding: .25rem;
 }
 /* !Territory map */
@@ -586,8 +811,8 @@ body {
     flex-direction: column;
     overflow: hidden;
     padding: 1rem 2.5rem;
-    border: 1px solid var(--white-oo);
-    background-color: var(--back);
+    border: 1px solid var(--holyxey-white-oo);
+    background-color: var(--holyxey-back);
     border-radius: 2rem;
     position: relative;
     cursor: pointer;
@@ -595,7 +820,7 @@ body {
 #faq-list .faq-item-header-block {
 }
 #faq-list .faq-item-header {
-    font-family: var(--roboto);
+    font-family: var(--holyxey-roboto);
     font-size: 1.2rem;
     font-weight: 400;
 }
@@ -608,7 +833,7 @@ body {
     width: .5rem;
     opacity: .5;
     border-radius: 100vmin;
-    background-color: var(--yellow);
+    background-color: var(--holyxey-yellow);
     transition: all .3s ease-out;
 }
 #faq-list .faq-item-body {
@@ -621,7 +846,7 @@ body {
     opacity: .8;
 }
 #faq-list a {
-    color: var(--yellow) !important;
+    color: var(--holyxey-yellow) !important;
     text-decoration: none;
     font-weight: 400;
     opacity: 1 !important;
@@ -629,13 +854,13 @@ body {
 .faqbtn {
     position: relative;
     font-weight: 400;
-    color: var(--yellow) !important;
+    color: var(--holyxey-yellow) !important;
     text-decoration: none !important;
 }
 .faqbtn:before {
     content: '';
     position: absolute;
-    background-color: var(--wine);
+    background-color: var(--holyxey-wine);
     width: 100%;
     height: 100%;
     translate: -5px -3px;
@@ -672,10 +897,10 @@ body {
 }
 #contacts .classic-ip article .footerButton {
     float: left;
-    background-color: var(--back-o);
+    background-color: var(--holyxey-back-o);
     padding: .5rem 1rem;
     width: fit-content;
-    border: 1px solid var(--white-o);
+    border: 1px solid var(--holyxey-white-o);
     display: inline-flex;
     border-radius: 100vmin;
     cursor: pointer;
@@ -685,7 +910,7 @@ body {
     justify-content: center;
     align-content: center;
     align-items: center;
-    color: var(--white)!important;
+    color: var(--holyxey-white)!important;
     text-decoration: none !important;
     border-radius: 100vmin;
     cursor: pointer;
@@ -693,7 +918,7 @@ body {
     width: fit-content;
 }
 #contacts .classic-ip article h4 {
-    font-family: var(--unbounded);
+    font-family: var(--holyxey-unbounded);
     font-size: 1.2rem;
     font-weight: 400;
 }
@@ -737,7 +962,7 @@ body {
     z-index: 100500900;
     overflow-y: auto;
 
-    background-color: var(--back-o);
+    background-color: var(--holyxey-back-o);
 
     display: flex;
     flex-direction: column;
@@ -753,16 +978,20 @@ body {
     padding-top: 2rem;
 }
 #popup-block .popUpDescr {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
     text-align: center;
     font-size: 1.1rem;
     max-width: 500px;
     padding: 1rem;
     margin-top: 1rem;
-    border: 1px solid var(--white-oo);
+    border: 1px solid var(--holyxey-white-oo);
     border-radius: 1rem;
 }
 #popup-block .weather {
-    background-color: var(--blue);
+    background-color: var(--holyxey-blue);
     max-width: 1200px;
     border-radius: 1rem;
     width: 100%;
@@ -792,6 +1021,16 @@ body {
 #popup-block video {
     border-radius: 1rem;
 }
+#popup-block .variantPopUpButtons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    /*margin-top: 1rem;*/
+    justify-content: center;
+}
+#popup-block .variantPopUpButtons > * {
+    flex: 1;
+}
 #close-popup {
     position: fixed;
     display: block;
@@ -815,7 +1054,7 @@ body {
     left: 0;
     bottom: 0;
     right: 0;
-    z-index: 100500900;
+    z-index: 1005009009;
 
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
@@ -831,7 +1070,7 @@ body {
     height: 50px;
     background-color: transparent;
     cursor: pointer;
-    z-index: 100900500;
+    z-index: 1009005009;
     opacity: 0;
 }
 #fullScreenPhoto img {
@@ -904,9 +1143,9 @@ body {
 #popup-service .popup-service-header {}
 #popup-service .popup-service-fulldescr {
     font-size: 1.1rem;
-    font-family: var(--roboto);
+    font-family: var(--holyxey-roboto);
     font-weight: 300;
-    color: var(--white-o);
+    color: var(--holyxey-white-o);
 }
 
 #popup-service .popup-service-buttons {
@@ -951,7 +1190,7 @@ body {
     display: flex;
     gap: .5rem;
     max-width: 1200px;
-    background-color: var(--blue);
+    background-color: var(--holyxey-blue);
     padding: .5rem;
     border-radius: 0 0 2rem 2rem;
 }
@@ -961,16 +1200,16 @@ body {
 #weatherTest .weatherDay {
 }
 #weatherTest .todayHeader {
-    font-family: var(--unbounded);
+    font-family: var(--holyxey-unbounded);
     padding: 0 1rem .5rem 1rem;
     text-align: center;
 }
 #weatherTest .hourly {
     flex: 1;
-    color: var(--back);
+    color: var(--holyxey-back);
     font-size: 1rem;
     padding: .5rem;
-    background-color: var(--white);
+    background-color: var(--holyxey-white);
     border-radius: 1.5rem;
 }
 #weatherTest .hourly .hour {
@@ -1007,7 +1246,7 @@ body {
     height: fit-content;
 
     padding: 2rem;
-    background-color: var(--back);
+    background-color: var(--holyxey-back);
     border-radius: 4rem;
 }
 .person-photo-block {
@@ -1035,13 +1274,13 @@ body {
     height: 100%;
 }
 .person-name {
-    font-family: var(--unbounded);
+    font-family: var(--holyxey-unbounded);
     font-weight: 500;
     font-size: 1.2rem;
 }
 .person-position {
-    color: var(--back-o);
-    background-color: var(--white);
+    color: var(--holyxey-back-o);
+    background-color: var(--holyxey-white);
     width: fit-content;
     margin-block: .25rem;
     padding: .25rem .5rem;
@@ -1049,7 +1288,7 @@ body {
     font-weight: 500;
 }
 .person-about {
-    font-family: var(--roboto);
+    font-family: var(--holyxey-roboto);
     opacity: .8;
 }
 /*!Блок команды в поп-апе*/
@@ -1071,7 +1310,7 @@ body {
     gap: 2rem 1rem;
     min-width: fit-content;
 
-    background-color: var(--wine);
+    background-color: var(--holyxey-wine);
     padding: 1rem;
     border-radius: 1rem;
 }
@@ -1079,7 +1318,7 @@ body {
     width: 100%;
     height: fit-content;
     font-weight: 500;
-    border-bottom: 1px solid var(--white-oo);
+    border-bottom: 1px solid var(--holyxey-white-oo);
 }
 #terruarMenu .menuCategory .product {
     display: flex;
@@ -1093,26 +1332,27 @@ body {
 }
 #terruarMenu .menuCategory .product .productDescription {
     width: fit-content;
-    color: var(--white-o);
+    color: var(--holyxey-white-o);
     font-weight: 300;
 }
 #terruarMenu .menuCategory .product .productPrice {
-    background-color: var(--white);
+    background-color: var(--holyxey-white);
     width: fit-content;
     padding: .5rem 1rem;
     border-radius: 1rem;
-    color: var(--wine);
+    color: var(--holyxey-wine);
     margin-top: auto;
 }
 /*!Restaurant menu*/
 
 /*Dolyami section*/
 #sectionDolyami {
-    background: url("https://optim.tildacdn.com/tild3963-6339-4231-a231-633830323034/-/format/webp/pattern5.png") var(--white) fixed;
+    background: url("https://optim.tildacdn.com/tild3963-6339-4231-a231-633830323034/-/format/webp/pattern5.png") var(--holyxey-white) fixed;
     background-size: 5rem;
     padding: 3rem;
-    color: var(--back-o);
+    color: var(--holyxey-back-o);
     width: 100%;
+    margin-block: 5rem;
 }
 #dolyami-inner {
     max-width: 1440px;
@@ -1125,9 +1365,9 @@ body {
     gap: 1rem;
 }
 #dolyamiCard {
-    font-family: var(--unbounded);
-    color: var(--white);
-    background-color: var(--back);
+    font-family: var(--holyxey-unbounded);
+    color: var(--holyxey-white);
+    background-color: var(--holyxey-back);
     width: fit-content;
     padding: 2rem;
     border-radius: 2rem;
@@ -1155,9 +1395,9 @@ body {
     display: block;
 }
 #dolyamiBooking {
-    /*font-family: var(--unbounded);*/
-    color: var(--white);
-    background-color: var(--wine);
+    /*font-family: var(--holyxey-unbounded);*/
+    color: var(--holyxey-white);
+    background-color: var(--holyxey-wine);
     padding: 1rem 2rem;
     border-radius: 2rem;
     font-size: 1.3rem;
@@ -1168,7 +1408,7 @@ body {
 
 /*Стили для Тильды*/
 .t-popup__close {
-    background-color: var(--white-oo);
+    background-color: var(--holyxey-white-oo);
     border-radius: 2rem;
 }
 .t-popup__container {
@@ -1178,33 +1418,33 @@ body {
     text-align: left;
 }
 .t702__title {
-    font-family: var(--unbounded) !important;
+    font-family: var(--holyxey-unbounded) !important;
     font-size: 1.8rem;
 }
 .t-upwidget-container__button,
 .t-form__errorbox-wrapper {
-    background-color: var(--wine);
+    background-color: var(--holyxey-wine);
 }
 .t-submit {
-    background-color: var(--wine) !important;
+    background-color: var(--holyxey-wine) !important;
     border-radius: 1rem !important;
-    color: var(--white) !important;
+    color: var(--holyxey-white) !important;
     font-weight: 500;
 }
 .t-input {
     border-radius: 1rem !important;
-    background-color: var(--white) !important;
+    background-color: var(--holyxey-white) !important;
 }
 .t-form__successbox {
     border-radius: 1rem !important;
-    color: var(--back-o) !important;
+    color: var(--holyxey-back-o) !important;
     font-weight: 500 !important;
 }
 .js-errorbox-all {
     border-radius: 1rem !important;
 }
 .t-input-error {
-    color: var(--wine) !important;
+    color: var(--holyxey-wine) !important;
 }
 /*Стили для Тильды*/
 
@@ -1224,11 +1464,33 @@ body {
     5% {scale: 1; transform: perspective(100rem) rotate3d(0,1,0, 0deg); translateX(0) margin-right: initial; z-index: 0}
     40% {scale: .8; transform: perspective(100rem) rotate3d(0,1,0, 40deg) translateX(-20%); margin-right: -45%; z-index: -1}
     50% {scale: .8; transform: perspective(100rem) rotate3d(0,1,0, 40deg) translateX(-20%); margin-right: -45%; z-index: -1}
-    95% {scale: 1; transform: perspective(100rem) rotate3d(0,1,0, 0deg) translateX(0); margin-right: initial; z-index: 0}
+    95% {scale: 1; transform: perspective(100rem) rotate3d(0,1,0, 0deg) translateX(0); margin-right: initial; z-index: 0; opacity: 1}
 }
 @keyframes endlessRotating {
     from {rotate: 0}
     from {rotate: 360deg}
+}
+@keyframes percentage {
+    from {
+        opacity: 0;
+        transform: rotate(10deg) translate3d(10px, 10px, 10px);
+    }
+    to {
+        opacity: 1;
+        transform: rotate(3deg) translate3d(-50px, 20px, 20px);
+    }
+}
+@keyframes whyBlock {
+    from {
+        opacity: 0;
+        height: 0;
+        padding: 0 1rem;
+    }
+    to {
+        opacity: 1;
+        height: 100%;
+        padding: 2rem;
+    }
 }
 
 /*
@@ -1295,9 +1557,15 @@ body {
         display: none;
     }
     #multi-page header #hero #heroTextBlock {
-        background: linear-gradient(0deg, rgba(0, 0, 0, 0.70) 0%, rgba(0, 0, 0, 0.70) 100%), url(https://optim.tildacdn.com/tild6563-3566-4264-b733-383436336232/-/format/webp/active.jpg) lightgray 50% / cover no-repeat;
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.70) 0%, rgba(0, 0, 0, 0.70) 100%), url(https://optim.tildacdn.com/tild6164-6236-4335-b061-383633653530/-/format/webp/DSC_8864_1.png) lightgray 50% / cover no-repeat;
         padding: 2rem;
         border-radius: 2rem;
+    }
+    #multi-page.services header #hero #heroTextBlock {
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.70) 0%, rgba(0, 0, 0, 0.70) 100%), url(https://optim.tildacdn.com/tild6563-3566-4264-b733-383436336232/-/format/webp/active.jpg) lightgray 50% / cover no-repeat;;
+    }
+    #multi-page.variants header #hero #heroTextBlock {
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.70) 0%, rgba(0, 0, 0, 0.70) 100%), url(https://thumb.tildacdn.com/tild3335-6365-4564-b639-333062663937/-/format/webp/5ZN_2626.jpg) lightgray 50% / cover no-repeat;;
     }
 
     /* needToRender (base design) */
@@ -1311,7 +1579,8 @@ body {
         position: relative;
     }
     .classic-art {
-        flex: 1 0 100%;
+        flex: 1;
+        min-width: 75dvw;
         scroll-snap-align: center;
         max-width: unset;
         padding: 1.5rem .5rem;
@@ -1331,13 +1600,17 @@ body {
         flex-direction: column;
         padding-left: 1.5rem;
     }
+    .classic-art-imgBlck {
+        min-height: 150px;
+    }
     /* !needToRender (base design) */
 
     #popup-block {
         padding: 0 .5rem 2rem .5rem
     }
     #popup-block .popUpHeader {
-        max-width: calc(100dvw - 4rem);
+        max-width: calc(100dvw - 10rem);
+        text-align: center;
     }
     #weatherTest {
         top: 0;
@@ -1381,6 +1654,11 @@ body {
         padding-block: 0;
     }
     /*!services pop-up*/
+
+    #pop-up-gallery {
+        min-height: 50dvh;
+        height: 50dvh;
+    }
 
     /* reviews!*/
     #reviews .classic-ip {
@@ -1429,11 +1707,82 @@ body {
         max-width: 100%;
         min-width: unset;
         border-radius: 2rem;
-        border: 1px solid var(--yellow);
-        background-color: var(--yellow);
+        border: 1px solid var(--holyxey-yellow);
+        background-color: var(--holyxey-yellow);
         padding: .25rem;
     }
     /* !Territory map */
+
+    /*Services*/
+    #services .classic-art-link {
+        display: none;
+    }
+    #services .classic-art {
+        padding: 1.5rem .5rem .5rem .5rem;
+    }
+    /*!Services*/
+
+    /*Variants*/
+    .variantBlock {
+        min-width: 85dvw;
+    }
+    /*!Variants*/
+
+    /*Offers*/
+    #offers .offer {
+        min-width: 85dvw;
+        padding: .25rem;
+    }
+    #offers .offer .offerTitleBlock,
+    #offers .offer.active .offerTitleBlock {
+        margin-bottom: 2rem;
+    }
+    /*!Offers*/
+
+    /* Videos */
+    #videos .videoBlocks {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    #videos .videoBlocks .verticalPreview {
+        aspect-ratio: 16 / 9;
+        background-position: center 65%;
+        width: unset;
+        height: 200px;
+        margin-inline: .5rem;
+    }
+    #videos .videoBlocks .horizontalPreview {
+        background-position: center;
+        width: unset;
+        height: 200px;
+        margin-inline: .5rem;
+    }
+    #videos .videoBlocks .button {
+        left: unset;
+        top: unset;
+        right: 0;
+        bottom: 0;
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+    #videos .videoBlocks .button svg {
+        width: 1.5rem;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-45%, -50%);
+    }
+    /* !Videos */
+
+    /* about */
+    #about #aboutBlock {
+        background: none;
+        padding: .5rem;
+    }
+    #about #aboutBlock .aboutInfo {
+        padding: .5rem;
+    }
+    /* !about */
 
     /*faq*/
     #faq-list .faq-item-text {
@@ -1532,11 +1881,11 @@ body {
         text-align: left;
     }
     .t702__title {
-        font-family: var(--unbounded);
+        font-family: var(--holyxey-unbounded);
         font-size: 1.8rem;
     }
     .t-upwidget-container__button {
-        background-color: var(--wine);
+        background-color: var(--holyxey-wine);
     }
     /*Стили для Тильды*/
 }

@@ -41,7 +41,7 @@
 
                 <!--<li class="navPCItem"><a href="/" onclick="multipage.hideMobileMenu()">Главная</a></li>-->
                 <li class="navPCItem"><a href="/#about" onclick="multipage.hideMobileMenu()">О нас</a></li>
-                <li class="navPCItem"><a href="/#variants" onclick="multipage.hideMobileMenu()">Наши домики</a></li>
+                <li class="navPCItem"><a href="/variants" onclick="multipage.hideMobileMenu()">Наши домики</a></li>
                 <li class="navPCItem"><a data-popup="online" data-header="Терруар онлайн" onclick="multipage.hideMobileMenu()" data-list="other" data-popup-type="undefined">Терруар онлайн</a></li>
                 <li class="navPCItem"><a data-popup="restaurant" data-header="Ресторан" onclick="multipage.hideMobileMenu()" data-list="other" data-popup-type="undefined">Ресторан</a></li>
                 <li class="navPCItem"><a href="/services" onclick="multipage.hideMobileMenu()">Услуги</a></li>
@@ -149,21 +149,59 @@
             </section>
             <article id="heroImageBlock" class="shadow"></article>
         </section>
-        <div data-v-f8873cb8=""><div data-v-1e3aff0c="" data-v-f8873cb8="" class="znms-widget__teleporter znms-widget__hidden"></div><div data-v-1e3aff0c="" data-v-f8873cb8="" class="znms-widget__teleporter znms-widget__hidden"></div><!----></div>
+<!--        <div data-v-f8873cb8="">-->
+<!--            <div data-v-1e3aff0c="" data-v-f8873cb8="" class="znms-widget__teleporter znms-widget__hidden"></div>-->
+<!--            <div data-v-1e3aff0c="" data-v-f8873cb8="" class="znms-widget__teleporter znms-widget__hidden"></div>-->
+<!--        </div>-->
         <script src="https://widget.bronirui-online.ru/js/app.js" type="text/javascript"></script>
     </header>
     <main>
         <section id="hero-offers" title="Основные предложения" data-need-to-render="other,2,3"></section>
+        <section id="about" class="classic-sec">
+            <div class="classic-hb w-btn">
+                <h3>Глэмпинг "Терруар"</h3>
+            </div>
+            <div id="aboutBlock">
+                <div class="aboutInfo">
+                    <p>В нашей атмосфере сочетаются уют природы и городской комфорт. Представьте: домики с видом на звёзды, кухня, все удобства горячий душ и зона для барбекю.</p>
+                    <p>Расслабьтесь в ароматной бане или горячей чаше среди деревьев, исследуйте окрестности на квадроцикле или насладитесь конными прогулками.</p>
+                    <p>Отдыхайте в экологически чистой зоне, далеко от городской суеты, и берите с собой своих питомцев — здесь им рады!</p>
+                    <a class="classic-header-button-first" onclick="showAboutBlock(this)">Почему "Терруар"</a>
+                </div>
+                <div class="aboutInfo whyTerruar">
+                    <p>Терруар - это совокупность почвенно-климатических факторов. Термин многогранный и всеобъемлющий: рельеф, почва, климат и многие другие особенности местности.</p>
+                    <p>Терруар - сельскохозяйственное понятие, но чаще всего используется в винной индустрии.</p>
+                    <p>Именно поэтому каждый домик нашего глемпинга называется как винный регион (терруар), а каждый глемпинг как сорт вина.</p>
+                </div>
+            </div>
+        </section>
         <section id="variants" class="classic-sec" title="Варианты отдыха" data-variants="preview">
             <div class="classic-hb w-btn">
                 <h3>Варианты отдыха</h3>
-                <a class="classic-header-button-first" href="/variants">Смотреть все</a>
+                <a class="classic-header-button-first" href="/variants#houses">Посмотреть домики</a>
+                <a class="classic-header-button-first" href="/variants#glamping">Посмотреть палатки</a>
+            </div>
+        </section>
+        <section id="offers" class="classic-sec" title="Наши акции" data-offers="preview">
+            <div class="classic-hb w-btn">
+                <h3>Наши акции</h3>
             </div>
         </section>
         <section id="videos" class="classic-sec">
             <div class="classic-hb w-btn">
-                <h3>Варианты отдыха</h3>
-                <a class="classic-header-button-first" href="/variants">Смотреть все</a>
+                <h3>Видео територии</h3>
+            </div>
+            <div class="videoBlocks">
+                <div onclick="openFullVideo(this)" class="verticalPreview" data-frame-link="https://www.youtube.com/embed/AhzqNwb0e60?autoplay=1&muted=1&controls=1&fs=1&modestbranding=1&rel=0&showinfo=0&playsinline=1&vq=hd1080">
+                    <div class="button">
+                        <svg fill="#F8F3C8" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35px" height="35px" viewBox="0 0 72 72" enable-background="new 0 0 72 72" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <path d="M15.283,68.898c-4.089,0-6.868-3.285-6.868-8.174V11.275c0-4.889,2.779-8.174,6.87-8.174c1.563,0,3.213,0.485,4.87,1.441 l38.924,24.77c2.877,1.659,4.506,4.052,4.506,6.692c0,2.638-1.62,5.027-4.566,6.729l-38.793,24.68 C18.495,68.414,16.847,68.898,15.283,68.898z M15.285,7.102c-2.563,0-2.87,2.919-2.87,4.174v49.449 c0,1.255,0.308,4.174,2.868,4.174c0.84,0,1.843-0.313,2.87-0.905l38.787-24.68c1.706-0.987,2.646-2.177,2.646-3.309 c0-1.135-0.937-2.327-2.574-3.272L18.08,7.963C17.127,7.415,16.126,7.102,15.285,7.102z"></path> </g> <g> <g> <path d="M35.163,48.955c-0.333,0-0.657-0.165-0.848-0.468c-0.294-0.467-0.153-1.084,0.313-1.379l0.54-0.34 c0.468-0.293,1.085-0.154,1.379,0.314c0.295,0.467,0.154,1.084-0.313,1.379l-0.54,0.34 C35.529,48.905,35.345,48.955,35.163,48.955z"></path> </g> <g> <path d="M20.514,58.169c-0.333,0-0.657-0.165-0.848-0.468c-0.294-0.467-0.153-1.085,0.314-1.379l11.223-7.06 c0.467-0.292,1.084-0.154,1.379,0.314c0.294,0.467,0.153,1.085-0.314,1.379l-11.223,7.06 C20.88,58.119,20.695,58.169,20.514,58.169z"></path> </g> </g> </g> </g></svg>
+                    </div>
+                </div>
+                <div onclick="openFullVideo(this)" class="horizontalPreview" data-frame-link="https://www.youtube.com/embed/kTnf0cAlhjk?autoplay=1&muted=1&controls=1&fs=1&modestbranding=1&rel=0&showinfo=0&playsinline=1&vq=hd1080">
+                    <div class="button">
+                        <svg fill="#F8F3C8" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35px" height="35px" viewBox="0 0 72 72" enable-background="new 0 0 72 72" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <path d="M15.283,68.898c-4.089,0-6.868-3.285-6.868-8.174V11.275c0-4.889,2.779-8.174,6.87-8.174c1.563,0,3.213,0.485,4.87,1.441 l38.924,24.77c2.877,1.659,4.506,4.052,4.506,6.692c0,2.638-1.62,5.027-4.566,6.729l-38.793,24.68 C18.495,68.414,16.847,68.898,15.283,68.898z M15.285,7.102c-2.563,0-2.87,2.919-2.87,4.174v49.449 c0,1.255,0.308,4.174,2.868,4.174c0.84,0,1.843-0.313,2.87-0.905l38.787-24.68c1.706-0.987,2.646-2.177,2.646-3.309 c0-1.135-0.937-2.327-2.574-3.272L18.08,7.963C17.127,7.415,16.126,7.102,15.285,7.102z"></path> </g> <g> <g> <path d="M35.163,48.955c-0.333,0-0.657-0.165-0.848-0.468c-0.294-0.467-0.153-1.084,0.313-1.379l0.54-0.34 c0.468-0.293,1.085-0.154,1.379,0.314c0.295,0.467,0.154,1.084-0.313,1.379l-0.54,0.34 C35.529,48.905,35.345,48.955,35.163,48.955z"></path> </g> <g> <path d="M20.514,58.169c-0.333,0-0.657-0.165-0.848-0.468c-0.294-0.467-0.153-1.085,0.314-1.379l11.223-7.06 c0.467-0.292,1.084-0.154,1.379,0.314c0.294,0.467,0.153,1.085-0.314,1.379l-11.223,7.06 C20.88,58.119,20.695,58.169,20.514,58.169z"></path> </g> </g> </g> </g></svg>
+                    </div>
+                </div>
             </div>
         </section>
         <section id="services" title="Мы можем предложить" data-need-to-render="servicesListPreview,1"></section>
