@@ -75,7 +75,8 @@ td, th {
     .days {
         font-size: 0.8rem;
     }
-    table {
+    .table_div table,
+    .tables-filters table {
         font-size: 1rem;
         width: 100%;
     }
