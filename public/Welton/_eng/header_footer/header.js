@@ -96,7 +96,7 @@ const firstLangChose = () => {
             `<div id="langChange">
             <p>Would you like to change the language to English?</p>
             <div>
-                <button id="changeLangYes" onclick="changeLanguage('en')">Yes</button>
+                <button id="changeLangYes" onclick="changeLanguage('en')">Change</button>
                 <button id="changeLangNo" onclick="closeChangeWindow()">Оставить русский</button>
             </div>
             </div>`);

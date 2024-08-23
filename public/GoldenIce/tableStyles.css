@@ -34,7 +34,8 @@
     background-color: #BDBBDA;
 }
 
-table {
+.table_div table,
+.tables-filters table{
     width: 90%;
     border-collapse: collapse;
     letter-spacing: 1px;

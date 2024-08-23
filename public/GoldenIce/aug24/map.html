@@ -1,0 +1,79 @@
+<!--// Карта yamap -->
+<style>
+    #yamap {
+        box-sizing: border-box;
+        padding: 2rem 1rem;
+        max-width: 1200px;
+        margin-inline: auto;
+        background-color: #d4c5e0;
+
+        * {box-sizing: border-box;}
+
+        > iframe {
+            width: calc(70% - .5rem);
+            height: 100%;
+            min-height: 500px;
+            max-height: 500px;
+            border-radius: 2rem 2rem 2rem 2rem;
+        }
+        > h4 {
+            color: #333333;
+            font-size: 52px;
+            font-family: 'Playfair Display', Arial, sans-serif;
+            font-weight: 700;
+
+            padding: 0 0 1rem 0;
+            margin: 0;
+        }
+        > div {
+            width: calc(30% - .5rem);
+            padding: 1rem 1.5rem;
+            border-radius: 2rem;
+            z-index: 1;
+            float: right;
+
+            > p {
+                padding: 0;
+                margin: 0;
+
+                color: #333333;
+                font-family: 'CirceRounded', Arial, sans-serif;
+                font-size: 1.2rem;
+            }
+        }
+
+        @media screen and (max-width: 450px) {
+            padding: .5rem;
+
+            > iframe {
+                border-radius: 1rem 1rem 1rem 1rem;
+                max-height: 75dvh;
+                width: 100%;
+                padding-top: 1rem;
+            }
+            > h4 {
+                font-size: 30px;
+            }
+            > div {
+                width: unset;
+                max-width: unset;
+                float: unset;
+                padding: 0;
+                font-size: .8rem;
+            }
+        }
+
+    }
+</style>
+
+<section id="yamap">
+    <h4>Ледовые арены</h4>
+    <div>
+        <p>Арены оборудованы с учетом последних технологических решений, находятся в шаговой доступности от метро,
+            всегда гарантируют высокое качество льда. На каждой присутствует необходимая социальная инфраструктура,
+            ребенок сможет переодеться в спортивную форму, перекусить после занятия.</p>
+    </div>
+    <iframe
+            frameborder="0"
+            src="https://yandex.ru/map-widget/v1/?um=constructor%3A86f931d190fde8a0f6bb070bf6ffb51718b33e39440dd5ea9eb8ec01bedc2f24&amp;source=constructor"></iframe>
+</section>
