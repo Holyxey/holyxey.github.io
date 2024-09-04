@@ -1,0 +1,313 @@
+body {background-color: #d4c5e0}
+
+.newTables {
+    max-width: 1200px;
+    margin-inline: auto;
+    overflow-x: auto;
+    padding-inline: 1rem;
+    /*position: relative;*/
+    /*z-index: 1;*/
+}
+.newTables table {}
+h2 {
+    max-width: 1200px;
+    margin: auto;
+    padding-block: 2rem .5rem;
+    padding-inline: 1rem;
+    font-size: 2.5rem;
+    color: #222222;
+}
+.newTables table.newTable {
+    border-radius: 1rem;
+    border-spacing: 1px 5px;
+}
+
+.loadingBlock {
+    overflow: visible;
+    padding: .5rem 1rem !important;
+    background-color: #E5DDEC;
+    border: 1px solid #A294AD;
+    border-radius: 1rem;
+}
+.loadingBlock svg {
+    height: 2rem;
+    margin: auto;
+    animation: priceLoading 3s linear infinite;
+}
+.addSplash {
+    position: relative;
+    margin-block: 8rem 2rem;
+    z-index: 0;
+}
+.addSplash:after {
+    content: url(https://optim.tildacdn.com/tild6461-3964-4338-b035-663865643836/-/resize/790x/-/format/webp/IMG_4291.PNG);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-110%, -50%) scale3d(.6, .4, .6);;
+    z-index: -1;
+    opacity: .9;
+}
+.scrollRight {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: .5rem;
+    z-index: 10;
+    translate: 0 -100%;
+    display: none;
+}
+
+.newTables table.newTable * {
+    font-family: 'CirceRounded',Arial,sans-serif;
+    font-size: 16px;
+}
+.newTables table.newTable td {
+    padding: 2px 5px;
+    border: 1px solid #A294AD;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 2px;
+
+    max-width: 150px;
+    text-wrap: balance;
+
+    cursor: pointer;
+    position: relative;
+}
+
+.newTables table.newTable > thead {background-color: #DBD3E1;}
+.newTables table.newTable > thead > tr > td {padding: 10px;}
+.newTables table.newTable > thead > tr > td:first-child {border-radius: 1rem 2px 2px 2px;}
+.newTables table.newTable > thead > tr > td:last-child {border-radius: 2px 1rem 2px 2px;}
+.newTables table.newTable > thead > tr table td {
+    border: none;
+    background-color: transparent!important;
+}
+
+.newTables table.newTable > tbody {}
+.newTables table.newTable > tbody tr td:first-child {text-align: left;}
+.newTables table.newTable > tbody tr:last-child td {padding-bottom: .5rem;}
+.newTables table.newTable > tbody tr:last-child td:first-child {border-radius: 2px 2px 2px 1rem;}
+.newTables table.newTable > tbody tr:last-child td:last-child {border-radius: 2px 2px 1rem 2px;}
+.newTables table.newTable > tbody td {
+    border-radius: 2px;
+    padding: 5px 10px;
+    text-align: center;
+    background-color: #E5DDEC;
+}
+
+.scheduleWeek {}
+.scheduleWeek > section {
+    max-width: 1200px;
+    margin-inline: 1rem;
+    margin: 1rem auto;
+    padding-inline: .5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    font-family: 'CirceRounded', 'Circe Rounded', Arial, sans-serif;
+    overflow-x: auto;
+}
+.scheduleWeek > section > div {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 150px;
+    max-width: 200px;
+    background-color: #E5DDEC;
+    padding: .25rem;
+    border-radius: .75rem;
+    /*height: fit-content;*/
+}
+.scheduleWeek > section > div > div:first-child {
+    padding: .5rem;
+    background-color: #d4c5e0;
+    border-radius: .5rem;
+    text-align: center;
+    font-size: 1.2rem;
+}
+.scheduleWeek > section > div > section {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    padding: .5rem;
+}
+.scheduleWeek > section > div > section > div:nth-child(2n+1):not(:first-child) {
+    padding-top: .5rem;
+    border-top: 1px solid #A294AD50;
+}
+
+/**/
+.scheduleSeason {}
+.scheduleSeason * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    color: #232323;
+}
+.scheduleSeason {
+    font-family: 'CirceRounded', 'Circe Rounded', Arial, sans-serif;
+    max-width: 1200px;
+    margin-inline: 1rem;
+    margin: 1rem auto;
+    padding-inline: .5rem;
+}
+
+.scheduleSeason .arena-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem 1rem;
+    padding-bottom: 1rem;
+}
+.scheduleSeason .arena-filters button {
+    font-family: 'CirceRounded', 'Circe Rounded', Arial, sans-serif;
+    flex: 1 0 0;
+    min-width: fit-content;
+    max-width: fit-content;
+    border: 2px solid #ffffff90;
+    background-color: transparent;
+    border-radius: 1rem;
+    padding: .5rem 1rem;
+    font-size: 1rem;
+}
+.scheduleSeason .arena-filters button.active {
+    background-color: #ffef8f;
+    border: 2px solid #ffffff;
+}
+
+.scheduleSeason .arena-filters-schedule {}
+.scheduleSeason .arena-filters-schedule > section {
+    display: none;
+    flex-wrap: wrap;
+    gap: .5rem;
+    border-radius: 1rem;
+}
+.scheduleSeason .arena-filters-schedule > section.active {
+    display: flex;
+}
+.scheduleSeason .arena-filters-schedule > section > p {
+    min-width: 100%;
+    font-size: 1.2rem;
+    padding-left: 1rem;
+}
+.scheduleSeason .arena-filters-schedule > section > section {
+    flex: 1 0 200px;
+    max-width: 300px;
+    background-color: #E5DDEC;
+    padding: .25rem;
+    border-radius: 1rem;
+}
+.scheduleSeason .arena-filters-schedule > section > section > p:nth-child(1) {
+    min-width: 100%;
+    font-size: 1.1rem;
+    padding: .75rem 2rem;
+    background-color: #62BFED;
+    color: #000000;
+    border-radius: .75rem;
+    text-align: center;
+}
+.scheduleSeason .arena-filters-schedule > section > section > p:nth-child(2) {
+    background-color: #d4c5e0;
+    margin: .25rem;
+    text-align: center;
+    border-radius: .5rem;
+    padding: .5rem;
+}
+.scheduleSeason .arena-filters-schedule > section > section > section {
+    margin: .5rem;
+}
+.scheduleSeason .arena-filters-schedule > section > section > section > p:first-child {
+    font-weight: 500;
+    margin: .25rem;
+    color: #000000;
+    border-bottom: 1px solid #d4c5e0;
+}
+/**/
+
+/* abonPrices */
+.abonPrices {}
+.abonPrices * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'CirceRounded', 'Circe Rounded', Arial, sans-serif;
+}
+.abonPrices {
+    max-width: 1200px;
+    margin: 1rem auto;
+    padding: .5rem;
+
+    display: flex;
+    /*flex-wrap: wrap;*/
+    overflow-x: auto;
+    gap: .5rem;
+    justify-content: stretch;
+}
+.abonPrices > div {
+    flex: 1 0 auto;
+    min-width: 150px;
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: #E5DDEC;
+    padding: .5rem;
+    border-radius: .75rem;
+}
+.abonPrices > div > article {
+    margin-block: auto;
+    padding: .25rem .5rem .5rem .5rem;
+}
+.abonPrices > div > div {
+    padding: .5rem;
+    background-color: #d4c5e0;
+    border-radius: .5rem;
+}
+.abonPrices > div > div:nth-child(2) {
+    margin-bottom: .25rem;
+}
+/* /abonPrices */
+
+@keyframes smoothShowTD {
+    from {
+        translate: 0 10%;
+        opacity: 0;
+        padding: 0 10px;
+        scale: 1.05;
+        transform: scale3d(1, .5, 1);
+    }
+    to {
+        translate: 0 0;
+        opacity: 1;
+        padding: 5px 10px;
+        scale: 1;
+        transform: scale3d(1, 1, 1);
+    }
+}
+@keyframes priceLoading {
+    from { rotate: 0 }
+    to { rotate: -360deg }
+}
+@keyframes groupFilter {
+    from {
+        opacity: 0;
+        translate: 0 -10px;
+    }
+    to {
+        opacity: 1;
+        translate: 0 0;
+    }
+}
+
+/*Цвета строк в ценах*/
+.eveningPricesBlock table.newTable tbody tr:nth-child(even) td,
+.morningPricesBlock table.newTable tbody tr:nth-child(even) td { background-color: #DBD3E1 !important; }
+
+@media screen and (max-width: 460px) {
+    .addSplash:after {
+        transform: translate(-70%, -50%) scale3d(.6, .4, .6);;
+    }
+    .scrollRight {
+        display: block;
+    }
+}

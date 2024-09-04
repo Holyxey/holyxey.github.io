@@ -1,0 +1,267 @@
+.coachesSection {}
+.coachesSection {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.coachesSection * {
+    box-sizing: content-box;
+    padding: 0;
+    margin: 0;
+}
+.coachesSection > section {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.coachesSection > section > .coach-card {
+    flex: 1 0 20%;
+    border-radius: 100vmin;
+    background-color: #E5DDEC;
+    max-width: 30%;
+    position: relative;
+    overflow: hidden;
+
+    aspect-ratio: 1 / 1;
+    border: 5px inset #d4c5e0;
+    box-shadow: 0 0 1rem #23232330;
+    cursor: pointer;
+
+    transition: scale .3s ease-out;
+    font-family: 'CirceRounded',Arial,sans-serif;
+}
+.coachesSection > section > .coach-card:active {
+    scale: .9;
+}
+
+.coachesSection > section > .coach-card .coach-avatar {
+    background-position: center top;
+    background-size: 100%;
+    /*border-radius: 1rem 1rem 1.5rem 1.5rem;*/
+    border-radius: 100vmin;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    transition: background .1s linear;
+}
+.coachesSection > section > .coach-card .coach-avatar:hover {
+    background-position: center 10%;
+    background-size: 105%;
+}
+
+.coachesSection > section > .coach-card .coach-info {
+    position: absolute;
+    background-color: rgba(225, 210, 237, 0.87);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    padding: .5rem 1rem .5rem 1rem;
+    box-shadow: 0 0 5px #23232300;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    overflow: hidden;
+
+    transition: all .3s ease-out;
+}
+.coachesSection > section > .coach-card .coach-info:hover {
+    padding: .5rem 1rem 4rem 1rem;
+    background-color: #d4c5e0;
+}
+.coachesSection > section > .coach-card .coach-info:after {
+    content: '';
+    position: absolute;
+    height: 2rem;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    background: linear-gradient(#d4c5e000 0%, #d4c5e0 80%);
+}
+.coachesSection > section > .coach-card .coach-info:hover:after {
+    background: linear-gradient(#d4c5e000 0%, #d4c5e0 80%);
+}
+.coachesSection > section > .coach-card .coach-info svg {
+    position: absolute;
+    top: .5rem;
+    right: .5rem;
+    height: 2rem;
+}
+
+.coachesSection > section > .coach-card .coach-info .coach-name {
+    font-size: 1.2rem;
+    text-align: center;
+    font-weight: 500;
+    margin-block: .5rem;
+    padding-inline: 20%;
+}
+.coachesSection > section > .coach-card .coach-info .coach-description {
+    position: absolute;
+    padding-block: 1rem;
+}
+
+#openCoach {}
+#openCoach {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 10000;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    background-color: #d4c5e0d0;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    overflow-y: auto;
+}
+#openCoach #openCoachClose {
+    cursor: pointer;
+    padding: .5rem;
+    height: 3rem;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100500;
+    border-radius: 100vmin;
+}
+#openCoach > div {
+    display: flex;
+    width: 1200px;
+    flex-wrap: wrap;
+    margin: 1rem;
+    border: 1px solid white;
+    position: relative;
+    background-color: #ffffff50;
+    z-index: 100;
+
+    min-height: 4rem;
+    overflow: hidden !important;
+}
+#openCoach > div:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 10%;
+    width: 20rem;
+    height: 200%;
+
+    background-color: #ffef8f;
+    z-index: -1;
+    rotate: -25deg;
+    border-radius: 100vmin;
+
+    animation: showUp 2s ease-out forwards;
+}
+#openCoach > div > .img {
+    background-size: cover;
+    background-position: center;
+
+    flex: 1 0 400px;
+    animation: showUp .8s ease-out;
+    margin-top: auto;
+    max-width: 400px;
+    aspect-ratio: 1 / 1;
+    z-index: 1;
+}
+
+#openCoach > div #openCoachInfo {}
+#openCoach > div #openCoachInfo * {
+    box-sizing: content-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'CirceRounded', "Helvetica Neue", sans-serif; }
+#openCoach > div #openCoachInfo {
+    flex: 1 0 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    z-index: 100;
+
+    padding: 1rem 2rem;
+}
+#openCoach > div #openCoachInfo .openCoachName {
+    font-family: 'Playfair Display', "Helvetica Neue", sans-serif;
+    font-size: 2rem;
+}
+#openCoach > div #openCoachInfo .openCoachDescription {
+    font-size: 1rem;
+}
+#openCoach > div #openCoachInfo .openCoachButton {
+    width: fit-content;
+    border-radius: 100vmin;
+    margin-top: auto;
+    background-color: #9792E3;
+    padding: 1rem 2rem;
+
+    text-decoration: none !important;
+    color: white !important;
+}
+
+@keyframes showUp {
+    from {
+        transform: translateX(-120px);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .coachesSection > section > .coach-card {
+        flex: 1 0 30%;
+    }
+}
+@media screen and (max-width: 700px) {
+    .coachesSection > section {
+        justify-content: center;
+    }
+    .coachesSection > section > .coach-card {
+        max-width: unset;
+        flex: 1 0 40%;
+    }
+
+    #openCoach > div {
+        flex-direction: column;
+    }
+}
+@media screen and (max-width: 460px) {
+    .coachesSection {
+        padding-inline: .5rem;
+    }
+    .coachesSection > section {
+        gap: .5rem;
+    }
+    .coachesSection > section > .coach-card {
+        flex: 1 0 40%;
+        border-radius: 10vmin;
+        aspect-ratio: 1 / 1.2;
+        max-width: 50%;
+    }
+    .coachesSection > section > .coach-card .coach-info {
+        padding: .5rem;
+    }
+    .coachesSection > section > .coach-card .coach-info .coach-name {
+        font-size: .9rem;
+        text-align: center;
+        font-weight: 500;
+        margin-block: .5rem;
+        padding-inline: 0;
+    }
+
+    #openCoach > div {
+        border-radius: 100vmin 100vmin 0 0;
+    }
+    #openCoach > div .img {
+        border-radius: 100vmin;
+        background-color: #ffef8f;
+        max-width: 100%;
+    }
+    #openCoach > div #openCoachInfo {
+        flex: 1 0 0;
+    }
+}
