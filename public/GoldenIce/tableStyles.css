@@ -130,7 +130,7 @@ td, th {
     }
     .h1-tables {
         font-size: 2rem;
-        margin: 3rem 0 2rem 2rem;
+        margin: 3rem 0 2rem .5rem
     }
     #golden-horizontal {
         padding: 0 5px 1rem 5px;
