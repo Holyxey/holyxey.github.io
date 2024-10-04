@@ -113,16 +113,24 @@ const firstLangChose = () => {
     }
 }
 
+
 //
 document.addEventListener('DOMContentLoaded', async () => {
     await subMenusHeader();
     await firstLangChose();
+    await function () {
+        const headerBottom =  document.querySelector('#header > div').getBoundingClientRect().bottom
+        const hero = document.querySelector('.hero')
+        const padTop = Number(hero.style.paddingTop.replace('px', ''))
+        hero.style.paddingTop = `${headerBottom}px`
+    }()
 })
 window.onload = async () => {
     try {
+        if (document.querySelector('.contact_hero'))
         await heroMargin(document.querySelector('.contact_hero'));
     } catch (e) {
-        console.log(e)
+        console.error(e)
     }
     await headerOnScroll()
 }

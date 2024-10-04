@@ -1,4 +1,61 @@
-/* GLOBAL */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Unicase:wght@300;400;500;600;700&display=swap');
+/* GLOBAL + TILDA */
+
+:root {
+    --back: #EBE3DE;
+    --text: #383c45;
+    --green: #334e3e;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: var(--back);
+}
+
+/*
+ */
+@font-face {
+    font-family: 'CeraPro';
+    src: url('https://static.tildacdn.com/tild3164-6336-4639-b662-383162616437/monotypecorsiva.woff') format('woff');
+    font-weight: 100;
+    font-style: normal
+}
+@font-face {
+    font-family: 'CeraPro';
+    src: url('https://static.tildacdn.com/tild3365-3461-4237-b066-323138643665/CeraPro-Thin.woff') format('woff');
+    font-weight: 300;
+    font-style: normal
+}
+@font-face {
+    font-family: 'CeraPro';
+    src: url('https://static.tildacdn.com/tild3937-3062-4464-a661-373563376562/CeraPro-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal
+}
+@font-face {
+    font-family: 'CeraPro';
+    src: url('https://static.tildacdn.com/tild6538-3662-4665-a635-373437323631/CeraPro-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal
+}
+@font-face {
+    font-family: 'CeraPro';
+    src: url('https://static.tildacdn.com/tild3433-6438-4430-b263-326139393039/CeraPro-Bold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal
+}
+@font-face {
+    font-family: 'CeraPro';
+    src: url('https://static.tildacdn.com/tild3138-3939-4139-b239-393063636535/CeraPro-Black.woff') format('woff');
+    font-weight: 700;
+    font-style: normal
+}
+/*
+ */
+
 .languages {
     display: flex;
     justify-content: center;
@@ -83,6 +140,44 @@
 #langChange > div button:last-child {
     color: var(--text) !important;
 }
+
+/* TILDA */
+.t-popup_show .t-popup__container.t-popup__container-static {
+    border-radius: 10px;
+}
+.t702 .t702__img {
+    border-radius: 10px 10px 10px 10px;
+}
+.t-input {
+    font-family: 'CeraPro', Arial, sans-serif;
+    height: 40px;
+}
+.t-select {
+    font-family: 'CeraPro', Arial, sans-serif;
+    height: 40px;
+}
+.t-submit {
+    font-family: 'CeraPro', Arial, sans-serif;
+    font-weight: 400;
+}
+.t702 .t-popup__block-close {
+    background: #EBE3DE;
+}
+.t-popup_show .t-popup__container.t-popup__container-static {
+    border-radius: 10px;
+}
+.t702 .t702__img {
+    border-radius: 10px 10px 0 0;
+}
+.t702 label {
+    font-family: "CeraPro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.t-descr_md {
+    font-size: 1rem;
+    font-weight: 500;
+}
+/*/ TILDA */
+
 @keyframes langChange {
     from {
         opacity: 0;
@@ -105,4 +200,4 @@
         padding: .5rem 1rem;
     }
 }
-/* !GLOBAL */
+/*/ GLOBAL + TILDA */

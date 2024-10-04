@@ -86,7 +86,7 @@ const scheduleWeek = {
         "Среда": [""],
         "Четверг": ["9.30-10.30 лёд", "10.45-11.45 зал", "17.45-18.45 лёд", "19.00-20.00 зал", "18.45-19.45 зал", "20.00-21.00 лёд"],
         "Пятница": ["18.45-19.45 зал", "20.00-21.00 лёд"],
-        "Суббота": ["11.15-12.15 зал", "12.30-13.30 лёд", "13.45-14.45 зал", "15.00-16.00 лёд"],
+        "Суббота": ["12.15-13.15 зал", "13.30-14-30 лёд", "14.45-15.45 зал", "16.00-17.00 лёд"],
         "Воскресенье": [""]
     },
     "parnasarena": {
@@ -575,7 +575,7 @@ const scheduleSeason = {
         },
         "Группа набора ": {
             "Дополнительно": "(без подготовки)",
-            "Тренер: Хе М.И.": {
+            "Хе М.И.": {
                 "Дополнительно": "",
                 "Расписание": {
                     "Понедельник": [
@@ -603,7 +603,7 @@ const scheduleSeason = {
                     ],
                 },
             },
-            "Тренер: Зубачова А.Н.": {
+            "Зубачова А.Н.": {
                 "Дополнительно": "",
                 "Расписание": {
                     "Понедельник": [
@@ -736,7 +736,7 @@ const scheduleSeason = {
         },
         "Юнош. разряды ": {
             "Дополнительно": "",
-            "Тренер: Глазкова А.О.": {
+            "Глазкова А.О.": {
                 "Дополнительно": "",
                 "Расписание": {
                     "Понедельник": [
@@ -798,7 +798,7 @@ const scheduleSeason = {
                     ],
                 },
             },
-            "Тренер: Серебряникова Е.А": {
+            "Серебряникова Е.А": {
                 "Дополнительно": "(2015-2010 г.р.)",
                 "Расписание": {
                     "Понедельник": [
@@ -831,7 +831,7 @@ const scheduleSeason = {
         },
         "Группа 3 года обучения ": {
             "Дополнительно": "(новичок 3, юный фигурист)",
-            "Тренер: Мушанова Е.А.": {
+            "Мушанова Е.А.": {
                 "Дополнительно": "(новичок 3, юный фигурист)",
                 "Расписание": {
                     "Понедельник": [
@@ -861,7 +861,7 @@ const scheduleSeason = {
                     ],
                 },
             },
-            "Тренер: Сорокина Е.А.": {
+            "Сорокина Е.А.": {
                 "Дополнительно": "(новичок 3, юный фигурист)",
                 "Расписание": {
                     "Понедельник": [
@@ -953,7 +953,7 @@ const scheduleSeason = {
         },
         "Группа 2 года обучения ": {
             "Дополнительно": "(новичок 1, новичок 2)",
-            "Селезнева К.А.": {
+            "Селезенева К.А.": {
                 "Дополнительно": "7-10 лет",
                 "Расписание": {
                     "Понедельник": [
@@ -1099,38 +1099,7 @@ const scheduleSeason = {
                 },
             },
         },
-        "Группа набора 1": {
-            "Дополнительно": "(без подготовки)",
-            "тренер не определен": {
-                "Дополнительно": "",
-                "Расписание": {
-                    "Понедельник": [
-                        "",
-                    ],
-                    "Вторник": [
-                        "9:45-10:45 зал",
-                        "11:00-12:00 лед ",
-                    ],
-                    "Среда": [
-                        "",
-                    ],
-                    "Четверг": [
-                        "9:45-10:45 зал",
-                        "11:00-12:00 лед ",
-                    ],
-                    "Пятница": [
-                        "",
-                    ],
-                    "Суббота": [
-                        "",
-                    ],
-                    "Воскресенье": [
-                        "",
-                    ],
-                },
-            },
-        },
-        "Группа набора 2": {
+        "Группы набора": {
             "Дополнительно": "(без подготовки)",
             "Серебряникова А.А/ Назарова Е.А.": {
                 "Дополнительно": "3-5 лет",
@@ -1160,10 +1129,35 @@ const scheduleSeason = {
                     ],
                 },
             },
-        },
-        "Группа набора 3": {
-            "Дополнительно": "(без подготовки)",
-            "тренер не определен": {
+            " ": {
+                "Дополнительно": "",
+                "Расписание": {
+                    "Понедельник": [
+                        "",
+                    ],
+                    "Вторник": [
+                        "9:45-10:45 зал",
+                        "11:00-12:00 лед ",
+                    ],
+                    "Среда": [
+                        "",
+                    ],
+                    "Четверг": [
+                        "9:45-10:45 зал",
+                        "11:00-12:00 лед ",
+                    ],
+                    "Пятница": [
+                        "",
+                    ],
+                    "Суббота": [
+                        "",
+                    ],
+                    "Воскресенье": [
+                        "",
+                    ],
+                },
+            },
+            "  ": {
                 "Дополнительно": "3-5 лет",
                 "Расписание": {
                     "Понедельник": [
@@ -1359,7 +1353,7 @@ const scheduleSeason = {
         },
         "Группа 3 года обучения ": {
             "Дополнительно": "(новичок 3, юный фигурист)",
-            "Тренер: Доронина С.И. / Доронина А.И.": {
+            "Доронина С.И. / Доронина А.И.": {
                 "Дополнительно": "",
                 "Расписание": {
                     "Понедельник": [
@@ -1542,7 +1536,7 @@ const scheduleSeason = {
         },
         "Группа набора": {
             "Дополнительно": "(без подготовки)",
-            "Тренер: Талалайкина М.С.": {
+            "Талалайкина М.С.": {
                 "Дополнительно": "",
                 "Расписание": {
                     "Понедельник": [
@@ -1695,7 +1689,7 @@ const scheduleSeason = {
                     ],
                 },
             },
-            "Тренер: Попова Е.А.": {
+            "Попова Е.А.": {
                 "Дополнительно": "",
                 "Расписание": {
                     "Понедельник": [
@@ -1758,7 +1752,7 @@ const scheduleSeason = {
                 },
             },
         },
-        "Новый набор 2024/2025": {
+        "Новый набор": {
             "Дополнительно": "",
             "Соколова Д.С.": {
                 "Дополнительно": "",
@@ -2547,7 +2541,7 @@ const scheduleSeason = {
                     ],
                 },
             },
-            "тренер не определен": {
+            " ": {
                 "Дополнительно": "(без подготовки)",
                 "Расписание": {
                     "Понедельник": [
@@ -2854,7 +2848,6 @@ const scheduleSeason = {
                 },
             },
         },
-
     },
     "repinoarena": {
         "Спортивные разряды ": {
@@ -3055,12 +3048,16 @@ const abonPrices = {
         [ "8000", "12000", "18000", "22400", "29400", "-", ] // Вечерние абонементы
     ],
     "border": [
-        [ "12000", "18000", "-", "-", "-", "-", ], // Утренние абонементы
+        [ "-", "12000", "18000", "-", "-", "-", ], // Утренние абонементы
         [ "8000", "12800", "19200", "24000", "31500", "37500", ] // Вечерние абонементы
     ],
     "arenachance": [
-        [ "12000", "18000", "-", "-", "-", "-", ], // Утренние абонементы
+        [ "-", "12000", "18000", "-", "-", "-", ], // Утренние абонементы
         [ "8000", "12800", "19200", "24000", "31500", "37500", ] // Вечерние абонементы
+    ],
+    "arenaneva": [
+        [ "-", "12000", "18000", "-", "-", "-", ], // Утренние абонементы
+        [ "10000", "14400", "21600", "25600", "31500", "37500", ] // Вечерние абонементы
     ],
     "arenakharlamova": [
         [ "-", "-", "-", "-", "-", "-", ], // Утренние абонементы
@@ -3083,17 +3080,17 @@ const abonPrices = {
         [ "8000", "12000", "18000", "22400", "29400", "-", ] // Вечерние абонементы
     ],
     "shuvalovskyarena": [
-        [ "10400", "15600", "-", "-", "-", "-", ], // Утренние абонементы
-        [ "8000", "12000", "18000", "22400", "29400", "-", ] // Вечерние абонементы
-    ],
-    "parnasarena": [
-        [ "-", "-", "-", "-", "-", "-", ], // Утренние абонементы
+        [ "-", "10400", "15600", "-", "-", "-", ], // Утренние абонементы
         [ "8000", "12000", "18000", "22400", "29400", "-", ] // Вечерние абонементы
     ],
     "repinoarena": [
         [ "-", "-", "-", "-", "-", "-", ], // Утренние абонементы
         [ "8000", "12000", "18000", "24000", "31500", "37500", ] // Вечерние абонементы
     ],
+    // "parnasarena": [
+    //     [ "-", "-", "-", "-", "-", "-", ], // Утренние абонементы
+    //     [ "8000", "12000", "18000", "22400", "29400", "-", ] // Вечерние абонементы
+    // ],
     "TEMPLATE": [
         [
             "Одноразовый: <br> 4 занятия",
@@ -3104,6 +3101,86 @@ const abonPrices = {
             "6&#8209;и разовый: <br> 25 занятий", ], // Утренние абонементы
         [ "-", "-", "-", "-", "-", "-", ] // Вечерние абонементы
     ],
+}
+const arenasObject = {
+    iceburgarena: {
+        name: 'Айсбург',
+        address: '',
+        link: '/iceburgarena',
+        menuName: '"Айсбург" - м. Пионерская/Комендантский',
+    },
+    ice3: {
+        name: 'Лёд-3',
+        address: '',
+        link: '/ice3',
+        menuName: '"Лед-3" - м. Электросила/Московские ворота',
+    },
+    border: {
+        name: 'Рубеж',
+        address: '',
+        link: '/border',
+        menuName: '"Рубеж" - м. пр.Ветеранов',
+    },
+    arenachance: {
+        name: 'Шанс',
+        address: '',
+        link: '/arenachance',
+        menuName: '"Шанс" - м. Лесная',
+    },
+    arenaneva: {
+        name: 'Дальневосточный',
+        address: '',
+        link: '/arenaneva',
+        menuName: '«Нева (Дальневосточный)»',
+    },
+    arenakharlamova: {
+        name: 'Харламова',
+        address: '',
+        link: '/arenakharlamova',
+        menuName: '"Ак. Харламова" - м. Бухарестская/Международная\n',
+    },
+    arenarocket: {
+        name: 'Ракета',
+        address: '',
+        link: '/arenarocket',
+        menuName: '"Ракета" - п. Шушары',
+    },
+    strelna: {
+        name: 'Стрельна',
+        address: '',
+        link: '/strelna',
+        menuName: '"Стрельна" - п. Стрельна',
+    },
+    petergof: {
+        name: 'Петергоф',
+        address: '',
+        link: '/petergof',
+        menuName: '"Петергоф" - г. Петергоф',
+    },
+    redstar: {
+        name: 'Красная звезда',
+        address: '',
+        link: '/redstar',
+        menuName: '"Красная звезда" - м. Ладожская/ пр.Большевиков',
+    },
+    shuvalovskyarena: {
+        name: 'Шуваловский лёд',
+        address: '',
+        link: '/shuvalovskyarena',
+        menuName: '"Шуваловский лед" - м. Комендантский пр./Озерки',
+    },
+    repinoarena: {
+        name: 'Репино',
+        address: '',
+        link: '/repinoarena',
+        menuName: 'ЗК «Репино - Ленинское»',
+    },
+    // parnasarena: {
+    //     name: 'Парнас',
+    //     address: '',
+    //     link: '',
+    //     menuName: '',
+    //     },
 }
 
 const renderWeek = (arena) => {
@@ -3176,12 +3253,15 @@ const renderSeason = (arena) => {
 }
 const renderSeasonSections = document.querySelectorAll('.scheduleSeason')
 const filterSetup = () => {
-    const buttons = document.querySelectorAll('.arena-filters > [data-button]')
-    const groups = document.querySelectorAll('.arena-filters-schedule > [data-group-name]')
-
-    if (buttons && groups) {
-        buttons[0].classList.toggle('active')
-        filterSeason(buttons[0].textContent, true)
+    try {
+        const buttons = document.querySelectorAll('.arena-filters > [data-button]')
+        const groups = document.querySelectorAll('.arena-filters-schedule > [data-group-name]')
+        if (buttons && groups) {
+            buttons[0].classList.toggle('active')
+            filterSeason(buttons[0].textContent, true)
+        }
+    } catch (e) {
+        console.log(e.message)
     }
 }
 const filterSeason = (groupName, firstSetup = false) => {
@@ -3205,6 +3285,46 @@ const filterSeason = (groupName, firstSetup = false) => {
 
 const abonPricesSections = document.querySelectorAll('.abonPrices')
 
+const renderByTiming = (sectionName) => {
+    const section = document.querySelector(`[data-arena-name="${sectionName}"]`)
+    const tickets = abonPrices["TEMPLATE"][0]
+    const removeEmpty = () => {
+        const abons = document.querySelectorAll('[data-ticket]')
+        abons.forEach(abon => {
+            if (!abon.querySelector('div')) {
+                abon.remove()
+            }
+        })
+    }
+    const insertPrice = (index) => {
+        let list = ''
+        if (sectionName === 'all-evening') {
+            for (const [name, value] of Object.entries(abonPrices)) {
+                if (name === 'TEMPLATE' || value[1][index] === '-') continue
+                const realName = arenasObject[name].name
+                list = list + (`<div>${realName}<span> - ${value[1][index]}</span></div>`)
+            }
+        }
+        if (sectionName === 'all-morning') {
+            for (const [name, value] of Object.entries(abonPrices)) {
+                if (name === 'TEMPLATE' || value[0][index] === '-') continue
+                const realName = arenasObject[name].name
+                list = list + (`<div>${realName}<span> - ${value[0][index]}</span></div>`)
+            }
+        }
+        if (list) return list; else return ''
+    }
+    tickets.forEach((ticket, index) => {
+        section.insertAdjacentHTML('beforeend',
+            `<div data-ticket="${ticket}">
+            <article>${ticket}</article>
+            ${insertPrice(index)}
+            </div>`
+        )
+    });
+    removeEmpty()
+
+}
 renderWeekSections.forEach(section => {
     renderWeek(section.getAttribute('data-arena-name'))
 })
@@ -3213,17 +3333,25 @@ renderSeasonSections.forEach(section => {
 })
 abonPricesSections.forEach(section => {
     const arenaName = section.getAttribute('data-arena-name')
+    if (arenaName === 'all-evening' || arenaName === 'all-morning') return renderByTiming(arenaName)
+
     const arenaData = abonPrices[arenaName]
     const variants = abonPrices["TEMPLATE"][0]
 
     for (let i = 0; i < variants.length; i++) {
         section.insertAdjacentHTML('beforeend', `<div>
                 <article>${variants[i]}</article>
-                <div>Утро: ${arenaData[1][i]}</div>
-                <div>Вечер: ${arenaData[0][i]}</div>
+                <div>Вечер: ${arenaData[1][i]}</div>
+                <div>Утро: ${arenaData[0][i]}</div>
             </div>`)
     }
 })
+
+const menuIs = document.querySelector("#goldenHero menu li ul");
+for (const [key, value] of Object.entries(arenasObject)) {
+    const {name, address, link, menuName} = value
+    menuIs.insertAdjacentHTML("beforeend", `<li><a href="${link}">${name}</a></li>`)
+}
 
 //
 filterSetup()

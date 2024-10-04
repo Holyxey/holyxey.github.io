@@ -44,7 +44,7 @@
     /*height: var(--rem-c);*/
     max-width: 100px;
     max-height: 50px;
+    display: block;
+    object-fit: contain;
+    border: #9f1c4e solid 1px;
 }
-
-/*
-*/

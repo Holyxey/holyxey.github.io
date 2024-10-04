@@ -1,0 +1,213 @@
+#coachInfo,
+#coachInfo *,
+#coaches,
+#coaches * { box-sizing: border-box; }
+/*
+*/
+
+#coaches {}
+#coaches > h2 { padding-right: 10rem}
+#coaches > section {
+    max-width: 1200px;
+    margin: 1rem auto 10rem auto;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    position: relative;
+}
+#coaches > section * {
+    cursor: pointer;
+    font-family: 'CirceRounded', 'Circe Rounded', Arial, sans-serif;
+
+}
+#coaches > section > article {
+    flex: 1 0 250px;
+    max-width: 300px;
+    margin-bottom: 2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1 / 1;
+    /*border-radius: 3rem 3rem 1rem 1rem;*/
+    border-radius: 100vmin;
+    /*background-image: url("https://codahosted.io/docs/tHfdwb1AeV/blobs/bl-K9eGJG_KTt/24eb46b7522ee7160729e7b0d748c9b5eb78af1f97036e7213e356ffb5558171ef1b861972fb21e0254723bdea39deb99ab4f02e43f9259c888c67041969640fb7f0a8c8013dace941439a6a5491de3198836a723ebd99697c7e1d3e3c36d9385795177a");*/
+    background-image: url("https://thumb.tildacdn.com/tild3938-3737-4234-a564-616631643964/-/format/webp/___.png");
+
+    background-size: 130%;
+    background-position: center;
+    border: 2px solid #E5DDEC;
+    position: relative;
+    box-shadow: inset 0 0 1rem #232323;
+
+    transition: background 1s ease, box-shadow .3s ease-out, border-color .3s ease-out;
+}
+#coaches > section > article:hover {
+    background-size: 100%;
+    box-shadow: inset 0 0 1rem #23232300;
+    border-color: #ffffff;
+}
+#coaches > section > article img {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-height: 100%;
+    transition: scale .5s ease, translate .3s ease-out;
+    border-radius: 100vmin;
+}
+#coaches > section > article img:hover {
+    scale: 1.1;
+    translate: 0 10px;
+}
+#coaches > section > article .personInfo {
+    margin-top: auto;
+    background-color: #d4c5e090;
+    border-radius: 2rem;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    width: 100%;
+    padding-block: 0;
+    z-index: 2;
+    transform: translateY(60%);
+}
+#coaches > section > article .personInfo h4 {
+    text-align: center;
+    max-width: 50%;
+    margin-inline: auto;
+    font-weight: 100;
+}
+
+/*
+*/
+#coachInfo {}
+#coachInfo,
+#coachInfo * {
+    box-sizing: border-box;
+    font-family: 'CirceRounded', 'Circe Rounded', Arial, sans-serif;
+
+}
+#coachInfo {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #ffffff80;
+    z-index: 1000;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: .5rem;
+    overflow-y: auto;
+}
+#coachInfo h4 {
+    padding-block: 1rem;
+}
+#closeCoachInfo {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 100500;
+    cursor: pointer;
+}
+
+#coachInfo article {
+    background-color: #ffffff90;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 2rem 2rem 2rem;
+    border-radius: 2rem 1rem 2rem 2rem;
+    border: 1px solid white;
+
+    animation: smoothUp .3s ease-out;
+}
+#coachInfo article img {
+    display: block;
+    max-width: 300px;
+    float: left;
+    margin: 2rem 2rem 2rem 0;
+    border-radius: 100vmin;
+    background-color: #ffef8f;
+}
+#coachInfo article h5 { font-size: 1.5rem }
+#coachInfo article #coachArenas {
+    margin-block: 2rem;
+}
+#coachInfo article #coachArenas h6 {
+    margin-bottom: 0;
+    font-size: 1.1rem;
+}
+#coachInfo article #coachButtons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding-top: 1rem;
+}
+#coachInfo article #coachButtons a {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+    padding: .75rem 1.5rem;
+    border-radius: 1rem;
+    color: #000000;
+}
+#coachInfo article #coachButtons a:nth-child(1) {
+    background-color: #62BFED;
+    flex: 1 0 200px;
+}
+#coachInfo article #coachButtons a:nth-child(2) {
+    background-color: #ffffff;
+    display: none;
+}
+#coachInfo article #coachButtons a:nth-child(3) {
+    background-color: #ffffff;
+    display: none;
+}
+
+.showAppButton {
+    position: absolute;
+    /*top: 0;*/
+    bottom: -13rem;
+    right: 1rem;
+    translate: 0 -200%;
+    background-color: #ffef8f;
+    padding: 1rem 1.5rem;
+    border-radius: 2rem;
+    border: 2px solid #d4c5e0;
+    z-index: 5;
+}
+
+
+@media screen and (max-width: 460px) {
+    #coaches > section {
+        gap: 2rem .5rem;
+    }
+    #coaches > section > article {
+        flex: 1 0 150px;
+        max-width: 300px;
+    }
+    #coaches > section > article .personInfo {
+        padding-block: .25rem;
+    }
+
+    #coachInfo article {
+        border-radius: 100vmin 100vmin 2rem 2rem;
+        padding: .5rem;
+    }
+    #coachInfo article img {
+        border-radius: 100vmin;
+        background-color: #ffef8f;
+        max-width: 100%;
+        margin: 0 0 2rem 0;
+    }
+}
+
+@keyframes smoothUp {
+    from { opacity: 0; translate: 0 20px }
+    to { opacity: 1; translate: 0 0 }
+}

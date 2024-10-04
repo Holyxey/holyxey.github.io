@@ -1,7 +1,7 @@
 //
 const readToken = '4d68a702-50a9-4a9f-9cb7-bcc1cbaa1387'
 const docId = 'tHfdwb1AeV'
-const TABLE_COACHES = document.getElementById('coaches')
+const TABLE_COACHES = document.getElementById('coachesNew')
 const SECTION_COACHES = TABLE_COACHES.querySelector('section')
 const TABLE_MANAGERS = document.getElementById('managers')
 const SECTION_MANAGERS = TABLE_MANAGERS.querySelector('section')
