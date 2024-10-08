@@ -1,9 +1,4 @@
-// 'use strict';
-const getToken = async () => {
-    const getToken = await fetch('https://api.holyxey.com/terruar/token')
-    const token = await getToken.json()
-    return token.token
-}
+'use strict';
 const seasonTapes = [
     'Бассейн'
 ]
@@ -1852,28 +1847,9 @@ const whereToRenderCounter = function () {
 // Запуск записи стрима вместо трансляции
 async function videoPlayBack() {
     try {
-        const token = await getToken()
-        const response = await fetch("https://api.b2o.goodline.info/ords/mobile/vc2/downloads", {
-            "headers": {
-                "accept": "application/json",
-                "api_key": "86e3ff40ec2c52a8504c8669710b4394",
-                "cache-control": "no-cache",
-                "pragma": "no-cache",
-                "priority": "u=1, i",
-                "token": `${token}`
-                // "token": `${videoPlayBackToken}`
-            },
-            "referrer": "https://video.linkvideo.ru/",
-            "referrerPolicy": "strict-origin-when-cross-origin",
-            "body": null,
-            "method": "GET",
-            "mode": "cors",
-            "credentials": "omit"
-        });
+        const response = await fetch('https://api.holyxey.com/terruar/downloads')
         const data = await response.json();
         console.log('data', data[0])
-        // document.getElementById('videoPlayBack').src = data[0].url;
-        // document.getElementById('videoPlayBack').parentNode.play()
         document.getElementById('popup-block').insertAdjacentHTML('beforeend', `<article id="video-stream" >
                 <video controls autoplay muted playsinline loop style="width: 100%">
                     <source id="videoPlayBack" src="${data[0].url}" type="video/mp4">
@@ -1971,6 +1947,5 @@ document.addEventListener("DOMContentLoaded", async () => {
         .then(renderOffers)
         .then(loyaltyWorker)
 
-    // console.clear();
-    console.log('Designed by Holyxey at AdsTarget');
+    console.log('Designed by Holyxey at AdsTarget')
 })
