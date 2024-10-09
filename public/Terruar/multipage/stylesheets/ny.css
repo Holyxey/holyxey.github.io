@@ -29,6 +29,7 @@ main:has(> .ny-block) {
     max-width: 600px;
     padding: 3rem;
     backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     color: var(--holyxey-white);
 }
 .ny-block .infoBlock .infoHeads {

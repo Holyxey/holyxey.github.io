@@ -336,7 +336,7 @@ const lists = {
     offers: [
         {
             title: 'Скидка 10%',
-            description: 'Для заездов с 19 июня по 26 июня',
+            description: 'Для заездов с 9 октября по 17 октября',
             cover: 'https://thumb.tildacdn.com/tild3538-3836-4137-a136-646137323339/-/format/webp/1_service.png',
         },
         {
@@ -1849,7 +1849,7 @@ async function videoPlayBack() {
     try {
         const response = await fetch('https://api.holyxey.com/terruar/downloads')
         const data = await response.json();
-        console.log('data', data[0])
+        // console.log('data', data[0])
         document.getElementById('popup-block').insertAdjacentHTML('beforeend', `<article id="video-stream" >
                 <video controls autoplay muted playsinline loop style="width: 100%">
                     <source id="videoPlayBack" src="${data[0].url}" type="video/mp4">

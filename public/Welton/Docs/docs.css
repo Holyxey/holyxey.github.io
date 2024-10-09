@@ -1,0 +1,105 @@
+.holy_body {
+    display: flex;
+    max-width: 800px;
+
+    /* max-width: 1200px; */
+    /* gap: 50px; */
+    margin-top: 100px;
+    background-color: #fff;
+    margin-left: 20vw;
+    margin-right: 20vw;
+    flex-direction: column;
+    align-items: center;
+    flex: 1 0 0;
+    align-self: stretch;
+}
+.holy_bodys {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    /*flex-direction: column;*/
+    /*flex: 1 0 0;*/
+    /*align-self: stretch;*/
+}
+h1 {
+    margin-top: 50px;
+    margin-bottom: 30px;
+    color: #334E3E;
+    text-align: center;
+    font-size: 2rem;
+    font-family: 'Cormorant Unicase';
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    max-width: 600px;
+}
+h2 {
+    margin-top: 50px;
+    margin-bottom: 30px;
+    color: #334E3E;
+    text-align: center;
+    font-size: 2rem;
+    font-family: 'Cormorant Unicase';
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+
+    max-width: 600px;
+}
+p, .p {
+    color: #454953;
+    margin-top: 1rem;
+    max-width: 600px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    font-family: 'CeraPro', 'Cera Round Pro DEMO', "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+p {
+    font-size: 1rem;
+}
+.p {
+    font-size: 15px;
+}
+
+@media screen and (max-width: 960px) {
+    .holy_body {
+        margin: 3%;
+        padding: 3%;
+        border-radius: 1rem;
+    }
+
+    h1 {
+        /*margin-top: 100px;*/
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        line-height: 2rem;
+    }
+
+    h2 {
+        margin-top: 3rem;
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+        line-height: 1.5rem;
+    }
+}
+@media screen and (min-width: 960px) {
+    .t-width {
+        background-color: #EBE3DE;
+        padding-bottom: 1rem !important;
+        padding-top: 2rem !important;
+    }
+    .holy_body {
+        background-color: #fff;
+        border-radius: 1rem;
+        padding: 2rem;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+    }
+
+    h1 {
+        margin: 1rem;
+    }
+    h2 {
+        margin: 2rem;
+    }
+}
