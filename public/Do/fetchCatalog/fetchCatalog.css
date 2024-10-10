@@ -89,6 +89,107 @@ body {
     border-radius: 100vmin;
 }
 
+::-webkit-scrollbar {
+    background-color: var(--back);
+    width: 5px;
+    height: 5px;
+    right: 5rem;
+}
+::-webkit-scrollbar-thumb {
+    background-color: var(--dark);
+}
+nav {
+    position: sticky;
+    top: .25rem;
+    background-color: var(--dark);
+    z-index: 100;
+    width: fit-content;
+    max-width: 100%;
+    margin-inline: auto;
+    border-radius: 100vmin;
+    border: .5rem solid black;
+    overflow: hidden;
+}
+nav.mobMenu {
+    transition: all .3s ease-out;
+    padding-bottom: 1rem;
+}
+nav menu {
+    display: flex;
+    overflow-x: auto;
+    align-items: center;
+    justify-content: flex-start;
+    gap: .5rem;
+}
+nav menu.mobMenu { transition: all .3s ease-out; flex-direction: column; padding-right: 0 }
+nav menu::-webkit-scrollbar { display: none }
+nav menu li {
+    display: block;
+    transition: all 1s ease-out;
+    animation: show .5s ease-out
+}
+nav menu li button {
+    text-wrap: nowrap;
+    padding: .5rem 1rem;
+    border: none;
+    border-radius: 100vmin;
+    font-size: 1rem;
+    font-weight: 300;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+
+    transition: color .3s ease-out, background-color .3s ease-out;
+    background-color: black;
+    color: white;
+}
+nav menu li button:hover {
+    background-color: white;
+    color: black;
+}
+nav menu li button > svg {
+    display: inline-block;
+    height: 1rem;
+    margin: auto;
+}
+nav menu li button.chosen {
+    background-color: white;
+    color: black;
+}
+nav menu li button#langButton span {
+    display: inline-block;
+    font-size: 1.5rem;
+    line-height: 100%;
+}
+nav menu li:has(.navButton).mobMenu { /*display: none;*/ }
+nav menu li:has(button#langButton) {
+    position: sticky;
+    left: 0;
+    z-index: 100;
+}
+nav menu li:has(button#navBurger) {
+    position: fixed;
+    right: .25rem;
+    z-index: 100;
+    top: .75%;
+}
+nav menu li button#navBurger.mobMenu {
+    background-color: black!important;
+}
+nav menu li:has(button#navBurger) svg {
+    height: 1.5rem;
+    transition: all .3s ease-out;
+}
+nav menu li button#navBurger.mobMenu svg {
+    > path {
+        stroke: white!important;
+    }
+    rotate: 10deg;
+}
+
 #fetchCatalog {
     display: flex;
     flex-direction: column;
@@ -96,6 +197,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
 }
+#fetchCatalog * { animation: show .5s ease-out }
 #fetchCatalog > .category {
     flex: 1;
 
@@ -105,7 +207,7 @@ body {
 }
 #fetchCatalog > .category > .product {
     flex: 1 0 40%;
-    padding: .5rem 0;
+    padding: .5rem;
     max-width: calc(50% - 1rem);
 
     display: flex;
@@ -156,7 +258,7 @@ body {
 }
 #fetchCatalog > .category > .product > .productGallery {
     display: flex;
-    padding-left: 1rem;
+    /*padding-left: 1rem;*/
     overflow-x: auto;
     height: 250px;
     gap: 1rem;
@@ -214,8 +316,8 @@ body {
 }
 
 @keyframes show {
-    from {opacity: 0; translate: 0 1rem}
-    to {opacity: 1; translate: 0 0}
+    from { opacity: 0; translate: 0 -1rem }
+    to { opacity: 1; translate: 0 0 }
 }
 
 @media (max-width: 1366px) {
@@ -230,7 +332,6 @@ body {
         gap: 2rem;
     }
     #fetchCatalog > .category {
-        padding: .25rem .5rem;
         flex-direction: column;
     }
     #fetchCatalog > .category > .product {
@@ -240,9 +341,20 @@ body {
         width: fit-content;
         margin: 0 auto;
     }
+    nav {
+        top: 0;
+        border-radius: 0;
+        width: 100vw;
+    }
+    nav menu {
+        padding-right: 3rem;
+    }
 }
 @media (min-width: 450px) {
     #mobMenu {
+        display: none;
+    }
+    nav menu li:has(button#navBurger) {
         display: none;
     }
 }

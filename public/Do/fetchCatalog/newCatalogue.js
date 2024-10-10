@@ -1,4 +1,4 @@
-let catalogData = {
+const catalogData = {
     "partuid": 227151755511,
     "filter": "y",
     "filters": {
@@ -2112,62 +2112,6 @@ let catalogData = {
                     "sku": "",
                     "quantity": "",
                     "img": ""
-                }
-            ],
-            "characteristics": []
-        },
-        {
-            "uid": 303095119972,
-            "title": "Dolce &amp; Salato",
-            "sku": "",
-            "text": "",
-            "mark": "",
-            "quantity": "",
-            "portion": 0,
-            "unit": "",
-            "single": "",
-            "price": "450.0000",
-            "priceold": "",
-            "descr": "Мусс из крем-чиза с чипсами из пармезана",
-            "gallery": "[{\"img\":\"https:\\/\\/static.tildacdn.com\\/stor3166-3262-4564-b963-393062313036\\/12785448.jpg\"}]",
-            "buttonlink": "",
-            "buttontarget": "",
-            "json_options": "",
-            "sort": 1012800,
-            "url": "https://dowine.bar/en-menu/tproduct/303095119972-dolce-amp-salato",
-            "pack_label": "lwh",
-            "pack_x": 0,
-            "pack_y": 0,
-            "pack_z": 0,
-            "pack_m": 0,
-            "partuids": "[251472980961]",
-            "externalid": "S3dFgEGFl9JCL8NM2REB",
-            "properties": [
-                {
-                    "title": "Name",
-                    "params": {
-                        "type": "single"
-                    },
-                    "sort": 1,
-                    "values": "Dolce &amp; Salato"
-                },
-                {
-                    "title": "Description",
-                    "params": {
-                        "type": "single"
-                    },
-                    "sort": 2,
-                    "values": "Cream cheese mousse with parmesan chips"
-                }
-            ],
-            "editions": [
-                {
-                    "uid": 303095119972,
-                    "price": "450.0000",
-                    "priceold": "",
-                    "sku": "",
-                    "quantity": "",
-                    "img": "https://static.tildacdn.com/stor3166-3262-4564-b963-393062313036/12785448.jpg"
                 }
             ],
             "characteristics": []
@@ -4536,6 +4480,62 @@ let catalogData = {
                 }
             ],
             "characteristics": []
+        },
+        {
+            "uid": 868627261312,
+            "title": "Тирамису",
+            "sku": "",
+            "text": "",
+            "mark": "",
+            "quantity": "",
+            "portion": 0,
+            "unit": "",
+            "single": "",
+            "price": "400.0000",
+            "priceold": "",
+            "descr": "по домшнему рецепту нашего итальянского шефа-повара",
+            "gallery": "[{\"img\":\"https:\\/\\/static.tildacdn.com\\/stor6630-3038-4363-b234-333139346130\\/96353679.jpg\"}]",
+            "buttonlink": "",
+            "buttontarget": "",
+            "json_options": "",
+            "sort": 1017400,
+            "url": "https://dowine.bar/en-menu/tproduct/868627261312-tiramisu",
+            "pack_label": "lwh",
+            "pack_x": 0,
+            "pack_y": 0,
+            "pack_z": 0,
+            "pack_m": 0,
+            "partuids": "[251472980961]",
+            "externalid": "RRAZKOsJZFmmUk7L9FfY",
+            "properties": [
+                {
+                    "title": "Name",
+                    "params": {
+                        "type": "single"
+                    },
+                    "sort": 1,
+                    "values": "Tiramisu"
+                },
+                {
+                    "title": "Description",
+                    "params": {
+                        "type": "single"
+                    },
+                    "sort": 2,
+                    "values": "by original recipe of our Italian chef"
+                }
+            ],
+            "editions": [
+                {
+                    "uid": 868627261312,
+                    "price": "400.0000",
+                    "priceold": "",
+                    "sku": "",
+                    "quantity": "",
+                    "img": "https://static.tildacdn.com/stor6630-3038-4363-b234-333139346130/96353679.jpg"
+                }
+            ],
+            "characteristics": []
         }
     ],
     "slice": 1,
@@ -5203,242 +5203,179 @@ let catalogData = {
     ]
 }
 
-const catalogLink = `https://store.tildaapi.com/api/getproductslist/?storepartuid=227151755511&recid=748764525&c=1715780724989&getparts=true&getoptions=true&slice=1&size=100`;
-const catalogLanguageCheck = () => {
-    const localStorageLang = localStorage.getItem("doMenuLanguage");
-    const byHref = '/eng';
-    const agentLang = navigator.language || navigator.userLanguage;
-    const href = window.location.href;
-    const renderLangButton = (inner, changeTo) => {
-        document.getElementById('changeLanguage').onclick = () => {
-            localStorage.setItem("doMenuLanguage", changeTo);
-            location.reload()
-        }
-    }
-    if (localStorageLang === 'eng') {
-        renderLangButton('На русском', "rus")
-        document.getElementById('changeLanguage').textContent = 'In RUS'
-        return 'eng';
-    } else
-    if (localStorageLang === 'rus') {
-        renderLangButton('In English', "eng")
-        document.getElementById('changeLanguage').textContent = 'In ENG'
-        return 'rus';
-    } else
-    if (href.includes(byHref) || agentLang.includes('en')) {
-        renderLangButton('На русском', "rus")
-        return 'eng'
-    }
-} // Языковой обработчик. Возвращает "eng" / "rus" в зависимости от правил
-const catalogNavOnScroll = () => {
-    let c = document.querySelector('.active')
-    c.scrollIntoView()
-} // Скроллим к активному пункту
-const catalogMenuButton = () => {
-    let nav = document.getElementById('menuNavbar')
-    let navButton = document.getElementById('mobMenu')
-    switch (navButton.getAttribute('clicked')) {
-        case '0':
-            nav.style.cssText += `flex-wrap: wrap; 
-                                    flex-direction: column; 
-                                    width: 100%; 
-                                    height: fit-content; 
-                                    top: auto; 
-                                    transition: all .5s ease-out;`
-            navButton.style.cssText += 'right: -5rem; opacity: 0'
-            navButton.setAttribute('clicked', '1')
-            break
-        case '1':
-            nav.style.cssText += `flex-wrap: unset; 
-                                    flex-direction: row; 
-                                    width: fit-content(); 
-                                    height: usnet; 
-                                    top: 0; 
-                                    bottom: auto; 
-                                    transition: all .5s ease-out;`
-            navButton.style.cssText += 'right: 1rem; opacity: 1'
-            navButton.setAttribute('clicked', '0')
-            break
-    }
-} // Кнопка "меню" в мобилке
-const catalogNavScroll = (navButton) => {
-    document.querySelectorAll('.navButton').forEach(el => {el.classList.remove('active')})
-    navButton.classList.add('active');
-    let title = navButton.textContent
-    let nav = document.getElementById('menuNavbar')
-    let navMenuButton = document.getElementById('mobMenu')
-    if (navMenuButton.getAttribute('clicked') === '1') {
-        nav.style.cssText += `flex-wrap: unset; 
-                                    flex-direction: row;
-                                    width: fit-content(); 
-                                    height: usnet; 
-                                    top: 0; 
-                                    bottom: auto; 
-                                    transition: all .5s ease-out;`
-        navMenuButton.setAttribute('clicked', '0')
-        navMenuButton.style.cssText += 'right: 1rem; opacity: 1'
-    }
-    document.querySelectorAll('h1').forEach(el => {
-        if (el.textContent === title) {
-            window.scroll({
-                top: el.getBoundingClientRect().top + window.scrollY - document.getElementById('menuNavbar').offsetHeight + 1,
-                behavior: 'smooth'
-            });
-        }
-    })
-    catalogNavOnScroll();
-} // Обработчик кликов по навбару
-const catalogRenderMenuNav = () => {
-    let body = document.getElementsByTagName('body')[0];
-    body.insertAdjacentHTML('afterbegin', `<nav id="menuNavbar"></nav>`); // Создаем блок навбара
-    let nav = document.getElementById('menuNavbar');
-    nav.insertAdjacentHTML('afterbegin',
-        `<button id="changeLanguage">In English</button>`)
-    catalogData.parts.forEach(part => {
-        let catID = part.uid.toString();
-        let engList = catalogData.partlinks;
-        if (catalogLanguageCheck() === 'eng' && engList.hasOwnProperty(catID)) {
-            let name = engList[catID].infotext;
-            nav.insertAdjacentHTML('beforeend',
-                `<button title="${name}" class="navButton" onclick="catalogNavScroll(this)">${name}</button>`
-            );
-        } else {
-            nav.insertAdjacentHTML('beforeend',
-                `<button title="${part.title}" class="navButton" onclick="catalogNavScroll(this)">${part.title}</button>`
-            );
-        }
-    })
-    body.insertAdjacentHTML('beforeend', `<div id="mobMenu" clicked="0" onclick="catalogMenuButton()"><div class="hr"></div><div class="hr"></div></div>`);
-} // Рендерим навбар для меню
-const catalogRenderProduct = (productCounter) => {
-    const getPrice = (price) => {
-        if (price.slice(0, -5).length <= 3) {
-            if (catalogLanguageCheck() === 'eng') {
-                return `<div class="productPrice">${Number(price)} rub.</div>`
-            } else {
-                return `<div class="productPrice">${Number(price)} p.</div>`
-            }
-        }
-        else {
-            if (catalogLanguageCheck() === 'eng') {
-                return `<div class="productPrice">${Number(price)} rub.</div>`
-            } else {
-                return `<div class="productPrice">${Number(price)/1000} т.p.</div>`
-            }
-        }
-    }
-    const getVariants = (variants) => {
-        let q = '';
-        variants.forEach(key => {
-            if (catalogLanguageCheck() === 'eng' && key.hasOwnProperty("Variant")) {
-                q += `<p class="variant">${key["Variant"]}</p>`
-            } else {
-                q += `<p class="variant">${key["Вариант"]}</p>`
-            }
-        })
-        return `<div class="productVariants">${q}</div>`
-    }
-    const getImages = (gallery) => {
-        let q = '';
-        gallery.forEach(g => {
-            q += `<img class="productImage" src="${g.img}" alt="Product Photo" loading="lazy" onclick="catalogImgOpen(this)">`
-        })
-        return `<div class="productGallery">${q}</div>`
-    }
-    if (catalogLanguageCheck() === 'eng') return `
-        <article class="product">
-                <div class="productHeader">
-                    ${catalogData.products[productCounter].prod_variants
-            ? `<h4 class="productTitle">${catalogData.products[productCounter].prod_variants}</h4>` 
-            : `<h4 class="productTitle">${catalogData.products[productCounter].title}</h4>`}
-                    ${(catalogData.products[productCounter].price > 1)
-            ? `${getPrice(catalogData.products[productCounter].price)}`
-            : ``}
-                </div>
-                ${catalogData.products[productCounter].prod_variants2
-            ? `<p class="productDescription">${catalogData.products[productCounter].prod_variants2}</p>`
-            : `<p class="productDescription">${catalogData.products[productCounter].descr}</p>`}
-                ${(catalogData.products[productCounter].editions.length > 1)
-            ? `${getVariants(catalogData.products[productCounter].editions)}`
-            : ``}
-                ${(JSON.parse(catalogData.products[productCounter].gallery).length >= 1)
-            ? `${getImages(JSON.parse(catalogData.products[productCounter].gallery))}`
-            : ``}
-        </article>`
-    else return `
-        <article class="product">
-                <div class="productHeader">
-                    <h4 class="productTitle">${catalogData.products[productCounter].title}</h4>
-                    ${(catalogData.products[productCounter].price > 1)
-                    ? `${getPrice(catalogData.products[productCounter].price)}`
-                    : ``}
-                </div>
-                ${catalogData.products[productCounter].descr
-                    ? `<p class="productDescription">${catalogData.products[productCounter].descr}</p>`
-                    : ''}
-                ${(catalogData.products[productCounter].editions.length > 1)
-                    ? `${getVariants(catalogData.products[productCounter].editions)}`
-                    : ``}
-                ${(JSON.parse(catalogData.products[productCounter].gallery).length >= 1)
-                    ? `${getImages(JSON.parse(catalogData.products[productCounter].gallery))}`
-                    : ``}
-        </article>`
-} // Производим рендер товара по его ID (string)
-const catalogImgOpen = (img) => {
-    document.body.insertAdjacentHTML( `afterbegin`, `<div id="productImgOpened" onclick="catalogImgClose(this)"><img src="${img.src}" alt=""></div>`)
-} // Открываем картинку на весь экран
-const catalogImgClose = (img) => {
-    img.remove()
-} // Закрываем картинку на весь экран
-const catalogRender = (data) => {
-    catalogRenderMenuNav()
-    const catalogRenderCheck = (uid) => {
-        return !!document.getElementById(`category_${uid}`);
-    } // Определяем наличие блока с категорией на сайте (boolean)
-    const catalogGetCategoryHeader = (productId) => {
-        for (let i = 0; i < catalogData.parts.length; i++) {
-            if (catalogData.parts[i].uid === Number(productId)) {
-                return (catalogData.parts[i].title)
-            }
-        }
-    } // Ищем заголовок категории по ID товара (string)
-    for (let i = 0; i < data.products.length; i++) {
-        let catalogDiv = document.getElementById('fetchCatalog')
-        let catID = data.products[i].partuids.slice(1, -1)
-        let engList = catalogData.partlinks;
-        
-        if (catalogRenderCheck(catID) === false) {
-            if (catalogLanguageCheck() === 'eng' && engList.hasOwnProperty(catID)) {
-                let name = engList[catID].infotext;
-                catalogDiv.innerHTML +=
-                    `<article id="category_${catID}" class="category">
-                    <div class="categoryHeader"><h1 title="${name}" class="categoryTitle">${name}</h1></div>
-                    ${catalogRenderProduct(i)}
-                </article>`
-            }
-            else {
-                catalogDiv.innerHTML +=
-                    `<article id="category_${catID}" class="category">
-                    <div class="categoryHeader"><h1 title="${catalogGetCategoryHeader(catID)}" class="categoryTitle">${catalogGetCategoryHeader(catID)}</h1></div>
-                    ${catalogRenderProduct(i)}
-                </article>`
-            }
-        }  // Рендерим категорию и продукт внутри
-        else if (catalogRenderCheck(catID) === true) {
-            document.getElementById(`category_${catID}`).innerHTML +=
-                `${catalogRenderProduct(i)}`
-        } // Если категория найдена - рендерим внутрь
-    }
-    document.getElementById('fetchCatalog').style.paddingTop = document.getElementById('menuNavbar').offsetHeight + 10 + 'px'
-} // Основной запуск
+//-
 
-const catalogResponse = async () => {
-    const response = await fetch(catalogLink)
-    const data = await response.json()
-    catalogData = data
-    catalogRender(data)
+const catalogue = document.getElementById('fetchCatalog')
+const nav = document.querySelector('nav > menu')
+const langButton = document.querySelector('#langButton')
+
+const lang = localStorage.getItem("doMenuLanguage") || 'RUS'
+// lang === 'RUS' ? langButton.textContent = `🇬🇧` : langButton.textContent = `🇷🇺`
+// lang === 'RUS' ? langButton.textContent = `in eng` : langButton.textContent = `рус`
+lang === 'RUS'
+    ? langButton.insertAdjacentHTML('beforeend','<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect x="1" y="4" width="30" height="24" rx="4" ry="4" fill="#fff"/><path d="M1.638 5.846h28.724A3.99 3.99 0 0 0 27 4H5a3.99 3.99 0 0 0-3.362 1.846m.392 1.846C2.022 7.795 2 7.894 2 8v1.539h29V8c0-.105-.022-.204-.03-.308zM2 11.385h29v1.846H2zm0 3.692h29v1.846H2zm-1 3.692h30v1.846H1zM1 24c0 .105.023.204.031.308h29.938c.008-.103.031-.202.031-.308v-1.539H1zm29.362 2.154H1.638A3.99 3.99 0 0 0 5 28h22a3.99 3.99 0 0 0 3.362-1.846" fill="#a62842"/><path d="M5 4h11v12.923H1V8c0-2.208 1.792-4 4-4" fill="#102d5e"/><path d="M27 4H5a4 4 0 0 0-4 4v16a4 4 0 0 0 4 4h22a4 4 0 0 0 4-4V8a4 4 0 0 0-4-4m3 20c0 1.654-1.346 3-3 3H5c-1.654 0-3-1.346-3-3V8c0-1.654 1.346-3 3-3h22c1.654 0 3 1.346 3 3z" opacity=".15"/><path d="M27 5H5a3 3 0 0 0-3 3v1a3 3 0 0 1 3-3h22a3 3 0 0 1 3 3V8a3 3 0 0 0-3-3" fill="#fff" opacity=".2"/><path fill="#fff" d="m4.601 7.463.592-.43h-.731l-.226-.695-.226.695h-.731l.591.43-.226.695.592-.429.591.429zm2.979 0 .592-.43h-.731l-.226-.695-.226.695h-.731l.591.43-.226.695.592-.429.591.429zm2.98 0 .591-.43h-.731l-.226-.695-.226.695h-.731l.591.43-.225.695.591-.429.591.429zm-4.494 1.82.592-.429h-.731l-.226-.696-.226.696h-.731l.591.429-.226.696.592-.43.591.43zm2.98 0 .591-.429h-.731l-.226-.696-.226.696h-.731l.591.429-.225.696.591-.43.591.43zm2.979 0 .591-.429h-.731l-.226-.696-.226.696h-.731l.592.429-.226.696.591-.43.592.43zm-5.959 3.641.592-.43h-.731l-.226-.695-.226.695h-.731l.591.43-.226.695.592-.429.591.429zm2.98 0 .591-.43h-.731l-.226-.695-.226.695h-.731l.591.43-.225.695.591-.429.591.429zm2.979 0 .591-.43h-.731l-.226-.695-.226.695h-.731l.592.43-.226.695.591-.429.592.429zm1.514-5.461.591-.43h-.731l-.226-.695-.226.695h-.731l.592.43-.226.695.591-.429.592.429zm-8.938 3.641.592-.43h-.731l-.226-.695-.226.695h-.731l.591.43-.226.695.592-.43.591.43zm2.979 0 .592-.43h-.731l-.226-.695-.226.695h-.731l.591.43-.226.695.592-.43.591.43zm2.98 0 .591-.43h-.731l-.226-.695-.226.695h-.731l.591.43-.225.695.591-.43.591.43zm2.979 0 .591-.43h-.731l-.226-.695-.226.695h-.731l.592.43-.226.695.591-.43.592.43zm-8.938 3.64.592-.429h-.731l-.226-.696-.226.696h-.731l.591.429-.226.696.592-.43.591.43zm2.979 0 .592-.429h-.731l-.226-.696-.226.696h-.731l.591.429-.226.696.592-.43.591.43zm2.98 0 .591-.429h-.731l-.226-.696-.226.696h-.731l.591.429-.225.696.591-.43.591.43zm2.979 0 .591-.429h-.731l-.226-.696-.226.696h-.731l.592.429-.226.696.591-.43.592.43z"/></svg>')
+    : langButton.insertAdjacentHTML('beforeend','<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path fill="#1435a1" d="M1 11h30v10H1z"/><path d="M5 4h22c2.208 0 4 1.792 4 4v4H1V8c0-2.208 1.792-4 4-4" fill="#fff"/><path d="M27 28H5c-2.208 0-4-1.792-4-4v-4h30v4c0 2.208-1.792 4-4 4" fill="#c53a28"/><path d="M27 4H5a4 4 0 0 0-4 4v16a4 4 0 0 0 4 4h22a4 4 0 0 0 4-4V8a4 4 0 0 0-4-4m3 20c0 1.654-1.346 3-3 3H5c-1.654 0-3-1.346-3-3V8c0-1.654 1.346-3 3-3h22c1.654 0 3 1.346 3 3z" opacity=".15"/><path d="M27 5H5a3 3 0 0 0-3 3v1a3 3 0 0 1 3-3h22a3 3 0 0 1 3 3V8a3 3 0 0 0-3-3" fill="#fff" opacity=".2"/></svg>')
+const setLang = () => {
+    if (!localStorage.getItem("doMenuLanguage")) localStorage.setItem("doMenuLanguage", 'RUS')
+    else {
+        localStorage.getItem("doMenuLanguage") === 'RUS'
+            ? localStorage.setItem("doMenuLanguage", 'ENG')
+            : localStorage.setItem("doMenuLanguage", 'RUS')
+        location.reload()
+    }
 }
-document.addEventListener("DOMContentLoaded", () => {
-    // catalogResponse()
-    catalogRender(catalogData)
+
+const navChosenScroll = (button) => {
+    const navScroll = button.getBoundingClientRect().left
+        + nav.scrollLeft  - document.querySelector('#langButton').clientWidth - 15
+    return nav.scrollTo(navScroll, 0)
+}
+const navScroll = (catUid) => {
+    if (window.innerWidth < 450 && nav.classList.contains('mobMenu')) mobMenu()
+
+    const catIs = document.getElementById(catUid).querySelector('.categoryHeader')
+    const scrollTo = catIs.getBoundingClientRect().top + window.scrollY
+    const navHeight = nav.parentElement.getBoundingClientRect().height
+    return window.scrollTo(0, scrollTo - navHeight + 1)
+}
+const catObs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        const id = entry.target.getAttribute('id')
+        const b = nav.querySelector(`button[data-id="${id}"]`)
+        return entry.isIntersecting
+            ? function () {
+                b.classList.add('chosen');
+                navChosenScroll(b)
+            }()
+            : b.classList.remove('chosen')
+
+    });
+},  { rootMargin: '-40%' })
+const navLisObs = new IntersectionObserver((entries) => {
+    return entries.forEach(entry => {
+        entry.isIntersecting
+            ? entry.target.style.cssText += ' translate: 0 0; '
+            : entry.target.style.cssText += ' translate: 0 -1rem; '
+    })
+})
+
+const mobMenu = () => {
+    nav.querySelectorAll('li:has(.navButton)').forEach(el => {
+        el.classList.toggle('mobMenu')
+    })
+    nav.querySelectorAll('#navBurger').forEach(el => {
+        el.classList.toggle('mobMenu')
+    })
+    nav.classList.toggle('mobMenu')
+    return nav.parentNode.classList.toggle('mobMenu')
+}
+
+//-
+const getCatalogue = async () => {
+    const data = await fetch('https://store.tildaapi.com/api/getproductslist/?storepartuid=227151755511&recid=748764525&c=1715780724989&getparts=true&getoptions=true&slice=1&size=100')
+    return await data.json()
+}
+document.addEventListener('DOMContentLoaded', async () => {
+    // const catalogData = await getCatalogue()
+    class Product {
+        constructor(uid) {
+            const prod = catalogData.products.find(product => product.uid === uid)
+            if (prod) {
+                this.title = prod?.title
+                this.titleEn = prod?.properties.find(p => p?.title === 'Name')?.values
+                this.descr = prod?.descr
+                this.descrEn = prod?.properties.find(p => p?.title === 'Description')?.values
+                this.price = prod?.price?.split('.')[0] ? prod.price.split('.')[0] : ''
+                this.cat = catalogData.parts.find(part => part.uid === Number(prod.partuids.replaceAll('[','').replaceAll(']','')))
+                this.catId = this.cat.uid
+                this.catTitle = this.cat.title
+                this.catTitleEn = catalogData.partlinks[this.cat.uid].infotext
+                this.options = prod?.json_options ? JSON.parse(prod?.json_options) : ''
+                this.variants = this.options?.[0]?.values
+                this.variantsEn = this.options?.[1]?.values
+                this.gallery = JSON.parse(prod.gallery).map(img => img.img).length > 0 ? JSON.parse(prod.gallery).map(img => img.img) : ''
+            }
+        }
+    }
+    class Category {
+        constructor(uid) {
+
+            const part = catalogData.parts?.find(part => part?.uid === uid)
+            this.uid = part?.uid
+            this.title = part?.title
+
+            const partLink = catalogData.partlinks?.[this.uid]
+            this.titleEn = partLink?.infotext
+        }
+    }
+
+    const renderProduct =   (Product, lang) => {
+        const gallery = () => {
+            let g = ''
+            for (let img of Product.gallery) {
+
+                img = img.replace('static.tilda','thumb.tilda').split('/')
+                img[img.length - 1] = '-/format/webp/' + img[img.length - 1]
+                img = img.join('/')
+
+                g += `<img alt="Product Photo"
+class="productImage"
+loading="lazy" onclick="catalogImgOpen(this)"
+src="${img}">`
+            }
+            return g
+        }
+        const variants = (lang) => {
+            let vs = ''
+            for (const v of lang === 'RUS' ? Product.variants : Product.variantsEn ) {
+                vs += `<p class="variant">${v}</p>`
+            }
+            return vs
+        }
+
+        return `<article class="product" title="${Product.titleEn}">
+<div class="productHeader">
+    <h4 class="productTitle">${lang === 'RUS'
+            ? Product.title : Product.titleEn}</h4>
+    <div class="productPrice">
+        ${Product.price && lang === 'RUS' ? Product.price + '&nbsp;р.' : ''}
+        ${Product.price && lang !== 'RUS' ? Product.price + '&nbsp;rub.' : ''}
+    </div>
+</div>
+<p class="productDescription">${lang === 'RUS' ? Product.descr : Product.descrEn}</p>
+${Product.variants?.length > 0
+            ? `<div class="productVariants">${variants(lang)}</div>` : ''}
+${Product.gallery?.length > 0
+            ? `<div class="productGallery">${gallery()}</div>` : ''}
+</article>`}
+    const renderCategory =  (Category, lang) => {
+        const catName = lang === 'RUS' ? Category.title : Category.titleEn
+
+        catalogue.insertAdjacentHTML('beforeend', `
+<article id="${Category.uid}" class="category" title="${catName}"> 
+<div class="categoryHeader">
+<h1 title="${catName}" class="categoryTitle">${catName}</h1>
+</div> 
+</article>`)
+
+        return nav.insertAdjacentHTML('beforeend', `<li><button class="navButton" data-id="${Category.uid}" onclick="navScroll(${Category.uid}, this)">${catName}</button></li>`)
+    }
+    catalogData.parts?.forEach((part) => {
+        const p = new Category(part.uid)
+        return renderCategory(p, lang)
+    })
+    catalogData.products.forEach(product => {
+        const el = new Product(product.uid)
+
+        return document.getElementById(el.catId)
+            ? document.getElementById(el.catId).insertAdjacentHTML('beforeend', renderProduct(el, lang))
+            : undefined
+    })
+
+    catalogue.querySelectorAll('.category').forEach(el => {
+        return catObs.observe(el)
+    })
+    nav.querySelectorAll('li').forEach(el => {
+        return navLisObs.observe(el)
+    })
 })

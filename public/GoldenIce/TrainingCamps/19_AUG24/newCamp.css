@@ -372,6 +372,7 @@ body, .t-body {
     aspect-ratio: 16 / 10;
     background-size: cover;
     position: relative;
+    background-position: center;
 
     border-radius: .5rem;
 }

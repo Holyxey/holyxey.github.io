@@ -51,8 +51,9 @@ main:has(> .ny-block) {
     font-size: 1rem;
 }
 .ny-block .infoBlock p {
-    color: var(--holyxey-white-o);
+    color: var(--holyxey-white);
     font-weight: 300;
+    text-wrap: balance;
 }
 .ny-block .infoBlock .dates {
     font-size: 1rem;
@@ -66,12 +67,15 @@ main:has(> .ny-block) {
 
 @media screen and (max-width: 600px) {
     .ny-block   {
-        padding-top: 2rem;
         border-radius: 2rem;
+        border: unset;
     }
     .ny-block .infoBlock {
         border-radius: 2rem;
         padding: 3rem 2rem 2rem 2rem;
-        backdrop-filter: blur(20px);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        background-color: #00000070;
+        background-blend-mode: multiply;
     }
 }
