@@ -1119,7 +1119,7 @@ const renderVariantsPreview = () => {
                 }
             }
             else if (node.getAttribute('data-variants') === 'houses') {
-                for (let i = 0; i < 3; i++) {
+                for (let i = 0; i < (location.href.includes('/variants') ? lists.houses.length : 3); i++) {
                     where.insertAdjacentHTML('beforeend',
                         `<article id="${lists.houses[i].title}" class="variantBlock" onclick="openVariantGallery('houses', ${i})" data-counter-item>
                         <div class="variantHeader" >
@@ -1140,12 +1140,14 @@ const renderVariantsPreview = () => {
                         <div class="variantPreviewImage" style="background-image: url(${lists.houses[i].images.summer[0]})"></div>
                     </article>`)
                 }
-                where.insertAdjacentHTML('beforeend', `
+                if (!location.href.includes('/variants')) {
+                    where.insertAdjacentHTML('beforeend', `
                 <article class="classic-art" title="Посмотреть все" style="border: 1px solid var(--holyxey-white-oo); cursor: pointer" onclick="location.href = '/variants'">
                     <div class="classic-art-hb"><h4 class="classic-art-header">Посмотреть все</h4></div>
                     <div class="classic-art-imgBlck"><img loading="lazy" class="classic-art-img" 
                     src="https://static.tildacdn.com/tild3365-3639-4463-b930-373032396132/variants_show_more.png" alt="Посмотреть все" onload="whatIsMax(this)" style="max-height: 100%; max-width: unset;"></div>
                 </article> `)
+                }
             }
             else if (node.getAttribute('data-variants') === 'glamping') {
                 for (let i = 0; i < lists.glamping.length; i++) {
