@@ -172,6 +172,11 @@ body {
     width: fit-content;
     margin-inline: auto;
 }
+#multi-page menu#menuList li.navPCItem.navCTA {
+    background: url("https://optim.tildacdn.com/tild3963-6339-4231-a231-633830323034/-/format/webp/pattern5.png") var(--holyxey-back) fixed;
+    background-size: 5rem;
+    border-radius: 100vmin;
+}
 #multi-page menu#menuList li.navPCItem a {
     display: block;
     padding: .5rem 1rem;
