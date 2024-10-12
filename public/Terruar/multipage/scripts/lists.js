@@ -1,4 +1,4 @@
-export const lists = {
+const lists = {
     servicesList: [
         {
             render: true,
@@ -903,6 +903,6 @@ export const lists = {
         },
     ],
 }
-export const seasonTapes = [
+const seasonTapes = [
     'Бассейн'
 ]
