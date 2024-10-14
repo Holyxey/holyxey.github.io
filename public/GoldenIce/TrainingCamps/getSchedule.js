@@ -23,7 +23,7 @@ const schedule = {
 
             const hasSchedule = function () {
                 const id = button.getAttribute('data-id')
-                const s = schedule.scheduleFindArena(id).schedule
+                const s = schedule.scheduleFindArena(id)?.schedule
                 if (s) {
                     return true;
                 }
@@ -152,10 +152,18 @@ const arenaBullets = {
         this.checkActiveBullets()
     }
 }
+const mainImage = () => {
+    const img = document.querySelector('.head-img img')
+    const defaultImg = 'https://optim.tildacdn.com/tild6362-3439-4162-b264-613331653363/IMAGE_2024-01-08_162.jpg'
+    const getFromTilda = document?.querySelector('.t-rec .t746 .t-popup__container .t-slds__container .t-slds__item meta')?.getAttribute('content')
+    img.src = getFromTilda || defaultImg
+    console.log(defaultImg)
+}
 
 document.addEventListener("DOMContentLoaded", () => {
     schedule.scheduleButtons()
     arenaBullets.renderBullets()
+    mainImage()
     const linkTags = document.getElementsByTagName('link');
     for (let i = 0; i < linkTags.length; i++) {
         if (linkTags[i].getAttribute('href') === 'https://holyxey.github.io/public/GoldenIce/tableStyles.css') {
