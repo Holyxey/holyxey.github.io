@@ -53,6 +53,7 @@ body, .t-body {
     display: flex;
     gap: 2rem;
     align-items: center;
+    justify-content: center;
 }
 #new-camp .head .head-img {
     max-width: 800px;
