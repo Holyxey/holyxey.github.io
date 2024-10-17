@@ -1,0 +1,88 @@
+/* #tabsMenu */
+#tabsMenu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+    font-family: 'CirceRounded', "Helvetica Neue", Arial, sans-serif;
+    height: 90dvh;
+    overflow-y: hidden;
+    /*background:*/
+    /*        linear-gradient(#00000090 30%, #00000090 100%),*/
+    /*        url(https://optim.tildacdn.one/tild6330-3237-4362-b739-653233346139/-/format/webp/IMG_4794.jpg)*/
+    /*        center / cover;*/
+    background-color: #b9cf9e;
+    padding-block: 2rem;
+}
+
+#tabsMenu h3 {
+    color: white;
+    font-size: 2rem;
+    margin: 0;
+}
+#tabsMenu #tabs {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+#tabsMenu #tabs button {
+    background-color: #b9cf9e;
+    border: 1px solid #94aa79;
+    padding: 1rem 2rem;
+    font-size: inherit;
+    font-family: inherit;
+    border-radius: 1rem;
+    transition: border-radius .3s ease-in-out;
+    color: white;
+}
+#tabsMenu #tabs button.selected {
+    border-radius: 3vmin;
+    background-color: #94aa79;
+}
+
+#tabsMenu #menus {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    gap: 1rem;
+}
+#tabsMenu #menus iframe {
+    position: relative;
+    display: none;
+    flex: 1 0 0;
+    opacity: 0;
+    border: none;
+    max-width: 1000px;
+    margin-inline: auto;
+    border-radius: 1rem;
+}
+#tabsMenu #menus iframe.chosenFrame {
+    display: block;
+    animation: showMenuIframe .5s ease-in-out forwards;
+}
+@keyframes showMenuIframe {
+    from {
+        opacity: 0;
+        filter:  blur(10px);
+        -webkit-filter: blur(10px);
+    }
+    to {
+        opacity: 1;
+        filter: blur(0);
+        -webkit-filter: blur(0);
+    }
+}
+
+
+@media (max-width: 600px) {
+    #tabsMenu #tabs {
+        padding: .25rem;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+    #tabsMenu #menus iframe {
+        border-radius: 0;
+    }
+}
