@@ -1,0 +1,27 @@
+#weddingHighLight,
+#weddingHighLight * {
+    padding: 0;
+    margin: 0;
+    font-family: 'Cera Pro', 'CeraPro', Arial, sans-serif;
+}
+#weddingHighLight ul {
+    list-style: none;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+#weddingHighLight ul li {
+    padding: 8px 20px;
+    border-radius: 1rem;
+    border: 1px solid #99A79F;
+    font-weight: 400;
+    text-align: center;
+    text-wrap: balance;
+}
+
+@media (max-width: 640px) {
+    #weddingHighLight ul li {
+        flex: 1 0 200px;
+    }
+}
