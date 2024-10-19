@@ -13,7 +13,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
-    padding-inline: 1rem !important;
+    padding: 1rem !important;
 }
 #weddingHighLight ul li {
     padding: 8px 20px;
