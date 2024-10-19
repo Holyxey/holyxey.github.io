@@ -21,6 +21,7 @@
     font-weight: 400;
     text-align: center;
     text-wrap: balance;
+    font-size: .9rem;
 }
 
 @media (max-width: 640px) {
