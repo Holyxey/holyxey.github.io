@@ -18,7 +18,7 @@ const highlights = [
 ]
 const descriptions = [
     {
-        eng: '',
+        eng: 'Special price for 1 hour exclusive SPA rent - 2 000 RUR',
         rus: 'Специальная стоимость аренды SPA на 1 час под закрытие - 2000 руб.',
     },
     {
@@ -38,7 +38,6 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         descriptions.forEach(descr => {
             hlNode.insertAdjacentHTML('afterend',
-                // `<p>${descr[host]}</p>`
                 `${descr[host] ? `<p>${descr[host]}</p>` : ''}`
             )
         })
