@@ -70,7 +70,7 @@ giCheck();
 
 // Прячем картинку, если высота таблицы меньше 500px
 document.addEventListener("DOMContentLoaded", function () {
-    if (document.querySelector('#golden-horizontal').getBoundingClientRect().height < 500) {
+    if (document.querySelector('#golden-horizontal')?.getBoundingClientRect().height < 500) {
         document.querySelector('.golden-h-img').style.opacity = '0';
     }
 
