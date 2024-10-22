@@ -3406,4 +3406,4 @@ for (const [key, value] of Object.entries(arenasObject)) {
 }
 
 //
-filterSetup()
+document.addEventListener("DOMContentLoaded", filterSetup)
