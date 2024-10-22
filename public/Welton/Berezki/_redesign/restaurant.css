@@ -134,6 +134,7 @@ body {
     -webkit-backdrop-filter: blur(10px);
     text-decoration: none;
     color: white !important;
+    position: relative;
 }
 .button.primary {
     background-color: var(--back);
@@ -147,6 +148,25 @@ body {
 }
 .button.transparent {
     background-color: #00000020;
+}
+.button.withIcon {
+    padding: .75rem 4rem;
+    overflow: hidden;
+}
+.button.withIcon svg {
+    display: block;
+    height: 100px;
+    position: absolute;
+    top: 50%;
+}
+.button.withIcon svg:first-child {
+    translate: -110% -50%;
+    rotate: 154deg;
+}
+.button.withIcon svg:last-child {
+    right: 0;
+    translate: 50% -50%;
+    rotate: 133deg;
 }
 
 
