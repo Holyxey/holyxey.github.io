@@ -394,22 +394,24 @@ const loyaltyWorker = () => {
         }
     }
     const loyaltySection = document.getElementById('loyalty')
-    const elements = loyaltySection.querySelectorAll('article')
-    for (const element of elements)
-        element.onclick = (e) => {
-            multipage.changeScroll()
-            popUp(element)
-            showHideChats()
-        }
+    if (loyaltySection) {
+        const elements = loyaltySection.querySelectorAll('article')
+        for (const element of elements)
+            element.onclick = (e) => {
+                multipage.changeScroll()
+                popUp(element)
+                showHideChats()
+            }
+    }
 }
 
 const seasonTapesRender = () => {
     const renderATape = (el) => {
         el.insertAdjacentHTML('beforeend', '<div class="a-tape"><p>Закрыто на сезон</p><p>Закрыто на сезон</p><p>Закрыто на сезон</p></div>')
     }
-    const articles = Array.from(document.querySelectorAll('article[data-list]'))
+    const articles = Array.from(document.querySelectorAll('article'))
     const elForTapping = articles.filter(el => {
-        return seasonTapes.some(text => el.title === text)
+        return seasonTapes.some(text => el.title === text || el.id === text)
     })
     elForTapping.forEach(el => {
         renderATape(el)

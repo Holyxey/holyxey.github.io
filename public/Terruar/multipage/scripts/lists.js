@@ -904,5 +904,8 @@ const lists = {
     ],
 }
 const seasonTapes = [
-    'Бассейн'
+    'Бассейн',
+    'Malbec',
+    'Riesling',
+    'Merlot',
 ]
