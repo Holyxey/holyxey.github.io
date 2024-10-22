@@ -3402,7 +3402,9 @@ abonPricesSections.forEach(section => {
 const menuIs = document.querySelector("#goldenHero menu li ul");
 for (const [key, value] of Object.entries(arenasObject)) {
     const {name, address, link, menuName} = value
-    menuIs.insertAdjacentHTML("beforeend", `<li><a href="${link}">${name}</a></li>`)
+    if (menuIs) {
+        menuIs.insertAdjacentHTML("beforeend", `<li><a href="${link}">${name}</a></li>`)
+    }
 }
 
 //
