@@ -16,18 +16,31 @@ const highlights = [
         rus: 'Халаты Mr & Mrs'
     },
 ]
-const description = {
-    eng: '3 500 RUR* At the reservation of Wedding package additional 20% discount for the room rate is applied',
-    rus: 'Стоимость: 3500 руб.* При бронировании свадебного пакета предоставляется скидка 20% на проживание в любой категории номера',
-}
+const descriptions = [
+    {
+        eng: '',
+        rus: 'Специальная стоимость аренды SPA на 1 час под закрытие - 2000 руб.',
+    },
+    {
+        eng: '4 000 RUR* At the reservation of Wedding package additional 20% discount for the room rate is applied',
+        rus: 'Стоимость: 4000 руб.* <i>При бронировании свадебного пакета предоставляется скидка 20% на проживание в любой категории номера</i>',
+    },
+]
 
 document.addEventListener('DOMContentLoaded', () => {
     const hlNode = document.querySelector('#weddingHighLight > ul');
-    (()=>{
+    (() => {
         const host = location.hostname.startsWith('en.') ? 'eng' : 'rus'; // todo замени на en.
-        highlights.forEach(highlight=>{
-            hlNode.insertAdjacentHTML('beforeend', `<li>${highlight[host]}</li>`)
+        highlights.forEach(highlight => {
+            hlNode.insertAdjacentHTML('beforeend',
+                `${highlight[host] ? `<li>${highlight[host]}</li>` : ''}`
+            )
         })
-        hlNode.insertAdjacentHTML('afterend', `<p>${description[host]}</p>`)
+        descriptions.forEach(descr => {
+            hlNode.insertAdjacentHTML('afterend',
+                // `<p>${descr[host]}</p>`
+                `${descr[host] ? `<p>${descr[host]}</p>` : ''}`
+            )
+        })
     })()
 })
