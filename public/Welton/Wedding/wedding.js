@@ -16,13 +16,18 @@ const highlights = [
         rus: 'Халаты Mr & Mrs'
     },
 ]
+const description = {
+    eng: '3 500 RUR* At the reservation of Wedding package additional 20% discount for the room rate is applied',
+    rus: 'Стоимость: 3500 руб.* При бронировании свадебного пакета предоставляется скидка 20% на проживание в любой категории номера',
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     const hlNode = document.querySelector('#weddingHighLight > ul');
     (()=>{
-        const host = location.hostname.startsWith('en.') ? 'eng' : 'rus' // todo замени на en.
+        const host = location.hostname.startsWith('en.') ? 'eng' : 'rus'; // todo замени на en.
         highlights.forEach(highlight=>{
             hlNode.insertAdjacentHTML('beforeend', `<li>${highlight[host]}</li>`)
         })
+        hlNode.insertAdjacentHTML('afterend', `<p>${description[host]}</p>`)
     })()
 })

@@ -6,6 +6,8 @@
     margin-block-start: 0;
     margin-block-end: 0;
     padding-inline-start: 0;
+    text-wrap: balance;
+    text-align: center;
 }
 #weddingHighLight ul {
     list-style: none;
@@ -15,6 +17,9 @@
     justify-content: center;
     gap: 1rem;
     padding: 2rem 1rem;
+    
+    max-width: 1200px;
+    margin: 0 auto;
 }
 #weddingHighLight ul li {
     padding: 8px 20px;
