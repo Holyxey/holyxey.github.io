@@ -358,7 +358,7 @@ const coaches = {
         "shortname": "Жужгина А.В.",
         "position": "Наши тренеры",
         "post": null,
-        "photo": "https://thumb.tildacdn.com/tild6534-6466-4730-b130-666338623265/_profile_w_.png",
+        "photo": "https://static.tildacdn.com/tild3365-6264-4139-b964-303438383166/photo.png",
         "contacts": [
             null,
             null
