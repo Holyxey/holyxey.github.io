@@ -17,7 +17,7 @@
     justify-content: center;
     gap: 1rem;
     padding: 2rem 1rem;
-    
+
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -29,6 +29,9 @@
     text-align: center;
     text-wrap: balance;
     font-size: .9rem;
+}
+#weddingHighLight p {
+    margin-bottom: 2rem;
 }
 
 @media (max-width: 640px) {
