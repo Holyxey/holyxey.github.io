@@ -332,7 +332,7 @@ const lists = {
     offers: [
         {
             title: 'Скидка 10%',
-            description: 'Для заездов с 17 октября по 27 октября',
+            description: 'Для заездов с 28 октября по 2 ноября',
             cover: 'https://thumb.tildacdn.com/tild3538-3836-4137-a136-646137323339/-/format/webp/1_service.png',
         },
         {
