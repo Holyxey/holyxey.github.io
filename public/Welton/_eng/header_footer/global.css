@@ -68,13 +68,17 @@ body {
     border-radius:  1rem;
     cursor: pointer;
     font-size: .75rem;
+    color: var(--back);
+    background-color: var(--green);
+}
+.languages .language:active {
+    scale: 0.95;
 }
 .languages .language.RU {}
 .languages .language.ENG {}
 .languages .language.notActive {
-    color: var(--back);
-    background-color: var(--green);
-    order: -1;
+    color: var(--green);
+    background-color: transparent;
 }
 
 .socialLinks {

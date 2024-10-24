@@ -754,7 +754,7 @@ const coaches = {
         "shortname": "Цепенкова К.М.",
         "position": "Наши тренеры",
         "post": null,
-        "photo": "https://thumb.tildacdn.com/tild6534-6466-4730-b130-666338623265/_profile_w_.png",
+        "photo": "https://static.tildacdn.com/tild3638-6330-4132-a533-666437393234/photo.png",
         "contacts": [
             null,
             null

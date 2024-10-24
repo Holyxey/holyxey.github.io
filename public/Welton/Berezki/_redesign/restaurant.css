@@ -54,9 +54,13 @@ body {
     .languages {
         color: var(--back);
     }
-    .languages .language.notActive {
+    .languages .language {
         color: var(--text);
         background-color: var(--back);
+    }
+    .languages .language.notActive {
+        color: var(--back);
+        background-color: transparent;
     }
     .languages > p.language.EN {}
     /*/ GLOBAL */
