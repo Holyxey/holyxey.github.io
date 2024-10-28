@@ -220,7 +220,7 @@ const coaches = {
         "shortname": "Борисова С.Н.",
         "position": "Наши тренеры",
         "post": null,
-        "photo": "https://thumb.tildacdn.com/tild6534-6466-4730-b130-666338623265/_profile_w_.png",
+        "photo": "https://static.tildacdn.com/tild6436-6163-4538-b939-303139313836/photo.png",
         "contacts": [
             "+7 (965) 081 92-38",
             "s_borisova85@bk.ru"
@@ -594,7 +594,7 @@ const coaches = {
         "shortname": "Степаньков Н.В.",
         "position": "Наши тренеры",
         "post": null,
-        "photo": "https://thumb.tildacdn.com/tild3339-6663-4166-a232-363831363131/_profile_m_.png",
+        "photo": "https://static.tildacdn.com/tild3531-6661-4762-b161-373539316365/photo.png",
         "contacts": [
             "+7 (993) 480 56-20",
             "nikitastepankov42@gmail.com"
