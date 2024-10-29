@@ -199,11 +199,6 @@ body {
     gap: 2rem;
     flex-wrap: wrap;
 }
-.rest article iframe {
-    flex: 1 0 0;
-    border-radius: .25rem;
-    min-height: 300px;
-}
 .rest article > div {
     flex: 1 0 0;
     display: flex;
@@ -244,6 +239,11 @@ body {
     flex-direction: column;
     gap: .5rem;
     color: var(--back);
+}
+.rest article iframe {
+    flex: 1 0 0;
+    border-radius: .25rem;
+    min-height: 300px;
 }
 .rest article h4 {
     font-size: 1.75rem;

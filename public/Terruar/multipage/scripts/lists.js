@@ -331,8 +331,8 @@ const lists = {
     ],
     offers: [
         {
-            title: 'Скидка 10%',
-            description: 'Для заездов с 28 октября по 2 ноября',
+            title: 'Скидка 50%',
+            description: 'На баню или банный чан при заезде во вторник или среду',
             cover: 'https://thumb.tildacdn.com/tild3538-3836-4137-a136-646137323339/-/format/webp/1_service.png',
         },
         {
