@@ -161,16 +161,27 @@ body {
     display: block;
     height: 100px;
     position: absolute;
+}
+.button.withIcon span {
+    display: block;
+    height: 100px;
+    width: 100px;
+    position: absolute;
     top: 50%;
 }
-.button.withIcon svg:first-child {
-    translate: -110% -50%;
-    rotate: 154deg;
+.button.withIcon span:first-child {
+    translate: -120% -50%;
 }
-.button.withIcon svg:last-child {
+.button.withIcon span:last-child {
     right: 0;
     translate: 50% -50%;
+}
+.button.withIcon span:first-child svg {
+    rotate: 154deg;
+}
+.button.withIcon span:last-child svg {
     rotate: 133deg;
+    animation: pizza 60s linear infinite;
 }
 
 
@@ -250,6 +261,11 @@ body {
     color: white;
     line-height: 1;
     font-family: 'Cormorant Unicase', "Helvetica Neue", sans-serif;
+}
+
+@keyframes pizza {
+    from    { transform: rotate(0deg) }
+    to      { transform: rotate(360deg) }
 }
 
 @media screen and (max-width: 600px) {
