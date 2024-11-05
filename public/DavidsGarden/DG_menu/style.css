@@ -85,4 +85,15 @@
     #tabsMenu #menus iframe {
         border-radius: 0;
     }
+    #tabsMenu #tabs button {
+        flex: 1;
+        background-color: #b9cf9e;
+        border: 1px solid #94aa79;
+        padding: .75rem 1rem;
+        font-size: inherit;
+        font-family: inherit;
+        border-radius: 1rem;
+        transition: border-radius .3s ease-in-out;
+        color: white;
+    }
 }
