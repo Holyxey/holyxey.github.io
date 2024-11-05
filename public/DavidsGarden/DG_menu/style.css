@@ -35,6 +35,7 @@
     border-radius: 1rem;
     transition: border-radius .3s ease-in-out;
     color: white;
+    cursor: pointer;
 }
 #tabsMenu #tabs button.selected {
     border-radius: 3vmin;
