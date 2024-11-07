@@ -15,6 +15,7 @@ const heroBack = {
     },
 }
 const heroNode = document.getElementById('heroVideo')
+const kitchenNode = document.getElementById('kitchen')
 
 const setBgStatic = (link = '') => {
     heroNode.style.backgroundImage = `url(${link})`
@@ -62,6 +63,12 @@ const setHeroVideo = () => {
         case false:
             return setPort()
     }
+}
+
+const kitchenHours = () => {
+    const dialog = document.querySelector('#openHours dialog')
+    dialog.onclick = () => { dialog.close() }
+    dialog.showModal()
 }
 
 document.addEventListener('DOMContentLoaded', () => {

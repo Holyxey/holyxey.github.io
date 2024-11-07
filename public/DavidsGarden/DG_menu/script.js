@@ -16,7 +16,8 @@ const tabsMenu = (pasteAfterRecId) => {
     ]
     try {
         !document.getElementById('tabsMenu')
-            ? document.getElementById(pasteAfterRecId).insertAdjacentHTML('afterend', '<section id="tabsMenu"> </section>') : null
+            ? document.getElementById(pasteAfterRecId).insertAdjacentHTML('afterend', '<section id="tabsMenu"> </section>')
+            : null
 
         const node = document.getElementById('tabsMenu')
 

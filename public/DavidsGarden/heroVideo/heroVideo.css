@@ -58,19 +58,47 @@
     position: relative;
 }
 
+#kitchen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    cursor: pointer;
+    background-color: var(--color-green);
+}
+#openHours dialog {
+    margin: auto;
+    border-radius: 1rem;
+    overflow: visible;
+    max-width: 300px;
+}
+#openHours dialog > * {
+    margin: 1rem;
+}
+#openHours dialog::backdrop {
+    backdrop-filter: blur(20px);
+    background-color: #00000070;
+    background-blend-mode: color-dodge;
+}
+
 #heroVideo #openHours {
-    width: fit-content;
+    position: absolute;
+    top: 0;
+
+    width: 100%;
     color: #232323;
+    padding: 0 2rem;
 
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
     margin-bottom: 1rem;
-}
-#heroVideo #openHours span {
+
     background-color: white;
+}
+
+#heroVideo #openHours span {
     padding: .75rem 1rem;
-    border-radius: .25rem;
 }
 
 #heroVideo #heroButtons {
