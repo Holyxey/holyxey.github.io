@@ -70,8 +70,25 @@ const kitchenHours = () => {
     dialog.onclick = () => { dialog.close() }
     dialog.showModal()
 }
+const infoHoursLine = () => {
+    const padding = Number;
+    const line = document.getElementById('openHours')
+    const getHeight = () => {
+        const mobile = document.querySelector('.tmenu-mobile').getBoundingClientRect().height
+        const pc     = document.querySelector('.tmenu-mobile__menucontent_fixed').getBoundingClientRect().height
+        if (pc >= mobile) return pc
+        else return mobile
+    }
+
+    if (line)
+        line.style.top = `${getHeight()}px`
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     setHeroVideo()
+    infoHoursLine()
 })
-window.onresize = setHeroVideo
+window.onresize = () => {
+    setHeroVideo()
+    infoHoursLine()
+}

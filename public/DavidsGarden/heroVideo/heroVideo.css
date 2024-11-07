@@ -66,15 +66,18 @@
     cursor: pointer;
     background-color: var(--color-green);
 }
+
 #openHours dialog {
     margin: auto;
     border-radius: 1rem;
     overflow: visible;
     max-width: 300px;
 }
+
 #openHours dialog > * {
     margin: 1rem;
 }
+
 #openHours dialog::backdrop {
     backdrop-filter: blur(20px);
     background-color: #00000070;
