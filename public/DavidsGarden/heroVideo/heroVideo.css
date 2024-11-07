@@ -101,6 +101,7 @@
     margin-bottom: 1rem;
 
     background-color: white;
+    transition: top .5s ease-out;
 }
 
 #heroVideo #openHours span {
