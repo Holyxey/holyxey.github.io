@@ -58,7 +58,7 @@
     position: relative;
 }
 
-#kitchen {
+#heroVideo #kitchen {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -68,7 +68,7 @@
     border-radius: .5rem .5rem 0 0;
 }
 
-#openHours dialog {
+#heroVideo #openHours dialog {
     margin: auto;
     border-radius: 1rem;
     overflow: visible;
@@ -76,12 +76,12 @@
     animation: showModal .5s ease-out;
 }
 
-#openHours dialog > * {
+#heroVideo #openHours dialog > * {
     margin: 1rem;
     animation: showModal .5s ease-out;
 }
 
-#openHours dialog::backdrop {
+#heroVideo #openHours dialog::backdrop {
     backdrop-filter: blur(20px);
     background-color: #00000070;
     background-blend-mode: color-dodge;
@@ -176,6 +176,11 @@
     }
     #heroVideo #openHours span {
         padding: .5rem;
+    }
+    #heroVideo #openHours span:not(#kitchen) {
+        flex: 1 0 auto;
+        max-width: fit-content;
+        margin: auto;
     }
 }
 
