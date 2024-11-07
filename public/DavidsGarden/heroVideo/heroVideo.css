@@ -162,6 +162,17 @@
     #heroVideo iframe {
         aspect-ratio: 9 / 16 !important;
     }
+    #heroVideo #openHours {
+        padding: .5rem 0 0 0;
+        gap: 0;
+    }
+    #heroVideo #openHours > * {
+        text-align: center;
+        width: 100%;
+    }
+    #heroVideo #openHours span {
+        padding: .5rem;
+    }
 }
 
 @media (min-width: 600px) {
