@@ -9,8 +9,8 @@ const heroBack = {
     },
     portrait: {
         img: 'https://static.tildacdn.com/tild3963-6634-4138-a433-333434623461/vlcsnap-2024-11-07-1.jpeg',
-        vid: 'https://player.vimeo.com/video/1026916631?muted=1&controls=0&loop=1&app_id=122963',
-        id: 1026853009,
+        vid: 'https://player.vimeo.com/video/1028361514?muted=1&controls=0&loop=1&app_id=122963',
+        id: 1028361514,
         mode: 'portrait'
     },
 }
