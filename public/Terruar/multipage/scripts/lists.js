@@ -579,12 +579,12 @@ const lists = {
                     'https://thumb.tildacdn.com/tild6636-3830-4365-b361-393239396233/-/format/webp/KIR_3068.jpg',
                 ],
                 winter: [
+                    'https://thumb.tildacdn.com/tild3434-3939-4165-b831-616531373261/-/format/webp/DSC08076.jpg',
                     'https://thumb.tildacdn.com/tild6338-3131-4939-b866-303330343831/-/format/webp/DSC08073.jpg',
                     'https://thumb.tildacdn.com/tild3431-3530-4030-b134-316561393735/-/format/webp/DSC08075.jpg',
                     'https://thumb.tildacdn.com/tild6666-6236-4632-b231-336333663637/-/format/webp/DSC08080.jpg',
                     'https://thumb.tildacdn.com/tild6131-6266-4133-a561-326364366237/-/format/webp/DSC08083.jpg',
                     'https://thumb.tildacdn.com/tild3963-3437-4164-a136-353865343163/-/format/webp/DSC08081.jpg',
-                    'https://thumb.tildacdn.com/tild3434-3939-4165-b831-616531373261/-/format/webp/DSC08076.jpg',
                 ]
             }
         },
@@ -626,12 +626,12 @@ const lists = {
                 ],
                 winter: [
                     'https://thumb.tildacdn.com/tild3639-6639-4634-b939-323636636462/-/format/webp/KIR_5372.jpg',
+                    'https://thumb.tildacdn.com/tild3036-3763-4339-a164-336534386630/-/format/webp/KIR_5368.jpg',
+                    'https://thumb.tildacdn.com/tild3839-6262-4466-b461-343132316563/-/format/webp/5ZN_2613.jpg',
                     'https://thumb.tildacdn.com/tild3135-3734-4462-b331-633064306531/-/format/webp/DSC08003.jpg',
                     'https://thumb.tildacdn.com/tild6666-6138-4131-b333-343866313037/-/format/webp/5ZN_2532_1.jpg',
                     'https://thumb.tildacdn.com/tild6339-6133-4432-b335-396239393063/-/format/webp/5ZN_2536.jpg',
-                    'https://thumb.tildacdn.com/tild3036-3763-4339-a164-336534386630/-/format/webp/KIR_5368.jpg',
                     'https://thumb.tildacdn.com/tild6661-6336-4231-b266-626564666633/-/format/webp/5ZN_2592.jpg',
-                    'https://thumb.tildacdn.com/tild3839-6262-4466-b461-343132316563/-/format/webp/5ZN_2613.jpg',
                     'https://thumb.tildacdn.com/tild3863-6533-4139-b866-653263333730/-/format/webp/5ZN_2626.jpg',
                 ]
             }
@@ -807,7 +807,15 @@ const lists = {
                     'https://thumb.tildacdn.com/tild3037-3164-4663-b138-343863323338/-/format/webp/DSC_9046.jpg',
                     'https://thumb.tildacdn.com/tild3764-3761-4665-a131-633433653734/-/format/webp/DSC_9005.jpg',
                     'https://thumb.tildacdn.com/tild3531-3961-4035-b461-316530323761/-/format/webp/DSC_9061.jpg',
-                ]
+                ],
+                winter: [
+                    'https://thumb.tildacdn.com/tild3166-3636-4836-b966-323164343030/-/format/webp/image_11.png',
+                    'https://thumb.tildacdn.com/tild3736-3530-4962-a637-353266633861/-/format/webp/DSC_9025.jpg',
+                    'https://thumb.tildacdn.com/tild6435-6436-4365-b430-376161343030/-/format/webp/DSC_9030.jpg',
+                    'https://thumb.tildacdn.com/tild3037-3164-4663-b138-343863323338/-/format/webp/DSC_9046.jpg',
+                    'https://thumb.tildacdn.com/tild3764-3761-4665-a131-633433653734/-/format/webp/DSC_9005.jpg',
+                    'https://thumb.tildacdn.com/tild3531-3961-4035-b461-316530323761/-/format/webp/DSC_9061.jpg',
+                ],
             }
         },
         {
@@ -824,7 +832,15 @@ const lists = {
                     'https://thumb.tildacdn.com/tild3736-3530-4962-a637-353266633861/-/format/webp/DSC_9025.jpg',
                     'https://thumb.tildacdn.com/tild6435-6436-4365-b430-376161343030/-/format/webp/DSC_9030.jpg',
                     'https://thumb.tildacdn.com/tild3531-3961-4035-b461-316530323761/-/format/webp/DSC_9061.jpg',
-                ]
+                ],
+                winter: [
+                    'https://thumb.tildacdn.com/tild6565-3466-4531-b236-653333623036/-/format/webp/image_12.png',
+                    'https://thumb.tildacdn.com/tild3037-3164-4663-b138-343863323338/-/format/webp/DSC_9046.jpg',
+                    'https://thumb.tildacdn.com/tild3764-3761-4665-a131-633433653734/-/format/webp/DSC_9005.jpg',
+                    'https://thumb.tildacdn.com/tild3736-3530-4962-a637-353266633861/-/format/webp/DSC_9025.jpg',
+                    'https://thumb.tildacdn.com/tild6435-6436-4365-b430-376161343030/-/format/webp/DSC_9030.jpg',
+                    'https://thumb.tildacdn.com/tild3531-3961-4035-b461-316530323761/-/format/webp/DSC_9061.jpg',
+                ],
             }
         },
         {
@@ -841,7 +857,15 @@ const lists = {
                     'https://thumb.tildacdn.com/tild3764-3761-4665-a131-633433653734/-/format/webp/DSC_9005.jpg',
                     'https://thumb.tildacdn.com/tild3531-3961-4035-b461-316530323761/-/format/webp/DSC_9061.jpg',
                     'https://thumb.tildacdn.com/tild6435-6436-4365-b430-376161343030/-/format/webp/DSC_9030.jpg',
-                ]
+                ],
+                winter: [
+                    'https://thumb.tildacdn.com/tild3031-6561-4762-b561-383939303839/-/format/webp/image_13.png',
+                    'https://thumb.tildacdn.com/tild3736-3530-4962-a637-353266633861/-/format/webp/DSC_9025.jpg',
+                    'https://thumb.tildacdn.com/tild3037-3164-4663-b138-343863323338/-/format/webp/DSC_9046.jpg',
+                    'https://thumb.tildacdn.com/tild3764-3761-4665-a131-633433653734/-/format/webp/DSC_9005.jpg',
+                    'https://thumb.tildacdn.com/tild3531-3961-4035-b461-316530323761/-/format/webp/DSC_9061.jpg',
+                    'https://thumb.tildacdn.com/tild6435-6436-4365-b430-376161343030/-/format/webp/DSC_9030.jpg',
+                ],
             }
         },
     ],

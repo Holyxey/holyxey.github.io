@@ -131,7 +131,7 @@ const needToRender = function (where) {
 const openVariantGallery = (list, index, preview = false) => {
     multipage.changeScroll()
     const element = lists[list][index]
-    const images = lists[list][index].images.summer
+    const images = lists[list][index].images.winter
     const multiPage = document.getElementById('multi-page')
     multiPage.insertAdjacentHTML('afterbegin', `
                 <div style="animation: showpopup .3s 1s ease-out forwards" id="close-popup" onclick="multipage.remPopup()">
@@ -178,7 +178,7 @@ const renderVariantsPreview = () => {
                             </svg>
                             </div>
                         </div>
-                        <div class="variantPreviewImage" style="background-image: url(${lists.houses[i].images.summer[0]})"></div>
+                        <div class="variantPreviewImage" style="background-image: url(${lists.houses[i].images.winter[0]})"></div>
                     </article>`)
                     where.insertAdjacentHTML('beforeend',
                         `<article id="${lists.glamping[i].title}" class="variantBlock" onclick="openVariantGallery('glamping', ${i})" data-counter-item>
@@ -197,7 +197,7 @@ const renderVariantsPreview = () => {
                             </svg>
                             </div>
                         </div>
-                        <div class="variantPreviewImage" style="background-image: url(${lists.glamping[i].images.summer[0]})"></div>
+                        <div class="variantPreviewImage" style="background-image: url(${lists.glamping[i].images.winter[0]})"></div>
                     </article>`)
                 }
             }
@@ -220,7 +220,7 @@ const renderVariantsPreview = () => {
                             </svg>
                             </div>
                         </div>
-                        <div class="variantPreviewImage" style="background-image: url(${lists.houses[i].images.summer[0]})"></div>
+                        <div class="variantPreviewImage" style="background-image: url(${lists.houses[i].images.winter[0]})"></div>
                     </article>`)
                 }
                 if (!location.href.includes('/variants')) {
@@ -251,7 +251,7 @@ const renderVariantsPreview = () => {
                             </svg>
                             </div>
                         </div>
-                        <div class="variantPreviewImage" style="background-image: url(${lists.glamping[i].images.summer[0]})"></div>
+                        <div class="variantPreviewImage" style="background-image: url(${lists.glamping[i].images.winter[0]})"></div>
                     </article>`)
                 }
             }
