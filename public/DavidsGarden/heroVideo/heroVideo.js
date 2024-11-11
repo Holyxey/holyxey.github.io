@@ -3,8 +3,8 @@
 const heroBack = {
     landscape: {
         img: 'https://static.tildacdn.com/tild6563-3261-4766-b365-663064393131/vlcsnap-2024-11-07-1.jpeg',
-        vid: 'https://player.vimeo.com/video/1026916631?muted=1&controls=0&loop=1&app_id=122963',
-        id: 1026916631,
+        vid: 'https://player.vimeo.com/video/1028369253?muted=1&controls=0&loop=1&app_id=122963',
+        id: 1028369253,
         mode: 'landscape'
     },
     portrait: {
