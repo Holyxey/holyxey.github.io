@@ -80,6 +80,7 @@ const needToRender = function (where) {
 
         const itemsParent = where.querySelector(`[class="${design.itemsParent}"]`)
         let number = 0
+
         what.forEach(function (item) {
             if (!item.render) return;
             if (maxOf && number >= maxOf) return
@@ -91,19 +92,19 @@ const needToRender = function (where) {
                 ${design.needCounter ? 'data-counter-item' : ''}
                 ${item.readMoreLink ? `style="border: 1px solid var(--holyxey-white-oo)" onclick="this.querySelector('a').click()"` : ''}
                 >
-                    ${design.artHeads 
+                    ${design.artHeads
                     ? `<div class="${design.artHeads}">
                             ${item.icon ? `<img class="classic-art-icon" src="${item.icon}" alt="icon">` : ''}
                             <h4 class="${design.artHeader}" ${item.icon ? `style="padding-left: 2.5rem"` : ''}>${item.title}</h4>
                             <p class="${design.artDescr}">${item.shortDescr}</p>
-                        </div>` 
+                        </div>`
                     : ''}
-                    ${design.artImgBlck 
-                        ? `<div class="${design.artImgBlck}"><img loading="lazy" class="${design.artImg}" src="${item.images[0]}" alt="${item.title}" onload="whatIsMax(this)"></div>` 
-                        : ''}
-                    ${design.artLink 
-                        ? `<a class="${design.artLink}" ${item.readMoreLink ? `href="${item.readMoreLink}"` : ''}>${item.readMoreText}</a>` 
-                        : ''}
+                    ${design.artImgBlck
+                    ? `<div class="${design.artImgBlck}"><img loading="lazy" class="${design.artImg}" src="${item.images[0]}" alt="${item.title}" onload="whatIsMax(this)"></div>`
+                    : ''}
+                    ${design.artLink
+                    ? `<a class="${design.artLink}" ${item.readMoreLink ? `href="${item.readMoreLink}"` : ''}>${item.readMoreText}</a>`
+                    : ''}
                 </article>
                 `)
             number++
@@ -141,9 +142,9 @@ const openVariantGallery = (list, index, preview = false) => {
                     <h2 class="popUpHeader">${element.title}</h2> 
                     <div class="popUpDescr">
                         ${element.description ? element.description : ''}
-                        ${preview 
-                            ? `<div class="variantPopUpButtons"><a class="classic-header-button-first" href="/variants">Смотреть все</a><a class="classic-header-button-first" onclick="multipage.bookingClick(); multipage.remPopup()">Выбрать даты</a></div>` 
-                            : `<div class="variantPopUpButtons"><a class="classic-header-button-first" onclick="multipage.bookingClick(); multipage.remPopup()">Выбрать даты</a></div>`}
+                        ${preview
+        ? `<div class="variantPopUpButtons"><a class="classic-header-button-first" href="/variants">Смотреть все</a><a class="classic-header-button-first" onclick="multipage.bookingClick(); multipage.remPopup()">Выбрать даты</a></div>`
+        : `<div class="variantPopUpButtons"><a class="classic-header-button-first" onclick="multipage.bookingClick(); multipage.remPopup()">Выбрать даты</a></div>`}
                     </div>
                     <article id="pop-up-gallery" onclick="event.stopPropagation();"></article>
                 </div>`) // Рендер поп-апа
@@ -200,8 +201,7 @@ const renderVariantsPreview = () => {
                         <div class="variantPreviewImage" style="background-image: url(${lists.glamping[i].images.winter[0]})"></div>
                     </article>`)
                 }
-            }
-            else if (node.getAttribute('data-variants') === 'houses') {
+            } else if (node.getAttribute('data-variants') === 'houses') {
                 for (let i = 0; i < (location.href.includes('/variants') ? lists.houses.length : 3); i++) {
                     where.insertAdjacentHTML('beforeend',
                         `<article id="${lists.houses[i].title}" class="variantBlock" onclick="openVariantGallery('houses', ${i})" data-counter-item>
@@ -231,8 +231,7 @@ const renderVariantsPreview = () => {
                     src="https://static.tildacdn.com/tild3365-3639-4463-b930-373032396132/variants_show_more.png" alt="Посмотреть все" onload="whatIsMax(this)" style="max-height: 100%; max-width: unset;"></div>
                 </article> `)
                 }
-            }
-            else if (node.getAttribute('data-variants') === 'glamping') {
+            } else if (node.getAttribute('data-variants') === 'glamping') {
                 for (let i = 0; i < lists.glamping.length; i++) {
                     where.insertAdjacentHTML('beforeend',
                         `<article id="${lists.glamping[i].title}" class="variantBlock" onclick="openVariantGallery('glamping', ${i})" data-counter-item>
@@ -332,10 +331,8 @@ const showHideChats = () => {
                 jivo[i].classList.toggle('hideIfPopUp')
             }
             document.getElementById('CalltouchWidgetFrame').classList.toggle('hideIfPopUp')
-        }
-        else new Error('Не найдено блоков Jivo')
-    }
-    catch (e) {
+        } else new Error('Не найдено блоков Jivo')
+    } catch (e) {
         console.error("showHideChats() => ", e.message)
     }
 } // прячет и показывает кнопки чатов (живо и тп)
@@ -356,7 +353,7 @@ const loyaltyWorker = () => {
                 </div>`)
         const loyaltyPopUp = document.getElementById('loyaltyPopUp')
         loyaltyPopUp.insertAdjacentHTML('beforeend',
-            `<h3>${el.title}</h3><article id="${el.id}"></article>` )
+            `<h3>${el.title}</h3><article id="${el.id}"></article>`)
         const inTo = loyaltyPopUp.querySelector('article')
 
         // info render
@@ -424,10 +421,9 @@ const showAboutBlock = (bttn) => {
     whyBlock.style.transition = 'all ease-out 1s'
     whyBlock.style.opacity = '1'
     whyBlock.style.height = '100%'
-    if ( window.innerWidth > 600 ) {
+    if (window.innerWidth > 600) {
         whyBlock.style.padding = '2rem'
-    }
-    else {
+    } else {
         whyBlock.style.padding = '.5rem'
     }
     //
@@ -495,7 +491,9 @@ const terruarCatalogue = {
                     menu.insertAdjacentHTML('beforeend', `<div class="menuCategory" id="${part.uid}"><h4 class="categoryHeader">${part.title}</h4></div>`)
                 })
             }
-        } else {console.log('Не обнаружен <div id="terruarMenu"></div>')}
+        } else {
+            console.log('Не обнаружен <div id="terruarMenu"></div>')
+        }
     },
     renderProducts: () => {
         if (document.getElementById('terruarMenu')) {
@@ -520,9 +518,10 @@ const terruarCatalogue = {
                 })
             }
         } else {
-            console.log('Не обнаружен <div id="terruarMenu"></div>')}
+            console.log('Не обнаружен <div id="terruarMenu"></div>')
+        }
     },
-    getCatalogues: async function() {
+    getCatalogues: async function () {
         try {
             const response = await fetch(this.link);
             if (!response.ok) {
@@ -574,8 +573,8 @@ const multipage = {
         }
     },
     //
-    popup(target){
-        const dataPopup= (target.getAttribute('data-popup') ? target.getAttribute('data-popup') : '')
+    popup(target) {
+        const dataPopup = (target.getAttribute('data-popup') ? target.getAttribute('data-popup') : '')
         const dataHeader = target.getAttribute('data-header') ? target.getAttribute('data-header') : ''
         const dataType = target.getAttribute('data-popup-type') ? target.getAttribute('data-popup-type') : ''
         const dataList = this.findListNameById(dataPopup)
@@ -583,7 +582,10 @@ const multipage = {
 
         const multiPage = document.getElementById('multi-page')
         const getMenu = (target) => {
-            terruarCatalogue.getCatalogues().then(r => {terruarCatalogue.renderCategories();terruarCatalogue.renderProducts()})
+            terruarCatalogue.getCatalogues().then(r => {
+                terruarCatalogue.renderCategories();
+                terruarCatalogue.renderProducts()
+            })
             return `<div id="terruarMenu"></div>`
         }
         const getGallery = (service) => {
@@ -653,7 +655,7 @@ const multipage = {
                     ${dataType === 'service' ? getService(target) : ''}
                 </div>`) // Рендер поп-апа
     }, // Показ поп-апа
-    remPopup(){
+    remPopup() {
         this.changeScroll()
         showHideChats()
         const popup = document.getElementById('popup-block')
@@ -663,7 +665,7 @@ const multipage = {
         popup.style.animation = 'hidepopup .3s ease-out forwards'
         closeButton.style.animation = 'hidepopup .3s ease-out forwards'
         // weatherBlock.style.animation = 'hidepopup .3s ease-out forwards'
-        setTimeout(()=>{
+        setTimeout(() => {
             popup ? popup.remove() : null;
             closeButton ? closeButton.remove() : null;
             weatherBlock ? weatherBlock.remove() : null;
@@ -673,7 +675,7 @@ const multipage = {
     //
     getHeaderHeight: async () => {
         const nav = document.querySelector('nav');
-        const hero  = document.getElementById('hero');
+        const hero = document.getElementById('hero');
         const mobNav = document.getElementById('mobileNavStroke');
 
         if (mobNav.offsetHeight < 1) {
@@ -711,7 +713,7 @@ const multipage = {
         //'https://optim.tildacdn.com/tild3539-6266-4461-a633-376165353133/-/format/webp/IMAGE_2024-04-11_174.jpg',
     ],
     mobileMenu: {
-        btnClck(el){
+        btnClck(el) {
             let menuPoints = document.querySelectorAll('.navPCItem')
             let nav = document.querySelector('nav')
             let mainList = document.getElementById('menuList')
@@ -720,8 +722,10 @@ const multipage = {
                 let tmt = 0;
                 menuPoints.forEach(point => {
                     point.style.opacity = '0'
-                        setTimeout(function () {point.style.opacity = 1}, tmt)
-                        tmt+=20
+                    setTimeout(function () {
+                        point.style.opacity = 1
+                    }, tmt)
+                    tmt += 20
                     point.style.display = 'block'
                     point.style.marginBlock = '.5rem'
                 })
@@ -731,8 +735,7 @@ const multipage = {
                 })
 
                 el.setAttribute('data-clicked', '1')
-            } else
-            if (el.getAttribute('data-clicked') === '1') {
+            } else if (el.getAttribute('data-clicked') === '1') {
                 menuPoints.forEach(point => {
                     point.style.display = 'none'
                 })
@@ -751,7 +754,7 @@ const multipage = {
         const list = lists.faq;
         section.insertAdjacentHTML('beforeend', `<ul id="faq-list" class="classic-ip"></ul>`)
         const whereTo = document.getElementById('faq-list')
-        for ( const [key, value] of Object.entries(list)) {
+        for (const [key, value] of Object.entries(list)) {
             whereTo.insertAdjacentHTML('beforeend',
                 `<li class="faq-item" onclick="multipage.clickFAQ(this)">
                     <div class="faq-item-header-block">
@@ -792,7 +795,7 @@ const multipage = {
             setTimeout(() => {
                 textBlock.style.translate = `0 10px`
                 textBlock.style.opacity = `1`
-            },70)
+            }, 70)
         }
     },
     //
@@ -814,7 +817,7 @@ const multipage = {
         const img = document.querySelector('#fullScreenPhoto')
         img.style.animation = 'hidepopup .3s ease-out forwards'
         button.style.animation = 'hidepopup .3s ease-out forwards'
-        setTimeout(()=>{
+        setTimeout(() => {
             img.remove()
             button.remove()
         }, 300)
@@ -822,7 +825,7 @@ const multipage = {
     },
     //
     randomIng: function (max) {
-        return  Math.floor(Math.random() * (max));
+        return Math.floor(Math.random() * (max));
     },
     smoothShowHorizontal: function () {
         const parentElements = document.querySelectorAll('[data-smooth-mobile]')
@@ -839,33 +842,27 @@ const multipage = {
             }, 1000)
         })
     },
-    changeScroll(){
+    changeScroll() {
         if (document.body.style.overflow === 'hidden')
             document.body.style.overflow = 'unset'
         else document.body.style.overflow = 'hidden'
     }, // Запрет/разрешение на скролл body ( прим. при открытии поп-апа )
-    getUserAgent(){
+    getUserAgent() {
         if ((navigator.userAgent.indexOf("Opera") || navigator.userAgent.indexOf('OPR')) !== -1) {
-            return('Opera');
-        }
-        else if (navigator.userAgent.indexOf("Edg") !== -1) {
-            return('Edge');
-        }
-        else if (navigator.userAgent.indexOf("Chrome") !== -1) {
-            return('Chrome');
-        }
-        else if (navigator.userAgent.indexOf("Safari") !== -1) {
-            return('Safari');
-        }
-        else if (navigator.userAgent.indexOf("Firefox") !== -1) {
-            return('Firefox');
-        }
-        else if ((navigator.userAgent.indexOf("MSIE") !== -1) || (!!document.documentMode == true)) //IF IE > 10
+            return ('Opera');
+        } else if (navigator.userAgent.indexOf("Edg") !== -1) {
+            return ('Edge');
+        } else if (navigator.userAgent.indexOf("Chrome") !== -1) {
+            return ('Chrome');
+        } else if (navigator.userAgent.indexOf("Safari") !== -1) {
+            return ('Safari');
+        } else if (navigator.userAgent.indexOf("Firefox") !== -1) {
+            return ('Firefox');
+        } else if ((navigator.userAgent.indexOf("MSIE") !== -1) || (!!document.documentMode == true)) //IF IE > 10
         {
-            return('IE');
-        }
-        else {
-            return('unknown');
+            return ('IE');
+        } else {
+            return ('unknown');
         }
     }, // Строкой получаем название браузера ( для трансляции )
     bookingClick() {
@@ -929,13 +926,13 @@ const whereToRenderCounter = function () {
     where.forEach(item => {
         const whatIsScrolling = (
             item.querySelector('[data-counter-scrollIt]')
-            ? item.querySelector('[data-counter-scrollIt]')
-            : item.parentNode.querySelector('[data-counter-scrollIt]')
+                ? item.querySelector('[data-counter-scrollIt]')
+                : item.parentNode.querySelector('[data-counter-scrollIt]')
         )
         const itemsList = (
             item.querySelectorAll('[data-counter-item]').length > 1
-            ? item.querySelectorAll('[data-counter-item]')
-            : item.parentNode.querySelectorAll('[data-counter-item]')
+                ? item.querySelectorAll('[data-counter-item]')
+                : item.parentNode.querySelectorAll('[data-counter-item]')
         )
         const max = itemsList.length;
         renderCounter(item, max, whatIsScrolling, itemsList)
@@ -957,6 +954,7 @@ async function videoPlayBack() {
         console.error('Error getting token:', error.message);
     }
 }
+
 // !Запуск записи стрима вместо трансляции
 
 // weather
@@ -965,6 +963,7 @@ const longitude = 37.856;
 const days = 3;
 const apiUrl = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m,rain&forecast_days=${days}`;
 let hourlyList = {};
+
 async function getWeatherForecast() {
     try {
         const response = await fetch(apiUrl);
@@ -972,20 +971,21 @@ async function getWeatherForecast() {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         const data = await response.json();
-        const { hourly } = data;
-        const { temperature_2m, rain, time } = hourly;
+        const {hourly} = data;
+        const {temperature_2m, rain, time} = hourly;
         hourlyList = temperature_2m
         weatherTestRender(days);
     } catch (error) {
         console.error('Error fetching weather data:', error);
     }
 }
+
 const weatherTestRender = (days) => {
     if (document.getElementById('weatherTest') && days > 0) {
         let b = document.getElementById('weatherTest')
         const today = (i) => {
             let q;
-            switch(i) {
+            switch (i) {
                 case 0:
                     q = 'Сегодня'
                     break;
@@ -1016,7 +1016,7 @@ const weatherTestRender = (days) => {
                 </article>
             `)
         }
-    } else return('Days is not defined')
+    } else return ('Days is not defined')
 }
 // !weather
 
@@ -1026,7 +1026,7 @@ window.addEventListener("resize", () => {
 })
 window.addEventListener("load", () => {
     multipage.getHeaderHeight()
-        .then( () => {
+        .then(() => {
             if (window.innerWidth < 600) {
                 multipage.smoothShowHorizontal()
             }
@@ -1034,7 +1034,6 @@ window.addEventListener("load", () => {
     seasonTapesRender()
 })
 document.addEventListener("DOMContentLoaded", async () => {
-
     needToRender()
     multipage.popupButtonsInit()
 

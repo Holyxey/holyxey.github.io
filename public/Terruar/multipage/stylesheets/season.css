@@ -1,0 +1,37 @@
+[data-season="winter"] #multi-page[data-page="main"] {
+
+    #heroImageBlock {
+        background: url(https://thumb.tildacdn.com/tild6436-6464-4933-a231-633331653566/-/format/webp/KIR_5409.jpg) center / cover !important;
+    }
+
+    #aboutBlock {
+        background: url(https://thumb.tildacdn.com/tild6561-3463-4530-b433-353434333163/-/format/webp/__2.jpg) center center no-repeat;
+    }
+
+    @media screen and (max-width: 600px) {
+        #heroTextBlock {
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.70) 0%, rgba(0, 0, 0, 0.70) 100%),
+            url(https://thumb.tildacdn.com/tild6436-6464-4933-a231-633331653566/-/format/webp/KIR_5409.jpg) lightgray 50%
+            / cover no-repeat !important
+        }
+
+        #aboutBlock {
+            background: none;
+        }
+    }
+}
+[data-season="winter"] #multi-page[data-page="services"] {
+
+    #heroImageBlock {
+        background: url(https://thumb.tildacdn.com/tild3335-3365-4063-a239-646365313532/-/format/webp/Frame_8.png) center / cover !important;
+    }
+
+
+    @media screen and (max-width: 600px) {
+        #heroTextBlock {
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.70) 0%, rgba(0, 0, 0, 0.70) 100%),
+            url(https://thumb.tildacdn.com/tild3335-3365-4063-a239-646365313532/-/format/webp/Frame_8.png) lightgray 50% center
+            / cover no-repeat !important
+        }
+    }
+}

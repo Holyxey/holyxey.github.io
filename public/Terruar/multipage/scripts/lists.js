@@ -73,7 +73,8 @@ const lists = {
             shortDescr: 'Бесплатно',
             fullDescr: 'Лесная тропа длинной 500м, в конце которой вас ждет полноценная зона отдыха с креслами и костровой зоной, а также потрясающим видом на закат. Путь обратно освещается. ',
             benefits: ['', '', ''],
-            images: ['https://thumb.tildacdn.com/tild3162-3733-4263-b164-623962383030/-/format/webp/path.jpeg'],
+            // images: ['https://thumb.tildacdn.com/tild3162-3733-4263-b164-623962383030/-/format/webp/path.jpeg'],
+            images: ['https://static.tildacdn.com/tild6362-6161-4065-b664-366466393761/pexels-photo-688660.jpeg'],
             popUp: true,
             popUpType: 'service',
             readMoreLink: '',
@@ -89,7 +90,8 @@ const lists = {
             shortDescr: 'От 7000р',
             fullDescr: 'Наши фотографы помогут запечатлеть памятную дату или просто создать настроение с помощью фотосессии. Кстати, мы излюбленное место для предложений. Бронировать время фотосессии лучше заранее, так можно будет выбрать из нескольких фотографов.',
             benefits: ['', '', ''],
-            images: ['https://thumb.tildacdn.com/tild3765-6264-4537-b535-616564323736/-/format/webp/photoSession.jpeg'],
+            // images: ['https://thumb.tildacdn.com/tild3765-6264-4537-b535-616564323736/-/format/webp/photoSession.jpeg'],
+            images: ['https://thumb.tildacdn.com/tild3735-3330-4034-a133-343665313739/-/format/webp/pexels-photo-7507966.jpeg'],
             popUp: true,
             popUpType: 'service',
             readMoreLink: '',
@@ -122,8 +124,8 @@ const lists = {
             shortDescr: '4000р/час',
             fullDescr: 'Отличный вариант для любителей активного отдыха, идеален для бездорожья. Доступен специальный маршрут на нашей карте мимо прудов по березовому лесу.',
             benefits: ['', '', ''],
-            images: ['https://thumb.tildacdn.com/tild6230-3462-4431-b436-386138613338/-/format/webp/photo.jpg',
-            ],
+            // images: ['https://thumb.tildacdn.com/tild6230-3462-4431-b436-386138613338/-/format/webp/photo.jpg',],
+            images: ['https://thumb.tildacdn.com/tild3734-3931-4465-a133-613035393531/-/format/webp/quadbike.png',],
             popUp: true,
             popUpType: 'service',
             readMoreLink: '',
@@ -155,8 +157,8 @@ const lists = {
             shortDescr: 'От 8000р',
             fullDescr: 'Заезд по бездорожью с профессиональным водителем. Вас ждут маршруты по лесу, переезд реки вброд, высокие подъемы и не менее экстремальные спуски',
             benefits: ['', '', ''],
-            images: ['https://thumb.tildacdn.com/tild3264-6431-4131-a234-663461616431/-/format/webp/c45331ec-7b02-4c17-8.jpg',
-            ],
+            // images: [ 'https://thumb.tildacdn.com/tild3264-6431-4131-a234-663461616431/-/format/webp/c45331ec-7b02-4c17-8.jpg' ],
+            images: [ 'https://thumb.tildacdn.com/tild3862-6339-4735-a539-356335633039/-/format/webp/tour.png' ],
             popUp: true,
             popUpType: 'service',
             readMoreLink: '',
@@ -333,7 +335,8 @@ const lists = {
         {
             title: 'Скидка 50%',
             description: 'На баню или банный чан при заезде во вторник или среду',
-            cover: 'https://thumb.tildacdn.com/tild3538-3836-4137-a136-646137323339/-/format/webp/1_service.png',
+            // cover: 'https://thumb.tildacdn.com/tild3538-3836-4137-a136-646137323339/-/format/webp/1_service.png',
+            cover: 'https://thumb.tildacdn.com/tild3466-3738-4238-a662-613531393237/-/format/webp/20perc.jpg',
         },
         {
             title: '-15% именинникам',
@@ -348,7 +351,8 @@ const lists = {
         {
             title: 'Романтическое путешествие',
             description: 'Скидка 5%',
-            cover: 'https://thumb.tildacdn.com/tild6537-3530-4731-a637-303634346265/-/format/webp/rom.png',
+            // cover: 'https://thumb.tildacdn.com/tild6537-3530-4731-a637-303634346265/-/format/webp/rom.png',
+            cover: 'https://thumb.tildacdn.com/tild6166-3466-4336-b438-373333633030-/format/webp/Frame_7.png',
             header: 'Домик на 2 ночи',
             highlights: [
                 '2 часа чана',
@@ -367,8 +371,8 @@ const lists = {
         {
             title: 'Активный отдых',
             description: 'Скидка 10%',
-            // cover: 'https://thumb.tildacdn.com/tild6563-3566-4264-b733-383436336232/-/format/webp/active.jpg',
-            cover: 'https://thumb.tildacdn.com/tild3064-3134-4361-a431-393232613639/-/format/webp/image_1.png',
+            // cover: 'https://thumb.tildacdn.com/tild3064-3134-4361-a431-393232613639/-/format/webp/image_1.png',
+            cover: 'https://thumb.tildacdn.com/tild3335-3365-4063-a239-646365313532/-/format/webp/Frame_8.png',
             header: 'Домик на 2 ночи',
             highlights: [
                 'завтрак',
@@ -386,7 +390,8 @@ const lists = {
         {
             title: 'Отдых с детьми',
             description: 'Скидка 5%',
-            cover: 'https://thumb.tildacdn.com/tild6261-6633-4765-b435-656230326233/-/format/webp/kid3.jpg',
+            // cover: 'https://thumb.tildacdn.com/tild6261-6633-4765-b435-656230326233/-/format/webp/kid3.jpg',
+            cover: 'https://thumb.tildacdn.com/tild3734-6461-4230-a562-333430316632/-/format/webp/Frame_9.png',
             header: 'Домик на 2 ночи',
             highlights: [
                 'завтрак',
@@ -406,7 +411,8 @@ const lists = {
             title: 'Отдых с друзьями',
             description: 'Скидка 15%',
             // cover: 'https://thumb.tildacdn.com/tild3130-3066-4432-a563-653332376334/-/format/webp/friends1.JPG',
-            cover: 'https://thumb.tildacdn.com/tild3665-3365-4735-b764-653165653764/-/format/webp/IMG_7498_1.png',
+            // cover: 'https://thumb.tildacdn.com/tild3665-3365-4735-b764-653165653764/-/format/webp/IMG_7498_1.png',
+            cover: 'https://thumb.tildacdn.com/tild3636-3035-4064-a163-323036353261-/format/webp/Frame_10.png',
             header: '2 домика на 2 ночи',
             highlights: [
                 'завтрак',
@@ -433,7 +439,8 @@ const lists = {
             shortDescr: 'Трансляция с камеры нашей территории, и прогноз погоды на пару дней',
             fullDescr: '',
             benefits: ['', '', ''],
-            images: ['https://optim.tildacdn.com/tild3530-3138-4862-a135-633935343735/-/format/webp/heroImg.png'],
+            images: ['https://static.tildacdn.com/tild3833-3736-4030-b937-353336636234/image.jpg'],
+            // images: ['https://optim.tildacdn.com/tild3530-3138-4862-a135-633935343735/-/format/webp/heroImg.png'],
             icon: 'https://static.tildacdn.com/tild6139-3036-4063-b835-343664383336/camera.svg',
             popUp: true,
             readMoreLink: '',
@@ -450,19 +457,6 @@ const lists = {
             fullDescr: '',
             benefits: ['', '', ''],
             images: [
-                // "https://optim.tildacdn.com/tild3862-3466-4135-a662-666565663861/-/format/webp/DSC_4429-2_.JPG",
-                // "https://optim.tildacdn.com/tild3437-3138-4262-b363-626433353334/-/format/webp/DSC_4434-2_.JPG",
-                // "https://optim.tildacdn.com/tild6664-3532-4735-b462-633139333135/-/format/webp/DSC_4440-2_.JPG",
-                // "https://optim.tildacdn.com/tild3433-3235-4663-b232-643536333365/-/format/webp/DSC_4443-2_.JPG",
-                // "https://optim.tildacdn.com/tild6162-6562-4463-a437-636434366233/-/format/webp/DSC_4445-2_.JPG",
-                // "https://optim.tildacdn.com/tild6336-3166-4539-b933-646265376165/-/format/webp/DSC_4878-2_.JPG",
-                // "https://optim.tildacdn.com/tild6633-3865-4561-b134-376231613366/-/format/webp/DSC_4575-2_.JPG",
-                // "https://optim.tildacdn.com/tild3661-6230-4561-a565-376134643135/-/format/webp/DSC_4453-2_.JPG",
-                // "https://optim.tildacdn.com/tild6334-3865-4563-b063-353037343638/-/format/webp/DSC_4902-2_.JPG",
-                // "https://optim.tildacdn.com/tild3134-3434-4562-a631-316133326565/-/format/webp/DSC_4454-2_.JPG",
-                // "https://optim.tildacdn.com/tild3837-3564-4233-b164-306238613366/-/format/webp/DSC_4638-2_.JPG",
-                // "https://optim.tildacdn.com/tild6635-3839-4761-a336-323563613861/-/format/webp/DSC_4462-2_.JPG",
-                // "https://optim.tildacdn.com/tild6538-3838-4332-b963-333761386339/-/format/webp/DSC_4611-2_.JPG",
                 "https://optim.tildacdn.com/tild6234-3262-4536-a465-373837626336/-/format/webp/DSC_4432-2_.JPG",
                 "https://optim.tildacdn.com/tild6466-3038-4463-b737-363630623662/-/format/webp/DSC_4876-2_.JPG",
                 "https://optim.tildacdn.com/tild6462-6533-4762-b666-313337666537/-/format/webp/DSC_4435-2_.JPG",
@@ -929,7 +923,20 @@ const lists = {
 }
 const seasonTapes = [
     'Бассейн',
+    'Сплав на кайаках',
+    'Пруд и Сап-борды',
     'Malbec',
     'Riesling',
     'Merlot',
 ]
+
+const setSeason = () => {
+    const month = new Date().getMonth() + 1;
+    const body = document.getElementsByTagName('body')[0];
+    if (11 > month > 1) {
+        body.setAttribute('data-season', 'summer');
+    } else {
+        body.setAttribute('data-season', 'winter');
+    }
+}
+setSeason()
