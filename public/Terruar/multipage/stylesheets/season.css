@@ -50,3 +50,6 @@
 [data-season="winter"] .horizontalPreview {
     background-image: url(https://thumb.tildacdn.com/tild3731-3761-4264-b432-323661343064/-/format/webp/1950070091-b25af30d5.jpg) !important;
 }
+[data-season="winter"] .verticalPreview {
+    background-image: url(https://static.tildacdn.com/tild3330-3962-4166-b932-393131333235/Slide_16_9_-_2.png) !important;
+}
