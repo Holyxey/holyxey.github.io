@@ -411,7 +411,12 @@ const seasonTapesRender = () => {
         return seasonTapes.some(text => el.title === text || el.id === text)
     })
     elForTapping.forEach(el => {
-        renderATape(el)
+        renderATape(el);
+        if (el.querySelector('.variantPreviewImage'))
+            el.querySelector('.variantPreviewImage').style.filter = 'grayscale(1)'
+        if (el.querySelector('img'))
+            el.querySelector('img').style.filter = 'grayscale(1)'
+        if (el.querySelector('a')) el.querySelector('a').remove()
     })
 }
 
