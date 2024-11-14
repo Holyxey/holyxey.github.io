@@ -416,7 +416,6 @@ const seasonTapesRender = () => {
             el.querySelector('.variantPreviewImage').style.filter = 'grayscale(1)'
         if (el.querySelector('img'))
             el.querySelector('img').style.filter = 'grayscale(1)'
-        if (el.querySelector('a')) el.querySelector('a').remove()
     })
 }
 

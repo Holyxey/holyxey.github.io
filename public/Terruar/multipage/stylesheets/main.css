@@ -121,8 +121,6 @@ body {
     display: flex;
     gap: 1rem;
     filter: grayscale(0);
-
-    animation: showVideoOpacity .5s ease-in-out;
 }
 .a-tape p {
     font-family: 'Raleway', "Roboto", Tahoma, Arial, sans-serif;
