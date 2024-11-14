@@ -20,6 +20,7 @@
         }
     }
 }
+
 [data-season="winter"] #multi-page[data-page="services"] {
 
     #heroImageBlock {
@@ -35,3 +36,11 @@
         }
     }
 }
+
+[data-season="winter"] .horizontalPreview {
+    background-image: url(https://thumb.tildacdn.com/tild3731-3761-4264-b432-323661343064/-/format/webp/1950070091-b25af30d5.jpg) !important;
+}
+
+/*
+https://thimb.tildacdn.com/tild3731-3761-4264-b432-323661343064/-/format/webp/1950070091-b25af30d5.jpg
+         */
