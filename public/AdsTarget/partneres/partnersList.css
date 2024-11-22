@@ -1,0 +1,23 @@
+@import "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css";
+.swiper {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 1200px;
+    height: 3rem;
+    padding-inline: 1rem;
+}
+img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    margin: auto;
+    /*max-height: 30px;*/
+}
+.swiper-slide { display: inline-block; overflow: hidden; }
+
+@media screen and (max-width: 640px) {
+    .swiper {
+        height: 100px;
+    }
+}

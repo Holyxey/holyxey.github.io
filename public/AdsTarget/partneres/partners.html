@@ -5,65 +5,14 @@
     <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
           name="viewport">
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <link href="partnersList.css" rel="stylesheet">
     <title>Document</title>
-    <style>
-        #partnersNode {}
-        #partnersNode {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-            max-width: 1200px;
-            /*overflow: hidden;*/
-            margin: 0 auto;
-            position: relative;
-            transition: gap .3s ease-out;
-        }
-        #partnersNode a img {
-            object-fit: fill;
-            height: 40px;
-            cursor: pointer;
-            filter: grayscale(1);
-            opacity: .7;
-            transition: opacity .5s ease-out, filter .25s ease-out;
-        }
-        #partnersNode a img:hover {
-            opacity: 1;
-            filter: grayscale(0);
-        }
-        #partnersNode .arrow {
-            position: absolute;
-            width: 30px;
-            height: 30px;
-            background-color: #ff5091;
-            border-radius: 100vmin;
-            border: none;
-            animation: showArrow .3s ease-out;
-            cursor: pointer;
-            text-align: center;
-        }
-        #partnersNode .arrow.left {
-            top: 50%;
-            left: 0;
-            translate: -50% -50%;
-        }
-        #partnersNode .arrow.right {
-            top: 50%;
-            right: 0;
-            translate: -50% -50%;
-        }
-
-        @keyframes showArrow {
-            from { opacity: 0; transform: translateY(1rem) }
-            to { opacity: 1; transform: translateY(0) }
-        }
-    </style>
 </head>
 <body>
 
-<h1>Наши партнеры</h1>
-<section id="partnersNode">
-</section>
+    <h1>Наши партнеры</h1>
+    <section id="partnersNode" class="swiper"></section>
+    <script type="module" src="partnersList.js"></script>
 
-<script src="partners.js"></script>
 </body>
 </html>
