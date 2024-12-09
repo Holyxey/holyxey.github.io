@@ -52,6 +52,11 @@
 #header div:nth-child(1) #headerPhone {
     font-weight: 500;
 }
+#header .headerStars {
+    display: flex;
+    align-content: center;
+    justify-content: space-around;
+}
 
 #header #mobileBurger {
     display: none;
