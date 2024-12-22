@@ -1217,8 +1217,8 @@ const scheduleSeason = {
                         "",
                     ],
                     "Среда": [
-                        "17:45-18:45 зал",
-                        "19:00-20:00 лед",
+                        "18:45-19:45 зал",
+                        "20:00-21:00 лед",
                     ],
                     "Четверг": [
                         "",
@@ -1227,8 +1227,8 @@ const scheduleSeason = {
                         "",
                     ],
                     "Суббота": [
-                        "10:00-11:00 лед",
-                        "11:15-12:15 зал",
+                        "12:30-13:30 лед",
+                        "13:45-14:45 зал",
                     ],
                     "Воскресенье": [
                         "",
@@ -3459,7 +3459,6 @@ const renderByTiming = (sectionName) => {
         )
     });
     removeEmpty()
-
 }
 renderWeekSections.forEach(section => {
     renderWeek(section.getAttribute('data-arena-name'))
