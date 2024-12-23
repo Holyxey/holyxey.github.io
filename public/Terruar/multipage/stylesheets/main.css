@@ -380,7 +380,7 @@ body {
     display: none !important;
 }
 .znms-widget__module-form-block--header {
-    z-index: 9999 !important;
+    z-index: 99 !important;
 }
 .znms-widget__brononline_popup_full {
     z-index: 999999 !important;
