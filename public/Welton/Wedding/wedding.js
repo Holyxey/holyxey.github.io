@@ -18,12 +18,12 @@ const highlights = [
 ]
 const descriptions = [
     {
-        eng: 'Special price for 1 hour exclusive SPA rent - 2 000 RUR',
-        rus: 'Специальная стоимость аренды SPA на 1 час под закрытие - 2000 руб.',
+        eng: 'Special price for 1 hour exclusive SPA rent - 2 400 RUR',
+        rus: 'Специальная стоимость аренды SPA на 1 час под закрытие - 2400 руб.',
     },
     {
-        eng: '4 000 RUR* At the reservation of Wedding package additional 20% discount for the room rate is applied',
-        rus: 'Стоимость: 4000 руб.* <i>При бронировании свадебного пакета предоставляется скидка 20% на проживание в любой категории номера</i>',
+        eng: '4 800 RUR* At the reservation of Wedding package additional 20% discount for the room rate is applied',
+        rus: 'Стоимость: 4800 руб.* <i>При бронировании свадебного пакета предоставляется скидка 20% на проживание в любой категории номера</i>',
     },
 ]
 
