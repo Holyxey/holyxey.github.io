@@ -593,9 +593,13 @@ const coaches = {
         "position": "Наши тренеры",
         "post": null,
         "photo": "https://thumb.tildacdn.com/tild3239-3861-4732-b664-393137373432/photo.png",
-        "contacts": [ ],
-        "arenas": [ ],
-        "description": [ ]
+        "contacts": [],
+        "arenas": ["Репино", "Рубеж"],
+        "description": [
+            "Родилась в Твери. Занималась одиночным катанием, выполнила разряд КМС. Призёр региональных соревнований.\n" +
+            "В сезонах 2022-2023, 2023-2024 гг. работала тренером в Твери.\n" +
+            "Начиная с сезона 2024-2025 гг., работает тренером в школе «Голден Айс»."
+        ]
     },
     "Попова Елизавета Алексеевна": {
         "active": true,
@@ -605,9 +609,9 @@ const coaches = {
         "position": "Наши тренеры",
         "post": null,
         "photo": "https://thumb.tildacdn.com/tild6466-3165-4431-b066-386562333965/photo.png",
-        "contacts": [ ],
-        "arenas": [ ],
-        "description": [ ]
+        "contacts": [],
+        "arenas": [],
+        "description": []
     },
     "Вязина Екатерина Антоновна": {
         "active": true,
@@ -617,9 +621,9 @@ const coaches = {
         "position": "Наши тренеры",
         "post": null,
         "photo": "https://thumb.tildacdn.com/tild3766-3361-4233-a563-616632663537/photo.png",
-        "contacts": [ ],
-        "arenas": [ ],
-        "description": [ ]
+        "contacts": [],
+        "arenas": [],
+        "description": []
     },
     "Степаньков Никита Вадимович": {
         "active": true,
