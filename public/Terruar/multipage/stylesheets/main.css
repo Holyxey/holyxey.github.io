@@ -1464,6 +1464,8 @@ body {
     display: flex;
     flex-direction: column;
     gap: .5rem;
+    flex: 1;
+    min-width: 200px;
 }
 #terruarMenu .menuCategory .product .productTitle {
     font-size: 1.2rem;
