@@ -15,6 +15,24 @@ img {
     /*max-height: 30px;*/
 }
 .swiper-slide { display: inline-block; overflow: hidden; }
+.swiper-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+    background-color: white;
+    color: #019EF7;
+    border: 1px solid #019EF7;
+    aspect-ratio: 1/1;
+    cursor: pointer;
+    border-radius: 100vmin;
+}
+.swiper-button-left {
+    left: 0;
+}
+.swiper-button-right {
+    right: 0;
+}
 
 @media screen and (max-width: 640px) {
     .swiper {

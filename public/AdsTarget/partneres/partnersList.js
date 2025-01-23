@@ -125,8 +125,12 @@ import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs
 
 (function renderPartners() {
     partnersNode.insertAdjacentHTML('beforeend', `<div class="swiper-wrapper"></div>`)
-    partnersNode.insertAdjacentHTML('beforeend', `<div class="swiper-button-prev"></div>`)
-    partnersNode.insertAdjacentHTML('beforeend', `<div class="swiper-button-next"></div>`)
+    partnersNode.insertAdjacentHTML('beforeend', `<div class="swiper-button swiper-button-left">
+            <svg style="display: block" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 6s-6 4.419-6 6s6 6 6 6" color="currentColor"/></svg>
+        </div>`)
+    partnersNode.insertAdjacentHTML('beforeend', `<div class="swiper-button swiper-button-right">
+            <svg style="display: block" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 6s6 4.419 6 6s-6 6-6 6" color="currentColor"/></svg>
+        </div>`)
 
 
     const wrapper = partnersNode.querySelector('.swiper-wrapper')
@@ -144,7 +148,7 @@ const slidesPerView = partnersNode.getBoundingClientRect().width / 200
 
 const swiperParams = {
     speed: 400, endless: true, loop: true, autoplay: {delay: 2400}, navigation: {
-        nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev',
+        nextEl: '.swiper-button-right', prevEl: '.swiper-button-left',
     }, pagination: {
         el: ".swiper-pagination", clickable: true,
     }, breakpoints: {
