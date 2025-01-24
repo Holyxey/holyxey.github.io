@@ -1,12 +1,12 @@
 @import "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css";
-.swiper {
+#partnersNode.swiper {
     box-sizing: border-box;
     width: 100%;
     max-width: 1200px;
     height: 3rem;
     padding-inline: 1rem;
 }
-img {
+#partnersNode img {
     display: block;
     width: 100%;
     height: 100%;
@@ -14,8 +14,8 @@ img {
     margin: auto;
     /*max-height: 30px;*/
 }
-.swiper-slide { display: inline-block; overflow: hidden; }
-.swiper-button {
+#partnersNode .swiper-slide { display: inline-block; overflow: hidden; }
+#partnersNode .swiper-button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -27,15 +27,15 @@ img {
     cursor: pointer;
     border-radius: 100vmin;
 }
-.swiper-button-left {
+#partnersNode .swiper-button-left {
     left: 0;
 }
-.swiper-button-right {
+#partnersNode .swiper-button-right {
     right: 0;
 }
 
 @media screen and (max-width: 640px) {
-    .swiper {
+    #partnersNode.swiper {
         height: 100px;
     }
 }
