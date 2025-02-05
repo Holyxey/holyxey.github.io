@@ -352,11 +352,13 @@ body {
 
 #znms-widget-1 {
     z-index: 999999 !important;
+    padding-inline: .5rem;
 }
 #znms-widget-1 > div  {
     background-color: var(--holyxey-back-o);
     border-radius: 2rem;
-    margin-inline: .5rem;
+    margin-inline: auto;
+    max-width: 1400px;
 }
 #znms-widget-floating-0 {
     display: none !important;
