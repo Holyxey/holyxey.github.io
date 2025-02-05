@@ -359,43 +359,6 @@ body {
 a[href^="https://bronirui-online.ru/module?utm_source"] {
     display: none !important;
 }
-/*.counter-guest { display: none; }*/
-/*Booking
-.znms-widget__module-form-block {
-    top: 620px !important;
-    left: .5rem !important;
-    right: .5rem !important;
-    border-radius: 2rem !important;
-}
-.znms-widget__module-form-block__wrap {
-    max-width: unset !important;
-}
-.znms-widget__module-form-block--opacity-bg {
-    max-width: 1400px;
-    background-color: var(--holyxey-back-o) !important;
-}
-.znms-widget__module-form-block__btn,
-.znms-widget__place_form-btn,
-.znms-widget__btn,
-.znms-widget__tariffs_promo-btn,
-.znms-widget__btn2:hover,
-.znms-widget__v-calendar-day-content:hover {
-    background-color: var(--holyxey-wine) !important;
-    color: var(--holyxey-white) !important;
-}
-.znms-widget__colored-text {
-    color: var(--holyxey-wine) !important;
-}
-.znms-widget__module-form-block__item--lg {
-    display: none !important;
-}
-.znms-widget__module-form-block--header {
-    z-index: 99 !important;
-}
-.znms-widget__brononline_popup_full {
-    z-index: 999999 !important;
-}
-!Header*/
 
 /* needToRender (base design) */
 .classic-sec {
