@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../stylesheets/season.css">
     <link rel="stylesheet" href="../stylesheets/main.css">
     <script src="../scripts/whatIsMax.js"></script>
+    <script src="https://widget.bronirui-online.ru/js/app.js" type="text/javascript"></script>
 </head>
 <body>
 <script src="../scripts/lists.js"></script>
@@ -76,7 +77,7 @@
                 </li>
             </menu>
         </nav>
-        <section id="hero" data-nomain="services" style="margin-bottom: 200px; margin-top: calc(67px + 5rem);">
+        <section id="hero" data-nomain="services">
             <section id="heroTextBlock">
                 <section id="heroHeadlineContainer">
                     <h1>Глэмпинг Терруар
@@ -153,11 +154,7 @@
             </section>
             <article id="heroImageBlock" class="shadow"></article>
         </section>
-<!--        <div data-v-f8873cb8="">-->
-<!--            <div data-v-1e3aff0c="" data-v-f8873cb8="" class="znms-widget__teleporter znms-widget__hidden"></div>-->
-<!--            <div data-v-1e3aff0c="" data-v-f8873cb8="" class="znms-widget__teleporter znms-widget__hidden"></div>-->
-<!--        </div>-->
-        <script src="https://widget.bronirui-online.ru/js/app.js" type="text/javascript"></script>
+        <div id="znms-widget-1"></div>
     </header>
     <main>
         <section id="hero-offers" title="Основные предложения" data-need-to-render="other,2,3"></section>
@@ -355,10 +352,8 @@
 
 <script src="../scripts/main.js"></script>
 
-
-<!-- Инициализация модуля бронирования-->
 <script>
-    window.znmsWidget.init('#booking', {
+    window.znmsWidget.init('#znms-widget-1', {
         moduleId: 5428,
         index: 0,
         widget: {
@@ -376,17 +371,44 @@
         // Настройки позиции плавающей кнопки
         button: {
             position: {
-                bottom: '-5rem',
-                left: '-5rem',
-                right: '-5rem',
+                bottom: '50px',
+                left: '50px',
+                right: '50px',
             },
         },
     })
 </script>
+<!-- Инициализация модуля бронирования-->
+<!--<script>-->
+<!--    window.znmsWidget.init('#booking', {-->
+<!--        moduleId: 5428,-->
+<!--        index: 0,-->
+<!--        widget: {-->
+<!--            position: {-->
+<!--                top: '650px',-->
+<!--            },-->
+<!--            mobile: {-->
+<!--                absolute: false, // Абсолютное позиционирование в мобильной версии при виде отображения "У шапки сайта"-->
+<!--                color: undefined, // HEX-код цвета виджета в мобильной версии-->
+<!--                position: {-->
+<!--                    top: '100px',-->
+<!--                },-->
+<!--            },-->
+<!--        },-->
+<!--        // Настройки позиции плавающей кнопки-->
+<!--        button: {-->
+<!--            position: {-->
+<!--                bottom: '-5rem',-->
+<!--                left: '-5rem',-->
+<!--                right: '-5rem',-->
+<!--            },-->
+<!--        },-->
+<!--    })-->
+<!--</script>-->
 <!-- /Инициализация модуля бронирования-->
 <!--Инициализация стрима-->
-<!--<script src='https://softvelum.com/player/releases/sldp-v2.26.1.min.js' type='text/javascript'></script>-->
-<script src='../scripts/sldp-v2.26.1.js' type='text/javascript'></script>
+<script src='https://softvelum.com/player/releases/sldp-v2.26.1.min.js' type='text/javascript'></script>
+<!--<script src='../scripts/sldp-v2.26.1.js' type='text/javascript'></script>-->
 <script src="../scripts/adCompanies/subOffers.js" type='text/javascript'></script>
 <!--/Инициализация стрима-->
 </body>

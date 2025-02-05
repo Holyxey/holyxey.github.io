@@ -1,9 +1,11 @@
-    #casesHeader {
-        background-color: var(--c-bl-tr);
-    }
+#casesHeader {
+    background-color: var(--c-bl-tr);
+}
+
 .hx-at-case-web {
     min-width: 30%;
 }
+
 .hx-at-case-img {
     aspect-ratio: 1 / 1.2;
     flex-direction: column;
@@ -11,10 +13,12 @@
     padding: 5px;
     max-width: calc(100% - 10px);
 }
+
 #allCasesButton {
     translate: -50%;
     left: 50%;
 }
-    .newCover {
-        background-position: top center!important;
-    }
+
+.newCover {
+    background-position: top center !important;
+}

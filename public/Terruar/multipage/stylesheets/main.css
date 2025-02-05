@@ -143,7 +143,7 @@ body {
     left: 0;
     right: 0;
 
-    z-index: 99999;
+    z-index: 9999;
 }
 #multi-page nav * {
     transition: .3s;
@@ -343,14 +343,18 @@ body {
 #multi-page header #heroContactButtons .heroSocialButtons svg:hover {
     scale: 1.1;
 }
-/**/#multi-page header #hero #booking {
+#multi-page header #hero #booking {
     background-color: var(--holyxey-back-o);
     width: 100%;
     padding: 2rem 4rem;
     border-radius: 1rem;
 }
 
-/*Booking*/
+#znms-widget-1 {
+    z-index: 999999 !important;
+}
+.counter-guest { display: none; }
+/*Booking
 .znms-widget__module-form-block {
     top: 620px !important;
     left: .5rem !important;
@@ -385,7 +389,7 @@ body {
 .znms-widget__brononline_popup_full {
     z-index: 999999 !important;
 }
-/*!Header*/
+!Header*/
 
 /* needToRender (base design) */
 .classic-sec {

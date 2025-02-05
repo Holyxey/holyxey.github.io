@@ -695,13 +695,16 @@ const multipage = {
     },
     modulePosition() {
         let module;
+        let PCModule
         const hero = document.getElementById('hero');
         const findModule = setInterval(() => {
             if (document.querySelector('.znms-widget__module-form-block')) {
                 // clearInterval(findModule)
                 module = document.querySelector('.znms-widget__module-form-block')
+                PCModule = document.querySelector('.znms-widget')
                 let topPosition = hero.offsetTop + hero.offsetHeight;
                 module.style.cssText = `top: ${topPosition}px !important;`
+                PCModule.style.cssText = `top: ${topPosition}px !important;`
                 hero.style.marginBottom = module.offsetHeight + 100 + 'px'
             }
         }, 300)
@@ -1026,7 +1029,7 @@ const weatherTestRender = (days) => {
 
 window.addEventListener("resize", () => {
     multipage.getHeaderHeight()
-        .then(multipage.modulePosition)
+        // .then(multipage.modulePosition)
 })
 window.addEventListener("load", () => {
     multipage.getHeaderHeight()
@@ -1042,7 +1045,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     multipage.popupButtonsInit()
 
     multipage.getHeaderHeight()
-        .then(multipage.modulePosition)
+        // .then(multipage.modulePosition)
         .then(renderVariantsPreview)
         .then(whereToRenderCounter)
         .then(multipage.renderFAQ)
