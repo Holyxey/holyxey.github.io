@@ -22,7 +22,8 @@ function addOffer() {
     const queryParams = new URLSearchParams(window.location.search);
     const utmAds = queryParams.get('utm_ads');
     const adsCookie = localStorage.getItem('terruar_utm_ads_cookie');
-    const isExpired = offers[utmAds || adsCookie].expires - new Date().getTime() < 0;
+    const offer = offers[utmAds || adsCookie]
+    const isExpired = offer?.expires - new Date().getTime() < 0;
 
     if ((utmAds || adsCookie) && isExpired) {
         localStorage.removeItem('terruar_utm_ads_cookie');

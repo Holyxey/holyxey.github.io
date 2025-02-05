@@ -1,20 +1,4 @@
-<!doctype html>
-<html lang="en" style="background-color: #1e1b23">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <script src="https://widget.bronirui-online.ru/js/app.js" type="text/javascript"></script>
-</head>
-<body>
-<div>
-    <div id="znms-widget-1"></div>
-    <h1>fontteest</h1>
-</div>
-</body>
-<script>
+try {
     window.znmsWidget.init('#znms-widget-1', {
         moduleId: 5428,
         index: 0,
@@ -39,5 +23,7 @@
             },
         },
     })
-</script>
-</html>
+}
+catch (e) {
+    console.error(e)
+}

@@ -693,22 +693,6 @@ const multipage = {
             hero.style.cssText += `margin-top: ${margin}`; //height:${height};
         } // для мобильных
     },
-    modulePosition() {
-        let module;
-        let PCModule
-        const hero = document.getElementById('hero');
-        const findModule = setInterval(() => {
-            if (document.querySelector('.znms-widget__module-form-block')) {
-                // clearInterval(findModule)
-                module = document.querySelector('.znms-widget__module-form-block')
-                PCModule = document.querySelector('.znms-widget')
-                let topPosition = hero.offsetTop + hero.offsetHeight;
-                module.style.cssText = `top: ${topPosition}px !important;`
-                PCModule.style.cssText = `top: ${topPosition}px !important;`
-                hero.style.marginBottom = module.offsetHeight + 100 + 'px'
-            }
-        }, 300)
-    },
     hideMobileMenu() {
         let btn = document.getElementById('monMenuButton');
         if (btn.getBoundingClientRect().width > 0) return btn.click();
@@ -836,18 +820,20 @@ const multipage = {
     },
     smoothShowHorizontal: function () {
         const parentElements = document.querySelectorAll('[data-smooth-mobile]')
-        parentElements.forEach(parentElement => {
-            parentElement.addEventListener('touchmove', e => {
-                parentElement.children[0].style.animation = ``
+        if (parentElements.length > 0) {
+            parentElements.forEach(parentElement => {
+                parentElement.addEventListener('touchmove', e => {
+                    parentElement.children[0].style.animation = ``
+                })
+                const waitOnTheViewPort = setInterval(() => {
+                    if (parentElement.getBoundingClientRect().top + 250 < window.innerHeight) {
+                        parentElement.children[0].style.animation = `smoothShowHorizontal 3s ease-in-out`
+                        clearInterval(waitOnTheViewPort);
+                    } else {
+                    }
+                }, 1000)
             })
-            const waitOnTheViewPort = setInterval(() => {
-                if (parentElement.getBoundingClientRect().top + 250 < window.innerHeight) {
-                    parentElement.children[0].style.animation = `smoothShowHorizontal 3s ease-in-out`
-                    clearInterval(waitOnTheViewPort);
-                } else {
-                }
-            }, 1000)
-        })
+        }
     },
     changeScroll() {
         if (document.body.style.overflow === 'hidden')
@@ -873,7 +859,7 @@ const multipage = {
         }
     }, // Строкой получаем название браузера ( для трансляции )
     bookingClick() {
-        let booking = document.querySelector('.znms-widget__widget-btn');
+        let booking = document.querySelector('#znms-widget-floating-0');
         if (booking) {
             booking.click()
         }
@@ -1029,7 +1015,6 @@ const weatherTestRender = (days) => {
 
 window.addEventListener("resize", () => {
     multipage.getHeaderHeight()
-        // .then(multipage.modulePosition)
 })
 window.addEventListener("load", () => {
     multipage.getHeaderHeight()
@@ -1045,7 +1030,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     multipage.popupButtonsInit()
 
     multipage.getHeaderHeight()
-        // .then(multipage.modulePosition)
         .then(renderVariantsPreview)
         .then(whereToRenderCounter)
         .then(multipage.renderFAQ)

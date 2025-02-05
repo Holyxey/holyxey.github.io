@@ -353,7 +353,13 @@ body {
 #znms-widget-1 {
     z-index: 999999 !important;
 }
-.counter-guest { display: none; }
+#znms-widget-floating-0 {
+    display: none !important;
+}
+a[href^="https://bronirui-online.ru/module?utm_source"] {
+    display: none !important;
+}
+/*.counter-guest { display: none; }*/
 /*Booking
 .znms-widget__module-form-block {
     top: 620px !important;
