@@ -353,9 +353,15 @@ body {
 #znms-widget-1 {
     z-index: 999999 !important;
 }
+#znms-widget-1 > div  {
+    background-color: var(--holyxey-back-o);
+    border-radius: 2rem;
+    margin-inline: .5rem;
+}
 #znms-widget-floating-0 {
     display: none !important;
 }
+.counter-guest {display: none}
 a[href^="https://bronirui-online.ru/module?utm_source"] {
     display: none !important;
 }
