@@ -859,7 +859,7 @@ const multipage = {
         }
     }, // Строкой получаем название браузера ( для трансляции )
     bookingClick() {
-        let booking = document.querySelector('#znms-widget-floating-0');
+        let booking = document.querySelector('#znms-widget-floating-0') || document.querySelector('.znms-widget__widget-btn');
         if (booking) {
             booking.click()
         }
