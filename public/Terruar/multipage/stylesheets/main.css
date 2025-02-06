@@ -350,6 +350,7 @@ body {
     border-radius: 1rem;
 }
 
+/* znms */
 #znms-widget-1 {
     z-index: 999999 !important;
     padding-inline: .5rem;
@@ -360,13 +361,19 @@ body {
     margin-inline: auto;
     max-width: 1400px;
 }
-#znms-widget-floating-0 {
+#znms-widget-floating-0,
+.znms-widget__widget-btn{
     display: none !important;
 }
 .counter-guest {display: none}
 a[href^="https://bronirui-online.ru/module?utm_source"] {
     display: none !important;
 }
+
+.znms-widget__module-form-block__title {
+    color: var(--holyxey-white) !important;
+}
+/* !znms */
 
 /* needToRender (base design) */
 .classic-sec {
