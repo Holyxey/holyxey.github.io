@@ -351,6 +351,9 @@ body {
 }
 
 /* znms */
+header .znms-widget__teleporter button[type="submit"] {
+    background-color: var(--holyxey-wine)!important;
+}
 #znms-widget-1 {
     z-index: 999999 !important;
     padding-inline: .5rem;
