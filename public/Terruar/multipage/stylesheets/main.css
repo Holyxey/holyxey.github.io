@@ -351,14 +351,15 @@ body {
 }
 
 /* znms */
-header .znms-widget__teleporter button[type="submit"] {
+.znms-widget__teleporter button[type="submit"] {
     background-color: var(--holyxey-wine)!important;
 }
-header .znms-widget__teleporter .znms-widget__module-form-block {
+.znms-widget__teleporter .znms-widget__module-form-block {
     background: var(--holyxey-back-o);
     border-radius: 2rem!important;
     max-width: 1400px;
 }
+.znms-widget__teleporter .znms-widget__input-people-counter-horizontal {display: none!important;}
 .znms-widget__brononline_popup_full .znms-widget__place_form button[type="submit"] {
     background-color: var(--holyxey-wine)!important;
 }
