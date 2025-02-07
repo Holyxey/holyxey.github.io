@@ -354,6 +354,11 @@ body {
 header .znms-widget__teleporter button[type="submit"] {
     background-color: var(--holyxey-wine)!important;
 }
+header .znms-widget__teleporter .znms-widget__module-form-block {
+    background: var(--holyxey-back-o);
+    border-radius: 2rem!important;
+    max-width: 1400px;
+}
 #znms-widget-1 {
     z-index: 999999 !important;
     padding-inline: .5rem;
