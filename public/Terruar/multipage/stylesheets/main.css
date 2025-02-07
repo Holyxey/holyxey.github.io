@@ -365,13 +365,14 @@ body {
 }
 .znms-widget__brononline_popup_full .znms-widget__btn {
     background-color: var(--holyxey-wine)!important;
+    border-color: var(--holyxey-wine)!important;
     color: var(--holyxey-white)!important;
 }
 .znms-widget__brononline_popup_full .znms-widget__btn2 {
     border: 1px solid var(--holyxey-wine) !important;
     color: var(--holyxey-wine) !important;
 }
-.znms-widget__brononline_popup_full .znms-widget__colored-text {
+.znms-widget__brononline_popup_full [class^=znms-widget__icon-] {
     color: var(--holyxey-wine)!important;
 }
 /**/
