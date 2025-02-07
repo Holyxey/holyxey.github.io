@@ -359,6 +359,21 @@ header .znms-widget__teleporter .znms-widget__module-form-block {
     border-radius: 2rem!important;
     max-width: 1400px;
 }
+.znms-widget__brononline_popup_full .znms-widget__place_form button[type="submit"] {
+    background-color: var(--holyxey-wine)!important;
+}
+.znms-widget__brononline_popup_full .znms-widget__btn {
+    background-color: var(--holyxey-wine)!important;
+    color: var(--holyxey-white)!important;
+}
+.znms-widget__brononline_popup_full .znms-widget__btn2 {
+    border: 1px solid var(--holyxey-wine) !important;
+    color: var(--holyxey-wine) !important;
+}
+.znms-widget__brononline_popup_full .znms-widget__colored-text {
+    color: var(--holyxey-wine)!important;
+}
+/**/
 #znms-widget-1 {
     z-index: 999999 !important;
     padding-inline: .5rem;
