@@ -372,6 +372,11 @@ body {
     border: 1px solid var(--holyxey-wine) !important;
     color: var(--holyxey-wine) !important;
 }
+.znms-widget__brononline_popup_full .znms-widget__btn2:hover {
+    border: 1px solid var(--holyxey-wine) !important;
+    color: var(--holyxey-white) !important;
+    background-color: var(--holyxey-wine) !important;
+}
 .znms-widget__brononline_popup_full [class^=znms-widget__icon-] {
     color: var(--holyxey-wine)!important;
 }
