@@ -122,6 +122,15 @@ h2 {
 
     gap: 2rem;
 }
+#goldenHeader div #headerSection #headerContacts .headerTitle {
+    flex: 1;
+    text-wrap: nowrap;
+    text-align: center;
+    min-width: 300px;
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: #10121F !important;
+}
 #goldenHeader div #headerSection #headerContacts #headerSocials {
     display: flex;
     gap: .5rem;
