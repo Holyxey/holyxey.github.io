@@ -663,10 +663,12 @@ const multipage = {
             const list = target.getAttribute('data-list')
             const obj = lists[list].find((service, id) => service.id === name)
 
+            const imageSrc = obj.images?.[season]?.[0] ? obj.images[season][0] : obj.images[0]
+
             return `
             <section data-ip-service="${obj.id}" id="popup-service">
             <div class="popup-service-imgblock">
-                <img onload="whatIsMax(this)" src="${obj.images[season][0]}" alt="${obj.fullDescr}" class="popup-service-img">
+                <img onload="whatIsMax(this)" src="${imageSrc}" alt="${obj.fullDescr}" class="popup-service-img">
             </div>
             <div class="popup-service-textblock">
                 <h3 class="popup-service-header">${obj.shortDescr}</h3>
