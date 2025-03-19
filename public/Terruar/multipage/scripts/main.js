@@ -102,6 +102,9 @@ const needToRender = function (where) {
             what.forEach(function (item) {
                 if (!item.render) return;
                 if (maxOf && number >= maxOf) return
+                
+                const imageSrc = item.images?.[season]?.[0] ? item.images[season][0] : item.images[0]
+                
                 itemsParent.insertAdjacentHTML('beforeend',
                     `
                 <article class="${design.article}"
@@ -118,7 +121,7 @@ const needToRender = function (where) {
                         </div>`
                         : ''}
                     ${design.artImgBlck
-                        ? `<div class="${design.artImgBlck}"><img loading="lazy" class="${design.artImg}" src="${item.images[season][0]}" alt="${item.title}" onload="whatIsMax(this)"></div>`
+                        ? `<div class="${design.artImgBlck}"><img loading="lazy" class="${design.artImg}" src="${imageSrc}" alt="${item.title}" onload="whatIsMax(this)"></div>`
                         : ''}
                     ${design.artLink
                         ? `<a class="${design.artLink}" ${item.readMoreLink ? `href="${item.readMoreLink}"` : ''}>${item.readMoreText}</a>`
@@ -1078,7 +1081,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         .then(loyaltyWorker)
 
     setTimeout(() => {
-        console.clear()
+        // console.clear()
         console.log('Designed by Holyxey at AdsTarget')
     }, 1500)
 })
