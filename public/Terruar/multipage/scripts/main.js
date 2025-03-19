@@ -627,16 +627,19 @@ const multipage = {
             return `<div id="terruarMenu"></div>`
         }
         const getGallery = (service) => {
-            if (service.id === 'showAllButton') return
-            let q = '';
-            const id = service.getAttribute('data-popup')
-            const obj = this.findObjectById(id)
-            if (!obj.withGallery) return q;
-
-            for (const img of obj.images) {
-                q += `<img src="${img}" onclick="this.scrollIntoView()" alt="Фотографии ресторана">`
-            }
-            return `<article id="pop-up-gallery">${q}</article>`;
+            if (service.id === 'showAllButton') return;
+            try {
+                let q = '';
+                const id = service.getAttribute('data-popup')
+                const obj = this.findObjectById(id)
+                if (!obj.withGallery) return q;
+    
+                for (const img of obj.images) {
+                    q += `<img src="${img}" onclick="this.scrollIntoView()" alt="Фотографии ресторана">`
+                }
+                return `<article id="pop-up-gallery">${q}</article>`;
+            } 
+            catch {}
         }
         const getTeam = (target) => {
             let q = ''
