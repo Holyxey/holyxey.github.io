@@ -50,11 +50,29 @@ const styleClassLists = [
     } // design #3 (Same like 2 but with section header)
 ]
 
-//
+/**
+ * Устанавливаем сезонность в зависимости от месяца
+ */
+const setSeason = () => {
+    const month = new Date().getMonth() + 1;
+    const body = document.getElementsByTagName('body')[0];
+    if (11 > month && month > 1) {
+        body.setAttribute('data-season', 'summer');
+        localStorage.setItem('season', 'summer');
+    } else {
+        body.setAttribute('data-season', 'winter');
+        localStorage.setItem('season', 'winter');
+    }
+}
+
+/**
+ * Начальный рендер из [data-need-to-render]
+ */
 const needToRender = function (where) {
     const sections = document.querySelectorAll('[data-need-to-render]')
 
     const renderNow = function (where, what, design, listName, maxOf) {
+        const season = localStorage.getItem('season');
         where.classList = `${design.section}`;
         if (design.needHeader) {
             where.insertAdjacentHTML('afterbegin',
@@ -67,25 +85,25 @@ const needToRender = function (where) {
                     >
                 </div>
                 `)
-        } else {
+        }
+        /**
+         * Рендерим (или нет) заголовок из аттрибута тайтл из "where" и основное тело
+         * */
+        else {
             where.insertAdjacentHTML('afterbegin',
-                `
-                <div class="${design.itemsParent}" 
+                ` <div class="${design.itemsParent}" 
                     ${design.needToSmooth ? 'data-smooth-mobile' : ''}
-                    ${design.needCounter ? 'data-counter-scrollIt' : ''}
-                    >
-                </div>
-                `)
-        }// Рендерим (или нет) заголовок из аттрибута тайтл из "where" и основное тело
+                    ${design.needCounter ? 'data-counter-scrollIt' : ''}> </div>`)
+        }
 
         const itemsParent = where.querySelector(`[class="${design.itemsParent}"]`)
         let number = 0
-
-        what.forEach(function (item) {
-            if (!item.render) return;
-            if (maxOf && number >= maxOf) return
-            itemsParent.insertAdjacentHTML('beforeend',
-                `
+        try {
+            what.forEach(function (item) {
+                if (!item.render) return;
+                if (maxOf && number >= maxOf) return
+                itemsParent.insertAdjacentHTML('beforeend',
+                    `
                 <article class="${design.article}"
                 ${item.popUp ? `data-popup="${item.id}"` : ''}
                 ${item.title ? `title="${item.title}"` : ''}
@@ -93,23 +111,27 @@ const needToRender = function (where) {
                 ${item.readMoreLink ? `style="border: 1px solid var(--holyxey-white-oo)" onclick="this.querySelector('a').click()"` : ''}
                 >
                     ${design.artHeads
-                    ? `<div class="${design.artHeads}">
+                        ? `<div class="${design.artHeads}">
                             ${item.icon ? `<img class="classic-art-icon" src="${item.icon}" alt="icon">` : ''}
                             <h4 class="${design.artHeader}" ${item.icon ? `style="padding-left: 2.5rem"` : ''}>${item.title}</h4>
                             <p class="${design.artDescr}">${item.shortDescr}</p>
                         </div>`
-                    : ''}
+                        : ''}
                     ${design.artImgBlck
-                    ? `<div class="${design.artImgBlck}"><img loading="lazy" class="${design.artImg}" src="${item.images[0]}" alt="${item.title}" onload="whatIsMax(this)"></div>`
-                    : ''}
+                        ? `<div class="${design.artImgBlck}"><img loading="lazy" class="${design.artImg}" src="${item.images[season][0]}" alt="${item.title}" onload="whatIsMax(this)"></div>`
+                        : ''}
                     ${design.artLink
-                    ? `<a class="${design.artLink}" ${item.readMoreLink ? `href="${item.readMoreLink}"` : ''}>${item.readMoreText}</a>`
-                    : ''}
+                        ? `<a class="${design.artLink}" ${item.readMoreLink ? `href="${item.readMoreLink}"` : ''}>${item.readMoreText}</a>`
+                        : ''}
                 </article>
                 `)
-            number++
-        })
+                number++
+            })
+        } catch (e) {
+            console.log(e, listName)
+        }
     }
+
     const getData = function (section) {
         const data = section.getAttribute('data-need-to-render')
         const title = section.getAttribute('title')
@@ -130,9 +152,10 @@ const needToRender = function (where) {
 }
 
 const openVariantGallery = (list, index, preview = false) => {
+    const season = localStorage.getItem('season')
     multipage.changeScroll()
     const element = lists[list][index]
-    const images = lists[list][index].images.winter
+    const images = lists[list][index].images[season] ? lists[list][index].images[season] : lists[list][index].images
     const multiPage = document.getElementById('multi-page')
     multiPage.insertAdjacentHTML('afterbegin', `
                 <div style="animation: showpopup .3s 1s ease-out forwards" id="close-popup" onclick="multipage.remPopup()">
@@ -160,6 +183,9 @@ const renderVariantsPreview = () => {
             node.insertAdjacentHTML('beforeend',
                 `<div class="classic-ip" data-smooth-mobile data-counter-scrollIt></div>`)
             const where = node.querySelector('.classic-ip')
+            const season = localStorage.getItem('season') || document.body.getAttribute('data-season')
+
+
             if (node.getAttribute('data-variants') === 'preview') {
                 for (let i = 0; i < 3; i++) {
                     where.insertAdjacentHTML('beforeend',
@@ -179,7 +205,7 @@ const renderVariantsPreview = () => {
                             </svg>
                             </div>
                         </div>
-                        <div class="variantPreviewImage" style="background-image: url(${lists.houses[i].images.winter[0]})"></div>
+                        <div class="variantPreviewImage" style="background-image: url(${lists.houses[i].images[season][0]})"></div>
                     </article>`)
                     where.insertAdjacentHTML('beforeend',
                         `<article id="${lists.glamping[i].title}" class="variantBlock" onclick="openVariantGallery('glamping', ${i})" data-counter-item>
@@ -198,10 +224,12 @@ const renderVariantsPreview = () => {
                             </svg>
                             </div>
                         </div>
-                        <div class="variantPreviewImage" style="background-image: url(${lists.glamping[i].images.winter[0]})"></div>
+                        <div class="variantPreviewImage" style="background-image: url(${lists.glamping[i].images[season][0]})"></div>
                     </article>`)
                 }
-            } else if (node.getAttribute('data-variants') === 'houses') {
+            }
+            /**/
+            else if (node.getAttribute('data-variants') === 'houses') {
                 for (let i = 0; i < (location.href.includes('/variants') ? lists.houses.length : 3); i++) {
                     where.insertAdjacentHTML('beforeend',
                         `<article id="${lists.houses[i].title}" class="variantBlock" onclick="openVariantGallery('houses', ${i})" data-counter-item>
@@ -220,7 +248,7 @@ const renderVariantsPreview = () => {
                             </svg>
                             </div>
                         </div>
-                        <div class="variantPreviewImage" style="background-image: url(${lists.houses[i].images.winter[0]})"></div>
+                        <div class="variantPreviewImage" style="background-image: url(${lists.houses[i].images[season][0]})"></div>
                     </article>`)
                 }
                 if (!location.href.includes('/variants')) {
@@ -231,7 +259,9 @@ const renderVariantsPreview = () => {
                     src="https://static.tildacdn.com/tild3365-3639-4463-b930-373032396132/variants_show_more.png" alt="Посмотреть все" onload="whatIsMax(this)" style="max-height: 100%; max-width: unset;"></div>
                 </article> `)
                 }
-            } else if (node.getAttribute('data-variants') === 'glamping') {
+            }
+            /**/
+            else if (node.getAttribute('data-variants') === 'glamping') {
                 for (let i = 0; i < lists.glamping.length; i++) {
                     where.insertAdjacentHTML('beforeend',
                         `<article id="${lists.glamping[i].title}" class="variantBlock" onclick="openVariantGallery('glamping', ${i})" data-counter-item>
@@ -262,6 +292,7 @@ const openOffersPopup = (element, index) => {
     multipage.changeScroll()
     const multiPage = document.getElementById('multi-page')
     const object = lists.offers[index]
+    const season = localStorage.getItem('season')
     multiPage.insertAdjacentHTML('afterbegin', `
                 <div style="animation: showpopup .3s 1s ease-out forwards" id="close-popup" onclick="multipage.remPopup()">
                     <svg width="50px" viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg"><g stroke-width="0"/><g stroke-linecap="round" stroke-linejoin="round"/><path d="M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2 2 6.5 2 12s4.5 10 10 10m-2.83-7.17 5.66-5.66m0 5.66L9.17 9.17" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -269,7 +300,7 @@ const openOffersPopup = (element, index) => {
                 <div class="blur" id="popup-block"> <!--тело поп-апа-->
                     <h2 class="popUpHeader">${object.title}</h2> 
                     <div class="offerPopupBlock">
-                    <div class="preview" style="background-image: url(${object.cover})">
+                    <div class="preview" style="background-image: url(${object.cover[season]})">
                         <p class="percentage">${object.percentage}</p>
                     </div>
                     <div class="info">
@@ -297,12 +328,13 @@ const openOffersPopup = (element, index) => {
 }
 const renderOffers = () => {
     const offersNode = document.getElementById('offers');
+    const season = localStorage.getItem('season');
     if (offersNode) {
         offersNode.insertAdjacentHTML('beforeend', `<div class="classic-ip" data-counter-scrollit></div>`)
         const whereTo = offersNode.querySelector('.classic-ip')
         lists.offers.forEach((offer, index) => {
             whereTo.insertAdjacentHTML('beforeend',
-                `<article data-counter-item class="offer ${offer.link ? 'active' : ''}" ${offer.link ? `onclick="openOffersPopup(this, ${index})"` : ''} data-offer-id="${index}" style="background-image: url(${offer.cover})">
+                `<article data-counter-item class="offer ${offer.link ? 'active' : ''}" ${offer.link ? `onclick="openOffersPopup(this, ${index})"` : ''} data-offer-id="${index}" style="background-image: url(${offer.cover[season]})">
                 <div class="offerTitleBlock">
                     <h4 class="offerTitle">${offer.title}</h4>
                     <p class="offerDescription">${offer.description}</p>
@@ -323,19 +355,21 @@ const renderOffers = () => {
         })
     }
 }
+
+/**
+ * прячет и показывает кнопки чатов (живо и тп)
+ * при открытии поп-апов*/
 const showHideChats = () => {
+    const jivo = document.querySelectorAll('jdiv')
     try {
-        const jivo = document.querySelectorAll('jdiv')
         if (jivo) {
             for (let i = 0; i < jivo.length; i++) {
                 jivo[i].classList.toggle('hideIfPopUp')
             }
             document.getElementById('CalltouchWidgetFrame').classList.toggle('hideIfPopUp')
-        } else new Error('Не найдено блоков Jivo')
-    } catch (e) {
-        console.error("showHideChats() => ", e.message)
-    }
-} // прячет и показывает кнопки чатов (живо и тп)
+        } else console.log('Не найдено блоков Jivo')
+    } catch {}
+}
 
 const loyaltyWorker = () => {
     const popUp = (nodeElement) => {
@@ -621,6 +655,7 @@ const multipage = {
             return `<section id="team" data-smooth-mobile>${q}</section>`
         }
         const getService = (target) => {
+            const season = localStorage.getItem('season')
             const name = target.getAttribute('data-popup')
             const list = target.getAttribute('data-list')
             const obj = lists[list].find((service, id) => service.id === name)
@@ -628,7 +663,7 @@ const multipage = {
             return `
             <section data-ip-service="${obj.id}" id="popup-service">
             <div class="popup-service-imgblock">
-                <img onload="whatIsMax(this)" src="${obj.images[0]}" alt="${obj.fullDescr}" class="popup-service-img">
+                <img onload="whatIsMax(this)" src="${obj.images[season][0]}" alt="${obj.fullDescr}" class="popup-service-img">
             </div>
             <div class="popup-service-textblock">
                 <h3 class="popup-service-header">${obj.shortDescr}</h3>
@@ -1026,6 +1061,7 @@ window.addEventListener("load", () => {
     seasonTapesRender()
 })
 document.addEventListener("DOMContentLoaded", async () => {
+    setSeason()
     needToRender()
     multipage.popupButtonsInit()
 
@@ -1036,5 +1072,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         .then(renderOffers)
         .then(loyaltyWorker)
 
-    console.log('Designed by Holyxey at AdsTarget')
+    setTimeout(() => {
+        console.clear()
+        console.log('Designed by Holyxey at AdsTarget')
+    }, 1500)
 })
