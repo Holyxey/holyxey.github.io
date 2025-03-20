@@ -1,198 +1,269 @@
-'use strict';
+"use strict";
 const styleClassLists = [
-    {
-        needHeader: true,
-        needCounter: false,
-        needToSmooth: true,
-        needIcon: false,
-        section: 'classic-sec',
-        headBlock: 'classic-hb w-btn',
-        itemsParent: 'classic-ip',
-        article: 'classic-art',
-        artHeads: 'classic-art-hb',
-        artHeader: 'classic-art-header',
-        artDescr: 'classic-art-descr',
-        artImgBlck: 'classic-art-imgBlck',
-        artImg: 'classic-art-img',
-        artLink: 'classic-art-link',
-    }, // design #1
-    {
-        needHeader: false,
-        needCounter: true,
-        needToSmooth: true,
-        needIcon: false,
-        section: 'classic-sec classic-sec-second',
-        headBlock: 'classic-hb classic-hb-second',
-        itemsParent: 'classic-ip classic-ip-second',
-        article: 'classic-art classic-art-second',
-        artHeads: 'classic-art-hb classic-art-hb-second',
-        artHeader: 'classic-art-header classic-art-header-second',
-        artDescr: 'classic-art-descr classic-art-descr-second',
-        artImgBlck: 'classic-art-imgBlck classic-art-imgBlck-second',
-        artImg: 'classic-art-img classic-art-img-second',
-        artLink: 'classic-art-link classic-art-link-second',
-    }, // design #2 ()
-    {
-        needHeader: true,
-        needCounter: true,
-        needToSmooth: true,
-        needIcon: false,
-        section: 'classic-sec classic-sec-second',
-        headBlock: 'classic-hb classic-hb-second',
-        itemsParent: 'classic-ip classic-ip-second',
-        article: 'classic-art classic-art-second',
-        artHeads: 'classic-art-hb classic-art-hb-second',
-        artHeader: 'classic-art-header classic-art-header-second',
-        artDescr: 'classic-art-descr classic-art-descr-second',
-        artImgBlck: 'classic-art-imgBlck classic-art-imgBlck-second',
-        artImg: 'classic-art-img classic-art-img-second',
-        artLink: 'classic-art-link classic-art-link-second',
-    } // design #3 (Same like 2 but with section header)
-]
+  {
+    needHeader: true,
+    needCounter: false,
+    needToSmooth: true,
+    needIcon: false,
+    section: "classic-sec",
+    headBlock: "classic-hb w-btn",
+    itemsParent: "classic-ip",
+    article: "classic-art",
+    artHeads: "classic-art-hb",
+    artHeader: "classic-art-header",
+    artDescr: "classic-art-descr",
+    artImgBlck: "classic-art-imgBlck",
+    artImg: "classic-art-img",
+    artLink: "classic-art-link",
+  }, // design #1
+  {
+    needHeader: false,
+    needCounter: true,
+    needToSmooth: true,
+    needIcon: false,
+    section: "classic-sec classic-sec-second",
+    headBlock: "classic-hb classic-hb-second",
+    itemsParent: "classic-ip classic-ip-second",
+    article: "classic-art classic-art-second",
+    artHeads: "classic-art-hb classic-art-hb-second",
+    artHeader: "classic-art-header classic-art-header-second",
+    artDescr: "classic-art-descr classic-art-descr-second",
+    artImgBlck: "classic-art-imgBlck classic-art-imgBlck-second",
+    artImg: "classic-art-img classic-art-img-second",
+    artLink: "classic-art-link classic-art-link-second",
+  }, // design #2 ()
+  {
+    needHeader: true,
+    needCounter: true,
+    needToSmooth: true,
+    needIcon: false,
+    section: "classic-sec classic-sec-second",
+    headBlock: "classic-hb classic-hb-second",
+    itemsParent: "classic-ip classic-ip-second",
+    article: "classic-art classic-art-second",
+    artHeads: "classic-art-hb classic-art-hb-second",
+    artHeader: "classic-art-header classic-art-header-second",
+    artDescr: "classic-art-descr classic-art-descr-second",
+    artImgBlck: "classic-art-imgBlck classic-art-imgBlck-second",
+    artImg: "classic-art-img classic-art-img-second",
+    artLink: "classic-art-link classic-art-link-second",
+  }, // design #3 (Same like 2 but with section header)
+];
 
-/**
- * Устанавливаем сезонность в зависимости от месяца
+/** Устанавливаем сезонность в зависимости от месяца
  */
 const setSeason = () => {
-    const month = new Date().getMonth() + 1;
-    const body = document.getElementsByTagName('body')[0];
-    if (11 > month && month > 1) {
-        body.setAttribute('data-season', 'summer');
-        localStorage.setItem('season', 'summer');
-    } else {
-        body.setAttribute('data-season', 'winter');
-        localStorage.setItem('season', 'winter');
-    }
-}
+  const month = new Date().getMonth() + 1;
+  const body = document.getElementsByTagName("body")[0];
+  if (11 > month && month > 1) {
+    body.setAttribute("data-season", "summer");
+    localStorage.setItem("season", "summer");
+  } else {
+    body.setAttribute("data-season", "winter");
+    localStorage.setItem("season", "winter");
+  }
+};
 
-/**
- * Начальный рендер из [data-need-to-render]
+/** Начальный рендер из [data-need-to-render]
  */
 const needToRender = function (where) {
-    const sections = document.querySelectorAll('[data-need-to-render]')
+  const sections = document.querySelectorAll("[data-need-to-render]");
 
-    const renderNow = function (where, what, design, listName, maxOf) {
-        const season = localStorage.getItem('season');
-        where.classList = `${design.section}`;
-        if (design.needHeader) {
-            where.insertAdjacentHTML('afterbegin',
-                `<div class="${design.headBlock}" ${design.needCounter ? 'data-counter-where' : ''}>
+  const renderNow = function (where, what, design, listName, maxOf) {
+    const season = localStorage.getItem("season");
+    where.classList = `${design.section}`;
+    if (design.needHeader) {
+      where.insertAdjacentHTML(
+        "afterbegin",
+        `<div class="${design.headBlock}" ${
+          design.needCounter ? "data-counter-where" : ""
+        }>
                     <h3>${where.title}</h3>
                 </div> 
                 <div class="${design.itemsParent}" 
-                    ${design.needToSmooth ? 'data-smooth-mobile' : ''}
-                    ${design.needCounter ? 'data-counter-scrollIt' : ''}
+                    ${design.needToSmooth ? "data-smooth-mobile" : ""}
+                    ${design.needCounter ? "data-counter-scrollIt" : ""}
                     >
                 </div>
-                `)
-        }
-        /**
-         * Рендерим (или нет) заголовок из аттрибута тайтл из "where" и основное тело
-         * */
-        else {
-            where.insertAdjacentHTML('afterbegin',
-                ` <div class="${design.itemsParent}" 
-                    ${design.needToSmooth ? 'data-smooth-mobile' : ''}
-                    ${design.needCounter ? 'data-counter-scrollIt' : ''}> </div>`)
-        }
+                `
+      );
+    } else {
+      /**
+       * Рендерим (или нет) заголовок из аттрибута тайтл из "where" и основное тело
+       * */
+      where.insertAdjacentHTML(
+        "afterbegin",
+        ` <div class="${design.itemsParent}" 
+                    ${design.needToSmooth ? "data-smooth-mobile" : ""}
+                    ${
+                      design.needCounter ? "data-counter-scrollIt" : ""
+                    }> </div>`
+      );
+    }
 
-        const itemsParent = where.querySelector(`[class="${design.itemsParent}"]`)
-        let number = 0
-        try {
-            what.forEach(function (item) {
-                if (!item.render) return;
-                if (maxOf && number >= maxOf) return
-                
-                const imageSrc = item.images?.[season]?.[0] ? item.images[season][0] : item.images[0]
-                
-                itemsParent.insertAdjacentHTML('beforeend',
-                    `
+    const itemsParent = where.querySelector(`[class="${design.itemsParent}"]`);
+    let number = 0;
+    try {
+      what.forEach(function (item) {
+        if (!item.render) return;
+        if (maxOf && number >= maxOf) return;
+
+        const imageSrc = item.images?.[season]?.[0]
+          ? item.images[season][0]
+          : item.images[0];
+
+        itemsParent.insertAdjacentHTML(
+          "beforeend",
+          `
                 <article class="${design.article}"
-                ${item.popUp ? `data-popup="${item.id}"` : ''}
-                ${item.title ? `title="${item.title}"` : ''}
-                ${design.needCounter ? 'data-counter-item' : ''}
-                ${item.readMoreLink ? `style="border: 1px solid var(--holyxey-white-oo)" onclick="this.querySelector('a').click()"` : ''}
+                ${item.popUp ? `data-popup="${item.id}"` : ""}
+                ${item.title ? `title="${item.title}"` : ""}
+                ${design.needCounter ? "data-counter-item" : ""}
+                ${
+                  item.readMoreLink
+                    ? `style="border: 1px solid var(--holyxey-white-oo)" onclick="this.querySelector('a').click()"`
+                    : ""
+                }
                 >
-                    ${design.artHeads
+                    ${
+                      design.artHeads
                         ? `<div class="${design.artHeads}">
-                            ${item.icon ? `<img class="classic-art-icon" src="${item.icon}" alt="icon">` : ''}
-                            <h4 class="${design.artHeader}" ${item.icon ? `style="padding-left: 2.5rem"` : ''}>${item.title}</h4>
+                            ${
+                              item.icon
+                                ? `<img class="classic-art-icon" src="${item.icon}" alt="icon">`
+                                : ""
+                            }
+                            <h4 class="${design.artHeader}" ${
+                            item.icon ? `style="padding-left: 2.5rem"` : ""
+                          }>${item.title}</h4>
                             <p class="${design.artDescr}">${item.shortDescr}</p>
                         </div>`
-                        : ''}
-                    ${design.artImgBlck
+                        : ""
+                    }
+                    ${
+                      design.artImgBlck
                         ? `<div class="${design.artImgBlck}"><img loading="lazy" class="${design.artImg}" src="${imageSrc}" alt="${item.title}" onload="whatIsMax(this)"></div>`
-                        : ''}
-                    ${design.artLink
-                        ? `<a class="${design.artLink}" ${item.readMoreLink ? `href="${item.readMoreLink}"` : ''}>${item.readMoreText}</a>`
-                        : ''}
+                        : ""
+                    }
+                    ${
+                      design.artLink
+                        ? `<a class="${design.artLink}" ${
+                            item.readMoreLink
+                              ? `href="${item.readMoreLink}"`
+                              : ""
+                          }>${item.readMoreText}</a>`
+                        : ""
+                    }
                 </article>
-                `)
-                number++
-            })
-        } catch (e) {
-            console.log(e, listName)
-        }
+                `
+        );
+        number++;
+      });
+    } catch (e) {
+      console.log(e, listName);
     }
+  };
 
-    const getData = function (section) {
-        const data = section.getAttribute('data-need-to-render')
-        const title = section.getAttribute('title')
-        const setups = data.split(',')
-        const listName = setups[0]
-        const styleNumber = setups[1] - 1
-        const maxOf = setups[2]
-        const design = styleClassLists[styleNumber]
-        const elements = lists[listName]
+  const getData = function (section) {
+    const data = section.getAttribute("data-need-to-render");
+    const title = section.getAttribute("title");
+    const setups = data.split(",");
+    const listName = setups[0];
+    const styleNumber = setups[1] - 1;
+    const maxOf = setups[2];
+    const design = styleClassLists[styleNumber];
+    const elements = lists[listName];
 
-        console.log(`Rendering "${title}":"${listName}, ${styleNumber + 1}"...`)
-        renderNow(section, elements, design, listName, maxOf ? maxOf : null)
+    console.log(`Rendering "${title}":"${listName}, ${styleNumber + 1}"...`);
+    renderNow(section, elements, design, listName, maxOf ? maxOf : null);
+  };
+  sections.forEach((section) => {
+    getData(section);
+  });
+};
 
-    }
-    sections.forEach(section => {
-        getData(section)
-    })
+/** Рендер отзывов
+ */
+function renderReviewGallery(maxRender = 4) {
+  const season = localStorage.getItem("season");
+  const renderTo = document.querySelector("#reviews .reviews-gallery");
+  renderTo.innerHTML = "";
+
+  for (const img of lists.reviewsGallery[season]) {
+    renderTo.insertAdjacentHTML(
+      "beforeend",
+      `
+      <div class="reviews-gallery-imgblock">
+        <img
+          alt="Фотография с территории Терруара"
+          class="reviews-gallery-img"
+          loading="lazy"
+          onclick="multipage.openFullScreenPhoto(this)"
+          onload="whatIsMax(this)"
+          src="${img}"
+        />
+      </div>
+      `
+    );
+    //
+  }
 }
 
 const openVariantGallery = (list, index, preview = false) => {
-    const season = localStorage.getItem('season')
-    multipage.changeScroll()
-    const element = lists[list][index]
-    const images = lists[list][index].images[season] ? lists[list][index].images[season] : lists[list][index].images
-    const multiPage = document.getElementById('multi-page')
-    multiPage.insertAdjacentHTML('afterbegin', `
+  const season = localStorage.getItem("season");
+  multipage.changeScroll();
+  const element = lists[list][index];
+  const images = lists[list][index].images[season]
+    ? lists[list][index].images[season]
+    : lists[list][index].images;
+  const multiPage = document.getElementById("multi-page");
+  multiPage.insertAdjacentHTML(
+    "afterbegin",
+    `
                 <div style="animation: showpopup .3s 1s ease-out forwards" id="close-popup" onclick="multipage.remPopup()">
                     <svg width="50px" viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg"><g stroke-width="0"/><g stroke-linecap="round" stroke-linejoin="round"/><path d="M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2 2 6.5 2 12s4.5 10 10 10m-2.83-7.17 5.66-5.66m0 5.66L9.17 9.17" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </div>
                 <div class="blur" id="popup-block"> <!--тело поп-апа-->
                     <h2 class="popUpHeader">${element.title}</h2> 
                     <div class="popUpDescr">
-                        ${element.description ? element.description : ''}
-                        ${preview
-        ? `<div class="variantPopUpButtons"><a class="classic-header-button-first" href="/variants">Смотреть все</a><a class="classic-header-button-first" onclick="multipage.bookingClick(); multipage.remPopup()">Выбрать даты</a></div>`
-        : `<div class="variantPopUpButtons"><a class="classic-header-button-first" onclick="multipage.bookingClick(); multipage.remPopup()">Выбрать даты</a></div>`}
+                        ${element.description ? element.description : ""}
+                        ${
+                          preview
+                            ? `<div class="variantPopUpButtons"><a class="classic-header-button-first" href="/variants">Смотреть все</a><a class="classic-header-button-first" onclick="multipage.bookingClick(); multipage.remPopup()">Выбрать даты</a></div>`
+                            : `<div class="variantPopUpButtons"><a class="classic-header-button-first" onclick="multipage.bookingClick(); multipage.remPopup()">Выбрать даты</a></div>`
+                        }
                     </div>
                     <article id="pop-up-gallery" onclick="event.stopPropagation();"></article>
-                </div>`) // Рендер поп-апа
-    images.forEach(image => {
-        document.getElementById('pop-up-gallery').insertAdjacentHTML('afterbegin', `<img onclick="multipage.openFullScreenPhoto(this)" src="${image}" alt="Фотографии ${element.title}">`)
-    })
-    showHideChats()
-}
+                </div>`
+  ); // Рендер поп-апа
+  images.forEach((image) => {
+    document
+      .getElementById("pop-up-gallery")
+      .insertAdjacentHTML(
+        "afterbegin",
+        `<img onclick="multipage.openFullScreenPhoto(this)" src="${image}" alt="Фотографии ${element.title}">`
+      );
+  });
+  showHideChats();
+};
 const renderVariantsPreview = () => {
-    const varNode = document.querySelectorAll('[data-variants]')
-    if (varNode) {
-        varNode.forEach(node => {
-            node.insertAdjacentHTML('beforeend',
-                `<div class="classic-ip" data-smooth-mobile data-counter-scrollIt></div>`)
-            const where = node.querySelector('.classic-ip')
-            const season = localStorage.getItem('season') || document.body.getAttribute('data-season')
+  const varNode = document.querySelectorAll("[data-variants]");
+  if (varNode) {
+    varNode.forEach((node) => {
+      node.insertAdjacentHTML(
+        "beforeend",
+        `<div class="classic-ip" data-smooth-mobile data-counter-scrollIt></div>`
+      );
+      const where = node.querySelector(".classic-ip");
+      const season =
+        localStorage.getItem("season") ||
+        document.body.getAttribute("data-season");
 
-
-            if (node.getAttribute('data-variants') === 'preview') {
-                for (let i = 0; i < 3; i++) {
-                    where.insertAdjacentHTML('beforeend',
-                        `<article id="${lists.houses[i].title}" class="variantBlock" onclick="openVariantGallery('houses', ${i}, true)" data-counter-item>
+      if (node.getAttribute("data-variants") === "preview") {
+        for (let i = 0; i < 3; i++) {
+          where.insertAdjacentHTML(
+            "beforeend",
+            `<article id="${lists.houses[i].title}" class="variantBlock" onclick="openVariantGallery('houses', ${i}, true)" data-counter-item>
                         <div class="variantHeader" >
                             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
                               <path fill-rule="evenodd" clip-rule="evenodd" d="M11.6466 0.580368C10.8358 0.727346 10.153 1.04482 9.48132 1.58705C9.3163 1.7203 8.91006 2.10524 8.57856 2.44251C7.74781 3.28774 0.220585 11.6613 0.127462 11.8438C0.0241016 12.0464 -0.0269037 12.3933 0.0142757 12.6138C0.172092 13.4585 1.0061 13.8901 1.80123 13.5383C1.90537 13.4923 2.07478 13.3565 2.23008 13.1945C2.32311 13.0975 2.48688 13.1634 2.4869 13.2977L2.4874 16.0546C2.48803 19.8271 2.51695 20.488 2.71673 21.2974C3.01339 22.4994 3.8774 23.6089 5.03046 24.2687C5.59546 24.592 6.26374 24.781 7.13732 24.8646C7.7612 24.9244 14.8866 24.9563 16.5883 24.907C18.0395 24.865 18.4841 24.8193 19.0569 24.6536C20.5465 24.2226 21.8952 22.8371 22.2734 21.3493C22.4759 20.5525 22.4845 20.3715 22.5032 16.5064L22.5187 13.2931C22.5193 13.1616 22.6798 13.098 22.7703 13.1932C23.0531 13.4906 23.2321 13.5942 23.5516 13.6457C24.5482 13.8062 25.2985 12.8092 24.8832 11.8761C24.8122 11.7167 24.7154 11.6037 23.3203 10.0538L23.0413 9.74385C22.7136 9.37989 22.5309 8.90838 22.5278 8.4187L22.4967 3.59241C22.4957 3.43666 22.4595 3.28316 22.3909 3.14335C22.2568 2.87032 22.0242 2.63795 21.7639 2.51677C21.5978 2.43951 21.4989 2.42054 21.2569 2.41949C20.9912 2.41832 20.927 2.43254 20.7053 2.54164C20.4324 2.6759 20.2419 2.86769 20.1045 3.14665C20.0221 3.31395 20.0194 3.35622 20.0012 4.83125C19.9945 5.37033 19.3299 5.62117 18.9687 5.22093L18.3462 4.53122C16.6145 2.61233 15.8433 1.82437 15.2977 1.41659C14.7199 0.98466 14.0402 0.698243 13.3132 0.58033C12.8936 0.512261 12.0222 0.512298 11.6466 0.580368ZM11.875 3.11166C11.5519 3.19634 11.4658 3.23891 11.1554 3.46746C10.7506 3.76546 10.1709 4.3803 7.53996 7.3022L5.51341 9.55287C5.18264 9.92022 4.99963 10.3971 4.99969 10.8914L5.00012 14.578C5.00065 19.0511 5.02262 20.0403 5.13322 20.5758C5.24214 21.103 5.56587 21.5897 6.02608 21.9181C6.51851 22.2695 6.83369 22.3439 7.971 22.377C8.39703 22.3894 8.74946 22.0481 8.75078 21.6219L8.76805 16.0311C8.76851 15.8839 8.80457 15.7391 8.87315 15.6089C9.07567 15.2245 9.41085 14.9897 9.85576 14.9204C9.9892 14.8996 11.1609 14.8897 12.6706 14.8964C15.0176 14.907 15.272 14.9141 15.4204 14.9729C15.7723 15.1125 16.0436 15.3875 16.1743 15.7368C16.2491 15.9366 16.2508 16.0126 16.2508 19.1707V21.6216C16.2508 22.0477 16.603 22.3895 17.029 22.3767C18.1721 22.3422 18.483 22.269 18.9747 21.9181C19.425 21.5968 19.7483 21.1178 19.8657 20.5979C19.9778 20.1015 20.0001 19.1106 20.0006 14.5969L20.0011 10.8917C20.0011 10.3974 19.8181 9.92056 19.4874 9.55322L17.6297 7.4899C16.3254 6.0412 15.0842 4.67028 14.8716 4.44338C14.3889 3.92827 13.8963 3.48448 13.6195 3.31534C13.1816 3.04786 12.4461 2.96198 11.875 3.11166ZM11.2628 21.1514C11.2628 21.8349 11.8169 22.389 12.5004 22.389C13.1839 22.389 13.738 21.8349 13.738 21.1514V18.6761C13.738 17.9926 13.1839 17.4385 12.5004 17.4385C11.8169 17.4385 11.2628 17.9926 11.2628 18.6761V21.1514Z" fill="#EEF0F2" fill-opacity="0.85"/>
@@ -209,9 +280,11 @@ const renderVariantsPreview = () => {
                             </div>
                         </div>
                         <div class="variantPreviewImage" style="background-image: url(${lists.houses[i].images[season][0]})"></div>
-                    </article>`)
-                    where.insertAdjacentHTML('beforeend',
-                        `<article id="${lists.glamping[i].title}" class="variantBlock" onclick="openVariantGallery('glamping', ${i})" data-counter-item>
+                    </article>`
+          );
+          where.insertAdjacentHTML(
+            "beforeend",
+            `<article id="${lists.glamping[i].title}" class="variantBlock" onclick="openVariantGallery('glamping', ${i})" data-counter-item>
                         <div class="variantHeader" >
                             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
                               <path fill-rule="evenodd" clip-rule="evenodd" d="M12.0289 0.346096C11.9061 0.397843 11.7695 0.471621 11.7253 0.510059C11.2792 0.897651 2.46445 9.1561 2.36115 9.28319C2.01846 9.70482 1.74935 10.2262 1.61908 10.7208C1.50021 11.1723 0.0279468 20.1212 0.00557251 20.5282C-0.0223093 21.0358 0.0526921 21.4045 0.270048 21.8284C0.649684 22.5688 1.33449 23.0444 2.19328 23.164C2.56332 23.2155 22.4858 23.2147 22.8426 23.1631C23.8942 23.0111 24.7401 22.2304 24.9547 21.214C25.0644 20.694 25.0269 20.4034 24.2435 15.7064C23.8417 13.2979 23.4803 11.17 23.4401 10.9779C23.3099 10.3542 23.0337 9.7669 22.6469 9.29107C22.5673 9.1932 20.4223 7.17109 17.8802 4.79743C14.5515 1.68943 13.203 0.45353 13.0611 0.380862C12.7697 0.231661 12.3352 0.217013 12.0289 0.346096ZM8.23625 7.25841C4.0793 11.1445 4.29807 10.9335 4.18566 11.165C4.10366 11.3339 3.9677 12.0903 3.32247 15.9659C2.90126 18.4961 2.55662 20.583 2.55662 20.6033C2.55662 20.6269 4.1221 20.6403 6.8785 20.6403H11.2004V12.5702C11.2004 8.1317 11.196 4.50133 11.1908 4.50274C11.1856 4.50416 9.856 5.74419 8.23625 7.25841ZM13.8011 11.3925L19.5814 20.6403H21.0131C21.9092 20.6403 22.4449 20.6264 22.4449 20.6033C22.4449 20.583 22.1002 18.4976 21.679 15.9692C20.9169 11.3951 20.8685 11.1486 20.6936 10.9495C20.6576 10.9084 19.2083 9.55 17.4728 7.93067C15.7374 6.31131 14.2013 4.87316 14.0593 4.73475L13.8011 4.48312V11.3925ZM13.8011 20.6403H15.1803C16.1228 20.6403 16.5516 20.6277 16.5349 20.6006C16.5214 20.5788 15.9008 19.5857 15.1558 18.3938L13.8011 16.2266V20.6403Z" fill="#EEF0F2" fill-opacity="0.85"/>
@@ -228,14 +301,19 @@ const renderVariantsPreview = () => {
                             </div>
                         </div>
                         <div class="variantPreviewImage" style="background-image: url(${lists.glamping[i].images[season][0]})"></div>
-                    </article>`)
-                }
-            }
-            /**/
-            else if (node.getAttribute('data-variants') === 'houses') {
-                for (let i = 0; i < (location.href.includes('/variants') ? lists.houses.length : 3); i++) {
-                    where.insertAdjacentHTML('beforeend',
-                        `<article id="${lists.houses[i].title}" class="variantBlock" onclick="openVariantGallery('houses', ${i})" data-counter-item>
+                    </article>`
+          );
+        }
+      } else if (node.getAttribute("data-variants") === "houses") {
+        /**/
+        for (
+          let i = 0;
+          i < (location.href.includes("/variants") ? lists.houses.length : 3);
+          i++
+        ) {
+          where.insertAdjacentHTML(
+            "beforeend",
+            `<article id="${lists.houses[i].title}" class="variantBlock" onclick="openVariantGallery('houses', ${i})" data-counter-item>
                         <div class="variantHeader" >
                             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
                               <path fill-rule="evenodd" clip-rule="evenodd" d="M11.6466 0.580368C10.8358 0.727346 10.153 1.04482 9.48132 1.58705C9.3163 1.7203 8.91006 2.10524 8.57856 2.44251C7.74781 3.28774 0.220585 11.6613 0.127462 11.8438C0.0241016 12.0464 -0.0269037 12.3933 0.0142757 12.6138C0.172092 13.4585 1.0061 13.8901 1.80123 13.5383C1.90537 13.4923 2.07478 13.3565 2.23008 13.1945C2.32311 13.0975 2.48688 13.1634 2.4869 13.2977L2.4874 16.0546C2.48803 19.8271 2.51695 20.488 2.71673 21.2974C3.01339 22.4994 3.8774 23.6089 5.03046 24.2687C5.59546 24.592 6.26374 24.781 7.13732 24.8646C7.7612 24.9244 14.8866 24.9563 16.5883 24.907C18.0395 24.865 18.4841 24.8193 19.0569 24.6536C20.5465 24.2226 21.8952 22.8371 22.2734 21.3493C22.4759 20.5525 22.4845 20.3715 22.5032 16.5064L22.5187 13.2931C22.5193 13.1616 22.6798 13.098 22.7703 13.1932C23.0531 13.4906 23.2321 13.5942 23.5516 13.6457C24.5482 13.8062 25.2985 12.8092 24.8832 11.8761C24.8122 11.7167 24.7154 11.6037 23.3203 10.0538L23.0413 9.74385C22.7136 9.37989 22.5309 8.90838 22.5278 8.4187L22.4967 3.59241C22.4957 3.43666 22.4595 3.28316 22.3909 3.14335C22.2568 2.87032 22.0242 2.63795 21.7639 2.51677C21.5978 2.43951 21.4989 2.42054 21.2569 2.41949C20.9912 2.41832 20.927 2.43254 20.7053 2.54164C20.4324 2.6759 20.2419 2.86769 20.1045 3.14665C20.0221 3.31395 20.0194 3.35622 20.0012 4.83125C19.9945 5.37033 19.3299 5.62117 18.9687 5.22093L18.3462 4.53122C16.6145 2.61233 15.8433 1.82437 15.2977 1.41659C14.7199 0.98466 14.0402 0.698243 13.3132 0.58033C12.8936 0.512261 12.0222 0.512298 11.6466 0.580368ZM11.875 3.11166C11.5519 3.19634 11.4658 3.23891 11.1554 3.46746C10.7506 3.76546 10.1709 4.3803 7.53996 7.3022L5.51341 9.55287C5.18264 9.92022 4.99963 10.3971 4.99969 10.8914L5.00012 14.578C5.00065 19.0511 5.02262 20.0403 5.13322 20.5758C5.24214 21.103 5.56587 21.5897 6.02608 21.9181C6.51851 22.2695 6.83369 22.3439 7.971 22.377C8.39703 22.3894 8.74946 22.0481 8.75078 21.6219L8.76805 16.0311C8.76851 15.8839 8.80457 15.7391 8.87315 15.6089C9.07567 15.2245 9.41085 14.9897 9.85576 14.9204C9.9892 14.8996 11.1609 14.8897 12.6706 14.8964C15.0176 14.907 15.272 14.9141 15.4204 14.9729C15.7723 15.1125 16.0436 15.3875 16.1743 15.7368C16.2491 15.9366 16.2508 16.0126 16.2508 19.1707V21.6216C16.2508 22.0477 16.603 22.3895 17.029 22.3767C18.1721 22.3422 18.483 22.269 18.9747 21.9181C19.425 21.5968 19.7483 21.1178 19.8657 20.5979C19.9778 20.1015 20.0001 19.1106 20.0006 14.5969L20.0011 10.8917C20.0011 10.3974 19.8181 9.92056 19.4874 9.55322L17.6297 7.4899C16.3254 6.0412 15.0842 4.67028 14.8716 4.44338C14.3889 3.92827 13.8963 3.48448 13.6195 3.31534C13.1816 3.04786 12.4461 2.96198 11.875 3.11166ZM11.2628 21.1514C11.2628 21.8349 11.8169 22.389 12.5004 22.389C13.1839 22.389 13.738 21.8349 13.738 21.1514V18.6761C13.738 17.9926 13.1839 17.4385 12.5004 17.4385C11.8169 17.4385 11.2628 17.9926 11.2628 18.6761V21.1514Z" fill="#EEF0F2" fill-opacity="0.85"/>
@@ -252,22 +330,26 @@ const renderVariantsPreview = () => {
                             </div>
                         </div>
                         <div class="variantPreviewImage" style="background-image: url(${lists.houses[i].images[season][0]})"></div>
-                    </article>`)
-                }
-                if (!location.href.includes('/variants')) {
-                    where.insertAdjacentHTML('beforeend', `
+                    </article>`
+          );
+        }
+        if (!location.href.includes("/variants")) {
+          where.insertAdjacentHTML(
+            "beforeend",
+            `
                 <article class="classic-art" title="Посмотреть все" style="border: 1px solid var(--holyxey-white-oo); cursor: pointer" onclick="location.href = '/variants'">
                     <div class="classic-art-hb"><h4 class="classic-art-header">Посмотреть все</h4></div>
                     <div class="classic-art-imgBlck"><img loading="lazy" class="classic-art-img" 
                     src="https://static.tildacdn.com/tild3365-3639-4463-b930-373032396132/variants_show_more.png" alt="Посмотреть все" onload="whatIsMax(this)" style="max-height: 100%; max-width: unset;"></div>
-                </article> `)
-                }
-            }
-            /**/
-            else if (node.getAttribute('data-variants') === 'glamping') {
-                for (let i = 0; i < lists.glamping.length; i++) {
-                    where.insertAdjacentHTML('beforeend',
-                        `<article id="${lists.glamping[i].title}" class="variantBlock" onclick="openVariantGallery('glamping', ${i})" data-counter-item>
+                </article> `
+          );
+        }
+      } else if (node.getAttribute("data-variants") === "glamping") {
+        /**/
+        for (let i = 0; i < lists.glamping.length; i++) {
+          where.insertAdjacentHTML(
+            "beforeend",
+            `<article id="${lists.glamping[i].title}" class="variantBlock" onclick="openVariantGallery('glamping', ${i})" data-counter-item>
                         <div class="variantHeader" >
                             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
                               <path fill-rule="evenodd" clip-rule="evenodd" d="M11.6466 0.580368C10.8358 0.727346 10.153 1.04482 9.48132 1.58705C9.3163 1.7203 8.91006 2.10524 8.57856 2.44251C7.74781 3.28774 0.220585 11.6613 0.127462 11.8438C0.0241016 12.0464 -0.0269037 12.3933 0.0142757 12.6138C0.172092 13.4585 1.0061 13.8901 1.80123 13.5383C1.90537 13.4923 2.07478 13.3565 2.23008 13.1945C2.32311 13.0975 2.48688 13.1634 2.4869 13.2977L2.4874 16.0546C2.48803 19.8271 2.51695 20.488 2.71673 21.2974C3.01339 22.4994 3.8774 23.6089 5.03046 24.2687C5.59546 24.592 6.26374 24.781 7.13732 24.8646C7.7612 24.9244 14.8866 24.9563 16.5883 24.907C18.0395 24.865 18.4841 24.8193 19.0569 24.6536C20.5465 24.2226 21.8952 22.8371 22.2734 21.3493C22.4759 20.5525 22.4845 20.3715 22.5032 16.5064L22.5187 13.2931C22.5193 13.1616 22.6798 13.098 22.7703 13.1932C23.0531 13.4906 23.2321 13.5942 23.5516 13.6457C24.5482 13.8062 25.2985 12.8092 24.8832 11.8761C24.8122 11.7167 24.7154 11.6037 23.3203 10.0538L23.0413 9.74385C22.7136 9.37989 22.5309 8.90838 22.5278 8.4187L22.4967 3.59241C22.4957 3.43666 22.4595 3.28316 22.3909 3.14335C22.2568 2.87032 22.0242 2.63795 21.7639 2.51677C21.5978 2.43951 21.4989 2.42054 21.2569 2.41949C20.9912 2.41832 20.927 2.43254 20.7053 2.54164C20.4324 2.6759 20.2419 2.86769 20.1045 3.14665C20.0221 3.31395 20.0194 3.35622 20.0012 4.83125C19.9945 5.37033 19.3299 5.62117 18.9687 5.22093L18.3462 4.53122C16.6145 2.61233 15.8433 1.82437 15.2977 1.41659C14.7199 0.98466 14.0402 0.698243 13.3132 0.58033C12.8936 0.512261 12.0222 0.512298 11.6466 0.580368ZM11.875 3.11166C11.5519 3.19634 11.4658 3.23891 11.1554 3.46746C10.7506 3.76546 10.1709 4.3803 7.53996 7.3022L5.51341 9.55287C5.18264 9.92022 4.99963 10.3971 4.99969 10.8914L5.00012 14.578C5.00065 19.0511 5.02262 20.0403 5.13322 20.5758C5.24214 21.103 5.56587 21.5897 6.02608 21.9181C6.51851 22.2695 6.83369 22.3439 7.971 22.377C8.39703 22.3894 8.74946 22.0481 8.75078 21.6219L8.76805 16.0311C8.76851 15.8839 8.80457 15.7391 8.87315 15.6089C9.07567 15.2245 9.41085 14.9897 9.85576 14.9204C9.9892 14.8996 11.1609 14.8897 12.6706 14.8964C15.0176 14.907 15.272 14.9141 15.4204 14.9729C15.7723 15.1125 16.0436 15.3875 16.1743 15.7368C16.2491 15.9366 16.2508 16.0126 16.2508 19.1707V21.6216C16.2508 22.0477 16.603 22.3895 17.029 22.3767C18.1721 22.3422 18.483 22.269 18.9747 21.9181C19.425 21.5968 19.7483 21.1178 19.8657 20.5979C19.9778 20.1015 20.0001 19.1106 20.0006 14.5969L20.0011 10.8917C20.0011 10.3974 19.8181 9.92056 19.4874 9.55322L17.6297 7.4899C16.3254 6.0412 15.0842 4.67028 14.8716 4.44338C14.3889 3.92827 13.8963 3.48448 13.6195 3.31534C13.1816 3.04786 12.4461 2.96198 11.875 3.11166ZM11.2628 21.1514C11.2628 21.8349 11.8169 22.389 12.5004 22.389C13.1839 22.389 13.738 21.8349 13.738 21.1514V18.6761C13.738 17.9926 13.1839 17.4385 12.5004 17.4385C11.8169 17.4385 11.2628 17.9926 11.2628 18.6761V21.1514Z" fill="#EEF0F2" fill-opacity="0.85"/>
@@ -284,19 +366,22 @@ const renderVariantsPreview = () => {
                             </div>
                         </div>
                         <div class="variantPreviewImage" style="background-image: url(${lists.glamping[i].images.winter[0]})"></div>
-                    </article>`)
-                }
-            }
-        })
-    }
-}
+                    </article>`
+          );
+        }
+      }
+    });
+  }
+};
 
 const openOffersPopup = (element, index) => {
-    multipage.changeScroll()
-    const multiPage = document.getElementById('multi-page')
-    const object = lists.offers[index]
-    const season = localStorage.getItem('season')
-    multiPage.insertAdjacentHTML('afterbegin', `
+  multipage.changeScroll();
+  const multiPage = document.getElementById("multi-page");
+  const object = lists.offers[index];
+  const season = localStorage.getItem("season");
+  multiPage.insertAdjacentHTML(
+    "afterbegin",
+    `
                 <div style="animation: showpopup .3s 1s ease-out forwards" id="close-popup" onclick="multipage.remPopup()">
                     <svg width="50px" viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg"><g stroke-width="0"/><g stroke-linecap="round" stroke-linejoin="round"/><path d="M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2 2 6.5 2 12s4.5 10 10 10m-2.83-7.17 5.66-5.66m0 5.66L9.17 9.17" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </div>
@@ -320,29 +405,45 @@ const openOffersPopup = (element, index) => {
                         </div>
                     </div>
                     </div>
-                </div>`) // Рендер поп-апа
-    object.highlights.forEach(hl => {
-        document.getElementById('infoHL').insertAdjacentHTML('beforeend', `<div class="hl">${hl}</div>`)
-    })
-    object.info.forEach(text => {
-        document.getElementById('infoText').insertAdjacentHTML('beforeend', `<p class="infoText">${text}</p>`)
-    })
-    showHideChats()
-}
+                </div>`
+  ); // Рендер поп-апа
+  object.highlights.forEach((hl) => {
+    document
+      .getElementById("infoHL")
+      .insertAdjacentHTML("beforeend", `<div class="hl">${hl}</div>`);
+  });
+  object.info.forEach((text) => {
+    document
+      .getElementById("infoText")
+      .insertAdjacentHTML("beforeend", `<p class="infoText">${text}</p>`);
+  });
+  showHideChats();
+};
 const renderOffers = () => {
-    const offersNode = document.getElementById('offers');
-    const season = localStorage.getItem('season');
-    if (offersNode) {
-        offersNode.insertAdjacentHTML('beforeend', `<div class="classic-ip" data-counter-scrollit></div>`)
-        const whereTo = offersNode.querySelector('.classic-ip')
-        lists.offers.forEach((offer, index) => {
-            whereTo.insertAdjacentHTML('beforeend',
-                `<article data-counter-item class="offer ${offer.link ? 'active' : ''}" ${offer.link ? `onclick="openOffersPopup(this, ${index})"` : ''} data-offer-id="${index}" style="background-image: url(${offer.cover[season]})">
+  const offersNode = document.getElementById("offers");
+  const season = localStorage.getItem("season");
+  if (offersNode) {
+    offersNode.insertAdjacentHTML(
+      "beforeend",
+      `<div class="classic-ip" data-counter-scrollit></div>`
+    );
+    const whereTo = offersNode.querySelector(".classic-ip");
+    lists.offers.forEach((offer, index) => {
+      whereTo.insertAdjacentHTML(
+        "beforeend",
+        `<article data-counter-item class="offer ${
+          offer.link ? "active" : ""
+        }" ${
+          offer.link ? `onclick="openOffersPopup(this, ${index})"` : ""
+        } data-offer-id="${index}" style="background-image: url(${
+          offer.cover[season]
+        })">
                 <div class="offerTitleBlock">
                     <h4 class="offerTitle">${offer.title}</h4>
                     <p class="offerDescription">${offer.description}</p>
-                    ${offer.link
-                    ? `<svg class="infoIcon" xmlns="http://www.w3.org/2000/svg" width="25" height="26" viewBox="0 0 25 26" fill="none">
+                    ${
+                      offer.link
+                        ? `<svg class="infoIcon" xmlns="http://www.w3.org/2000/svg" width="25" height="26" viewBox="0 0 25 26" fill="none">
                       <g clip-path="url(#a)">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M11.843.746C8.027.936 4.483 2.9 2.258 6.054 1.015 7.816.274 9.825.04 12.058c-.054.524-.055 1.826-.001 2.364a12.56 12.56 0 0 0 5.274 9.06c1.762 1.242 3.771 1.984 6.004 2.216.525.055 1.827.056 2.364.002a12.56 12.56 0 0 0 9.06-5.274c1.243-1.762 1.984-3.772 2.217-6.004.054-.525.055-1.827.001-2.364a12.56 12.56 0 0 0-5.274-9.06A12.5 12.5 0 0 0 11.843.746m-.319 2.536c-2.004.237-3.749.945-5.253 2.13-.357.282-1.312 1.235-1.582 1.58a10.26 10.26 0 0 0-2.083 4.754c-.098.613-.098 2.385 0 2.976.295 1.783.993 3.384 2.067 4.747.281.357 1.235 1.312 1.58 1.582a10.26 10.26 0 0 0 4.754 2.083c.612.098 2.384.098 2.975 0 1.783-.296 3.376-.989 4.747-2.067.412-.323 1.404-1.336 1.712-1.748a10.2 10.2 0 0 0 1.953-4.586c.098-.612.098-2.384 0-2.975-.295-1.783-.992-3.384-2.067-4.747-.282-.357-1.235-1.312-1.58-1.582a10.3 10.3 0 0 0-4.727-2.08c-.36-.058-2.16-.107-2.496-.067m.624 3.75c-1.104.354-1.215 1.845-.173 2.339.175.083.257.097.544.097.275 0 .37-.017.511-.087.28-.138.469-.325.604-.598.108-.22.123-.287.123-.552 0-.253-.017-.335-.104-.513a1.36 1.36 0 0 0-.617-.621 1.4 1.4 0 0 0-.888-.065m0 3.753a1.25 1.25 0 0 0-.884 1.034c-.054.328-.053 6.27 0 6.598.122.753.851 1.24 1.553 1.035.514-.149.834-.511.92-1.039.053-.328.052-6.27-.001-6.598a1.28 1.28 0 0 0-.419-.77c-.299-.27-.795-.38-1.169-.26" fill="#1E1B23"/>
                       </g>
@@ -352,302 +453,376 @@ const renderOffers = () => {
                         </clipPath>
                       </defs>
                     </svg>`
-                    : ''}
+                        : ""
+                    }
                 </div>
-            </article>`)
-        })
-    }
-}
+            </article>`
+      );
+    });
+  }
+};
 
-/**
- * прячет и показывает кнопки чатов (живо и тп)
+/** прячет и показывает кнопки чатов (живо и тп)
  * при открытии поп-апов*/
 const showHideChats = () => {
-    const jivo = document.querySelectorAll('jdiv')
-    try {
-        if (jivo) {
-            for (let i = 0; i < jivo.length; i++) {
-                jivo[i].classList.toggle('hideIfPopUp')
-            }
-            document.getElementById('CalltouchWidgetFrame').classList.toggle('hideIfPopUp')
-        } else console.log('Не найдено блоков Jivo')
-    } catch {}
-}
+  const jivo = document.querySelectorAll("jdiv");
+  try {
+    if (jivo) {
+      for (let i = 0; i < jivo.length; i++) {
+        jivo[i].classList.toggle("hideIfPopUp");
+      }
+      document
+        .getElementById("CalltouchWidgetFrame")
+        .classList.toggle("hideIfPopUp");
+    } else console.log("Не найдено блоков Jivo");
+  } catch {}
+};
 
 const loyaltyWorker = () => {
-    const popUp = (nodeElement) => {
-        const multiPage = document.getElementById('multi-page')
-        const title = nodeElement.getAttribute('title')
-        const el = lists.loyalty.find((element) => element.title === title);
+  const popUp = (nodeElement) => {
+    const multiPage = document.getElementById("multi-page");
+    const title = nodeElement.getAttribute("title");
+    const el = lists.loyalty.find((element) => element.title === title);
 
-        // popup render
-        multiPage.insertAdjacentHTML('afterbegin', `
+    // popup render
+    multiPage.insertAdjacentHTML(
+      "afterbegin",
+      `
                 <div style="animation: showpopup .3s 1s ease-out forwards" id="close-popup" onclick="multipage.remPopup()">
                     <svg width="50px" viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg"><g stroke-width="0"/><g stroke-linecap="round" stroke-linejoin="round"/><path d="M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2 2 6.5 2 12s4.5 10 10 10m-2.83-7.17 5.66-5.66m0 5.66L9.17 9.17" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </div>
                 <div class="blur" id="popup-block">
                     <section id="loyaltyPopUp"></section>
-                </div>`)
-        const loyaltyPopUp = document.getElementById('loyaltyPopUp')
-        loyaltyPopUp.insertAdjacentHTML('beforeend',
-            `<h3>${el.title}</h3><article id="${el.id}"></article>`)
-        const inTo = loyaltyPopUp.querySelector('article')
+                </div>`
+    );
+    const loyaltyPopUp = document.getElementById("loyaltyPopUp");
+    loyaltyPopUp.insertAdjacentHTML(
+      "beforeend",
+      `<h3>${el.title}</h3><article id="${el.id}"></article>`
+    );
+    const inTo = loyaltyPopUp.querySelector("article");
 
-        // info render
-        let tmt = 0
-        switch (el.id) {
-            case("loyaltyProgram"):
-                for (const param of Object.entries(el.innards)) {
-                    inTo.insertAdjacentHTML('beforeend', `<div style="animation: showpopup .4s ${tmt}s ease-out forwards" data-param="${param[0]}"><h4>${param[0]}</h4></div>`)
-                    param[1].forEach((el, ind) => {
-                        tmt += .1
-                        inTo.querySelector(`[data-param="${param[0]}"]`).insertAdjacentHTML('beforeend', `<p style="animation: showpopup .4s ${tmt}s ease-out forwards" >${el}</p>`)
-                    })
-                }
-                inTo.insertAdjacentHTML('beforeend', `<div style="animation: showpopup .4s ${tmt}s ease-out forwards"  id="loyaltyButtons">
+    // info render
+    let tmt = 0;
+    switch (el.id) {
+      case "loyaltyProgram":
+        for (const param of Object.entries(el.innards)) {
+          inTo.insertAdjacentHTML(
+            "beforeend",
+            `<div style="animation: showpopup .4s ${tmt}s ease-out forwards" data-param="${param[0]}"><h4>${param[0]}</h4></div>`
+          );
+          param[1].forEach((el, ind) => {
+            tmt += 0.1;
+            inTo
+              .querySelector(`[data-param="${param[0]}"]`)
+              .insertAdjacentHTML(
+                "beforeend",
+                `<p style="animation: showpopup .4s ${tmt}s ease-out forwards" >${el}</p>`
+              );
+          });
+        }
+        inTo.insertAdjacentHTML(
+          "beforeend",
+          `<div style="animation: showpopup .4s ${tmt}s ease-out forwards"  id="loyaltyButtons">
                     <a class="classic-header-button-first" target="_blank" href="tel:+7 (499) 495-12-45">+7 (499) 495-12-45</a>
                     <a class="classic-header-button-first" target="_blank" href="https://wa.me/79670655655?text=Добрый день! Подскажите, какая у меня категория лояльности?">WhatsApp</a>
-                </div>`)
-                break
-            case("certificates"):
-                for (const certificate of Object.entries(el.innards)) {
-                    const name = certificate[0]
-                    const values = certificate[1]
-                    inTo.insertAdjacentHTML('beforeend',
-                        `<div style="animation: showpopup .4s ${tmt}s ease-out forwards" data-cert="${name}">
+                </div>`
+        );
+        break;
+      case "certificates":
+        for (const certificate of Object.entries(el.innards)) {
+          const name = certificate[0];
+          const values = certificate[1];
+          inTo.insertAdjacentHTML(
+            "beforeend",
+            `<div style="animation: showpopup .4s ${tmt}s ease-out forwards" data-cert="${name}">
                                 <img src="${values.imageLink}" alt="Терруар подарочный сертификат на ${name}">
                             <section>
                                 <a href="${values.paymentLink}" target="_blank">${el.cartIcon}</a>
                                 <a href="${values.paymentLink}" target="_blank">${values.qr}</a>
                             </section>
-                        </div>`)
-                    tmt += .3
-                }
-                inTo.insertAdjacentHTML('afterbegin', `<p style="opacity: 0; animation: showpopup .4s ${tmt}s ease-out forwards">После оплаты сертификат с номером придет вам на указанную почту в течение суток.<br><br>Если нужно быстрее, <a onclick="multipage.remPopup()" href="#contacts" class="faqbtn" >свяжитесь с нами</a>, все сделаем!:)</p>`)
-                break
+                        </div>`
+          );
+          tmt += 0.3;
         }
+        inTo.insertAdjacentHTML(
+          "afterbegin",
+          `<p style="opacity: 0; animation: showpopup .4s ${tmt}s ease-out forwards">После оплаты сертификат с номером придет вам на указанную почту в течение суток.<br><br>Если нужно быстрее, <a onclick="multipage.remPopup()" href="#contacts" class="faqbtn" >свяжитесь с нами</a>, все сделаем!:)</p>`
+        );
+        break;
     }
-    const loyaltySection = document.getElementById('loyalty')
-    if (loyaltySection) {
-        const elements = loyaltySection.querySelectorAll('article')
-        for (const element of elements)
-            element.onclick = (e) => {
-                multipage.changeScroll()
-                popUp(element)
-                showHideChats()
-            }
-    }
-}
+  };
+  const loyaltySection = document.getElementById("loyalty");
+  if (loyaltySection) {
+    const elements = loyaltySection.querySelectorAll("article");
+    for (const element of elements)
+      element.onclick = (e) => {
+        multipage.changeScroll();
+        popUp(element);
+        showHideChats();
+      };
+  }
+};
 
 const seasonTapesRender = () => {
-    const renderATape = (el) => {
-        el.insertAdjacentHTML('beforeend', '<div class="a-tape"><p>Закрыто на сезон</p><p>Закрыто на сезон</p><p>Закрыто на сезон</p></div>')
-    }
-    const articles = Array.from(document.querySelectorAll('article'))
-    const elForTapping = articles.filter(el => {
-        return seasonTapes.some(text => el.title === text || el.id === text)
-    })
-    elForTapping.forEach(el => {
-        renderATape(el);
-        if (el.querySelector('.variantPreviewImage'))
-            el.querySelector('.variantPreviewImage').style.filter = 'grayscale(1)'
-        if (el.querySelector('img'))
-            el.querySelector('img').style.filter = 'grayscale(1)'
-    })
-}
+  const season = localStorage.getItem("season");
+  const renderATape = (el) => {
+    el.insertAdjacentHTML(
+      "beforeend",
+      '<div class="a-tape"><p>Закрыто на сезон</p><p>Закрыто на сезон</p><p>Закрыто на сезон</p></div>'
+    );
+  };
+  const articles = Array.from(document.querySelectorAll("article"));
+  const elForTapping = articles.filter((el) => {
+    return closedForSeason[season].some(
+      (text) => el.title === text || el.id === text
+    );
+  });
+  elForTapping.forEach((el) => {
+    renderATape(el);
+    if (el.querySelector(".variantPreviewImage"))
+      el.querySelector(".variantPreviewImage").style.filter = "grayscale(1)";
+    if (el.querySelector("img"))
+      el.querySelector("img").style.filter = "grayscale(1)";
+  });
+};
 
 const showAboutBlock = (bttn) => {
-    const whyBlock = document.querySelector('.whyTerruar')
-    //
-    whyBlock.style.transition = 'all ease-out 1s'
-    whyBlock.style.opacity = '1'
-    whyBlock.style.height = '100%'
-    if (window.innerWidth > 600) {
-        whyBlock.style.padding = '2rem'
-    } else {
-        whyBlock.style.padding = '.5rem'
-    }
-    //
-    bttn.style.transition = 'all ease-out .5s'
-    bttn.style.translate = '10px 0'
-    bttn.style.height = '0'
-    bttn.style.padding = '0'
-    bttn.style.opacity = '0'
-    bttn.style.marginInline = '-1rem'
+  const whyBlock = document.querySelector(".whyTerruar");
+  //
+  whyBlock.style.transition = "all ease-out 1s";
+  whyBlock.style.opacity = "1";
+  whyBlock.style.height = "100%";
+  if (window.innerWidth > 600) {
+    whyBlock.style.padding = "2rem";
+  } else {
+    whyBlock.style.padding = ".5rem";
+  }
+  //
+  bttn.style.transition = "all ease-out .5s";
+  bttn.style.translate = "10px 0";
+  bttn.style.height = "0";
+  bttn.style.padding = "0";
+  bttn.style.opacity = "0";
+  bttn.style.marginInline = "-1rem";
+};
+
+/** настройки для видео, сезонные в основном
+ */
+function setVeasonVideos() {
+  const season = localStorage.getItem("season");
+  const vertical = document.querySelector(".verticalPreview");
+  const horisontal = document.querySelector(".horizontalPreview");
+
+  if (vertical)
+    vertical.setAttribute(
+      "data-frame-link",
+      lists.videos[season].vertical.videoLink
+    );
+  if (horisontal)
+    horisontal.setAttribute(
+      "data-frame-link",
+      lists.videos[season].horisontal.videoLink
+    );
 }
 const openFullVideo = (element) => {
-    multipage.changeScroll()
-    const link = element.getAttribute('data-frame-link')
-    const multiPage = document.getElementById('multi-page')
-    multiPage.insertAdjacentHTML('afterbegin', `
+  multipage.changeScroll();
+  const link = element.getAttribute("data-frame-link");
+  const multiPage = document.getElementById("multi-page");
+  multiPage.insertAdjacentHTML(
+    "afterbegin",
+    `
                 <div style="animation: showpopup .3s 1s ease-out forwards" id="close-popup" onclick="multipage.remPopup()">
                     <svg width="50px" viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg"><g stroke-width="0"/><g stroke-linecap="round" stroke-linejoin="round"/><path d="M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2 2 6.5 2 12s4.5 10 10 10m-2.83-7.17 5.66-5.66m0 5.66L9.17 9.17" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </div>
                 <div class="blur" id="popup-block"> <!--тело поп-апа-->
-                    <iframe src="${link}" allowfullscreen class="${element.getAttribute('class')}" id="popUpVideo"></iframe>
-                </div>`) // Рендер поп-апа
-    // console.log(link)
-    showHideChats()
-}
+                    <iframe src="${link}" allowfullscreen class="${element.getAttribute(
+      "class"
+    )}" id="popUpVideo"></iframe>
+                </div>`
+  ); // Рендер поп-апа
+  // console.log(link)
+  showHideChats();
+};
 
 const terruarCatalogue = {
-    link: 'https://store.tildaapi.com/api/getproductslist/?storepartuid=513452425241&recid=752306605&c=1716436482010&getparts=true&getoptions=true&slice=1&size=36&projectid=5131025',
-    catalog: {},
-    get parts() {
-        return this.catalog.parts;
-    },
-    get products() {
-        return this.catalog.products;
-    },
-    getProductId: (product, string) => {
-        if (string)
-            return product.uid.toString();
-        return Number(product.uid)
-    },
-    getProductTitle: (product, string) => {
-        if (string)
-            return product.title.toString();
-        return product.title
-    },
-    getProductPart: (product, string) => {
-        if (string)
-            return product.partuids.slice(1, -1)
-        return Number(product.partuids.slice(1, -1))
-    },
-    getProductPrice: (product, string) => {
-        if (string)
-            return product.price
-        return Math.floor(product.price)
-    },
-    getProductDescription: (product, string) => {
-        if (string)
-            return product.descr.toString()
-        return product.descr
-    },
-    renderCategories: () => {
-        if (document.getElementById('terruarMenu')) {
-            let menu = document.getElementById('terruarMenu');
-            if (terruarCatalogue.parts) {
-                terruarCatalogue.parts.forEach(part => {
-                    menu.insertAdjacentHTML('beforeend', `<div class="menuCategory" id="${part.uid}"><h4 class="categoryHeader">${part.title}</h4></div>`)
-                })
-            }
-        } else {
-            console.log('Не обнаружен <div id="terruarMenu"></div>')
-        }
-    },
-    renderProducts: () => {
-        if (document.getElementById('terruarMenu')) {
-            let menu = document.getElementById('terruarMenu');
-            if (terruarCatalogue.products) {
-                terruarCatalogue.products.forEach(product => {
-                    let partID = terruarCatalogue.getProductPart(product)
-                    document.getElementById(partID).insertAdjacentHTML("beforeend",
-                        `
+  link: "https://store.tildaapi.com/api/getproductslist/?storepartuid=513452425241&recid=752306605&c=1716436482010&getparts=true&getoptions=true&slice=1&size=36&projectid=5131025",
+  catalog: {},
+  get parts() {
+    return this.catalog.parts;
+  },
+  get products() {
+    return this.catalog.products;
+  },
+  getProductId: (product, string) => {
+    if (string) return product.uid.toString();
+    return Number(product.uid);
+  },
+  getProductTitle: (product, string) => {
+    if (string) return product.title.toString();
+    return product.title;
+  },
+  getProductPart: (product, string) => {
+    if (string) return product.partuids.slice(1, -1);
+    return Number(product.partuids.slice(1, -1));
+  },
+  getProductPrice: (product, string) => {
+    if (string) return product.price;
+    return Math.floor(product.price);
+  },
+  getProductDescription: (product, string) => {
+    if (string) return product.descr.toString();
+    return product.descr;
+  },
+  renderCategories: () => {
+    if (document.getElementById("terruarMenu")) {
+      let menu = document.getElementById("terruarMenu");
+      if (terruarCatalogue.parts) {
+        terruarCatalogue.parts.forEach((part) => {
+          menu.insertAdjacentHTML(
+            "beforeend",
+            `<div class="menuCategory" id="${part.uid}"><h4 class="categoryHeader">${part.title}</h4></div>`
+          );
+        });
+      }
+    } else {
+      console.log('Не обнаружен <div id="terruarMenu"></div>');
+    }
+  },
+  renderProducts: () => {
+    if (document.getElementById("terruarMenu")) {
+      let menu = document.getElementById("terruarMenu");
+      if (terruarCatalogue.products) {
+        terruarCatalogue.products.forEach((product) => {
+          let partID = terruarCatalogue.getProductPart(product);
+          document.getElementById(partID).insertAdjacentHTML(
+            "beforeend",
+            `
 <div class="product" id="${terruarCatalogue.getProductId(product)}">
-                        ${product.title
-                            ? `<p class="productTitle">${terruarCatalogue.getProductTitle(product)}</p>`
-                            : ''}
-                        ${product.descr
-                            ? `<p class="productDescription">${terruarCatalogue.getProductDescription(product)}</p> `
-                            : ''}
-                        ${product.price
-                            ? `<p class="productPrice">${terruarCatalogue.getProductPrice(product)} p.</p> `
-                            : ''}
+                        ${
+                          product.title
+                            ? `<p class="productTitle">${terruarCatalogue.getProductTitle(
+                                product
+                              )}</p>`
+                            : ""
+                        }
+                        ${
+                          product.descr
+                            ? `<p class="productDescription">${terruarCatalogue.getProductDescription(
+                                product
+                              )}</p> `
+                            : ""
+                        }
+                        ${
+                          product.price
+                            ? `<p class="productPrice">${terruarCatalogue.getProductPrice(
+                                product
+                              )} p.</p> `
+                            : ""
+                        }
 </div>
-`)
-                })
-            }
-        } else {
-            console.log('Не обнаружен <div id="terruarMenu"></div>')
-        }
-    },
-    getCatalogues: async function () {
-        try {
-            const response = await fetch(this.link);
-            if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`);
-            }
-            if (response.ok) {
-                terruarCatalogue.catalog = await response.json();
-            }
-        } catch (error) {
-            // console.error('Error fetching catalog:', error)
-        }
-    },
-}
+`
+          );
+        });
+      }
+    } else {
+      console.log('Не обнаружен <div id="terruarMenu"></div>');
+    }
+  },
+  getCatalogues: async function () {
+    try {
+      const response = await fetch(this.link);
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      if (response.ok) {
+        terruarCatalogue.catalog = await response.json();
+      }
+    } catch (error) {
+      // console.error('Error fetching catalog:', error)
+    }
+  },
+};
 const multipage = {
-    popupButtonsInit: function () {
-        document.querySelectorAll("[data-popup]").forEach(bttn => {
-            const data = bttn.getAttribute("data-popup")
-            bttn.addEventListener('click', (e) => {
-                multipage.popup(e.target)
-                showHideChats()
-            })
-            bttn.querySelectorAll('*').forEach(button => {
-                button.setAttribute('data-popup', data)
-            })
-        })
-        const buttons = document.querySelectorAll("[data-popup]")
+  popupButtonsInit: function () {
+    document.querySelectorAll("[data-popup]").forEach((bttn) => {
+      const data = bttn.getAttribute("data-popup");
+      bttn.addEventListener("click", (e) => {
+        multipage.popup(e.target);
+        showHideChats();
+      });
+      bttn.querySelectorAll("*").forEach((button) => {
+        button.setAttribute("data-popup", data);
+      });
+    });
+    const buttons = document.querySelectorAll("[data-popup]");
 
-        buttons.forEach(button => {
-            const id = button.getAttribute("data-popup")
-            const listName = this.findListNameById(id)
-            const obj = this.findObjectById(id);
-            button.setAttribute('data-list', listName)
-            button.setAttribute('data-popup-type', obj.popUpType)
-            button.setAttribute('data-header', obj.title)
-        })
-    },
-    findListNameById: function (id) {
-        for (const listName in lists) {
-            if (lists[listName].some(service => service.id === id)) {
-                return listName
-            }
-        }
-    },
-    findObjectById: function (id) {
-        for (const listName in lists) {
-            if (lists[listName].find(service => service.id === id)) {
-                return lists[listName].find(service => service.id === id)
-            }
-        }
-    },
-    //
-    popup(target) {
-        const dataPopup = (target.getAttribute('data-popup') ? target.getAttribute('data-popup') : '')
-        const dataHeader = target.getAttribute('data-header') ? target.getAttribute('data-header') : ''
-        const dataType = target.getAttribute('data-popup-type') ? target.getAttribute('data-popup-type') : ''
-        const dataList = this.findListNameById(dataPopup)
-        this.changeScroll()
+    buttons.forEach((button) => {
+      const id = button.getAttribute("data-popup");
+      const listName = this.findListNameById(id);
+      const obj = this.findObjectById(id);
+      button.setAttribute("data-list", listName);
+      button.setAttribute("data-popup-type", obj.popUpType);
+      button.setAttribute("data-header", obj.title);
+    });
+  },
+  findListNameById: function (id) {
+    for (const listName in lists) {
+      if (lists[listName].some((service) => service.id === id)) {
+        return listName;
+      }
+    }
+  },
+  findObjectById: function (id) {
+    for (const listName in lists) {
+      if (lists[listName].find((service) => service.id === id)) {
+        return lists[listName].find((service) => service.id === id);
+      }
+    }
+  },
+  //
+  popup(target) {
+    const dataPopup = target.getAttribute("data-popup")
+      ? target.getAttribute("data-popup")
+      : "";
+    const dataHeader = target.getAttribute("data-header")
+      ? target.getAttribute("data-header")
+      : "";
+    const dataType = target.getAttribute("data-popup-type")
+      ? target.getAttribute("data-popup-type")
+      : "";
+    const dataList = this.findListNameById(dataPopup);
+    this.changeScroll();
 
-        const multiPage = document.getElementById('multi-page')
-        const getMenu = (target) => {
-            terruarCatalogue.getCatalogues().then(r => {
-                terruarCatalogue.renderCategories();
-                terruarCatalogue.renderProducts()
-            })
-            return `<div id="terruarMenu"></div>`
+    const multiPage = document.getElementById("multi-page");
+    const getMenu = (target) => {
+      terruarCatalogue.getCatalogues().then((r) => {
+        terruarCatalogue.renderCategories();
+        terruarCatalogue.renderProducts();
+      });
+      return `<div id="terruarMenu"></div>`;
+    };
+    const getGallery = (service) => {
+      if (service.id === "showAllButton") return;
+      try {
+        let q = "";
+        const id = service.getAttribute("data-popup");
+        const obj = this.findObjectById(id);
+        if (!obj.withGallery) return q;
+
+        const season = localStorage.getItem("season");
+
+        for (const img of obj.images?.[season] || obj.images) {
+          q += `<img src="${img}" onclick="this.scrollIntoView()" alt="Фотографии ресторана">`;
         }
-        const getGallery = (service) => {
-            if (service.id === 'showAllButton') return;
-            try {
-                let q = '';
-                const id = service.getAttribute('data-popup')
-                const obj = this.findObjectById(id)
-                if (!obj.withGallery) return q;
-    
-                for (const img of obj.images) {
-                    q += `<img src="${img}" onclick="this.scrollIntoView()" alt="Фотографии ресторана">`
-                }
-                return `<article id="pop-up-gallery">${q}</article>`;
-            } 
-            catch {}
-        }
-        const getTeam = (target) => {
-            let q = ''
-            lists.team.forEach(person => {
-                q += `<article class="team-person">
+
+        return `<article id="pop-up-gallery">${q}</article>`;
+      } catch {}
+    };
+    const getTeam = (target) => {
+      let q = "";
+      lists.team.forEach((person) => {
+        q += `<article class="team-person">
                 <div class="person-photo-block">
                     <img onload="whatIsMax(this)" class="shadow person-photo" src="${person.photo[0]}" alt="${person.name}">
                 </div>
@@ -656,19 +831,21 @@ const multipage = {
                     <p class="person-about">${person.about}</p>
                     <p class="person-position">${person.position}</p>
                 </div>
-                </article>`
-            })
-            return `<section id="team" data-smooth-mobile>${q}</section>`
-        }
-        const getService = (target) => {
-            const season = localStorage.getItem('season')
-            const name = target.getAttribute('data-popup')
-            const list = target.getAttribute('data-list')
-            const obj = lists[list].find((service, id) => service.id === name)
+                </article>`;
+      });
+      return `<section id="team" data-smooth-mobile>${q}</section>`;
+    };
+    const getService = (target) => {
+      const season = localStorage.getItem("season");
+      const name = target.getAttribute("data-popup");
+      const list = target.getAttribute("data-list");
+      const obj = lists[list].find((service, id) => service.id === name);
 
-            const imageSrc = obj.images?.[season]?.[0] ? obj.images[season][0] : obj.images[0]
+      const imageSrc = obj.images?.[season]?.[0]
+        ? obj.images[season][0]
+        : obj.images[0];
 
-            return `
+      return `
             <section data-ip-service="${obj.id}" id="popup-service">
             <div class="popup-service-imgblock">
                 <img onload="whatIsMax(this)" src="${imageSrc}" alt="${obj.fullDescr}" class="popup-service-img">
@@ -684,113 +861,124 @@ const multipage = {
                 </div>
             </div>
             </section>
-            `
-        }
+            `;
+    };
 
-        getWeatherForecast().then()
-        dataPopup === 'online' ? videoPlayBack() : ''
-        multiPage.insertAdjacentHTML('afterbegin', `
+    getWeatherForecast().then();
+    dataPopup === "online" ? videoPlayBack() : "";
+    multiPage.insertAdjacentHTML(
+      "afterbegin",
+      `
                 <div style="animation: showpopup .3s 1s ease-out forwards" id="close-popup" onclick="multipage.remPopup()">
                         <svg width="50px" viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg"><g stroke-width="0"/><g stroke-linecap="round" stroke-linejoin="round"/><path d="M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2 2 6.5 2 12s4.5 10 10 10m-2.83-7.17 5.66-5.66m0 5.66L9.17 9.17" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                     </div>
                 <div class="blur" id="popup-block"> <!--тело поп-апа-->
-                    ${dataPopup === 'online' ? `<article id="weatherTest"></article>` : ''}
+                    ${
+                      dataPopup === "online"
+                        ? `<article id="weatherTest"></article>`
+                        : ""
+                    }
                     <h2 class="popUpHeader">${dataHeader}</h2> 
                     ${getGallery(target)}
-                    ${dataPopup === 'team' ? getTeam(target) : ''}
-                    ${dataPopup === 'restaurant' ? getMenu(target) : ''}
-                    ${dataType === 'service' ? getService(target) : ''}
-                </div>`) // Рендер поп-апа
-    }, // Показ поп-апа
-    remPopup() {
-        this.changeScroll()
-        showHideChats()
-        const popup = document.getElementById('popup-block')
-        const closeButton = document.getElementById('close-popup')
-        const weatherBlock = document.getElementById('weatherTest')
-        const mobileMenuButton = document.getElementById('monMenuButton')
-        popup.style.animation = 'hidepopup .3s ease-out forwards'
-        closeButton.style.animation = 'hidepopup .3s ease-out forwards'
-        // weatherBlock.style.animation = 'hidepopup .3s ease-out forwards'
-        setTimeout(() => {
-            popup ? popup.remove() : null;
-            closeButton ? closeButton.remove() : null;
-            weatherBlock ? weatherBlock.remove() : null;
-        }, 300)
-    }, // Сброс поп-апа
+                    ${dataPopup === "team" ? getTeam(target) : ""}
+                    ${dataPopup === "restaurant" ? getMenu(target) : ""}
+                    ${dataType === "service" ? getService(target) : ""}
+                </div>`
+    ); // Рендер поп-апа
+  }, // Показ поп-апа
+  remPopup() {
+    this.changeScroll();
+    showHideChats();
+    const popup = document.getElementById("popup-block");
+    const closeButton = document.getElementById("close-popup");
+    const weatherBlock = document.getElementById("weatherTest");
+    const mobileMenuButton = document.getElementById("monMenuButton");
+    popup.style.animation = "hidepopup .3s ease-out forwards";
+    closeButton.style.animation = "hidepopup .3s ease-out forwards";
+    // weatherBlock.style.animation = 'hidepopup .3s ease-out forwards'
+    setTimeout(() => {
+      popup ? popup.remove() : null;
+      closeButton ? closeButton.remove() : null;
+      weatherBlock ? weatherBlock.remove() : null;
+    }, 300);
+  }, // Сброс поп-апа
 
-    //
-    getHeaderHeight: async () => {
-        const nav = document.querySelector('nav');
-        const hero = document.getElementById('hero');
-        const mobNav = document.getElementById('mobileNavStroke');
+  //
+  getHeaderHeight: async () => {
+    const nav = document.querySelector("nav");
+    const hero = document.getElementById("hero");
+    const mobNav = document.getElementById("mobileNavStroke");
 
-        if (mobNav.offsetHeight < 1) {
-            let height = `calc(${window.innerHeight}px - ${nav.clientHeight}px - 3rem)`;
-            let margin = `calc(${nav.clientHeight}px + 5rem)`
-            hero.style.cssText += `margin-top: ${margin}`; //height:${height};
-        } // для пк
-        else {
-            let height = `unset`;
-            let margin = `calc(${nav.offsetHeight}px + 1rem)`
-            hero.style.cssText += `margin-top: ${margin}`; //height:${height};
-        } // для мобильных
+    if (mobNav.offsetHeight < 1) {
+      let height = `calc(${window.innerHeight}px - ${nav.clientHeight}px - 3rem)`;
+      let margin = `calc(${nav.clientHeight}px + 5rem)`;
+      hero.style.cssText += `margin-top: ${margin}`; //height:${height};
+    } // для пк
+    else {
+      let height = `unset`;
+      let margin = `calc(${nav.offsetHeight}px + 1rem)`;
+      hero.style.cssText += `margin-top: ${margin}`; //height:${height};
+    } // для мобильных
+  },
+  hideMobileMenu() {
+    let btn = document.getElementById("monMenuButton");
+    if (btn.getBoundingClientRect().width > 0) return btn.click();
+  },
+  mobileBackImages: [
+    "https://optim.tildacdn.com/tild3534-3435-4839-b839-366337373937/-/format/webp/IMAGE_2024-04-11_170.jpg",
+    "https://optim.tildacdn.com/tild3837-6638-4535-a238-663235623730/-/format/webp/KIR_3052.jpg",
+    "https://optim.tildacdn.com/tild3739-6138-4236-a436-313339626532/-/format/webp/IMAGE_2024-04-11_173.jpg",
+    //'https://optim.tildacdn.com/tild3539-6266-4461-a633-376165353133/-/format/webp/IMAGE_2024-04-11_174.jpg',
+  ],
+  mobileMenu: {
+    btnClck(el) {
+      let menuPoints = document.querySelectorAll(".navPCItem");
+      let nav = document.querySelector("nav");
+      let mainList = document.getElementById("menuList");
+      let buttonLines = document.querySelectorAll(".menuButtonHR");
+      if (el.getAttribute("data-clicked") === "0") {
+        let tmt = 0;
+        menuPoints.forEach((point) => {
+          point.style.opacity = "0";
+          setTimeout(function () {
+            point.style.opacity = 1;
+          }, tmt);
+          tmt += 20;
+          point.style.display = "block";
+          point.style.marginBlock = ".5rem";
+        });
+        el.style.backgroundColor = "var(--holyxey-white)";
+        buttonLines.forEach((line) => {
+          line.style.backgroundColor = "var(--holyxey-wine)";
+        });
+
+        el.setAttribute("data-clicked", "1");
+      } else if (el.getAttribute("data-clicked") === "1") {
+        menuPoints.forEach((point) => {
+          point.style.display = "none";
+        });
+        el.style.backgroundColor = "var(--holyxey-wine)";
+        buttonLines.forEach((line) => {
+          line.style.backgroundColor = "var(--holyxey-white)";
+        });
+
+        el.setAttribute("data-clicked", "0");
+      }
     },
-    hideMobileMenu() {
-        let btn = document.getElementById('monMenuButton');
-        if (btn.getBoundingClientRect().width > 0) return btn.click();
-    },
-    mobileBackImages: [
-        'https://optim.tildacdn.com/tild3534-3435-4839-b839-366337373937/-/format/webp/IMAGE_2024-04-11_170.jpg',
-        'https://optim.tildacdn.com/tild3837-6638-4535-a238-663235623730/-/format/webp/KIR_3052.jpg',
-        'https://optim.tildacdn.com/tild3739-6138-4236-a436-313339626532/-/format/webp/IMAGE_2024-04-11_173.jpg',
-        //'https://optim.tildacdn.com/tild3539-6266-4461-a633-376165353133/-/format/webp/IMAGE_2024-04-11_174.jpg',
-    ],
-    mobileMenu: {
-        btnClck(el) {
-            let menuPoints = document.querySelectorAll('.navPCItem')
-            let nav = document.querySelector('nav')
-            let mainList = document.getElementById('menuList')
-            let buttonLines = document.querySelectorAll('.menuButtonHR')
-            if (el.getAttribute('data-clicked') === '0') {
-                let tmt = 0;
-                menuPoints.forEach(point => {
-                    point.style.opacity = '0'
-                    setTimeout(function () {
-                        point.style.opacity = 1
-                    }, tmt)
-                    tmt += 20
-                    point.style.display = 'block'
-                    point.style.marginBlock = '.5rem'
-                })
-                el.style.backgroundColor = 'var(--holyxey-white)'
-                buttonLines.forEach(line => {
-                    line.style.backgroundColor = 'var(--holyxey-wine)'
-                })
-
-                el.setAttribute('data-clicked', '1')
-            } else if (el.getAttribute('data-clicked') === '1') {
-                menuPoints.forEach(point => {
-                    point.style.display = 'none'
-                })
-                el.style.backgroundColor = 'var(--holyxey-wine)'
-                buttonLines.forEach(line => {
-                    line.style.backgroundColor = 'var(--holyxey-white)'
-                })
-
-                el.setAttribute('data-clicked', '0')
-            }
-        }
-    },
-    //
-    renderFAQ: function () {
-        const section = document.getElementById('faq')
-        const list = lists.faq;
-        section.insertAdjacentHTML('beforeend', `<ul id="faq-list" class="classic-ip"></ul>`)
-        const whereTo = document.getElementById('faq-list')
-        for (const [key, value] of Object.entries(list)) {
-            whereTo.insertAdjacentHTML('beforeend',
-                `<li class="faq-item" onclick="multipage.clickFAQ(this)">
+  },
+  //
+  renderFAQ: function () {
+    const section = document.getElementById("faq");
+    const list = lists.faq;
+    section.insertAdjacentHTML(
+      "beforeend",
+      `<ul id="faq-list" class="classic-ip"></ul>`
+    );
+    const whereTo = document.getElementById("faq-list");
+    for (const [key, value] of Object.entries(list)) {
+      whereTo.insertAdjacentHTML(
+        "beforeend",
+        `<li class="faq-item" onclick="multipage.clickFAQ(this)">
                     <div class="faq-item-header-block">
                         <div class="faq-item-header-icon"></div>
                         <h5 class="faq-item-header">${key}</h5>
@@ -798,200 +986,222 @@ const multipage = {
                     <div class="faq-item-body">
                         <p class="faq-item-text">${value}</p>
                     </div>
-                    </li>`)
-        }
-        multipage.checkFAQlinks()
-    },
-    clickFAQ: function (li) {
-        li.parentNode.querySelectorAll('.faq-item-body').forEach(item => {
-            item.style.height = '0';
-            item.style.opacity = `0`;
-            item.style.translate = `0 40px`
-        })
-        li.parentNode.querySelectorAll('.faq-item-header-icon').forEach(item => {
-            item.style.top = '50%';
-            item.style.left = '1rem';
-            item.style.translate = '0 -50%';
-            item.style.width = '.5rem'
-            item.style.height = '.5rem'
-        })
-        const textBlock = li.querySelector('.faq-item-body')
-        const textInBlock = li.querySelector('.faq-item-text')
-        const bullet = li.querySelector('.faq-item-header-icon')
+                    </li>`
+      );
+    }
+    multipage.checkFAQlinks();
+  },
+  clickFAQ: function (li) {
+    li.parentNode.querySelectorAll(".faq-item-body").forEach((item) => {
+      item.style.height = "0";
+      item.style.opacity = `0`;
+      item.style.translate = `0 40px`;
+    });
+    li.parentNode.querySelectorAll(".faq-item-header-icon").forEach((item) => {
+      item.style.top = "50%";
+      item.style.left = "1rem";
+      item.style.translate = "0 -50%";
+      item.style.width = ".5rem";
+      item.style.height = ".5rem";
+    });
+    const textBlock = li.querySelector(".faq-item-body");
+    const textInBlock = li.querySelector(".faq-item-text");
+    const bullet = li.querySelector(".faq-item-header-icon");
 
-        if (textBlock.clientHeight <= 0) {
-            bullet.style.top = '1rem';
-            bullet.style.left = '-1rem';
-            bullet.style.width = '2px'
-            bullet.style.height = '2px'
+    if (textBlock.clientHeight <= 0) {
+      bullet.style.top = "1rem";
+      bullet.style.left = "-1rem";
+      bullet.style.width = "2px";
+      bullet.style.height = "2px";
 
-            textBlock.style.height = `calc(${textInBlock.getBoundingClientRect().height + 10}px`
-            setTimeout(() => {
-                textBlock.style.translate = `0 10px`
-                textBlock.style.opacity = `1`
-            }, 70)
-        }
-    },
-    //
-    openFullScreenPhoto: function (el) {
-        this.changeScroll()
-        const multiPage = document.getElementById('multi-page')
-        multiPage.insertAdjacentHTML('afterbegin', `
+      textBlock.style.height = `calc(${
+        textInBlock.getBoundingClientRect().height + 10
+      }px`;
+      setTimeout(() => {
+        textBlock.style.translate = `0 10px`;
+        textBlock.style.opacity = `1`;
+      }, 70);
+    }
+  },
+  //
+  openFullScreenPhoto: function (el) {
+    this.changeScroll();
+    const multiPage = document.getElementById("multi-page");
+    multiPage.insertAdjacentHTML(
+      "afterbegin",
+      `
                 <div style="animation: showpopup .3s 1s ease-out forwards" id="fullScreenPhotoButton" onclick="multipage.closeFullScreenPhoto()">
                     <svg width="50px" viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg"><g stroke-width="0"/><g stroke-linecap="round" stroke-linejoin="round"/><path d="M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2 2 6.5 2 12s4.5 10 10 10m-2.83-7.17 5.66-5.66m0 5.66L9.17 9.17" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </div>
                 <article id="fullScreenPhoto">
                     <img src="${el.src}" alt="${el.alt}">
-                </article>`)
-        showHideChats()
-    },
-    closeFullScreenPhoto: function () {
-        this.changeScroll()
-        const button = document.querySelector('#fullScreenPhotoButton')
-        const img = document.querySelector('#fullScreenPhoto')
-        img.style.animation = 'hidepopup .3s ease-out forwards'
-        button.style.animation = 'hidepopup .3s ease-out forwards'
-        setTimeout(() => {
-            img.remove()
-            button.remove()
-        }, 300)
-        showHideChats()
-    },
-    //
-    randomIng: function (max) {
-        return Math.floor(Math.random() * (max));
-    },
-    smoothShowHorizontal: function () {
-        const parentElements = document.querySelectorAll('[data-smooth-mobile]')
-        if (parentElements.length > 0) {
-            parentElements.forEach(parentElement => {
-                parentElement.addEventListener('touchmove', e => {
-                    parentElement.children[0].style.animation = ``
-                })
-                const waitOnTheViewPort = setInterval(() => {
-                    if (parentElement.getBoundingClientRect().top + 250 < window.innerHeight) {
-                        parentElement.children[0].style.animation = `smoothShowHorizontal 3s ease-in-out`
-                        clearInterval(waitOnTheViewPort);
-                    } else {
-                    }
-                }, 1000)
-            })
-        }
-    },
-    changeScroll() {
-        if (document.body.style.overflow === 'hidden')
-            document.body.style.overflow = 'unset'
-        else document.body.style.overflow = 'hidden'
-    }, // Запрет/разрешение на скролл body ( прим. при открытии поп-апа )
-    getUserAgent() {
-        if ((navigator.userAgent.indexOf("Opera") || navigator.userAgent.indexOf('OPR')) !== -1) {
-            return ('Opera');
-        } else if (navigator.userAgent.indexOf("Edg") !== -1) {
-            return ('Edge');
-        } else if (navigator.userAgent.indexOf("Chrome") !== -1) {
-            return ('Chrome');
-        } else if (navigator.userAgent.indexOf("Safari") !== -1) {
-            return ('Safari');
-        } else if (navigator.userAgent.indexOf("Firefox") !== -1) {
-            return ('Firefox');
-        } else if ((navigator.userAgent.indexOf("MSIE") !== -1) || (!!document.documentMode == true)) //IF IE > 10
-        {
-            return ('IE');
+                </article>`
+    );
+    showHideChats();
+  },
+  closeFullScreenPhoto: function () {
+    this.changeScroll();
+    const button = document.querySelector("#fullScreenPhotoButton");
+    const img = document.querySelector("#fullScreenPhoto");
+    img.style.animation = "hidepopup .3s ease-out forwards";
+    button.style.animation = "hidepopup .3s ease-out forwards";
+    setTimeout(() => {
+      img.remove();
+      button.remove();
+    }, 300);
+    showHideChats();
+  },
+  //
+  randomIng: function (max) {
+    return Math.floor(Math.random() * max);
+  },
+  smoothShowHorizontal: function () {
+    const parentElements = document.querySelectorAll("[data-smooth-mobile]");
+    if (parentElements.length > 0) {
+      parentElements.forEach((parentElement) => {
+        parentElement.addEventListener("touchmove", (e) => {
+          parentElement.children[0].style.animation = ``;
+        });
+        const waitOnTheViewPort = setInterval(() => {
+          if (
+            parentElement.getBoundingClientRect().top + 250 <
+            window.innerHeight
+          ) {
+            parentElement.children[0].style.animation = `smoothShowHorizontal 3s ease-in-out`;
+            clearInterval(waitOnTheViewPort);
+          } else {
+          }
+        }, 1000);
+      });
+    }
+  },
+  changeScroll() {
+    if (document.body.style.overflow === "hidden")
+      document.body.style.overflow = "unset";
+    else document.body.style.overflow = "hidden";
+  }, // Запрет/разрешение на скролл body ( прим. при открытии поп-апа )
+  getUserAgent() {
+    if (
+      (navigator.userAgent.indexOf("Opera") ||
+        navigator.userAgent.indexOf("OPR")) !== -1
+    ) {
+      return "Opera";
+    } else if (navigator.userAgent.indexOf("Edg") !== -1) {
+      return "Edge";
+    } else if (navigator.userAgent.indexOf("Chrome") !== -1) {
+      return "Chrome";
+    } else if (navigator.userAgent.indexOf("Safari") !== -1) {
+      return "Safari";
+    } else if (navigator.userAgent.indexOf("Firefox") !== -1) {
+      return "Firefox";
+    } else if (
+      navigator.userAgent.indexOf("MSIE") !== -1 ||
+      !!document.documentMode == true
+    ) {
+      //IF IE > 10
+      return "IE";
+    } else {
+      return "unknown";
+    }
+  }, // Строкой получаем название браузера ( для трансляции )
+  bookingClick() {
+    let booking =
+      document.querySelector("#znms-widget-floating-0") ||
+      document.querySelector(".znms-widget__widget-btn");
+    if (booking) {
+      booking.click();
+    }
+  },
+  clickAndCopy: function (el) {
+    if (
+      confirm(`Скопировать 
+"${el.textContent}"?`)
+    ) {
+      navigator.clipboard.writeText(el.textContent);
+    }
+  },
+  checkFAQlinks: function () {
+    let links = document.querySelectorAll(".faqbtn");
+    links.forEach((link) => {
+      if (link.getAttribute("href")) {
+        const href = link.getAttribute("href");
+        const sharp = href.split("#")[1];
+        if (!document.getElementById(sharp)) {
+          return "";
         } else {
-            return ('unknown');
+          link.href = `#${sharp}`;
         }
-    }, // Строкой получаем название браузера ( для трансляции )
-    bookingClick() {
-        let booking = document.querySelector('#znms-widget-floating-0') || document.querySelector('.znms-widget__widget-btn');
-        if (booking) {
-            booking.click()
-        }
-    },
-    clickAndCopy: function (el) {
-        if (confirm(`Скопировать 
-"${el.textContent}"?`)) {
-            navigator.clipboard.writeText(el.textContent);
-        }
-    },
-    checkFAQlinks: function () {
-        let links = document.querySelectorAll('.faqbtn')
-        links.forEach(link => {
-            if (link.getAttribute('href')) {
-                const href = link.getAttribute('href')
-                const sharp = href.split('#')[1]
-                if (!document.getElementById(sharp)) {
-                    return ''
-                } else {
-                    link.href = `#${sharp}`
-                }
-            }
-        })
-    },
-}
+      }
+    });
+  },
+};
 
 const checkInViewHorizontal = function (element) {
-    return element.getBoundingClientRect().left > 0 && element.getBoundingClientRect().right < window.innerWidth;
-} // Используется для назначения каунтера, который ниже рендерится
+  return (
+    element.getBoundingClientRect().left > 0 &&
+    element.getBoundingClientRect().right < window.innerWidth
+  );
+}; // Используется для назначения каунтера, который ниже рендерится
 const renderCounter = function (where, max, whatIsScrolling, itemsList) {
-    if (!itemsList) return (console.log('Нет элементов для renderCounter'))
+  if (!itemsList) return console.log("Нет элементов для renderCounter");
 
-    const counterChange = function (where, itemsList) {
-        const items = itemsList
-        const counterSpan = where.querySelector('.counterSpan');
+  const counterChange = function (where, itemsList) {
+    const items = itemsList;
+    const counterSpan = where.querySelector(".counterSpan");
 
-        let count = 1;
-        items.forEach((item, index) => {
-            if (checkInViewHorizontal(item)) {
-                counterSpan.textContent = (index + 1).toString();
-            }
-        })
-    }
-    where.insertAdjacentHTML("beforeend",
-        `<div class="counterBlock" style="opacity: .8">
+    let count = 1;
+    items.forEach((item, index) => {
+      if (checkInViewHorizontal(item)) {
+        counterSpan.textContent = (index + 1).toString();
+      }
+    });
+  };
+  where.insertAdjacentHTML(
+    "beforeend",
+    `<div class="counterBlock" style="opacity: .8">
                 <span class="counterSpan">1</span>
                 <span> / </span>
                 <span>${max}</span>
-                </div>`)
-    whatIsScrolling.addEventListener('scroll', () => {
-        counterChange(where, itemsList)
-    })
-}
+                </div>`
+  );
+  whatIsScrolling.addEventListener("scroll", () => {
+    counterChange(where, itemsList);
+  });
+};
 const whereToRenderCounter = function () {
-    const where = document.querySelectorAll('[data-counter-where]')
-    if (where.length === 0) return
-    where.forEach(item => {
-        const whatIsScrolling = (
-            item.querySelector('[data-counter-scrollIt]')
-                ? item.querySelector('[data-counter-scrollIt]')
-                : item.parentNode.querySelector('[data-counter-scrollIt]')
-        )
-        const itemsList = (
-            item.querySelectorAll('[data-counter-item]').length > 1
-                ? item.querySelectorAll('[data-counter-item]')
-                : item.parentNode.querySelectorAll('[data-counter-item]')
-        )
-        const max = itemsList.length;
-        renderCounter(item, max, whatIsScrolling, itemsList)
-    })
-} // аттрибуты data-counter(-where/-scrollIt/-item)
-// ------------------------------------------------
+  const where = document.querySelectorAll("[data-counter-where]");
+  if (where.length === 0) return;
+  where.forEach((item) => {
+    const whatIsScrolling = item.querySelector("[data-counter-scrollIt]")
+      ? item.querySelector("[data-counter-scrollIt]")
+      : item.parentNode.querySelector("[data-counter-scrollIt]");
+    const itemsList =
+      item.querySelectorAll("[data-counter-item]").length > 1
+        ? item.querySelectorAll("[data-counter-item]")
+        : item.parentNode.querySelectorAll("[data-counter-item]");
+    const max = itemsList.length;
+    renderCounter(item, max, whatIsScrolling, itemsList);
+  });
+};
+// Аттрибуты data-counter(-where/-scrollIt/-item)
 
-// Запуск записи стрима вместо трансляции
+// Запуск трансляции
 async function videoPlayBack() {
-    try {
-        const response = await fetch('https://api.holyxey.com/terruar/downloads')
-        const data = await response.json();
-        // console.log('data', data[0])
-        document.getElementById('popup-block').insertAdjacentHTML('beforeend', `<article id="video-stream" >
+  try {
+    const response = await fetch("https://api.holyxey.com/terruar/downloads");
+    const data = await response.json();
+    // console.log('data', data[0])
+    document.getElementById("popup-block").insertAdjacentHTML(
+      "beforeend",
+      `<article id="video-stream" >
                 <video controls autoplay muted playsinline loop style="width: 100%">
                     <source id="videoPlayBack" src="${data[0].url}" type="video/mp4">
-                </video></article>`)
-    } catch (error) {
-        console.error('Error getting token:', error.message);
-    }
+                </video></article>`
+    );
+  } catch (error) {
+    console.error("Error getting token:", error.message);
+  }
 }
-
-// ! Запуск записи стрима вместо трансляции
 
 // weather
 const latitude = 54.702;
@@ -1001,87 +1211,98 @@ const apiUrl = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&long
 let hourlyList = {};
 
 async function getWeatherForecast() {
-    try {
-        const response = await fetch(apiUrl);
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const data = await response.json();
-        const {hourly} = data;
-        const {temperature_2m, rain, time} = hourly;
-        hourlyList = temperature_2m
-        weatherTestRender(days);
-    } catch (error) {
-        console.error('Error fetching weather data:', error);
+  try {
+    const response = await fetch(apiUrl);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
     }
+    const data = await response.json();
+    const { hourly } = data;
+    const { temperature_2m, rain, time } = hourly;
+    hourlyList = temperature_2m;
+    weatherTestRender(days);
+  } catch (error) {
+    console.error("Error fetching weather data:", error);
+  }
 }
 
 const weatherTestRender = (days) => {
-    if (document.getElementById('weatherTest') && days > 0) {
-        let b = document.getElementById('weatherTest')
-        const today = (i) => {
-            let q;
-            switch (i) {
-                case 0:
-                    q = 'Сегодня'
-                    break;
-                case 1:
-                    q = 'Завтра'
-                    break;
-                case 2:
-                    q = 'Послезавтра'
-                    break;
-                default:
-                    q = 'Погода'
-                    break;
-            }
-            return q;
-        };
-        const getStrokeNumber = (day, hour) => {
-            return (24 * day + hour)
-        }
-        for (let i = 0; i < days; i++) {
-            b.insertAdjacentHTML(`beforeend`, `
+  if (document.getElementById("weatherTest") && days > 0) {
+    let b = document.getElementById("weatherTest");
+    const today = (i) => {
+      let q;
+      switch (i) {
+        case 0:
+          q = "Сегодня";
+          break;
+        case 1:
+          q = "Завтра";
+          break;
+        case 2:
+          q = "Послезавтра";
+          break;
+        default:
+          q = "Погода";
+          break;
+      }
+      return q;
+    };
+    const getStrokeNumber = (day, hour) => {
+      return 24 * day + hour;
+    };
+    for (let i = 0; i < days; i++) {
+      b.insertAdjacentHTML(
+        `beforeend`,
+        `
                 <article class="weatherDay">
                     <p class="todayHeader">${today(i)}</p>
                     <div class="hourly">
-                        <p class="hour morning">Утром: ${hourlyList[(getStrokeNumber(i, 6))]}℃</p>
-                        <p class="hour day">Днем: ${hourlyList[(getStrokeNumber(i, 14))]}℃</p>
-                        <p class="hour evening">Вечером: ${hourlyList[(getStrokeNumber(i, 20))]}℃</p>
+                        <p class="hour morning">Утром: ${
+                          hourlyList[getStrokeNumber(i, 6)]
+                        }℃</p>
+                        <p class="hour day">Днем: ${
+                          hourlyList[getStrokeNumber(i, 14)]
+                        }℃</p>
+                        <p class="hour evening">Вечером: ${
+                          hourlyList[getStrokeNumber(i, 20)]
+                        }℃</p>
                     </div>
                 </article>
-            `)
-        }
-    } else return ('Days is not defined')
-}
+            `
+      );
+    }
+  } else return "Days is not defined";
+};
 // !weather
 
 window.addEventListener("resize", () => {
-    multipage.getHeaderHeight()
-})
+  multipage.getHeaderHeight();
+});
 window.addEventListener("load", () => {
-    multipage.getHeaderHeight()
-        .then(() => {
-            if (window.innerWidth < 600) {
-                multipage.smoothShowHorizontal()
-            }
-        })
-    seasonTapesRender()
-})
+  multipage.getHeaderHeight().then(() => {
+    if (window.innerWidth < 600) {
+      multipage.smoothShowHorizontal();
+    }
+  });
+  seasonTapesRender();
+  setVeasonVideos();
+});
 document.addEventListener("DOMContentLoaded", async () => {
-    setSeason()
-    needToRender()
-    multipage.popupButtonsInit()
+  setSeason();
+  needToRender();
+  renderReviewGallery();
+  multipage.popupButtonsInit();
 
-    multipage.getHeaderHeight()
-        .then(renderVariantsPreview)
-        .then(whereToRenderCounter)
-        .then(multipage.renderFAQ)
-        .then(renderOffers)
-        .then(loyaltyWorker)
+  multipage
+    .getHeaderHeight()
+    .then(renderVariantsPreview)
+    .then(whereToRenderCounter)
+    .then(multipage.renderFAQ)
+    .then(renderOffers)
+    .then(loyaltyWorker);
 
-    setTimeout(() => {
-        // console.clear()
-        console.log('Designed by Holyxey at AdsTarget')
-    }, 1500)
-})
+  setTimeout(() => {
+    // console.clear()
+    console.log("Designed by Holyxey at AdsTarget");
+  }, 1500);
+});
