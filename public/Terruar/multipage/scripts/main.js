@@ -567,6 +567,7 @@ const loyaltyWorker = () => {
 const seasonTapesRender = () => {
   const season = localStorage.getItem("season");
   const renderATape = (el) => {
+    el.style = 'order: 1;'
     el.insertAdjacentHTML(
       "beforeend",
       '<div class="a-tape"><p>Закрыто на сезон</p><p>Закрыто на сезон</p><p>Закрыто на сезон</p></div>'
