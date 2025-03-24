@@ -1113,10 +1113,10 @@ const lists = {
   ],
   reviewsGallery: {
     summer: [
-      "https://thumb.tildacdn.com/tild3466-3738-4238-a662-613531393237/-/format/webp/20perc.jpg",
-      "https://thumb.tildacdn.com/tild3634-3464-4034-a138-373736306532/-/format/webp/1.jpg",
-      "https://thumb.tildacdn.com/tild3261-3435-4138-a533-643166313830/-/format/webp/7.jpg",
-      "https://thumb.tildacdn.com/tild3164-6438-4530-b061-653762623030/-/format/webp/about1.jpg",
+      "https://thumb.tildacdn.com/tild3564-3765-4235-a636-623162323762/-/format/webp/600A3825.png",
+      "https://thumb.tildacdn.com/tild3762-6630-4139-a563-373839653165/-/format/webp/rom3.jpg",
+      "https://thumb.tildacdn.com/tild3938-6531-4430-b532-646337666664/-/format/webp/kid1.jpg",
+      "https://thumb.tildacdn.com/tild6366-3066-4538-b735-656366366266/-/format/webp/friends5.JPG",
     ],
     winter: [
       "https://thumb.tildacdn.com/tild3634-3464-4034-a138-373736306532/-/format/webp/1.jpg",
