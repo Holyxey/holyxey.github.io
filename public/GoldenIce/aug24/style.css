@@ -331,6 +331,12 @@ h2 {
     border-radius: 1rem;
     padding: .5rem 1rem;
     font-size: 1rem;
+    cursor: pointer;
+    transition: scale .25s ease-out;
+
+    &:active {
+        scale: 0.95;
+    }
 }
 .scheduleSeason .arena-filters button.active {
     background-color: #ffef8f;

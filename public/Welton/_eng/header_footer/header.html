@@ -13,121 +13,113 @@
 <body>
 
 <section id="header">
-    <div>
-        <address id="headerAddress">
-            <a href="/contacts">
-                197110 Sankt-Peterburg, <br>
-                Building 1, House 11, Malaya Raznochinnaya Street</a>
-        </address>
-        <a href="/" id="headerLogo">
-            <img
-                    alt="Logotype"
-                    src="https://static.tildacdn.com/tild3333-3330-4361-b739-646461393965/LogoHeader.svg">
-            <div class="headerStars">
-                <strong style="color: rgb(51, 78, 62);">★</strong>
-                <strong style="color: rgb(51, 78, 62);">★</strong>
-                <strong style="color: rgb(51, 78, 62);">★</strong>
-                <strong style="color: rgb(51, 78, 62);">★</strong>
-            </div>
-        </a>
-        <address id="headerPhone">
-            <div class="languages">
-                <p class="language EN" onclick="changeLanguage('en')">ENG</p>
-                <p class="language RU notActive" onclick="changeLanguage('ru')">RUS</p>
-            </div>
-            <a href="tel:+78123465555">+7 (812) 346-55-55</a>
-        </address>
-        <button data-showed="false" id="mobileBurger" onclick="mobileBurger(this)">
-            <svg fill="none" height="64" viewBox="0 0 24 24" width="64" xmlns="http://www.w3.org/2000/svg">
-                <g stroke-width="0"/>
-                <g stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M11 17h8M5 12h14m-8-5h8" stroke="var(--text)" stroke-linecap="round" stroke-linejoin="round"
-                      stroke-width="2"/>
-            </svg>
-        </button>
-        <a href="#" id="upButton">
-            <svg fill="none" height="64px" viewBox="0 0 24 24" width="64px" xmlns="http://www.w3.org/2000/svg">
-                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                <g id="SVGRepo_iconCarrier">
-                    <path d="M16 14L12 10L8 14" stroke="#454953" stroke-linecap="round" stroke-linejoin="round"
-                          stroke-width="2"></path>
-                </g>
-            </svg>
-        </a>
-    </div>
-    <nav>
-        <ul>
-            <li><p class="includesSubmenus">Rooms</p>
-                <div class="headerSubmenus">
-                    <a href="/allrooms">All rooms</a>
-                    <a href="/terrace">Terrace rooms</a>
+        <div>
+            <address id="headerAddress">
+                <a href="/contacts">197110, Санкт-Петербург,<br>
+                    ул. Малая Разночинная, 11, строение 1</a>
+            </address>
+            <a href="/" id="headerLogo">
+                <img alt="Welton Hotel логотип" src="https://static.tildacdn.com/tild3333-3330-4361-b739-646461393965/LogoHeader.svg">
+                <div class="headerStars">
+                    <strong style="color: rgb(51, 78, 62);">★</strong>
+                    <strong style="color: rgb(51, 78, 62);">★</strong>
+                    <strong style="color: rgb(51, 78, 62);">★</strong>
+                    <strong style="color: rgb(51, 78, 62);">★</strong>
                 </div>
-            </li> <!-- Номера -->
-            <li><a href="/spa">SPA</a></li> <!-- СПА -->
-            <li><p class="includesSubmenus">Restaurant</p>
-                <div class="headerSubmenus">
-                    <a href="/restaurant/ru">"Berezki" Restaurant</a>
-                    <a href="https://restaurantberezki.ru/menyu" target="_blank">Menu</a>
-                    <a href="/banquets">Banquets</a>
-                    <a href="https://restaurantberezki.ru/#rec623995979" target="_blank">Contacts</a>
+            </a>
+            <address id="headerPhone">
+                <div class="languages">
+                    <p class="language RU" onclick="changeLanguage('ru')">RUS</p>
+                    <p class="language EN notActive" onclick="changeLanguage('en')">ENG</p>
                 </div>
-            </li> <!-- Ресторан -->
-            <li><a href="/wedding">Wedding</a></li> <!-- Свадьбы -->
-            <li><a href="/services">Services</a></li> <!-- Услуги -->
-            <li><a href="/specialoffers">Special offers</a></li> <!-- Спецпредложения -->
-            <li><a href="/events">Conference rooms</a></li> <!-- Конф.-залы -->
-            <li><a href="/rent">Long-term</a></li> <!-- Долгосрок -->
-            <li><a href="/contacts">Contacts</a></li> <!-- Контакты -->
-        </ul>
-        <ul>
-            <li><a href="tel:+78123465555">+7 (812) 346-55-55</a></li>
-        </ul>
-        <ul>
-            <li id="headerSocialLinks">
-                <a href="https://t.me/Welton_Hotel_Saint_Petersburg" target="_blank">
-                    <svg fill="none" height="21" viewBox="0 0 23 21" width="23" xmlns="http://www.w3.org/2000/svg">
-                        <path clip-rule="evenodd"
-                              d="M19.858.764A1.632 1.632 0 0 1 22.04 2.64l-.002.004-3.833 16.743a1.632 1.632 0 0 1-2.67.857h-.002l-9-7.92-5.22-1.048h-.004c-1.568-.322-1.809-2.518-.276-3.12L19.854.765zM1.633 9.674v.003h.004l5.431 1.09c.14.029.27.094.378.188l9.167 8.065.002.002 3.832-16.737z"
-                              fill="#334E3E"
-                              fill-rule="evenodd"/>
-                        <path clip-rule="evenodd"
-                              d="M21.45 1.06a.816.816 0 0 1-.183 1.138L7.39 12.221a.816.816 0 1 1-.956-1.323L20.311.876a.816.816 0 0 1 1.14.183"
-                              fill="#334E3E"
-                              fill-rule="evenodd"/>
-                        <path clip-rule="evenodd"
-                              d="M6.905 10.759c.45 0 .816.365.816.815v6.637l.004-.005 3.182-3.181a.816.816 0 1 1 1.153 1.154l-3.18 3.179a1.632 1.632 0 0 1-2.79-1.145v-6.639c0-.45.365-.815.815-.815"
-                              fill="#334E3E"
-                              fill-rule="evenodd"/>
-                    </svg>
-                </a> <!--TG-->
-                <a href="https://vk.com/weltonclubhotel" target="_blank">
-                    <svg fill="none" height="21" viewBox="0 0 33 21" width="33" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M30.658 20.653H27.26c-1.258 0-1.888-.703-2.936-1.868-.413-.458-.92-1.021-1.592-1.695-1.854-1.788-2.64-1.968-2.928-1.968-.011.076-.02.197-.02.387v3.046c0 1.741-1.28 2.098-3.204 2.098-4.03 0-8.143-2.448-11-6.55C1.465 8.336.08 3.647.08 2.394.08 1.289.788.656 2.02.656h3.398c1.49 0 1.946.952 2.255 1.843 1.53 4.458 3.784 7.78 4.722 8.443.008-.101.014-.235.014-.415V5.523c-.064-1.132-.44-1.598-.772-2.008-.272-.335-.58-.716-.58-1.303 0-.748.628-1.557 1.642-1.557h5.339c.798 0 1.747.35 1.747 2.025v6.73q0 .047.003.085c.175-.12.425-.349.784-.706 2.296-2.57 3.989-6.652 4.006-6.694.405-.947 1.163-1.443 2.197-1.443h3.398c.734 0 1.27.22 1.591.652.215.288.42.799.18 1.597-.437 2.017-4.25 7.427-4.684 8.037-.033.054-.165.269-.182.342.005 0 .033.076.162.243.156.216.543.595.917.963.463.454.986.968 1.402 1.46 1.833 2.06 2.707 3.295 3.013 4.245.255.879.03 1.432-.207 1.744-.24.33-.734.717-1.706.717m-10.761-7.085c.702 0 1.717.287 3.922 2.413.708.708 1.233 1.29 1.66 1.766 1.016 1.131 1.263 1.354 1.78 1.354h3.397c.322 0 .452-.073.47-.094 0 0 .038-.094-.038-.357-.286-.888-1.593-2.436-2.7-3.683-.4-.472-.886-.947-1.317-1.368-.48-.469-.857-.84-1.073-1.141-.773-.996-.47-1.665-.028-2.376 1.15-1.624 4.144-6.07 4.472-7.565.045-.159.056-.246.056-.288-.028.004-.132-.02-.326-.02h-3.398c-.464 0-.632.18-.764.49-.068.166-1.804 4.356-4.31 7.16-.798.799-1.362 1.302-2.163 1.302-.63 0-1.306-.548-1.306-1.748V2.68c0-.298-.036-.424-.053-.467-.017.006-.059-.003-.141-.005h-5.339c-.076.06.058.224.146.333.409.504 1.023 1.267 1.117 2.94l.001 5.047c0 .62 0 2.073-1.407 2.073-1.992 0-4.967-5.573-6.35-9.595-.275-.796-.404-.796-.786-.796h-3.4c-.304 0-.394.059-.394.059.006.669.969 4.975 5.223 10.94 2.572 3.692 6.207 5.892 9.732 5.892 1.65 0 1.65-.228 1.65-.545V15.51c0-.962.198-1.943 1.665-1.943"
-                              fill="#334E3E"/>
-                    </svg>
-                </a> <!--VK-->
-                <a href="https://api.whatsapp.com/send/?phone=79990354193&text=%22Hello!%22&type=phone_number&app_absent=0"
-                   target="_blank">
-                    <svg fill="none" height="21" viewBox="0 0 21 21" width="21" xmlns="http://www.w3.org/2000/svg">
-                        <path clip-rule="evenodd"
-                              d="M17.688 3.56a9.85 9.85 0 0 0-7.01-2.907C5.214.653.767 5.1.766 10.563a9.9 9.9 0 0 0 1.323 4.955L.684 20.653l5.253-1.378a9.9 9.9 0 0 0 4.736 1.207h.004c5.462 0 9.909-4.447 9.911-9.91a9.85 9.85 0 0 0-2.9-7.012m-7.01 15.248h-.004a8.2 8.2 0 0 1-4.192-1.148l-.301-.179-3.118.818.832-3.04-.196-.312a8.2 8.2 0 0 1-1.259-4.383c.002-4.542 3.697-8.237 8.24-8.237 2.2 0 4.27.859 5.824 2.416a8.2 8.2 0 0 1 2.41 5.827c-.001 4.542-3.696 8.238-8.237 8.238"
-                              fill="#334E3E"
-                              fill-rule="evenodd"/>
-                        <path clip-rule="evenodd"
-                              d="M15.193 12.639c-.248-.124-1.465-.723-1.692-.806-.227-.082-.392-.124-.557.124s-.64.806-.784.971-.29.186-.537.062-1.045-.385-1.991-1.229c-.736-.657-1.233-1.467-1.378-1.715s-.015-.382.109-.506c.111-.11.248-.289.371-.434.124-.144.165-.248.248-.413s.041-.31-.02-.434c-.063-.123-.558-1.342-.764-1.838-.201-.483-.405-.418-.557-.425a10 10 0 0 0-.475-.009.9.9 0 0 0-.66.31c-.227.248-.867.847-.867 2.066s.887 2.396 1.011 2.561 1.746 2.667 4.23 3.74a14 14 0 0 0 1.412.521c.593.189 1.133.162 1.56.098.476-.07 1.465-.599 1.671-1.177.207-.579.207-1.075.145-1.178s-.227-.165-.475-.29"
-                              fill="#334E3E"
-                              fill-rule="evenodd"/>
-                    </svg>
-                </a> <!--WA-->
-            </li>
-            <li class="languages">
-                <p class="language EN" onclick="changeLanguage('en')">ENG</p>
-                <p class="language RU notActive" onclick="changeLanguage('ru')">RUS</p>
-            </li>
-        </ul>
-    </nav>
-</section>
+                <a href="tel:+78123465555">+7 (812) 346-55-55</a>
+            </address>
+            <button data-showed="false" id="mobileBurger" onclick="mobileBurger(this)">
+                <svg fill="none" height="64" viewBox="0 0 24 24" width="64" xmlns="http://www.w3.org/2000/svg">
+                    <g stroke-width="0"/>
+                    <g stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M11 17h8M5 12h14m-8-5h8" stroke="var(--text)" stroke-linecap="round" stroke-linejoin="round"
+                          stroke-width="2"/>
+                </svg>
+            </button>
+            <a href="#" id="upButton">
+                <svg fill="none" height="64px" viewBox="0 0 24 24" width="64px" xmlns="http://www.w3.org/2000/svg">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier">
+                        <path d="M16 14L12 10L8 14" stroke="#454953" stroke-linecap="round" stroke-linejoin="round"
+                              stroke-width="2"></path>
+                    </g>
+                </svg>
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><p class="includesSubmenus">Номера</p>
+                    <div class="headerSubmenus">
+                        <a href="/allrooms">Все номера</a>
+                        <a href="/terrace">Номера с террасой</a>
+                    </div>
+                </li> <!-- Номера -->
+                <li><a href="/spa">СПА</a></li> <!-- СПА -->
+                <li><p class="includesSubmenus">Ресторан</p>
+                    <div class="headerSubmenus">
+                        <a href="/restaurant">Ресторан Берёзки</a>
+                        <!--<a href="https://restaurantberezki.ru/menyu" target="_blank">Меню</a>-->
+                        <a href="/banquets">Банкеты</a>
+                        <a href="/restaurant#contacts">Контакты</a>
+                    </div>
+                </li> <!-- Ресторан -->
+                <li><a href="/wedding">Свадьбы</a></li> <!-- Свадьбы -->
+                <li><a href="/services">Услуги</a></li> <!-- Услуги -->
+                <li><a href="/specialoffers">Специальные предложения</a></li> <!-- Спецпредложения -->
+                <li><a href="/events">Конференц-залы</a></li> <!-- Конф.-залы -->
+                <li><a href="/rent">Долгосрочная аренда</a></li> <!-- Долгосрок -->
+                <li><a href="/consulting">Консалтинг</a></li> <!-- Консалтинг -->
+                <li><a href="/contacts">Контакты</a></li> <!-- Контакты -->
+            </ul>
+            <ul>
+                <li><a href="tel:+78123465555">+7 (812) 346-55-55</a></li>
+            </ul>
+            <ul>
+                <li id="headerSocialLinks">
+                    <a href="https://t.me/Welton_Hotel_Saint_Petersburg" target="_blank">
+                        <svg fill="none" height="21" viewBox="0 0 23 21" width="23" xmlns="http://www.w3.org/2000/svg">
+                            <path clip-rule="evenodd" d="M19.858.764A1.632 1.632 0 0 1 22.04 2.64l-.002.004-3.833 16.743a1.632 1.632 0 0 1-2.67.857h-.002l-9-7.92-5.22-1.048h-.004c-1.568-.322-1.809-2.518-.276-3.12L19.854.765zM1.633 9.674v.003h.004l5.431 1.09c.14.029.27.094.378.188l9.167 8.065.002.002 3.832-16.737z"
+                                  fill="#334E3E"
+                                  fill-rule="evenodd"/>
+                            <path clip-rule="evenodd" d="M21.45 1.06a.816.816 0 0 1-.183 1.138L7.39 12.221a.816.816 0 1 1-.956-1.323L20.311.876a.816.816 0 0 1 1.14.183"
+                                  fill="#334E3E"
+                                  fill-rule="evenodd"/>
+                            <path clip-rule="evenodd" d="M6.905 10.759c.45 0 .816.365.816.815v6.637l.004-.005 3.182-3.181a.816.816 0 1 1 1.153 1.154l-3.18 3.179a1.632 1.632 0 0 1-2.79-1.145v-6.639c0-.45.365-.815.815-.815"
+                                  fill="#334E3E"
+                                  fill-rule="evenodd"/>
+                        </svg>
+                    </a> <!--TG-->
+                    <a href="https://vk.com/weltonclubhotel" target="_blank">
+                        <svg fill="none" height="21" viewBox="0 0 33 21" width="33" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M30.658 20.653H27.26c-1.258 0-1.888-.703-2.936-1.868-.413-.458-.92-1.021-1.592-1.695-1.854-1.788-2.64-1.968-2.928-1.968-.011.076-.02.197-.02.387v3.046c0 1.741-1.28 2.098-3.204 2.098-4.03 0-8.143-2.448-11-6.55C1.465 8.336.08 3.647.08 2.394.08 1.289.788.656 2.02.656h3.398c1.49 0 1.946.952 2.255 1.843 1.53 4.458 3.784 7.78 4.722 8.443.008-.101.014-.235.014-.415V5.523c-.064-1.132-.44-1.598-.772-2.008-.272-.335-.58-.716-.58-1.303 0-.748.628-1.557 1.642-1.557h5.339c.798 0 1.747.35 1.747 2.025v6.73q0 .047.003.085c.175-.12.425-.349.784-.706 2.296-2.57 3.989-6.652 4.006-6.694.405-.947 1.163-1.443 2.197-1.443h3.398c.734 0 1.27.22 1.591.652.215.288.42.799.18 1.597-.437 2.017-4.25 7.427-4.684 8.037-.033.054-.165.269-.182.342.005 0 .033.076.162.243.156.216.543.595.917.963.463.454.986.968 1.402 1.46 1.833 2.06 2.707 3.295 3.013 4.245.255.879.03 1.432-.207 1.744-.24.33-.734.717-1.706.717m-10.761-7.085c.702 0 1.717.287 3.922 2.413.708.708 1.233 1.29 1.66 1.766 1.016 1.131 1.263 1.354 1.78 1.354h3.397c.322 0 .452-.073.47-.094 0 0 .038-.094-.038-.357-.286-.888-1.593-2.436-2.7-3.683-.4-.472-.886-.947-1.317-1.368-.48-.469-.857-.84-1.073-1.141-.773-.996-.47-1.665-.028-2.376 1.15-1.624 4.144-6.07 4.472-7.565.045-.159.056-.246.056-.288-.028.004-.132-.02-.326-.02h-3.398c-.464 0-.632.18-.764.49-.068.166-1.804 4.356-4.31 7.16-.798.799-1.362 1.302-2.163 1.302-.63 0-1.306-.548-1.306-1.748V2.68c0-.298-.036-.424-.053-.467-.017.006-.059-.003-.141-.005h-5.339c-.076.06.058.224.146.333.409.504 1.023 1.267 1.117 2.94l.001 5.047c0 .62 0 2.073-1.407 2.073-1.992 0-4.967-5.573-6.35-9.595-.275-.796-.404-.796-.786-.796h-3.4c-.304 0-.394.059-.394.059.006.669.969 4.975 5.223 10.94 2.572 3.692 6.207 5.892 9.732 5.892 1.65 0 1.65-.228 1.65-.545V15.51c0-.962.198-1.943 1.665-1.943"
+                                  fill="#334E3E"/>
+                        </svg>
+                    </a> <!--VK-->
+                    <a href="https://api.whatsapp.com/send/?phone=79990354193&text=%22Hello!%22&type=phone_number&app_absent=0" target="_blank">
+                        <svg fill="none" height="21" viewBox="0 0 21 21" width="21" xmlns="http://www.w3.org/2000/svg">
+                            <path clip-rule="evenodd" d="M17.688 3.56a9.85 9.85 0 0 0-7.01-2.907C5.214.653.767 5.1.766 10.563a9.9 9.9 0 0 0 1.323 4.955L.684 20.653l5.253-1.378a9.9 9.9 0 0 0 4.736 1.207h.004c5.462 0 9.909-4.447 9.911-9.91a9.85 9.85 0 0 0-2.9-7.012m-7.01 15.248h-.004a8.2 8.2 0 0 1-4.192-1.148l-.301-.179-3.118.818.832-3.04-.196-.312a8.2 8.2 0 0 1-1.259-4.383c.002-4.542 3.697-8.237 8.24-8.237 2.2 0 4.27.859 5.824 2.416a8.2 8.2 0 0 1 2.41 5.827c-.001 4.542-3.696 8.238-8.237 8.238"
+                                  fill="#334E3E"
+                                  fill-rule="evenodd"/>
+                            <path clip-rule="evenodd" d="M15.193 12.639c-.248-.124-1.465-.723-1.692-.806-.227-.082-.392-.124-.557.124s-.64.806-.784.971-.29.186-.537.062-1.045-.385-1.991-1.229c-.736-.657-1.233-1.467-1.378-1.715s-.015-.382.109-.506c.111-.11.248-.289.371-.434.124-.144.165-.248.248-.413s.041-.31-.02-.434c-.063-.123-.558-1.342-.764-1.838-.201-.483-.405-.418-.557-.425a10 10 0 0 0-.475-.009.9.9 0 0 0-.66.31c-.227.248-.867.847-.867 2.066s.887 2.396 1.011 2.561 1.746 2.667 4.23 3.74a14 14 0 0 0 1.412.521c.593.189 1.133.162 1.56.098.476-.07 1.465-.599 1.671-1.177.207-.579.207-1.075.145-1.178s-.227-.165-.475-.29"
+                                  fill="#334E3E"
+                                  fill-rule="evenodd"/>
+                        </svg>
+                    </a> <!--WA-->
+                </li>
+                <li class="languages">
+                    <p class="language RU" onclick="changeLanguage('ru')">RUS</p>
+                    <p class="language EN notActive" onclick="changeLanguage('en')">ENG</p>
+                </li>
+            </ul>
+        </nav>
+    </section>
 <section id="footer">
     <div class="footerBlock">
         <a href="">
