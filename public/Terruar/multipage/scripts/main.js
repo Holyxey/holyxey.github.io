@@ -182,8 +182,7 @@ const needToRender = function (where) {
   });
 };
 
-/** Рендер отзывов
- */
+/** Рендер отзывов */
 function renderReviewGallery(maxRender = 4) {
   const season = localStorage.getItem("season");
   const renderTo = document.querySelector("#reviews .reviews-gallery");
@@ -209,6 +208,7 @@ function renderReviewGallery(maxRender = 4) {
   }
 }
 
+// Рендер фотографий блока
 const openVariantGallery = (list, index, preview = false) => {
   const season = localStorage.getItem("season");
   multipage.changeScroll();
@@ -217,6 +217,7 @@ const openVariantGallery = (list, index, preview = false) => {
     ? lists[list][index].images[season]
     : lists[list][index].images;
   const multiPage = document.getElementById("multi-page");
+
   multiPage.insertAdjacentHTML(
     "afterbegin",
     `
@@ -225,8 +226,17 @@ const openVariantGallery = (list, index, preview = false) => {
                 </div>
                 <div class="blur" id="popup-block"> <!--тело поп-апа-->
                     <h2 class="popUpHeader">${element.title}</h2> 
+
                     <div class="popUpDescr">
                         ${element.description ? element.description : ""}
+                      <div class="gallery-arows">
+                          <button class="gallery-arow prev" onclick="galleryScrollTo(this)">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><!-- Icon from Material Symbols by Google - https://github.com/google/material-design-icons/blob/master/LICENSE --><path fill="currentColor" d="m10 18l-6-6l6-6l1.4 1.45L7.85 11H20v2H7.85l3.55 3.55z"/></svg>
+                          </button>
+                          <button class="gallery-arow next" onclick="galleryScrollTo(this)">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><!-- Icon from Material Symbols by Google - https://github.com/google/material-design-icons/blob/master/LICENSE --><path fill="currentColor" d="M16.15 13H5q-.425 0-.712-.288T4 12t.288-.712T5 11h11.15L13.3 8.15q-.3-.3-.288-.7t.288-.7q.3-.3.713-.312t.712.287L19.3 11.3q.15.15.213.325t.062.375t-.062.375t-.213.325l-4.575 4.575q-.3.3-.712.288t-.713-.313q-.275-.3-.288-.7t.288-.7z"/></svg>
+                          </button>
+                      </div>
                         ${
                           preview
                             ? `<div class="variantPopUpButtons"><a class="classic-header-button-first" href="/variants">Смотреть все</a><a class="classic-header-button-first" onclick="multipage.bookingClick(); multipage.remPopup()">Выбрать даты</a></div>`
@@ -235,17 +245,39 @@ const openVariantGallery = (list, index, preview = false) => {
                     </div>
                     <article id="pop-up-gallery" onclick="event.stopPropagation();"></article>
                 </div>`
-  ); // Рендер поп-апа
-  images.forEach((image) => {
+  );
+
+  const galleryNode = document.getElementById("pop-up-gallery");
+  galleryNode.scrollTo({ left: 0 });
+  images.forEach((image, ind) => {
     document
       .getElementById("pop-up-gallery")
       .insertAdjacentHTML(
-        "afterbegin",
-        `<img onclick="multipage.openFullScreenPhoto(this)" src="${image}" alt="Фотографии ${element.title}">`
+        "beforeend",
+        `<img onclick="multipage.openFullScreenPhoto(this)" data-gallery-img="${ind}" src="${image}" alt="Фотографии ${element.title}">`
       );
   });
   showHideChats();
 };
+// Клик на кнопку скролла в галерее
+function galleryScrollTo(button) {
+  const galleryNode = document.getElementById("pop-up-gallery");
+  const arrows = {
+    next: document.querySelector(".gallery-arow.next"),
+    prev: document.querySelector(".gallery-arow.prev"),
+  };
+  const images = galleryNode.querySelectorAll("img");
+
+  let buttonNum = Number(button.getAttribute("data-scroll-to") | 0);
+
+  if (button === arrows.next) buttonNum++;
+
+  try {
+    images[buttonNum].scrollIntoView();
+    arrows.next.setAttribute("data-scroll-to", buttonNum);
+    arrows.prev.setAttribute("data-scroll-to", buttonNum - 1);
+  } catch {}
+}
 const renderVariantsPreview = () => {
   const varNode = document.querySelectorAll("[data-variants]");
   if (varNode) {

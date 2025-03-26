@@ -8,7 +8,7 @@
     --holyxey-white: #EEF0F2;
     --holyxey-white-o: #EEF0F2de;
     --holyxey-white-oo: #EEF0F250;
-    --holyxey-good : #158763;
+    --holyxey-good: #158763;
     --holyxey-bad: #EF767A;
     --holyxey-blue: #0081AF;
     --holyxey-wine: #a4315b;
@@ -26,6 +26,7 @@
     scrollbar-width: thin;
     scroll-behavior: smooth;
 }
+
 body {
     background: url("https://optim.tildacdn.com/tild3963-6339-4231-a231-633830323034/-/format/webp/pattern5.png") var(--holyxey-back) fixed;
     background-size: 5rem;
@@ -33,22 +34,28 @@ body {
     color: var(--holyxey-white);
     overflow-x: hidden;
 }
+
 ::-webkit-scrollbar-thumb {
     background: #F8F3C8;
     border-radius: 1rem;
 }
+
 ::-webkit-scrollbar-track {
     background: #222;
 }
+
 ::-webkit-scrollbar {
     height: 2px;
     width: 2px;
     background: transparent;
 }
+
 #multi-page {
     width: 100%;
 }
-#multi-page ul, footer ul {
+
+#multi-page ul,
+footer ul {
     list-style: none !important;
     padding-left: 0 !important;
     margin-bottom: 0 !important;
@@ -61,16 +68,19 @@ body {
     color: var(--holyxey-yellow);
     font-weight: 500;
 }
+
 #multi-page h2 {
     font-size: 1.2rem;
     font-family: var(--holyxey-roboto);
     font-weight: 300;
     line-height: 1;
 }
+
 #multi-page h2.popUpHeader {
     font-size: 2rem;
     font-weight: 500;
 }
+
 #multi-page h3 {
     font-size: 2rem;
     font-family: var(--holyxey-unbounded);
@@ -82,21 +92,27 @@ body {
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
 }
+
 #multi-page .shadow {
     box-shadow: 0 0 30px #1E1B23;
 }
+
 #multi-page .border {
     border: 1px solid #ffffff20;
 }
+
 .hideMobile {
     display: inherit !important;
 }
+
 .hidePC {
     display: none !important;
 }
+
 .counterBlock {
     display: none;
 }
+
 .hideIfPopUp {
     animation: hidepopup 1s ease-in-out forwards;
 }
@@ -106,6 +122,7 @@ body {
     overflow: hidden;
     /*filter: grayscale(100);*/
 }
+
 .a-tape {
     content: 'ЗАКРЫТО НА СЕЗОН';
     background-color: yellow;
@@ -122,6 +139,7 @@ body {
     gap: 1rem;
     filter: grayscale(0);
 }
+
 .a-tape p {
     font-family: 'Raleway', "Roboto", Tahoma, Arial, sans-serif;
     font-weight: 600;
@@ -145,9 +163,11 @@ body {
 
     z-index: 9999;
 }
+
 #multi-page nav * {
     transition: .3s;
 }
+
 #multi-page menu#menuList {
     list-style: none;
     margin-block-start: 0;
@@ -168,15 +188,18 @@ body {
 
     background-color: var(--holyxey-wine);
 }
+
 #multi-page menu#menuList li.navPCItem {
     width: fit-content;
     margin-inline: auto;
 }
+
 #multi-page menu#menuList li.navPCItem.navCTA {
     background: url("https://optim.tildacdn.com/tild3963-6339-4231-a231-633830323034/-/format/webp/pattern5.png") var(--holyxey-back) fixed;
     background-size: 5rem;
     border-radius: 100vmin;
 }
+
 #multi-page menu#menuList li.navPCItem a {
     display: block;
     padding: .5rem 1rem;
@@ -192,12 +215,15 @@ body {
         color: var(--holyxey-back);
     }
 }
+
 #multi-page menu#menuList li#mobileNavStroke {
     display: none;
 }
+
 #multi-page menu#menuList li#mobileNavStroke img {
     display: block;
 }
+
 #multi-page menu#menuList li#mobileNavStroke ul {
     list-style: none;
     display: flex;
@@ -205,12 +231,14 @@ body {
     align-items: center;
     width: 100%;
 }
-#multi-page menu#menuList li#mobileNavStroke ul li {
-}
+
+#multi-page menu#menuList li#mobileNavStroke ul li {}
+
 #multi-page menu#menuList li#mobileNavStroke ul #mobLogo {
     height: 3rem;
     width: 3rem;
 }
+
 #multi-page menu#menuList li#mobileNavStroke ul #monMenuButton {
     height: 3rem;
     width: 3rem;
@@ -225,11 +253,13 @@ body {
     border: 1px solid var(--holyxey-white-o);
     border-radius: 100vmin;
 }
+
 #multi-page menu#menuList li#mobileNavStroke ul #monMenuButton .menuButtonHR {
     width: 60%;
     height: 1px;
     background-color: var(--holyxey-white-o);
 }
+
 /*!nav*/
 
 /*Header*/
@@ -246,8 +276,11 @@ body {
 
     transition: all .3s ease-in-out;
 }
+
 #multi-page header #hero[data-nomain="services"] {}
+
 #multi-page header #hero #heroHeadlineContainer {}
+
 #multi-page header #hero #heroTextBlock {
     display: flex;
     flex: 1;
@@ -256,22 +289,28 @@ body {
     gap: 1rem;
     padding-block: 2rem;
 }
-/**/#multi-page header #hero #heroTextBlock #heroPreferences {
+
+/**/
+#multi-page header #hero #heroTextBlock #heroPreferences {
     display: flex;
     gap: 2rem 1rem;
     flex-wrap: wrap;
     padding-block: 2rem;
     min-width: 200px;
-} /* Хайлайты hero */
+}
+
+/* Хайлайты hero */
 #multi-page header #hero #heroTextBlock .heroPreferencesBlock {
     flex: 1 0 250px;
 }
+
 #multi-page header #hero #heroTextBlock .heroPreferencesBlock svg {
     height: 25px;
     display: block;
     float: left;
     margin: auto 1rem auto 0;
 }
+
 #multi-page header #hero #heroTextBlock .heroPreferencesBlock .blockTitle {
     font-size: 1.2rem;
     /*padding-bottom: 1rem;*/
@@ -281,10 +320,12 @@ body {
     padding: 0;
     color: var(--holyxey-white);
 }
+
 #multi-page header #hero #heroTextBlock .heroPreferencesBlock .blockText {
     font-size: 1rem;
     color: var(--holyxey-white-o);
 }
+
 #multi-page header #hero #heroImageBlock {
     background: url(https://optim.tildacdn.com/tild6164-6236-4335-b061-383633653530/-/format/webp/DSC_8864_1.png) center / cover;
     flex: 1;
@@ -292,23 +333,30 @@ body {
     min-height: 300px;
     min-width: 550px;
 }
-    #multi-page.services header #hero #heroImageBlock {
-        background: url(https://optim.tildacdn.com/tild6563-3566-4264-b733-383436336232/-/format/webp/active.jpg) center / cover;
-    }
-    #multi-page.variants header #hero #heroImageBlock {
-        background: url(https://thumb.tildacdn.com/tild3335-6365-4564-b639-333062663937/-/format/webp/5ZN_2626.jpg) center / cover;
-    }
-    #multi-page header #hero[data-nomain="2025"] #heroImageBlock {
-        background-image: url("https://static.tildacdn.com/tild3966-3733-4237-b834-333435613261/ny_main_bg.png");
-    }
-/**/#multi-page header #heroContactButtons {
+
+#multi-page.services header #hero #heroImageBlock {
+    background: url(https://optim.tildacdn.com/tild6563-3566-4264-b733-383436336232/-/format/webp/active.jpg) center / cover;
+}
+
+#multi-page.variants header #hero #heroImageBlock {
+    background: url(https://thumb.tildacdn.com/tild3335-6365-4564-b639-333062663937/-/format/webp/5ZN_2626.jpg) center / cover;
+}
+
+#multi-page header #hero[data-nomain="2025"] #heroImageBlock {
+    background-image: url("https://static.tildacdn.com/tild3966-3733-4237-b834-333435613261/ny_main_bg.png");
+}
+
+/**/
+#multi-page header #heroContactButtons {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
     justify-content: space-between;
     align-items: center;
     z-index: 2;
-} /* Кнопки в hero */
+}
+
+/* Кнопки в hero */
 #multi-page header #heroContactButtons .heroButton {
     display: block;
     background-color: var(--holyxey-white);
@@ -318,31 +366,38 @@ body {
     text-decoration: none !important;
     color: var(--holyxey-back) !important;
 }
+
 #multi-page header #heroContactButtons .heroButton.phone {
     background-color: var(--holyxey-wine);
     color: var(--holyxey-white) !important;
 }
+
 #multi-page header #heroContactButtons .heroButton.book {
     background-color: var(--holyxey-yellow);
     color: var(--holyxey-back) !important;
 }
+
 #multi-page header #heroContactButtons .heroSocialButtons {
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
 #multi-page header #heroContactButtons .heroSocialButtons a {
     text-decoration: none !important;
 }
+
 #multi-page header #heroContactButtons .heroSocialButtons svg {
     margin: auto .5rem;
     height: 1.5rem;
     display: block;
     transition: scale .1s ease-in;
 }
+
 #multi-page header #heroContactButtons .heroSocialButtons svg:hover {
     scale: 1.1;
 }
+
 #multi-page header #hero #booking {
     background-color: var(--holyxey-back-o);
     width: 100%;
@@ -352,50 +407,66 @@ body {
 
 /* znms */
 .znms-widget__teleporter button[type="submit"] {
-    background-color: var(--holyxey-wine)!important;
+    background-color: var(--holyxey-wine) !important;
 }
+
 .znms-widget__teleporter .znms-widget__module-form-block {
     background: var(--holyxey-back-o);
-    border-radius: 2rem!important;
+    border-radius: 2rem !important;
     max-width: 1400px;
 }
-.znms-widget__teleporter .znms-widget__input-people-counter-horizontal {display: none!important;}
+
+.znms-widget__teleporter .znms-widget__input-people-counter-horizontal {
+    display: none !important;
+}
+
 .znms-widget__brononline_popup_full .znms-widget__place_form button[type="submit"] {
-    background-color: var(--holyxey-wine)!important;
+    background-color: var(--holyxey-wine) !important;
 }
+
 .znms-widget__brononline_popup_full .znms-widget__btn {
-    background-color: var(--holyxey-wine)!important;
-    border-color: var(--holyxey-wine)!important;
-    color: var(--holyxey-white)!important;
+    background-color: var(--holyxey-wine) !important;
+    border-color: var(--holyxey-wine) !important;
+    color: var(--holyxey-white) !important;
 }
+
 .znms-widget__brononline_popup_full .znms-widget__btn2 {
     border: 1px solid var(--holyxey-wine) !important;
     color: var(--holyxey-wine) !important;
 }
+
 .znms-widget__brononline_popup_full .znms-widget__btn2:hover {
     border: 1px solid var(--holyxey-wine) !important;
     color: var(--holyxey-white) !important;
     background-color: var(--holyxey-wine) !important;
 }
+
 .znms-widget__brononline_popup_full [class^=znms-widget__icon-] {
-    color: var(--holyxey-wine)!important;
+    color: var(--holyxey-wine) !important;
 }
+
 /**/
 #znms-widget-1 {
     z-index: 999999 !important;
     padding-inline: .5rem;
 }
-#znms-widget-1 > div  {
+
+#znms-widget-1>div {
     background-color: var(--holyxey-back-o);
     border-radius: 2rem;
     margin-inline: auto;
     max-width: 1400px;
 }
+
 #znms-widget-floating-0,
-.znms-widget__widget-btn{
+.znms-widget__widget-btn {
     display: none !important;
 }
-.counter-guest {display: none}
+
+.counter-guest {
+    display: none
+}
+
 a[href^="https://bronirui-online.ru/module?utm_source"] {
     display: none !important;
 }
@@ -403,6 +474,7 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
 .znms-widget__module-form-block__title {
     color: var(--holyxey-white) !important;
 }
+
 /* !znms */
 
 /* needToRender (base design) */
@@ -415,6 +487,7 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
     gap: 1rem;
     position: relative;
 }
+
 .classic-ip {
     display: flex;
     flex-wrap: wrap;
@@ -422,6 +495,7 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
     justify-content: center;
     position: relative;
 }
+
 .classic-hb {
     display: flex;
     /*flex-wrap: wrap;*/
@@ -431,20 +505,24 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
     gap: .5rem;
     position: relative;
 }
+
 .w-btn {
     justify-content: space-between;
     flex-direction: row;
 }
-.w-btn > h3 {
+
+.w-btn>h3 {
     width: 100%;
     font-size: 2rem;
     font-family: var(--holyxey-unbounded);
     font-weight: 400;
     line-height: 1;
 }
-.w-btn > * {
+
+.w-btn>* {
     min-width: fit-content;
 }
+
 .classic-art {
     flex: 1 0 300px;
     display: flex;
@@ -458,6 +536,7 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
     border: 1px solid transparent;
     transition: scale .3s ease-out;
 }
+
 .classic-art-hb {
     display: flex;
     flex-direction: column;
@@ -465,18 +544,21 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
     gap: .7rem;
     position: relative;
 }
+
 .classic-art-header {
     font-family: var(--holyxey-unbounded);
     font-weight: 500;
     font-size: 1.3rem;
     color: var(--holyxey-yellow);
 }
+
 .classic-art-descr {
     font-size: 1.1rem;
     font-family: var(--holyxey-roboto);
     font-weight: 300;
     color: var(--holyxey-white-o);
 }
+
 .classic-art-imgBlck {
     flex: 1;
     min-height: 200px;
@@ -485,26 +567,30 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
     border-radius: 1.5rem;
     position: relative;
 }
+
 .classic-art-img {
     position: absolute;
     top: 50%;
     left: 50%;
     translate: -50% -50%;
 }
+
 .classic-art-link {
     text-decoration: none !important;
     color: var(--holyxey-white) !important;
     margin: 0 1rem 0 auto;
 }
+
 .classic-art-icon {
     position: absolute;
     left: 1rem;
     width: 24px;
 }
+
 .classic-header-button-first {
     /*background-color: var(--holyxey-wine);*/
     background-color: var(--holyxey-yellow);
-    color: var(--holyxey-back-o)!important;
+    color: var(--holyxey-back-o) !important;
     width: fit-content;
     text-decoration: none !important;
     padding: .7rem 1.4rem;
@@ -515,40 +601,34 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
     display: block;
     float: left;
 }
+
 /* !needToRender */
 
-    /* second design */
-    .classic-sec-second {
+/* second design */
+.classic-sec-second {}
 
-    }
-    .classic-hb-second {
-    }
-    .classic-ip-second {
+.classic-hb-second {}
 
-    }
-    .classic-art-second {
-        flex: 1 0 30%;
-        max-width: calc(1400px / 3);
-    }
-    .classic-art-hb-second {
+.classic-ip-second {}
 
-    }
-    .classic-art-header-second {
+.classic-art-second {
+    flex: 1 0 30%;
+    max-width: calc(1400px / 3);
+}
 
-    }
-    .classic-art-descr-second {
+.classic-art-hb-second {}
 
-    }
-    .classic-art-imgBlck-second {
+.classic-art-header-second {}
 
-    }
-    .classic-art-img-second {
+.classic-art-descr-second {}
 
-    }
-    .classic-art-link-second {
+.classic-art-imgBlck-second {}
 
-    }
-    /* !second design */
+.classic-art-img-second {}
+
+.classic-art-link-second {}
+
+/* !second design */
 
 /* reviews */
 #reviews .classic-ip {
@@ -556,12 +636,14 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
     gap: 2rem;
     flex-direction: row;
 }
+
 #reviews iframe {
     flex: .6;
     height: 80vh;
     border-radius: 2rem;
     border: none;
 }
+
 #reviews .reviews-gallery {
     flex: 1;
     display: flex;
@@ -570,6 +652,7 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
     overflow: hidden;
     border-radius: 3rem;
 }
+
 #reviews .reviews-gallery .reviews-gallery-imgblock {
     flex: 1;
     position: relative;
@@ -578,21 +661,25 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
     min-width: calc(30% - .5rem);
     border-radius: 2rem;
 }
+
 #reviews .reviews-gallery .reviews-gallery-imgblock:nth-child(2),
 #reviews .reviews-gallery .reviews-gallery-imgblock:nth-child(3) {
     flex: 2;
     min-width: calc(60% - .5rem);
 }
+
 #reviews .reviews-gallery .reviews-gallery-img {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
 /* !reviews */
 
 /* variants */
 #variants {}
+
 .variantBlock {
     flex: 1 0 300px;
     /*max-width: 500px;*/
@@ -603,35 +690,43 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
     cursor: pointer;
     scroll-snap-align: center;
 }
+
 .variantBlock .variantHeader {
     display: flex;
     align-items: center;
     gap: 1rem;
     padding-inline: 1rem;
 }
+
 .variantBlock svg {}
+
 .variantBlock .variantTitle {}
+
 .variantBlock .openVariantGallery {
     margin-left: auto;
 }
+
 .variantBlock .variantPreviewImage {
     background-size: cover;
     background-position: center;
     margin-top: .5rem;
-    border-radius:  1rem 1rem 2rem 2rem;
+    border-radius: 1rem 1rem 2rem 2rem;
     min-height: 200px;
     /*aspect-ratio: 1.8 / 1.3;*/
 }
+
 .variantBlock .showMore {
     padding: .5rem 1.5rem 0 1rem;
     text-align: right;
 }
+
 /* !variants */
 
 /* about */
 #about {}
+
 #about #aboutBlock {
-    background:  url(https://thumb.tildacdn.com/tild3734-3333-4335-b235-623766363464/-/format/webp/KIR_3234.jpg) center center no-repeat;
+    background: url(https://thumb.tildacdn.com/tild3734-3333-4335-b235-623766363464/-/format/webp/KIR_3234.jpg) center center no-repeat;
     background-size: cover;
     padding-inline: .5rem;
     border-radius: 3rem;
@@ -641,6 +736,7 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
     gap: 1rem;
     flex-wrap: wrap;
 }
+
 #about #aboutBlock .aboutInfo {
     display: flex;
     flex-direction: column;
@@ -650,27 +746,33 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
     background-color: var(--holyxey-back);
     border-radius: 2rem;
 }
+
 #about #aboutBlock .aboutInfo.whyTerruar {
     opacity: 0;
     height: 0;
     color: var(--holyxey-yellow);
 }
+
 #about #aboutBlock .aboutInfo p {
     font-size: 1.1rem;
     color: var(--holyxey-white-o);
 }
+
 /* !about */
 
 /* offers */
 #offers {}
+
 #offers .offer.active {
     cursor: pointer;
     min-width: 300px;
 }
+
 #offers .offer.active .offerTitleBlock {
     background-color: var(--holyxey-yellow);
     margin-bottom: 10rem;
 }
+
 #offers .offer {
     flex: 1;
     background-size: cover;
@@ -684,9 +786,11 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
     max-width: 500px;
     scroll-snap-align: center;
 }
+
 #offers .offer .classic-ip {
     scroll-snap-type: x mandatory;
 }
+
 #offers .offer .offerTitleBlock {
     background-color: var(--holyxey-white-o);
     border-radius: 1rem;
@@ -695,28 +799,34 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
     padding: 1rem;
     position: relative;
 }
-#offers .offer .offerTitleBlock > h4 {
+
+#offers .offer .offerTitleBlock>h4 {
     font-family: var(--holyxey-unbounded);
     padding-bottom: .5rem;
 }
+
 #offers .offer .offerTitleBlock .infoIcon {
     position: absolute;
     right: 1rem;
     top: 50%;
     translate: 0 -50%;
 }
+
 #offers .offer {}
 
 .offerPopupBlock {}
+
 .offerPopupBlock * {
     animation: showpopup .3s ease-out forwards;
 }
+
 .offerPopupBlock {
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
     max-width: 500px;
 }
+
 .offerPopupBlock .preview {
     flex: 1;
     background-size: cover;
@@ -726,6 +836,7 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
     min-height: 300px;
     position: relative;
 }
+
 .offerPopupBlock .preview .percentage {
     position: absolute;
     bottom: -2rem;
@@ -736,6 +847,7 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
 
     animation: percentage 1s 1.5s ease-out forwards;
 }
+
 .offerPopupBlock .info {
     flex: 1;
     padding-block: 1rem;
@@ -744,43 +856,54 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
     gap: 1rem;
     min-width: 300px;
 }
+
 .offerPopupBlock .info .infoTitle {
     font-family: var(--holyxey-unbounded);
     font-size: 1.5rem;
 }
+
 .offerPopupBlock .info #infoHL {
     display: flex;
     flex-wrap: wrap;
     gap: .5rem;
 }
+
 .offerPopupBlock .info #infoHL .hl {
     padding: .75rem 1rem;
     background-color: var(--holyxey-yellow);
     border-radius: 1rem;
     color: var(--holyxey-back);
 }
+
 .offerPopupBlock .info #infoText {}
+
 .offerPopupBlock .info #infoText .infoText {
     padding-block: .5rem;
 }
+
 .offerPopupBlock .info #infoFooter {
     display: flex;
     gap: 1rem;
     align-items: center;
 }
+
 .offerPopupBlock .info #infoFooter .button {
     padding: .75rem 1rem .5rem 1rem;
     border-radius: 1rem;
 }
+
 .offerPopupBlock .info #infoFooter .button svg {
     width: 100px;
 }
+
 .offerPopupBlock .info #infoFooter .price {
     padding: .5rem 1rem;
     background-color: var(--holyxey-wine);
     border-radius: .25rem;
 }
+
 .offerPopupBlock {}
+
 /* !offers */
 
 #loyalty {
@@ -791,20 +914,24 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
     margin-block: 5rem;
     z-index: 0;
 }
+
 #loyaltyPopUp {
     padding: 2rem 0;
     max-width: 100%;
 }
-#loyaltyPopUp > h3 {
+
+#loyaltyPopUp>h3 {
     margin: 0 .5rem 1rem .5rem;
     color: var(--holyxey-yellow);
 }
-#loyaltyPopUp > article {
+
+#loyaltyPopUp>article {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
 }
-#loyaltyPopUp > article h4 {
+
+#loyaltyPopUp>article h4 {
     padding: .75rem 1rem;
     margin-bottom: .75rem;
     font-family: var(--holyxey-unbounded), sans-serif;
@@ -813,26 +940,36 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
     border-bottom: var(--holyxey-back) 2px solid;
     background-color: #1e1b2330;
 }
-#loyaltyPopUp > article#loyaltyProgram { max-width: 600px }
-#loyaltyPopUp > article#loyaltyProgram > div {
+
+#loyaltyPopUp>article#loyaltyProgram {
+    max-width: 600px
+}
+
+#loyaltyPopUp>article#loyaltyProgram>div {
     padding-bottom: 1rem;
     border-radius: 1rem;
     width: 100%;
     opacity: 0;
 }
-#loyaltyPopUp > article#loyaltyProgram > div > p {
+
+#loyaltyPopUp>article#loyaltyProgram>div>p {
     padding: .25rem 1rem;
     opacity: 0;
 }
-#loyaltyPopUp > article#loyaltyProgram #loyaltyButtons {
+
+#loyaltyPopUp>article#loyaltyProgram #loyaltyButtons {
     padding: 1rem;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     gap: 1rem;
 }
-#loyaltyPopUp > article#certificates { max-width: 600px }
-#loyaltyPopUp > article#certificates > div {
+
+#loyaltyPopUp>article#certificates {
+    max-width: 600px
+}
+
+#loyaltyPopUp>article#certificates>div {
     display: flex;
     gap: 1rem;
 
@@ -841,53 +978,64 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
     position: relative;
     opacity: 0;
 }
-#loyaltyPopUp > article#certificates > div > img {
+
+#loyaltyPopUp>article#certificates>div>img {
     display: block;
     max-width: calc(100% - 50px);
     height: 100%;
     flex: 1 0 100px;
     border-radius: 1rem 0 0 1rem;
 }
-#loyaltyPopUp > article#certificates > div > section {
+
+#loyaltyPopUp>article#certificates>div>section {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-#loyaltyPopUp > article#certificates > div > section svg {
+
+#loyaltyPopUp>article#certificates>div>section svg {
     display: block;
 }
-#loyaltyPopUp > article#certificates > div > section > a:nth-child(1) {
+
+#loyaltyPopUp>article#certificates>div>section>a:nth-child(1) {
     display: block;
     translate: -5% 3%;
 }
-#loyaltyPopUp > article#certificates > div > section > a:nth-child(2) {
+
+#loyaltyPopUp>article#certificates>div>section>a:nth-child(2) {
     display: none;
 }
-#loyaltyPopUp > article > div[data-cert]:nth-child(2),
-#loyaltyPopUp > article > div[data-param]:nth-child(1) {
+
+#loyaltyPopUp>article>div[data-cert]:nth-child(2),
+#loyaltyPopUp>article>div[data-param]:nth-child(1) {
     background-color: var(--holyxey-blue);
 }
-#loyaltyPopUp > article > div[data-cert]:nth-child(3),
-#loyaltyPopUp > article > div[data-param]:nth-child(2) {
+
+#loyaltyPopUp>article>div[data-cert]:nth-child(3),
+#loyaltyPopUp>article>div[data-param]:nth-child(2) {
     background-color: var(--holyxey-good);
 }
-#loyaltyPopUp > article > div[data-cert]:nth-child(4),
-#loyaltyPopUp > article > div[data-param]:nth-child(3){
+
+#loyaltyPopUp>article>div[data-cert]:nth-child(4),
+#loyaltyPopUp>article>div[data-param]:nth-child(3) {
     background-color: var(--holyxey-wine);
 }
 
 /* videos */
 #videos {}
+
 #videos .videoBlocks {
     display: flex;
     gap: 2rem;
 }
-#videos .videoBlocks > * {
+
+#videos .videoBlocks>* {
     border-radius: 2rem;
     position: relative;
     cursor: pointer;
 }
+
 #videos .videoBlocks .button {
     content: '';
     position: absolute;
@@ -899,12 +1047,14 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
     top: 50%;
     transform: translate(-50%, -50%);
 }
+
 #videos .videoBlocks .button svg {
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-45%, -50%);
 }
+
 #videos .videoBlocks .verticalPreview {
     aspect-ratio: 9 / 16;
     background-image: url(https://thumb.tildacdn.com/tild3739-3438-4835-b765-663831646262/-/format/webp/m_preview.png);
@@ -912,6 +1062,7 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
     background-size: cover;
     width: 30%;
 }
+
 #videos .videoBlocks .horizontalPreview {
     aspect-ratio: 16 / 9;
     background-image: url(https://thumb.tildacdn.com/tild6262-3330-4231-b630-646639343633/-/format/webp/pc_preview.png);
@@ -919,6 +1070,7 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
     background-size: cover;
     width: 100%;
 }
+
 #popUpVideo {
     position: absolute;
     z-index: 100500;
@@ -933,12 +1085,15 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
     box-shadow: 0 0 100px #000000;
     border-radius: 1rem;
 }
+
 #popUpVideo.verticalPreview {
     aspect-ratio: 9 / 16;
 }
+
 #popUpVideo.horizontalPreview {
     aspect-ratio: 16 / 9;
 }
+
 /* !videos */
 
 /* Territory map */
@@ -948,6 +1103,7 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
     flex-wrap: wrap;
     /*padding-inline: 1rem;*/
 }
+
 #map .map-img {
     flex: 1;
     max-width: 50%;
@@ -959,6 +1115,7 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
     background-color: var(--holyxey-yellow);
     padding: .25rem;
 }
+
 /* !Territory map */
 
 /* faq */
@@ -968,6 +1125,7 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
     gap: .5rem;
     padding-inline: 1rem !important;
 }
+
 #faq-list .faq-item {
     display: flex;
     flex-direction: column;
@@ -979,13 +1137,15 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
     position: relative;
     cursor: pointer;
 }
-#faq-list .faq-item-header-block {
-}
+
+#faq-list .faq-item-header-block {}
+
 #faq-list .faq-item-header {
     font-family: var(--holyxey-roboto);
     font-size: 1.2rem;
     font-weight: 400;
 }
+
 #faq-list .faq-item-header-icon {
     position: absolute;
     top: 50%;
@@ -998,27 +1158,32 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
     background-color: var(--holyxey-yellow);
     transition: all .3s ease-out;
 }
+
 #faq-list .faq-item-body {
     height: 0;
     opacity: 0;
     transition: all .3s ease-out;
 }
+
 #faq-list .faq-item-text {
     font-weight: 300;
     opacity: .8;
 }
+
 #faq-list a {
     color: var(--holyxey-yellow) !important;
     text-decoration: none;
     font-weight: 400;
     opacity: 1 !important;
 }
+
 .faqbtn {
     position: relative;
     font-weight: 400;
     color: var(--holyxey-yellow) !important;
     text-decoration: none !important;
 }
+
 .faqbtn:before {
     content: '';
     position: absolute;
@@ -1033,18 +1198,22 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
     padding: 3px 5px;
     cursor: pointer;
 }
+
 /* !faq */
 
 /* contacts */
-#contacts { }
+#contacts {}
+
 #contacts .classic-ip {
     display: flex;
     gap: 2rem;
 }
+
 #contacts .classic-ip iframe {
     flex: 1;
     border-radius: 2rem;
 }
+
 #contacts .classic-ip article {
     flex: 1;
     display: flex;
@@ -1052,11 +1221,13 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
     gap: 3rem;
     padding-block: 1rem;
 }
-#contacts .classic-ip article > div {
+
+#contacts .classic-ip article>div {
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
+
 #contacts .classic-ip article .footerButton {
     float: left;
     background-color: var(--holyxey-back-o);
@@ -1067,50 +1238,59 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
     border-radius: 100vmin;
     cursor: pointer;
 }
+
 #contacts .classic-ip article a {
     display: flex;
     justify-content: center;
     align-content: center;
     align-items: center;
-    color: var(--holyxey-white)!important;
+    color: var(--holyxey-white) !important;
     text-decoration: none !important;
     border-radius: 100vmin;
     cursor: pointer;
     gap: 1rem;
     width: fit-content;
 }
+
 #contacts .classic-ip article h4 {
     font-family: var(--holyxey-unbounded);
     font-size: 1.2rem;
     font-weight: 400;
 }
+
 #contacts .classic-ip article ul {
     width: fit-content;
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
+
 #contacts .classic-ip article ul .footerSocialIconsBlock {
     display: flex;
     gap: .5rem;
 }
+
 #contacts .classic-ip article ul .footerSocialIconsBlock a {
     border: 0;
     padding: 0;
     background-color: transparent;
 }
+
 #contacts .classic-ip article ul li {
     width: fit-content;
 }
+
 #contacts .classic-ip article svg {
     display: inline-block;
     height: 24px;
 }
+
 #contacts .classic-ip article .footerFlexButtons {
     display: flex;
     gap: .5rem;
     flex-wrap: wrap;
 }
+
 /* !contacts */
 
 /*Pop-up base styles*/
@@ -1136,9 +1316,11 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
     opacity: 0;
     animation: showpopup .3s ease-out forwards;
 }
+
 #popup-block .popUpHeader {
     padding-top: 2rem;
 }
+
 #popup-block .popUpDescr {
     display: flex;
     flex-direction: column;
@@ -1152,15 +1334,18 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
     border: 1px solid var(--holyxey-white-oo);
     border-radius: 1rem;
 }
+
 #popup-block .weather {
     background-color: var(--holyxey-blue);
     max-width: 1200px;
     border-radius: 1rem;
     width: 100%;
 }
-#popup-block .weather > a {
+
+#popup-block .weather>a {
     border-radius: 1rem;
 }
+
 #popup-block #video-stream {
     max-width: 1200px;
     border-radius: 1rem;
@@ -1171,18 +1356,23 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
     align-items: center;
     justify-content: center;
 }
+
 #popup-block #video-stream .sldp_player_wrp {
     border-radius: 1rem;
 }
-#popup-block #video-stream .sldp_player_wrp  video {
+
+#popup-block #video-stream .sldp_player_wrp video {
     border-radius: 1rem;
 }
+
 .sldp_volume_desktop {
     display: none;
 }
+
 #popup-block video {
     border-radius: 1rem;
 }
+
 #popup-block .variantPopUpButtons {
     display: flex;
     gap: 1rem;
@@ -1190,9 +1380,11 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
     /*margin-top: 1rem;*/
     justify-content: center;
 }
-#popup-block .variantPopUpButtons > * {
+
+#popup-block .variantPopUpButtons>* {
     flex: 1;
 }
+
 #close-popup {
     position: fixed;
     display: block;
@@ -1223,6 +1415,7 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
 
     animation: showpopup .3s ease-out forwards;
 }
+
 #fullScreenPhotoButton {
     position: fixed;
     display: block;
@@ -1235,12 +1428,14 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
     z-index: 1009005009;
     opacity: 0;
 }
+
 #fullScreenPhoto img {
     max-width: calc(100% - 1rem);
     max-height: calc(100% - 1rem);
     border-radius: 1rem;
 }
 
+/* Gallery */
 #pop-up-gallery {
     display: flex;
     justify-content: flex-start;
@@ -1256,19 +1451,74 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
     direction: ltr;
 
 }
+
 #pop-up-gallery img {
+    flex: 1;
     display: block;
-    max-height: 100%;
+    height: 100%;
+    /* max-height: 100%;  */
     max-width: 95dvw;
+    aspect-ratio: 4 / 3;
     border-radius: 1rem;
     scroll-snap-align: center;
+    object-fit: cover;
 
     animation: showpopup .3s ease-out forwards;
 }
+
 #pop-up-gallery[class=vertical] {
     max-width: 100%;
     aspect-ratio: unset;
 }
+
+.popUpDescr:has(.gallery-arows) {
+    position: relative;
+}
+
+.gallery-arows {
+    position: absolute;
+    bottom: 1rem;
+    left: 0;
+    right: 0;
+}
+
+.gallery-arows .gallery-arow {
+    position: absolute;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 2rem;
+    width: 2rem;
+    bottom: 0;
+
+    transition: all .1s ease-out;
+
+    background: var(--holyxey-yellow);
+    border-radius: 100vmin;
+    border: none;
+
+    cursor: pointer;
+    outline: 1px solid #F8F3C800;
+
+    &:hover {
+        outline: 5px solid #F8F3C870;
+    }
+
+    &:active {
+        outline: 1px solid #F8F3C800;
+    }
+}
+
+.gallery-arows .gallery-arow.prev {
+    left: -4rem;
+}
+
+.gallery-arows .gallery-arow.next {
+    right: -4rem;
+}
+
 /*!Pop-up base styles*/
 
 /*services pop-up*/
@@ -1280,6 +1530,7 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
     width: 100%;
     margin-block: auto;
 }
+
 #popup-service .popup-service-imgblock {
     flex: 1;
     border-radius: 3rem;
@@ -1287,12 +1538,14 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
     /*height: 500px;*/
     position: relative;
 }
+
 #popup-service .popup-service-img {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
 #popup-service .popup-service-textblock {
     flex: 1;
 
@@ -1302,7 +1555,9 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
 
     padding-block: 2rem;
 }
+
 #popup-service .popup-service-header {}
+
 #popup-service .popup-service-fulldescr {
     font-size: 1.1rem;
     font-family: var(--holyxey-roboto);
@@ -1315,6 +1570,7 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
     display: flex;
     gap: 1rem;
 }
+
 #popup-service .popup-service-buttons a {
     display: flex;
     gap: .5rem;
@@ -1323,16 +1579,18 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
     padding: .8rem 1.5rem;
     border: 1px solid #56AC69;
     box-shadow: 0 0 10px #00000050;
-    color: #F8F3C8!important;
+    color: #F8F3C8 !important;
 
     text-decoration: none !important;
     translate: 0 1px;
 }
+
 #popup-service .popup-service-buttons svg {
     fill: #56AC69;
     height: 1.5rem;
     translate: 0 1px;
 }
+
 #popup-service .popup-service-buttons p {
     display: flex;
     gap: .5rem;
@@ -1345,6 +1603,7 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
     opacity: .6;
     font-weight: 300;
 }
+
 /*!services pop-up*/
 
 /*Weather*/
@@ -1356,16 +1615,19 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
     padding: .5rem;
     border-radius: 0 0 2rem 2rem;
 }
+
 #weatherTest * {
     transition: all .3s ease-out;
 }
-#weatherTest .weatherDay {
-}
+
+#weatherTest .weatherDay {}
+
 #weatherTest .todayHeader {
     font-family: var(--holyxey-unbounded);
     padding: 0 1rem .5rem 1rem;
     text-align: center;
 }
+
 #weatherTest .hourly {
     flex: 1;
     color: var(--holyxey-back);
@@ -1374,19 +1636,18 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
     background-color: var(--holyxey-white);
     border-radius: 1.5rem;
 }
+
 #weatherTest .hourly .hour {
     padding: .25rem;
     font-size: 1rem;
 }
-#weatherTest .hourly .morning {
 
-}
-#weatherTest .hourly .day {
+#weatherTest .hourly .morning {}
 
-}
-#weatherTest .hourly .evening {
+#weatherTest .hourly .day {}
 
-}
+#weatherTest .hourly .evening {}
+
 /*!Weather*/
 
 /*Блок команды в поп-апе*/
@@ -1399,6 +1660,7 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
     flex-wrap: wrap;
     gap: 1rem;
 }
+
 .team-person {
     flex: 1 0 300px;
 
@@ -1411,6 +1673,7 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
     background-color: var(--holyxey-back);
     border-radius: 4rem;
 }
+
 .person-photo-block {
     flex: 1 0 100px;
     max-width: 100px;
@@ -1421,6 +1684,7 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
 
     overflow: hidden;
 }
+
 .person-photo {
     display: block;
     position: absolute;
@@ -1428,6 +1692,7 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
 .person-text-content {
     flex: 1;
     display: flex;
@@ -1435,11 +1700,13 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
     gap: .25rem;
     height: 100%;
 }
+
 .person-name {
     font-family: var(--holyxey-unbounded);
     font-weight: 500;
     font-size: 1.2rem;
 }
+
 .person-position {
     color: var(--holyxey-back-o);
     background-color: var(--holyxey-white);
@@ -1449,10 +1716,12 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
     border-radius: .5rem;
     font-weight: 500;
 }
+
 .person-about {
     font-family: var(--holyxey-roboto);
     opacity: .8;
 }
+
 /*!Блок команды в поп-апе*/
 
 /*Restaurant menu*/
@@ -1464,6 +1733,7 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
     max-width: 1200px;
     margin-inline: .5rem;
 }
+
 #terruarMenu .menuCategory {
     flex: 1;
     display: flex;
@@ -1476,12 +1746,14 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
     padding: 1rem;
     border-radius: 1rem;
 }
+
 #terruarMenu .menuCategory .categoryHeader {
     width: 100%;
     height: fit-content;
     font-weight: 500;
     border-bottom: 1px solid var(--holyxey-white-oo);
 }
+
 #terruarMenu .menuCategory .product {
     display: flex;
     flex-direction: column;
@@ -1489,16 +1761,19 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
     flex: 1;
     min-width: 200px;
 }
+
 #terruarMenu .menuCategory .product .productTitle {
     font-size: 1.2rem;
     font-weight: 500;
     width: fit-content;
 }
+
 #terruarMenu .menuCategory .product .productDescription {
     width: fit-content;
     color: var(--holyxey-white-o);
     font-weight: 300;
 }
+
 #terruarMenu .menuCategory .product .productPrice {
     background-color: var(--holyxey-white);
     width: fit-content;
@@ -1507,6 +1782,7 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
     color: var(--holyxey-wine);
     margin-top: auto;
 }
+
 /*!Restaurant menu*/
 
 /*Dolyami section*/
@@ -1518,6 +1794,7 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
     width: 100%;
     margin-block: 5rem;
 }
+
 #dolyami-inner {
     max-width: 1440px;
     margin: 0 auto;
@@ -1528,6 +1805,7 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
     align-items: center;
     gap: 1rem;
 }
+
 #dolyamiCard {
     font-family: var(--holyxey-unbounded);
     color: var(--holyxey-white);
@@ -1540,6 +1818,7 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
     gap: .5rem;
     cursor: pointer;
 }
+
 #dolyamiCard p {
     margin-right: 1rem;
     font-size: 1.3rem;
@@ -1548,6 +1827,7 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
     min-width: fit-content;
     align-self: center;
 }
+
 #dolyamiLogos {
     display: flex;
     flex-direction: row;
@@ -1555,9 +1835,11 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
     height: 100%;
     flex-wrap: wrap;
 }
+
 #dolyamiCard img {
     display: block;
 }
+
 #dolyamiBooking {
     /*font-family: var(--holyxey-unbounded);*/
     color: var(--holyxey-white);
@@ -1568,6 +1850,7 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
     font-weight: 400;
     cursor: pointer;
 }
+
 /*Dolyami section*/
 
 /*Стили для Тильды*/
@@ -1575,98 +1858,172 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
     background-color: var(--holyxey-white-oo);
     border-radius: 2rem;
 }
+
 .t-popup__container {
     border-radius: 2rem;
 }
+
 .t702__text-wrapper {
     text-align: left;
 }
+
 .t702__title {
     font-family: var(--holyxey-unbounded) !important;
     font-size: 1.8rem;
 }
+
 .t-upwidget-container__button,
 .t-form__errorbox-wrapper {
     background-color: var(--holyxey-wine);
 }
+
 .t-submit {
     background-color: var(--holyxey-wine) !important;
     border-radius: 1rem !important;
     color: var(--holyxey-white) !important;
     font-weight: 500;
 }
+
 .t-input {
     border-radius: 1rem !important;
     background-color: var(--holyxey-white) !important;
 }
+
 .t-form__successbox {
     border-radius: 1rem !important;
     color: var(--holyxey-back-o) !important;
     font-weight: 500 !important;
 }
+
 .js-errorbox-all {
     border-radius: 1rem !important;
 }
+
 .t-input-error {
     color: var(--holyxey-wine) !important;
 }
+
 #CalltouchWidgetFrame,
 jdiv {
     z-index: 200 !important;
 }
+
 /*Стили для Тильды*/
 
 @keyframes showpopup {
-    from { opacity: 0; translate: 0 -2rem}
-    to { opacity: 1; translate: 0 0}
+    from {
+        opacity: 0;
+        translate: 0 -2rem
+    }
+
+    to {
+        opacity: 1;
+        translate: 0 0
+    }
 }
+
 @keyframes hidepopup {
-    from { opacity: 1; translate: 0 0 }
-    to { opacity: 0; translate: 0 -2rem}
+    from {
+        opacity: 1;
+        translate: 0 0
+    }
+
+    to {
+        opacity: 0;
+        translate: 0 -2rem
+    }
 }
+
 @keyframes showVideoOpacity {
-    from { opacity: 0; filter: blur(25px); -webkit-filter: blur(25px);}
-    to { opacity: .5; filter: blur(0); -webkit-filter: blur(0);}
+    from {
+        opacity: 0;
+        filter: blur(25px);
+        -webkit-filter: blur(25px);
+    }
+
+    to {
+        opacity: .5;
+        filter: blur(0);
+        -webkit-filter: blur(0);
+    }
 }
+
 @keyframes smoothShowHorizontal {
-    5% {scale: 1; transform: perspective(100rem) rotate3d(0,1,0, 0deg); translateX(0) margin-right: initial; z-index: 0}
-    40% {scale: .8; transform: perspective(100rem) rotate3d(0,1,0, 40deg) translateX(-20%); margin-right: -45%; z-index: -1}
-    50% {scale: .8; transform: perspective(100rem) rotate3d(0,1,0, 40deg) translateX(-20%); margin-right: -45%; z-index: -1}
-    95% {scale: 1; transform: perspective(100rem) rotate3d(0,1,0, 0deg) translateX(0); margin-right: initial; z-index: 0; opacity: 1}
+    5% {
+        scale: 1;
+        transform: perspective(100rem) rotate3d(0, 1, 0, 0deg);
+        translateX(0) margin-right: initial;
+        z-index: 0
+    }
+
+    40% {
+        scale: .8;
+        transform: perspective(100rem) rotate3d(0, 1, 0, 40deg) translateX(-20%);
+        margin-right: -45%;
+        z-index: -1
+    }
+
+    50% {
+        scale: .8;
+        transform: perspective(100rem) rotate3d(0, 1, 0, 40deg) translateX(-20%);
+        margin-right: -45%;
+        z-index: -1
+    }
+
+    95% {
+        scale: 1;
+        transform: perspective(100rem) rotate3d(0, 1, 0, 0deg) translateX(0);
+        margin-right: initial;
+        z-index: 0;
+        opacity: 1
+    }
 }
+
 @keyframes endlessRotating {
-    from {rotate: 0}
-    from {rotate: 360deg}
+    from {
+        rotate: 0
+    }
+
+    from {
+        rotate: 360deg
+    }
 }
+
 @keyframes percentage {
     from {
         opacity: 0;
         transform: rotate(10deg) translate3d(10px, 10px, 10px);
     }
+
     to {
         opacity: 1;
         transform: rotate(3deg) translate3d(-50px, 20px, 20px);
     }
 }
+
 @keyframes whyBlock {
     from {
         opacity: 0;
         height: 0;
         padding: 0 1rem;
     }
+
     to {
         opacity: 1;
         height: 100%;
         padding: 2rem;
     }
 }
+
 @keyframes tapeAnim {
     from {
         translate: 0 0;
     }
+
     50% {
         translate: 10% 0;
     }
+
     to {
         translate: 0 0;
     }
@@ -1678,17 +2035,20 @@ jdiv {
     .hideMobile {
         display: none !important;
     }
+
     .hidePC {
         display: inherit !important;
     }
+
     .znms-widget__module-form-block {
-        top: unset!important;
+        top: unset !important;
         max-width: calc(100% - 2rem) !important;
         left: 0 !important;
         right: 0 !important;
         border-radius: 2rem !important;
-        transition: all 0.5s ;
+        transition: all 0.5s;
     }
+
     .counterBlock {
         display: block;
     }
@@ -1696,10 +2056,12 @@ jdiv {
     #multi-page h1 {
         font-size: 1.8rem;
     }
+
     #multi-page h2 {
         font-size: 1.3rem;
         padding-top: 1rem;
     }
+
     #multi-page h3 {
         font-size: 1.7rem;
     }
@@ -1710,15 +2072,19 @@ jdiv {
         display: block;
         margin-inline: .5rem;
     }
+
     #multi-page menu#menuList li#mobileNavStroke {
         display: block;
     }
+
     #multi-page menu#menuList li.navPCItem {
         display: none;
     }
+
     #multi-page menu .heroSocialButtons {
         display: flex !important;
     }
+
     #multi-page menu .heroSocialButtons svg {
         height: 20px;
     }
@@ -1728,24 +2094,32 @@ jdiv {
         padding: .5rem;
         margin-inline: 0;
     }
+
     #multi-page header #heroContactButtons {
         flex-direction: column;
         justify-content: center;
     }
+
     #multi-page header #hero #heroImageBlock {
         display: none;
     }
+
     #multi-page header #hero #heroTextBlock {
         background: linear-gradient(0deg, rgba(0, 0, 0, 0.70) 0%, rgba(0, 0, 0, 0.70) 100%), url(https://optim.tildacdn.com/tild6164-6236-4335-b061-383633653530/-/format/webp/DSC_8864_1.png) lightgray 50% / cover no-repeat;
         padding: 2rem;
         border-radius: 2rem;
     }
+
     #multi-page.services header #hero #heroTextBlock {
-        background: linear-gradient(0deg, rgba(0, 0, 0, 0.70) 0%, rgba(0, 0, 0, 0.70) 100%), url(https://optim.tildacdn.com/tild6563-3566-4264-b733-383436336232/-/format/webp/active.jpg) lightgray 50% / cover no-repeat;;
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.70) 0%, rgba(0, 0, 0, 0.70) 100%), url(https://optim.tildacdn.com/tild6563-3566-4264-b733-383436336232/-/format/webp/active.jpg) lightgray 50% / cover no-repeat;
+        ;
     }
+
     #multi-page.variants header #hero #heroTextBlock {
-        background: linear-gradient(0deg, rgba(0, 0, 0, 0.70) 0%, rgba(0, 0, 0, 0.70) 100%), url(https://thumb.tildacdn.com/tild3335-6365-4564-b639-333062663937/-/format/webp/5ZN_2626.jpg) lightgray 50% / cover no-repeat;;
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.70) 0%, rgba(0, 0, 0, 0.70) 100%), url(https://thumb.tildacdn.com/tild3335-6365-4564-b639-333062663937/-/format/webp/5ZN_2626.jpg) lightgray 50% / cover no-repeat;
+        ;
     }
+
     #multi-page header #hero[data-nomain="2025"] #heroTextBlock {
         background: linear-gradient(0deg, rgba(0, 0, 0, 0.70) 0%, rgba(0, 0, 0, 0.70) 100%), url(https://thumb.tildacdn.com/tild6436-6464-4933-a231-633331653566/-/format/webp/KIR_5409.jpg) lightgray 50% / cover no-repeat;
     }
@@ -1760,6 +2134,7 @@ jdiv {
         gap: 1rem;
         position: relative;
     }
+
     .classic-art {
         flex: 1;
         min-width: 85dvw;
@@ -1768,6 +2143,7 @@ jdiv {
         padding: 1.5rem .5rem;
         border-radius: 2rem;
     }
+
     .classic-ip {
         flex-direction: row;
         flex-wrap: nowrap;
@@ -1778,22 +2154,27 @@ jdiv {
         padding-inline: .5rem;
         justify-content: flex-start;
     }
+
     .w-btn {
         flex-direction: column;
         padding-left: 1.5rem;
     }
+
     .classic-art-imgBlck {
         min-height: 150px;
     }
+
     /* !needToRender (base design) */
 
     #popup-block {
         padding: 0 .5rem 2rem .5rem
     }
+
     #popup-block .popUpHeader {
         max-width: calc(100dvw - 10rem);
         text-align: center;
     }
+
     #weatherTest {
         top: 0;
         left: 0;
@@ -1802,15 +2183,19 @@ jdiv {
         flex-wrap: wrap;
         border-radius: 0 0 1.5rem 1.5rem;
     }
+
     #weatherTest p {
         text-align: center;
     }
+
     #weatherTest .weatherDay:nth-child(1) {
         width: 100%;
     }
+
     #weatherTest .weatherDay:not(:nth-child(1)) {
         flex: 1;
     }
+
     #weatherTest .weatherDay:not(:nth-child(1)) .morning,
     #weatherTest .weatherDay:not(:nth-child(1)) .evening {
         display: none;
@@ -1824,17 +2209,21 @@ jdiv {
         gap: 2rem;
         width: 100%;
     }
+
     #popup-service .popup-service-imgblock {
         min-height: 40dvh;
     }
+
     #popup-service .popup-service-header {
         width: 100%;
     }
+
     #popup-service .popup-service-textblock {
         padding-inline: 1rem;
         align-items: center;
         padding-block: 0;
     }
+
     /*!services pop-up*/
 
     #pop-up-gallery {
@@ -1842,14 +2231,20 @@ jdiv {
         height: 50dvh;
     }
 
+    .gallery-arows {
+        display: none;
+    }
+
     /* reviews!*/
     #reviews .classic-ip {
         flex-direction: column;
         gap: 1rem;
     }
+
     #reviews iframe {
         min-height: 60vh;
     }
+
     #reviews .reviews-gallery {
         flex: 1;
         display: flex;
@@ -1860,6 +2255,7 @@ jdiv {
 
         scroll-snap-type: x mandatory;
     }
+
     #reviews .reviews-gallery .reviews-gallery-imgblock {
         flex: 1;
         position: relative;
@@ -1870,11 +2266,13 @@ jdiv {
 
         scroll-snap-align: center;
     }
+
     #reviews .reviews-gallery .reviews-gallery-imgblock:nth-child(2),
     #reviews .reviews-gallery .reviews-gallery-imgblock:nth-child(3) {
         flex: 1;
         min-width: 80vw;
     }
+
     /* !reviews!*/
 
     /* Territory map */
@@ -1885,6 +2283,7 @@ jdiv {
         flex-wrap: nowrap;
         /*padding-inline: 1rem;*/
     }
+
     #map .map-img {
         max-width: 100%;
         min-width: unset;
@@ -1893,21 +2292,25 @@ jdiv {
         background-color: var(--holyxey-yellow);
         padding: .25rem;
     }
+
     /* !Territory map */
 
     /*Services*/
     #services .classic-art-link {
         display: none;
     }
+
     #services .classic-art {
         padding: 1.5rem .5rem .5rem .5rem;
     }
+
     /*!Services*/
 
     /*Variants*/
     .variantBlock {
         min-width: 85dvw;
     }
+
     /*!Variants*/
 
     /*Offers*/
@@ -1915,10 +2318,12 @@ jdiv {
         min-width: 85dvw;
         padding: .25rem;
     }
+
     #offers .offer .offerTitleBlock,
     #offers .offer.active .offerTitleBlock {
         margin-bottom: 2rem;
     }
+
     /*!Offers*/
 
     /* Videos */
@@ -1926,6 +2331,7 @@ jdiv {
         flex-direction: column;
         gap: 1rem;
     }
+
     #videos .videoBlocks .verticalPreview {
         aspect-ratio: 16 / 9;
         background-position: center 65%;
@@ -1933,12 +2339,14 @@ jdiv {
         height: 200px;
         margin-inline: .5rem;
     }
+
     #videos .videoBlocks .horizontalPreview {
         background-position: center;
         width: unset;
         height: 200px;
         margin-inline: .5rem;
     }
+
     #videos .videoBlocks .button {
         left: unset;
         top: unset;
@@ -1947,6 +2355,7 @@ jdiv {
         width: 2.5rem;
         height: 2.5rem;
     }
+
     #videos .videoBlocks .button svg {
         width: 1.5rem;
         position: absolute;
@@ -1954,6 +2363,7 @@ jdiv {
         top: 50%;
         transform: translate(-45%, -50%);
     }
+
     /* !Videos */
 
     /* about */
@@ -1961,15 +2371,18 @@ jdiv {
         background: none;
         padding: .5rem;
     }
+
     #about #aboutBlock .aboutInfo {
         padding: .5rem;
     }
+
     /* !about */
 
     /*faq*/
     #faq-list .faq-item-text {
         margin-inline: -1rem;
     }
+
     /*!faq*/
 
     /* contacts */
@@ -1977,19 +2390,23 @@ jdiv {
         flex-direction: column;
         gap: 1rem;
     }
+
     #contacts .classic-ip article {
         padding-inline: 1rem;
         order: -1;
     }
+
     #contacts .classic-ip iframe {
         min-height: 60dvh;
     }
+
     /* !contacts */
 
     #terruarMenu .menuCategory {
         gap: 1rem;
         width: unset;
     }
+
     #terruarMenu .menuCategory .product {
         flex: 1 0 60%;
     }
@@ -2002,11 +2419,13 @@ jdiv {
         border-radius: 2rem;
         border: 1px solid #00000010;
     }
+
     #multi-page .person-photo-block {
         aspect-ratio: unset;
         border-radius: 100vmin;
         overflow: hidden;
     }
+
     #multi-page .person-photo {
         min-height: 100%;
         display: block;
@@ -2015,6 +2434,7 @@ jdiv {
         left: 50%;
         transform: translate(-50%, -50%);
     }
+
     /*!Блок команды в поп-апе*/
 
     /*Dolyami section*/
@@ -2022,9 +2442,11 @@ jdiv {
         padding: 4rem .5rem;
         flex-direction: column;
     }
+
     #dolyami-inner {
         flex-direction: column;
     }
+
     #dolyamiCard {
         flex-direction: column;
         width: 100%;
@@ -2032,56 +2454,69 @@ jdiv {
         padding: 1rem 1rem 1.3rem 1rem;
         border-radius: 1rem;
     }
+
     #dolyamiCard p {
         width: unset;
         margin-right: 0;
     }
+
     #dolyamiLogos {
         align-items: center;
         justify-content: center;
         gap: .5rem;
     }
+
     #dolyamiCard img {
         display: block;
         height: 1rem;
     }
+
     #dolyamiBooking {
         width: 100%;
         text-align: center;
         border-radius: 1rem;
     }
+
     /*Dolyami section*/
 
     /*Стили для Тильды*/
     .t-popup__close {
         border-radius: 0;
     }
+
     .t-popup__container {
         border-radius: 0;
     }
+
     .t702__text-wrapper {
         text-align: left;
     }
+
     .t702__title {
         font-family: var(--holyxey-unbounded);
         font-size: 1.8rem;
     }
+
     .t-upwidget-container__button {
         background-color: var(--holyxey-wine);
     }
+
     /*Стили для Тильды*/
 }
+
 @media screen and (min-width: 900px) {
-    #loyaltyPopUp > article#certificates > div {
+    #loyaltyPopUp>article#certificates>div {
         padding: .5rem;
         border-radius: 1rem 1rem 0 1rem;
     }
-    #loyaltyPopUp > article#certificates > div > img {
+
+    #loyaltyPopUp>article#certificates>div>img {
         max-width: 100%;
         height: unset;
         border-radius: 1rem;
     }
-    #loyaltyPopUp > article#certificates > div > section  {
+
+    #loyaltyPopUp>article#certificates>div>section {
         position: absolute;
         right: 0;
         bottom: 0;
@@ -2091,14 +2526,16 @@ jdiv {
         gap: 1rem;
         border-radius: 0 1rem 1rem 0;
     }
-    #loyaltyPopUp > article#certificates > div > section > a:nth-child(2) {
+
+    #loyaltyPopUp>article#certificates>div>section>a:nth-child(2) {
         display: block;
         /*position: absolute;*/
         /*left: 0;*/
         /*top: 50%;*/
         /*translate: -120% -50%;*/
     }
-    #loyaltyPopUp > article#certificates > div > section > a:nth-child(1) {
+
+    #loyaltyPopUp>article#certificates>div>section>a:nth-child(1) {
         /*position: absolute;*/
         /*left: 0;*/
         /*top: 50%;*/
