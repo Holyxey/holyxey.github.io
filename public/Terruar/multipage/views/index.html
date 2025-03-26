@@ -108,9 +108,11 @@
             </li>
             <!--Социальные сети-->
 
-            <!--<li class="navPCItem"><a href="/" onclick="multipage.hideMobileMenu()">Главная</a></li>-->
+            <!--<li class="navPCItem navCTA"><a href="/2025">&#x1F384; 2025 &#x1F384;</a></li>-->
             <li class="navPCItem navCTA">
-              <a href="/2025">&#x1F384; 2025 &#x1F384;</a>
+              <a href="https://invest.terruarhome.ru" target="_blank"
+                >Франшиза</a
+              >
             </li>
             <li class="navPCItem">
               <a href="/#about" onclick="multipage.hideMobileMenu()">О нас</a>
@@ -169,6 +171,7 @@
                 >Забронировать</a
               >
             </li>
+            <!--<li class="navPCItem"><a href="https://bronirui.online/terruar" target="_blank" onclick="multipage.hideMobileMenu()" style="background-color: var(--holyxey-white-o); color: var(--holyxey-back)!important;">Забронировать</a></li>-->
             <li id="mobileNavStroke">
               <ul>
                 <li>
@@ -207,8 +210,14 @@
         <section id="hero" data-nomain="services">
           <section id="heroTextBlock">
             <section id="heroHeadlineContainer">
-              <h1>Глэмпинг Терруар <br />В 120 км от Москвы</h1>
-              <h2>Станьте ближе к природе на земле без забот</h2>
+              <h1>
+                Глэмпинг Терруар <br />в Тульской области
+                <span style="color: #ffffff">от 4500 руб. за сутки</span>
+              </h1>
+              <h2 style="padding-top: 1rem">
+                Станьте ближе к природе на земле без забот
+              </h2>
+              <!--<h2 style="padding-top: 1rem">Всем заезжающим с 21.02 по 23.02 - скидка на баню 50% + веник в подарок</h2>-->
             </section>
             <!--Заголовки-->
             <section id="heroPreferences">
@@ -397,11 +406,32 @@
         <div id="znms-widget-1"></div>
       </header>
       <main>
+        <!-- Варианты отдыха -->
+        <section
+          id="variants"
+          class="classic-sec"
+          title="Варианты отдыха"
+          data-variants="houses"
+        >
+          <div class="classic-hb w-btn">
+            <h3>Варианты отдыха</h3>
+            <a class="classic-header-button-first" href="/variants#houses"
+              >Посмотреть домики</a
+            >
+            <a class="classic-header-button-first" href="/variants#glamping"
+              >Посмотреть палатки</a
+            >
+          </div>
+        </section>
+
+        <!-- Основные предложения -->
         <section
           id="hero-offers"
           title="Основные предложения"
           data-need-to-render="other,2,3"
         ></section>
+
+        <!-- Глэмпинг "Терруар" -->
         <section id="about" class="classic-sec">
           <div class="classic-hb w-btn">
             <h3>Глэмпинг "Терруар"</h3>
@@ -410,8 +440,8 @@
             <div class="aboutInfo">
               <p>
                 В нашей атмосфере сочетаются уют природы и городской комфорт.
-                Представьте: домики с видом на звёзды, кухня, все удобства
-                горячий душ и зона для барбекю.
+                Представьте: домики с видом на звёзды, личной кухней и всеми
+                удобствами, а также зоной для барбекю.
               </p>
               <p>
                 Расслабьтесь в ароматной бане или горячей чаше среди деревьев,
@@ -445,22 +475,8 @@
             </div>
           </div>
         </section>
-        <section
-          id="variants"
-          class="classic-sec"
-          title="Варианты отдыха"
-          data-variants="houses"
-        >
-          <div class="classic-hb w-btn">
-            <h3>Варианты отдыха</h3>
-            <a class="classic-header-button-first" href="/variants#houses"
-              >Посмотреть домики</a
-            >
-            <a class="classic-header-button-first" href="/variants#glamping"
-              >Посмотреть палатки</a
-            >
-          </div>
-        </section>
+
+        <!-- Наши акции -->
         <section
           id="offers"
           class="classic-sec"
@@ -471,17 +487,25 @@
             <h3>Наши акции</h3>
           </div>
         </section>
+
+        <!-- Программа лояльности -->
         <section
           id="loyalty"
           title="Программа лояльности"
           data-need-to-render="loyalty,2"
         ></section>
+
+        <!-- Блок с видео -->
         <section id="videos" class="classic-sec">
           <div class="classic-hb w-btn">
             <h3>Видео территории</h3>
           </div>
           <div class="videoBlocks">
-            <div onclick="openFullVideo(this)" class="verticalPreview">
+            <div
+              onclick="openFullVideo(this)"
+              class="verticalPreview"
+              data-frame-link="https://player.vimeo.com/video/1030020451?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;loop=1&amp;autoplay=1&amp;quality=1080p"
+            >
               <div class="button">
                 <svg
                   fill="#F8F3C8"
@@ -525,7 +549,11 @@
                 </svg>
               </div>
             </div>
-            <div onclick="openFullVideo(this)" class="horizontalPreview">
+            <div
+              onclick="openFullVideo(this)"
+              class="horizontalPreview"
+              data-frame-link="https://player.vimeo.com/video/1029685351?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;loop=1&amp;autoplay=1&amp;quality=1080p"
+            >
               <div class="button">
                 <svg
                   fill="#F8F3C8"
@@ -571,6 +599,8 @@
             </div>
           </div>
         </section>
+
+        <!-- Мы можем предложить -->
         <section
           id="services"
           title="Мы можем предложить"
