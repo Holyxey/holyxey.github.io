@@ -730,28 +730,34 @@ const lists = {
     "Как устроить корпоратив / тимбилдинг?": `Напишите нам на почту<a href="mail:Terruar.msk@gmail.com" class="faqbtn"> Terruar.msk@gmail.com </a> поможем реализовать любую идею! У нас есть ведущие, фотографы, можем организовать лазертаг, джип-тур, банную программу с профессиональным банщиком, а также сделать специальную скидку для вас!`,
   },
   houses: [
+    // Mendoza
     {
       title: "Mendoza",
       description: `Двух-местный уютный домик — Мендоза, повышенной категории (зеркальный)<br><br>В доме с большим панорамным окном есть двуспальная кровать, кухня, холодильник и санузел с душем, есть терраса с мебелью и все принадлежности для барбекю.`,
       images: {
         summer: [
+          "https://thumb.tildacdn.com/tild6636-3830-4365-b361-393239396233/-/format/webp/KIR_3068.jpg",
           "https://thumb.tildacdn.com/tild3734-3333-4335-b235-623766363464/-/format/webp/KIR_3234.jpg",
           "https://thumb.tildacdn.com/tild6264-6533-4566-b038-333564646639/-/format/webp/KIR_3064.jpg",
+          "https://thumb.tildacdn.com/tild3139-3865-4464-a262-626639303062/-/format/webp/Mendoza_11.jpeg",
           "https://thumb.tildacdn.com/tild6633-3266-4833-b062-323538313130/-/format/webp/DSC08079.jpg",
           "https://thumb.tildacdn.com/tild3963-3437-4164-a136-353865343163/-/format/webp/DSC08081.jpg",
+          "https://thumb.tildacdn.com/tild6430-3862-4230-b666-363337623437/-/format/webp/Mendoza_26.jpeg",
           "https://thumb.tildacdn.com/tild3866-3830-4665-b936-623536663465/-/format/webp/KIR_3274.jpg",
-          "https://thumb.tildacdn.com/tild6636-3830-4365-b361-393239396233/-/format/webp/KIR_3068.jpg",
         ],
         winter: [
           "https://thumb.tildacdn.com/tild3434-3939-4165-b831-616531373261/-/format/webp/DSC08076.jpg",
           "https://thumb.tildacdn.com/tild6338-3131-4939-b866-303330343831/-/format/webp/DSC08073.jpg",
+          "https://thumb.tildacdn.com/tild3139-3865-4464-a262-626639303062/-/format/webp/Mendoza_11.jpeg",
           "https://thumb.tildacdn.com/tild3431-3530-4030-b134-316561393735/-/format/webp/DSC08075.jpg",
           "https://thumb.tildacdn.com/tild6666-6236-4632-b231-336333663637/-/format/webp/DSC08080.jpg",
+          "https://thumb.tildacdn.com/tild6430-3862-4230-b666-363337623437/-/format/webp/Mendoza_26.jpeg",
           "https://thumb.tildacdn.com/tild6131-6266-4133-a561-326364366237/-/format/webp/DSC08083.jpg",
           "https://thumb.tildacdn.com/tild3963-3437-4164-a136-353865343163/-/format/webp/DSC08081.jpg",
         ],
       },
     },
+    // Provence
     {
       title: "Provence",
       description: `Одномодульный уютный домик — Прованс<br><br>В доме с большим панорамным окном есть двуспальная кровать, кухня, холодильник и санузел с душем, есть терраса с мебелью и все принадлежности для барбекю.`,
@@ -760,6 +766,8 @@ const lists = {
           "https://thumb.tildacdn.com/tild3961-6162-4533-b464-633961303838/-/format/webp/5ZN_1417-HDR.jpg",
           "https://thumb.tildacdn.com/tild6539-3733-4133-b338-363831333233/-/format/webp/5ZN_1511-HDR.jpg",
           "https://thumb.tildacdn.com/tild3733-3435-4230-a132-333036393337/-/format/webp/5ZN_1411-HDR.jpg",
+          "https://thumb.tildacdn.com/tild6133-3762-4538-b638-353632313137/-/format/webp/Provance_8.jpeg",
+          "https://thumb.tildacdn.com/tild6630-3732-4862-b233-313065643138/-/format/webp/Provance_9.jpeg",
           "https://thumb.tildacdn.com/tild6366-3633-4335-b437-326239323838/-/format/webp/5ZN_1715.jpg",
           "https://thumb.tildacdn.com/tild3764-3531-4639-a333-333031353131/-/format/webp/5ZN_1788.jpg",
           "https://thumb.tildacdn.com/tild6363-3936-4236-b034-383535366336/-/format/webp/5ZN_1493.jpg",
@@ -769,11 +777,14 @@ const lists = {
           "https://thumb.tildacdn.com/tild6237-6330-4237-b638-363134643663/-/format/webp/KIR_5466.jpg",
           "https://thumb.tildacdn.com/tild6162-6139-4137-a530-323734376339/-/format/webp/KIR_5467.jpg",
           "https://thumb.tildacdn.com/tild6165-6534-4762-a435-353333323732/-/format/webp/DSC08024.jpg",
+          "https://thumb.tildacdn.com/tild6133-3762-4538-b638-353632313137/-/format/webp/Provance_8.jpeg",
+          "https://thumb.tildacdn.com/tild6630-3732-4862-b233-313065643138/-/format/webp/Provance_9.jpeg",
           "https://thumb.tildacdn.com/tild6130-6264-4466-a530-633237306130/-/format/webp/KIR_5468.jpg",
           "https://thumb.tildacdn.com/tild3333-6337-4432-b966-613965626164/-/format/webp/KIR_5460.jpg",
         ],
       },
     },
+    // Champagne
     {
       title: "Champagne",
       description: `Четырех-местный уютный домик — Шампань.<br><br>В доме на 4-х человек с большим панорамными окнами есть 2 комнаты: в одной из них находится двуспальная кровать, а в другой раздвижной диван, а также кухня, холодильник и санузел с душем, есть терраса с мебелью и все принадлежности для барбекю.<br><br>Домик оборудован электрическим конвектором, у вас всегда будет тепло!`,
@@ -800,11 +811,13 @@ const lists = {
         ],
       },
     },
+    // Bourgogne
     {
       title: "Bourgogne",
       description: `Одномодульный уютный домик — Бургундия<br><br>В доме с большим панорамным окном есть двуспальная кровать, кухня, холодильник и санузел с душем, есть терраса с мебелью и все принадлежности для барбекю.`,
       images: {
         summer: [
+          "https://thumb.tildacdn.com/tild3734-3737-4664-a534-386234386332/-/format/webp/Bourgogne_8.jpeg",
           "https://thumb.tildacdn.com/tild3166-3130-4965-a432-373332373130/-/format/webp/5ZN_1819.jpg",
           "https://thumb.tildacdn.com/tild6137-6264-4630-a133-623239656131/-/format/webp/5ZN_1573.jpg",
           "https://thumb.tildacdn.com/tild6565-6365-4139-b133-336630323961/-/format/webp/5ZN_1925.jpg",
@@ -821,17 +834,19 @@ const lists = {
         ],
       },
     },
+    // Rheingau
     {
       title: "Rheingau",
       description: `Одномодульный уютный домик — Рейнау<br><br>В доме с большим панорамным окном есть двуспальная кровать, кухня, холодильник и санузел с душем, есть терраса с мебелью и все принадлежности для барбекю.`,
       images: {
         summer: [
           "https://thumb.tildacdn.com/tild6136-3837-4665-b735-616235316331/-/format/webp/5ZN_1605.jpg",
-          "https://thumb.tildacdn.com/tild3130-3431-4361-b736-306233303835/-/format/webp/5ZN_1558.jpg",
-          "https://thumb.tildacdn.com/tild6364-3930-4565-b333-633336633561/-/format/webp/5ZN_1586.jpg",
+          "https://thumb.tildacdn.com/tild3863-3566-4731-a434-373631393132/-/format/webp/Rheingau_7.jpeg",
+          "https://thumb.tildacdn.com/tild6161-3961-4332-b233-363866306266/-/format/webp/Rheingau_13.jpeg",
           "https://thumb.tildacdn.com/tild3337-6634-4935-a163-326132616432/-/format/webp/5ZN_1606.jpg",
           "https://thumb.tildacdn.com/tild3938-3132-4335-a635-653433656233/-/format/webp/5ZN_2441.jpg",
           "https://thumb.tildacdn.com/tild6639-6664-4433-a439-356338656465/-/format/webp/5ZN_2466.jpg",
+          "https://thumb.tildacdn.com/tild6630-6538-4465-b762-313235653334/-/format/webp/Rheingau_11.jpeg",
         ],
         winter: [
           "https://thumb.tildacdn.com/tild3331-6364-4131-b461-353238653931/-/format/webp/KIR_5644.jpg",
@@ -846,16 +861,19 @@ const lists = {
         ],
       },
     },
+    // Toscana
     {
       title: "Toscana",
       description: `Одномодульный уютный домик — Тоскана<br><br>В доме с большим панорамным окном есть двуспальная кровать, кухня, холодильник и санузел с душем, есть терраса с мебелью и все принадлежности для барбекю.`,
       images: {
         summer: [
           "https://thumb.tildacdn.com/tild3532-3038-4362-a631-653933616333/-/format/webp/5ZN_2021.jpg",
-          "https://thumb.tildacdn.com/tild3837-6338-4530-b131-333937336535/-/format/webp/5ZN_2027.jpg",
+          "https://thumb.tildacdn.com/tild3235-6665-4132-b135-616635376331/-/format/webp/Toskana_10.jpeg",
+          "https://thumb.tildacdn.com/tild3838-3133-4439-b439-666230376436/-/format/webp/Toskana_7.jpeg",
+          "https://thumb.tildacdn.com/tild6538-3135-4635-a237-333839303363/-/format/webp/Toskana_8.jpeg",
           "https://thumb.tildacdn.com/tild6231-3036-4036-b364-643730343736/-/format/webp/5ZN_1918-HDR.jpg",
           "https://thumb.tildacdn.com/tild6637-3638-4539-a334-313234323162/-/format/webp/5ZN_2483.jpg",
-          "https://thumb.tildacdn.com/tild6266-6637-4530-b866-613065663066/-/format/webp/5ZN_2428.jpg",
+          "https://thumb.tildacdn.com/tild3837-6338-4530-b131-333937336535/-/format/webp/5ZN_2027.jpg",
         ],
         winter: [
           "https://thumb.tildacdn.com/tild3939-3864-4263-a439-643564633439/-/format/webp/DSC08058.jpg",
@@ -867,11 +885,14 @@ const lists = {
         ],
       },
     },
+    // Bordeaux
     {
       title: "Bordeaux",
       description: `Одномодульный уютный домик — Бордо<br><br>В доме с большим панорамным окном есть двуспальная кровать, кухня, холодильник и санузел с душем, есть терраса с мебелью и все принадлежности для барбекю.`,
       images: {
         summer: [
+          "https://thumb.tildacdn.com/tild6263-6436-4338-b365-633562613833/-/format/webp/Bordeaux_8.jpeg",
+          "https://thumb.tildacdn.com/tild3761-3038-4561-b531-343631323431/-/format/webp/Bordeaux_5.jpeg",
           "https://thumb.tildacdn.com/tild3062-6437-4539-a431-303937616539/-/format/webp/5ZN_2444.jpg",
           "https://thumb.tildacdn.com/tild6430-6236-4664-a236-346432656638/-/format/5ZN_2078.jpg",
           "https://thumb.tildacdn.com/tild6466-3461-4636-b330-356163653834/-/format/5ZN_2117-HDR.jpg",
@@ -888,6 +909,7 @@ const lists = {
         ],
       },
     },
+    // Apulia
     {
       title: "Apulia",
       description: `Двух-местный уютный домик — Апулия, повышенной категории<br><br>В доме с большим панорамным окном есть двуспальная кровать, кухня, холодильник и санузел с душем, есть терраса с мебелью и все принадлежности для барбекю`,
@@ -895,6 +917,11 @@ const lists = {
         summer: [
           "https://thumb.tildacdn.com/tild3236-6666-4835-b131-633436663939/-/format/webp/IMG_1647.jpg",
           "https://thumb.tildacdn.com/tild3032-3838-4362-b863-356233313433/-/format/webp/IMG_1660.jpg",
+          "https://thumb.tildacdn.com/tild3365-6239-4036-b664-653765363765/-/format/webp/Apulia_2.jpeg",
+          "https://thumb.tildacdn.com/tild6162-3664-4836-a132-626338663362/-/format/webp/Apulia_13.jpeg",
+          "https://thumb.tildacdn.com/tild3361-3231-4636-a236-613633383932/-/format/webp/Apulia_15.jpeg",
+          "https://thumb.tildacdn.com/tild6530-6437-4163-a139-326563313366/-/format/webp/Apulia_19.jpeg",
+          "https://thumb.tildacdn.com/tild3136-3132-4031-b664-636431653738/-/format/webp/Apulia_21.jpeg",
           "https://thumb.tildacdn.com/tild3535-6439-4162-b530-353434623762/-/format/webp/IMG_1673.jpg",
           "https://thumb.tildacdn.com/tild3035-6161-4361-b262-646630336538/-/format/webp/KIR_3061.jpg",
           "https://thumb.tildacdn.com/tild3736-3764-4566-b664-666265663061/-/format/webp/IMG_1675.jpg",
@@ -910,18 +937,23 @@ const lists = {
         ],
       },
     },
+    // Laura
     {
       title: "Laura",
       description: `Двух-местный уютный домик — Лаура, повышенной категории<br><br>В доме с большим панорамным окном есть двуспальная кровать, кухня, холодильник и санузел с душем, есть терраса с мебелью и все принадлежности для барбекю.`,
       images: {
         summer: [
           "https://thumb.tildacdn.com/tild3163-6164-4838-b635-323066326164/-/format/webp/KIR_3063.jpg",
-          "https://thumb.tildacdn.com/tild3533-3866-4536-a162-653330643537/-/format/webp/IMG_1666.jpg",
           "https://thumb.tildacdn.com/tild6437-3661-4033-b763-363636313739/-/format/webp/IMG_1666.jpg",
+          "https://thumb.tildacdn.com/tild3632-3033-4961-b537-616633393739/-/format/webp/Laura_1.jpeg",
+          "https://thumb.tildacdn.com/tild3630-6534-4339-a238-353834626631/-/format/webp/Laura_17.jpeg",
+          "https://thumb.tildacdn.com/tild6430-3635-4333-a438-353632326533/-/format/webp/Laura_7.jpeg",
+          "https://thumb.tildacdn.com/tild3733-6639-4062-a432-353437316663/-/format/webp/Laura_10.jpeg",
+          "https://thumb.tildacdn.com/tild6335-6433-4038-a531-333536363031/-/format/webp/Laura_13.jpeg",
           "https://thumb.tildacdn.com/tild3031-3232-4431-b537-303731386566/-/format/webp/DSC04369.jpg",
-          "https://thumb.tildacdn.com/tild6230-3133-4035-b865-373233306530/-/format/webp/DSC08032.jpg",
           "https://thumb.tildacdn.com/tild3463-6664-4334-a163-383962656332/-/format/webp/DSC08033.jpg",
           "https://thumb.tildacdn.com/tild3764-6539-4062-b061-623632653833/-/format/webp/DSC04378.jpg",
+          "https://thumb.tildacdn.com/tild6230-3133-4035-b865-373233306530/-/format/webp/DSC08032.jpg",
         ],
         winter: [
           "https://thumb.tildacdn.com/tild3730-6364-4461-b235-393839613434/-/format/webp/DSC08062.jpg",
@@ -933,17 +965,20 @@ const lists = {
         ],
       },
     },
+    // Etna
     {
       title: "Etna",
       description: `Двух-местный уютный домик — Этна, повышенной категории<br><br>В доме с большим панорамным окном есть двуспальная кровать, кухня, холодильник и санузел с душем, есть терраса с мебелью и все принадлежности для барбекю.`,
       images: {
         summer: [
+          "https://thumb.tildacdn.com/tild3836-3937-4732-a536-626634396436/-/format/Etna_33.jpeg",
           "https://thumb.tildacdn.com/tild6132-6330-4630-b061-613733313137/-/format/webp/IMG_1679.jpg",
           "https://thumb.tildacdn.com/tild3034-3139-4130-a230-396539373239/-/format/webp/IMG_1911.jpg",
+          "https://thumb.tildacdn.com/tild3436-3262-4361-a131-363833653831/-/format/Etna_31.jpeg",
+          "https://thumb.tildacdn.com/tild3964-3736-4838-b835-303965353034/-/format/Etna_34.jpeg",
           "https://thumb.tildacdn.com/tild3137-3735-4266-b131-646637326335/-/format/webp/KIR_3098.jpg",
           "https://thumb.tildacdn.com/tild3062-6432-4133-a562-383264363065/-/format/webp/KIR_3101.jpg",
           "https://thumb.tildacdn.com/tild3133-6138-4436-a335-613266343636/-/format/webp/KIR_3102.jpg",
-          "https://thumb.tildacdn.com/tild6565-3864-4266-a432-343932643966/-/format/webp/KIR_3105.jpg",
         ],
         winter: [
           "https://thumb.tildacdn.com/tild3561-3366-4136-b430-376634626535/-/format/webp/DSC08065.jpg",

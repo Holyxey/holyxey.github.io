@@ -739,6 +739,7 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
     cursor: pointer;
     transition: all .3s ease-out;
     max-width: 500px;
+    scroll-snap-align: center;
 
     &:hover {
         scale: 1.01;
@@ -752,7 +753,7 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
 .variantsList .varItem .varHeader {
     display: flex;
     gap: .75rem;
-    padding-left: 1rem;
+    padding-inline: 1rem;
 }
 
 .variantsList .varItem .varHeader .varIcon * {
@@ -780,8 +781,7 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
     padding: 0;
     margin: 0;
     text-wrap: nowrap;
-    text-align: right;
-    padding-right: 1rem;
+    padding-inline: 1rem;
 }
 
 .preview.variantsList {
@@ -791,8 +791,7 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
     scroll-snap-type: x mandatory;
 
     .varItem {
-        border-radius: 3rem;
-        scroll-snap-align: center;
+        /* border-radius: 3rem; */
     }
 }
 
