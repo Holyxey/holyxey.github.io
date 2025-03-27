@@ -211,7 +211,9 @@ function renderReviewGallery(maxRender = 4) {
 // Рендер фотографий блока
 const openVariantGallery = (list, index, preview = false) => {
   const season = localStorage.getItem("season");
+
   multipage.changeScroll();
+
   const element = lists[list][index];
   const images = lists[list][index].images[season]
     ? lists[list][index].images[season]
@@ -220,35 +222,35 @@ const openVariantGallery = (list, index, preview = false) => {
 
   multiPage.insertAdjacentHTML(
     "afterbegin",
-    `
-                <div style="animation: showpopup .3s 1s ease-out forwards" id="close-popup" onclick="multipage.remPopup()">
-                    <svg width="50px" viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg"><g stroke-width="0"/><g stroke-linecap="round" stroke-linejoin="round"/><path d="M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2 2 6.5 2 12s4.5 10 10 10m-2.83-7.17 5.66-5.66m0 5.66L9.17 9.17" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </div>
-                <div class="blur" id="popup-block"> <!--тело поп-апа-->
-                    <h2 class="popUpHeader">${element.title}</h2> 
+    `<div style="animation: showpopup .3s 1s ease-out forwards" id="close-popup" onclick="multipage.remPopup()">
+        <svg width="50px" viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg"><g stroke-width="0"/><g stroke-linecap="round" stroke-linejoin="round"/><path d="M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2 2 6.5 2 12s4.5 10 10 10m-2.83-7.17 5.66-5.66m0 5.66L9.17 9.17" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <div class="blur" id="popup-block"> <!--тело поп-апа-->
+        <h2 class="popUpHeader">${element.title}</h2> 
 
-                    <div class="popUpDescr">
-                        ${element.description ? element.description : ""}
-                      <div class="gallery-arows">
-                          <button class="gallery-arow prev" onclick="galleryScrollTo(this)">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><!-- Icon from Material Symbols by Google - https://github.com/google/material-design-icons/blob/master/LICENSE --><path fill="currentColor" d="m10 18l-6-6l6-6l1.4 1.45L7.85 11H20v2H7.85l3.55 3.55z"/></svg>
-                          </button>
-                          <button class="gallery-arow next" onclick="galleryScrollTo(this)">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><!-- Icon from Material Symbols by Google - https://github.com/google/material-design-icons/blob/master/LICENSE --><path fill="currentColor" d="M16.15 13H5q-.425 0-.712-.288T4 12t.288-.712T5 11h11.15L13.3 8.15q-.3-.3-.288-.7t.288-.7q.3-.3.713-.312t.712.287L19.3 11.3q.15.15.213.325t.062.375t-.062.375t-.213.325l-4.575 4.575q-.3.3-.712.288t-.713-.313q-.275-.3-.288-.7t.288-.7z"/></svg>
-                          </button>
-                      </div>
-                        ${
-                          preview
-                            ? `<div class="variantPopUpButtons"><a class="classic-header-button-first" href="/variants">Смотреть все</a><a class="classic-header-button-first" onclick="multipage.bookingClick(); multipage.remPopup()">Выбрать даты</a></div>`
-                            : `<div class="variantPopUpButtons"><a class="classic-header-button-first" onclick="multipage.bookingClick(); multipage.remPopup()">Выбрать даты</a></div>`
-                        }
-                    </div>
-                    <article id="pop-up-gallery" onclick="event.stopPropagation();"></article>
-                </div>`
+        <div class="popUpDescr">
+            ${element.description ? element.description : ""}
+          <div class="gallery-arows">
+              <div id="gallery-arow-prev" class="gallery-arow prev nav-arrow">
+                <img role="none" src="${
+                  iconLinks.nav.left
+                }?color=black&height=23" alt="none">
+              </div>
+              <div id="gallery-arow-next" class="gallery-arow next nav-arrow">
+                <img role="none" src="${
+                  iconLinks.nav.right
+                }?color=black&height=23" alt="none">
+              </div>
+          </div>
+            ${
+              preview
+                ? `<div class="variantPopUpButtons"><a class="classic-header-button-first" href="/variants">Смотреть все</a><a class="classic-header-button-first" onclick="multipage.bookingClick(); multipage.remPopup()">Выбрать даты</a></div>`
+                : `<div class="variantPopUpButtons"><a class="classic-header-button-first" onclick="multipage.bookingClick(); multipage.remPopup()">Выбрать даты</a></div>`
+            }
+        </div>
+        <article id="pop-up-gallery" onclick="event.stopPropagation();"></article>
+    </div>`
   );
-
-  const galleryNode = document.getElementById("pop-up-gallery");
-  galleryNode.scrollTo({ left: 0 });
   images.forEach((image, ind) => {
     document
       .getElementById("pop-up-gallery")
@@ -257,27 +259,84 @@ const openVariantGallery = (list, index, preview = false) => {
         `<img onclick="multipage.openFullScreenPhoto(this)" data-gallery-img="${ind}" src="${image}" alt="Фотографии ${element.title}">`
       );
   });
+
+  initGallery("pop-up-gallery", "gallery-arow-next", "gallery-arow-prev");
+
   showHideChats();
 };
-// Клик на кнопку скролла в галерее
-function galleryScrollTo(button) {
-  const galleryNode = document.getElementById("pop-up-gallery");
+
+/** Инициализация галереи.
+ * @param {string} next - id кнопки "далее"
+ * @param {string} prev - id кнопки "назад"
+ * @param {string} node - id блока галереи
+ */
+function initGallery(node, next, prev) {
+  const galleryNode = document.getElementById(node);
   const arrows = {
-    next: document.querySelector(".gallery-arow.next"),
-    prev: document.querySelector(".gallery-arow.prev"),
+    next: document.getElementById(next),
+    prev: document.getElementById(prev),
   };
-  const images = galleryNode.querySelectorAll("img");
+  galleryNode.scrollTo({ left: 0, behavior: "smooth" });
 
-  let buttonNum = Number(button.getAttribute("data-scroll-to") | 0);
+  const elements = [...galleryNode.children];
 
-  if (button === arrows.next) buttonNum++;
+  const observeElements = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((el) => {
+        if (el.target.getAttribute("data-gallery-id") == 0) {
+          el.isIntersecting
+            ? (arrows.prev.style.display = "none")
+            : (arrows.prev.style.display = "");
+        }
+        if (el.target.getAttribute("data-gallery-id") == elements.length - 1) {
+          el.isIntersecting
+            ? (arrows.next.style.display = "none")
+            : (arrows.next.style.display = "");
+        }
+      });
+    },
+    { root: galleryNode, threshold: 0.9 }
+  );
+
+  [...galleryNode.children].forEach((el, ind) => {
+    el.setAttribute("data-gallery-id", ind);
+    observeElements.observe(el);
+  });
+
+  arrows.next.addEventListener("click", () =>
+    galleryScrollTo(arrows.next, arrows.next, arrows.prev, galleryNode)
+  );
+  arrows.prev.addEventListener("click", () =>
+    galleryScrollTo(arrows.prev, arrows.next, arrows.prev, galleryNode)
+  );
+}
+
+/** Обработка нажатия кнопки навигации галереи
+ * @param {HTMLElement} pressed - нажатая кнопка
+ * @param {HTMLElement} next - кнопка "далее"
+ * @param {HTMLElement} prev - кнопка "назад"
+ * @param {HTMLElement} node - блок с элементами
+ */
+function galleryScrollTo(pressed, next, prev, node) {
+  const elements = node.children;
+
+  let buttonNum = Number(pressed.getAttribute("data-active-element") | 0);
+  if (pressed === next) buttonNum++;
+  else buttonNum--;
 
   try {
-    images[buttonNum].scrollIntoView();
-    arrows.next.setAttribute("data-scroll-to", buttonNum);
-    arrows.prev.setAttribute("data-scroll-to", buttonNum - 1);
-  } catch {}
+    let leftItem = elements[buttonNum].getBoundingClientRect().left;
+    let leftNode = node.getBoundingClientRect().left;
+
+    node.scrollBy({ behavior: "smooth", left: leftItem - leftNode });
+    next.setAttribute("data-active-element", buttonNum);
+    prev.setAttribute("data-active-element", buttonNum);
+  } catch (e) {
+    console.log(e);
+  }
 }
+
+// TODO замени на новый рендер что ниже
 const renderVariantsPreview = () => {
   const varNode = document.querySelectorAll("[data-variants]");
   if (varNode) {
@@ -396,6 +455,60 @@ const renderVariantsPreview = () => {
       }
     });
   }
+};
+
+/** Рендерит домики/палатки внутрь найденного блока
+ * Ищет ноды по параметру data-render-variants
+ * Извлекает data-render-variants и data-render-preview
+ */
+const renderVariants = () => {
+  const variants_nodes = document.querySelectorAll("[data-render-variants]");
+  if (!variants_nodes || !variants_nodes.length) return;
+
+  const season = localStorage.getItem("season");
+
+  function insertVariants(list, node, listName) {
+    if (!list || !node) return;
+
+    list.forEach((l, ind) => {
+      node.insertAdjacentHTML(
+        "beforeend",
+        `
+        <div class="varItem" onclick="openVariantGallery('${listName}', ${ind})">
+          <div class="varHeader">
+            <img class="varIcon" role="none" src="${iconLinks[listName]}?color=%23EEF0F2&height=20px" />
+            <p class="varTitle">${l.title}</p>
+          </div>
+          <img loading="lazy" class="varPreview" src="${l.images[season][0]}" alt="Домики и палатки в глэмпинге Терруар: ${l.title}" />
+          <p class="varShowMore">Смотреть фото</p>
+        </div>
+        `
+      );
+    });
+  }
+
+  variants_nodes.forEach((el) => {
+    el.innerHTML = "";
+
+    const listName = el.getAttribute("data-render-variants");
+    const isPreview = el.getAttribute("data-render-preview");
+
+    el.id = `gallery-${listName}`;
+    el.classList.add("variantsList");
+
+    if (isPreview) {
+      el.classList.add("preview");
+      setTimeout(() => {
+        initGallery(
+          `gallery-${listName}`,
+          "houses-arrow-next",
+          "houses-arrow-prev"
+        );
+      }, 1000);
+    }
+
+    insertVariants(lists[listName], el, listName);
+  });
 };
 
 const openOffersPopup = (element, index) => {
@@ -1320,7 +1433,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   multipage
     .getHeaderHeight()
+    // TODO замени на новый рендер
     .then(renderVariantsPreview)
+    .then(renderVariants)
     .then(whereToRenderCounter)
     .then(multipage.renderFAQ)
     .then(renderOffers)

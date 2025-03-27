@@ -1181,3 +1181,12 @@ const closedForSeason = {
     "Merlot",
   ],
 };
+
+const iconLinks = {
+  houses: "https://api.iconify.design/hugeicons:home-13.svg",
+  glamping: "https://api.iconify.design/hugeicons:tree-06.svg",
+  nav: {
+    left: "https://api.iconify.design/hugeicons:arrow-left-04.svg",
+    right: "https://api.iconify.design/hugeicons:arrow-right-04.svg",
+  },
+};

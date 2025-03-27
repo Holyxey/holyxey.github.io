@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Unbounded:wght@200..900&display=swap');
-/*
-*/
+@import url('https://holyxey.github.io/public/Terruar/multipage/stylesheets/season.css');
 
 :root {
     --holyxey-back: #1e1b23;
@@ -677,8 +676,8 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
 
 /* !reviews */
 
+/* TODO удали после новых вариантов .variantsList */
 /* variants */
-#variants {}
 
 .variantBlock {
     flex: 1 0 300px;
@@ -697,10 +696,6 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
     gap: 1rem;
     padding-inline: 1rem;
 }
-
-.variantBlock svg {}
-
-.variantBlock .variantTitle {}
 
 .variantBlock .openVariantGallery {
     margin-left: auto;
@@ -721,6 +716,87 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
 }
 
 /* !variants */
+
+/* Новые варианты */
+
+.variantsList {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    scrollbar-width: none;
+    padding: .5rem;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.variantsList .varItem {
+    flex: 1;
+    background: var(--holyxey-back-o);
+    padding: 1rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: all .3s ease-out;
+    max-width: 500px;
+
+    &:hover {
+        scale: 1.01;
+    }
+
+    &:active {
+        scale: 0.99;
+    }
+}
+
+.variantsList .varItem .varHeader {
+    display: flex;
+    gap: .75rem;
+    padding-left: 1rem;
+}
+
+.variantsList .varItem .varHeader .varIcon * {
+    fill: var(--holyxey-bad);
+}
+
+.variantsList .varItem .varHeader .varTitle {
+    font-family: var(--holyxey-unbounded);
+    color: var(--holyxey-yellow);
+    font-size: 1.25rem;
+}
+
+.variantsList .varItem .varPreview {
+    width: 100%;
+    max-height: 200px;
+    min-width: 300px;
+    aspect-ratio: 5 / 3;
+    object-fit: cover;
+    margin-block: .75rem;
+    border-radius: 1rem;
+    pointer-events: none;
+}
+
+.variantsList .varItem .varShowMore {
+    padding: 0;
+    margin: 0;
+    text-wrap: nowrap;
+    text-align: right;
+    padding-right: 1rem;
+}
+
+.preview.variantsList {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+
+    scroll-snap-type: x mandatory;
+
+    .varItem {
+        border-radius: 3rem;
+        scroll-snap-align: center;
+    }
+}
+
+/* ! Новые варианты */
 
 /* about */
 #about {}
@@ -1435,7 +1511,38 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
     border-radius: 1rem;
 }
 
+/* Nav */
+.nav-arrow {
+    background-color: var(--holyxey-yellow);
+    aspect-ratio: 1 / 1;
+    width: 3rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 100vmin;
+    cursor: pointer;
+    transition: all .1s ease-out;
+    outline: 1px solid #F8F3C800;
+
+    &:hover {
+        outline: 5px solid #F8F3C870;
+    }
+
+    &:active {
+        outline: 1px solid #F8F3C800;
+    }
+
+    > img {
+        pointer-events: none;
+    }
+}
+
+/* ! Nav */
+
 /* Gallery */
+
 #pop-up-gallery {
     display: flex;
     justify-content: flex-start;
@@ -1482,40 +1589,17 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
     right: 0;
 }
 
-.gallery-arows .gallery-arow {
+.gallery-arow {
     position: absolute;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    height: 2rem;
-    width: 2rem;
     bottom: 0;
-
-    transition: all .1s ease-out;
-
-    background: var(--holyxey-yellow);
-    border-radius: 100vmin;
-    border: none;
-
-    cursor: pointer;
-    outline: 1px solid #F8F3C800;
-
-    &:hover {
-        outline: 5px solid #F8F3C870;
-    }
-
-    &:active {
-        outline: 1px solid #F8F3C800;
-    }
 }
 
-.gallery-arows .gallery-arow.prev {
+.gallery-arow.prev {
     left: -4rem;
 }
 
-.gallery-arows .gallery-arow.next {
+.gallery-arow.next {
     right: -4rem;
 }
 

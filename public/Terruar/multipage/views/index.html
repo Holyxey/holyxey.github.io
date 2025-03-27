@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Terruar | Multipage</title>
-    <link rel="stylesheet" href="../stylesheets/season.css" />
     <link rel="stylesheet" href="../stylesheets/main.css" />
+    <script src="../scripts/lists.js"></script>
     <script src="../scripts/whatIsMax.js"></script>
     <script
       src="https://widget.bronirui-online.ru/js/app.js"
@@ -14,7 +14,6 @@
     ></script>
   </head>
   <body>
-    <script src="../scripts/lists.js"></script>
 
     <div id="multi-page" data-page="main">
       <header>
@@ -109,19 +108,23 @@
             <!--Социальные сети-->
 
             <!--<li class="navPCItem navCTA"><a href="/2025">&#x1F384; 2025 &#x1F384;</a></li>-->
+            <!-- Инвест -->
             <li class="navPCItem navCTA">
               <a href="https://invest.terruarhome.ru" target="_blank"
                 >Франшиза</a
               >
             </li>
+            <!-- О нас -->
             <li class="navPCItem">
-              <a href="/#about" onclick="multipage.hideMobileMenu()">О нас</a>
+              <a href="./#about" onclick="multipage.hideMobileMenu()">О нас</a>
             </li>
+            <!-- Наши домики -->
             <li class="navPCItem">
               <a href="/variants" onclick="multipage.hideMobileMenu()"
                 >Наши домики</a
               >
             </li>
+            <!-- Камера -->
             <li class="navPCItem">
               <a
                 data-popup="online"
@@ -132,6 +135,7 @@
                 >Терруар онлайн</a
               >
             </li>
+            <!-- Ресторан -->
             <li class="navPCItem">
               <a
                 data-popup="restaurant"
@@ -142,25 +146,31 @@
                 >Ресторан</a
               >
             </li>
+            <!-- Услуги -->
             <li class="navPCItem">
               <a href="/services" onclick="multipage.hideMobileMenu()"
                 >Услуги</a
               >
             </li>
+            <!-- Акции -->
             <li class="navPCItem">
               <a href="/#offers" onclick="multipage.hideMobileMenu()">Акции</a>
             </li>
+            <!-- Карта -->
             <li class="navPCItem">
               <a href="#map" onclick="multipage.hideMobileMenu()">Карта</a>
             </li>
+            <!-- Отзывы -->
             <li class="navPCItem">
               <a href="#reviews" onclick="multipage.hideMobileMenu()">Отзывы</a>
             </li>
+            <!-- Контакты -->
             <li class="navPCItem">
               <a href="#contacts" onclick="multipage.hideMobileMenu()"
                 >Контакты</a
               >
             </li>
+            <!-- Забронировать -->
             <li class="navPCItem">
               <a
                 onclick="multipage.bookingClick(); multipage.hideMobileMenu()"
@@ -209,6 +219,7 @@
         </nav>
         <section id="hero" data-nomain="services">
           <section id="heroTextBlock">
+            <!--Заголовки-->
             <section id="heroHeadlineContainer">
               <h1>
                 Глэмпинг Терруар <br />в Тульской области
@@ -219,7 +230,8 @@
               </h2>
               <!--<h2 style="padding-top: 1rem">Всем заезжающим с 21.02 по 23.02 - скидка на баню 50% + веник в подарок</h2>-->
             </section>
-            <!--Заголовки-->
+
+            <!--Хайлайты (Комфорт - развлечения - отзывы)-->
             <section id="heroPreferences">
               <article class="heroPreferencesBlock">
                 <svg
@@ -301,8 +313,8 @@
                 </p>
               </article>
             </section>
-            <!--Хайлайты (Комфорт - развлечения - отзывы)-->
 
+            <!--Кнопки и соц.сети-->
             <section id="heroContactButtons">
               <a href="tel:+74991122405" class="heroButton phone"
                 >+7 (499) 112-24-05</a
@@ -399,15 +411,28 @@
                 >Заказать звонок</a
               >
             </section>
-            <!--Кнопки и соц.сети-->
           </section>
           <article id="heroImageBlock" class="shadow"></article>
         </section>
         <div id="znms-widget-1"></div>
       </header>
+
       <main>
+        <!-- TODO новые Варианты отдыха  -->
+        <section class="classic-sec">
+          <div class="classic-hb w-btn">
+            <h3>Варианты отдыха</h3>
+            <div id="houses-arrow-prev" class="nav-arrow">
+              <img role="none" src="https://api.iconify.design/hugeicons:arrow-left-04.svg?color=black&height=23" alt="none">
+            </div>
+            <div id="houses-arrow-next" class="nav-arrow">
+              <img role="none" src="https://api.iconify.design/hugeicons:arrow-right-04.svg?color=black&height=23" alt="none">
+            </div>
+          </div>
+          <div data-render-variants="houses" data-render-preview="1"></div>
+        </section>
         <!-- Варианты отдыха -->
-        <section
+        <!-- <section
           id="variants"
           class="classic-sec"
           title="Варианты отдыха"
@@ -422,20 +447,13 @@
               >Посмотреть палатки</a
             >
           </div>
-        </section>
+        </section> -->
 
         <!-- Мы можем предложить -->
         <section
           id="services"
           title="Мы можем предложить"
           data-need-to-render="servicesListPreview,1"
-        ></section>
-
-        <!-- Основные предложения -->
-        <section
-          id="hero-offers"
-          title="Основные предложения"
-          data-need-to-render="other,2,3"
         ></section>
 
         <!-- Глэмпинг "Терруар" -->
@@ -482,6 +500,13 @@
             </div>
           </div>
         </section>
+
+        <!-- Основные предложения -->
+        <section
+          id="hero-offers"
+          title="Основные предложения"
+          data-need-to-render="other,2,3"
+        ></section>
 
         <!-- Наши акции -->
         <section
@@ -607,6 +632,7 @@
           </div>
         </section>
       </main>
+
       <footer>
         <section id="sectionDolyami">
           <div id="dolyami-inner">
