@@ -1534,8 +1534,14 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
         outline: 1px solid #F8F3C800;
     }
 
-    > img {
+    >img {
         pointer-events: none;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .nav-arrow {
+        display: none;
     }
 }
 
