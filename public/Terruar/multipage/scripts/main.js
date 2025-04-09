@@ -458,30 +458,43 @@ const renderVariantsPreview = () => {
 };
 
 /** Рендерит домики/палатки внутрь найденного блока
- * Ищет ноды по параметру data-render-variants
- * Извлекает data-render-variants и data-render-preview
+ * Ищет ноды по параметру data-render-list
+ * Извлекает data-render-list и data-render-preview
  */
-const renderVariants = () => {
-  const variants_nodes = document.querySelectorAll("[data-render-variants]");
+const renderLists = () => {
+  const variants_nodes = document.querySelectorAll("[data-render-list]");
   if (!variants_nodes || !variants_nodes.length) return;
 
   const season = localStorage.getItem("season");
 
-  function insertVariants(list, node, listName) {
+  function insertListItems(list, node, listName) {
     if (!list || !node) return;
+
+    // <article class="classic-art" data-popup="bathvat" title="Банный чан" data-list="servicesList" data-popup-type="service" data-header="Банный чан">
+    // </article>
 
     list.forEach((l, ind) => {
       node.insertAdjacentHTML(
         "beforeend",
         `
-        <div class="varItem" onclick="openVariantGallery('${listName}', ${ind})">
+        <article class="varItem" onclick="openVariantGallery('${listName}', ${ind})" 
+        ${l.id ? `data-popup="${l.id}"` : ""} 
+        ${l.title ? `title="${l.title}" data-header="${l.title}"` : ""}
+        data-list="${listName}" data-popup-type="${l.popUpType}">
           <div class="varHeader">
-            <img class="varIcon" role="none" src="${iconLinks[listName]}?color=%23EEF0F2&height=20px" />
+          ${
+            iconLinks[listName]
+              ? `<img class="varIcon" role="none" src="${iconLinks[listName]}?color=%23EEF0F2&height=20px" />`
+              : ""
+          }
             <p class="varTitle">${l.title}</p>
           </div>
-          <img loading="lazy" class="varPreview" src="${l.images[season][0]}" alt="Домики и палатки в глэмпинге Терруар: ${l.title}" />
+          ${l.shortDescr ? `<p>${l.shortDescr}</p>` : ""}
+          <img loading="lazy" class="varPreview" src="${
+            l.images?.[season]?.[0] ? l.images[season][0] : l.images[0]
+          }" alt="Домики и палатки в глэмпинге Терруар: ${l.title}" />
           <p class="varShowMore">Смотреть фото</p>
-        </div>
+        </article>
         `
       );
     });
@@ -490,7 +503,7 @@ const renderVariants = () => {
   variants_nodes.forEach((el) => {
     el.innerHTML = "";
 
-    const listName = el.getAttribute("data-render-variants");
+    const listName = el.getAttribute("data-render-list");
     const isPreview = el.getAttribute("data-render-preview");
 
     el.id = `gallery-${listName}`;
@@ -501,13 +514,13 @@ const renderVariants = () => {
       setTimeout(() => {
         initGallery(
           `gallery-${listName}`,
-          "houses-arrow-next",
-          "houses-arrow-prev"
+          `${listName}-arrow-next`,
+          `${listName}-arrow-prev`
         );
       }, 1000);
     }
 
-    insertVariants(lists[listName], el, listName);
+    insertListItems(lists[listName], el, listName);
   });
 };
 
@@ -704,11 +717,16 @@ const loyaltyWorker = () => {
 const seasonTapesRender = () => {
   const season = localStorage.getItem("season");
   const renderATape = (el) => {
-    el.style = "order: 1;";
+    const node = el.parentElement;
     el.insertAdjacentHTML(
       "beforeend",
       '<div class="a-tape"><p>Закрыто на сезон</p><p>Закрыто на сезон</p><p>Закрыто на сезон</p></div>'
     );
+    const copy = el.cloneNode();
+    copy.innerHTML = el.innerHTML;
+    
+    el.remove();
+    node.append(copy);
   };
   const articles = Array.from(document.querySelectorAll("article"));
   const elForTapping = articles.filter((el) => {
@@ -1433,13 +1451,16 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   multipage
     .getHeaderHeight()
+    .then(renderLists)
     // TODO замени на новый рендер
     .then(renderVariantsPreview)
-    .then(renderVariants)
     .then(whereToRenderCounter)
     .then(multipage.renderFAQ)
     .then(renderOffers)
-    .then(loyaltyWorker);
+    .then(loyaltyWorker)
+    .then(seasonTapesRender);
+
+  ;
 
   setTimeout(() => {
     // console.clear()

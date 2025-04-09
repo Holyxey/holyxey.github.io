@@ -1,0 +1,19 @@
+@import "tailwindcss";
+@font-face {
+    font-family: Unbounded;
+    src: url('/fonts/Unbounded-Variable.woff2');
+}
+
+@theme {
+    --color-back: #1e1b23;
+    --color-wine: #a4315b;
+    --color-white: #EEF0F2;
+    --color-yellow: #F8F3C8;
+
+    --font-roboto: "Roboto", sans-serif;
+    --font-unboun: "Unbounded", sans-serif;
+}
+
+@utility basic-button {
+    @apply cursor-pointer! transition-all! py-3! px-6! block! rounded-2xl! m-0! w-fit! text-white!  active:scale-99! hover:inset-shadow-2xs! inset-shadow-neutral-700;
+}

@@ -1,0 +1,310 @@
+[
+	{
+		"category": "target",
+		"name": "Регистрации на Летний кампус Skillbox за 360₽",
+		"link": "/skillbox",
+		"title": "Таргетированная реклама в ВК",
+		"cover": "https://holyxey.github.io/public/AdsTarget/cases/casesImgs/skillbox.webp"
+	},
+	{
+		"category": "context",
+		"name": "Продажа ювелирных изделий на Авито",
+		"link": "/avito_jewelry",
+		"title": "Контекстная реклама на Авито",
+		"cover": "https://holyxey.github.io/public/AdsTarget/cases/casesImgs/avito_jewelry.webp"
+	},
+	{
+		"category": "target",
+		"name": "Соискатели из TikTok для СберМаркета за 240₽",
+		"link": "/hh_tiktok",
+		"title": "Таргетированная реклама в TikTok",
+		"cover": "https://holyxey.github.io/public/AdsTarget/cases/casesImgs/hh_tiktok.webp"
+	},
+	{
+		"category": "webdev",
+		"name": "Welton Club Hotel & Apartments",
+		"link": "https://weltonhotel.ru/",
+		"title": "Разработка сайта",
+		"cover": "https://holyxey.github.io/public/AdsTarget/cases/casesImgs/welton_m.webp"
+	},
+	{
+		"category": "webdev",
+		"name": "Кейтеринг премиум-класса",
+		"link": "https://privilege.catering",
+		"title": "Разработка сайта",
+		"cover": "https://holyxey.github.io/public/AdsTarget/cases/casesImgs/privilege_m.webp"
+	},
+	{
+		"category": "content",
+		"name": "Полный sold out отеля благодаря контенту",
+		"link": "/duplex_content",
+		"title": "Создание контента",
+		"cover": "https://holyxey.github.io/public/AdsTarget/cases/casesImgs/duplex_content.webp"
+	},
+	{
+		"category": "target",
+		"name": "Telegram-канал с нуля до 28 тысяч подписчиков",
+		"link": "/evrasia_tg",
+		"title": "Реклама в Telegram + чат-бот",
+		"cover": "https://holyxey.github.io/public/AdsTarget/cases/casesImgs/evrasia_tg.webp"
+	},
+	{
+		"category": "webdev",
+		"name": "Глэмпинг в лесу с панорамными видами",
+		"link": "https://terruarhome.ru/",
+		"title": "Разработка сайта",
+		"cover": "https://holyxey.github.io/public/AdsTarget/cases/casesImgs/terruar_m.webp"
+	},
+	{
+		"category": "webdev",
+		"name": "Детская школа балета",
+		"link": "https://baletika.ru",
+		"title": "Разработка сайта",
+		"cover": "https://holyxey.github.io/public/AdsTarget/cases/casesImgs/baletika_m.webp"
+	},
+	{
+		"category": "target",
+		"name": "Рост показателей рекламы в 6 раз",
+		"link": "/jewerly",
+		"title": "Таргетированная реклама в ВК",
+		"cover": "https://holyxey.github.io/public/AdsTarget/cases/casesImgs/jewerly.webp"
+	},
+	{
+		"category": "webdev",
+		"name": "Спектакль «Место, которого ещё не было»",
+		"link": "https://mesto.dance/",
+		"title": "Разработка сайта",
+		"cover": "https://holyxey.github.io/public/AdsTarget/cases/casesImgs/mesto_m.webp"
+	},
+	{
+		"category": "target",
+		"name": "28 миллионов выручки с рекламы ресторана",
+		"link": "/evrasia_loyalty",
+		"title": "Таргетированная реклама в ВК",
+		"cover": "https://holyxey.github.io/public/AdsTarget/cases/casesImgs/evrasia_loyalty.webp"
+	},
+	{
+		"category": "content",
+		"name": "Смена имиджа через визуальный контент",
+		"link": "/image",
+		"title": "Создание контента",
+		"cover": "https://holyxey.github.io/public/AdsTarget/cases/casesImgs/image.webp"
+	},
+	{
+		"category": "webdev",
+		"name": "Сайт танцевального спектакля «Непокой»",
+		"link": "https://nepokoi.art/",
+		"title": "Разработка сайта",
+		"cover": "https://holyxey.github.io/public/AdsTarget/cases/casesImgs/nepokoi_m.webp"
+	},
+	{
+		"category": "webdev",
+		"name": "Продажа курсов инвестора",
+		"link": "https://supremehuckster.ru/premium/",
+		"title": "Разработка сайта",
+		"cover": "https://holyxey.github.io/public/AdsTarget/cases/casesImgs/supreme_m.webp"
+	},
+	{
+		"category": "target",
+		"name": "Заполнили глэмпинг при хаосе событий 2022 года",
+		"link": "/thegarden",
+		"title": "Комплексный маркетинг",
+		"cover": "https://holyxey.github.io/public/AdsTarget/cases/casesImgs/thegarden.webp"
+	},
+	{
+		"category": "target",
+		"name": "Соискатели из ВК для Пятёрочки за 410₽",
+		"link": "/hh_pyaterochka",
+		"title": "Таргетированная реклама в ВК",
+		"cover": "https://holyxey.github.io/public/AdsTarget/cases/casesImgs/hh_pyaterochka.webp"
+	},
+	{
+		"category": "target",
+		"name": "Миллион за месяц на клубничных букетах",
+		"link": "/klubnika",
+		"title": "Таргетированная реклама в Inst",
+		"cover": "https://holyxey.github.io/public/AdsTarget/cases/casesImgs/klubnika.webp"
+	},
+	{
+		"category": "target",
+		"name": "Продвижение начинающего музыканта",
+		"link": "/kintelps",
+		"title": "Таргетированная реклама в ВК",
+		"cover": "https://holyxey.github.io/public/AdsTarget/cases/casesImgs/kintelps.webp"
+	},
+	{
+		"category": "webdev",
+		"name": "Концептуальный бар «Поток»",
+		"link": "/potok",
+		"title": "Разработка сайта",
+		"cover": "https://holyxey.github.io/public/AdsTarget/cases/casesImgs/potok.webp"
+	},
+	{
+		"category": "target",
+		"name": "3 500 откликов на вакансии в ресторан",
+		"link": "/evrasia",
+		"title": "Таргетированная реклама в ВК",
+		"cover": "https://holyxey.github.io/public/AdsTarget/cases/casesImgs/evrasia.webp"
+	},
+	{
+		"category": "webdev",
+		"name": "Клиника красоты и здоровья KIZ clinic",
+		"link": "/kizclinic",
+		"title": "Разработка сайта",
+		"cover": "https://holyxey.github.io/public/AdsTarget/cases/casesImgs/kizclinic.webp"
+	},
+	{
+		"category": "target",
+		"name": "386 продаж одежды более чем на 5 млн.руб.",
+		"link": "/clothing_store",
+		"title": "Таргетированная реклама в Inst",
+		"cover": "https://holyxey.github.io/public/AdsTarget/cases/casesImgs/clothing_store.webp"
+	},
+	{
+		"category": "webdev",
+		"name": "Сайт для детского центра развития Кидкорт",
+		"link": "https://kidkort.ru/",
+		"title": "Разработка сайта",
+		"cover": "https://holyxey.github.io/public/AdsTarget/cases/casesImgs/kidkort.webp"
+	},
+	{
+		"category": "target",
+		"name": "100% бронь глэмпинга на Алтае за 2 месяца",
+		"link": "/altai",
+		"title": "Таргетированная реклама в Inst",
+		"cover": "https://holyxey.github.io/public/AdsTarget/cases/casesImgs/altai.webp"
+	},
+	{
+		"category": "webdev",
+		"name": "Студия мужских стрижек PROCUT",
+		"link": "/procut",
+		"title": "Разработка сайта",
+		"cover": "https://holyxey.github.io/public/AdsTarget/cases/casesImgs/procut.webp"
+	},
+	{
+		"category": "target",
+		"name": "1 610 заявок для студии Дианы Вишнёвой",
+		"link": "/context",
+		"title": "Таргетированная реклама в Inst",
+		"cover": "https://holyxey.github.io/public/AdsTarget/cases/casesImgs/context.webp"
+	},
+	{
+		"category": "target",
+		"name": "Увеличили брони отеля на 40% во время ковида",
+		"link": "/hotels-pb",
+		"title": "Таргетированная реклама в Inst",
+		"cover": "https://holyxey.github.io/public/AdsTarget/cases/casesImgs/hotels-pb.webp"
+	},
+	{
+		"category": "webdev",
+		"name": "Клиника врачебной косметологии КВК",
+		"link": "/kvk",
+		"title": "Разработка сайта",
+		"cover": "https://holyxey.github.io/public/AdsTarget/cases/casesImgs/kvk.webp"
+	},
+	{
+		"category": "target",
+		"name": "Раскрутка «нулевой» группы арт-кофейни",
+		"link": "/hostcoffee",
+		"title": "Таргетированная реклама в ВК",
+		"cover": "https://holyxey.github.io/public/AdsTarget/cases/casesImgs/hostcoffee.webp"
+	},
+	{
+		"category": "webdev",
+		"name": "Mouse House - семейный клуб и ресторан.",
+		"link": "https://m-house.ru/about",
+		"title": "Разработка сайта",
+		"cover": "https://holyxey.github.io/public/AdsTarget/cases/casesImgs/mousehouse_m.webp"
+	},
+	{
+		"category": "target",
+		"name": "140 лидов для производителя купелей",
+		"link": "/kupelvmetel",
+		"title": "Таргетированная реклама в ВК",
+		"cover": "https://holyxey.github.io/public/AdsTarget/cases/casesImgs/kupelvmetel.webp"
+	},
+	{
+		"category": "target",
+		"name": "306 руб за заявки на мед образование",
+		"link": "/mado",
+		"title": "Таргетированная реклама в ВК",
+		"cover": "https://holyxey.github.io/public/AdsTarget/cases/casesImgs/mado.webp"
+	},
+	{
+		"category": "target",
+		"name": "146 заявок для детского развивающего центра",
+		"link": "/kidkort_target",
+		"title": "Таргетированная реклама в ВК",
+		"cover": "https://holyxey.github.io/public/AdsTarget/cases/casesImgs/kidkort_target.webp"
+	},
+	{
+		"category": "target",
+		"name": "650 проданных билетов на детский спектакль",
+		"link": "/gerda",
+		"title": "Таргетированная реклама в ВК",
+		"cover": "https://holyxey.github.io/public/AdsTarget/cases/casesImgs/gerda.webp"
+	},
+	{
+		"category": "target",
+		"name": "Заявки дешевле KPI для врачебной косметологии",
+		"link": "/vrach_cosmetology_nsk",
+		"title": "Таргетированная реклама в ВК",
+		"cover": "https://holyxey.github.io/public/AdsTarget/cases/casesImgs/vrach_cosmetology_nsk.webp"
+	},
+	{
+		"category": "target",
+		"name": "700 заявок на новогоднюю ночь",
+		"link": "/newyear",
+		"title": "Таргетированная реклама в ВК",
+		"cover": "https://holyxey.github.io/public/AdsTarget/cases/casesImgs/newyear.webp"
+	},
+	{
+		"category": "target",
+		"name": "Доносим до ЦА ребрендинг ресторана",
+		"link": "/mousehouse",
+		"title": "Таргетированная реклама в ВК",
+		"cover": "https://holyxey.github.io/public/AdsTarget/cases/casesImgs/mousehouse.webp"
+	},
+	{
+		"category": "target",
+		"name": "31 продажа новогодней фотосессии",
+		"link": "/photo",
+		"title": "Таргетированная реклама в ВК",
+		"cover": "https://holyxey.github.io/public/AdsTarget/cases/casesImgs/photo.webp"
+	},
+	{
+		"category": "target",
+		"name": "Рост броней коттеджей в условиях ограничений",
+		"link": "/strawberry_fields",
+		"title": "Таргетированная реклама в Inst",
+		"cover": "https://holyxey.github.io/public/AdsTarget/cases/casesImgs/strawberry_fields.webp"
+	},
+	{
+		"category": "target",
+		"name": "Продажа онлайн-курса для косметологов",
+		"link": "/ayna_kurs_nachinayushie",
+		"title": "Таргетированная реклама в ВК",
+		"cover": "https://holyxey.github.io/public/AdsTarget/cases/casesImgs/ayna_kurs_nachinayushie.webp"
+	},
+	{
+		"category": "target",
+		"name": "Programmatic для сети ресторанов Евразия",
+		"link": "/eurasia",
+		"title": "Programmatic-реклама",
+		"cover": "https://holyxey.github.io/public/AdsTarget/cases/casesImgs/eurasia.webp"
+	},
+	{
+		"category": "target",
+		"name": "Заявки по 158 руб. на поздравления детей",
+		"link": "/animashki",
+		"title": "Таргетированная реклама в ВК",
+		"cover": "https://holyxey.github.io/public/AdsTarget/cases/casesImgs/animashki.webp"
+	},
+	{
+		"category": "context",
+		"name": "Продажа ангаров на Авито",
+		"link": "/avito_angar",
+		"title": "Реклама на Авито",
+		"cover": "https://holyxey.github.io/public/AdsTarget/cases/casesImgs/avito_angar.webp"
+	}
+]
