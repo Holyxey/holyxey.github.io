@@ -18,7 +18,7 @@ if (cases_node) {
 	const cases_wrapper = document.createElement("section");
 	const cases_ul = document.createElement("ul");
 
-	cases_wrapper.classList.add("max-w-6xl!", "mx-auto!", "relative!");
+	cases_wrapper.classList.add("relative!");
 
 	cases_wrapper.append(cases_ul);
 	cases_node.append(cases_wrapper);
@@ -32,9 +32,7 @@ if (cases_node) {
 		"grid-cols-1!",
 		"gap-4!",
 		"gap-y-8!",
-		"font-geometria!",
 		"text-balance!",
-		"px-4!",
 
 		"xl:px-0!",
 	);
@@ -219,9 +217,9 @@ if (cases_node) {
 		button.href = "/cases";
 		button.textContent = "Посмотреть все";
 		button.classList.add(
+			"sticky!",
 			"block!",
 			"font-geometria!",
-			"sticky!",
 			"bottom-2!",
 			"left-4!",
 			"right-4!",

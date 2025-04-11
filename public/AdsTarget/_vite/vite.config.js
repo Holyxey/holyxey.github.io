@@ -12,18 +12,17 @@ export default defineConfig({
 	build: {
 		rollupOptions: {
 			input: {
-				main: resolve(__dirname, "index.html"),
-				partners: resolve(__dirname, "partners/index.html"),
-				staff: resolve(__dirname, "staff/index.html"),
-				cases: resolve(__dirname, "cases/index.html"),
-				tarifs: resolve(__dirname, "tarifs/index.html"),
-				contacts: resolve(__dirname, "contacts/index.html"),
+				main: resolve(__dirname, "/index.html"),
+				partners: resolve(__dirname, "/views/partners/index.html"),
+				staff: resolve(__dirname, "/views/staff/index.html"),
+				cases: resolve(__dirname, "/views/cases/index.html"),
+				tarifs: resolve(__dirname, "/views/tariffs/index.html"),
 			},
 		},
 	},
 
-	// server: {
-	// 	host: "0.0.0.0",
-	// 	port: "3030",
-	// },
+	server: {
+		// 	host: "0.0.0.0",
+		port: "3000",
+	},
 });

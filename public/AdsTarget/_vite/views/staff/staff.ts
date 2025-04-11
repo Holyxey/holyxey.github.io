@@ -1,4 +1,4 @@
-import { People, staff_list } from "../staff/staff_list";
+import { People, staff_list } from "./staff_list.ts";
 
 const staff_node: HTMLElement | null = document.getElementById("staff");
 
@@ -18,11 +18,9 @@ if (staff_node) {
 		"grid-flow-row!",
 		"grid-cols-2!",
 		"gap-4!",
-		"px-4!",
-		"font-geometria!",
-		"max-w-6xl!",
+		"m-0!",
+		"p-0!",
 		"transition-all!",
-		"mx-auto!",
 		"list-none!",
 		"text-balance!",
 	);
