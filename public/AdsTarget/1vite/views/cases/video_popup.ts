@@ -6,7 +6,7 @@ const popUpClass = [
 	"h-full!",
 	"bg-[#00000030]",
 	"backdrop-blur-sm!",
-	"z-50!",
+	"z-999!",
 	"flex!",
 	"items-center!",
 	"justify-center!",
