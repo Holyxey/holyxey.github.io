@@ -8,7 +8,7 @@ const tilda_header = document.getElementById("headerM");
 
 const filter_node_styles = [
 	"md:sticky!",
-	tilda_header ? "top-[100px]!" : "top-2!",
+	tilda_header ? "md:top-[100px]!" : "top-2!",
 
 	"grid!",
 	"grid-flow-row!",

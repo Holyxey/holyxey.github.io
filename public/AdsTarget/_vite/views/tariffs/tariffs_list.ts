@@ -4,6 +4,7 @@ export type Tariff = {
 	hours: number;
 	cover: string;
 	price: number;
+	additional_hour_price: number;
 	time_tracking?: boolean;
 	time_transfering?: number;
 };
@@ -17,6 +18,7 @@ const tariffs: Tariff[] = [
 			"https://thumb.tildacdn.com/tild3431-6130-4366-b065-623133363635/-/format/webp/pexels-photo-1038001.jpeg",
 		price: 15000,
 		time_tracking: true,
+		additional_hour_price: 3000,
 	},
 	{
 		tag: "extended",
@@ -27,6 +29,7 @@ const tariffs: Tariff[] = [
 		price: 27000,
 		time_tracking: true,
 		time_transfering: 2,
+		additional_hour_price: 3000,
 	},
 	{
 		tag: "maximum",
@@ -37,6 +40,7 @@ const tariffs: Tariff[] = [
 		price: 75000,
 		time_tracking: true,
 		time_transfering: 5,
+		additional_hour_price: 3000,
 	},
 ];
 

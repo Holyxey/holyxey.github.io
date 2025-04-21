@@ -7,6 +7,14 @@
 		"cover": "https://holyxey.github.io/public/AdsTarget/cases/casesImgs/skillbox.webp"
 	},
 	{
+		"category": "videoprodiction",
+		"name": "Вдохновение от Евразии",
+		"link": "https://rutube.ru/play/embed/b72c8b47379da24057b01f9e80a8a5eb?autoplay=1",
+		"title": "Видеопроизводство",
+		"cover": "https://static.tildacdn.com/tild3036-6566-4333-b066-663238636431/photo.jpg",
+		"gif": "/views/cases/img/video/Вдохновение.gif"
+	},
+	{
 		"category": "context",
 		"name": "Продажа ювелирных изделий на Авито",
 		"link": "/avito_jewelry",
@@ -33,6 +41,14 @@
 		"link": "https://privilege.catering",
 		"title": "Разработка сайта",
 		"cover": "https://holyxey.github.io/public/AdsTarget/cases/casesImgs/privilege_m.webp"
+	},
+	{
+		"category": "videoprodiction",
+		"name": "ЕВРАЗИЯ 20 ЛЕТ!",
+		"link": "https://rutube.ru/play/embed/488089514c37d3b74fd7a5d84217a993?autoplay=1",
+		"title": "Видеопроизводство",
+		"cover": "https://static.tildacdn.com/tild3730-3633-4362-b034-376431323639/_20.jpg",
+		"gif": "/views/cases/img/video/ЕВРАЗИЯ_20.gif"
 	},
 	{
 		"category": "content",
@@ -105,11 +121,27 @@
 		"cover": "https://holyxey.github.io/public/AdsTarget/cases/casesImgs/supreme_m.webp"
 	},
 	{
+		"category": "videoprodiction",
+		"name": "Евразия-любовь!",
+		"link": "https://rutube.ru/play/embed/e9fe60b702c6672931436e7abfc5fddc?autoplay=1",
+		"title": "Видеопроизводство",
+		"cover": "https://static.tildacdn.com/tild3162-3531-4430-a633-323635363735/_.jpg",
+		"gif": "/views/cases/img/video/Евразия_Любовь.gif"
+	},
+	{
 		"category": "target",
 		"name": "Заполнили глэмпинг при хаосе событий 2022 года",
 		"link": "/thegarden",
 		"title": "Комплексный маркетинг",
 		"cover": "https://holyxey.github.io/public/AdsTarget/cases/casesImgs/thegarden.webp"
+	},
+	{
+		"category": "videoprodiction",
+		"name": "Стейк давай",
+		"link": "https://rutube.ru/play/embed/c283cf4024e5d310a1ded8ad7e6d2c58?autoplay=1",
+		"title": "Видеопроизводство",
+		"cover": "https://static.tildacdn.com/tild6161-3435-4361-b766-373461363339/photo.jpg",
+		"gif": "/views/cases/img/video/СТЕЙК.gif"
 	},
 	{
 		"category": "target",
@@ -140,6 +172,14 @@
 		"cover": "https://holyxey.github.io/public/AdsTarget/cases/casesImgs/potok.webp"
 	},
 	{
+		"category": "videoprodiction",
+		"name": "EVRASIA DANCE",
+		"link": "https://rutube.ru/play/embed/28f45ec602e46310a6e663f9f80d1762?autoplay=1",
+		"title": "Видеопроизводство",
+		"cover": "https://static.tildacdn.com/tild3538-3462-4266-a666-396137656266/EVRASIA_DANCE.jpg",
+		"gif": "/views/cases/img/video/EVRASIA_DANCE.gif"
+	},
+	{
 		"category": "target",
 		"name": "3 500 откликов на вакансии в ресторан",
 		"link": "/evrasia",
@@ -152,6 +192,14 @@
 		"link": "/kizclinic",
 		"title": "Разработка сайта",
 		"cover": "https://holyxey.github.io/public/AdsTarget/cases/casesImgs/kizclinic.webp"
+	},
+	{
+		"category": "videoprodiction",
+		"name": "Евразия Евро 2020",
+		"link": "https://rutube.ru/play/embed/a273b202c19e0afe9e4b951981e21fbe?autoplay=1",
+		"title": "Видеопроизводство",
+		"cover": "https://static.tildacdn.com/tild3636-6663-4130-b261-636336633131/_.jpg",
+		"gif": "/views/cases/img/video/Евразия_Евро.gif"
 	},
 	{
 		"category": "target",
