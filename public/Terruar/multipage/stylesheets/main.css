@@ -739,6 +739,7 @@ a[href^="https://bronirui-online.ru/module?utm_source"] {
     cursor: pointer;
     transition: all .3s ease-out;
     max-width: 500px;
+    min-width: fit-content;
     scroll-snap-align: center;
 
     &:hover {

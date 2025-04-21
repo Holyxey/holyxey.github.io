@@ -1,0 +1,84 @@
+@layer theme, components, utilities;
+
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
+
+@theme {
+	--color-pink: #ff4f92;
+	--color-blue: #5ed7cf;
+
+	--color-blue-50: #f1fcfa;
+	--color-blue-100: #d1f6f1;
+	--color-blue-200: #a3ece5;
+	--color-blue-300: #5ed7cf;
+	--color-blue-400: #3fc2bd;
+	--color-blue-500: #26a6a4;
+	--color-blue-600: #1c8485;
+	--color-blue-700: #1a6a6b;
+	--color-blue-800: #195456;
+	--color-blue-900: #194848;
+	--color-blue-950: #09272a;
+
+	--font-geometria: "Geometria", Helvetica, Tahoma, sans-serif;
+
+	--animate-show: show_case 1s ease-out forwards;
+}
+
+@layer utilities {
+	html {
+		@apply scroll-smooth!;
+	}
+	[id] {
+		@apply scroll-mt-[120px]!;
+	}
+
+	.scrollbar {
+		scrollbar-width: none;
+		-ms-overflow-style: none;
+	}
+
+	.scrollbar::-webkit-scrollbar {
+		display: none;
+	}
+
+	.scrollbar\! {
+		scrollbar-width: none !important;
+		-ms-overflow-style: none !important;
+	}
+
+	.scrollbar\!::-webkit-scrollbar {
+		display: none !important;
+	}
+
+	.section {
+		@apply font-geometria! mx-auto! max-w-6xl! px-4!;
+	}
+
+	.text-h1 {
+		@apply my-0! pb-6! text-4xl! font-medium! text-stone-600 transition-all! md:text-5xl!;
+	}
+
+	.text-h2 {
+		@apply my-0! text-3xl! font-medium! text-stone-600 transition-all! md:text-4xl!;
+	}
+
+	.text-p {
+		@apply my-0! text-lg! font-normal! text-stone-600 transition-all! md:text-2xl!;
+	}
+
+	.button {
+		@apply font-geometria! block! cursor-pointer! truncate! rounded-lg! border-0! px-4! py-3! text-base! no-underline! shadow-md! outline-2! transition-all! hover:-translate-y-1! hover:scale-102! hover:shadow-xl! active:-translate-0! active:scale-100! active:shadow-sm!;
+	}
+}
+
+@keyframes show_case {
+	from {
+		opacity: 0;
+		translate: 0 1rem;
+	}
+
+	to {
+		opacity: 1;
+		translate: 0 0;
+	}
+}
