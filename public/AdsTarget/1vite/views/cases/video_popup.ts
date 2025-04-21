@@ -4,7 +4,7 @@ const popUpClass = [
 	"left-0!",
 	"w-full!",
 	"h-full!",
-  "bg-[#00000030]",
+	"bg-[#00000030]",
 	"backdrop-blur-sm!",
 	"z-50!",
 	"flex!",
@@ -12,9 +12,9 @@ const popUpClass = [
 	"justify-center!",
 ];
 const iframeClass = [
-  "bg-stone-700!",
+	"bg-stone-700!",
 	"w-full!",
-  "md:w-3/4!",
+	"md:w-3/4!",
 	"m-4!",
 	"animate-show!",
 	"aspect-video!",

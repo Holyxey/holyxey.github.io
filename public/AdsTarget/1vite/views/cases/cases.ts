@@ -215,13 +215,13 @@ export function renderCases() {
 			link.textContent = c.link.startsWith("/") ? "Подробнее" : "Результат";
 			link.target = "_blank";
 			link.classList.add(...caseStyles.link);
-			link.title = c.name
+			link.title = c.name;
 
 			// videoprodiction
-			if (c.category === 'videoprodiction') {
-				link.textContent = 'Воспроизвести'
-				link.removeAttribute('href')
-				link.removeAttribute('target')
+			if (c.category === "videoprodiction") {
+				link.textContent = "Воспроизвести";
+				link.removeAttribute("href");
+				link.removeAttribute("target");
 			}
 
 			//
@@ -233,10 +233,9 @@ export function renderCases() {
 
 			//
 			li.addEventListener("click", () => {
-				if (c.category === 'videoprodiction') {
-					openVideoPopup(c.link)
-				}
-				else link.click()
+				if (c.category === "videoprodiction") {
+					openVideoPopup(c.link);
+				} else link.click();
 			});
 			if (window.innerWidth < 600) mobile_observer.observe(li);
 		}

@@ -1,7 +1,13 @@
 export type Case = {
 	name: string;
 	title: string;
-	category: "all" | "target" | "webdev" | "content" | "avito" | "videoprodiction";
+	category:
+		| "all"
+		| "target"
+		| "webdev"
+		| "content"
+		| "avito"
+		| "videoprodiction";
 	link: string;
 	cover: string;
 	gif?: string;
