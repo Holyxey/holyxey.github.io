@@ -7,7 +7,7 @@ export type Case = {
 		| "webdev"
 		| "content"
 		| "avito"
-		| "videoprodiction";
+		| "videoproduction";
 	link: string;
 	cover: string;
 	gif?: string;

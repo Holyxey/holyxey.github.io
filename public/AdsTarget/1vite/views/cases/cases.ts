@@ -217,8 +217,8 @@ export function renderCases() {
 			link.classList.add(...caseStyles.link);
 			link.title = c.name;
 
-			// videoprodiction
-			if (c.category === "videoprodiction") {
+			// videoproduction
+			if (c.category === "videoproduction") {
 				link.textContent = "Воспроизвести";
 				link.removeAttribute("href");
 				link.removeAttribute("target");
@@ -233,7 +233,7 @@ export function renderCases() {
 
 			//
 			li.addEventListener("click", () => {
-				if (c.category === "videoprodiction") {
+				if (c.category === "videoproduction") {
 					openVideoPopup(c.link);
 				} else link.click();
 			});
