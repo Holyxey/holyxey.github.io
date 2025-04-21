@@ -11,6 +11,10 @@ export default defineConfig({
 
 	build: {
 		rollupOptions: {
+			output: {
+				assetFileNames: "adstarget_vite.css",
+				chunkFileNames: "adstarget_vite.js",
+			},
 			input: {
 				main: resolve(__dirname, "/index.html"),
 				partners: resolve(__dirname, "/views/partners/index.html"),
