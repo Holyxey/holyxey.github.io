@@ -7,12 +7,26 @@
 		"cover": "https://holyxey.github.io/public/AdsTarget/cases/casesImgs/skillbox.webp"
 	},
 	{
+		"category": "target",
+		"name": "Как привлечь 360 студентов IThub College через ВК и Яндекс Директ",
+		"link": "/ithub_college",
+		"title": "Таргетированная реклама в ВК",
+		"cover": "https://optim.tildacdn.com/tild6562-3465-4839-b134-633432636133/-/format/webp/kNpoBrBU4K4.jpg.webp"
+	},
+	{
 		"category": "videoproduction",
 		"name": "Вдохновение от Евразии",
 		"link": "https://rutube.ru/play/embed/b72c8b47379da24057b01f9e80a8a5eb?autoplay=1",
 		"title": "Видеопроизводство",
 		"cover": "https://static.tildacdn.com/tild3036-6566-4333-b066-663238636431/photo.jpg",
 		"gif": "https://s6.gifyu.com/images/bpijx.gif"
+	},
+	{
+		"category": "webdev",
+		"name": "Welton Club Hotel & Apartments",
+		"link": "https://weltonhotel.ru/",
+		"title": "Разработка сайта",
+		"cover": "https://holyxey.github.io/public/AdsTarget/cases/casesImgs/welton_m.webp"
 	},
 	{
 		"category": "context",
@@ -27,13 +41,6 @@
 		"link": "/hh_tiktok",
 		"title": "Таргетированная реклама в TikTok",
 		"cover": "https://holyxey.github.io/public/AdsTarget/cases/casesImgs/hh_tiktok.webp"
-	},
-	{
-		"category": "webdev",
-		"name": "Welton Club Hotel & Apartments",
-		"link": "https://weltonhotel.ru/",
-		"title": "Разработка сайта",
-		"cover": "https://holyxey.github.io/public/AdsTarget/cases/casesImgs/welton_m.webp"
 	},
 	{
 		"category": "webdev",
