@@ -19,7 +19,7 @@
 		"link": "https://rutube.ru/play/embed/b72c8b47379da24057b01f9e80a8a5eb?autoplay=1",
 		"title": "Видеопроизводство",
 		"cover": "https://static.tildacdn.com/tild3036-6566-4333-b066-663238636431/photo.jpg",
-		"gif": "https://s6.gifyu.com/images/bpijx.gif"
+		"gif": "https://s4.gifyu.com/images/bpf1g.gif"
 	},
 	{
 		"category": "webdev",
@@ -29,11 +29,11 @@
 		"cover": "https://holyxey.github.io/public/AdsTarget/cases/casesImgs/welton_m.webp"
 	},
 	{
-		"category": "context",
-		"name": "Продажа ювелирных изделий на Авито",
-		"link": "/avito_jewelry",
-		"title": "Контекстная реклама на Авито",
-		"cover": "https://holyxey.github.io/public/AdsTarget/cases/casesImgs/avito_jewelry.webp"
+		"category": "target",
+		"name": "Telegram-канал с нуля до 28 тысяч подписчиков",
+		"link": "/evrasia_tg",
+		"title": "Реклама в Telegram + чат-бот",
+		"cover": "https://holyxey.github.io/public/AdsTarget/cases/casesImgs/evrasia_tg.webp"
 	},
 	{
 		"category": "target",
@@ -63,13 +63,6 @@
 		"link": "/duplex_content",
 		"title": "Создание контента",
 		"cover": "https://holyxey.github.io/public/AdsTarget/cases/casesImgs/duplex_content.webp"
-	},
-	{
-		"category": "target",
-		"name": "Telegram-канал с нуля до 28 тысяч подписчиков",
-		"link": "/evrasia_tg",
-		"title": "Реклама в Telegram + чат-бот",
-		"cover": "https://holyxey.github.io/public/AdsTarget/cases/casesImgs/evrasia_tg.webp"
 	},
 	{
 		"category": "webdev",
@@ -119,6 +112,13 @@
 		"link": "https://nepokoi.art/",
 		"title": "Разработка сайта",
 		"cover": "https://holyxey.github.io/public/AdsTarget/cases/casesImgs/nepokoi_m.webp"
+	},
+	{
+		"category": "context",
+		"name": "Продажа ювелирных изделий на Авито",
+		"link": "/avito_jewelry",
+		"title": "Контекстная реклама на Авито",
+		"cover": "https://holyxey.github.io/public/AdsTarget/cases/casesImgs/avito_jewelry.webp"
 	},
 	{
 		"category": "webdev",
