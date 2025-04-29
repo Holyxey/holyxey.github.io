@@ -1,6 +1,7 @@
 function holyxey() {
-    let addCommentHolyxey = document.createComment('Site design and supporting at AdsTarget by Holyxey');
-    document.documentElement.prepend(addCommentHolyxey);
+    let addCommentHolyxey = document.createComment('Дизайн, разработка: Holyxey.com');
+    let addCommentAdsTarget = document.createComment('Продвижение бизнеса: AdsTarget.ru');
+    document.prepend(addCommentHolyxey, addCommentAdsTarget);
 }
 const holyxeySchema = () => {
     let schemaData = {
@@ -37,9 +38,7 @@ function backUTMButton() {
     if (location.href.includes('?utm_source=AdsTarget') && document.referrer.includes('adstarget')) {
         let bb = document.createElement("a")
         // let referrerLink = document.referrer
-        bb.onclick = () => {
-            history.back()
-        }
+        bb.href = 'https://adstarget.ru/?utm_source=Holyxey'
         bb.style.cssText = `
         position: fixed!important;
         top: 2rem!important;
