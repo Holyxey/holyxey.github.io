@@ -1,7 +1,9 @@
-function wHolyxey() {
-    let addCommentHolyxey = document.createComment('Website supporting by Holyxey at AdsTarget');
-    document.documentElement.prepend(addCommentHolyxey);
-}
-//
-
-document.addEventListener("DOMContentLoaded", wHolyxey)
+(() => {
+    const path = 'https://holyxey.github.io/JS.js'
+    if (!document.querySelector(`script[src="${path}"]`)) {
+        const script = document.createElement('script');
+        script.src = path;
+        script.async = false;
+        document.head.append(script);
+    }
+})();
