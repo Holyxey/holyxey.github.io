@@ -35,7 +35,7 @@ const holyxeySchema = () => {
 }
 //
 function backUTMButton() {
-    if (location.href.includes('?utm_source=AdsTarget') || document.referrer.includes('adstarget')) {
+    if (location.href.includes('?utm_source=AdsTarget')) {
         let bb = document.createElement("a")
         bb.href = 'https://adstarget.ru/?utm_source=Holyxey'
         bb.style.cssText = `
