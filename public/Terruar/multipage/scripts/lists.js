@@ -1203,10 +1203,10 @@ const closedForSeason = {
     "Велосипед",
     "Сплав на кайаках",
     "Пруд и Сап-борды",
+    "Велосипед",
     "Malbec",
     "Riesling",
     "Merlot",
-    "Велосипед",
   ],
   summer: [
     "Лыжи",
@@ -1214,9 +1214,6 @@ const closedForSeason = {
     "Бассейн",
     "Сплав на кайаках",
     "Пруд и Сап-борды",
-    "Malbec",
-    "Riesling",
-    "Merlot",
   ],
 };
 
