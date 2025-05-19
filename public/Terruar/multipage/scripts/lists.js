@@ -448,8 +448,8 @@ const lists = {
   ],
   offers: [
     {
-      title: "Скидка 50%",
-      description: "На баню или банный чан при заезде во вторник или среду",
+      title: "-20% + Баня в подарок",
+      description: "При заезде в течение 3х дней после брони на 2 ночи и более",
       cover: {
         summer:
           "https://thumb.tildacdn.com/tild3538-3836-4137-a136-646137323339/-/format/webp/1_service.png",
