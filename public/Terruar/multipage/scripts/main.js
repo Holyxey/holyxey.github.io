@@ -1344,14 +1344,24 @@ const whereToRenderCounter = function () {
 // Запуск трансляции
 async function videoPlayBack() {
   try {
-    const response = await fetch("https://api.holyxey.com/terruar/downloads");
-    const data = await response.json();
+    // const response = await fetch("https://api.holyxey.com/terruar/downloads");
+    // const data = await response.json();
+    // // console.log('data', data[0])
+    // document.getElementById("popup-block").insertAdjacentHTML(
+    //   "beforeend",
+    //   `<article id="video-stream" >
+    //             <video controls autoplay muted playsinline loop style="width: 100%">
+    //                 <source id="videoPlayBack" src="${data[0].url}" type="video/mp4">
+    //             </video></article>`
+    // );
+    const response = await fetch("https://terruar-stream.text-holyxey.workers.dev/getVideo");
+    // const data = await response.json();
     // console.log('data', data[0])
     document.getElementById("popup-block").insertAdjacentHTML(
       "beforeend",
       `<article id="video-stream" >
                 <video controls autoplay muted playsinline loop style="width: 100%">
-                    <source id="videoPlayBack" src="${data[0].url}" type="video/mp4">
+                    <source id="videoPlayBack" src="${response}" type="video/mp4">
                 </video></article>`
     );
   } catch (error) {
