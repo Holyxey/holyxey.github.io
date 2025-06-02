@@ -10,7 +10,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 3rem;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: stretch;
     max-width: 1200px;
     margin-inline: auto;
@@ -24,6 +24,7 @@
 
   .at_varCards .at_varCard {
     flex: 1 0 300px;
+    max-width: 350px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -111,16 +112,16 @@
       filter: grayscale(0.5);
     }
     .at_varCards .at_varCard:first-child {
-      transform: perspective(200px) skew(1deg, -1deg) rotateY(0.5deg)
-        scale(1.01);
+      /* transform: perspective(200px) skew(1deg, -1deg) rotateY(0.5deg)
+        scale(1.01); */
       &:hover {
         transform: perspective(200px) skew(1deg, -1deg) rotateX(0.5deg)
           rotateY(0.5deg) scale(1.01);
       }
     }
     .at_varCards .at_varCard:last-child {
-      transform: perspective(200px) skew(-1deg, 1deg) rotateY(-0.5deg)
-        scale(1.01);
+      /* transform: perspective(200px) skew(-1deg, 1deg) rotateY(-0.5deg)
+        scale(1.01); */
       &:hover {
         transform: perspective(200px) skew(-1deg, 1deg) rotateX(0.5deg)
           rotateY(-0.5deg) scale(1.01);
