@@ -1,0 +1,59 @@
+.at_fullCard,
+.at_fullCard * {
+  box-sizing: border-box;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.at_fullCard {
+  display: flex;
+  gap: 1rem;
+
+  font-family: 'Arial', sans-serif;
+  color: var(--at-bg);
+  background-color: var(--at-text);
+}
+.at_fullCard .at_fullCard__header {
+  position: relative;
+
+  background-position: center top;
+  background-size: cover;
+
+  flex: 1.2;
+  padding: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  /*  */
+  h4 {
+    display: inline-block;
+    width: fit-content;
+    padding: 0.75rem;
+    background-color: var(--at-text);
+    font-size: 1.5rem;
+    color: var(--at-bg);
+  }
+}
+.at_fullCard .at_fullCard__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 0.5rem;
+
+  /* list */
+  .at_fullCard__list {
+    /*  */
+    .at_fullCard__list_item {
+    }
+  }
+
+  /* buttons */
+  .at_fullCard .at_fullCard__buttons {
+    /*  */
+    a.at_fullCard__button {
+    }
+  }
+}
