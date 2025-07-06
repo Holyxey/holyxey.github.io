@@ -1,122 +1,122 @@
 #hrsctn {
-    background: url("casesImgs/altai.webp") no-repeat center left / cover;
-    z-index: 1;
+  background: url('casesImgs/altai.webp') no-repeat center left / cover;
+  z-index: 1;
+  position: relative;
 }
 #hrsctn:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    background: #00000050;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  background: #00000050;
 }
 #hero {
-    background: none;
-    color: var(--c-wht);
+  background: none;
+  color: var(--c-wht);
 }
 
 .hx-at-allcases-item {
-
 }
 
 .newCover {
-    background-position: top center!important;
+  background-position: top center !important;
 }
 #choseCategory {
-    border-color: var(--c-bl-tr);
-    background-color: white;
+  border-color: var(--c-bl-tr);
+  background-color: white;
 }
 
 .hx-at-cases-filters {
-    border: 1px solid #5ED7CF80;
-    border-radius: var(--rem-bb);
+  border: 1px solid #5ed7cf80;
+  border-radius: var(--rem-bb);
 
-    margin: 0 auto;
-    max-width: fit-content;
-    position: sticky;
-    top: 90px;
-    z-index: 995595607;
-    background-color: var(--c-wht);
+  margin: 0 auto;
+  max-width: fit-content;
+  position: sticky;
+  top: 90px;
+  z-index: 995595607;
+  background-color: var(--c-wht);
 }
 .hx-at-cases-categories {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: stretch;
-    gap: var(--rem-a);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: stretch;
+  gap: var(--rem-a);
 
-    margin: var(--rem-a);
+  margin: var(--rem-a);
 }
-    .hx-at-cases-categories .hx-at-btn-p-tr {
-        padding: var(--rem-a) var(--rem-b);
-        color: var(--c-gr) !important;
-        transition: all .3s ease-out;
-        border-color: #FF4F9250;
-        cursor: pointer;
-        align-self: stretch;
-    }
+.hx-at-cases-categories .hx-at-btn-p-tr {
+  padding: var(--rem-a) var(--rem-b);
+  color: var(--c-gr) !important;
+  transition: all 0.3s ease-out;
+  border-color: #ff4f9250;
+  cursor: pointer;
+  align-self: stretch;
+}
 .caseActiveFilter {
-    box-shadow: 0 0 2px #9f1c4e;
-    font-weight: 700;
+  box-shadow: 0 0 2px #9f1c4e;
+  font-weight: 700;
 }
 
 .mobile-category {
-    padding: var(--rem-aa) var(--rem-bb);
-    border-radius: var(--rem-aa);
-    background-color: var(--c-wht);
-    color: var(--c-gr);
-    border: 1px solid var(--c-pk);
-    text-transform: uppercase;
-    font-weight: 500;
-    font-size: var(--rem-aa);
+  padding: var(--rem-aa) var(--rem-bb);
+  border-radius: var(--rem-aa);
+  background-color: var(--c-wht);
+  color: var(--c-gr);
+  border: 1px solid var(--c-pk);
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: var(--rem-aa);
 }
 
 .hx-at-cases-block {
-    justify-content: center;
+  justify-content: center;
 }
 
 .hx-at-case-web {
-    max-height: calc(100vh - 90px);
+  max-height: calc(100vh - 90px);
 }
 
 /**/
 @media screen and (min-width: 1100px) {
-    .hx-at-allcases-item {
-        max-width: 31%;
-    }
-    #choseCategory {
-        display: none;
-    }
+  .hx-at-allcases-item {
+    max-width: 31%;
+  }
+  #choseCategory {
+    display: none;
+  }
 }
 @media screen and (max-width: 1100px) {
-    .hx-at-cases-filters {
-        top: unset;
-        bottom: var(--rem-aa);
-        left: var(--rem-aa);
-        right: var(--rem-aa);
-        position: fixed;
-        margin: 0 auto;
+  .hx-at-cases-filters {
+    top: unset;
+    bottom: var(--rem-aa);
+    left: var(--rem-aa);
+    right: var(--rem-aa);
+    position: fixed;
+    margin: 0 auto;
 
-        background-color: rgba(116, 215, 208, 0.38);
-        -webkit-backdrop-filter: blur(10px);
-        backdrop-filter: blur(10px);
-        border: none;
-        box-shadow: 0 0 10px #0c333090;
-        max-width: none;
-    }
-    .hx-at-cases-categories {
-        gap: var(--rem-aaa);
-        margin: var(--rem-aaa);
-        justify-content: center;
-    }
-    .hx-at-cases-categories .hx-at-btn-p-tr {
-        width: 100%;
-    }
-    .hx-at-cases-categories .hx-at-btn-p-tr[category] {
-        display: none;
-    }
+    background-color: rgba(116, 215, 208, 0.38);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: none;
+    box-shadow: 0 0 10px #0c333090;
+    max-width: none;
+  }
+  .hx-at-cases-categories {
+    gap: var(--rem-aaa);
+    margin: var(--rem-aaa);
+    justify-content: center;
+  }
+  .hx-at-cases-categories .hx-at-btn-p-tr {
+    width: 100%;
+  }
+  .hx-at-cases-categories .hx-at-btn-p-tr[category] {
+    display: none;
+  }
 }
