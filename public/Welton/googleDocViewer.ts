@@ -1,5 +1,7 @@
 function initGoogleDocViewer() {
-  const links: NodeListOf<HTMLAnchorElement> = document.querySelectorAll("a[href*='drive.google.com']");
+  const links: NodeListOf<HTMLAnchorElement> = document.querySelectorAll(
+    "a[href*='drive.google.com']"
+  );
 
   links.forEach(link => {
     link.addEventListener("click", e => {
@@ -10,12 +12,19 @@ function initGoogleDocViewer() {
   });
 }
 function closeGooglePopUp() {
-  const widgets: NodeListOf<HTMLElement> = document.querySelectorAll("*[class*='widget']");
+  const widgets: NodeListOf<HTMLElement> =
+    document.querySelectorAll("*[class*='widget']");
+
   document.querySelectorAll("#popGoogle").forEach(popup => {
-    if (window.history.length === 1) {
-      window.location.href = "/";
+    // Вход по qr или из нового окна
+    if (!document.referrer || history.length === 1) {
+      const lang = navigator.language;
+      lang.includes("en")
+        ? window.location.replace("https://en.weltonhotel.ru/")
+        : window.location.replace("https://weltonhotel.ru/");
     }
-    popup.remove();
+    // Открытие внутри сайта
+    else popup.remove();
   });
   widgets.forEach(widget => {
     widget.style.opacity = "initial";
@@ -23,7 +32,8 @@ function closeGooglePopUp() {
   });
 }
 function openGooglePopUp(link: string) {
-  const widgets: NodeListOf<HTMLElement> = document.querySelectorAll("*[class*='widget']");
+  const widgets: NodeListOf<HTMLElement> =
+    document.querySelectorAll("*[class*='widget']");
   widgets.forEach(widget => {
     widget.style.opacity = "0";
     widget.style.pointerEvents = "none";
@@ -48,6 +58,7 @@ function openGooglePopUp(link: string) {
 
   const iframe = document.createElement("iframe");
   iframe.src = link;
+  iframe.referrerPolicy = "no-referrer";
   iframe.style.height = "100%";
   iframe.style.width = "100%";
   iframe.style.maxWidth = "600px";
@@ -61,7 +72,8 @@ function openGooglePopUp(link: string) {
   closeButton.style.zIndex = "999999";
   closeButton.style.width = "2.5rem";
   closeButton.style.height = "2.5rem";
-  closeButton.style.background = 'url("https://api.iconify.design/hugeicons:cancel-01.svg")';
+  closeButton.style.background =
+    'url("https://api.iconify.design/hugeicons:cancel-01.svg")';
   closeButton.style.backgroundSize = "cover";
   closeButton.style.backgroundPosition = "center";
   closeButton.style.backgroundColor = "#EBE3DE";
