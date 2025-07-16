@@ -1,4 +1,4 @@
-export function initGoogleDocViewer() {
+function initGoogleDocViewer() {
   const links: NodeListOf<HTMLAnchorElement> = document.querySelectorAll(
     "a[href*='drive.google.com']"
   );
@@ -11,7 +11,7 @@ export function initGoogleDocViewer() {
     link.setAttribute("data-google-popup", "true");
   });
 }
-export function closeGooglePopUp() {
+function closeGooglePopUp() {
   const widgets: NodeListOf<HTMLElement> =
     document.querySelectorAll("*[class*='widget']");
 
@@ -31,7 +31,7 @@ export function closeGooglePopUp() {
     widget.style.pointerEvents = "initial";
   });
 }
-export function openGooglePopUp(link: string) {
+function openGooglePopUp(link: string) {
   const widgets: NodeListOf<HTMLElement> =
     document.querySelectorAll("*[class*='widget']");
   widgets.forEach(widget => {
@@ -92,4 +92,4 @@ export function openGooglePopUp(link: string) {
 }
 document.addEventListener("DOMContentLoaded", initGoogleDocViewer);
 
-// bun build googleDocViewer.ts --outfile googleDocViewer.js --minify --banner "// $(date +%s)"
+// bun build googleDocViewer.ts --outfile googleDocViewer.js --target browser --minify-syntax --minify-whitespace --banner "// $(date +%s)"
