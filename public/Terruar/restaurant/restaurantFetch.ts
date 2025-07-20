@@ -1,6 +1,3 @@
-const link: string =
-  'https://store.tildaaapi.com/api/getproductslist/?storepartuid=513452425241&recid=752306605&c=1716436482010&getparts=true&getoptions=true&slice=1&size=36&projectid=5131025';
-
 export type Product = {
   title: string;
   descr: string;
@@ -22,6 +19,9 @@ function createOptimLink(link: string): string {
 }
 
 export async function getProductsByType(): Promise<Product[]> {
+  const link: string =
+    'https://store.tildaaapi.com/api/getproductslist/?storepartuid=513452425241&recid=752306605&c=1716436482010&getparts=true&getoptions=true&slice=1&size=36&projectid=5131025';
+
   let restaurantData;
 
   try {

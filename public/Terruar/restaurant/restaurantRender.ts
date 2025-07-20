@@ -62,7 +62,7 @@ async function insertProducts(): Promise<HTMLDivElement> {
 }
 
 //
-export async function initCatalogue() {
+async function initCatalogue() {
   const catalogue = await insertProducts();
   const cataloguePopUp = new PopUp('Наша еда', catalogue);
 
