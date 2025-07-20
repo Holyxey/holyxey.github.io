@@ -28,13 +28,12 @@ html:has(.pop-up) {
 
     display: flex;
     gap: 0.5rem;
-    background: var(--holyxey-back-o);
+    background: var(--holyxey-back);
     align-items: center;
     padding: 0.5rem 0.5rem 0.5rem 1rem;
     border-radius: 1rem;
 
     opacity: 0;
-    backdrop-filter: blur(5px);
     animation: showElement 0.5s var(--animation-cubic) forwards;
     transition: all 0.5s var(--animation-cubic);
     /*  */
@@ -68,10 +67,9 @@ html:has(.pop-up) {
     height: 100%;
     overflow-y: auto;
 
-    background: var(--holyxey-back-o);
+    background: var(--holyxey-back);
 
     opacity: 0;
-    backdrop-filter: blur(15px);
     animation: showElement 0.5s 0.1s var(--animation-cubic) forwards;
     transition: all 0.5s var(--animation-cubic);
   }
