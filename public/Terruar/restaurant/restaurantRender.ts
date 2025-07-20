@@ -64,7 +64,7 @@ async function insertProducts(): Promise<HTMLDivElement> {
 //
 async function initCatalogue() {
   const catalogue = await insertProducts();
-  const cataloguePopUp = new PopUp('Наша еда', catalogue);
+  const cataloguePopUp = new PopUp('Готовая еда в дом', catalogue);
 
   const isUrlHasAction = window.location.href.includes('open-rest=true');
 

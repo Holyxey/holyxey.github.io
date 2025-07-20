@@ -6,21 +6,26 @@ html:has(.pop-up) {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  max-width: 1000px;
-  margin-inline: auto;
 
   overflow-x: auto;
   position: fixed;
   z-index: 995595607309;
   text-wrap: balance;
 
-  left: 0.25rem;
-  top: 0.25rem;
-  right: 0.25rem;
-  bottom: 0.25rem;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.25rem;
+
+  backdrop-filter: blur(15px) grayscale(1);
 
   /* contained */
   .pop-up-header {
+    width: 100%;
+    margin-inline: auto;
+    max-width: 1000px;
+
     display: flex;
     gap: 0.5rem;
     background: var(--holyxey-back-o);
@@ -54,6 +59,10 @@ html:has(.pop-up) {
   }
 
   .pop-up-content {
+    width: 100%;
+    margin-inline: auto;
+    max-width: 1000px;
+
     border-radius: 1rem;
     width: 100%;
     height: 100%;
@@ -62,6 +71,7 @@ html:has(.pop-up) {
     background: var(--holyxey-back-o);
 
     opacity: 0;
+    backdrop-filter: blur(15px);
     animation: showElement 0.5s 0.1s var(--animation-cubic) forwards;
     transition: all 0.5s var(--animation-cubic);
   }

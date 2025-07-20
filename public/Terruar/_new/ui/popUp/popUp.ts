@@ -36,6 +36,11 @@ export class PopUp {
     this.container.appendChild(this.contentElement);
 
     this.closeButton.addEventListener('click', () => this.close());
+    this.container.addEventListener('click', (event) => {
+      if (event.target === this.container) {
+        this.close();
+      }
+    });
   }
 
   //
