@@ -60,11 +60,6 @@ class DocViewer {
     Object.assign(this.iframe.style, this.styles.iframe);
     Object.assign(this.button.style, this.styles.button);
   }
-  private handleEscapeKey(e: KeyboardEvent) {
-    if (e.key === "Escape") {
-      this.close();
-    }
-  }
 
   //
 
@@ -73,12 +68,9 @@ class DocViewer {
     this.container.appendChild(this.iframe);
     this.container.appendChild(this.button);
     document.body.appendChild(this.container);
-
-    window.addEventListener("keydown", this.handleEscapeKey);
   }
   close() {
     this.container.remove();
-    window.removeEventListener("keydown", this.handleEscapeKey);
 
     const url = new URL(window.location.href);
     url.searchParams.delete("doc");
@@ -148,10 +140,12 @@ function docMenusFromHtmlData() {
 
       el.addEventListener("click", e => {
         e.preventDefault();
-        const viewer = new DocViewer(
-          DocMenus[doc][lang || "ru"],
-          onclose || undefined
-        );
+        const link = DocMenus[doc][lang]
+          ? DocMenus[doc][lang]
+          : DocMenus[doc]["ru"];
+        console.log(link);
+
+        const viewer = new DocViewer(link, onclose || undefined);
         viewer.open();
       });
     });
@@ -163,4 +157,21 @@ document.addEventListener("DOMContentLoaded", () => {
   docMenusFromHtmlData();
 });
 
+// ((menu = "main") => {
+//   const params = new URLSearchParams(window.location.search);
+//   if (params.has("doc")) return;
+
+//   if (!params.has("lang")) {
+//     params.set("lang", "ru");
+//   }
+//   if (!params.has("onclose")) {
+//     params.set("onclose", "/restaurant");
+//   }
+//   params.set("doc", menu);
+
+//   window.history.replaceState(null, "", `?${params.toString()}`);
+//   window.location.reload();
+// })();
+
+//
 // bun build docViewer.ts --outfile=docViewer.js --target=browser --format=esm --minify  --banner="// $(date +%s)"
