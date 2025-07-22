@@ -92,19 +92,27 @@ class DocViewer {
   }
 }
 
-const DocMenus: Record<string, {ru: string; eng?: string}> = {
+const DocMenus: Record<string, {ru: string; en?: string}> = {
   main: {
-    ru: "https://drive.google.com/file/d/1NaT8YAv8GK7qa5Y6Yy3V67LaGebpyViU/preview"
+    ru: "https://drive.google.com/file/d/1FcPW_zTeCQlxdSIqA5GOpTC94l9dUFtt/preview",
+    en: "https://drive.google.com/file/d/1NaT8YAv8GK7qa5Y6Yy3V67LaGebpyViU/preview"
   } as const,
+
   bar: {
     ru: "https://drive.google.com/file/d/13FNjt78ih6l64Xh6ULZnSt-PPcYQCVbu/preview"
   } as const,
+
   kids: {
     ru: "https://drive.google.com/file/d/1QKHE94fY2i1Cck1MEaxRD4qHnrhKNVAU/preview"
   } as const,
+
   night: {
     ru: "https://drive.google.com/file/d/10OXH66mlYh2Nebmw9c7FcxrG61oWbdNb/preview",
-    eng: "https://drive.google.com/file/d/127t3eWiFf2D9mUPVNas0K20tcGLEtWTk/preview"
+    en: "https://drive.google.com/file/d/127t3eWiFf2D9mUPVNas0K20tcGLEtWTk/preview"
+  } as const,
+
+  pizza: {
+    ru: "https://drive.google.com/file/d/1f-39DkwPF9r-6QOZSO0GlQZbTonPY8Wy/preview"
   } as const
 };
 
@@ -133,14 +141,17 @@ function docMenusFromHtmlData() {
       const doc = el.getAttribute("data-doc");
       const lang = el.getAttribute("data-doc-lang") || "ru";
       const onclose = el.getAttribute("data-doc-onclose");
-      if (!doc) return;
-
-      const link = DocMenus[doc][lang] || doc;
       el.style.cursor = "pointer";
+
+      if (!doc || !DocMenus[doc])
+        return console.warn(`Doc "${doc}" not found in DocMenus`);
 
       el.addEventListener("click", e => {
         e.preventDefault();
-        const viewer = new DocViewer(link, onclose || undefined);
+        const viewer = new DocViewer(
+          DocMenus[doc][lang || "ru"],
+          onclose || undefined
+        );
         viewer.open();
       });
     });
