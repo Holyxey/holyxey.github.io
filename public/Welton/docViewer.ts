@@ -9,6 +9,7 @@ class DocViewer {
       display: "flex",
       top: "0",
       left: "0",
+      zIndex: "995595607309",
       width: "100%",
       height: "100%",
       backgroundColor: "#ebe3deb2",
