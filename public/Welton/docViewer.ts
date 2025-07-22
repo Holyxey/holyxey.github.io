@@ -3,23 +3,42 @@ class DocViewer {
   private iframe: HTMLIFrameElement;
   private button: HTMLDivElement;
 
+  constructor(
+    public link: string,
+    public onCloseOrHref?: string | (() => void)
+  ) {
+    this.container = document.createElement("div");
+
+    this.iframe = document.createElement("iframe");
+    this.iframe.src = link;
+    this.iframe.referrerPolicy = "no-referrer";
+
+    this.button = document.createElement("div");
+    this.button.textContent = "Закрыть";
+    this.button.addEventListener("click", () => this.close());
+    this.container.addEventListener("click", () => this.close());
+
+    this.setStyles();
+  }
+
+  //
   private styles = {
     container: {
       position: "fixed",
       display: "flex",
       top: "0",
       left: "0",
+      right: "0",
+      bottom: "0",
       zIndex: "995595607309",
-      width: "100%",
-      height: "100%",
       backgroundColor: "#ebe3deb2",
+      padding: "10px",
       backdropFilter: "blur(5px)"
     } as CSSStyleDeclaration,
     iframe: {
       maxWidth: "1024px",
       position: "relative",
       width: "100%",
-      margin: "10px",
       marginInline: "auto",
       borderRadius: "10px",
       border: "none"
@@ -36,27 +55,18 @@ class DocViewer {
       cursor: "pointer"
     } as CSSStyleDeclaration
   };
-
-  //
-  constructor(public link: string) {
-    this.container = document.createElement("div");
-
-    this.iframe = document.createElement("iframe");
-    this.iframe.src = link;
-
-    this.button = document.createElement("div");
-    this.button.textContent = "Закрыть";
-    this.button.addEventListener("click", () => this.close());
-
-    this.setStyles();
-  }
-
-  //
   private setStyles() {
     Object.assign(this.container.style, this.styles.container);
     Object.assign(this.iframe.style, this.styles.iframe);
     Object.assign(this.button.style, this.styles.button);
   }
+  private handleEscapeKey(e: KeyboardEvent) {
+    if (e.key === "Escape") {
+      this.close();
+    }
+  }
+
+  //
 
   //
   open() {
@@ -66,7 +76,7 @@ class DocViewer {
 
     window.addEventListener("keydown", this.handleEscapeKey);
   }
-  close(onCloseOrHref?: () => void | string) {
+  close() {
     this.container.remove();
     window.removeEventListener("keydown", this.handleEscapeKey);
 
@@ -74,49 +84,60 @@ class DocViewer {
     url.searchParams.delete("doc");
     window.history.replaceState(null, "", url.toString());
 
-    if (onCloseOrHref) {
-      typeof onCloseOrHref === "string"
-        ? (window.location.href = onCloseOrHref)
-        : onCloseOrHref();
+    if (this.onCloseOrHref) {
+      typeof this.onCloseOrHref === "string"
+        ? (window.location.href = this.onCloseOrHref)
+        : this.onCloseOrHref();
     }
   }
-
-  private handleEscapeKey = (e: KeyboardEvent) => {
-    if (e.key === "Escape") {
-      this.close();
-    }
-  };
 }
 
-export enum DocMenus {
-  main = "https://drive.google.com/file/d/1NaT8YAv8GK7qa5Y6Yy3V67LaGebpyViU/preview",
-  bar = "https://drive.google.com/file/d/13FNjt78ih6l64Xh6ULZnSt-PPcYQCVbu/preview",
-  kids = "https://drive.google.com/file/d/1QKHE94fY2i1Cck1MEaxRD4qHnrhKNVAU/preview",
-  night = "https://drive.google.com/file/d/10OXH66mlYh2Nebmw9c7FcxrG61oWbdNb/preview"
-}
+const DocMenus: Record<string, {ru: string; eng?: string}> = {
+  main: {
+    ru: "https://drive.google.com/file/d/1NaT8YAv8GK7qa5Y6Yy3V67LaGebpyViU/preview"
+  } as const,
+  bar: {
+    ru: "https://drive.google.com/file/d/13FNjt78ih6l64Xh6ULZnSt-PPcYQCVbu/preview"
+  } as const,
+  kids: {
+    ru: "https://drive.google.com/file/d/1QKHE94fY2i1Cck1MEaxRD4qHnrhKNVAU/preview"
+  } as const,
+  night: {
+    ru: "https://drive.google.com/file/d/10OXH66mlYh2Nebmw9c7FcxrG61oWbdNb/preview",
+    eng: "https://drive.google.com/file/d/127t3eWiFf2D9mUPVNas0K20tcGLEtWTk/preview"
+  } as const
+};
 
-function docMenusBySearchParams() {
-  const params = new URLSearchParams(window.location.search);
-  const doc = params.get("doc");
-  if (doc && DocMenus[doc]) {
-    console.log(`Opening document: ${doc}`);
+//
+function docMenusBySearchParams(): string | undefined {
+  let params = new URLSearchParams(window.location.search);
+  let doc = params.get("doc");
+  let lang = params.get("lang");
+  let onclose = params.get("onclose");
 
-    return doc as DocMenus;
+  if (!doc) return;
+  if (!lang || !DocMenus[doc][lang]) {
+    lang = "ru";
   }
-  console.warn(`Document not found: ${doc}`);
-  return null;
+
+  const link = DocMenus[doc][lang];
+  const viewer = new DocViewer(link, onclose || undefined);
+  viewer.open();
+  return link;
 }
-function docMenusMyHtmlData() {
+function docMenusFromHtmlData() {
   const elems =
     document.querySelectorAll<HTMLAnchorElement>("[data-doc-viewer]");
+
   if (elems.length > 0) {
     elems.forEach(el => {
       const doc = el.getAttribute("data-doc-viewer");
+      const onclose = el.getAttribute("data-doc-onclose");
       if (!doc) return;
 
       el.addEventListener("click", e => {
         e.preventDefault();
-        const viewer = new DocViewer(doc);
+        const viewer = new DocViewer(doc, onclose || undefined);
         viewer.open();
       });
     });
@@ -124,12 +145,8 @@ function docMenusMyHtmlData() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  docMenusMyHtmlData();
-  const docSearchParam = docMenusBySearchParams();
-  if (docSearchParam) {
-    const viewer = new DocViewer(DocMenus[docSearchParam]);
-    viewer.open();
-  }
+  docMenusBySearchParams();
+  docMenusFromHtmlData();
 });
 
 // bun build docViewer.ts --outfile=docViewer.js --target=browser --format=esm --minify  --banner="// $(date +%s)"
