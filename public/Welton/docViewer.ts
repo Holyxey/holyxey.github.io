@@ -151,6 +151,22 @@ function docMenusFromHtmlData() {
     });
   }
 }
+function preventDefaultAnchorGoogleLinks() {
+  const elems = document.querySelectorAll<HTMLAnchorElement>(
+    "a[href^='https://drive.google.com']"
+  );
+
+  if (elems.length > 0) {
+    elems.forEach(el => {
+      el.addEventListener("click", e => {
+        e.preventDefault();
+        const link = el.href.replace("/view", "/preview");
+        const viewer = new DocViewer(link);
+        viewer.open();
+      });
+    });
+  }
+}
 
 document.addEventListener("DOMContentLoaded", () => {
   docMenusBySearchParams();
