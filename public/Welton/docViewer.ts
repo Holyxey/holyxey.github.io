@@ -126,18 +126,21 @@ function docMenusBySearchParams(): string | undefined {
   return link;
 }
 function docMenusFromHtmlData() {
-  const elems =
-    document.querySelectorAll<HTMLAnchorElement>("[data-doc-viewer]");
+  const elems = document.querySelectorAll<HTMLAnchorElement>("[data-doc]");
 
   if (elems.length > 0) {
     elems.forEach(el => {
-      const doc = el.getAttribute("data-doc-viewer");
+      const doc = el.getAttribute("data-doc");
+      const lang = el.getAttribute("data-doc-lang") || "ru";
       const onclose = el.getAttribute("data-doc-onclose");
       if (!doc) return;
 
+      const link = DocMenus[doc][lang] || doc;
+      el.style.cursor = "pointer";
+
       el.addEventListener("click", e => {
         e.preventDefault();
-        const viewer = new DocViewer(doc, onclose || undefined);
+        const viewer = new DocViewer(link, onclose || undefined);
         viewer.open();
       });
     });
