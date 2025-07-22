@@ -19,6 +19,7 @@ class DocViewer {
       position: "relative",
       width: "100%",
       margin: "10px",
+      marginInline: "auto",
       borderRadius: "10px",
       border: "none"
     } as CSSStyleDeclaration,
@@ -29,7 +30,7 @@ class DocViewer {
       right: "10px",
       padding: "10px 15px",
       backgroundColor: "#334e3e",
-      borderRadius: " 0 10px 0 10px",
+      borderRadius: "10px",
       color: "#fff",
       cursor: "pointer"
     } as CSSStyleDeclaration
@@ -64,11 +65,18 @@ class DocViewer {
 
     window.addEventListener("keydown", this.handleEscapeKey);
   }
-  close(onClose?: () => void) {
+  close(onCloseOrHref?: () => void | string) {
     this.container.remove();
     window.removeEventListener("keydown", this.handleEscapeKey);
-    if (onClose) {
-      onClose();
+
+    const url = new URL(window.location.href);
+    url.searchParams.delete("doc");
+    window.history.replaceState(null, "", url.toString());
+
+    if (onCloseOrHref) {
+      typeof onCloseOrHref === "string"
+        ? (window.location.href = onCloseOrHref)
+        : onCloseOrHref();
     }
   }
 
