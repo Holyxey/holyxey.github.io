@@ -53,8 +53,6 @@ async function insertProducts(): Promise<HTMLDivElement> {
 
     categoryDiv.appendChild(categoryTitle);
 
-    console.log(category);
-
     category.products.forEach((prod, index) => {
       const productElement = getProductElement(prod, index);
       categoryDiv.appendChild(productElement);
