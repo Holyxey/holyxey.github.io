@@ -171,6 +171,7 @@ function preventDefaultAnchorGoogleLinks() {
 document.addEventListener("DOMContentLoaded", () => {
   docMenusBySearchParams();
   docMenusFromHtmlData();
+  preventDefaultAnchorGoogleLinks();
 });
 
 // ((menu = "main") => {
