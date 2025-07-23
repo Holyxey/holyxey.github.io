@@ -1,4 +1,8 @@
-import { getProductsByType, type Product } from './restaurantFetch';
+import {
+  getCategoriesWithProducts,
+  type Product,
+  type Category,
+} from './restaurantFetch';
 import { PopUp } from '../_new/ui/popUp/popUp';
 import './restaurantStyles.css';
 
@@ -36,26 +40,27 @@ async function insertProducts(): Promise<HTMLDivElement> {
   const cat = document.createElement('div');
   cat.classList.add('catalogue');
 
-  const products = await getProductsByType();
+  const categories = await getCategoriesWithProducts();
 
-  const categories = new Map<string, HTMLDivElement>();
+  categories.forEach((category) => {
+    if (category.products.length === 0) return;
+    const categoryDiv = document.createElement('div');
+    categoryDiv.classList.add('category');
 
-  products.forEach((prod, index) => {
-    if (!categories.has(prod.category)) {
-      const categoryDiv = document.createElement('div');
-      categoryDiv.classList.add('category');
+    const categoryTitle = document.createElement('div');
+    categoryTitle.textContent = category.title;
+    categoryTitle.classList.add('cat-title');
 
-      const categoryTitle = document.createElement('div');
-      categoryTitle.textContent = prod.category;
-      categoryTitle.classList.add('cat-title');
+    categoryDiv.appendChild(categoryTitle);
 
-      categoryDiv.appendChild(categoryTitle);
-      categories.set(prod.category, categoryDiv);
-      cat.appendChild(categoryDiv);
-    }
+    console.log(category);
 
-    const productElement = getProductElement(prod, index);
-    categories.get(prod.category)?.appendChild(productElement);
+    category.products.forEach((prod, index) => {
+      const productElement = getProductElement(prod, index);
+      categoryDiv.appendChild(productElement);
+    });
+
+    cat.appendChild(categoryDiv);
   });
 
   return cat;
@@ -64,12 +69,13 @@ async function insertProducts(): Promise<HTMLDivElement> {
 //
 async function initCatalogue() {
   const catalogue = await insertProducts();
-  const cataloguePopUp = new PopUp('Готовая еда в дом', catalogue);
+  const cataloguePopUp = new PopUp('Готовая еда в глэмпинге', catalogue);
 
-  const isUrlHasAction = window.location.href.includes('open-rest=true');
+  const searchParams = new URLSearchParams(location.search);
+  const isUrlHasAction = searchParams.has('open-rest');
 
   const restButtons = document.querySelectorAll(
-    'button[data-action="open-restaurant-menu"]'
+    '[data-action="open-restaurant-menu"]'
   );
   if (restButtons.length) {
     restButtons.forEach((button) => {
