@@ -23,6 +23,7 @@ export class PopUp {
 
     this.closeButton = document.createElement('button');
     this.closeButton.textContent = 'Закрыть';
+    this.closeButton.id = 'pop-up-close-button';
 
     this.titleElement = document.createElement('p');
     this.titleElement.className = 'pop-up-title';

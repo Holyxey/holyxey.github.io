@@ -1,113 +1,115 @@
 @import 'https://holyxey.github.io/public/Terruar/multipage/stylesheets/main.css';
 @import '../_new/ui/popUp/popUp.css';
 
-.catalogue {
-  display: grid;
-  grid-template-rows: auto;
-  gap: 1rem;
-  grid-template-columns: 1fr;
+.pop-up .catalogue {
+}
 
-  @media screen and (min-width: 600px) {
-    grid-template-columns: 1fr 1fr;
+.pop-up .catalogue .category {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+
+  > .cat-title {
+    flex: 1 0 100%;
+    position: sticky;
+    height: fit-content;
+    top: 3.5rem;
+    margin-top: 3rem;
+    left: 0.5rem;
+    padding: 0.5rem 1rem;
+    z-index: 20;
+    background-color: #0b090d;
+    backdrop-filter: blur(20px);
+    font-family: var(--holyxey-unbounded);
+    color: var(--holyxey-yellow);
   }
-  @media screen and (min-width: 900px) {
-    grid-template-columns: 1fr 1fr 1fr;
+}
+
+/*  */
+.pop-up .catalogue .category .product {
+  flex: 1 1 30%;
+  max-width: calc((100% - 6rem) / 3);
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--holyxey-back);
+
+  @media screen and (max-width: 800px) {
+    flex: 1 1 50%;
+    max-width: calc((100% - 4rem) / 2);
   }
-
-  .category {
-    padding: 1rem;
-    display: flex;
-    gap: 2rem;
-    flex-direction: column;
-
-    > .cat-title {
-      position: sticky;
-      top: 0.5rem;
-      padding: 0.5rem;
-      z-index: 20;
-      background-color: var(--holyxey-back-o);
-      backdrop-filter: blur(20px);
-      border-radius: 0.5rem;
-      font-family: var(--holyxey-unbounded);
-      color: var(--holyxey-yellow);
-      text-align: center;
-    }
+  @media screen and (max-width: 600px) {
+    flex: 1 1 auto;
+    max-width: unset;
   }
 
   /*  */
-  .category .product {
+
+  .product-header {
+    min-height: 100px;
+    position: relative;
+
+    img {
+      pointer-events: none;
+      user-select: none;
+      position: absolute;
+      top: -1rem;
+      left: -0.5rem;
+      height: 200px;
+    }
+  }
+  .product-info {
     display: flex;
     flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 0.5rem;
+
     background-color: var(--holyxey-back);
+    border-radius: 1rem;
+    z-index: 10;
+    padding: 0.5rem;
 
-    /*  */
-
-    .product-header {
-      height: 100px;
-      position: relative;
-
-      img {
-        pointer-events: none;
-        user-select: none;
-        position: absolute;
-        top: -1rem;
-        left: -0.5rem;
-        height: 200px;
-      }
+    .product-title {
+      font-family: var(--holyxey-unbounded);
+      color: var(--holyxey-yellow);
     }
-    .product-info {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      padding: 0.5rem;
-
-      background-color: var(--holyxey-back);
-      border-radius: 1rem;
-      z-index: 10;
-      padding: 0.5rem;
-
-      .product-title {
-        font-family: var(--holyxey-unbounded);
-        color: var(--holyxey-yellow);
-      }
-      .product-descr {
-        line-clamp: 3;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        display: -webkit-box;
-      }
+    .product-descr {
+      line-clamp: 3;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
     }
-    .product-footer {
+  }
+  .product-footer {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.5rem;
+
+    a {
       display: flex;
-      align-items: center;
       gap: 1rem;
-      padding: 0.5rem;
+      align-items: center;
 
-      a {
-        display: flex;
-        gap: 1rem;
-        align-items: center;
+      padding: 0.5rem 0.5rem 0.5rem 1rem;
+      border: none;
+      border-radius: 1rem;
 
-        padding: 0.5rem 0.5rem 0.5rem 1rem;
-        border: none;
-        border-radius: 1rem;
+      background: var(--holyxey-good);
+      color: var(--holyxey-whit);
+      font-family: var(--holyxey-unbounded);
+      text-decoration: none !important;
 
-        background: var(--holyxey-good);
-        color: var(--holyxey-whit);
-        font-family: var(--holyxey-unbounded);
-        text-decoration: none !important;
-
-        svg {
-          height: 1.5rem;
-        }
+      svg {
+        height: 1.5rem;
       }
-      .product-price {
-        font-family: var(--holyxey-unbounded);
-        color: var(--holyxey-yellow);
-        text-wrap: nowrap;
-      }
+    }
+    .product-price {
+      font-family: var(--holyxey-unbounded);
+      color: var(--holyxey-yellow);
+      text-wrap: nowrap;
     }
   }
 }

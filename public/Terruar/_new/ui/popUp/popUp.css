@@ -7,6 +7,9 @@ html:has(.pop-up) {
   flex-direction: column;
   gap: 0.5rem;
 
+  height: 100%;
+  overflow-y: auto;
+
   overflow-x: auto;
   position: fixed;
   z-index: 995595607309;
@@ -22,6 +25,10 @@ html:has(.pop-up) {
 
   /* contained */
   .pop-up-header {
+    position: sticky;
+    top: 0.25rem;
+    z-index: 10;
+
     width: 100%;
     margin-inline: auto;
     max-width: 1000px;
@@ -64,8 +71,6 @@ html:has(.pop-up) {
 
     border-radius: 1rem;
     width: 100%;
-    height: 100%;
-    overflow-y: auto;
 
     background: var(--holyxey-back);
 

@@ -1,0 +1,5 @@
+{
+  "scripts": {
+    "build-restaurant": "bun build restaurant/restaurantRender.ts --outdir=restaurant/build --target=browser --minify --format=esm"
+  }
+}
