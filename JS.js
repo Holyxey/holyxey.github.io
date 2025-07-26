@@ -1,44 +1,51 @@
 function holyxey() {
-    let addCommentHolyxey = document.createComment('Дизайн, разработка: Holyxey.com');
-    let addCommentAdsTarget = document.createComment('Продвижение бизнеса: AdsTarget.ru');
-    document.prepend(addCommentHolyxey, addCommentAdsTarget);
+  let addCommentHolyxey = document.createComment(
+    'Дизайн, разработка: Holyxey.com'
+  );
+  let addCommentAdsTarget = document.createComment(
+    'Продвижение бизнеса: AdsTarget.ru'
+  );
+  document.prepend(addCommentHolyxey, addCommentAdsTarget);
 }
 const holyxeySchema = () => {
-    let schemaData = {
-        path: window.location.origin.toString(),
-        year: new Date().getFullYear().toString()
-    }
-    let addSchemaWebSite = document.createElement('script')
-    addSchemaWebSite.type = 'application/ld+json'
-    addSchemaWebSite.innerHTML = `
+  let schemaData = {
+    path: window.location.origin,
+    year: new Date().getFullYear().toString(),
+  };
+  let addSchemaWebSite = document.createElement('script');
+  addSchemaWebSite.type = 'application/ld+json';
+  addSchemaWebSite.innerHTML = /* js */ `
         {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "url": "${schemaData.path}",
-        "copyrightYear": "${schemaData.year}",
-        "author": {
-            "@type": "Person",
-            "email": "contact@holyxey.com",
-            "url": "https://holyxey.com",
-            "brand": "holyxey"
-        },
-        "publisher": {
-            "@type": "Organization",
-            "brand": "AdsTarget",
-            "legalName": "AdsTarget",
-            "email": "mail@adstarget.ru",
-            "image": "https://optim.tildacdn.com/tild6631-3263-4136-b435-396234613533/x300.png"
-        }
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "url": "${schemaData.path}",
+            "copyrightYear": "${schemaData.year}",
+            "author": {
+                "@type": "Person",
+                "email": "text.holyxey@gmail.com",
+                "url": "https://holyxey.com",
+                "skills": "Fullstack developer & UI/UX Designer",
+                "jobTitle": "Fullstack developer & UI/UX Designer",
+                "name": "Alex Yurin",
+                "additionalName": "holyxey"
+            }
+            "publisher": {
+                "@type": "Organization",
+                "brand": "AdsTarget",
+                "legalName": "AdsTarget",
+                "email": "mail@adstarget.ru",
+                "image": "https://optim.tildacdn.com/tild6631-3263-4136-b435-396234613533/x300.png"
+            }
         }
     `;
-    document.body.append(addSchemaWebSite);
-}
+  document.body.append(addSchemaWebSite);
+};
 //
 function backUTMButton() {
-    if (location.href.includes('?utm_source=AdsTarget')) {
-        let bb = document.createElement("a")
-        bb.href = 'https://adstarget.ru/?utm_source=Holyxey'
-        bb.style.cssText = `
+  if (location.href.includes('?utm_source=AdsTarget')) {
+    let bb = document.createElement('a');
+    bb.href = 'https://adstarget.ru/?utm_source=Holyxey';
+    bb.style.cssText = `
         position: fixed!important;
         top: 2rem!important;
         left: 2rem!important;
@@ -52,14 +59,13 @@ function backUTMButton() {
         content: url("https://static.tildacdn.com/tild6663-6639-4166-a462-316239353461/SVG_logo_1.svg");
         cursor: pointer;
         `;
-        document.documentElement.append(bb)
-    }
+    document.documentElement.append(bb);
+  }
 }
 //
 
-
-window.addEventListener("load", backUTMButton)
-document.addEventListener("DOMContentLoaded", () => {
-    holyxey();
-    holyxeySchema();
-})
+window.addEventListener('load', backUTMButton);
+// document.addEventListener('DOMContentLoaded', () => {
+holyxey();
+holyxeySchema();
+// });
