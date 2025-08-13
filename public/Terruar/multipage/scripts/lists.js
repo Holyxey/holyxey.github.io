@@ -768,6 +768,42 @@ const lists = {
     'Как устроить корпоратив / тимбилдинг?': `Напишите нам на почту<a href="mail:Terruar.msk@gmail.com" class="faqbtn"> Terruar.msk@gmail.com </a> поможем реализовать любую идею! У нас есть ведущие, фотографы, можем организовать лазертаг, джип-тур, банную программу с профессиональным банщиком, а также сделать специальную скидку для вас!`,
   },
   houses: [
+    // Valencia
+    {
+      title: 'Valencia',
+      description: `Валенсия: двух-местный уютный домик, повышенной категории<br><br>В доме с большим панорамным окном есть двуспальная кровать, кухня, холодильник и санузел с душем, есть терраса с мебелью и все принадлежности для барбекю`,
+      images: {
+        summer: [
+          'https://thumb.tildacdn.com/tild3765-6134-4735-a239-653235376466/-/format/webp/Valency_12.jpeg.webp',
+          'https://thumb.tildacdn.com/tild3463-3464-4138-b262-653733383935/-/format/webp/Valency_4.jpeg.webp',
+          'https://thumb.tildacdn.com/tild6563-3035-4664-b635-383065376561/-/format/webp/Valency_3.jpeg.webp',
+          'https://thumb.tildacdn.com/tild3234-3265-4131-b330-633063336333-/format/webp/Valency_1.jpeg.webp',
+          'https://thumb.tildacdn.com/tild6365-3238-4561-b231-636666356531/-/format/webp/Valency_2.jpeg.webp',
+          'https://thumb.tildacdn.com/tild3833-6566-4730-b462-313863333935/-/format/webp/Valency_5.jpeg.webp',
+          'https://thumb.tildacdn.com/tild3464-6239-4234-b565-623131376238/-/format/webp/Valency_6.jpeg.webp',
+          'https://thumb.tildacdn.com/tild3739-3639-4464-b536-396661353061/-/format/webp/Valency_7.jpeg.webp',
+          'https://thumb.tildacdn.com/tild3765-6464-4064-b966-613234663865/-/format/webp/Valency_8.jpeg.webp',
+          'https://thumb.tildacdn.com/tild3739-3361-4235-b063-313130363562/-/format/webp/Valency_9.jpeg.webp',
+          'https://thumb.tildacdn.com/tild3633-3338-4366-b065-343633616633/-/format/webp/Valency_11.jpeg.webp',
+          'https://thumb.tildacdn.com/tild6565-3766-4232-b538-393337363062/-/format/webp/Valency_13.jpeg.webp',
+          'https://thumb.tildacdn.com/tild3866-3333-4239-b836-653262666238/-/format/webp/Valency_14.jpeg.webp',
+          'https://thumb.tildacdn.com/tild3238-3064-4862-b838-613564653330/-/format/webp/Valency_15.jpeg.webp',
+          'https://thumb.tildacdn.com/tild6433-3130-4062-b361-356339396236/-/format/webp/Valency_16.jpeg.webp',
+          'https://thumb.tildacdn.com/tild3965-6561-4336-b264-373337666366/-/format/webp/Valency_17.jpeg.webp',
+          'https://thumb.tildacdn.com/tild3030-3961-4233-b335-323861663965/-/format/webp/Valency_18.jpeg.webp',
+          'https://thumb.tildacdn.com/tild3336-3135-4831-b336-366633653832/-/format/webp/Valency_21.jpeg.webp',
+          'https://thumb.tildacdn.com/tild3937-3537-4336-b830-623266383030/-/format/webp/Valency_22.jpeg.webp',
+          'https://thumb.tildacdn.com/tild6137-3630-4231-a332-373961623361/-/format/webp/Valency_23.jpeg.webp',
+          'https://thumb.tildacdn.com/tild3532-3831-4933-a266-666237333839/-/format/webp/Valency_24.jpeg.webp',
+          'https://thumb.tildacdn.com/tild6165-6238-4761-a666-303333316537/-/format/webp/Valency_25.jpeg.webp',
+          'https://thumb.tildacdn.com/tild6233-6263-4032-b766-373039616631/-/format/webp/Valency_26.jpeg.webp',
+          'https://thumb.tildacdn.com/tild6338-3035-4561-b163-316363383266/-/format/webp/Valency_28.jpeg.webp',
+          'https://thumb.tildacdn.com/tild3135-3232-4532-b432-373963643932/-/format/webp/Valency_29.jpeg.webp',
+          'https://thumb.tildacdn.com/tild3838-6364-4161-a437-373937393430/-/format/webp/Valency_30.jpeg.webp',
+        ],
+        winter: [''],
+      },
+    },
     // Mendoza
     {
       title: 'Mendoza',
