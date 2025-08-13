@@ -1059,7 +1059,7 @@ const multipage = {
   }, // Сброс поп-апа
 
   //
-  getHeaderHeight: async () => {
+  getHeaderHeight: () => {
     const nav = document.querySelector('nav');
     const hero = document.getElementById('hero');
     const mobNav = document.getElementById('mobileNavStroke');
@@ -1446,6 +1446,10 @@ window.addEventListener('resize', () => {
   multipage.getHeaderHeight();
 });
 window.addEventListener('load', () => {
+  renderLists();
+  // TODO замени на новый рендер (renderLists)
+  renderVariantsPreview();
+
   multipage.getHeaderHeight().then(() => {
     if (window.innerWidth < 600) {
       multipage.smoothShowHorizontal();
@@ -1454,17 +1458,14 @@ window.addEventListener('load', () => {
   seasonTapesRender();
   setVeasonVideos();
 });
-document.addEventListener('DOMContentLoaded', async () => {
+document.addEventListener('DOMContentLoaded', () => {
   setSeason();
   needToRender();
   renderReviewGallery();
   multipage.popupButtonsInit();
 
-  await multipage.getHeaderHeight();
-  renderLists();
+  multipage.getHeaderHeight();
 
-  // TODO замени на новый рендер (renderLists)
-  renderVariantsPreview();
   whereToRenderCounter();
   multipage.renderFAQ();
   renderOffers();
