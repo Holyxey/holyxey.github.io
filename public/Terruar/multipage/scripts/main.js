@@ -1,52 +1,52 @@
-"use strict";
+'use strict';
 const styleClassLists = [
   {
     needHeader: true,
     needCounter: false,
     needToSmooth: true,
     needIcon: false,
-    section: "classic-sec",
-    headBlock: "classic-hb w-btn",
-    itemsParent: "classic-ip",
-    article: "classic-art",
-    artHeads: "classic-art-hb",
-    artHeader: "classic-art-header",
-    artDescr: "classic-art-descr",
-    artImgBlck: "classic-art-imgBlck",
-    artImg: "classic-art-img",
-    artLink: "classic-art-link",
+    section: 'classic-sec',
+    headBlock: 'classic-hb w-btn',
+    itemsParent: 'classic-ip',
+    article: 'classic-art',
+    artHeads: 'classic-art-hb',
+    artHeader: 'classic-art-header',
+    artDescr: 'classic-art-descr',
+    artImgBlck: 'classic-art-imgBlck',
+    artImg: 'classic-art-img',
+    artLink: 'classic-art-link',
   }, // design #1
   {
     needHeader: false,
     needCounter: true,
     needToSmooth: true,
     needIcon: false,
-    section: "classic-sec classic-sec-second",
-    headBlock: "classic-hb classic-hb-second",
-    itemsParent: "classic-ip classic-ip-second",
-    article: "classic-art classic-art-second",
-    artHeads: "classic-art-hb classic-art-hb-second",
-    artHeader: "classic-art-header classic-art-header-second",
-    artDescr: "classic-art-descr classic-art-descr-second",
-    artImgBlck: "classic-art-imgBlck classic-art-imgBlck-second",
-    artImg: "classic-art-img classic-art-img-second",
-    artLink: "classic-art-link classic-art-link-second",
+    section: 'classic-sec classic-sec-second',
+    headBlock: 'classic-hb classic-hb-second',
+    itemsParent: 'classic-ip classic-ip-second',
+    article: 'classic-art classic-art-second',
+    artHeads: 'classic-art-hb classic-art-hb-second',
+    artHeader: 'classic-art-header classic-art-header-second',
+    artDescr: 'classic-art-descr classic-art-descr-second',
+    artImgBlck: 'classic-art-imgBlck classic-art-imgBlck-second',
+    artImg: 'classic-art-img classic-art-img-second',
+    artLink: 'classic-art-link classic-art-link-second',
   }, // design #2 ()
   {
     needHeader: true,
     needCounter: true,
     needToSmooth: true,
     needIcon: false,
-    section: "classic-sec classic-sec-second",
-    headBlock: "classic-hb classic-hb-second",
-    itemsParent: "classic-ip classic-ip-second",
-    article: "classic-art classic-art-second",
-    artHeads: "classic-art-hb classic-art-hb-second",
-    artHeader: "classic-art-header classic-art-header-second",
-    artDescr: "classic-art-descr classic-art-descr-second",
-    artImgBlck: "classic-art-imgBlck classic-art-imgBlck-second",
-    artImg: "classic-art-img classic-art-img-second",
-    artLink: "classic-art-link classic-art-link-second",
+    section: 'classic-sec classic-sec-second',
+    headBlock: 'classic-hb classic-hb-second',
+    itemsParent: 'classic-ip classic-ip-second',
+    article: 'classic-art classic-art-second',
+    artHeads: 'classic-art-hb classic-art-hb-second',
+    artHeader: 'classic-art-header classic-art-header-second',
+    artDescr: 'classic-art-descr classic-art-descr-second',
+    artImgBlck: 'classic-art-imgBlck classic-art-imgBlck-second',
+    artImg: 'classic-art-img classic-art-img-second',
+    artLink: 'classic-art-link classic-art-link-second',
   }, // design #3 (Same like 2 but with section header)
 ];
 
@@ -54,35 +54,35 @@ const styleClassLists = [
  */
 const setSeason = () => {
   const month = new Date().getMonth() + 1;
-  const body = document.getElementsByTagName("body")[0];
+  const body = document.getElementsByTagName('body')[0];
   if (11 > month && month > 1) {
-    body.setAttribute("data-season", "summer");
-    localStorage.setItem("season", "summer");
+    body.setAttribute('data-season', 'summer');
+    localStorage.setItem('season', 'summer');
   } else {
-    body.setAttribute("data-season", "winter");
-    localStorage.setItem("season", "winter");
+    body.setAttribute('data-season', 'winter');
+    localStorage.setItem('season', 'winter');
   }
 };
 
 /** Начальный рендер из [data-need-to-render]
  */
 const needToRender = function (where) {
-  const sections = document.querySelectorAll("[data-need-to-render]");
+  const sections = document.querySelectorAll('[data-need-to-render]');
 
   const renderNow = function (where, what, design, listName, maxOf) {
-    const season = localStorage.getItem("season");
+    const season = localStorage.getItem('season');
     where.classList = `${design.section}`;
     if (design.needHeader) {
       where.insertAdjacentHTML(
-        "afterbegin",
+        'afterbegin',
         `<div class="${design.headBlock}" ${
-          design.needCounter ? "data-counter-where" : ""
+          design.needCounter ? 'data-counter-where' : ''
         }>
                     <h3>${where.title}</h3>
                 </div> 
                 <div class="${design.itemsParent}" 
-                    ${design.needToSmooth ? "data-smooth-mobile" : ""}
-                    ${design.needCounter ? "data-counter-scrollIt" : ""}
+                    ${design.needToSmooth ? 'data-smooth-mobile' : ''}
+                    ${design.needCounter ? 'data-counter-scrollIt' : ''}
                     >
                 </div>
                 `
@@ -92,11 +92,11 @@ const needToRender = function (where) {
        * Рендерим (или нет) заголовок из аттрибута тайтл из "where" и основное тело
        * */
       where.insertAdjacentHTML(
-        "afterbegin",
+        'afterbegin',
         ` <div class="${design.itemsParent}" 
-                    ${design.needToSmooth ? "data-smooth-mobile" : ""}
+                    ${design.needToSmooth ? 'data-smooth-mobile' : ''}
                     ${
-                      design.needCounter ? "data-counter-scrollIt" : ""
+                      design.needCounter ? 'data-counter-scrollIt' : ''
                     }> </div>`
       );
     }
@@ -113,16 +113,16 @@ const needToRender = function (where) {
           : item.images[0];
 
         itemsParent.insertAdjacentHTML(
-          "beforeend",
+          'beforeend',
           `
                 <article class="${design.article}"
-                ${item.popUp ? `data-popup="${item.id}"` : ""}
-                ${item.title ? `title="${item.title}"` : ""}
-                ${design.needCounter ? "data-counter-item" : ""}
+                ${item.popUp ? `data-popup="${item.id}"` : ''}
+                ${item.title ? `title="${item.title}"` : ''}
+                ${design.needCounter ? 'data-counter-item' : ''}
                 ${
                   item.readMoreLink
                     ? `style="border: 1px solid var(--holyxey-white-oo)" onclick="this.querySelector('a').click()"`
-                    : ""
+                    : ''
                 }
                 >
                     ${
@@ -131,28 +131,28 @@ const needToRender = function (where) {
                             ${
                               item.icon
                                 ? `<img class="classic-art-icon" src="${item.icon}" alt="icon">`
-                                : ""
+                                : ''
                             }
                             <h4 class="${design.artHeader}" ${
-                            item.icon ? `style="padding-left: 2.5rem"` : ""
+                            item.icon ? `style="padding-left: 2.5rem"` : ''
                           }>${item.title}</h4>
                             <p class="${design.artDescr}">${item.shortDescr}</p>
                         </div>`
-                        : ""
+                        : ''
                     }
                     ${
                       design.artImgBlck
                         ? `<div class="${design.artImgBlck}"><img loading="lazy" class="${design.artImg}" src="${imageSrc}" alt="${item.title}" onload="whatIsMax(this)"></div>`
-                        : ""
+                        : ''
                     }
                     ${
                       design.artLink
                         ? `<a class="${design.artLink}" ${
                             item.readMoreLink
                               ? `href="${item.readMoreLink}"`
-                              : ""
+                              : ''
                           }>${item.readMoreText}</a>`
-                        : ""
+                        : ''
                     }
                 </article>
                 `
@@ -165,9 +165,9 @@ const needToRender = function (where) {
   };
 
   const getData = function (section) {
-    const data = section.getAttribute("data-need-to-render");
-    const title = section.getAttribute("title");
-    const setups = data.split(",");
+    const data = section.getAttribute('data-need-to-render');
+    const title = section.getAttribute('title');
+    const setups = data.split(',');
     const listName = setups[0];
     const styleNumber = setups[1] - 1;
     const maxOf = setups[2];
@@ -184,13 +184,13 @@ const needToRender = function (where) {
 
 /** Рендер отзывов */
 function renderReviewGallery(maxRender = 4) {
-  const season = localStorage.getItem("season");
-  const renderTo = document.querySelector("#reviews .reviews-gallery");
-  renderTo.innerHTML = "";
+  const season = localStorage.getItem('season');
+  const renderTo = document.querySelector('#reviews .reviews-gallery');
+  renderTo.innerHTML = '';
 
   for (const img of lists.reviewsGallery[season]) {
     renderTo.insertAdjacentHTML(
-      "beforeend",
+      'beforeend',
       `
       <div class="reviews-gallery-imgblock">
         <img
@@ -209,8 +209,8 @@ function renderReviewGallery(maxRender = 4) {
 }
 
 // Рендер фотографий блока
-const openVariantGallery = (list, index, preview = false) => {
-  const season = localStorage.getItem("season");
+function openVariantGallery(list, index, preview = false) {
+  const season = localStorage.getItem('season');
 
   multipage.changeScroll();
 
@@ -218,10 +218,10 @@ const openVariantGallery = (list, index, preview = false) => {
   const images = lists[list][index].images[season]
     ? lists[list][index].images[season]
     : lists[list][index].images;
-  const multiPage = document.getElementById("multi-page");
+  const multiPage = document.getElementById('multi-page');
 
   multiPage.insertAdjacentHTML(
-    "afterbegin",
+    'afterbegin',
     `<div style="animation: showpopup .3s 1s ease-out forwards" id="close-popup" onclick="multipage.remPopup()">
         <svg width="50px" viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg"><g stroke-width="0"/><g stroke-linecap="round" stroke-linejoin="round"/><path d="M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2 2 6.5 2 12s4.5 10 10 10m-2.83-7.17 5.66-5.66m0 5.66L9.17 9.17" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </div>
@@ -229,7 +229,7 @@ const openVariantGallery = (list, index, preview = false) => {
         <h2 class="popUpHeader">${element.title}</h2> 
 
         <div class="popUpDescr">
-            ${element.description ? element.description : ""}
+            ${element.description ? element.description : ''}
           <div class="gallery-arows">
               <div id="gallery-arow-prev" class="gallery-arow prev nav-arrow">
                 <img role="none" src="${
@@ -253,22 +253,22 @@ const openVariantGallery = (list, index, preview = false) => {
   );
   images.forEach((image, ind) => {
     document
-      .getElementById("pop-up-gallery")
+      .getElementById('pop-up-gallery')
       .insertAdjacentHTML(
-        "beforeend",
+        'beforeend',
         `<img onclick="multipage.openFullScreenPhoto(this)" data-gallery-img="${ind}" src="${image}" alt="Фотографии ${element.title}">`
       );
   });
 
-  initGallery("pop-up-gallery", "gallery-arow-next", "gallery-arow-prev");
+  initGallery('pop-up-gallery', 'gallery-arow-next', 'gallery-arow-prev');
 
   showHideChats();
-};
+}
 
 /** Инициализация галереи.
+ * @param {string} node - id блока галереи
  * @param {string} next - id кнопки "далее"
  * @param {string} prev - id кнопки "назад"
- * @param {string} node - id блока галереи
  */
 function initGallery(node, next, prev) {
   const galleryNode = document.getElementById(node);
@@ -276,22 +276,22 @@ function initGallery(node, next, prev) {
     next: document.getElementById(next),
     prev: document.getElementById(prev),
   };
-  galleryNode.scrollTo({ left: 0, behavior: "smooth" });
+  galleryNode.scrollTo({ left: 0, behavior: 'smooth' });
 
   const elements = [...galleryNode.children];
 
   const observeElements = new IntersectionObserver(
     (entries, observer) => {
       entries.forEach((el) => {
-        if (el.target.getAttribute("data-gallery-id") == 0) {
+        if (el.target.getAttribute('data-gallery-id') == 0) {
           el.isIntersecting
-            ? (arrows.prev.style.display = "none")
-            : (arrows.prev.style.display = "");
+            ? (arrows.prev.style.display = 'none')
+            : (arrows.prev.style.display = '');
         }
-        if (el.target.getAttribute("data-gallery-id") == elements.length - 1) {
+        if (el.target.getAttribute('data-gallery-id') == elements.length - 1) {
           el.isIntersecting
-            ? (arrows.next.style.display = "none")
-            : (arrows.next.style.display = "");
+            ? (arrows.next.style.display = 'none')
+            : (arrows.next.style.display = '');
         }
       });
     },
@@ -299,14 +299,14 @@ function initGallery(node, next, prev) {
   );
 
   [...galleryNode.children].forEach((el, ind) => {
-    el.setAttribute("data-gallery-id", ind);
+    el.setAttribute('data-gallery-id', ind);
     observeElements.observe(el);
   });
 
-  arrows.next.addEventListener("click", () =>
+  arrows.next.addEventListener('click', () =>
     galleryScrollTo(arrows.next, arrows.next, arrows.prev, galleryNode)
   );
-  arrows.prev.addEventListener("click", () =>
+  arrows.prev.addEventListener('click', () =>
     galleryScrollTo(arrows.prev, arrows.next, arrows.prev, galleryNode)
   );
 }
@@ -320,7 +320,7 @@ function initGallery(node, next, prev) {
 function galleryScrollTo(pressed, next, prev, node) {
   const elements = node.children;
 
-  let buttonNum = Number(pressed.getAttribute("data-active-element") | 0);
+  let buttonNum = Number(pressed.getAttribute('data-active-element') | 0);
   if (pressed === next) buttonNum++;
   else buttonNum--;
 
@@ -328,9 +328,9 @@ function galleryScrollTo(pressed, next, prev, node) {
     let leftItem = elements[buttonNum].getBoundingClientRect().left;
     let leftNode = node.getBoundingClientRect().left;
 
-    node.scrollBy({ behavior: "smooth", left: leftItem - leftNode });
-    next.setAttribute("data-active-element", buttonNum);
-    prev.setAttribute("data-active-element", buttonNum);
+    node.scrollBy({ behavior: 'smooth', left: leftItem - leftNode });
+    next.setAttribute('data-active-element', buttonNum);
+    prev.setAttribute('data-active-element', buttonNum);
   } catch (e) {
     console.log(e);
   }
@@ -338,22 +338,22 @@ function galleryScrollTo(pressed, next, prev, node) {
 
 // TODO замени на новый рендер что ниже
 const renderVariantsPreview = () => {
-  const varNode = document.querySelectorAll("[data-variants]");
+  const varNode = document.querySelectorAll('[data-variants]');
   if (varNode) {
     varNode.forEach((node) => {
       node.insertAdjacentHTML(
-        "beforeend",
+        'beforeend',
         `<div class="classic-ip" data-smooth-mobile data-counter-scrollIt></div>`
       );
-      const where = node.querySelector(".classic-ip");
+      const where = node.querySelector('.classic-ip');
       const season =
-        localStorage.getItem("season") ||
-        document.body.getAttribute("data-season");
+        localStorage.getItem('season') ||
+        document.body.getAttribute('data-season');
 
-      if (node.getAttribute("data-variants") === "preview") {
+      if (node.getAttribute('data-variants') === 'preview') {
         for (let i = 0; i < 3; i++) {
           where.insertAdjacentHTML(
-            "beforeend",
+            'beforeend',
             `<article id="${lists.houses[i].title}" class="variantBlock" onclick="openVariantGallery('houses', ${i}, true)" data-counter-item>
                         <div class="variantHeader" >
                             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
@@ -374,7 +374,7 @@ const renderVariantsPreview = () => {
                     </article>`
           );
           where.insertAdjacentHTML(
-            "beforeend",
+            'beforeend',
             `<article id="${lists.glamping[i].title}" class="variantBlock" onclick="openVariantGallery('glamping', ${i})" data-counter-item>
                         <div class="variantHeader" >
                             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
@@ -395,15 +395,15 @@ const renderVariantsPreview = () => {
                     </article>`
           );
         }
-      } else if (node.getAttribute("data-variants") === "houses") {
+      } else if (node.getAttribute('data-variants') === 'houses') {
         /**/
         for (
           let i = 0;
-          i < (location.href.includes("/variants") ? lists.houses.length : 3);
+          i < (location.href.includes('/variants') ? lists.houses.length : 3);
           i++
         ) {
           where.insertAdjacentHTML(
-            "beforeend",
+            'beforeend',
             `<article id="${lists.houses[i].title}" class="variantBlock" onclick="openVariantGallery('houses', ${i})" data-counter-item>
                         <div class="variantHeader" >
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 25 25" fill="none">
@@ -416,9 +416,9 @@ const renderVariantsPreview = () => {
                     </article>`
           );
         }
-        if (!location.href.includes("/variants")) {
+        if (!location.href.includes('/variants')) {
           where.insertAdjacentHTML(
-            "beforeend",
+            'beforeend',
             `
                 <article class="classic-art" title="Посмотреть все" style="border: 1px solid var(--holyxey-white-oo); cursor: pointer" onclick="location.href = '/variants'">
                     <div class="classic-art-hb"><h4 class="classic-art-header">Посмотреть все</h4></div>
@@ -427,11 +427,11 @@ const renderVariantsPreview = () => {
                 </article> `
           );
         }
-      } else if (node.getAttribute("data-variants") === "glamping") {
+      } else if (node.getAttribute('data-variants') === 'glamping') {
         /**/
         for (let i = 0; i < lists.glamping.length; i++) {
           where.insertAdjacentHTML(
-            "beforeend",
+            'beforeend',
             `<article id="${lists.glamping[i].title}" class="variantBlock" onclick="openVariantGallery('glamping', ${i})" data-counter-item>
                         <div class="variantHeader" >
                             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
@@ -462,10 +462,13 @@ const renderVariantsPreview = () => {
  * Извлекает data-render-list и data-render-preview
  */
 const renderLists = () => {
-  const variants_nodes = document.querySelectorAll("[data-render-list]");
-  if (!variants_nodes || !variants_nodes.length) return;
+  const variants_nodes = document.querySelectorAll('[data-render-list]');
+  if (!variants_nodes || !variants_nodes.length) {
+    console.error('Списки не найдены');
+    return;
+  }
 
-  const season = localStorage.getItem("season");
+  const season = localStorage.getItem('season');
 
   function insertListItems(list, node, listName) {
     if (!list || !node) return;
@@ -475,21 +478,21 @@ const renderLists = () => {
 
     list.forEach((l, ind) => {
       node.insertAdjacentHTML(
-        "beforeend",
+        'beforeend',
         `
         <article class="varItem" onclick="openVariantGallery('${listName}', ${ind})" 
-        ${l.id ? `data-popup="${l.id}"` : ""} 
-        ${l.title ? `title="${l.title}" data-header="${l.title}"` : ""}
+        ${l.id ? `data-popup="${l.id}"` : ''} 
+        ${l.title ? `title="${l.title}" data-header="${l.title}"` : ''}
         data-list="${listName}" data-popup-type="${l.popUpType}">
           <div class="varHeader">
           ${
             iconLinks[listName]
               ? `<img class="varIcon" role="none" src="${iconLinks[listName]}?color=%23EEF0F2&height=20px" />`
-              : ""
+              : ''
           }
             <p class="varTitle">${l.title}</p>
           </div>
-          ${l.shortDescr ? `<p>${l.shortDescr}</p>` : ""}
+          ${l.shortDescr ? `<p>${l.shortDescr}</p>` : ''}
           <img loading="lazy" class="varPreview" src="${
             l.images?.[season]?.[0] ? l.images[season][0] : l.images[0]
           }" alt="Домики и палатки в глэмпинге Терруар: ${l.title}" />
@@ -501,16 +504,16 @@ const renderLists = () => {
   }
 
   variants_nodes.forEach((el) => {
-    el.innerHTML = "";
+    el.innerHTML = '';
 
-    const listName = el.getAttribute("data-render-list");
-    const isPreview = el.getAttribute("data-render-preview");
+    const listName = el.getAttribute('data-render-list');
+    const isPreview = el.getAttribute('data-render-preview');
 
     el.id = `gallery-${listName}`;
-    el.classList.add("variantsList");
+    el.classList.add('variantsList');
 
     if (isPreview) {
-      el.classList.add("preview");
+      el.classList.add('preview');
       setTimeout(() => {
         initGallery(
           `gallery-${listName}`,
@@ -526,11 +529,11 @@ const renderLists = () => {
 
 const openOffersPopup = (element, index) => {
   multipage.changeScroll();
-  const multiPage = document.getElementById("multi-page");
+  const multiPage = document.getElementById('multi-page');
   const object = lists.offers[index];
-  const season = localStorage.getItem("season");
+  const season = localStorage.getItem('season');
   multiPage.insertAdjacentHTML(
-    "afterbegin",
+    'afterbegin',
     `
                 <div style="animation: showpopup .3s 1s ease-out forwards" id="close-popup" onclick="multipage.remPopup()">
                     <svg width="50px" viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg"><g stroke-width="0"/><g stroke-linecap="round" stroke-linejoin="round"/><path d="M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2 2 6.5 2 12s4.5 10 10 10m-2.83-7.17 5.66-5.66m0 5.66L9.17 9.17" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -559,32 +562,32 @@ const openOffersPopup = (element, index) => {
   ); // Рендер поп-апа
   object.highlights.forEach((hl) => {
     document
-      .getElementById("infoHL")
-      .insertAdjacentHTML("beforeend", `<div class="hl">${hl}</div>`);
+      .getElementById('infoHL')
+      .insertAdjacentHTML('beforeend', `<div class="hl">${hl}</div>`);
   });
   object.info.forEach((text) => {
     document
-      .getElementById("infoText")
-      .insertAdjacentHTML("beforeend", `<p class="infoText">${text}</p>`);
+      .getElementById('infoText')
+      .insertAdjacentHTML('beforeend', `<p class="infoText">${text}</p>`);
   });
   showHideChats();
 };
 const renderOffers = () => {
-  const offersNode = document.getElementById("offers");
-  const season = localStorage.getItem("season");
+  const offersNode = document.getElementById('offers');
+  const season = localStorage.getItem('season');
   if (offersNode) {
     offersNode.insertAdjacentHTML(
-      "beforeend",
+      'beforeend',
       `<div class="classic-ip" data-counter-scrollit></div>`
     );
-    const whereTo = offersNode.querySelector(".classic-ip");
+    const whereTo = offersNode.querySelector('.classic-ip');
     lists.offers.forEach((offer, index) => {
       whereTo.insertAdjacentHTML(
-        "beforeend",
+        'beforeend',
         `<article data-counter-item class="offer ${
-          offer.link ? "active" : ""
+          offer.link ? 'active' : ''
         }" ${
-          offer.link ? `onclick="openOffersPopup(this, ${index})"` : ""
+          offer.link ? `onclick="openOffersPopup(this, ${index})"` : ''
         } data-offer-id="${index}" style="background-image: url(${
           offer.cover[season]
         })">
@@ -603,7 +606,7 @@ const renderOffers = () => {
                         </clipPath>
                       </defs>
                     </svg>`
-                        : ""
+                        : ''
                     }
                 </div>
             </article>`
@@ -615,28 +618,28 @@ const renderOffers = () => {
 /** прячет и показывает кнопки чатов (живо и тп)
  * при открытии поп-апов*/
 const showHideChats = () => {
-  const jivo = document.querySelectorAll("jdiv");
+  const jivo = document.querySelectorAll('jdiv');
   try {
     if (jivo) {
       for (let i = 0; i < jivo.length; i++) {
-        jivo[i].classList.toggle("hideIfPopUp");
+        jivo[i].classList.toggle('hideIfPopUp');
       }
       document
-        .getElementById("CalltouchWidgetFrame")
-        .classList.toggle("hideIfPopUp");
-    } else console.log("Не найдено блоков Jivo");
+        .getElementById('CalltouchWidgetFrame')
+        .classList.toggle('hideIfPopUp');
+    } else console.log('Не найдено блоков Jivo');
   } catch {}
 };
 
 const loyaltyWorker = () => {
   const popUp = (nodeElement) => {
-    const multiPage = document.getElementById("multi-page");
-    const title = nodeElement.getAttribute("title");
+    const multiPage = document.getElementById('multi-page');
+    const title = nodeElement.getAttribute('title');
     const el = lists.loyalty.find((element) => element.title === title);
 
     // popup render
     multiPage.insertAdjacentHTML(
-      "afterbegin",
+      'afterbegin',
       `
                 <div style="animation: showpopup .3s 1s ease-out forwards" id="close-popup" onclick="multipage.remPopup()">
                     <svg width="50px" viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg"><g stroke-width="0"/><g stroke-linecap="round" stroke-linejoin="round"/><path d="M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2 2 6.5 2 12s4.5 10 10 10m-2.83-7.17 5.66-5.66m0 5.66L9.17 9.17" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -645,20 +648,20 @@ const loyaltyWorker = () => {
                     <section id="loyaltyPopUp"></section>
                 </div>`
     );
-    const loyaltyPopUp = document.getElementById("loyaltyPopUp");
+    const loyaltyPopUp = document.getElementById('loyaltyPopUp');
     loyaltyPopUp.insertAdjacentHTML(
-      "beforeend",
+      'beforeend',
       `<h3>${el.title}</h3><article id="${el.id}"></article>`
     );
-    const inTo = loyaltyPopUp.querySelector("article");
+    const inTo = loyaltyPopUp.querySelector('article');
 
     // info render
     let tmt = 0;
     switch (el.id) {
-      case "loyaltyProgram":
+      case 'loyaltyProgram':
         for (const param of Object.entries(el.innards)) {
           inTo.insertAdjacentHTML(
-            "beforeend",
+            'beforeend',
             `<div style="animation: showpopup .4s ${tmt}s ease-out forwards" data-param="${param[0]}"><h4>${param[0]}</h4></div>`
           );
           param[1].forEach((el, ind) => {
@@ -666,25 +669,25 @@ const loyaltyWorker = () => {
             inTo
               .querySelector(`[data-param="${param[0]}"]`)
               .insertAdjacentHTML(
-                "beforeend",
+                'beforeend',
                 `<p style="animation: showpopup .4s ${tmt}s ease-out forwards" >${el}</p>`
               );
           });
         }
         inTo.insertAdjacentHTML(
-          "beforeend",
+          'beforeend',
           `<div style="animation: showpopup .4s ${tmt}s ease-out forwards"  id="loyaltyButtons">
                     <a class="classic-header-button-first" target="_blank" href="tel:+7 (499) 495-12-45">+7 (499) 495-12-45</a>
                     <a class="classic-header-button-first" target="_blank" href="https://wa.me/79670655655?text=Добрый день! Подскажите, какая у меня категория лояльности?">WhatsApp</a>
                 </div>`
         );
         break;
-      case "certificates":
+      case 'certificates':
         for (const certificate of Object.entries(el.innards)) {
           const name = certificate[0];
           const values = certificate[1];
           inTo.insertAdjacentHTML(
-            "beforeend",
+            'beforeend',
             `<div style="animation: showpopup .4s ${tmt}s ease-out forwards" data-cert="${name}">
                                 <img src="${values.imageLink}" alt="Терруар подарочный сертификат на ${name}">
                             <section>
@@ -696,15 +699,15 @@ const loyaltyWorker = () => {
           tmt += 0.3;
         }
         inTo.insertAdjacentHTML(
-          "afterbegin",
+          'afterbegin',
           `<p style="opacity: 0; animation: showpopup .4s ${tmt}s ease-out forwards">После оплаты сертификат с номером придет вам на указанную почту в течение суток.<br><br>Если нужно быстрее, <a onclick="multipage.remPopup()" href="#contacts" class="faqbtn" >свяжитесь с нами</a>, все сделаем!:)</p>`
         );
         break;
     }
   };
-  const loyaltySection = document.getElementById("loyalty");
+  const loyaltySection = document.getElementById('loyalty');
   if (loyaltySection) {
-    const elements = loyaltySection.querySelectorAll("article");
+    const elements = loyaltySection.querySelectorAll('article');
     for (const element of elements)
       element.onclick = (e) => {
         multipage.changeScroll();
@@ -715,20 +718,20 @@ const loyaltyWorker = () => {
 };
 
 const seasonTapesRender = () => {
-  const season = localStorage.getItem("season");
+  const season = localStorage.getItem('season');
   const renderATape = (el) => {
     const node = el.parentElement;
     el.insertAdjacentHTML(
-      "beforeend",
+      'beforeend',
       '<div class="a-tape"><p>Закрыто на сезон</p><p>Закрыто на сезон</p><p>Закрыто на сезон</p></div>'
     );
     const copy = el.cloneNode();
     copy.innerHTML = el.innerHTML;
-    
+
     el.remove();
     node.append(copy);
   };
-  const articles = Array.from(document.querySelectorAll("article"));
+  const articles = Array.from(document.querySelectorAll('article'));
   const elForTapping = articles.filter((el) => {
     return closedForSeason[season].some(
       (text) => el.title === text || el.id === text
@@ -736,64 +739,64 @@ const seasonTapesRender = () => {
   });
   elForTapping.forEach((el) => {
     renderATape(el);
-    if (el.querySelector(".variantPreviewImage"))
-      el.querySelector(".variantPreviewImage").style.filter = "grayscale(1)";
-    if (el.querySelector("img"))
-      el.querySelector("img").style.filter = "grayscale(1)";
+    if (el.querySelector('.variantPreviewImage'))
+      el.querySelector('.variantPreviewImage').style.filter = 'grayscale(1)';
+    if (el.querySelector('img'))
+      el.querySelector('img').style.filter = 'grayscale(1)';
   });
 };
 
 const showAboutBlock = (bttn) => {
-  const whyBlock = document.querySelector(".whyTerruar");
+  const whyBlock = document.querySelector('.whyTerruar');
   //
-  whyBlock.style.transition = "all ease-out 1s";
-  whyBlock.style.opacity = "1";
-  whyBlock.style.height = "100%";
+  whyBlock.style.transition = 'all ease-out 1s';
+  whyBlock.style.opacity = '1';
+  whyBlock.style.height = '100%';
   if (window.innerWidth > 600) {
-    whyBlock.style.padding = "2rem";
+    whyBlock.style.padding = '2rem';
   } else {
-    whyBlock.style.padding = ".5rem";
+    whyBlock.style.padding = '.5rem';
   }
   //
-  bttn.style.transition = "all ease-out .5s";
-  bttn.style.translate = "10px 0";
-  bttn.style.height = "0";
-  bttn.style.padding = "0";
-  bttn.style.opacity = "0";
-  bttn.style.marginInline = "-1rem";
+  bttn.style.transition = 'all ease-out .5s';
+  bttn.style.translate = '10px 0';
+  bttn.style.height = '0';
+  bttn.style.padding = '0';
+  bttn.style.opacity = '0';
+  bttn.style.marginInline = '-1rem';
 };
 
 /** настройки для видео, сезонные в основном
  */
 function setVeasonVideos() {
-  const season = localStorage.getItem("season");
-  const vertical = document.querySelector(".verticalPreview");
-  const horisontal = document.querySelector(".horizontalPreview");
+  const season = localStorage.getItem('season');
+  const vertical = document.querySelector('.verticalPreview');
+  const horisontal = document.querySelector('.horizontalPreview');
 
   if (vertical)
     vertical.setAttribute(
-      "data-frame-link",
+      'data-frame-link',
       lists.videos[season].vertical.videoLink
     );
   if (horisontal)
     horisontal.setAttribute(
-      "data-frame-link",
+      'data-frame-link',
       lists.videos[season].horisontal.videoLink
     );
 }
 const openFullVideo = (element) => {
   multipage.changeScroll();
-  const link = element.getAttribute("data-frame-link");
-  const multiPage = document.getElementById("multi-page");
+  const link = element.getAttribute('data-frame-link');
+  const multiPage = document.getElementById('multi-page');
   multiPage.insertAdjacentHTML(
-    "afterbegin",
+    'afterbegin',
     `
                 <div style="animation: showpopup .3s 1s ease-out forwards" id="close-popup" onclick="multipage.remPopup()">
                     <svg width="50px" viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg"><g stroke-width="0"/><g stroke-linecap="round" stroke-linejoin="round"/><path d="M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2 2 6.5 2 12s4.5 10 10 10m-2.83-7.17 5.66-5.66m0 5.66L9.17 9.17" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </div>
                 <div class="blur" id="popup-block"> <!--тело поп-апа-->
                     <iframe src="${link}" allowfullscreen class="${element.getAttribute(
-      "class"
+      'class'
     )}" id="popUpVideo"></iframe>
                 </div>`
   ); // Рендер поп-апа
@@ -802,7 +805,7 @@ const openFullVideo = (element) => {
 };
 
 const terruarCatalogue = {
-  link: "https://store.tildaapi.com/api/getproductslist/?storepartuid=513452425241&recid=752306605&c=1716436482010&getparts=true&getoptions=true&slice=1&size=36&projectid=5131025",
+  link: 'https://store.tildaapi.com/api/getproductslist/?storepartuid=513452425241&recid=752306605&c=1716436482010&getparts=true&getoptions=true&slice=1&size=36&projectid=5131025',
   catalog: {},
   get parts() {
     return this.catalog.parts;
@@ -831,12 +834,12 @@ const terruarCatalogue = {
     return product.descr;
   },
   renderCategories: () => {
-    if (document.getElementById("terruarMenu")) {
-      let menu = document.getElementById("terruarMenu");
+    if (document.getElementById('terruarMenu')) {
+      let menu = document.getElementById('terruarMenu');
       if (terruarCatalogue.parts) {
         terruarCatalogue.parts.forEach((part) => {
           menu.insertAdjacentHTML(
-            "beforeend",
+            'beforeend',
             `<div class="menuCategory" id="${part.uid}"><h4 class="categoryHeader">${part.title}</h4></div>`
           );
         });
@@ -846,13 +849,13 @@ const terruarCatalogue = {
     }
   },
   renderProducts: () => {
-    if (document.getElementById("terruarMenu")) {
-      let menu = document.getElementById("terruarMenu");
+    if (document.getElementById('terruarMenu')) {
+      let menu = document.getElementById('terruarMenu');
       if (terruarCatalogue.products) {
         terruarCatalogue.products.forEach((product) => {
           let partID = terruarCatalogue.getProductPart(product);
           document.getElementById(partID).insertAdjacentHTML(
-            "beforeend",
+            'beforeend',
             `
 <div class="product" id="${terruarCatalogue.getProductId(product)}">
                         ${
@@ -860,21 +863,21 @@ const terruarCatalogue = {
                             ? `<p class="productTitle">${terruarCatalogue.getProductTitle(
                                 product
                               )}</p>`
-                            : ""
+                            : ''
                         }
                         ${
                           product.descr
                             ? `<p class="productDescription">${terruarCatalogue.getProductDescription(
                                 product
                               )}</p> `
-                            : ""
+                            : ''
                         }
                         ${
                           product.price
                             ? `<p class="productPrice">${terruarCatalogue.getProductPrice(
                                 product
                               )} p.</p> `
-                            : ""
+                            : ''
                         }
 </div>
 `
@@ -901,25 +904,25 @@ const terruarCatalogue = {
 };
 const multipage = {
   popupButtonsInit: function () {
-    document.querySelectorAll("[data-popup]").forEach((bttn) => {
-      const data = bttn.getAttribute("data-popup");
-      bttn.addEventListener("click", (e) => {
+    document.querySelectorAll('[data-popup]').forEach((bttn) => {
+      const data = bttn.getAttribute('data-popup');
+      bttn.addEventListener('click', (e) => {
         multipage.popup(e.target);
         showHideChats();
       });
-      bttn.querySelectorAll("*").forEach((button) => {
-        button.setAttribute("data-popup", data);
+      bttn.querySelectorAll('*').forEach((button) => {
+        button.setAttribute('data-popup', data);
       });
     });
-    const buttons = document.querySelectorAll("[data-popup]");
+    const buttons = document.querySelectorAll('[data-popup]');
 
     buttons.forEach((button) => {
-      const id = button.getAttribute("data-popup");
+      const id = button.getAttribute('data-popup');
       const listName = this.findListNameById(id);
       const obj = this.findObjectById(id);
-      button.setAttribute("data-list", listName);
-      button.setAttribute("data-popup-type", obj.popUpType);
-      button.setAttribute("data-header", obj.title);
+      button.setAttribute('data-list', listName);
+      button.setAttribute('data-popup-type', obj.popUpType);
+      button.setAttribute('data-header', obj.title);
     });
   },
   findListNameById: function (id) {
@@ -938,19 +941,19 @@ const multipage = {
   },
   //
   popup(target) {
-    const dataPopup = target.getAttribute("data-popup")
-      ? target.getAttribute("data-popup")
-      : "";
-    const dataHeader = target.getAttribute("data-header")
-      ? target.getAttribute("data-header")
-      : "";
-    const dataType = target.getAttribute("data-popup-type")
-      ? target.getAttribute("data-popup-type")
-      : "";
+    const dataPopup = target.getAttribute('data-popup')
+      ? target.getAttribute('data-popup')
+      : '';
+    const dataHeader = target.getAttribute('data-header')
+      ? target.getAttribute('data-header')
+      : '';
+    const dataType = target.getAttribute('data-popup-type')
+      ? target.getAttribute('data-popup-type')
+      : '';
     const dataList = this.findListNameById(dataPopup);
     this.changeScroll();
 
-    const multiPage = document.getElementById("multi-page");
+    const multiPage = document.getElementById('multi-page');
     const getMenu = (target) => {
       terruarCatalogue.getCatalogues().then((r) => {
         terruarCatalogue.renderCategories();
@@ -959,14 +962,14 @@ const multipage = {
       return `<div id="terruarMenu"></div>`;
     };
     const getGallery = (service) => {
-      if (service.id === "showAllButton") return;
+      if (service.id === 'showAllButton') return;
       try {
-        let q = "";
-        const id = service.getAttribute("data-popup");
+        let q = '';
+        const id = service.getAttribute('data-popup');
         const obj = this.findObjectById(id);
         if (!obj.withGallery) return q;
 
-        const season = localStorage.getItem("season");
+        const season = localStorage.getItem('season');
 
         for (const img of obj.images?.[season] || obj.images) {
           q += `<img src="${img}" onclick="this.scrollIntoView()" alt="Фотографии ресторана">`;
@@ -976,7 +979,7 @@ const multipage = {
       } catch {}
     };
     const getTeam = (target) => {
-      let q = "";
+      let q = '';
       lists.team.forEach((person) => {
         q += `<article class="team-person">
                 <div class="person-photo-block">
@@ -992,9 +995,9 @@ const multipage = {
       return `<section id="team" data-smooth-mobile>${q}</section>`;
     };
     const getService = (target) => {
-      const season = localStorage.getItem("season");
-      const name = target.getAttribute("data-popup");
-      const list = target.getAttribute("data-list");
+      const season = localStorage.getItem('season');
+      const name = target.getAttribute('data-popup');
+      const list = target.getAttribute('data-list');
       const obj = lists[list].find((service, id) => service.id === name);
 
       const imageSrc = obj.images?.[season]?.[0]
@@ -1021,36 +1024,36 @@ const multipage = {
     };
 
     getWeatherForecast().then();
-    dataPopup === "online" ? videoPlayBack() : "";
+    dataPopup === 'online' ? videoPlayBack() : '';
     multiPage.insertAdjacentHTML(
-      "afterbegin",
+      'afterbegin',
       `
                 <div style="animation: showpopup .3s 1s ease-out forwards" id="close-popup" onclick="multipage.remPopup()">
                         <svg width="50px" viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg"><g stroke-width="0"/><g stroke-linecap="round" stroke-linejoin="round"/><path d="M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2 2 6.5 2 12s4.5 10 10 10m-2.83-7.17 5.66-5.66m0 5.66L9.17 9.17" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                     </div>
                 <div class="blur" id="popup-block"> <!--тело поп-апа-->
                     ${
-                      dataPopup === "online"
+                      dataPopup === 'online'
                         ? `<article id="weatherTest"></article>`
-                        : ""
+                        : ''
                     }
                     <h2 class="popUpHeader">${dataHeader}</h2> 
                     ${getGallery(target)}
-                    ${dataPopup === "team" ? getTeam(target) : ""}
-                    ${dataPopup === "restaurant" ? getMenu(target) : ""}
-                    ${dataType === "service" ? getService(target) : ""}
+                    ${dataPopup === 'team' ? getTeam(target) : ''}
+                    ${dataPopup === 'restaurant' ? getMenu(target) : ''}
+                    ${dataType === 'service' ? getService(target) : ''}
                 </div>`
     ); // Рендер поп-апа
   }, // Показ поп-апа
   remPopup() {
     this.changeScroll();
     showHideChats();
-    const popup = document.getElementById("popup-block");
-    const closeButton = document.getElementById("close-popup");
-    const weatherBlock = document.getElementById("weatherTest");
-    const mobileMenuButton = document.getElementById("monMenuButton");
-    popup.style.animation = "hidepopup .3s ease-out forwards";
-    closeButton.style.animation = "hidepopup .3s ease-out forwards";
+    const popup = document.getElementById('popup-block');
+    const closeButton = document.getElementById('close-popup');
+    const weatherBlock = document.getElementById('weatherTest');
+    const mobileMenuButton = document.getElementById('monMenuButton');
+    popup.style.animation = 'hidepopup .3s ease-out forwards';
+    closeButton.style.animation = 'hidepopup .3s ease-out forwards';
     // weatherBlock.style.animation = 'hidepopup .3s ease-out forwards'
     setTimeout(() => {
       popup ? popup.remove() : null;
@@ -1061,9 +1064,9 @@ const multipage = {
 
   //
   getHeaderHeight: async () => {
-    const nav = document.querySelector("nav");
-    const hero = document.getElementById("hero");
-    const mobNav = document.getElementById("mobileNavStroke");
+    const nav = document.querySelector('nav');
+    const hero = document.getElementById('hero');
+    const mobNav = document.getElementById('mobileNavStroke');
 
     if (mobNav.offsetHeight < 1) {
       let height = `calc(${window.innerHeight}px - ${nav.clientHeight}px - 3rem)`;
@@ -1077,63 +1080,63 @@ const multipage = {
     } // для мобильных
   },
   hideMobileMenu() {
-    let btn = document.getElementById("monMenuButton");
+    let btn = document.getElementById('monMenuButton');
     if (btn.getBoundingClientRect().width > 0) return btn.click();
   },
   mobileBackImages: [
-    "https://optim.tildacdn.com/tild3534-3435-4839-b839-366337373937/-/format/webp/IMAGE_2024-04-11_170.jpg",
-    "https://optim.tildacdn.com/tild3837-6638-4535-a238-663235623730/-/format/webp/KIR_3052.jpg",
-    "https://optim.tildacdn.com/tild3739-6138-4236-a436-313339626532/-/format/webp/IMAGE_2024-04-11_173.jpg",
+    'https://optim.tildacdn.com/tild3534-3435-4839-b839-366337373937/-/format/webp/IMAGE_2024-04-11_170.jpg',
+    'https://optim.tildacdn.com/tild3837-6638-4535-a238-663235623730/-/format/webp/KIR_3052.jpg',
+    'https://optim.tildacdn.com/tild3739-6138-4236-a436-313339626532/-/format/webp/IMAGE_2024-04-11_173.jpg',
     //'https://optim.tildacdn.com/tild3539-6266-4461-a633-376165353133/-/format/webp/IMAGE_2024-04-11_174.jpg',
   ],
   mobileMenu: {
     btnClck(el) {
-      let menuPoints = document.querySelectorAll(".navPCItem");
-      let nav = document.querySelector("nav");
-      let mainList = document.getElementById("menuList");
-      let buttonLines = document.querySelectorAll(".menuButtonHR");
-      if (el.getAttribute("data-clicked") === "0") {
+      let menuPoints = document.querySelectorAll('.navPCItem');
+      let nav = document.querySelector('nav');
+      let mainList = document.getElementById('menuList');
+      let buttonLines = document.querySelectorAll('.menuButtonHR');
+      if (el.getAttribute('data-clicked') === '0') {
         let tmt = 0;
         menuPoints.forEach((point) => {
-          point.style.opacity = "0";
+          point.style.opacity = '0';
           setTimeout(function () {
             point.style.opacity = 1;
           }, tmt);
           tmt += 20;
-          point.style.display = "block";
-          point.style.marginBlock = ".5rem";
+          point.style.display = 'block';
+          point.style.marginBlock = '.5rem';
         });
-        el.style.backgroundColor = "var(--holyxey-white)";
+        el.style.backgroundColor = 'var(--holyxey-white)';
         buttonLines.forEach((line) => {
-          line.style.backgroundColor = "var(--holyxey-wine)";
+          line.style.backgroundColor = 'var(--holyxey-wine)';
         });
 
-        el.setAttribute("data-clicked", "1");
-      } else if (el.getAttribute("data-clicked") === "1") {
+        el.setAttribute('data-clicked', '1');
+      } else if (el.getAttribute('data-clicked') === '1') {
         menuPoints.forEach((point) => {
-          point.style.display = "none";
+          point.style.display = 'none';
         });
-        el.style.backgroundColor = "var(--holyxey-wine)";
+        el.style.backgroundColor = 'var(--holyxey-wine)';
         buttonLines.forEach((line) => {
-          line.style.backgroundColor = "var(--holyxey-white)";
+          line.style.backgroundColor = 'var(--holyxey-white)';
         });
 
-        el.setAttribute("data-clicked", "0");
+        el.setAttribute('data-clicked', '0');
       }
     },
   },
   //
   renderFAQ: function () {
-    const section = document.getElementById("faq");
+    const section = document.getElementById('faq');
     const list = lists.faq;
     section.insertAdjacentHTML(
-      "beforeend",
+      'beforeend',
       `<ul id="faq-list" class="classic-ip"></ul>`
     );
-    const whereTo = document.getElementById("faq-list");
+    const whereTo = document.getElementById('faq-list');
     for (const [key, value] of Object.entries(list)) {
       whereTo.insertAdjacentHTML(
-        "beforeend",
+        'beforeend',
         `<li class="faq-item" onclick="multipage.clickFAQ(this)">
                     <div class="faq-item-header-block">
                         <div class="faq-item-header-icon"></div>
@@ -1148,27 +1151,27 @@ const multipage = {
     multipage.checkFAQlinks();
   },
   clickFAQ: function (li) {
-    li.parentNode.querySelectorAll(".faq-item-body").forEach((item) => {
-      item.style.height = "0";
+    li.parentNode.querySelectorAll('.faq-item-body').forEach((item) => {
+      item.style.height = '0';
       item.style.opacity = `0`;
       item.style.translate = `0 40px`;
     });
-    li.parentNode.querySelectorAll(".faq-item-header-icon").forEach((item) => {
-      item.style.top = "50%";
-      item.style.left = "1rem";
-      item.style.translate = "0 -50%";
-      item.style.width = ".5rem";
-      item.style.height = ".5rem";
+    li.parentNode.querySelectorAll('.faq-item-header-icon').forEach((item) => {
+      item.style.top = '50%';
+      item.style.left = '1rem';
+      item.style.translate = '0 -50%';
+      item.style.width = '.5rem';
+      item.style.height = '.5rem';
     });
-    const textBlock = li.querySelector(".faq-item-body");
-    const textInBlock = li.querySelector(".faq-item-text");
-    const bullet = li.querySelector(".faq-item-header-icon");
+    const textBlock = li.querySelector('.faq-item-body');
+    const textInBlock = li.querySelector('.faq-item-text');
+    const bullet = li.querySelector('.faq-item-header-icon');
 
     if (textBlock.clientHeight <= 0) {
-      bullet.style.top = "1rem";
-      bullet.style.left = "-1rem";
-      bullet.style.width = "2px";
-      bullet.style.height = "2px";
+      bullet.style.top = '1rem';
+      bullet.style.left = '-1rem';
+      bullet.style.width = '2px';
+      bullet.style.height = '2px';
 
       textBlock.style.height = `calc(${
         textInBlock.getBoundingClientRect().height + 10
@@ -1182,9 +1185,9 @@ const multipage = {
   //
   openFullScreenPhoto: function (el) {
     this.changeScroll();
-    const multiPage = document.getElementById("multi-page");
+    const multiPage = document.getElementById('multi-page');
     multiPage.insertAdjacentHTML(
-      "afterbegin",
+      'afterbegin',
       `
                 <div style="animation: showpopup .3s 1s ease-out forwards" id="fullScreenPhotoButton" onclick="multipage.closeFullScreenPhoto()">
                     <svg width="50px" viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg"><g stroke-width="0"/><g stroke-linecap="round" stroke-linejoin="round"/><path d="M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2 2 6.5 2 12s4.5 10 10 10m-2.83-7.17 5.66-5.66m0 5.66L9.17 9.17" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -1197,10 +1200,10 @@ const multipage = {
   },
   closeFullScreenPhoto: function () {
     this.changeScroll();
-    const button = document.querySelector("#fullScreenPhotoButton");
-    const img = document.querySelector("#fullScreenPhoto");
-    img.style.animation = "hidepopup .3s ease-out forwards";
-    button.style.animation = "hidepopup .3s ease-out forwards";
+    const button = document.querySelector('#fullScreenPhotoButton');
+    const img = document.querySelector('#fullScreenPhoto');
+    img.style.animation = 'hidepopup .3s ease-out forwards';
+    button.style.animation = 'hidepopup .3s ease-out forwards';
     setTimeout(() => {
       img.remove();
       button.remove();
@@ -1212,10 +1215,10 @@ const multipage = {
     return Math.floor(Math.random() * max);
   },
   smoothShowHorizontal: function () {
-    const parentElements = document.querySelectorAll("[data-smooth-mobile]");
+    const parentElements = document.querySelectorAll('[data-smooth-mobile]');
     if (parentElements.length > 0) {
       parentElements.forEach((parentElement) => {
-        parentElement.addEventListener("touchmove", (e) => {
+        parentElement.addEventListener('touchmove', (e) => {
           parentElement.children[0].style.animation = ``;
         });
         const waitOnTheViewPort = setInterval(() => {
@@ -1232,38 +1235,38 @@ const multipage = {
     }
   },
   changeScroll() {
-    if (document.body.style.overflow === "hidden")
-      document.body.style.overflow = "unset";
-    else document.body.style.overflow = "hidden";
+    if (document.body.style.overflow === 'hidden')
+      document.body.style.overflow = 'unset';
+    else document.body.style.overflow = 'hidden';
   }, // Запрет/разрешение на скролл body ( прим. при открытии поп-апа )
   getUserAgent() {
     if (
-      (navigator.userAgent.indexOf("Opera") ||
-        navigator.userAgent.indexOf("OPR")) !== -1
+      (navigator.userAgent.indexOf('Opera') ||
+        navigator.userAgent.indexOf('OPR')) !== -1
     ) {
-      return "Opera";
-    } else if (navigator.userAgent.indexOf("Edg") !== -1) {
-      return "Edge";
-    } else if (navigator.userAgent.indexOf("Chrome") !== -1) {
-      return "Chrome";
-    } else if (navigator.userAgent.indexOf("Safari") !== -1) {
-      return "Safari";
-    } else if (navigator.userAgent.indexOf("Firefox") !== -1) {
-      return "Firefox";
+      return 'Opera';
+    } else if (navigator.userAgent.indexOf('Edg') !== -1) {
+      return 'Edge';
+    } else if (navigator.userAgent.indexOf('Chrome') !== -1) {
+      return 'Chrome';
+    } else if (navigator.userAgent.indexOf('Safari') !== -1) {
+      return 'Safari';
+    } else if (navigator.userAgent.indexOf('Firefox') !== -1) {
+      return 'Firefox';
     } else if (
-      navigator.userAgent.indexOf("MSIE") !== -1 ||
+      navigator.userAgent.indexOf('MSIE') !== -1 ||
       !!document.documentMode == true
     ) {
       //IF IE > 10
-      return "IE";
+      return 'IE';
     } else {
-      return "unknown";
+      return 'unknown';
     }
   }, // Строкой получаем название браузера ( для трансляции )
   bookingClick() {
     let booking =
-      document.querySelector("#znms-widget-floating-0") ||
-      document.querySelector(".znms-widget__widget-btn");
+      document.querySelector('#znms-widget-floating-0') ||
+      document.querySelector('.znms-widget__widget-btn');
     if (booking) {
       booking.click();
     }
@@ -1277,13 +1280,13 @@ const multipage = {
     }
   },
   checkFAQlinks: function () {
-    let links = document.querySelectorAll(".faqbtn");
+    let links = document.querySelectorAll('.faqbtn');
     links.forEach((link) => {
-      if (link.getAttribute("href")) {
-        const href = link.getAttribute("href");
-        const sharp = href.split("#")[1];
+      if (link.getAttribute('href')) {
+        const href = link.getAttribute('href');
+        const sharp = href.split('#')[1];
         if (!document.getElementById(sharp)) {
-          return "";
+          return '';
         } else {
           link.href = `#${sharp}`;
         }
@@ -1299,11 +1302,11 @@ const checkInViewHorizontal = function (element) {
   );
 }; // Используется для назначения каунтера, который ниже рендерится
 const renderCounter = function (where, max, whatIsScrolling, itemsList) {
-  if (!itemsList) return console.log("Нет элементов для renderCounter");
+  if (!itemsList) return console.log('Нет элементов для renderCounter');
 
   const counterChange = function (where, itemsList) {
     const items = itemsList;
-    const counterSpan = where.querySelector(".counterSpan");
+    const counterSpan = where.querySelector('.counterSpan');
 
     let count = 1;
     items.forEach((item, index) => {
@@ -1313,28 +1316,28 @@ const renderCounter = function (where, max, whatIsScrolling, itemsList) {
     });
   };
   where.insertAdjacentHTML(
-    "beforeend",
+    'beforeend',
     `<div class="counterBlock" style="opacity: .8">
                 <span class="counterSpan">1</span>
                 <span> / </span>
                 <span>${max}</span>
                 </div>`
   );
-  whatIsScrolling.addEventListener("scroll", () => {
+  whatIsScrolling.addEventListener('scroll', () => {
     counterChange(where, itemsList);
   });
 };
 const whereToRenderCounter = function () {
-  const where = document.querySelectorAll("[data-counter-where]");
+  const where = document.querySelectorAll('[data-counter-where]');
   if (where.length === 0) return;
   where.forEach((item) => {
-    const whatIsScrolling = item.querySelector("[data-counter-scrollIt]")
-      ? item.querySelector("[data-counter-scrollIt]")
-      : item.parentNode.querySelector("[data-counter-scrollIt]");
+    const whatIsScrolling = item.querySelector('[data-counter-scrollIt]')
+      ? item.querySelector('[data-counter-scrollIt]')
+      : item.parentNode.querySelector('[data-counter-scrollIt]');
     const itemsList =
-      item.querySelectorAll("[data-counter-item]").length > 1
-        ? item.querySelectorAll("[data-counter-item]")
-        : item.parentNode.querySelectorAll("[data-counter-item]");
+      item.querySelectorAll('[data-counter-item]').length > 1
+        ? item.querySelectorAll('[data-counter-item]')
+        : item.parentNode.querySelectorAll('[data-counter-item]');
     const max = itemsList.length;
     renderCounter(item, max, whatIsScrolling, itemsList);
   });
@@ -1354,18 +1357,20 @@ async function videoPlayBack() {
     //                 <source id="videoPlayBack" src="${data[0].url}" type="video/mp4">
     //             </video></article>`
     // );
-    const response = await fetch("https://terruar-stream.text-holyxey.workers.dev/getVideo");
+    const response = await fetch(
+      'https://terruar-stream.text-holyxey.workers.dev/getVideo'
+    );
     const url = await response.text();
-    
-    document.getElementById("popup-block").insertAdjacentHTML(
-      "beforeend",
+
+    document.getElementById('popup-block').insertAdjacentHTML(
+      'beforeend',
       `<article id="video-stream" >
                 <video controls autoplay muted playsinline loop style="width: 100%">
                     <source id="videoPlayBack" src="${url}" type="video/mp4">
                 </video></article>`
     );
   } catch (error) {
-    console.error("Error getting token:", error.message);
+    console.error('Error getting token:', error.message);
   }
 }
 
@@ -1388,27 +1393,27 @@ async function getWeatherForecast() {
     hourlyList = temperature_2m;
     weatherTestRender(days);
   } catch (error) {
-    console.error("Error fetching weather data:", error);
+    console.error('Error fetching weather data:', error);
   }
 }
 
 const weatherTestRender = (days) => {
-  if (document.getElementById("weatherTest") && days > 0) {
-    let b = document.getElementById("weatherTest");
+  if (document.getElementById('weatherTest') && days > 0) {
+    let b = document.getElementById('weatherTest');
     const today = (i) => {
       let q;
       switch (i) {
         case 0:
-          q = "Сегодня";
+          q = 'Сегодня';
           break;
         case 1:
-          q = "Завтра";
+          q = 'Завтра';
           break;
         case 2:
-          q = "Послезавтра";
+          q = 'Послезавтра';
           break;
         default:
-          q = "Погода";
+          q = 'Погода';
           break;
       }
       return q;
@@ -1437,14 +1442,14 @@ const weatherTestRender = (days) => {
             `
       );
     }
-  } else return "Days is not defined";
+  } else return 'Days is not defined';
 };
 // !weather
 
-window.addEventListener("resize", () => {
+window.addEventListener('resize', () => {
   multipage.getHeaderHeight();
 });
-window.addEventListener("load", () => {
+window.addEventListener('load', () => {
   multipage.getHeaderHeight().then(() => {
     if (window.innerWidth < 600) {
       multipage.smoothShowHorizontal();
@@ -1453,27 +1458,24 @@ window.addEventListener("load", () => {
   seasonTapesRender();
   setVeasonVideos();
 });
-document.addEventListener("DOMContentLoaded", async () => {
+document.addEventListener('DOMContentLoaded', async () => {
   setSeason();
   needToRender();
   renderReviewGallery();
   multipage.popupButtonsInit();
 
-  multipage
-    .getHeaderHeight()
-    .then(renderLists)
-    // TODO замени на новый рендер
-    .then(renderVariantsPreview)
-    .then(whereToRenderCounter)
-    .then(multipage.renderFAQ)
-    .then(renderOffers)
-    .then(loyaltyWorker)
-    .then(seasonTapesRender);
-
-  ;
+  multipage.getHeaderHeight();
+  renderLists();
+  // TODO замени на новый рендер
+  renderVariantsPreview();
+  whereToRenderCounter();
+  multipage.renderFAQ();
+  renderOffers();
+  loyaltyWorker();
+  seasonTapesRender();
 
   setTimeout(() => {
     // console.clear()
-    console.log("Designed by Holyxey at AdsTarget");
+    console.log('Designed by Holyxey at AdsTarget');
   }, 1500);
 });
