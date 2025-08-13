@@ -473,9 +473,6 @@ const renderLists = () => {
   function insertListItems(list, node, listName) {
     if (!list || !node) return;
 
-    // <article class="classic-art" data-popup="bathvat" title="Банный чан" data-list="servicesList" data-popup-type="service" data-header="Банный чан">
-    // </article>
-
     list.forEach((l, ind) => {
       node.insertAdjacentHTML(
         'beforeend',
@@ -511,19 +508,18 @@ const renderLists = () => {
 
     el.id = `gallery-${listName}`;
     el.classList.add('variantsList');
+    insertListItems(lists[listName], el, listName);
 
     if (isPreview) {
       el.classList.add('preview');
-      setTimeout(() => {
-        initGallery(
-          `gallery-${listName}`,
-          `${listName}-arrow-next`,
-          `${listName}-arrow-prev`
-        );
-      }, 1000);
+      // setTimeout(() => {
+      initGallery(
+        `gallery-${listName}`,
+        `${listName}-arrow-next`,
+        `${listName}-arrow-prev`
+      );
+      // }, 1000);
     }
-
-    insertListItems(lists[listName], el, listName);
   });
 };
 
@@ -1464,18 +1460,14 @@ document.addEventListener('DOMContentLoaded', async () => {
   renderReviewGallery();
   multipage.popupButtonsInit();
 
-  multipage.getHeaderHeight();
+  await multipage.getHeaderHeight();
   renderLists();
-  // TODO замени на новый рендер
+
+  // TODO замени на новый рендер (renderLists)
   renderVariantsPreview();
   whereToRenderCounter();
   multipage.renderFAQ();
   renderOffers();
   loyaltyWorker();
   seasonTapesRender();
-
-  setTimeout(() => {
-    // console.clear()
-    console.log('Designed by Holyxey at AdsTarget');
-  }, 1500);
 });
