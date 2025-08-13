@@ -1,0 +1,75 @@
+#tl-visa-wrapper {
+  display: flex;
+  overflow: hidden;
+  position: fixed;
+  bottom: 4rem;
+  right: 2.5rem;
+  width: fit-content;
+  height: fit-content;
+  z-index: 10;
+  gap: 1rem;
+  z-index: 595607309595607309;
+}
+#tl-visa-support-block {
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  animation: visa-module 1s 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+#tl-visa-close {
+  cursor: pointer;
+  margin: auto;
+  padding: 0.25rem;
+  background-color: white;
+  border-radius: 50%;
+  opacity: 0;
+  right: 0;
+  animation: visa-module 1.25s 1s cubic-bezier(0.68, -0.55, 0.265, 1.55)
+    forwards;
+
+  /*  */
+  svg {
+    display: block;
+  }
+}
+
+/*  */
+@media screen and (max-width: 768px) {
+  #tl-visa-wrapper {
+    display: none;
+    /* bottom: 0.5rem;
+    right: 0.5rem;
+    width: 100%;
+    height: fit-content;
+    flex-direction: column;
+    align-items: center; */
+  }
+  /* #tl-visa-support-block {
+    animation-name: visa-module-m;
+  }
+  #tl-visa-close {
+    animation-name: visa-module-m;
+  } */
+}
+
+/*  */
+@keyframes visa-module {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes visa-module-m {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
