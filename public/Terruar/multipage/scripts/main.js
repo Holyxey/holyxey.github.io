@@ -270,7 +270,8 @@ function openVariantGallery(list, index, preview = false) {
  * @param {string} next - id кнопки "далее"
  * @param {string} prev - id кнопки "назад"
  */
-function initGallery(node, next, prev) {
+async function initGallery(node, next, prev) {
+  await new Promise((resolve) => setTimeout(resolve, 1000));
   const galleryNode = document.getElementById(node);
   const arrows = {
     next: document.getElementById(next),
@@ -1446,10 +1447,6 @@ window.addEventListener('resize', () => {
   multipage.getHeaderHeight();
 });
 window.addEventListener('load', () => {
-  renderLists();
-  // TODO замени на новый рендер (renderLists)
-  renderVariantsPreview();
-
   multipage.getHeaderHeight().then(() => {
     if (window.innerWidth < 600) {
       multipage.smoothShowHorizontal();
@@ -1465,6 +1462,10 @@ document.addEventListener('DOMContentLoaded', () => {
   multipage.popupButtonsInit();
 
   multipage.getHeaderHeight();
+
+  renderLists();
+  // TODO замени на новый рендер (renderLists)
+  renderVariantsPreview();
 
   whereToRenderCounter();
   multipage.renderFAQ();

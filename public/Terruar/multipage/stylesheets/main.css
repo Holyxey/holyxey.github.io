@@ -1558,6 +1558,7 @@ a[href^="https://bronirui-online.ru/module?utm_source"]
   cursor: pointer;
   transition: all 0.1s ease-out;
   outline: 1px solid #f8f3c800;
+  user-select: none;
 
   &:hover {
     outline: 5px solid #f8f3c870;
@@ -1629,6 +1630,7 @@ a[href^="https://bronirui-online.ru/module?utm_source"]
 
 .gallery-arow {
   position: absolute;
+  user-select: none;
 
   bottom: 0;
 }
