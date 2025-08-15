@@ -770,6 +770,8 @@ function setVeasonVideos() {
   const vertical = document.querySelector('.verticalPreview');
   const horisontal = document.querySelector('.horizontalPreview');
 
+  console.log(lists.videos[season]);
+
   if (vertical)
     vertical.setAttribute(
       'data-frame-link',
@@ -1452,8 +1454,6 @@ window.addEventListener('load', () => {
       multipage.smoothShowHorizontal();
     }
   });
-  seasonTapesRender();
-  setVeasonVideos();
 });
 document.addEventListener('DOMContentLoaded', () => {
   setSeason();
@@ -1467,6 +1467,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // TODO замени на новый рендер (renderLists)
   renderVariantsPreview();
 
+  setVeasonVideos();
   whereToRenderCounter();
   multipage.renderFAQ();
   renderOffers();
