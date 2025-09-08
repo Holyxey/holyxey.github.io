@@ -1508,7 +1508,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   renderLists();
   // TODO замени на новый рендер (renderLists)
-  // renderVariantsPreview();
+  renderVariantsPreview();
 
   setVeasonVideos();
   whereToRenderCounter();
