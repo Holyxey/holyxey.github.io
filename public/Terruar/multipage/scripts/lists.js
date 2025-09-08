@@ -60,10 +60,11 @@ const lists = {
       readMoreText: 'Подробнее',
       withGallery: false,
     },
+    // Баня с фурако
     {
       render: true,
       id: 'furako',
-      title: 'Баня с фурако и холодной купелью',
+      title: 'Баня с фурако и холодной купелью',
       header: '',
       price: '',
       shortDescr: 'От 3500р/час',

@@ -55,12 +55,16 @@ const styleClassLists = [
 const setSeason = () => {
   const month = new Date().getMonth() + 1;
   const body = document.getElementsByTagName('body')[0];
+
+  function set(season) {
+    body.setAttribute('data-season', season);
+    localStorage.setItem('season', season);
+  }
+
   if (11 > month && month > 1) {
-    body.setAttribute('data-season', 'summer');
-    localStorage.setItem('season', 'summer');
+    set('summer');
   } else {
-    body.setAttribute('data-season', 'winter');
-    localStorage.setItem('season', 'winter');
+    set('winter');
   }
 };
 
@@ -184,14 +188,15 @@ const needToRender = function (where) {
 
 /** Рендер отзывов */
 function renderReviewGallery(maxRender = 4) {
-  const season = localStorage.getItem('season');
-  const renderTo = document.querySelector('#reviews .reviews-gallery');
-  renderTo.innerHTML = '';
+  try {
+    const season = localStorage.getItem('season');
+    const renderTo = document.querySelector('#reviews .reviews-gallery');
+    renderTo.innerHTML = '';
 
-  for (const img of lists.reviewsGallery[season]) {
-    renderTo.insertAdjacentHTML(
-      'beforeend',
-      `
+    for (const img of lists.reviewsGallery[season]) {
+      renderTo.insertAdjacentHTML(
+        'beforeend',
+        `
       <div class="reviews-gallery-imgblock">
         <img
           alt="Фотография с территории Терруара"
@@ -203,21 +208,36 @@ function renderReviewGallery(maxRender = 4) {
         />
       </div>
       `
-    );
-    //
+      );
+      //
+    }
+  } catch (e) {
+    console.log('Не удалось отрендерить отзывы');
   }
 }
 
 // Рендер фотографий блока
-function openVariantGallery(list, index, preview = false) {
-  const season = localStorage.getItem('season');
+function openVariantGallery(list, index, preview = false, customSeason) {
+  const season = customSeason || localStorage.getItem('season');
 
   multipage.changeScroll();
+  function cover() {
+    const l = lists[list][index];
+    try {
+      if (l.images?.[season]?.length > 1) {
+        console.log('Выбрана сезонная галерея', season);
+        return l.images[season];
+      } else if (l.images?.['summer']?.length > 1) {
+        console.log('Выбрана галерея по умолчанию - "summer"');
+        return l.images['summer'];
+      } else return l.images;
+    } catch (error) {
+      console.log('Ошибка получения фотографий для галереи', list, error);
+      return [''];
+    }
+  }
 
   const element = lists[list][index];
-  const images = lists[list][index].images[season]
-    ? lists[list][index].images[season]
-    : lists[list][index].images;
   const multiPage = document.getElementById('multi-page');
 
   multiPage.insertAdjacentHTML(
@@ -225,21 +245,21 @@ function openVariantGallery(list, index, preview = false) {
     `<div style="animation: showpopup .3s 1s ease-out forwards" id="close-popup" onclick="multipage.remPopup()">
         <svg width="50px" viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg"><g stroke-width="0"/><g stroke-linecap="round" stroke-linejoin="round"/><path d="M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2 2 6.5 2 12s4.5 10 10 10m-2.83-7.17 5.66-5.66m0 5.66L9.17 9.17" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </div>
-    <div class="blur" id="popup-block"> <!--тело поп-апа-->
+    <div class="blur" id="popup-block">
         <h2 class="popUpHeader">${element.title}</h2> 
 
         <div class="popUpDescr">
             ${element.description ? element.description : ''}
           <div class="gallery-arows">
               <div id="gallery-arow-prev" class="gallery-arow prev nav-arrow">
-                <img role="none" src="${
-                  iconLinks.nav.left
-                }?color=black&height=23" alt="none">
+                <img role="none" 
+                  src="${iconLinks.nav.left}?color=black&height=23" 
+                  alt="none">
               </div>
               <div id="gallery-arow-next" class="gallery-arow next nav-arrow">
-                <img role="none" src="${
-                  iconLinks.nav.right
-                }?color=black&height=23" alt="none">
+                <img role="none" 
+                  src="${iconLinks.nav.right}?color=black&height=23" 
+                  alt="none">
               </div>
           </div>
             ${
@@ -251,7 +271,7 @@ function openVariantGallery(list, index, preview = false) {
         <article id="pop-up-gallery" onclick="event.stopPropagation();"></article>
     </div>`
   );
-  images.forEach((image, ind) => {
+  cover().forEach((image, ind) => {
     document
       .getElementById('pop-up-gallery')
       .insertAdjacentHTML(
@@ -465,35 +485,46 @@ const renderVariantsPreview = () => {
 const renderLists = () => {
   const variants_nodes = document.querySelectorAll('[data-render-list]');
   if (!variants_nodes || !variants_nodes.length) {
-    console.error('Списки не найдены');
+    console.error('Нет нод для рендера вариантов');
     return;
   }
 
-  const season = localStorage.getItem('season');
-
-  function insertListItems(list, node, listName) {
+  function insertListItems(list, node, listName, customSeason) {
     if (!list || !node) return;
+
+    const season = customSeason || localStorage.getItem('season');
+    const cover = (list) => {
+      try {
+        if (list.images?.[season]?.[0]) return list.images?.[season]?.[0];
+        else if (list.images[0]) return list.images[0];
+        else return list.images['summer'][0];
+      } catch (error) {
+        return '';
+      }
+    };
 
     list.forEach((l, ind) => {
       node.insertAdjacentHTML(
         'beforeend',
         `
-        <article class="varItem" onclick="openVariantGallery('${listName}', ${ind})" 
-        ${l.id ? `data-popup="${l.id}"` : ''} 
-        ${l.title ? `title="${l.title}" data-header="${l.title}"` : ''}
-        data-list="${listName}" data-popup-type="${l.popUpType}">
+        <article class="varItem" onclick="openVariantGallery('${listName}', ${ind}, ${false}, '${season}')" 
+          ${l.id ? `data-popup="${l.id}"` : ''} 
+          ${l.title ? `title="${l.title}" data-header="${l.title}"` : ''}
+          data-list="${listName}" data-popup-type="${l.popUpType}">
           <div class="varHeader">
-          ${
-            iconLinks[listName]
-              ? `<img class="varIcon" role="none" src="${iconLinks[listName]}?color=%23EEF0F2&height=20px" />`
-              : ''
-          }
+            ${
+              iconLinks[listName]
+                ? `<img class="varIcon" role="none" src="${iconLinks[listName]}?color=%23EEF0F2&height=20px" />`
+                : ''
+            }
             <p class="varTitle">${l.title}</p>
-          </div>
-          ${l.shortDescr ? `<p>${l.shortDescr}</p>` : ''}
-          <img loading="lazy" class="varPreview" src="${
-            l.images?.[season]?.[0] ? l.images[season][0] : l.images[0]
-          }" alt="Домики и палатки в глэмпинге Терруар: ${l.title}" />
+            </div>
+          ${l.shortDescr ? `<p class="varDescription">${l.shortDescr}</p>` : ''}
+          <img loading="lazy" 
+            class="varPreview" 
+            src="${cover(l)}" 
+            onerror="this.src='https://thumb.tildacdn.com/tild6265-3465-4235-b230-383939346435/-/format/webp/KIR_3234.jpg.webp'"
+            alt="Домики и палатки в глэмпинге Терруар: ${l.title}" />
           <p class="varShowMore">Смотреть фото</p>
         </article>
         `
@@ -506,20 +537,20 @@ const renderLists = () => {
 
     const listName = el.getAttribute('data-render-list');
     const isPreview = el.getAttribute('data-render-preview');
+    const customSeason = el.getAttribute('data-custom-season');
 
     el.id = `gallery-${listName}`;
     el.classList.add('variantsList');
-    insertListItems(lists[listName], el, listName);
+    insertListItems(lists[listName], el, listName, customSeason);
 
     if (isPreview) {
       el.classList.add('preview');
-      // setTimeout(() => {
+
       initGallery(
         `gallery-${listName}`,
         `${listName}-arrow-next`,
         `${listName}-arrow-prev`
       );
-      // }, 1000);
     }
   });
 };
@@ -715,32 +746,36 @@ const loyaltyWorker = () => {
 };
 
 const seasonTapesRender = () => {
-  const season = localStorage.getItem('season');
-  const renderATape = (el) => {
-    const node = el.parentElement;
-    el.insertAdjacentHTML(
-      'beforeend',
-      '<div class="a-tape"><p>Закрыто на сезон</p><p>Закрыто на сезон</p><p>Закрыто на сезон</p></div>'
-    );
-    const copy = el.cloneNode();
-    copy.innerHTML = el.innerHTML;
+  try {
+    const season = localStorage.getItem('season');
+    const renderATape = (el) => {
+      const node = el.parentElement;
+      el.insertAdjacentHTML(
+        'beforeend',
+        '<div class="a-tape"><p>Закрыто на сезон</p><p>Закрыто на сезон</p><p>Закрыто на сезон</p></div>'
+      );
+      const copy = el.cloneNode();
+      copy.innerHTML = el.innerHTML;
 
-    el.remove();
-    node.append(copy);
-  };
-  const articles = Array.from(document.querySelectorAll('article'));
-  const elForTapping = articles.filter((el) => {
-    return closedForSeason[season].some(
-      (text) => el.title === text || el.id === text
-    );
-  });
-  elForTapping.forEach((el) => {
-    renderATape(el);
-    if (el.querySelector('.variantPreviewImage'))
-      el.querySelector('.variantPreviewImage').style.filter = 'grayscale(1)';
-    if (el.querySelector('img'))
-      el.querySelector('img').style.filter = 'grayscale(1)';
-  });
+      el.remove();
+      node.append(copy);
+    };
+    const articles = Array.from(document.querySelectorAll('article'));
+    const elForTapping = articles.filter((el) => {
+      return closedForSeason[season].some(
+        (text) => el.title === text || el.id === text
+      );
+    });
+    elForTapping.forEach((el) => {
+      renderATape(el);
+      if (el.querySelector('.variantPreviewImage'))
+        el.querySelector('.variantPreviewImage').style.filter = 'grayscale(1)';
+      if (el.querySelector('img'))
+        el.querySelector('img').style.filter = 'grayscale(1)';
+    });
+  } catch (e) {
+    console.error('Ошибка в рендере сезонок');
+  }
 };
 
 const showAboutBlock = (bttn) => {
@@ -769,8 +804,6 @@ function setVeasonVideos() {
   const season = localStorage.getItem('season');
   const vertical = document.querySelector('.verticalPreview');
   const horisontal = document.querySelector('.horizontalPreview');
-
-  console.log(lists.videos[season]);
 
   if (vertical)
     vertical.setAttribute(
@@ -1022,7 +1055,7 @@ const multipage = {
             `;
     };
 
-    getWeatherForecast().then();
+    getWeatherForecast();
     dataPopup === 'online' ? videoPlayBack() : '';
     multiPage.insertAdjacentHTML(
       'afterbegin',
@@ -1126,17 +1159,18 @@ const multipage = {
   },
   //
   renderFAQ: function () {
-    const section = document.getElementById('faq');
-    const list = lists.faq;
-    section.insertAdjacentHTML(
-      'beforeend',
-      `<ul id="faq-list" class="classic-ip"></ul>`
-    );
-    const whereTo = document.getElementById('faq-list');
-    for (const [key, value] of Object.entries(list)) {
-      whereTo.insertAdjacentHTML(
+    try {
+      const section = document.getElementById('faq');
+      const list = lists.faq;
+      section.insertAdjacentHTML(
         'beforeend',
-        `<li class="faq-item" onclick="multipage.clickFAQ(this)">
+        `<ul id="faq-list" class="classic-ip"></ul>`
+      );
+      const whereTo = document.getElementById('faq-list');
+      for (const [key, value] of Object.entries(list)) {
+        whereTo.insertAdjacentHTML(
+          'beforeend',
+          `<li class="faq-item" onclick="multipage.clickFAQ(this)">
                     <div class="faq-item-header-block">
                         <div class="faq-item-header-icon"></div>
                         <h5 class="faq-item-header">${key}</h5>
@@ -1145,9 +1179,12 @@ const multipage = {
                         <p class="faq-item-text">${value}</p>
                     </div>
                     </li>`
-      );
+        );
+      }
+      multipage.checkFAQlinks();
+    } catch (e) {
+      console.error('Ошибка в renderFAQ');
     }
-    multipage.checkFAQlinks();
   },
   clickFAQ: function (li) {
     li.parentNode.querySelectorAll('.faq-item-body').forEach((item) => {
@@ -1233,7 +1270,11 @@ const multipage = {
       });
     }
   },
-  changeScroll() {
+  changeScroll(forse) {
+    if (forse) {
+      document.body.style.overflow = 'hidden';
+      return;
+    }
     if (document.body.style.overflow === 'hidden')
       document.body.style.overflow = 'unset';
     else document.body.style.overflow = 'hidden';
@@ -1374,86 +1415,88 @@ async function videoPlayBack() {
 }
 
 // weather
-const latitude = 54.702;
-const longitude = 37.856;
-const days = 3;
-const apiUrl = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m,rain&forecast_days=${days}`;
-let hourlyList = {};
-
 async function getWeatherForecast() {
+  const days = 3;
+
+  const search = new URLSearchParams();
+  search.set('latitude', '54.702');
+  search.set('longitude', '37.856');
+  search.set('hourly', 'temperature_2m');
+  search.set('forecast_days', `${days}`);
+  const apiUrl = `https://api.open-meteo.com/v1/forecast?${search.toString()}`;
+
+  let hourlyList = {};
+
+  function weatherRender(days) {
+    if (document.getElementById('weatherTest') && days > 0) {
+      let b = document.getElementById('weatherTest');
+      const today = (i) => {
+        let q;
+        switch (i) {
+          case 0:
+            q = 'Сегодня';
+            break;
+          case 1:
+            q = 'Завтра';
+            break;
+          case 2:
+            q = 'Послезавтра';
+            break;
+          default:
+            q = 'Погода';
+            break;
+        }
+        return q;
+      };
+      const getStrokeNumber = (day, hour) => {
+        return 24 * day + hour;
+      };
+      for (let i = 0; i < days; i++) {
+        b.insertAdjacentHTML(
+          `beforeend`,
+          ` <article class="weatherDay">
+              <p class="todayHeader">${today(i)}</p>
+              <div class="hourly">
+                  <p class="hour morning">Утром: ${
+                    hourlyList[getStrokeNumber(i, 6)]
+                  }℃</p>
+                  <p class="hour day">Днем: ${
+                    hourlyList[getStrokeNumber(i, 14)]
+                  }℃</p>
+                  <p class="hour evening">Вечером: ${
+                    hourlyList[getStrokeNumber(i, 20)]
+                  }℃</p>
+              </div>
+          </article> `
+        );
+      }
+    } else return 'Days is not defined';
+  }
+
   try {
-    const response = await fetch(apiUrl);
+    const response = await fetch(apiUrl, { cache: 'no-store', method: 'GET' });
     if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+      throw new Error(`HTTP error! Status: ${response.status}`);
     }
     const data = await response.json();
     const { hourly } = data;
     const { temperature_2m, rain, time } = hourly;
+
     hourlyList = temperature_2m;
-    weatherTestRender(days);
+    weatherRender(days);
   } catch (error) {
     console.error('Error fetching weather data:', error);
   }
 }
 
-const weatherTestRender = (days) => {
-  if (document.getElementById('weatherTest') && days > 0) {
-    let b = document.getElementById('weatherTest');
-    const today = (i) => {
-      let q;
-      switch (i) {
-        case 0:
-          q = 'Сегодня';
-          break;
-        case 1:
-          q = 'Завтра';
-          break;
-        case 2:
-          q = 'Послезавтра';
-          break;
-        default:
-          q = 'Погода';
-          break;
-      }
-      return q;
-    };
-    const getStrokeNumber = (day, hour) => {
-      return 24 * day + hour;
-    };
-    for (let i = 0; i < days; i++) {
-      b.insertAdjacentHTML(
-        `beforeend`,
-        `
-                <article class="weatherDay">
-                    <p class="todayHeader">${today(i)}</p>
-                    <div class="hourly">
-                        <p class="hour morning">Утром: ${
-                          hourlyList[getStrokeNumber(i, 6)]
-                        }℃</p>
-                        <p class="hour day">Днем: ${
-                          hourlyList[getStrokeNumber(i, 14)]
-                        }℃</p>
-                        <p class="hour evening">Вечером: ${
-                          hourlyList[getStrokeNumber(i, 20)]
-                        }℃</p>
-                    </div>
-                </article>
-            `
-      );
-    }
-  } else return 'Days is not defined';
-};
-// !weather
-
 window.addEventListener('resize', () => {
   multipage.getHeaderHeight();
 });
 window.addEventListener('load', () => {
-  multipage.getHeaderHeight().then(() => {
-    if (window.innerWidth < 600) {
-      multipage.smoothShowHorizontal();
-    }
-  });
+  multipage.getHeaderHeight();
+  if (window.innerWidth < 600) {
+    multipage.smoothShowHorizontal();
+  }
 });
 document.addEventListener('DOMContentLoaded', () => {
   setSeason();
@@ -1465,7 +1508,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   renderLists();
   // TODO замени на новый рендер (renderLists)
-  renderVariantsPreview();
+  // renderVariantsPreview();
 
   setVeasonVideos();
   whereToRenderCounter();

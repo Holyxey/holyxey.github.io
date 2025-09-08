@@ -1,81 +1,100 @@
 /* new year */
 main:has(> .ny-block) {
-    padding: .5rem;
-    width: 100%;
-    max-width: 1400px;
-    margin: 4rem auto;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    position: relative;
+  padding: 0.5rem;
+  width: 100%;
+  max-width: 1400px;
+  margin: 4rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: relative;
 }
 .ny-block {
-    background-size: cover;
-    background-position: center;
-    border-radius: 3rem;
-    overflow: hidden;
-    margin-block: 1rem;
-    border: 1px solid #232323;
+  background-size: cover;
+  background-position: center;
+  border-radius: 3rem;
+  overflow: hidden;
+  margin-block: 1rem;
+  border: 1px solid #232323;
+  user-select: none;
 }
 /*.ny-block[data-holyday="new-year"] { background-image: url("https://static.tildacdn.com/tild3665-6238-4662-a239-626533653635/Frame_46.png") !important }*/
-.ny-block[data-holyday="new-year"] { background-image: url("https://thumb.tildacdn.com/tild3735-3265-4936-a164-646231313162/-/format/webp/Image-1.png") !important }
+.ny-block[data-holyday='new-year'] {
+  background-image: url('https://thumb.tildacdn.com/tild3735-3265-4936-a164-646231313162/-/format/webp/Image-1.png') !important;
+}
 /*.ny-block[data-holyday="christmas"] { background-image: url("https://static.tildacdn.com/tild3435-3034-4331-b161-623430376665/Frame_46-1.png") !important }*/
-.ny-block[data-holyday="christmas"] { background-image: url("https://thumb.tildacdn.com/tild6536-3665-4466-b131-316161306166/-/format/webp/Image.png") !important }
+.ny-block[data-holyday='christmas'] {
+  background-image: url('https://thumb.tildacdn.com/tild6536-3665-4466-b131-316161306166/-/format/webp/Image.png') !important;
+}
 .ny-block .infoBlock {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 
-    max-width: 600px;
-    padding: 3rem;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    color: var(--holyxey-white);
+  max-width: 600px;
+  padding: 3rem;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  color: var(--holyxey-white);
 }
 .ny-block .infoBlock .infoHeads {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
 
-    font-size: 1.2rem;
-    font-family: var(--holyxey-unbounded);
-    color: var(--holyxey-yellow);
-    margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-family: var(--holyxey-unbounded);
+  color: var(--holyxey-yellow);
+  margin-bottom: 1rem;
 }
 .ny-block .infoBlock .infoHeads h3 {
-    font-weight: 500 !important;
+  font-weight: 500 !important;
 }
-.ny-block .infoBlock .infoHeads p {
-    font-weight: 400 !important;
-    font-size: 1rem;
+.ny-block .infoBlock .infoHeads .price {
+  position: relative;
+}
+.ny-block .infoBlock .infoHeads .price p {
+  font-weight: 400 !important;
+  font-size: 1rem;
+  color: var(--holyxey-yellow);
+
+  &.old {
+    color: var(--holyxey-white);
+    text-decoration: line-through;
+    font-weight: 100 !important;
+    font-size: 0.8rem;
+    font-style: italic;
+    opacity: 0.7;
+  }
 }
 .ny-block .infoBlock p {
-    color: var(--holyxey-white);
-    font-weight: 300;
-    text-wrap: balance;
+  color: var(--holyxey-white);
+  font-weight: 300;
+  text-wrap: balance;
 }
 .ny-block .infoBlock .dates {
-    font-size: 1rem;
-    font-weight: 500 !important;
-    font-family: var(--holyxey-unbounded);
+  font-size: 1rem;
+  font-weight: 500 !important;
+  font-family: var(--holyxey-unbounded);
 }
 .ny-block .classic-header-button-first {
-    margin-top: 1rem;
+  margin-top: 1rem;
 }
 /* !new year */
 
 @media screen and (max-width: 600px) {
-    .ny-block   {
-        border-radius: 2rem;
-        border: unset;
-    }
-    .ny-block .infoBlock {
-        border-radius: 2rem;
-        padding: 3rem 2rem 2rem 2rem;
-        backdrop-filter: blur(5px);
-        -webkit-backdrop-filter: blur(5px);
-        background-color: #00000070;
-        background-blend-mode: multiply;
-    }
+  .ny-block {
+    border-radius: 2rem;
+    border: unset;
+  }
+  .ny-block .infoBlock {
+    border-radius: 2rem;
+    padding: 3rem 2rem 2rem 2rem;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    background-color: #00000070;
+    background-blend-mode: multiply;
+  }
 }

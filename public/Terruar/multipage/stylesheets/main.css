@@ -354,6 +354,9 @@ footer ul {
 #multi-page header #hero[data-nomain='2025'] #heroImageBlock {
   background-image: url('https://static.tildacdn.com/tild3966-3733-4237-b834-333435613261/ny_main_bg.png');
 }
+#multi-page header #hero[data-nomain='2026'] #heroImageBlock {
+  background-image: url('https://optim.tildacdn.com/tild3236-3936-4537-b064-353061306230/-/format/webp/2026.jpg.webp');
+}
 
 /**/
 #multi-page header #heroContactButtons {
@@ -703,7 +706,6 @@ a[href^="https://bronirui-online.ru/module?utm_source"]
 
 .variantBlock {
   flex: 1 0 300px;
-  /*max-width: 500px;*/
   background-color: var(--holyxey-back-o);
   margin-inline: 0.5rem;
   padding: 1rem;
@@ -729,7 +731,6 @@ a[href^="https://bronirui-online.ru/module?utm_source"]
   margin-top: 0.5rem;
   border-radius: 1rem 1rem 2rem 2rem;
   min-height: 200px;
-  /*aspect-ratio: 1.8 / 1.3;*/
 }
 
 .variantBlock .showMore {
@@ -754,6 +755,7 @@ a[href^="https://bronirui-online.ru/module?utm_source"]
 }
 
 .variantsList .varItem {
+  position: relative;
   flex: 1;
   background: var(--holyxey-back-o);
   padding: 1rem;
@@ -762,6 +764,7 @@ a[href^="https://bronirui-online.ru/module?utm_source"]
   transition: all 0.3s ease-out;
   max-width: 500px;
   min-width: fit-content;
+  height: fit-content;
   scroll-snap-align: center;
 
   &:hover {
@@ -787,14 +790,20 @@ a[href^="https://bronirui-online.ru/module?utm_source"]
   font-family: var(--holyxey-unbounded);
   color: var(--holyxey-yellow);
   font-size: 1.25rem;
+  max-width: 250px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.variantsList .varItem .varDescription {
+  padding-inline: 1rem;
 }
 
 .variantsList .varItem .varPreview {
-  width: 100px;
-  max-height: 200px;
-  min-width: 300px;
-  aspect-ratio: 5 / 3;
   object-fit: cover;
+  aspect-ratio: 5 / 3;
+  width: 300px;
   margin-block: 0.75rem;
   border-radius: 1rem;
   pointer-events: none;
@@ -2235,11 +2244,7 @@ jdiv {
   }
 
   #multi-page header #hero #heroTextBlock {
-    background: linear-gradient(
-        0deg,
-        rgba(0, 0, 0, 0.7) 0%,
-        rgba(0, 0, 0, 0.7) 100%
-      ),
+    background: linear-gradient(rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.7) 100%),
       url(https://optim.tildacdn.com/tild6164-6236-4335-b061-383633653530/-/format/webp/DSC_8864_1.png)
         lightgray 50% / cover no-repeat;
     padding: 2rem;
@@ -2247,32 +2252,26 @@ jdiv {
   }
 
   #multi-page.services header #hero #heroTextBlock {
-    background: linear-gradient(
-        0deg,
-        rgba(0, 0, 0, 0.7) 0%,
-        rgba(0, 0, 0, 0.7) 100%
-      ),
+    background: linear-gradient(rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.7) 100%),
       url(https://optim.tildacdn.com/tild6563-3566-4264-b733-383436336232/-/format/webp/active.jpg)
         lightgray 50% / cover no-repeat;
   }
 
   #multi-page.variants header #hero #heroTextBlock {
-    background: linear-gradient(
-        0deg,
-        rgba(0, 0, 0, 0.7) 0%,
-        rgba(0, 0, 0, 0.7) 100%
-      ),
+    background: linear-gradient(rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.7) 100%),
       url(https://thumb.tildacdn.com/tild3335-6365-4564-b639-333062663937/-/format/webp/5ZN_2626.jpg)
         lightgray 50% / cover no-repeat;
   }
 
   #multi-page header #hero[data-nomain='2025'] #heroTextBlock {
-    background: linear-gradient(
-        0deg,
-        rgba(0, 0, 0, 0.7) 0%,
-        rgba(0, 0, 0, 0.7) 100%
-      ),
+    background: linear-gradient(rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.7) 100%),
       url(https://thumb.tildacdn.com/tild6436-6464-4933-a231-633331653566/-/format/webp/KIR_5409.jpg)
+        lightgray 50% / cover no-repeat;
+  }
+
+  #multi-page header #hero[data-nomain='2026'] #heroTextBlock {
+    background: linear-gradient(rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.7) 100%),
+      url(https://optim.tildacdn.com/tild3236-3936-4537-b064-353061306230/-/format/webp/2026.jpg.webp)
         lightgray 50% / cover no-repeat;
   }
 
