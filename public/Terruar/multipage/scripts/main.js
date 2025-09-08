@@ -52,13 +52,20 @@ const styleClassLists = [
 
 /** Устанавливаем сезонность в зависимости от месяца
  */
-const setSeason = () => {
+const setSeason = (force) => {
   const month = new Date().getMonth() + 1;
   const body = document.getElementsByTagName('body')[0];
 
   function set(season) {
     body.setAttribute('data-season', season);
     localStorage.setItem('season', season);
+  }
+
+  if (body.getAttribute('data-season')) return;
+
+  if (force && (force === 'summer' || force === 'winter')) {
+    set(force);
+    return;
   }
 
   if (11 > month && month > 1) {
@@ -138,8 +145,8 @@ const needToRender = function (where) {
                                 : ''
                             }
                             <h4 class="${design.artHeader}" ${
-                            item.icon ? `style="padding-left: 2.5rem"` : ''
-                          }>${item.title}</h4>
+                              item.icon ? `style="padding-left: 2.5rem"` : ''
+                            }>${item.title}</h4>
                             <p class="${design.artDescr}">${item.shortDescr}</p>
                         </div>`
                         : ''
@@ -832,8 +839,8 @@ const openFullVideo = (element) => {
                 </div>
                 <div class="blur" id="popup-block"> <!--тело поп-апа-->
                     <iframe src="${link}" allowfullscreen class="${element.getAttribute(
-      'class'
-    )}" id="popUpVideo"></iframe>
+                      'class'
+                    )}" id="popUpVideo"></iframe>
                 </div>`
   ); // Рендер поп-апа
   // console.log(link)
