@@ -280,7 +280,7 @@ function openVariantGallery(list, index, preview = false, customSeason) {
       );
   });
 
-  initGallery('pop-up-gallery', 'gallery-arow-next', 'gallery-arow-prev');
+  initHolyGallery('pop-up-gallery', 'gallery-arow-next', 'gallery-arow-prev');
 
   showHideChats();
 }
@@ -290,7 +290,7 @@ function openVariantGallery(list, index, preview = false, customSeason) {
  * @param {string} next - id кнопки "далее"
  * @param {string} prev - id кнопки "назад"
  */
-async function initGallery(node, next, prev) {
+async function initHolyGallery(node, next, prev) {
   await new Promise((resolve) => setTimeout(resolve, 1000));
   const galleryNode = document.getElementById(node);
   const arrows = {
@@ -546,7 +546,7 @@ const renderLists = () => {
     if (isPreview) {
       el.classList.add('preview');
 
-      initGallery(
+      initHolyGallery(
         `gallery-${listName}`,
         `${listName}-arrow-next`,
         `${listName}-arrow-prev`
