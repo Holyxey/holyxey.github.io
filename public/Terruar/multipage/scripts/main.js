@@ -169,21 +169,22 @@ const needToRender = function (where) {
   };
 
   const getData = function (section) {
-    const data = section.getAttribute('data-need-to-render');
-    const title = section.getAttribute('title');
-    const setups = data.split(',');
-    const listName = setups[0];
-    const styleNumber = setups[1] - 1;
-    const maxOf = setups[2];
-    const design = styleClassLists[styleNumber];
-    const elements = lists[listName];
+    try {
+      const data = section.getAttribute('data-need-to-render');
+      const title = section.getAttribute('title');
+      const setups = data.split(',');
+      const listName = setups[0];
+      const styleNumber = setups[1] - 1;
+      const maxOf = setups[2];
+      const design = styleClassLists[styleNumber];
+      const elements = lists[listName];
 
-    console.log(`Rendering "${title}":"${listName}, ${styleNumber + 1}"...`);
-    renderNow(section, elements, design, listName, maxOf ? maxOf : null);
+      renderNow(section, elements, design, listName, maxOf ? maxOf : null);
+    } catch (error) {
+      console.log('Ошибка рендера [needToRender]');
+    }
   };
-  sections.forEach((section) => {
-    getData(section);
-  });
+  sections.forEach(getData);
 };
 
 /** Рендер отзывов */
@@ -212,7 +213,7 @@ function renderReviewGallery(maxRender = 4) {
       //
     }
   } catch (e) {
-    console.log('Не удалось отрендерить отзывы');
+    console.error('Не удалось отрендерить отзывы\n', e.message);
   }
 }
 
@@ -797,6 +798,9 @@ const showAboutBlock = (bttn) => {
   bttn.style.opacity = '0';
   bttn.style.marginInline = '-1rem';
 };
+
+// tilda image path changer
+function setImageWebp(link) {}
 
 /** настройки для видео, сезонные в основном
  */

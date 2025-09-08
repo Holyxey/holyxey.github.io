@@ -1,0 +1,42 @@
+#certificates-block {
+  .certificates-list {
+    display: flex;
+    flex-wrap: wrap;
+
+    * {
+      text-decoration: none !important;
+      font-size: inherit !important;
+      font-family: inherit !important;
+    }
+  }
+}
+#certificates-block .certificates-list {
+  .certificate {
+    display: flex;
+    justify-content: center;
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: column;
+    flex: 1 1 200px;
+    margin: 0.5rem;
+    border-radius: 1rem;
+    overflow: hidden;
+
+    * {
+      border-radius: 0.25rem;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    p {
+      display: block;
+      padding: 0.5rem;
+      text-align: center;
+      background-color: var(--holyxey-yellow);
+      color: var(--holyxey-back) !important;
+    }
+  }
+}
