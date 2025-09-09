@@ -55,13 +55,17 @@ const styleClassLists = [
 const setSeason = (force) => {
   const month = new Date().getMonth() + 1;
   const body = document.getElementsByTagName('body')[0];
+  const mainNode = document.getElementById('multi-page');
 
   function set(season) {
     body.setAttribute('data-season', season);
     localStorage.setItem('season', season);
   }
 
-  if (body.getAttribute('data-season')) return;
+  if (mainNode.getAttribute('data-season')) {
+    set(mainNode.getAttribute('data-season'));
+    return;
+  }
 
   if (force && (force === 'summer' || force === 'winter')) {
     set(force);
@@ -83,20 +87,19 @@ const needToRender = function (where) {
   const renderNow = function (where, what, design, listName, maxOf) {
     const season = localStorage.getItem('season');
     where.classList = `${design.section}`;
+
     if (design.needHeader) {
       where.insertAdjacentHTML(
         'afterbegin',
-        `<div class="${design.headBlock}" ${
-          design.needCounter ? 'data-counter-where' : ''
-        }>
+        `<div class="${design.headBlock}" 
+        ${design.needCounter ? 'data-counter-where' : ''}>
                     <h3>${where.title}</h3>
                 </div> 
                 <div class="${design.itemsParent}" 
                     ${design.needToSmooth ? 'data-smooth-mobile' : ''}
                     ${design.needCounter ? 'data-counter-scrollIt' : ''}
                     >
-                </div>
-                `
+        </div> `
       );
     } else {
       /**
