@@ -779,8 +779,8 @@ const lists = {
                   огромная терраса с качелями и всеми принадлежностями для барбекю`,
       images: {
         summer: [
-          'https://thumb.tildacdn.com/tild3765-6134-4735-a239-653235376466/-/format/webp/Valency_12.jpeg.webp',
           'https://thumb.tildacdn.com/tild3463-3464-4138-b262-653733383935/-/format/webp/Valency_4.jpeg.webp',
+          'https://thumb.tildacdn.com/tild3765-6134-4735-a239-653235376466/-/format/webp/Valency_12.jpeg.webp',
           'https://thumb.tildacdn.com/tild6563-3035-4664-b635-383065376561/-/format/webp/Valency_3.jpeg.webp',
           'https://thumb.tildacdn.com/tild3234-3265-4131-b330-633063336333-/format/webp/Valency_1.jpeg.webp',
           'https://thumb.tildacdn.com/tild6365-3238-4561-b231-636666356531/-/format/webp/Valency_2.jpeg.webp',
