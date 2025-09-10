@@ -213,7 +213,9 @@ footer ul {
   text-align: center;
 
   &:hover {
-    transition: color 0.3s, background-color 0.3s;
+    transition:
+      color 0.3s,
+      background-color 0.3s;
     background-color: var(--holyxey-white);
     color: var(--holyxey-back);
   }
@@ -1204,6 +1206,7 @@ a[href^="https://bronirui-online.ru/module?utm_source"]
 
 #popUpVideo.verticalPreview {
   aspect-ratio: 9 / 16;
+  width: auto;
 }
 
 #popUpVideo.horizontalPreview {
@@ -2244,7 +2247,8 @@ jdiv {
   }
 
   #multi-page header #hero #heroTextBlock {
-    background: linear-gradient(rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.7) 100%),
+    background:
+      linear-gradient(rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.7) 100%),
       url(https://optim.tildacdn.com/tild6164-6236-4335-b061-383633653530/-/format/webp/DSC_8864_1.png)
         lightgray 50% / cover no-repeat;
     padding: 2rem;
@@ -2252,25 +2256,29 @@ jdiv {
   }
 
   #multi-page.services header #hero #heroTextBlock {
-    background: linear-gradient(rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.7) 100%),
+    background:
+      linear-gradient(rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.7) 100%),
       url(https://optim.tildacdn.com/tild6563-3566-4264-b733-383436336232/-/format/webp/active.jpg)
         lightgray 50% / cover no-repeat;
   }
 
   #multi-page.variants header #hero #heroTextBlock {
-    background: linear-gradient(rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.7) 100%),
+    background:
+      linear-gradient(rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.7) 100%),
       url(https://thumb.tildacdn.com/tild3335-6365-4564-b639-333062663937/-/format/webp/5ZN_2626.jpg)
         lightgray 50% / cover no-repeat;
   }
 
   #multi-page header #hero[data-nomain='2025'] #heroTextBlock {
-    background: linear-gradient(rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.7) 100%),
+    background:
+      linear-gradient(rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.7) 100%),
       url(https://thumb.tildacdn.com/tild6436-6464-4933-a231-633331653566/-/format/webp/KIR_5409.jpg)
         lightgray 50% / cover no-repeat;
   }
 
   #multi-page header #hero[data-nomain='2026'] #heroTextBlock {
-    background: linear-gradient(rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.7) 100%),
+    background:
+      linear-gradient(rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.7) 100%),
       url(https://optim.tildacdn.com/tild3236-3936-4537-b064-353061306230/-/format/webp/2026.jpg.webp)
         lightgray 50% / cover no-repeat;
   }
