@@ -8,18 +8,32 @@ const offers = {
   ny2026: {
     icon: '<span style="font-size: 2rem; float: left; margin: auto 1rem auto 0; display: block">🎄</span>',
     title: `Новый год!`,
-    description: `Дарим 30% скидку на новодние заезды при раннем бронировании`,
+    description: `Дарим 30% скидку на новогодние заезды при раннем бронировании`,
     expires: new Date('08-01-2026'),
     style: {
       'box-shadow': '0 0 1rem #a4315b, inset 0 0 5px #621d37',
       padding: '0.5rem',
       cursor: 'pointer',
       'border-radius': '1rem',
+      'user-select': 'none',
       outline: '2px solid #a4315b',
       background: 'linear-gradient(53deg, #a4315b 0%, #621d37 100%)',
     },
-    action: () => {
-      window.location.href = '/2026';
+    action: {
+      text: 'Забронировать',
+      style: {
+        background: 'var(--holyxey-yellow)',
+        border: 'none',
+        width: '100%',
+        margin: '0.5rem 0 0 0',
+        padding: '0.5rem',
+        'font-size': '1rem',
+        'pointer-events': 'none',
+        'border-radius': '0.5rem',
+      },
+      func: () => {
+        window.location.href = '/2026';
+      },
     },
   },
 };
@@ -36,10 +50,6 @@ function pasteOffer(offer) {
     article.style = Object.entries(offer.style || {})
       .map(([key, value]) => `${key}: ${value}`)
       .join('; ');
-    if (offer.action) {
-      article.onclick = offer.action;
-      article.style.cursor = 'pointer';
-    }
 
     const iconDiv = document.createElement('div');
     iconDiv.innerHTML = offer.icon;
@@ -53,6 +63,18 @@ function pasteOffer(offer) {
     const descP = document.createElement('p');
     descP.innerHTML = offer.description;
     article.appendChild(descP);
+
+    if (offer.action) {
+      article.onclick = offer.action.func;
+      article.style.cursor = 'pointer';
+
+      const button = document.createElement('button');
+      button.innerText = offer.action.text || 'Подробнее';
+      button.style = Object.entries(offer.action.style || {})
+        .map(([key, value]) => `${key}: ${value}`)
+        .join('; ');
+      article.appendChild(button);
+    }
 
     offersNode.insertAdjacentElement('afterbegin', article);
   } catch (error) {
