@@ -275,8 +275,19 @@ function openVariantGallery(list, index, preview = false, customSeason) {
           </div>
             ${
               preview
-                ? `<div class="variantPopUpButtons"><a class="classic-header-button-first" href="/variants">Смотреть все</a><a class="classic-header-button-first" onclick="multipage.bookingClick(); multipage.remPopup()">Выбрать даты</a></div>`
-                : `<div class="variantPopUpButtons"><a class="classic-header-button-first" onclick="multipage.bookingClick(); multipage.remPopup()">Выбрать даты</a></div>`
+                ? `<div class="variantPopUpButtons">
+                    <a class="classic-header-button-first" href="/variants">
+                      Смотреть все
+                    </a>
+                    <a class="classic-header-button-first" onclick="multipage.bookingClick(); multipage.remPopup()">
+                      Выбрать даты
+                    </a>
+                  </div>`
+                : `<div class="variantPopUpButtons">
+                    <a class="classic-header-button-first" onclick="multipage.bookingClick(); multipage.remPopup()">
+                      'Выбрать даты'
+                    </a>
+                  </div>`
             }
         </div>
         <article id="pop-up-gallery" onclick="event.stopPropagation();"></article>
@@ -495,48 +506,82 @@ const renderVariantsPreview = () => {
  */
 const renderLists = () => {
   const variants_nodes = document.querySelectorAll('[data-render-list]');
-  if (!variants_nodes || !variants_nodes.length) {
+  if (!variants_nodes?.length) {
     console.error('Нет нод для рендера вариантов');
     return;
   }
 
-  function insertListItems(list, node, listName, customSeason) {
+  // TODO нужен обработчик не только для домов
+  /**
+   * @descr Вставляет список вариантов внутрь ноды
+   * @param {object} list - список из lists
+   * @param {HTMLElement} node - нода для вставки
+   * @param {string=} listName - имя списка из lists
+   * @param {'summer' | 'winter'=} customSeason - сезон для обложки
+   * @returns
+   */
+  function insertVariantsList(list, node, listName, customSeason) {
     if (!list || !node) return;
 
     const season = customSeason || localStorage.getItem('season');
     const cover = (list) => {
       try {
         if (list.images?.[season]?.[0]) return list.images?.[season]?.[0];
-        else if (list.images[0]) return list.images[0];
         else return list.images['summer'][0];
       } catch (error) {
         return '';
       }
     };
 
-    list.forEach((l, ind) => {
+    list.forEach((listItem, ind) => {
       node.insertAdjacentHTML(
         'beforeend',
         `
         <article class="varItem" onclick="openVariantGallery('${listName}', ${ind}, ${false}, '${season}')" 
-          ${l.id ? `data-popup="${l.id}"` : ''} 
-          ${l.title ? `title="${l.title}" data-header="${l.title}"` : ''}
-          data-list="${listName}" data-popup-type="${l.popUpType}">
-          <div class="varHeader">
+          ${listItem.id ? `data-popup="${listItem.id}"` : ''} 
+          ${listItem.title ? `title="${listItem.title}" data-header="${listItem.title}"` : ''}
+          data-list="${listName}" data-popup-type="${listItem.popUpType}">
+          <header class="varHeader">
             ${
               iconLinks[listName]
                 ? `<img class="varIcon" role="none" src="${iconLinks[listName]}?color=%23EEF0F2&height=20px" />`
                 : ''
             }
-            <p class="varTitle">${l.title}</p>
+            <h1 class="varTitle">${listItem.title}</h1>
+          </header>
+          ${listItem.shortDescr ? `<p class="varDescription">${listItem.shortDescr}</p>` : ''}
+          <main class="varPreviewWrapper">
+            <figure>
+              <img loading="lazy" 
+                class="varPreview" 
+                src="${cover(listItem)}" 
+                onerror="this.src='https://thumb.tildacdn.com/tild6265-3465-4235-b230-383939346435/-/format/webp/KIR_3234.jpg.webp'"
+                alt="Домики и палатки в глэмпинге Терруар: ${listItem.title}"
+                />
+                <figcaption style="position: absolute; left: -9999px;">
+                  Домики и палатки в глэмпинге Терруар: ${listItem.title}
+                </figcaption>
+            </figure>
+            
+            <div class="varPreviewOverlay">
+              ${
+                listItem.params &&
+                `<span >${listItem.params.guests_count} 
+                  <img alt="Icon" aria-label="none" src=${listItem.params.guests_count > 2 ? iconLinks.personsGroup : iconLinks.personsTwo} />
+                </span>`
+              }
+              ${
+                listItem.params &&
+                `<span >
+                ${listItem.params.square}м
+                  <img alt="Icon" aria-label="none" src=${iconLinks.area} />
+                </span>`
+              }
             </div>
-          ${l.shortDescr ? `<p class="varDescription">${l.shortDescr}</p>` : ''}
-          <img loading="lazy" 
-            class="varPreview" 
-            src="${cover(l)}" 
-            onerror="this.src='https://thumb.tildacdn.com/tild6265-3465-4235-b230-383939346435/-/format/webp/KIR_3234.jpg.webp'"
-            alt="Домики и палатки в глэмпинге Терруар: ${l.title}" />
-          <p class="varShowMore">Смотреть фото</p>
+            </main>
+            <footer>
+              <button class="varPreviewButton">Подробнее</button>
+            </footer>
         </article>
         `
       );
@@ -552,7 +597,7 @@ const renderLists = () => {
 
     el.id = `gallery-${listName}`;
     el.classList.add('variantsList');
-    insertListItems(lists[listName], el, listName, customSeason);
+    insertVariantsList(lists[listName], el, listName, customSeason);
 
     if (isPreview) {
       el.classList.add('preview');

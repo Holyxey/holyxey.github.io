@@ -744,6 +744,13 @@ a[href^="https://bronirui-online.ru/module?utm_source"]
 
 /* Новые варианты */
 
+.preview.variantsList {
+  overflow-x: auto;
+  flex-wrap: nowrap;
+
+  scroll-snap-type: x mandatory;
+}
+
 .variantsList {
   display: flex;
   gap: 1rem;
@@ -768,6 +775,7 @@ a[href^="https://bronirui-online.ru/module?utm_source"]
   min-width: fit-content;
   height: fit-content;
   scroll-snap-align: center;
+  user-select: none;
 
   &:hover {
     scale: 1.01;
@@ -782,6 +790,10 @@ a[href^="https://bronirui-online.ru/module?utm_source"]
   display: flex;
   gap: 0.75rem;
   padding-inline: 1rem;
+}
+.variantsList .varItem .varHeader h1 {
+  font-size: 1.3rem !important;
+  font-weight: 400 !important;
 }
 
 .variantsList .varItem .varHeader .varIcon * {
@@ -802,31 +814,55 @@ a[href^="https://bronirui-online.ru/module?utm_source"]
   padding-inline: 1rem;
 }
 
-.variantsList .varItem .varPreview {
+.variantsList .varItem .varPreviewWrapper {
+  position: relative;
+  gap: 0.25rem;
+}
+.variantsList .varItem .varPreviewWrapper .varPreview {
+  display: block;
   object-fit: cover;
   aspect-ratio: 5 / 3;
+  margin-top: 0.75rem;
   width: 300px;
-  margin-block: 0.75rem;
-  border-radius: 1rem;
+  border-radius: 1rem 1rem 0 0;
   pointer-events: none;
 }
+.variantsList .varItem .varPreviewWrapper .varPreviewOverlay {
+  display: flex;
+  gap: 0.25rem;
+  padding: 0.25rem;
+  border-radius: 0.75rem;
+  background: var(--holyxey-back-o);
 
-.variantsList .varItem .varShowMore {
-  padding: 0;
-  margin: 0;
-  text-wrap: nowrap;
-  padding-inline: 1rem;
+  position: absolute;
+  right: 0.25rem;
+  top: 0.25rem;
+  font-size: 0.8rem;
+
+  transition: all 0.3s ease-out;
+  color: var(--holyxey-back) !important;
 }
-
-.preview.variantsList {
-  overflow-x: auto;
-  flex-wrap: nowrap;
-
-  scroll-snap-type: x mandatory;
-
-  .varItem {
-    /* border-radius: 3rem; */
-  }
+.variantsList .varItem .varPreviewWrapper .varPreviewOverlay span {
+  /* box-shadow: 0 0 1rem var(--holyxey-back); */
+  background-color: var(--holyxey-yellow);
+  border: 1px solid var(--holyxey-back);
+  border-radius: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+}
+.variantsList .varItem .varPreviewButton {
+  display: block !important;
+  border: none !important;
+  font-size: 1rem !important;
+  margin-top: 2px !important;
+  width: 100% !important;
+  background-color: var(--holyxey-wine) !important;
+  color: var(--holyxey-white) !important;
+  padding: 0.75rem !important;
+  border-radius: 0 0 1rem 1rem !important;
+  pointer-events: none !important;
 }
 
 /* ! Новые варианты */
