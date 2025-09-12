@@ -6,7 +6,9 @@ const offers = {
     expires: new Date(2034, 11, 30, 12, 0, 1),
   },
   ny2026: {
-    icon: '<span style="font-size: 2rem; float: left; margin: auto 1rem auto 0; display: block">🎄</span>',
+    icon: `<span style="font-size: 2rem; float: left; margin: auto 1rem auto 0; display: block">
+    &#x1F384;
+    </span>`,
     title: `Новый год!`,
     description: `Дарим 30% скидку на новогодние заезды при раннем бронировании`,
     expires: new Date('08-01-2026'),
@@ -20,11 +22,12 @@ const offers = {
       background: 'linear-gradient(53deg, #a4315b 0%, #621d37 100%)',
     },
     action: {
-      text: 'Забронировать',
+      text: 'Подробнее',
       style: {
         background: 'var(--holyxey-yellow)',
         border: 'none',
         width: '100%',
+        color: 'black',
         margin: '0.5rem 0 0 0',
         padding: '0.5rem',
         'font-size': '1rem',
@@ -44,12 +47,17 @@ function pasteOffer(offer) {
 
   try {
     const offersNode = document.getElementById('heroPreferences');
+    const offerId = `offer-${Object.keys(offers).find((key) => offers[key] === offer)}`;
 
     const article = document.createElement('article');
     article.className = 'heroPreferencesBlock';
     article.style = Object.entries(offer.style || {})
-      .map(([key, value]) => `${key}: ${value}`)
+      .map(([key, value]) => `${key}: ${value} !important`)
       .join('; ');
+    article.id = offerId;
+
+    // Проверка на дубликаты
+    if (offersNode?.querySelector(`#${offerId}`)) return;
 
     const iconDiv = document.createElement('div');
     iconDiv.innerHTML = offer.icon;
@@ -71,7 +79,7 @@ function pasteOffer(offer) {
       const button = document.createElement('button');
       button.innerText = offer.action.text || 'Подробнее';
       button.style = Object.entries(offer.action.style || {})
-        .map(([key, value]) => `${key}: ${value}`)
+        .map(([key, value]) => `${key}: ${value} !important`)
         .join('; ');
       article.appendChild(button);
     }
