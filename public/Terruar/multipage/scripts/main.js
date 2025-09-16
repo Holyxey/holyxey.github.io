@@ -285,7 +285,7 @@ function openVariantGallery(list, index, preview = false, customSeason) {
                   </div>`
                 : `<div class="variantPopUpButtons">
                     <a class="classic-header-button-first" onclick="multipage.bookingClick(); multipage.remPopup()">
-                      'Выбрать даты'
+                      Выбрать даты
                     </a>
                   </div>`
             }

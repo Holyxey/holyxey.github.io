@@ -767,7 +767,7 @@ a[href^="https://bronirui-online.ru/module?utm_source"]
   position: relative;
   flex: 1;
   background: var(--holyxey-back-o);
-  padding: 1rem;
+  padding: 0.75rem;
   border-radius: 2rem;
   cursor: pointer;
   transition: all 0.3s ease-out;
@@ -776,6 +776,9 @@ a[href^="https://bronirui-online.ru/module?utm_source"]
   height: fit-content;
   scroll-snap-align: center;
   user-select: none;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 330px;
 
   &:hover {
     scale: 1.01;
@@ -785,21 +788,18 @@ a[href^="https://bronirui-online.ru/module?utm_source"]
     scale: 0.99;
   }
 }
-
 .variantsList .varItem .varHeader {
   display: flex;
   gap: 0.75rem;
-  padding-inline: 1rem;
+  padding: 0 1rem;
 }
 .variantsList .varItem .varHeader h1 {
   font-size: 1.3rem !important;
   font-weight: 400 !important;
 }
-
 .variantsList .varItem .varHeader .varIcon * {
   fill: var(--holyxey-bad);
 }
-
 .variantsList .varItem .varHeader .varTitle {
   font-family: var(--holyxey-unbounded);
   color: var(--holyxey-yellow);
@@ -809,21 +809,20 @@ a[href^="https://bronirui-online.ru/module?utm_source"]
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-
 .variantsList .varItem .varDescription {
   padding-inline: 1rem;
 }
-
 .variantsList .varItem .varPreviewWrapper {
   position: relative;
   gap: 0.25rem;
 }
-.variantsList .varItem .varPreviewWrapper .varPreview {
+.variantsList .varItem .varPreviewWrapper img.varPreview {
   display: block;
   object-fit: cover;
-  aspect-ratio: 5 / 3;
+  aspect-ratio: 6 / 3;
   margin-top: 0.75rem;
-  width: 300px;
+  width: 100%;
+  height: auto;
   border-radius: 1rem 1rem 0 0;
   pointer-events: none;
 }
@@ -861,7 +860,7 @@ a[href^="https://bronirui-online.ru/module?utm_source"]
   background-color: var(--holyxey-wine) !important;
   color: var(--holyxey-white) !important;
   padding: 0.75rem !important;
-  border-radius: 0 0 1rem 1rem !important;
+  border-radius: 0 0 1.25rem 1.25rem !important;
   pointer-events: none !important;
 }
 

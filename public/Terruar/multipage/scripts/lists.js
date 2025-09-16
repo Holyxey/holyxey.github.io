@@ -1351,7 +1351,6 @@ const lists = {
 
 const closedForSeason = {
   winter: [
-    'Бассейн',
     'Велосипед',
     'Сплав на кайаках',
     'Пруд и Сап-борды',
@@ -1360,11 +1359,11 @@ const closedForSeason = {
     'Riesling',
     'Merlot',
   ],
-  summer: ['Лыжи', 'Сплав на кайаках', 'Пруд и Сап-борды'],
+  summer: ['Лыжи', 'Бассейн', 'Сплав на кайаках', 'Пруд и Сап-борды'],
 };
 
 const iconLinks = {
-  houses: 'https://api.iconify.design/hugeicons:home-13.svg',
+  houses: 'https://api.iconify.design/solar:home-line-duotone.svg',
   glamping: 'https://api.iconify.design/hugeicons:tree-06.svg',
   nav: {
     left: 'https://api.iconify.design/hugeicons:arrow-left-04.svg',
