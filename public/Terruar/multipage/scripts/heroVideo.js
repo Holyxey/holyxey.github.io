@@ -11,6 +11,7 @@ function placeVideo() {
     video.autoplay = true;
     video.muted = true;
     video.loop = true;
+    video.volume = 0;
 
     video.style.width = '100%';
     video.style.maxWidth = '100%';
