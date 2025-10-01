@@ -137,6 +137,16 @@ function controlElements(video: HTMLVideoElement) {
       }
     },
     openFullScreen: () => {
+      if (video.requestFullscreen) {
+        video.requestFullscreen();
+      } else if ((video as any).webkitRequestFullscreen) {
+        /* Safari */
+        (video as any).webkitRequestFullscreen();
+      } else if ((video as any).msRequestFullscreen) {
+        /* IE11 */
+        (video as any).msRequestFullscreen();
+      }
+
       video.requestFullscreen({ navigationUI: 'show' });
       video.play();
       video.controls = true;
