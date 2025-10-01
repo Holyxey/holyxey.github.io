@@ -340,7 +340,7 @@ footer ul {
   flex: 1;
   border-radius: 3rem;
   min-height: 300px;
-  min-width: 550px;
+  min-width: 300px;
   overflow: hidden;
   position: relative;
 }
@@ -2280,7 +2280,7 @@ jdiv {
   }
 
   #multi-page header #hero #heroImageBlock {
-    display: none;
+    /* display: none; */
   }
 
   #multi-page header #hero #heroTextBlock {

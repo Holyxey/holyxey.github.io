@@ -1368,6 +1368,9 @@ const iconLinks = {
   nav: {
     left: 'https://api.iconify.design/hugeicons:arrow-left-04.svg',
     right: 'https://api.iconify.design/hugeicons:arrow-right-04.svg',
+    play: 'https://api.iconify.design/hugeicons:play.svg',
+    pause: 'https://api.iconify.design/hugeicons:pause.svg',
+    fullScreen: 'https://api.iconify.design/hugeicons:full-screen.svg',
   },
   personsTwo:
     'https://api.iconify.design/solar:users-group-rounded-line-duotone.svg',
