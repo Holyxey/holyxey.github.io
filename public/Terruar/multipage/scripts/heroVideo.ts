@@ -137,17 +137,15 @@ function controlElements(video: HTMLVideoElement) {
       }
     },
     openFullScreen: () => {
-      if (video.requestFullscreen) {
-        video.requestFullscreen();
+      if ((video as any).webkitEnterFullscreen) {
+        // For iOS Safari
+        (video as any).webkitEnterFullscreen();
+      } else if (video.requestFullscreen) {
+        video.requestFullscreen({ navigationUI: 'show' });
       } else if ((video as any).webkitRequestFullscreen) {
-        /* Safari */
-        (video as any).webkitRequestFullscreen();
-      } else if ((video as any).msRequestFullscreen) {
-        /* IE11 */
-        (video as any).msRequestFullscreen();
+        (video as any).webkitRequestFullscreen({ navigationUI: 'show' });
       }
 
-      video.requestFullscreen({ navigationUI: 'show' });
       video.play();
       video.controls = true;
       video.volume = 1;
