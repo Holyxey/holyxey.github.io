@@ -3,6 +3,8 @@ const videoPath = 'https://holyxey.github.io/public/Terruar/media/terruar.mp4';
 const node = document.getElementById('heroImageBlock') as HTMLDivElement;
 const isDesktop = window.innerWidth > 500;
 
+console.info('[heroVideo] - ' + isDesktop);
+
 // Вставляю видео
 function insertVideo(): HTMLVideoElement {
   try {
@@ -13,6 +15,7 @@ function insertVideo(): HTMLVideoElement {
     video.muted = true;
     video.loop = true;
     video.volume = 0;
+    video.playsInline = true;
 
     video.style.width = '100%';
     video.style.maxWidth = '100%';
@@ -24,16 +27,19 @@ function insertVideo(): HTMLVideoElement {
     video.style.all = 'fitler 1s ease-in-out';
     video.style.zIndex = '1';
 
-    if (document.readyState === 'complete') {
+    function start() {
       video.src = videoPath;
+      video.load();
       node.appendChild(video);
+      setStyle();
+    }
+
+    if (document.readyState === 'complete') {
+      start();
     } else {
       document.onreadystatechange = () => {
         if (document.readyState === 'complete') {
-          video.src = videoPath;
-          video.addEventListener('canplaythrough', () =>
-            node.appendChild(video)
-          );
+          start();
         }
       };
     }
@@ -119,7 +125,6 @@ function insertFullScreenButton() {
   node.appendChild(button);
   return { button, toggle };
 }
-
 function controlElements(video: HTMLVideoElement) {
   const controls = {
     togglePlay: () => {
@@ -162,9 +167,28 @@ function controlElements(video: HTMLVideoElement) {
   return { play, fullScreen };
 }
 
+// Применяем стили к body
+function setStyle() {
+  const style = document.createElement('style');
+  style.setAttribute('id', 'heroVideoStyle');
+
+  style.innerHTML = `body[hero-video] { 
+    #heroImageBlock { 
+      display: block !important; 
+      aspect-ratio: 16 / 9 !important;
+      min-height: unset !important;
+      min-width: 100px !important;
+    }
+  }`;
+
+  document.head.prepend(style);
+}
+
 // Запуск
 function main() {
+  if (!document.body.getAttribute('hero-video')) return false;
   if (!node) return false;
+
   const video = insertVideo();
   controlElements(video);
 }

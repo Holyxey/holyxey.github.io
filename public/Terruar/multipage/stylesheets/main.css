@@ -2280,7 +2280,7 @@ jdiv {
   }
 
   #multi-page header #hero #heroImageBlock {
-    /* display: none; */
+    display: none;
   }
 
   #multi-page header #hero #heroTextBlock {
