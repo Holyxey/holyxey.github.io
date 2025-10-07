@@ -876,6 +876,7 @@ a[href^="https://bronirui-online.ru/module?utm_source"]
   }
   &.more {
     background-color: var(--holyxey-yellow) !important;
+    color: var(--holyxey-back) !important;
   }
 }
 
