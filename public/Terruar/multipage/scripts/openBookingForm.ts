@@ -14,7 +14,7 @@ function openBookingForm(event: Event, houseTitle: string, img?: string) {
     variant.style.cursor = 'not-allowed';
   } else return;
 
-  if (img && image) image.src = img;
+  if (img && image) setTimeout((image.src = img), 500);
 }
 
 window.openBookingForm = openBookingForm;
