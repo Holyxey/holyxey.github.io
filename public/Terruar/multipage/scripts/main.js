@@ -250,6 +250,7 @@ function openVariantGallery(list, index, preview = false, customSeason) {
 
   const element = lists[list][index];
   const multiPage = document.getElementById('multi-page');
+  const imagesList = cover();
 
   multiPage.insertAdjacentHTML(
     'afterbegin',
@@ -286,7 +287,7 @@ function openVariantGallery(list, index, preview = false, customSeason) {
                 : `<div class="variantPopUpButtons">
                       <a class="classic-header-button-first" 
                         href="#popup:openBookingForm" 
-                        onclick="openBookingForm(event, '${element.title}')">
+                        onclick="openBookingForm(event, '${element.title || ''}', '${imagesList[0] || ''}')">
                       Забронировать
                     </a>
                   </div>`
@@ -295,7 +296,7 @@ function openVariantGallery(list, index, preview = false, customSeason) {
         <article id="pop-up-gallery" onclick="event.stopPropagation();"></article>
     </div>`
   );
-  cover().forEach((image, ind) => {
+  imagesList.forEach((image, ind) => {
     document
       .getElementById('pop-up-gallery')
       .insertAdjacentHTML(
