@@ -869,6 +869,7 @@ a[href^="https://bronirui-online.ru/module?utm_source"]
   padding: 0.75rem !important;
   text-align: center !important;
   text-decoration: none !important;
+  cursor: pointer !important;
 
   &.book {
     background-color: var(--holyxey-wine) !important;
