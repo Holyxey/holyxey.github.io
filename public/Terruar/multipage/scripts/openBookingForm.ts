@@ -4,16 +4,23 @@ function openBookingForm(event: Event, houseTitle: string, img?: string) {
 
     let node = document.querySelector('.uc-openBookingForm');
     let form = node?.querySelector('form');
-    let variant: HTMLInputElement | null | undefined =
-      form?.querySelector('[name="variant"]');
     let image = node?.querySelector('img');
+    let inputNode: HTMLElement | null | undefined = node?.querySelector(
+      '[data-field-name="variant"]'
+    );
+    let input: HTMLInputElement | null | undefined =
+      form?.querySelector('[name="variant"]');
+    let titleDiv: HTMLElement | null | undefined =
+      node?.querySelector('.t-title');
 
-    if (variant) {
-      variant.value = houseTitle;
-      variant.disabled = true;
-      variant.style.opacity = '0.5';
-      variant.style.cursor = 'not-allowed';
-    } else return;
+    if (inputNode) inputNode.style.display = 'none';
+    if (titleDiv) titleDiv.innerHTML = houseTitle;
+    // if (input) {
+    //   input.value = houseTitle;
+    //   input.disabled = true;
+    //   input.style.opacity = '0.5';
+    //   input.style.cursor = 'not-allowed';
+    // } else return;
 
     if (img && image) setTimeout((image.src = img), 500);
   } catch (error) {
