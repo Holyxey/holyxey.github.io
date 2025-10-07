@@ -537,7 +537,7 @@ const renderLists = () => {
       node.insertAdjacentHTML(
         'beforeend',
         `
-        <article class="varItem" onclick="openVariantGallery('${listName}', ${ind}, ${false}, '${season}')"
+        <article class="varItem" 
           ${listItem.id ? `data-popup="${listItem.id}"` : ''} 
           ${listItem.title ? `title="${listItem.title}" data-header="${listItem.title}"` : ''}
           data-list="${listName}" data-popup-type="${listItem.popUpType}">
@@ -580,7 +580,11 @@ const renderLists = () => {
             </div>
             </main>
             <footer id="varPreviewFooter">
-              <button class="varPreviewButton more">Подробнее</button>
+              <button 
+                onclick="openVariantGallery('${listName}', ${ind}, ${false}, '${season}')"
+                class="varPreviewButton more">
+                Подробнее
+              </button>
               <a class="varPreviewButton book" href="#popup:openBookingForm" 
                 onclick="openBookingForm(event, '${listItem.title || ''}', '${cover(listItem) || ''}')">
                 Забронировать
