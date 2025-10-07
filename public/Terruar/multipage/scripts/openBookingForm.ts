@@ -20,12 +20,12 @@ function openBookingForm(event: Event, houseTitle: string, img?: string) {
 
     if (inputNode) inputNode.style.display = 'none';
     if (titleDiv) titleDiv.innerHTML = houseTitle;
-    // if (input) {
-    //   input.value = houseTitle;
-    //   input.disabled = true;
-    //   input.style.opacity = '0.5';
-    //   input.style.cursor = 'not-allowed';
-    // } else return;
+    if (input) {
+      input.value = houseTitle;
+      //   input.disabled = true;
+      //   input.style.opacity = '0.5';
+      //   input.style.cursor = 'not-allowed';
+    } else return;
 
     if (img && image) setTimeout((image.src = img), 500);
   } catch (error) {
