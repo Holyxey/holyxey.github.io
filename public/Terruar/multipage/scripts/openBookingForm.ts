@@ -1,12 +1,6 @@
-interface Window {
-  multipage?: {
-    remPopup: () => void;
-  };
-}
-
 function openBookingForm(event: Event, houseTitle: string, img?: string) {
   try {
-    window.multipage?.remPopup();
+    multipage?.remPopup();
 
     let node = document.querySelector('.uc-openBookingForm');
     let form = node?.querySelector('form');
