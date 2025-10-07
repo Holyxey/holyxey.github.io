@@ -825,7 +825,7 @@ a[href^="https://bronirui-online.ru/module?utm_source"]
   margin-top: 0.75rem;
   width: 100%;
   height: auto;
-  border-radius: 1rem 1rem 0 0;
+  border-radius: 1rem 1rem 0.25rem 0.25rem;
   pointer-events: none;
 }
 .variantsList .varItem .varPreviewWrapper .varPreviewOverlay {
@@ -853,17 +853,30 @@ a[href^="https://bronirui-online.ru/module?utm_source"]
   align-items: center;
   gap: 0.15rem;
 }
+
+.variantsList .varItem #varPreviewFooter {
+  display: flex;
+  gap: 2px;
+  margin-top: 2px !important;
+  border-radius: 0.25rem 0.25rem 1.25rem 1.25rem !important;
+  overflow: hidden;
+}
 .variantsList .varItem .varPreviewButton {
   display: block !important;
   border: none !important;
   font-size: 1rem !important;
-  margin-top: 2px !important;
   width: 100% !important;
-  background-color: var(--holyxey-wine) !important;
-  color: var(--holyxey-white) !important;
   padding: 0.75rem !important;
-  border-radius: 0 0 1.25rem 1.25rem !important;
-  pointer-events: none !important;
+  text-align: center !important;
+  text-decoration: none !important;
+
+  &.book {
+    background-color: var(--holyxey-wine) !important;
+    color: var(--holyxey-white) !important;
+  }
+  &.more {
+    background-color: var(--holyxey-yellow) !important;
+  }
 }
 
 /* ! Новые варианты */

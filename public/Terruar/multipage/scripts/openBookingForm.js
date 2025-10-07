@@ -1,0 +1,1 @@
+function i(t,l,o){t.stopPropagation();let n=document.querySelector(".uc-openBookingForm"),e=n?.querySelector("form")?.querySelector('[name="variant"]'),r=n?.querySelector("img");if(e)e.value=l,e.disabled=!0,e.style.opacity="0.5",e.style.cursor="not-allowed";else return;if(o&&r)r.src=o}window.openBookingForm=i;
