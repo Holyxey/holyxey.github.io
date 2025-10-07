@@ -1,5 +1,6 @@
 function openBookingForm(event: Event, houseTitle: string, img?: string) {
-  event.stopPropagation();
+  // event.stopPropagation();
+
   let node = document.querySelector('.uc-openBookingForm');
   let form = node?.querySelector('form');
   let variant: HTMLInputElement | null | undefined =
