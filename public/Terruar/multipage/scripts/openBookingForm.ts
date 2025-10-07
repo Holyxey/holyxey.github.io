@@ -1,7 +1,9 @@
 function openBookingForm(event: Event, houseTitle: string, img?: string) {
   try {
     multipage?.remPopup();
+  } catch (error) {}
 
+  try {
     let node = document.querySelector('.uc-openBookingForm');
     let form = node?.querySelector('form');
     let image = node?.querySelector('img');
