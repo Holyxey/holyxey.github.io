@@ -284,8 +284,10 @@ function openVariantGallery(list, index, preview = false, customSeason) {
                     </a>
                   </div>`
                 : `<div class="variantPopUpButtons">
-                    <a class="classic-header-button-first" onclick="multipage.bookingClick(); multipage.remPopup()">
-                      Выбрать даты
+                      <a class="classic-header-button-first" 
+                        href="#popup:openBookingForm" 
+                        onclick="openBookingForm(event, '${element.title}')">
+                      Забронировать
                     </a>
                   </div>`
             }
