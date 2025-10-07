@@ -1,6 +1,9 @@
 function openBookingForm(event: Event, houseTitle: string, img?: string) {
   try {
-    multipage?.remPopup();
+    if (document.getElementById('popup-block')) {
+      multipage.remPopup();
+      multipage.changeScroll();
+    }
   } catch (error) {}
 
   try {
