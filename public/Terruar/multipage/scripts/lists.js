@@ -880,7 +880,7 @@ const lists = {
       },
       params: {
         square: 22,
-        guests_count: 2,
+        guests_count: 4,
       },
     },
     // title: 'Прованс',
