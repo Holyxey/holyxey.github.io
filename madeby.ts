@@ -4,6 +4,7 @@ function isRef() {
     .find((row) => row.startsWith('madeby-yurin='));
 
   const hasLocal = localStorage.getItem('madeby-yurin');
+  const isQuery = window.location.search.includes('madeby-yurin');
 
   const referrers = [
     'fl.ru',
