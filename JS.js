@@ -1,9 +1,9 @@
-function a(){let e=document.createComment("Дизайн, разработка: Holyxey.com");document.prepend(e)}var n=()=>{let e={path:window.location.origin,year:new Date().getFullYear().toString()},t=document.createElement("script");t.type="application/ld+json",t.innerHTML=`
+function o(){let t=document.createComment("Дизайн, разработка: Алексей Юрин");document.prepend(t);let e=document.documentElement.lang.startsWith("ru")?"ru":"en",n="background-color: #FEFBE8; color: #00272B; border: solid 1px #00272B; font-size: 10px; display: inline-block; padding: 2px 8px; border-radius: 8px";if(e==="ru")console.log("%cДизайн и разработка: Алексей Юрин - https://yurin.dev",n);else console.log("%cDesign & Development: Alex Yurin - https://yurin.dev",n)}var a=()=>{let t={path:window.location.origin,year:new Date().getFullYear().toString()},e=document.createElement("script");e.type="application/ld+json",e.innerHTML=`
         {
             "@context": "https://schema.org",
             "@type": "WebSite",
-            "url": "${e.path}",
-            "copyrightYear": "${e.year}",
+            "url": "${t.path}",
+            "copyrightYear": "${t.year}",
             "publisher": {
                 "@type": "Organization",
                 "brand": "AdsTarget",
@@ -21,4 +21,4 @@ function a(){let e=document.createComment("Дизайн, разработка: H
                 "additionalName": "holyxey"
             }
         }
-    `,document.body.append(t)};a();n();
+    `,document.body.append(e)};o();a();

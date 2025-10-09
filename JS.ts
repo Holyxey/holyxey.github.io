@@ -1,8 +1,24 @@
 function holyxey() {
   const addCommentHolyxey = document.createComment(
-    'Дизайн, разработка: Holyxey.com'
+    'Дизайн, разработка: Алексей Юрин'
   );
   document.prepend(addCommentHolyxey);
+
+  const lang = document.documentElement.lang.startsWith('ru') ? 'ru' : 'en';
+
+  const styles =
+    'background-color: #FEFBE8; color: #00272B; border: solid 1px #00272B; font-size: 10px; display: inline-block; padding: 2px 8px; border-radius: 8px';
+
+  if (lang === 'ru')
+    console.log(
+      '%cДизайн и разработка: Алексей Юрин - https://yurin.dev',
+      styles
+    );
+  else
+    console.log(
+      '%cDesign & Development: Alex Yurin - https://yurin.dev',
+      styles
+    );
 }
 const holyxeySchema = () => {
   const schemaData = {
