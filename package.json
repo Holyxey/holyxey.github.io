@@ -1,0 +1,5 @@
+{
+  "scripts": {
+    "jsh": "bun run build.ts && git add ."
+  }
+}

@@ -1,9 +1,22 @@
-function a(){let e=document.createComment("Дизайн, разработка: Holyxey.com");document.prepend(e)}var n=()=>{let e={path:window.location.origin,year:new Date().getFullYear().toString()},t=document.createElement("script");t.type="application/ld+json",t.innerHTML=`
+function holyxey() {
+  const addCommentHolyxey = document.createComment(
+    'Дизайн, разработка: Holyxey.com'
+  );
+  document.prepend(addCommentHolyxey);
+}
+const holyxeySchema = () => {
+  const schemaData = {
+    path: window.location.origin,
+    year: new Date().getFullYear().toString(),
+  };
+  const addSchemaWebSite = document.createElement('script');
+  addSchemaWebSite.type = 'application/ld+json';
+  addSchemaWebSite.innerHTML = /* js */ `
         {
             "@context": "https://schema.org",
             "@type": "WebSite",
-            "url": "${e.path}",
-            "copyrightYear": "${e.year}",
+            "url": "${schemaData.path}",
+            "copyrightYear": "${schemaData.year}",
             "publisher": {
                 "@type": "Organization",
                 "brand": "AdsTarget",
@@ -21,4 +34,9 @@ function a(){let e=document.createComment("Дизайн, разработка: H
                 "additionalName": "holyxey"
             }
         }
-    `,document.body.append(t)};a();n();
+    `;
+  document.body.append(addSchemaWebSite);
+};
+
+holyxey();
+holyxeySchema();

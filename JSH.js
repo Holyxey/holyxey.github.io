@@ -1,9 +1,1 @@
-(() => {
-    const path = 'https://holyxey.github.io/JS.js'
-    if (!document.querySelector(`script[src="${path}"]`)) {
-        const script = document.createElement('script');
-        script.src = path;
-        script.async = false;
-        document.head.append(script);
-    }
-})();
+(()=>{["https://esm.yurin.dev/holyxey.github.io/JS.js","https://esm.yurin.dev/holyxey.github.io/madeby.js"].forEach((t)=>{if(!document.querySelector(`script[src="${t}"]`)){let e=document.createElement("script");e.src=t,e.async=!1,e.defer=!0,e.type="module",document.head.append(e)}})})();
