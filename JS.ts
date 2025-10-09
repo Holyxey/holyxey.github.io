@@ -19,7 +19,7 @@ const holyxeySchema = () => {
           "jobTitle": "Fullstack developer & UI/UX Designer",
           "name": "Alex Yurin",
           "additionalName": "holyxey",
-          "image": "https://yurin.dev/meta/og.webp
+          "image": "https://yurin.dev/meta/og.webp"
         }
       }
     `;
