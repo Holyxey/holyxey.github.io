@@ -4,7 +4,7 @@ function isRef() {
     .find((row) => row.startsWith('madeby-yurin='));
 
   const hasLocal = localStorage.getItem('madeby-yurin');
-  const isQuery = window.location.search.includes('madeby-yurin');
+  const isQuery = window.location.search.includes('madeby=yurin');
 
   const referrers = [
     'fl.ru',
@@ -22,7 +22,7 @@ function isRef() {
   ];
   const hasRef = referrers.some((r) => document.referrer.includes(r));
 
-  return hasRef || hasCookie || hasLocal;
+  return isQuery || hasRef || hasCookie || hasLocal;
 }
 
 function setup() {
