@@ -15,6 +15,7 @@ function isRef() {
     'wellfound.com',
     'toptal.com',
     'upwork.com',
+    'profi.ru',
 
     'holyxey.com',
     'linkedin.com',
