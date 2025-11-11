@@ -83,29 +83,30 @@ class DocViewer {
     }
   }
 }
+const gdocUri = "https://drive.google.com/file/d";
 
 const DocMenus: Record<string, {ru: string; en?: string}> = {
   main: {
-    ru: "https://drive.google.com/file/d/1FcPW_zTeCQlxdSIqA5GOpTC94l9dUFtt/preview",
-    en: "https://drive.google.com/file/d/1NaT8YAv8GK7qa5Y6Yy3V67LaGebpyViU/preview"
-  } as const,
+    ru: `${gdocUri}/1FcPW_zTeCQlxdSIqA5GOpTC94l9dUFtt/preview`,
+    en: `${gdocUri}/1SR1cHZfoF7nyvrNOmvVfdBNaB4Qipv4m/preview`
+  },
 
   bar: {
-    ru: "https://drive.google.com/file/d/13FNjt78ih6l64Xh6ULZnSt-PPcYQCVbu/preview"
-  } as const,
+    ru: `${gdocUri}/13FNjt78ih6l64Xh6ULZnSt-PPcYQCVbu/preview`
+  },
 
   kids: {
-    ru: "https://drive.google.com/file/d/1QKHE94fY2i1Cck1MEaxRD4qHnrhKNVAU/preview"
-  } as const,
+    ru: `${gdocUri}/1QKHE94fY2i1Cck1MEaxRD4qHnrhKNVAU/preview`
+  },
 
   night: {
-    ru: "https://drive.google.com/file/d/10OXH66mlYh2Nebmw9c7FcxrG61oWbdNb/preview",
-    en: "https://drive.google.com/file/d/127t3eWiFf2D9mUPVNas0K20tcGLEtWTk/preview"
-  } as const,
+    ru: `${gdocUri}/10OXH66mlYh2Nebmw9c7FcxrG61oWbdNb/preview`,
+    en: `${gdocUri}/127t3eWiFf2D9mUPVNas0K20tcGLEtWTk/preview`
+  },
 
   pizza: {
-    ru: "https://drive.google.com/file/d/1f-39DkwPF9r-6QOZSO0GlQZbTonPY8Wy/preview"
-  } as const
+    ru: `${gdocUri}/1f-39DkwPF9r-6QOZSO0GlQZbTonPY8Wy/preview`
+  }
 };
 
 //
