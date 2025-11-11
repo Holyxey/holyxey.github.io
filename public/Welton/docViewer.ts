@@ -87,7 +87,7 @@ const gdocUri = "https://drive.google.com/file/d";
 
 const DocMenus: Record<string, {ru: string; en?: string}> = {
   main: {
-    ru: `${gdocUri}/1FcPW_zTeCQlxdSIqA5GOpTC94l9dUFtt/preview`,
+    ru: `${gdocUri}/1Y54E6sOaumyuKst0soQNcZeymBQVT110/preview`,
     en: `${gdocUri}/1SR1cHZfoF7nyvrNOmvVfdBNaB4Qipv4m/preview`
   },
 
