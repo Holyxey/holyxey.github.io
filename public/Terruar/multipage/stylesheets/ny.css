@@ -18,13 +18,11 @@ main:has(> .ny-block) {
   border: 1px solid #232323;
   user-select: none;
 }
-/*.ny-block[data-holyday="new-year"] { background-image: url("https://static.tildacdn.com/tild3665-6238-4662-a239-626533653635/Frame_46.png") !important }*/
 .ny-block[data-holyday='new-year'] {
-  background-image: url('https://thumb.tildacdn.com/tild3735-3265-4936-a164-646231313162/-/format/webp/Image-1.png') !important;
+  background-image: url('https://thumb.tildacdn.com/tild3161-3431-4266-b466-396138313966/-/format/webp/terruar-ny.jpeg.webp') !important;
 }
-/*.ny-block[data-holyday="christmas"] { background-image: url("https://static.tildacdn.com/tild3435-3034-4331-b161-623430376665/Frame_46-1.png") !important }*/
 .ny-block[data-holyday='christmas'] {
-  background-image: url('https://thumb.tildacdn.com/tild6536-3665-4466-b131-316161306166/-/format/webp/Image.png') !important;
+  background-image: url('https://thumb.tildacdn.com/tild3465-6130-4630-b135-316532633231/-/format/webp/terruar-cm.jpeg.webp') !important;
 }
 .ny-block .infoBlock {
   display: flex;
@@ -35,6 +33,7 @@ main:has(> .ny-block) {
   padding: 3rem;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
+  background-color: #1e1b2350;
   color: var(--holyxey-white);
 }
 .ny-block .infoBlock .infoHeads {
