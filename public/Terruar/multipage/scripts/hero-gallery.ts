@@ -1,12 +1,12 @@
 let node = document.getElementById('heroImageBlock') as HTMLDivElement;
 const list: string[] = [
-  'https://avatars.mds.yandex.net/get-altay/12814440/2a00000191938365af85965694d05077332e/XXXL',
-  'https://avatars.mds.yandex.net/get-altay/10578166/2a0000018deab5fb1c821d41e48183fd7743/XXXL',
-  'https://avatars.mds.yandex.net/get-altay/16182900/2a00000196a479884aff6283a79dc47a8eb7/XXXL',
-  'https://avatars.mds.yandex.net/get-altay/901763/2a00000184a88d3638cddbf4368d73af99a7/XXXL',
-  'https://static.tildacdn.com/tild3734-3931-4465-a133-613035393531/quadbike.png',
-  'https://avatars.mds.yandex.net/get-altay/11371852/2a0000018d2bafa21415d5a529249126feb0/XXXL',
-  'https://avatars.mds.yandex.net/get-altay/903559/2a0000018719338a4e7991a8d56261679868/XXXL',
+  'https://static.tildacdn.com/tild6432-3230-4264-a539-363737336335/ny-1.jpg',
+  'https://static.tildacdn.com/tild6438-6361-4133-b064-646366383832/ny-2.jpg',
+  'https://static.tildacdn.com/tild3739-3232-4561-a266-626266356635/ny-3.jpg',
+  'https://static.tildacdn.com/tild3739-3333-4132-b661-643730633566/ny-4.jpg',
+  'https://static.tildacdn.com/tild3334-6665-4162-b332-303439396263/ny-5.png',
+  'https://static.tildacdn.com/tild3732-6234-4431-a635-373334393431/ny-6.jpg',
+  'https://static.tildacdn.com/tild3235-3135-4161-b230-376566356239/ny-7.jpg',
 ];
 const IDS = {
   WRAPPER: 'heroImageBlockWrapper',
@@ -124,6 +124,7 @@ async function initHeroGallery() {
       mobile = true;
       node = mobWrapper;
     }
+
     // Arrows insert
     const wrapper = await initImages();
     const nextArrow = createArrow('next');
