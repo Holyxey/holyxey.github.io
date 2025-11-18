@@ -148,8 +148,8 @@ const needToRender = function (where) {
                                 : ''
                             }
                             <h4 class="${design.artHeader}" ${
-                              item.icon ? `style="padding-left: 2.5rem"` : ''
-                            }>${item.title}</h4>
+                            item.icon ? `style="padding-left: 2.5rem"` : ''
+                          }>${item.title}</h4>
                             <p class="${design.artDescr}">${item.shortDescr}</p>
                         </div>`
                         : ''
@@ -287,7 +287,9 @@ function openVariantGallery(list, index, preview = false, customSeason) {
                 : `<div class="variantPopUpButtons">
                       <a class="classic-header-button-first" 
                         href="#popup:openBookingForm" 
-                        onclick="openBookingForm(event, '${element.title || ''}', '${imagesList[0] || ''}')">
+                        onclick="openBookingForm(event, '${
+                          element.title || ''
+                        }', '${imagesList[0] || ''}')">
                       Забронировать
                     </a>
                   </div>`
@@ -316,6 +318,25 @@ function openVariantGallery(list, index, preview = false, customSeason) {
  * @param {string} prev - id кнопки "назад"
  */
 async function initHolyGallery(node, next, prev) {
+  function galleryScrollTo(pressed, next, prev, node) {
+    const elements = node.children;
+
+    let buttonNum = Number(pressed.getAttribute('data-active-element') | 0);
+    if (pressed === next) buttonNum++;
+    else buttonNum--;
+
+    try {
+      let leftItem = elements[buttonNum].getBoundingClientRect().left;
+      let leftNode = node.getBoundingClientRect().left;
+
+      node.scrollBy({ behavior: 'smooth', left: leftItem - leftNode });
+      next.setAttribute('data-active-element', buttonNum);
+      prev.setAttribute('data-active-element', buttonNum);
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
   await new Promise((resolve) => setTimeout(resolve, 1000));
   const galleryNode = document.getElementById(node);
   const arrows = {
@@ -332,12 +353,12 @@ async function initHolyGallery(node, next, prev) {
         if (el.target.getAttribute('data-gallery-id') == 0) {
           el.isIntersecting
             ? (arrows.prev.style.display = 'none')
-            : (arrows.prev.style.display = '');
+            : (arrows.prev.style.display = 'flex');
         }
         if (el.target.getAttribute('data-gallery-id') == elements.length - 1) {
           el.isIntersecting
             ? (arrows.next.style.display = 'none')
-            : (arrows.next.style.display = '');
+            : (arrows.next.style.display = 'flex');
         }
       });
     },
@@ -355,31 +376,6 @@ async function initHolyGallery(node, next, prev) {
   arrows.prev.addEventListener('click', () =>
     galleryScrollTo(arrows.prev, arrows.next, arrows.prev, galleryNode)
   );
-}
-
-/** Обработка нажатия кнопки навигации галереи
- * @param {HTMLElement} pressed - нажатая кнопка
- * @param {HTMLElement} next - кнопка "далее"
- * @param {HTMLElement} prev - кнопка "назад"
- * @param {HTMLElement} node - блок с элементами
- */
-function galleryScrollTo(pressed, next, prev, node) {
-  const elements = node.children;
-
-  let buttonNum = Number(pressed.getAttribute('data-active-element') | 0);
-  if (pressed === next) buttonNum++;
-  else buttonNum--;
-
-  try {
-    let leftItem = elements[buttonNum].getBoundingClientRect().left;
-    let leftNode = node.getBoundingClientRect().left;
-
-    node.scrollBy({ behavior: 'smooth', left: leftItem - leftNode });
-    next.setAttribute('data-active-element', buttonNum);
-    prev.setAttribute('data-active-element', buttonNum);
-  } catch (e) {
-    console.log(e);
-  }
 }
 
 // TODO замени на новый рендер что ниже
@@ -542,7 +538,11 @@ const renderLists = () => {
         `
         <article class="varItem" 
           ${listItem.id ? `data-popup="${listItem.id}"` : ''} 
-          ${listItem.title ? `title="${listItem.title}" data-header="${listItem.title}"` : ''}
+          ${
+            listItem.title
+              ? `title="${listItem.title}" data-header="${listItem.title}"`
+              : ''
+          }
           data-list="${listName}" data-popup-type="${listItem.popUpType}">
           <header class="varHeader">
             ${
@@ -552,7 +552,11 @@ const renderLists = () => {
             }
             <h1 class="varTitle">${listItem.title}</h1>
           </header>
-          ${listItem.shortDescr ? `<p class="varDescription">${listItem.shortDescr}</p>` : ''}
+          ${
+            listItem.shortDescr
+              ? `<p class="varDescription">${listItem.shortDescr}</p>`
+              : ''
+          }
           <main class="varPreviewWrapper">
             <figure>
               <img loading="lazy" 
@@ -570,7 +574,11 @@ const renderLists = () => {
               ${
                 listItem.params &&
                 `<span >${listItem.params.guests_count} 
-                  <img alt="Icon" aria-label="none" src=${listItem.params.guests_count > 2 ? iconLinks.personsGroup : iconLinks.personsTwo} />
+                  <img alt="Icon" aria-label="none" src=${
+                    listItem.params.guests_count > 2
+                      ? iconLinks.personsGroup
+                      : iconLinks.personsTwo
+                  } />
                 </span>`
               }
               ${
@@ -589,7 +597,9 @@ const renderLists = () => {
                 Подробнее
               </button>
               <a class="varPreviewButton book" href="#popup:openBookingForm" 
-                onclick="openBookingForm(event, '${listItem.title || ''}', '${cover(listItem) || ''}')">
+                onclick="openBookingForm(event, '${listItem.title || ''}', '${
+          cover(listItem) || ''
+        }')">
                 Забронировать
               </a>
             </footer>
