@@ -135,7 +135,7 @@ async function initHeroGallery() {
     node.style.backgroundImage = 'none';
 
     node.prepend(wrapper);
-    initHolyGallery(IDS.WRAPPER, IDS.NEXT_ARROW, IDS.PREV_ARROW);
+    window.initHolyGallery?.(IDS.WRAPPER, IDS.NEXT_ARROW, IDS.PREV_ARROW);
   } catch (error) {
     console.error('Error initializing hero gallery:', error);
   }

@@ -2,6 +2,7 @@
   "scripts": {
     "build-restaurant": "bun build restaurant/restaurantRender.ts --outdir=restaurant/build --target=browser --minify --format=esm",
     "build-list": "bun build multipage/scripts/lists/index.ts --outfile=multipage/scripts/lists/list.js --target=browser --format=esm",
+    "build-ny-gallery": "bun build multipage/scripts/hero-gallery.ts --outfile multipage/scripts/hero-gallery.js --minify-syntax --minify-whitespace --format=esm",
     "build-hero-video": "bun build multipage/scripts/heroVideo.ts --outfile=multipage/scripts/heroVideo.js --minify",
     "build-booking-form": "bun build multipage/scripts/openBookingForm.ts --outfile=multipage/scripts/openBookingForm.js --minify"
   }
