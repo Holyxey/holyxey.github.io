@@ -1,4 +1,7 @@
-const videoPath = 'https://holyxey.github.io/public/Terruar/media/terruar.mp4';
+// const videoPath = 'https://holyxey.github.io/public/Terruar/media/terruar.mp4';
+const videoPath =
+  'https://holyxey.github.io/public/Terruar/media/terruar-winter.mp4';
+// const videoPath = '../../media/terruar-winter.mp4';
 
 const node = document.getElementById('heroImageBlock') as HTMLDivElement;
 const isDesktop = window.innerWidth > 500;
@@ -9,14 +12,18 @@ console.info('[heroVideo] - ' + isDesktop);
 function insertVideo(): HTMLVideoElement {
   try {
     const video = document.createElement('video');
+
     if (isDesktop) {
       video.autoplay = true;
     }
+
     video.muted = true;
     video.loop = true;
     video.volume = 0;
     video.playsInline = true;
-
+    video.style.border = 'none';
+    video.style.objectFit = 'cover';
+    video.style.height = '100%';
     video.style.width = '100%';
     video.style.maxWidth = '100%';
     video.style.position = 'absolute';
