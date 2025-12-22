@@ -78,8 +78,12 @@ main:has(> .ny-block) {
   font-weight: 500 !important;
   font-family: var(--holyxey-unbounded);
 }
+.ny-block .button-wrapper {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
 .ny-block .classic-header-button-first {
-  margin-top: 1rem;
 }
 /* !new year */
 
