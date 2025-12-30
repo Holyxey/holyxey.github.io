@@ -210,6 +210,31 @@ const lists = {
       readMoreText: 'Подробнее',
       withGallery: false,
     },
+    // Снегоход
+    {
+      render: true,
+      id: 'snowmobile',
+      title: 'Снегоход',
+      header: '',
+      price: '',
+      shortDescr: '6000р/заезд',
+      fullDescr:
+        'Прекрасный выбор для ценителей активного отдыха, идеально подходит для покорения заснеженных просторов.',
+      benefits: ['', '', ''],
+      images: {
+        summer: [
+          'https://thumb.tildacdn.com/tild3334-6535-4734-a332-666562383634/-/format/webp/IMG_7721_Large.jpeg',
+        ],
+        winter: [
+          'https://thumb.tildacdn.com/tild3334-6535-4734-a332-666562383634/-/format/webp/IMG_7721_Large.jpeg',
+        ],
+      },
+      popUp: true,
+      popUpType: 'service',
+      readMoreLink: '',
+      readMoreText: 'Подробнее',
+      withGallery: false,
+    },
     // Багги
     {
       render: true,
@@ -395,6 +420,7 @@ const lists = {
       readMoreText: 'Подробнее',
       withGallery: false,
     },
+    // Баня с фурако
     {
       render: true,
       id: 'furako',
@@ -419,22 +445,23 @@ const lists = {
       readMoreText: 'Подробнее',
       withGallery: false,
     },
+    // Снегоход
     {
       render: true,
-      id: 'quadbike',
-      title: 'Квадроцикл',
+      id: 'snowmobile',
+      title: 'Снегоход',
       header: '',
       price: '',
-      shortDescr: '5000р/час',
+      shortDescr: '6000р/заезд',
       fullDescr:
-        'Отличный вариант для любителей активного отдыха, идеален для бездорожья. Доступен специальный маршрут на нашей карте мимо прудов по березовому лесу.',
+        'Прекрасный выбор для ценителей активного отдыха, идеально подходит для покорения заснеженных просторов.',
       benefits: ['', '', ''],
       images: {
         summer: [
-          'https://thumb.tildacdn.com/tild6230-3462-4431-b436-386138613338/-/format/webp/photo.jpg',
+          'https://thumb.tildacdn.com/tild3334-6535-4734-a332-666562383634/-/format/webp/IMG_7721_Large.jpeg',
         ],
         winter: [
-          'https://thumb.tildacdn.com/tild3734-3931-4465-a133-613035393531/-/format/webp/quadbike.png',
+          'https://thumb.tildacdn.com/tild3334-6535-4734-a332-666562383634/-/format/webp/IMG_7721_Large.jpeg',
         ],
       },
       popUp: true,
