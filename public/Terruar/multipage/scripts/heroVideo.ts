@@ -182,7 +182,6 @@ function controlElements(video: HTMLVideoElement) {
   return { play, fullScreen };
 }
 
-// Применяем стили к body
 function setStyle() {
   const style = document.createElement('style');
   style.setAttribute('id', 'heroVideoStyle');
@@ -191,10 +190,10 @@ function setStyle() {
     #heroImageBlock { 
       display: block !important; 
       aspect-ratio: 16 / 9 !important;
-      min-height: unset !important;
-      min-width: 100px !important;
-    }
-  }`;
+      }
+      }`;
+  // min-height: unset !important;
+  // min-width: 100px !important;
 
   document.head.prepend(style);
 }
