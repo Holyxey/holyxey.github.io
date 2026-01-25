@@ -1,1 +1,1 @@
-(()=>{["https://esm.yurin.dev/holyxey.github.io/JS.js","https://esm.yurin.dev/holyxey.github.io/madeby.js"].forEach((t)=>{if(!document.querySelector(`script[src="${t}"]`)){let e=document.createElement("script");e.src=t,e.async=!1,e.defer=!0,e.type="module",document.head.append(e)}})})();
+(()=>{["https://holyxey.github.io/JS.js","https://holyxey.github.io/madeby.js"].forEach((t)=>{if(!document.querySelector(`script[src="${t}"]`)){let e=document.createElement("script");e.src=t,e.async=!1,e.defer=!0,e.type="module",document.head.append(e)}})})();

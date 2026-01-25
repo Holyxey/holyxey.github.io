@@ -1,7 +1,7 @@
 (() => {
   const paths = [
-    'https://esm.yurin.dev/holyxey.github.io/JS.js',
-    'https://esm.yurin.dev/holyxey.github.io/madeby.js',
+    'https://holyxey.github.io/JS.js',
+    'https://holyxey.github.io/madeby.js',
   ];
 
   paths.forEach((p) => {
