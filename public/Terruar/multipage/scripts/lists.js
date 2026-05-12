@@ -489,7 +489,7 @@ const lists = {
       },
       popUp: false,
       popUpType: 'service',
-      readMoreLink: '/services',
+      readMoreLink: '/active',
       readMoreText: 'Страница с услугами',
       withGallery: false,
     },
